@@ -110,6 +110,16 @@ Tracheophyta.review.summary$Species <- Tracheophyta.summary.matched$Species[matc
 
 Tracheophyta.review.summary <- rbind(Tracheophyta.review.summary, unmatched.iNat.obs.summary)
 
+# Add column for National Status Ranking (and rename 'Status' to 'Provincial Status')
+
+Tracheophyta.review.summary$National_Status <- NA
+
+Tracheophyta.review.summary <- Tracheophyta.review.summary %>% select('Taxon', 'Taxon Author', 'Subtaxon Author', 'Common Name', 'Kingdom', 'Phylum', 'Subphylum', 'Superclass', 'Class', 'Subclass', 'Superorder', 'Order', 'Suborder', 'Superfamily', 'Family', 'Subfamily', 'Tribe', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety', 'Origin', 'Status', 'National_Status', 'Reporting Status', 'Observation', 'Collected/Reported (y-m-d)', 'Collector/Source', 'Collection/List', 'Accession Number', 'GBIF ID', 'First Observed', 'Observer', 'iNaturalist Link', 'Notes', 'ID', 'Stats Code')
+
+names(Tracheophyta.review.summary) <- c('Taxon', 'Taxon Author', 'Subtaxon Author', 'Common Name', 'Kingdom', 'Phylum', 'Subphylum', 'Superclass', 'Class', 'Subclass', 'Superorder', 'Order', 'Suborder', 'Superfamily', 'Family', 'Subfamily', 'Tribe', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety', 'Origin', 'Provincial Status', 'National Status', 'Reporting Status', 'Observation', 'Collected/Reported (y-m-d)', 'Collector/Source', 'Collection/List', 'Accession Number', 'GBIF ID', 'First Observed', 'Observer', 'iNaturalist Link', 'Notes', 'ID', 'Stats Code')
+
+names(Tracheophyta.review.summary)
+
 # Replace NA values with ""
 
 Tracheophyta.review.summary[is.na(Tracheophyta.review.summary)] <- ""
