@@ -1,0 +1,63 @@
+"","Taxon","Genus","Species","Hybrid","Subspecies","Variety","Origin","Provincial.Status","National.Status","latitude","longitude","geoprivacy","private_latitude","private_longitude","id"
+"234","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.978878732,-123.5650235502,"",48.931029,-123.47708,2563709
+"235","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9340861427,-123.3364113952,"",48.86682,-123.338487,12819711
+"236","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.8437244421,-123.4230454705,"obscured",NA,NA,12871801
+"237","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9352740758,-123.3438819921,"",48.880657,-123.339343,12916676
+"238","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9170048103,-123.4841257985,"",48.9153722222,-123.4231194444,12996624
+"239","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.8566470685,-123.4023402538,"",48.951065,-123.5071,12996820
+"240","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9553686004,-123.4642060935,"",48.942078,-123.475971,13027602
+"241","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",49.0403806196,-123.4525776792,"",49.000513,-123.582308,13372380
+"242","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9086766828,-123.3108611005,"",48.9136541434,-123.3958829812,52033143
+"243","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.8546541071,-123.434567099,"",NA,NA,90752993
+"17010","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.8974333333,-123.3386916667,"",NA,NA,6249542
+"17110","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.8972716283,-123.3387261783,"",NA,NA,6447929
+"17210","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.8975416667,-123.33853,"",NA,NA,26057588
+"17310","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.8973927639,-123.3387933727,"",NA,NA,26288907
+"17410","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.909615,-123.37194,"",NA,NA,111053106
+"17510","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.90951,-123.3712066667,"",NA,NA,114482009
+"17610","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.9096266667,-123.3719533333,"",NA,NA,119369501
+"17710","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.8973583333,-123.3386683333,"",NA,NA,120494798
+"17810","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.909615,-123.37194,"",NA,NA,121538559
+"430","Platanthera ephemerantha","Platanthera","ephemerantha","","","","native","S3 (2019)","",48.9745177234,-123.563928411,"",NA,NA,84513004
+"431","Platanthera ephemerantha","Platanthera","ephemerantha","","","","native","S3 (2019)","",48.97448667,-123.56389667,"",NA,NA,87508542
+"432","Platanthera ephemerantha","Platanthera","ephemerantha","","","","native","S3 (2019)","",48.8971204333,-123.4073464438,"",NA,NA,126309922
+"433","Platanthera ephemerantha","Platanthera","ephemerantha","","","","native","S3 (2019)","",48.89515,-123.4093783333,"",NA,NA,126928678
+"1473","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9526,-123.533288,"",NA,NA,2762301
+"1474","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9526627629,-123.5340101651,"",NA,NA,123934422
+"1475","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.953847,-123.536703,"",NA,NA,123934424
+"1476","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9537866667,-123.53701,"",NA,NA,123934425
+"1477","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9554516667,-123.5394983333,"",NA,NA,123934427
+"1478","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9564216667,-123.5410516667,"",NA,NA,123934430
+"1479","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9576266667,-123.5427016667,"",NA,NA,123934435
+"1480","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9579583333,-123.5432483333,"",NA,NA,123934438
+"1481","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9581833333,-123.5436783333,"",NA,NA,123934439
+"1482","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.95828,-123.5437516667,"",NA,NA,123934440
+"1483","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9584616667,-123.544,"",NA,NA,123934442
+"1484","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9594833333,-123.5454633333,"",NA,NA,123934444
+"1485","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9603566667,-123.546895,"",NA,NA,123934446
+"1486","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9613733333,-123.5480633333,"",NA,NA,123934448
+"1487","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.96156,-123.5484333333,"",NA,NA,123934449
+"1488","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.96182,-123.5488533333,"",NA,NA,123934450
+"1489","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.96221,-123.5493933333,"",NA,NA,123934452
+"1490","Lomatium papilioniferum","Lomatium","papilioniferum","","","","native","S2 (2019)","1-T (2011)",48.9629349819,-123.5501675782,"",NA,NA,123934453
+"2641","Uropappus lindleyi","Uropappus","lindleyi","","","","native","S1S2 (2019)","1-E (2010)",48.866945,-123.341328,"",NA,NA,12817804
+"2642","Uropappus lindleyi","Uropappus","lindleyi","","","","native","S1S2 (2019)","1-E (2010)",48.8618803558,-123.3293636424,"",NA,NA,114745571
+"4557","Pyrola aphylla","Pyrola","aphylla","","","","native","S3 (2019)","",48.915988,-123.424981,"",NA,NA,3213200
+"4558","Pyrola aphylla","Pyrola","aphylla","","","","native","S3 (2019)","",48.915924,-123.425292,"",NA,NA,3340486
+"4559","Pyrola aphylla","Pyrola","aphylla","","","","native","S3 (2019)","",48.871483,-123.346735,"",NA,NA,13430277
+"4560","Pyrola aphylla","Pyrola","aphylla","","","","native","S3 (2019)","",48.869152,-123.346483,"",NA,NA,13795349
+"4561","Pyrola aphylla","Pyrola","aphylla","","","","native","S3 (2019)","",48.875368,-123.341708,"",NA,NA,13964383
+"4562","Pyrola aphylla","Pyrola","aphylla","","","","native","S3 (2019)","",48.8713983333,-123.3462283333,"",NA,NA,13973301
+"4563","Pyrola aphylla","Pyrola","aphylla","","","","native","S3 (2019)","",48.87295,-123.341366,"",NA,NA,14370713
+"4564","Pyrola aphylla","Pyrola","aphylla","","","","native","S3 (2019)","",48.9324916667,-123.4792716667,"",NA,NA,84362796
+"4565","Pyrola aphylla","Pyrola","aphylla","","","","native","S3 (2019)","",48.93247,-123.4791716667,"",NA,NA,84375998
+"4566","Pyrola aphylla","Pyrola","aphylla","","","","native","S3 (2019)","",48.9313889864,-123.4732674227,"",NA,NA,84388553
+"5197","Trifolium dichotomum","Trifolium","dichotomum","","","","native","S2 (2021)","",48.8615138889,-123.366625,"",NA,NA,116636297
+"5198","Trifolium dichotomum","Trifolium","dichotomum","","","","native","S2 (2021)","",48.86147,-123.365915,"",NA,NA,116636304
+"5199","Trifolium dichotomum","Trifolium","dichotomum","","","","native","S2 (2021)","",48.8658768672,-123.3650000766,"",NA,NA,120380816
+"5200","Trifolium dichotomum","Trifolium","dichotomum","","","","native","S2 (2021)","",48.86345,-123.3638233333,"",NA,NA,120470376
+"7186","Epilobium densiflorum","Epilobium","densiflorum","","","","native","S2 (2019)","1-E (2006)",48.9307416667,-123.474245,"",NA,NA,3711497
+"7187","Epilobium densiflorum","Epilobium","densiflorum","","","","native","S2 (2019)","1-E (2006)",48.930818,-123.474376,"",NA,NA,3719840
+"7188","Epilobium densiflorum","Epilobium","densiflorum","","","","native","S2 (2019)","1-E (2006)",48.9306916667,-123.4743633333,"",NA,NA,14758645
+"7189","Epilobium densiflorum","Epilobium","densiflorum","","","","native","S2 (2019)","1-E (2006)",48.9314222222,-123.4766833333,"",NA,NA,125381632
+"7581","Meconella oregana","Meconella","oregana","","","","native","S1S2 (2019)","1-E (2006)",48.871567,-123.381984,"",NA,NA,9142345
