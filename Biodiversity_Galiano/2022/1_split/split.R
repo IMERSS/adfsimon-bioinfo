@@ -19,15 +19,19 @@ head(obs)
 
 Tracheophyta <- obs %>% filter(taxon_phylum_name == 'Tracheophyta')
 
-### Summarize first recorded historical records by Taxon
+# Summarize first recorded historical records by Taxon
 
 Tracheophyta$observed_on <- as.Date(Tracheophyta$observed_on)
 
 Tracheophyta.summary <- Tracheophyta %>% group_by(scientific_name) %>% filter(observed_on == min(observed_on))
 
-### Remove taxa that remain unresolved to genus
+# Remove taxa that remain unresolved to genus
 
 Tracheophyta.summary <- Tracheophyta.summary[!(is.na(Tracheophyta.summary$taxon_genus_name) | Tracheophyta.summary$taxon_genus_name==""), ]
+
+# Remove duplicate observations from summary
+
+Tracheophyta.summary <- Tracheophyta.summary %>% distinct('Taxon', .keep_all = TRUE)
 
 # Write iNaturalist summaries by Taxon
 
