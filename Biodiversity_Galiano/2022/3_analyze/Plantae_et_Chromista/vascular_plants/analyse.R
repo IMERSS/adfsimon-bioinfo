@@ -15,20 +15,16 @@ setwd("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Ga
 # Read iNaturalist observations
 
 obs <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/Tracheophyta_iNat_obs.csv")
-head(obs)
 
 # Read summary
 
 summary <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/Tracheophyta_review_summary_reviewed.csv")
-head(obs)
 
 # Standardize obs fields to facilitate join with summary
 
 obs$taxon_species_name <- word(obs$taxon_species_name, 2)
 obs$taxon_subspecies_name <- word(obs$taxon_subspecies_name, 3)
 obs$taxon_variety_name <- word(obs$taxon_variety_name, 3)
-
-names(obs)
 
 obs <- rename(obs, Taxon = scientific_name)
 obs <- rename(obs, Genus = taxon_genus_name)
@@ -37,11 +33,7 @@ obs <- rename(obs, Hybrid = taxon_hybrid_name)
 obs <- rename(obs, Subspecies = taxon_subspecies_name)
 obs <- rename(obs, Variety = taxon_variety_name)
 
-nrow(obs)
-
 # Merge catalog with summary based on genus, species, subspecies, hybrid, variety fields
-
-names(matched.catalog.summary.genus.subspecies)
 
 matched.catalog.summary.genus.subspecies <- inner_join(summary, obs, by = c('Genus','Subspecies'))
 matched.catalog.summary.genus.subspecies <- matched.catalog.summary.genus.subspecies[!(matched.catalog.summary.genus.subspecies$Subspecies==""), ]
@@ -63,11 +55,8 @@ matched.catalog.summary.subspecies.variety.hybrid <- rbind(matched.catalog.summa
 # Merge catalog of all species (not ssp, var, or hybrid) with summary (based on difference with other dataframes)
 
 matched.catalog.summary.genus.species <- inner_join(summary, obs, by = c('Taxon'))
-
 matched.catalog.summary.genus.species <- matched.catalog.summary.genus.species %>% dplyr::select(Taxon,Genus.x,Species.x,Hybrid.x,Subspecies.x,Variety.x,Origin,Provincial.Status,National.Status,latitude,longitude,geoprivacy,private_latitude,private_longitude,id)
-
 names(matched.catalog.summary.genus.species) <- c('Taxon', 'Genus', 'Species','Hybrid','Subspecies','Variety','Origin','Provincial.Status','National.Status','latitude','longitude','geoprivacy','private_latitude','private_longitude','id')
-
 matched.catalog.summary.genus.species <- anti_join(matched.catalog.summary.genus.species, matched.catalog.summary.subspecies.variety.hybrid, by = "id")
 
 nrow(obs)
@@ -103,13 +92,9 @@ write.csv(obs.unmatched.unique, "/Users/andrewsimon/GitHub/bioinformatics/adfsim
 
 unmatched.taxon.key <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/unmatched_taxon_key.csv")
 
-# Substitute names in ummatched dataframe using unmatched taxon key
-
-names(unmatched.taxon.key)
+# Substitute names in ummatched dataframe with names from unmatched taxon key
 
 obs.unmatched$Taxon <- unmatched.taxon.key$Matched.Taxon[match(unlist(obs.unmatched$Taxon), unmatched.taxon.key$Taxon)]
-
-names(obs.unmatched)
 
 obs.unmatched <- obs.unmatched %>% drop_na(Taxon)
 
@@ -125,8 +110,6 @@ obs.unmatched$National.Status <- summary$National.Status[match(unlist(obs.unmatc
 obs.unmatched <- obs.unmatched %>% select('Taxon', 'Genus', 'Species','Hybrid','Subspecies','Variety','Origin','Provincial.Status','National.Status','latitude','longitude','geoprivacy','private_latitude','private_longitude','id')
 
 # Aggregate observations
-
-unique(obs.summary$Provincial.Status)
 
 obs.summary <- rbind(obs.matched, obs.unmatched)
 obs.summary.exotic <- obs.summary %>% filter(Origin == 'exotic')
