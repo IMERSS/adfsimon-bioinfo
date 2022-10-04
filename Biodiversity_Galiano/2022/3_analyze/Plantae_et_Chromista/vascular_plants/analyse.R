@@ -92,7 +92,7 @@ write.csv(obs.unmatched.unique, "/Users/andrewsimon/GitHub/bioinformatics/adfsim
 
 unmatched.taxon.key <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/unmatched_taxon_key.csv")
 
-# Substitute names in ummatched dataframe with names from unmatched taxon key
+# Substitute names in ummatched dataframe with names from unmatched taxon key that correspond with summary
 
 obs.unmatched$Taxon <- unmatched.taxon.key$Matched.Taxon[match(unlist(obs.unmatched$Taxon), unmatched.taxon.key$Taxon)]
 
