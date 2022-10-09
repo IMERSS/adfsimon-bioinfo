@@ -8,7 +8,7 @@ library(dplyr)
 
 # Set working directory
 
-setwd("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/1_split")
+setwd(".../Biodiversity_Galiano/2022/1_split")
 
 # Read iNaturalist observations
 
