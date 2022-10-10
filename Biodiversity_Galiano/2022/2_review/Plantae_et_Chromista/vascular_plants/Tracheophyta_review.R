@@ -1,4 +1,8 @@
-# Script to compare iNaturalist observations against historical baseline
+# Script to compare iNaturalist observations against a historical baseline
+
+# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
 
 # Load packages
 
@@ -8,13 +12,13 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/2_review/Plantae_et_Chromista/vascular_plants/Tracheophyta_review_summary_reviewed.csv")
+baseline <- read.csv("Tracheophyta_review_summary_reviewed.csv")
 
 Tracheophyta.baseline <- baseline %>% filter(Phylum == 'Tracheophyta')
 
 # Read iNaturalist obs summary
 
-iNat.obs.summary <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/1_split/vascular_plants/Tracheophyta_iNat_summary.csv")
+iNat.obs.summary <- read.csv("../../../1_split/vascular_plants/Tracheophyta_iNat_summary.csv")
 names(iNat.obs.summary)
 
 # Drop extraneous fields
@@ -106,4 +110,4 @@ Tracheophyta.review.summary[is.na(Tracheophyta.review.summary)] <- ""
 
 # Write review summary
 
-write.csv(Tracheophyta.review.summary, "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/2_review/Plantae_et_Chromista/vascular_plants/Tracheophyta_review_summary.csv")
+write.csv(Tracheophyta.review.summary, "Tracheophyta_review_summary.csv")

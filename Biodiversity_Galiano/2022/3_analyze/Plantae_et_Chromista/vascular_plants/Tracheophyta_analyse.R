@@ -2,19 +2,19 @@
 # 2022-10-01
 # Andrew Simon
 
+# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
+
 # Load packages
 
 library(dplyr)
 library(stringr)
 library(tidyr)
 
-# Set working directory
-
-setwd("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista")
-
 # Read iNaturalist observations
 
-obs <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/iNaturalist_Tracheophyta_observations_2022-10-09.csv")
+obs <- read.csv("iNaturalist_Tracheophyta_observations_2022-10-09.csv")
 
 # Drop cultivated taxa from observations
 
@@ -22,7 +22,7 @@ obs <- subset(obs, captive_cultivated != "true")
 
 # Read summary
 
-summary <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/Tracheophyta_review_summary_reviewed.csv")
+summary <- read.csv("Tracheophyta_review_summary_reviewed.csv")
 
 # Standardize obs fields to facilitate join with summary
 
@@ -90,11 +90,11 @@ nrow(obs.unmatched)+nrow(obs.matched)
 
 obs.unmatched.unique <- obs.unmatched %>% distinct(Taxon)
 
-write.csv(obs.unmatched.unique, "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/obs_unmatched.unique.csv")
+write.csv(obs.unmatched.unique, "obs_unmatched.unique.csv")
 
 # Read unmatched taxon key
 
-unmatched.taxon.key <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/unmatched_taxon_key.csv")
+unmatched.taxon.key <- read.csv("unmatched_taxon_key.csv")
 
 # Substitute names in ummatched dataframe with names from unmatched taxon key that correspond with summary
 
@@ -128,6 +128,6 @@ rare.obs.count <- obs.summary.rare %>% count(Taxon)
 
 # Write catalogs of exotic, native, and rare species 
 
-write.csv(obs.summary.exotic, "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/obs_exotic.csv")
-write.csv(obs.summary.native, "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/obs_native.csv")
-write.csv(obs.summary.rare, "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/obs_rare.csv")
+write.csv(obs.summary.exotic, "obs_exotic.csv")
+write.csv(obs.summary.native, "obs_native.csv")
+write.csv(obs.summary.rare, "obs_rare.csv")

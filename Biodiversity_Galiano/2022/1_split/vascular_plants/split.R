@@ -2,13 +2,13 @@
 # 2022-09-30
 # Andrew Simon
 
+# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
+
 # Load packages
 
 library(dplyr)
-
-# Set working directory
-
-setwd("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/1_split/vascular_plants/")
 
 # Read iNaturalist observations
 
@@ -35,9 +35,9 @@ Tracheophyta.summary <- Tracheophyta.summary %>% distinct('Taxon', .keep_all = T
 
 # Write iNaturalist summaries by Taxon
 
-write.csv(Tracheophyta.summary, "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/1_split/vascular_plants/Tracheophyta_iNat_summary.csv")
+write.csv(Tracheophyta.summary, "Tracheophyta_iNat_summary.csv")
 
 # Write iNaturalist catalogs by Taxon
 
-write.csv(Tracheophyta, "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/1_split/vascular_plants/Tracheophyta_iNat_obs.csv")
+write.csv(Tracheophyta, "Tracheophyta_iNat_obs.csv")
 
