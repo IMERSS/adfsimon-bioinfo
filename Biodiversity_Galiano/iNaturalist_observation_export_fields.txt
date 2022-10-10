@@ -1,12 +1,12 @@
-Fields for export:
+Fields to export:
 
-1. Query: Life
+1. Query: Life, etc.
 
-3. Columns: id, user_login, user_name, observed_on, url, image_url, sound_url, quality_grade
+3. Columns: captive_cultivated, id, image_url, observed_on, quality_grade, sound_url, url, user_login, user_name
 
-4. Geo: latitude, longitude, private_latitude, private_longitude, positioning_method, positioning_device, positional_accuracy, public_positional_accuracy, geoprivacy, taxon_geoprivacy
+4. Geo: coordinates_obscured, geoprivacy, latitude, longitude, positional_accuracy, positioning_device, positioning_method, private_latitude, private_longitude, public_positional_accuracy, taxon_geoprivacy
 
-5. Taxon: scientific_name, common_name, taxon_id
+5. Taxon: common_name, scientific_name, taxon_id
 
 6. Taxon Extras: ALL
 
