@@ -14,7 +14,11 @@ setwd("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Ga
 
 # Read iNaturalist observations
 
-obs <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/Tracheophyta_iNat_obs.csv")
+obs <- read.csv("/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/iNaturalist_Tracheophyta_observations_2022-10-09.csv")
+
+# Drop cultivated taxa from observations
+
+obs <- subset(obs, captive_cultivated != "true")
 
 # Read summary
 
@@ -115,6 +119,12 @@ obs.summary <- rbind(obs.matched, obs.unmatched)
 obs.summary.exotic <- obs.summary %>% filter(Origin == 'exotic')
 obs.summary.native <- obs.summary %>% filter(Origin == 'native')
 obs.summary.rare <- obs.summary %>% filter(Provincial.Status == 'S3 (2018)' | Provincial.Status == 'S3 (2019)'| Provincial.Status == 'S2 (2019)'| Provincial.Status == 'S1S2 (2019)'| Provincial.Status == 'S2 (2021)')
+
+# Summary species by observation frequency
+
+exotic.obs.count <- obs.summary.exotic %>% count(Taxon)
+native.obs.count <- obs.summary.native %>% count(Taxon)
+rare.obs.count <- obs.summary.rare %>% count(Taxon)
 
 # Write catalogs of exotic, native, and rare species 
 

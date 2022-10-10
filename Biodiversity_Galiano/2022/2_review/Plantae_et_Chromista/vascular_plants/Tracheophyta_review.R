@@ -45,7 +45,7 @@ iNat.obs.summary[is.na(iNat.obs.summary)] <- ""
 
 matched.iNat.obs.summary <- inner_join(Tracheophyta.baseline, iNat.obs.summary, by = c("Genus", "Hybrid", "Species", "Subspecies", "Variety"))
 names(matched.iNat.obs.summary)
-matched.iNat.obs.summary <- matched.iNat.obs.summary[,c(1,39:75)]
+matched.iNat.obs.summary <- matched.iNat.obs.summary[,c(1,39:76)]
 
 # Match observation summary against baseline by Taxon and Date Observed
 
