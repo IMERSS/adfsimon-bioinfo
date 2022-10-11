@@ -102,7 +102,13 @@ plot(rbeta, col=my.colors(255), frame.plot=F, axes=F, box=F, add=F, legend.width
 
 # Adapting the above code to implement the same gridded analysis of my data:
 
-# Then, load the grid (shapefile). This is a grid of 0.25 degree lat/long of Cerrado.
-shape <- readOGR("grided_analysis_test/final_shape.shp")
+# Load the grid
+dir()
+shape <- readOGR("gridded_analysis_mydata/1km_grid_TPI_extent_WGS84.shp")
+
+# Read species occurrences.
+occurrences <- read.csv("gridded_analysis_mydata/Galiano_vascular_plants_2022-10-10.csv")
+
+
 
 
