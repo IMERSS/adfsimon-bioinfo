@@ -100,4 +100,9 @@ my.colors = colorRampPalette(c("white","lightblue", "yellow","orangered", "red")
 plot(rbeta, col=my.colors(255), frame.plot=F, axes=F, box=F, add=F, legend.width=0.8, legend.shrink=1)
 
 
+# Adapting the above code to implement the same gridded analysis of my data:
+
+# Then, load the grid (shapefile). This is a grid of 0.25 degree lat/long of Cerrado.
+shape <- readOGR("grided_analysis_test/final_shape.shp")
+
 
