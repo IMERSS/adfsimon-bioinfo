@@ -20,11 +20,11 @@ library(vegan)
 
 # Read spatially explicit biodiversity data
 
-data <- read.csv("Galiano_vascular_plants_x_1km_grid_TPI_extent_2022-10-10.csv")
+data <- read.csv("gridded_analysis_mydata/Galiano_vascular_plants_2022-10-10_intersect_1km_grid_TPI_extent_WGS84.csv")
 
 # Subset relevant fields
 
-data <- data %>% dplyr::select('Taxon'|'id_2')
+data <- data %>% dplyr::select('Taxon'|'field_1')
 
 # Add count field to generate matrix
 
@@ -32,7 +32,7 @@ data$Count <- 1
 
 # Generate matrix 
 
-matrix <- ecodist::crosstab(data$id_2, data$Taxon, data$Count)
+matrix <- ecodist::crosstab(data$field_1, data$Taxon, data$Count)
 
 # Convert to presence / absence
 
@@ -103,8 +103,7 @@ plot(rbeta, col=my.colors(255), frame.plot=F, axes=F, box=F, add=F, legend.width
 # Adapting the above code to implement the same gridded analysis of my data:
 
 # Load the grid
-dir()
-shape <- readOGR("gridded_analysis_mydata/1km_grid_TPI_extent_WGS84.shp")
+shape <- readOGR("gridded_analysis_mydata/1km_grid_TPI_extent_WGS84_intersect_plant_data.shp")
 plot(shape)
 
 # Read species occurrences.
