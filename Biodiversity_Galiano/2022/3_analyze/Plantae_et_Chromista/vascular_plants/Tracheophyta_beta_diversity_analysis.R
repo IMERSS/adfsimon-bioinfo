@@ -15,6 +15,7 @@ library(raster)
 library(rgdal)
 library(rgeos)
 library(stringr)
+library(terra)
 library(tidyr)
 library(vegan)
 
@@ -63,7 +64,9 @@ betagrid<-function(gridshp, comp, xfeature, yfeature, radius, phylotree, phylobe
   return(data.frame(cell=row.names(comp), mean_turnover, mean_nestedness, mean_beta))
 }
 
-###################
+###############
+## TEST DATA ##
+###############
 
 # Then, load the grid (shapefile). This is a grid of 0.25 degree lat/long of Cerrado.
 shape <- readOGR("grided_analysis_test/final_shape.shp")
@@ -99,12 +102,17 @@ my.colors = colorRampPalette(c("white","lightblue", "yellow","orangered", "red")
 # Plot the map
 plot(rbeta, col=my.colors(255), frame.plot=F, axes=F, box=F, add=F, legend.width=0.8, legend.shrink=1)
 
+#############
+## MY DATA ##
+#############
 
-# Adapting the above code to implement the same gridded analysis of my data:
+# Adapting the above code to implement the same grided analysis of my data:
 
 # Load the grid
 shape <- readOGR("gridded_analysis_mydata/1km_grid_TPI_extent_WGS84_intersect_plant_data.shp")
 plot(shape)
+
+shape <- vect(shape, crs="+proj=utm +zone=10 +datum=WGS84  +units=m")
 
 # Read species occurrences.
 # Use matrix generated above!
@@ -114,19 +122,19 @@ names(shape)
 
 # Call the function and get results! Let us calculate beta diversity for each focal cell. Note that the function will return results containing four columns: number of grid cell, the mean turnover partition of beta diversity, the mean nestedness partition of beta diversity, and the mean total beta diversity. Also, note that radius equals 0.25 degree, which is the same size as the resolution of our grid. This will make the function use only the 8 (or fewer) adjacent cells in relation to the focal cells. If you want more neighbor cells to be included in the analysis, you can use the double (0.5 in this example) or greater values.
 
-results <- betagrid(gridshp=shape, comp=matrix, xfeature=6, yfeature=7, radius=0.25, index="sorensen")
+results <- betagrid(gridshp=shape, comp=matrix, xfeature=6, yfeature=7, radius=1000, index="sorensen")
 
 #### GRAPH ####
 
 # Create a new layer in our grid file for the mean total beta diversity.
 shape$betadiv <- results[,4]
 
-writeOGR(shape, dsn = "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/gridded_analysis_mydata/", 
-         layer = "betagrid_plants.shp", driver = "ESRI Shapefile")
+# writeOGR(shape, dsn = "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/gridded_analysis_mydata/", 
+         # layer = "betagrid_plants.shp", driver = "ESRI Shapefile")
 
 # Now create a raster with the same extent and resolution as our previous grid (in our example, 0.25 degree lat/long):
 emptyraster <- raster(extent(shape))
-res(emptyraster)=0.25
+res(emptyraster)=1000
 
 # Assign values to the new raster according to the beta diversity layer in our shapefile.
 rbeta <- rasterize(shape, field="betadiv", emptyraster)
