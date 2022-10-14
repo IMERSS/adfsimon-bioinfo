@@ -3093,18 +3093,378 @@
 "9925","Vinca minor","Vinca","minor","","","","exotic","unlisted","",48.8977366667,-123.4016716667,"",NA,NA,123643956
 "9928","Viola odorata","Viola","odorata","","","","exotic","unlisted","",48.8684166667,-123.3478416667,"",NA,NA,40448514
 "9929","Viola odorata","Viola","odorata","","","","exotic","unlisted","",48.865841978,-123.3504907664,"",NA,NA,82929644
-"9950","Zostera japonica","Zostera","japonica","","","","exotic","unlisted","",48.884828,-123.321018,"",NA,NA,3613098
-"9951","Zostera japonica","Zostera","japonica","","","","exotic","unlisted","",48.868125,-123.387105,"",NA,NA,3910096
-"9952","Zostera japonica","Zostera","japonica","","","","exotic","unlisted","",48.9,-123.3404983333,"",NA,NA,30217324
-"9953","Zostera japonica","Zostera","japonica","","","","exotic","unlisted","",48.9002625625,-123.4093437305,"",NA,NA,74014927
+"9943","Malva moschata","Malva","moschata","","","","exotic","unlisted","",48.9481966354,-123.5016915077,"",NA,NA,14300222
+"9944","Malva moschata","Malva","moschata","","","","exotic","unlisted","",48.9058721625,-123.3862203733,"",NA,NA,27894282
+"9945","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.867939,-123.348527,"",NA,NA,2602959
+"9946","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.866581,-123.350265,"",NA,NA,2603447
+"9947","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8696996517,-123.3440953867,"",NA,NA,2647780
+"9948","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8619916667,-123.3582,"",NA,NA,2647969
+"9949","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.897594153,-123.340281509,"",NA,NA,2648001
+"9950","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.892518,-123.355072,"",NA,NA,2772982
+"9951","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.9000197764,-123.3614015583,"",NA,NA,5647009
+"9952","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.869607,-123.342413,"",NA,NA,12634793
+"9953","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.866026,-123.333975,"",NA,NA,12817516
+"9954","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8671748515,-123.3423181461,"",NA,NA,17164370
+"9955","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.874235,-123.3300083333,"",NA,NA,23830511
+"9956","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.871925,-123.3129583333,"",NA,NA,24701415
+"9957","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8719055556,-123.3122638889,"",NA,NA,24824115
+"9958","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8717805556,-123.3123333333,"",NA,NA,24824149
+"9959","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8719305556,-123.3124083333,"",NA,NA,24824164
+"9960","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8719416667,-123.3129194444,"",NA,NA,25048317
+"9961","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8690013439,-123.3125287761,"",NA,NA,25482798
+"9962","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8852591484,-123.3217483672,"",NA,NA,40413019
+"9963","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8660439123,-123.3506118345,"",NA,NA,43555511
+"9964","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.9110887237,-123.3976773453,"",NA,NA,47174806
+"9965","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8660277778,-123.3505555556,"",NA,NA,48304580
+"9966","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.872375,-123.31279667,"",NA,NA,57789504
+"9967","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8652435914,-123.352306222,"",NA,NA,66860040
+"9968","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.865676,-123.350315,"",NA,NA,70958452
+"9969","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8651583705,-123.3526882311,"",NA,NA,83596910
+"9970","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8649483333,-123.364255,"",NA,NA,85291247
+"9971","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8743466667,-123.3196416667,"",NA,NA,86360299
+"9972","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.9001019722,-123.3421869722,"",NA,NA,100435204
+"9973","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.9033178833,-123.3739828891,"",NA,NA,114056464
+"9974","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8634,-123.32989,"",NA,NA,114482578
+"9975","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8639633333,-123.31633,"",NA,NA,116784815
+"9976","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8628466667,-123.3504633333,"",NA,NA,121538577
+"9977","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8628437841,-123.351224597,"",NA,NA,122258266
+"9978","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.86263,-123.3513116667,"",NA,NA,122258273
+"9979","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.872264873,-123.311630249,"",NA,NA,123644174
+"9980","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8811066667,-123.323845,"",NA,NA,127184008
+"9981","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.8660759444,-123.3513318889,"",NA,NA,130272697
+"9982","Daphne laureola","Daphne","laureola","","","","exotic","unlisted","",48.870175,-123.3193666667,"",NA,NA,130334829
+"9983","Lythrum salicaria","Lythrum","salicaria","","","","exotic","unlisted","",48.9486938416,-123.477094731,"",NA,NA,31529144
+"10073","Oenothera biennis","Oenothera","biennis","","","","exotic","unlisted","",48.9400102322,-123.4917796866,"",NA,NA,15604522
+"10091","Oxalis corniculata","Oxalis","corniculata","","","","exotic","unlisted","",48.8790223342,-123.319982707,"",NA,NA,46518419
+"10092","Oxalis corniculata","Oxalis","corniculata","","","","exotic","unlisted","",48.8729333333,-123.3466416667,"",NA,NA,84109075
+"10440","Eschscholzia californica","Eschscholzia","californica","","","","exotic","unlisted","",48.8784047633,-123.3169653153,"",NA,NA,46413709
+"10441","Eschscholzia californica","Eschscholzia","californica","","","","exotic","unlisted","",48.8774430556,-123.3178913889,"",NA,NA,59943230
+"10442","Eschscholzia californica","Eschscholzia","californica","","","","exotic","unlisted","",48.9314502222,-123.4757443889,"",NA,NA,120581706
+"10443","Fumaria muralis","Fumaria","muralis","","","","exotic","unlisted","",48.870565,-123.318594,"",NA,NA,121917751
+"10444","Fumaria muralis","Fumaria","muralis","","","","exotic","unlisted","",48.8705722222,-123.3185888889,"",NA,NA,122258297
+"10445","Fumaria muralis","Fumaria","muralis","","","","exotic","unlisted","",48.8707083333,-123.3185116667,"",NA,NA,130439827
+"10449","Clematis vitalba","Clematis","vitalba","","","","exotic","unlisted","",48.9287116667,-123.469025,"",NA,NA,28650048
+"10450","Clematis vitalba","Clematis","vitalba","","","","exotic","unlisted","",48.9995816667,-123.5611283333,"",NA,NA,94679675
+"10451","Clematis vitalba","Clematis","vitalba","","","","exotic","unlisted","",48.9088875148,-123.3761764565,"",NA,NA,128735849
+"10496","Ranunculus acris","Ranunculus","acris","","","","exotic","unlisted","",48.985449,-123.559939,"",NA,NA,3296001
+"10497","Ranunculus acris","Ranunculus","acris","","","","exotic","unlisted","",48.933199,-123.483099,"",NA,NA,3328649
+"10498","Ranunculus acris","Ranunculus","acris","","","","exotic","unlisted","",48.9282116667,-123.467545,"",NA,NA,122092194
+"10499","Ranunculus acris","Ranunculus","acris","","","","exotic","unlisted","",49.011985,-123.5739233333,"",NA,NA,123934642
+"10500","Ranunculus acris","Ranunculus","acris","","","","exotic","unlisted","",49.0119033333,-123.57392,"",NA,NA,124067892
+"10501","Ranunculus acris","Ranunculus","acris","","","","exotic","unlisted","",48.977275,-123.5664133333,"",NA,NA,129718158
+"10502","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.930676,-123.475857,"",NA,NA,2563728
+"10503","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.92974,-123.47517,"",NA,NA,2568065
+"10504","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.93062,-123.466587,"",NA,NA,2568976
+"10505","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.929845,-123.475761,"",NA,NA,2617670
+"10506","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.931525,-123.478092,"",NA,NA,2632625
+"10507","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",49.0056004522,-123.5758495331,"",NA,NA,3948559
+"10508","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9923753114,-123.5750985146,"",NA,NA,4005335
+"10509","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9627508941,-123.5473537445,"",NA,NA,6391052
+"10510","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9312824124,-123.4779810905,"",NA,NA,6409677
+"10511","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9431928821,-123.4841394424,"",NA,NA,6411173
+"10512","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.867731,-123.340191,"",NA,NA,10714579
+"10513","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.869646038,-123.3192476259,"",NA,NA,12507371
+"10514","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9484602987,-123.5018268042,"",NA,NA,13198889
+"10515","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9482271071,-123.5027314944,"",NA,NA,14300210
+"10516","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9874618437,-123.5481753797,"",NA,NA,19600562
+"10517","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.8999638889,-123.4068305556,"",NA,NA,24672684
+"10518","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.8992382214,-123.4040935246,"",NA,NA,25478339
+"10519","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9790925291,-123.5574462266,"",NA,NA,25480241
+"10520","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9797431743,-123.5576246773,"",NA,NA,25482630
+"10521","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9302069341,-123.4671153505,"",NA,NA,52906127
+"10522","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9303172912,-123.4671789506,"",NA,NA,52925277
+"10523","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9284237061,-123.4690018182,"",NA,NA,54690973
+"10524","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9282609893,-123.4679212236,"",NA,NA,84464277
+"10525","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9275179544,-123.4631055593,"",NA,NA,84636162
+"10526","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9297910507,-123.4714322025,"",NA,NA,100274948
+"10527","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.8718466667,-123.315445,"",NA,NA,119369488
+"10528","Ranunculus repens","Ranunculus","repens","","","","exotic","unlisted","",48.9282116667,-123.467545,"",NA,NA,122092209
+"10529","Ranunculus sardous","Ranunculus","sardous","","","","exotic","unlisted","",48.932492,-123.483324,"",NA,NA,3319983
+"10530","Ranunculus sardous","Ranunculus","sardous","","","","exotic","unlisted","",48.930828,-123.475642,"",NA,NA,3329692
+"10531","Ranunculus sardous","Ranunculus","sardous","","","","exotic","unlisted","",48.9396805055,-123.4923081753,"",NA,NA,14281193
+"10532","Ranunculus sardous","Ranunculus","sardous","","","","exotic","unlisted","",48.9919184174,-123.5706593413,"",NA,NA,16309751
+"10574","Petrosedum forsterianum","Petrosedum","forsterianum","","","","exotic","unlisted","",48.930482,-123.475838,"",NA,NA,2583337
+"10575","Petrosedum forsterianum","Petrosedum","forsterianum","","","","exotic","unlisted","",48.930654,-123.475256,"",NA,NA,2599934
+"10576","Petrosedum forsterianum","Petrosedum","forsterianum","","","","exotic","unlisted","",48.902053,-123.34546,"",NA,NA,4397432
+"10577","Petrosedum forsterianum","Petrosedum","forsterianum","","","","exotic","unlisted","",48.935046,-123.490748,"",NA,NA,6472897
+"10578","Petrosedum forsterianum","Petrosedum","forsterianum","","","","exotic","unlisted","",48.9826605868,-123.5555303757,"",NA,NA,13198275
+"10579","Petrosedum forsterianum","Petrosedum","forsterianum","","","","exotic","unlisted","",48.8973927639,-123.3387933727,"",NA,NA,26288910
+"10580","Petrosedum forsterianum","Petrosedum","forsterianum","","","","exotic","unlisted","",48.9773916667,-123.5665283333,"",NA,NA,31324205
+"10581","Petrosedum forsterianum","Petrosedum","forsterianum","","","","exotic","unlisted","",48.977195,-123.56674167,"",NA,NA,84387371
+"10582","Petrosedum forsterianum","Petrosedum","forsterianum","","","","exotic","unlisted","",48.8776212931,-123.3179356904,"",NA,NA,125707450
+"10583","Petrosedum forsterianum","Petrosedum","forsterianum","","","","exotic","unlisted","",48.9773216667,-123.5664133333,"",NA,NA,129718706
+"10584","Sedum acre","Sedum","acre","","","","exotic","unlisted","",48.8631145055,-123.3513737829,"",NA,NA,13974437
+"10585","Sedum acre","Sedum","acre","","","","exotic","unlisted","",48.8623366667,-123.3499916667,"",NA,NA,82960325
+"10586","Sedum album","Sedum","album","","","","exotic","unlisted","",48.883869,-123.325498,"",NA,NA,4571925
+"10587","Sedum album","Sedum","album","","","","exotic","unlisted","",48.929695,-123.4750966667,"",NA,NA,45039970
+"10588","Sedum album","Sedum","album","","","","exotic","unlisted","",48.9411283333,-123.5020083333,"",NA,NA,45326893
+"10589","Sedum album","Sedum","album","","","","exotic","unlisted","",48.8762830556,-123.3189430556,"",NA,NA,59943200
+"10590","Sedum album","Sedum","album","","","","exotic","unlisted","",48.8688533333,-123.312185,"",NA,NA,121538469
+"10870","Cotoneaster franchetii","Cotoneaster","franchetii","","","","exotic","unlisted","",48.910105,-123.3743583333,"",NA,NA,121538520
+"10871","Cotoneaster franchetii","Cotoneaster","franchetii","","","","exotic","unlisted","",48.9097033333,-123.374875,"",NA,NA,121538567
+"10872","Cotoneaster horizontalis","Cotoneaster","horizontalis","","","","exotic","unlisted","",48.901475,-123.377612,"",NA,NA,13130562
+"10873","Cotoneaster horizontalis","Cotoneaster","horizontalis","","","","exotic","unlisted","",48.8992313698,-123.3954001719,"",NA,NA,97390114
+"10874","Cotoneaster simonsii","Cotoneaster","simonsii","","","","exotic","unlisted","",48.9096233333,-123.37492,"",NA,NA,121538499
+"10949","Potentilla recta","Potentilla","recta","","","","exotic","unlisted","",48.8694084584,-123.3198727947,"",NA,NA,50580859
+"10950","Prunus avium","Prunus","avium","","","","exotic","unlisted","",48.880127,-123.350919,"",NA,NA,2710472
+"10951","Prunus cerasifera","Prunus","cerasifera","","","","exotic","unlisted","",48.931071,-123.472939,"",NA,NA,2589133
+"10952","Prunus cerasifera","Prunus","cerasifera","","","","exotic","unlisted","",48.900439851,-123.4062422254,"",NA,NA,24715310
+"10953","Prunus cerasifera","Prunus","cerasifera","","","","exotic","unlisted","",48.9126231987,-123.3988321201,"",NA,NA,71708262
+"10954","Prunus laurocerasus","Prunus","laurocerasus","","","","exotic","unlisted","",48.8763085231,-123.3220911026,"",NA,NA,3649978
+"10955","Prunus laurocerasus","Prunus","laurocerasus","","","","exotic","unlisted","",48.8684818023,-123.3482564053,"",NA,NA,43555478
+"10956","Prunus laurocerasus","Prunus","laurocerasus","","","","exotic","unlisted","",48.90025,-123.44497,"",NA,NA,111879345
+"10957","Prunus laurocerasus","Prunus","laurocerasus","","","","exotic","unlisted","",48.8770604181,-123.3234130127,"",NA,NA,114035151
+"10961","Pyrus communis","Pyrus","communis","","","","exotic","unlisted","",48.894307,-123.408329,"",NA,NA,3702255
+"10962","Pyrus communis","Pyrus","communis","","","","exotic","unlisted","",48.8698,-123.3212,"",NA,NA,12184297
+"10963","Pyrus communis","Pyrus","communis","","","","exotic","unlisted","",48.99004706,-123.57624971,"",NA,NA,43755527
+"10964","Rosa canina","Rosa","canina","","","","exotic","unlisted","",48.869655,-123.320238,"",NA,NA,13030731
+"11037","Rosa rubiginosa","Rosa","rubiginosa","","","","exotic","unlisted","",48.930654,-123.475256,"",NA,NA,2599930
+"11038","Rosa rubiginosa","Rosa","rubiginosa","","","","exotic","unlisted","",48.930845,-123.473969,"",NA,NA,2663708
+"11039","Rosa rubiginosa","Rosa","rubiginosa","","","","exotic","unlisted","",48.877426,-123.350946,"",NA,NA,4102189
+"11040","Rosa rubiginosa","Rosa","rubiginosa","","","","exotic","unlisted","",48.8667332659,-123.3712506294,"",NA,NA,6409664
+"11041","Rosa rubiginosa","Rosa","rubiginosa","","","","exotic","unlisted","",48.930774921,-123.4753417969,"",NA,NA,6411208
+"11042","Rosa rubiginosa","Rosa","rubiginosa","","","","exotic","unlisted","",48.872722,-123.370444,"",NA,NA,13031846
+"11043","Rosa rubiginosa","Rosa","rubiginosa","","","","exotic","unlisted","",48.863745,-123.36518,"",NA,NA,116636259
+"11044","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.9677811659,-123.5563582554,"",NA,NA,12629765
+"11045","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.8781611111,-123.3182833333,"",NA,NA,33436035
+"11046","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.866305362,-123.3403147744,"",NA,NA,43253036
+"11047","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.959453457,-123.5080877608,"",NA,NA,55389182
+"11048","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.9422775849,-123.4996439393,"",NA,NA,70065788
+"11049","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.9423883333,-123.50117,"",NA,NA,72321442
+"11050","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.94176,-123.50083,"",NA,NA,72321462
+"11051","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.9426583333,-123.500825,"",NA,NA,72321493
+"11052","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.8742866667,-123.3195133333,"",NA,NA,86360323
+"11053","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.99958,-123.5611233333,"",NA,NA,94679677
+"11054","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.9880051257,-123.5508929982,"",NA,NA,100641803
+"11055","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.8789966698,-123.3195333333,"",NA,NA,102626582
+"11056","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.8789533333,-123.3195716667,"",NA,NA,102626747
+"11057","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.8706833333,-123.32098,"",NA,NA,121538447
+"11058","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.9952082969,-123.5840970939,"",NA,NA,124067918
+"11059","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.929718,-123.476028,"",NA,NA,2563601
+"11060","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.929548,-123.475771,"",NA,NA,2564016
+"11061","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.930124,-123.475857,"",NA,NA,2599240
+"11062","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.897258,-123.405755,"",NA,NA,3652952
+"11063","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.992898,-123.574943,"",NA,NA,3881788
+"11064","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9006968474,-123.336124418,"",NA,NA,6425214
+"11065","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.87247985,-123.31112889,"",NA,NA,24688866
+"11066","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8724527778,-123.31115,"",NA,NA,24824118
+"11067","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8722527778,-123.3117305556,"",NA,NA,24824187
+"11068","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8726759702,-123.3119583876,"",NA,NA,25148311
+"11069","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8991644187,-123.4042014835,"",NA,NA,25478364
+"11070","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8999709674,-123.405185938,"",NA,NA,25478512
+"11071","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.87246856,-123.3110001684,"",NA,NA,25483281
+"11072","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8659537359,-123.3503779981,"",NA,NA,43555571
+"11073","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9298226712,-123.4676319349,"",NA,NA,52907321
+"11074","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9301159588,-123.4674833254,"",NA,NA,52925632
+"11075","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8839291132,-123.3688878132,"",NA,NA,53020588
+"11076","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9284736896,-123.4689782646,"",NA,NA,54690596
+"11077","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8953517681,-123.3955935782,"",NA,NA,57343721
+"11078","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8954416395,-123.3957894792,"",NA,NA,57378012
+"11079","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.87255,-123.31112,"",NA,NA,83747898
+"11080","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9279986267,-123.4680665565,"",NA,NA,84095942
+"11081","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9280018889,-123.4680290935,"",NA,NA,84147337
+"11082","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9281472738,-123.4678570923,"",NA,NA,84243564
+"11083","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9277952286,-123.4675130096,"",NA,NA,84463315
+"11084","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.92955998,-123.47512958,"",NA,NA,84494478
+"11085","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.929325,-123.47525,"",NA,NA,84498075
+"11086","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9293666667,-123.4751666667,"",NA,NA,84499120
+"11087","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9275595875,-123.4649066627,"",NA,NA,84582688
+"11088","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9293364282,-123.4743225579,"",NA,NA,84809947
+"11089","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.870414,-123.32037,"",NA,NA,89941274
+"11090","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.92993762,-123.47573764,"",NA,NA,92950722
+"11091","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8845766667,-123.371,"",NA,NA,93550073
+"11092","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9298288635,-123.4750465396,"",NA,NA,97447796
+"11093","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9291270404,-123.4679622018,"",NA,NA,101447218
+"11094","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9392701,-123.5011865997,"",NA,NA,107685918
+"11095","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.870593,-123.32105,"",NA,NA,115227900
+"11096","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.870435,-123.3213783333,"",NA,NA,121538446
+"11097","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9281616667,-123.4680783333,"",NA,NA,122094524
+"11098","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.87255,-123.3111033333,"",NA,NA,122839866
+"11099","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8658737909,-123.3217338184,"",NA,NA,127157351
+"11100","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8702383333,-123.318405,"",NA,NA,130437876
+"11101","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.9000033333,-123.405355,"",NA,NA,131157815
+"11102","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.87087,-123.321102,"",NA,NA,132185503
+"11103","Rubus laciniatus","Rubus","laciniatus","","","","exotic","unlisted","",48.8713616667,-123.3161916667,"",NA,NA,135831826
+"11377","Sorbus aucuparia","Sorbus","aucuparia","","","","exotic","unlisted","",48.8796616667,-123.3246216667,"",NA,NA,3899003
+"11378","Sorbus aucuparia","Sorbus","aucuparia","","","","exotic","unlisted","",48.942407,-123.499275,"",NA,NA,3903127
+"11379","Sorbus aucuparia","Sorbus","aucuparia","","","","exotic","unlisted","",48.9431928821,-123.4841394424,"",NA,NA,6411178
+"11380","Sorbus aucuparia","Sorbus","aucuparia","","","","exotic","unlisted","",48.9404284424,-123.5033848624,"",NA,NA,16307022
+"11381","Sorbus aucuparia","Sorbus","aucuparia","","","","exotic","unlisted","",48.9289973388,-123.4631823376,"",NA,NA,34173116
+"11382","Sorbus aucuparia","Sorbus","aucuparia","","","","exotic","unlisted","",48.9428958936,-123.5000092132,"",NA,NA,51247261
+"11383","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.93592,-123.478432,"",NA,NA,2565590
+"11384","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.933242,-123.481264,"",NA,NA,2566269
+"11385","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.933242,-123.481264,"",NA,NA,2566278
+"11386","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.933383,-123.482895,"",NA,NA,2566564
+"11387","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.929802,-123.475299,"",NA,NA,2569319
+"11388","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.878292,-123.321791,"",NA,NA,2572166
+"11389","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.950515,-123.509567,"",NA,NA,2583441
+"11390","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",49.008395,-123.577428,"",NA,NA,2679461
+"11391","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.941479,-123.501048,"",NA,NA,2692219
+"11392","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.895294,-123.362485,"",NA,NA,2743020
+"11393","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8971583333,-123.3497916667,"",NA,NA,2813650
+"11394","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.964264,-123.550623,"",NA,NA,2823120
+"11395","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.934009,-123.471887,"",NA,NA,3104409
+"11396","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8685133333,-123.385575,"",NA,NA,5155090
+"11397","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.975663,-123.548326,"",NA,NA,5279681
+"11398","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.87813,-123.350177,"",NA,NA,5393755
+"11399","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.950836,-123.515997,"",NA,NA,5483357
+"11400","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.905323252,-123.3564019203,"",NA,NA,5646979
+"11401","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9062823311,-123.3589553833,"",NA,NA,5885680
+"11402","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.906042563,-123.3582687378,"",NA,NA,5886270
+"11403","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.900724,-123.362585,"",NA,NA,5935177
+"11404","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.901345698,-123.3648562431,"",NA,NA,5953020
+"11405","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8986656072,-123.3639657497,"",NA,NA,5993176
+"11406","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.897903871,-123.3629786968,"",NA,NA,5993184
+"11407","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9761608904,-123.5488557816,"",NA,NA,6085939
+"11408","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9519028159,-123.523370437,"",NA,NA,6473324
+"11409","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9723134931,-123.5534477234,"",NA,NA,6611350
+"11410","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.874694,-123.38037,"",NA,NA,6818200
+"11411","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8767681159,-123.3795332909,"",NA,NA,7280582
+"11412","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.898341,-123.343038,"",NA,NA,8097236
+"11413","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.948312,-123.50209,"",NA,NA,9843149
+"11414","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.89405,-123.34887,"",NA,NA,11578071
+"11415","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.875744,-123.335287,"",NA,NA,12772952
+"11416","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.874077,-123.342488,"",NA,NA,12790987
+"11417","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9108360905,-123.3952431724,"",NA,NA,13102175
+"11418","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8696397073,-123.3870978766,"",NA,NA,13307343
+"11419","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8702555556,-123.3202833333,"",NA,NA,13955324
+"11420","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8980766667,-123.344925,"",NA,NA,13972289
+"11421","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8720023439,-123.3458119974,"",NA,NA,13973293
+"11422","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8714933333,-123.3465983333,"",NA,NA,13973300
+"11423","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8725185962,-123.3705540557,"",NA,NA,17693202
+"11424","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.875531,-123.335686,"",NA,NA,19762519
+"11425","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9955583333,-123.5707083333,"",NA,NA,21351304
+"11426","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",49.0028265152,-123.5745670802,"",NA,NA,24497658
+"11427","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9626583333,-123.5201716667,"",NA,NA,24630241
+"11428","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9731941223,-123.5454559326,"",NA,NA,24647582
+"11429","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9624638889,-123.5179138889,"",NA,NA,24663834
+"11430","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.962775,-123.5179583333,"",NA,NA,24663867
+"11431","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9629638889,-123.51735,"",NA,NA,24663915
+"11432","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9629527778,-123.5164638889,"",NA,NA,24665207
+"11433","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9632388889,-123.5168083333,"",NA,NA,24665208
+"11434","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9630166667,-123.5172361111,"",NA,NA,24665218
+"11435","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9637972222,-123.5159222222,"",NA,NA,24665253
+"11436","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9634972222,-123.5154638889,"",NA,NA,24665255
+"11437","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9633722222,-123.5158527778,"",NA,NA,24665257
+"11438","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9631583333,-123.5167388889,"",NA,NA,24665268
+"11439","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9631583333,-123.5161583333,"",NA,NA,24665276
+"11440","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9643861111,-123.5161888889,"",NA,NA,24666657
+"11441","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9643138889,-123.5175638889,"",NA,NA,24673927
+"11442","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9626583333,-123.5201722222,"",NA,NA,24673944
+"11443","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9647444444,-123.5167694444,"",NA,NA,24673957
+"11444","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9617916667,-123.5202166667,"",NA,NA,24673962
+"11445","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9641305556,-123.5177916667,"",NA,NA,24673982
+"11446","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9647555556,-123.5168,"",NA,NA,24674010
+"11447","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9633305556,-123.5162583333,"",NA,NA,24674021
+"11448","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9643833333,-123.5171194444,"",NA,NA,24674036
+"11449","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9632861111,-123.5199888889,"",NA,NA,24674076
+"11450","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9644277778,-123.5170972222,"",NA,NA,24674097
+"11451","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9645472222,-123.5168305556,"",NA,NA,24674149
+"11452","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9645305556,-123.5176861111,"",NA,NA,24674179
+"11453","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9624777778,-123.5175555556,"",NA,NA,24684052
+"11454","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9644361111,-123.5171888889,"",NA,NA,24694112
+"11455","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9642216667,-123.5174416667,"",NA,NA,24697846
+"11456","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.962125,-123.5175166667,"",NA,NA,24698558
+"11457","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.95748,-123.5414416667,"",NA,NA,24698787
+"11458","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8667222222,-123.3310694444,"",NA,NA,24702346
+"11459","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9625666667,-123.517875,"",NA,NA,24709562
+"11460","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9630271029,-123.5167342332,"",NA,NA,24709854
+"11461","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9636127046,-123.5158190971,"",NA,NA,24709934
+"11462","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9502676461,-123.5180559666,"",NA,NA,24819470
+"11463","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9625386056,-123.5174405762,"",NA,NA,24919834
+"11464","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9631305356,-123.5166643282,"",NA,NA,24920051
+"11465","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9632936055,-123.5182905012,"",NA,NA,24940584
+"11466","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9626772004,-123.516034512,"",NA,NA,24941098
+"11467","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9650271507,-123.5167694372,"",NA,NA,24941752
+"11468","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.90014395,-123.34286904,"",NA,NA,25032057
+"11469","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8992817235,-123.4032267519,"",NA,NA,25478133
+"11470","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8996812469,-123.404559726,"",NA,NA,25478458
+"11471","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9792236221,-123.5568765925,"",NA,NA,25479228
+"11472","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.979074047,-123.5570033268,"",NA,NA,25479886
+"11473","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9791433234,-123.5570550432,"",NA,NA,25479918
+"11474","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9797353792,-123.5576921516,"",NA,NA,25482606
+"11475","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9816644323,-123.5572883954,"",NA,NA,25482785
+"11476","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9623972222,-123.5179444444,"",NA,NA,25597365
+"11477","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9629944444,-123.5167388889,"",NA,NA,25597366
+"11478","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9642444444,-123.5177083333,"",NA,NA,25599950
+"11479","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8663055556,-123.3314666667,"",NA,NA,25658116
+"11480","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8666444444,-123.3312305556,"",NA,NA,25658117
+"11481","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8655240301,-123.351823387,"",NA,NA,35113773
+"11482","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9486345907,-123.4798754333,"",NA,NA,38438872
+"11483","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9487549093,-123.4793656993,"",NA,NA,38468639
+"11484","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9486711532,-123.4797186917,"",NA,NA,38468657
+"11485","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8682809475,-123.3478240891,"",NA,NA,40460162
+"11486","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9994341859,-123.5742656078,"",NA,NA,44275660
+"11487","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.93024167,-123.46707833,"",NA,NA,52907135
+"11488","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.928755,-123.46843,"",NA,NA,62172631
+"11489","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9422775849,-123.4996439393,"",NA,NA,70065793
+"11490","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9476316667,-123.5011033333,"",NA,NA,70065821
+"11491","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.942385,-123.50118,"",NA,NA,72321443
+"11492","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8676866667,-123.33725,"",NA,NA,74386695
+"11493","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8755166667,-123.38465,"",NA,NA,77854400
+"11494","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8691157319,-123.3714785581,"",NA,NA,82929636
+"11495","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.887075,-123.3624716667,"",NA,NA,83097993
+"11496","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",49.0104515833,-123.577504,"",NA,NA,83602464
+"11497","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",49.0044012434,-123.5706346482,"",NA,NA,83602786
+"11498","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.876025,-123.3841166667,"",NA,NA,83738317
+"11499","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.92795719,-123.46749973,"",NA,NA,84095320
+"11500","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9310260241,-123.4687556326,"",NA,NA,84095412
+"11501","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.927875,-123.4672916667,"",NA,NA,84096463
+"11502","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9281916667,-123.467155,"",NA,NA,84144841
+"11503","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9277846736,-123.4677174508,"",NA,NA,84147250
+"11504","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9281245932,-123.4677692568,"",NA,NA,84147448
+"11505","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9278616667,-123.46717,"",NA,NA,84148686
+"11506","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9299311443,-123.4685985253,"",NA,NA,84210432
+"11507","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.92802,-123.4674833333,"",NA,NA,84252832
+"11508","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9327219604,-123.480070372,"",NA,NA,84597195
+"11509","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",49.0036083333,-123.567795,"",NA,NA,85685588
+"11510","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.98443,-123.5569433333,"",NA,NA,89513130
+"11511","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9847716667,-123.5449833333,"",NA,NA,93752369
+"11512","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.99073,-123.5513783333,"",NA,NA,100641891
+"11513","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.867757218,-123.3377054149,"",NA,NA,101304367
+"11514","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9286967973,-123.4684217816,"",NA,NA,101446596
+"11515","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9316302929,-123.4643319206,"",NA,NA,102152475
+"11516","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",49.01045555,-123.57797167,"",NA,NA,105352376
+"11517","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9647545783,-123.5162533947,"",NA,NA,107021668
+"11518","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9485766667,-123.50253,"",NA,NA,107022552
+"11519","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8712833333,-123.3467861111,"",NA,NA,107216254
+"11520","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8642763,-123.3519536997,"",NA,NA,107673607
+"11521","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9465989507,-123.4986968232,"",NA,NA,108064512
+"11522","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",49.0004777783,-123.5840383333,"",NA,NA,109622127
+"11523","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9153416667,-123.4257055556,"",NA,NA,111975260
+"11524","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9573974943,-123.5289219395,"",NA,NA,116029602
+"11525","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9359815497,-123.4763301052,"",NA,NA,117410165
+"11526","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8765683333,-123.3713283333,"",NA,NA,118608406
+"11527","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8803033333,-123.381005,"",NA,NA,118718745
+"11528","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8803266667,-123.38098,"",NA,NA,118718746
+"11529","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9318116667,-123.4778283333,"",NA,NA,121748036
+"11530","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.862625,-123.3513033333,"",NA,NA,122258275
+"11531","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.877545,-123.351355,"",NA,NA,129712438
+"11532","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.8918133333,-123.3863133333,"",NA,NA,135747530
+"11533","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",48.9598713171,-123.5088147245,"",NA,NA,136055316
+"11534","Urtica dioica","Urtica","dioica","","","","exotic","unlisted","",49.011025,-123.5737,"",NA,NA,137665981
+"11719","Aesculus hippocastanum","Aesculus","hippocastanum","","","","exotic","unlisted","",48.930614,-123.474698,"",NA,NA,3329680
+"11720","Aesculus hippocastanum","Aesculus","hippocastanum","","","","exotic","unlisted","",48.9311209167,-123.4746698056,"",NA,NA,118330339
+"11721","Aesculus hippocastanum","Aesculus","hippocastanum","","","","exotic","unlisted","",48.90973358,-123.4120804,"",NA,NA,121635368
+"11915","Convolvulus arvensis","Convolvulus","arvensis","","","","exotic","unlisted","",48.8711,-123.3194366667,"",NA,NA,3816774
+"11916","Convolvulus arvensis","Convolvulus","arvensis","","","","exotic","unlisted","",48.871105,-123.3193133333,"",NA,NA,130442404
+"11917","Convolvulus arvensis","Convolvulus","arvensis","","","","exotic","unlisted","",48.871262,-123.320078,"",NA,NA,132188665
+"11918","Solanum nigrum","Solanum","nigrum","","","","exotic","unlisted","",48.9282222222,-123.4682388889,"",NA,NA,16162530
+"11919","Solanum physalifolium","Solanum","physalifolium","","","","exotic","unlisted","",48.9396805055,-123.4923081753,"",NA,NA,14281200
+"11920","Solanum physalifolium","Solanum","physalifolium","","","","exotic","unlisted","",48.9399312537,-123.4917255919,"",NA,NA,14281205
+"11921","Solanum americanum","Solanum","americanum","","","","exotic","unlisted","",48.94429667,-123.50794167,"",NA,NA,62566198
+"12560","Zostera japonica","Zostera","japonica","","","","exotic","unlisted","",48.884828,-123.321018,"",NA,NA,3613098
+"12561","Zostera japonica","Zostera","japonica","","","","exotic","unlisted","",48.868125,-123.387105,"",NA,NA,3910096
+"12562","Zostera japonica","Zostera","japonica","","","","exotic","unlisted","",48.9,-123.3404983333,"",NA,NA,30217324
+"12563","Zostera japonica","Zostera","japonica","","","","exotic","unlisted","",48.9002625625,-123.4093437305,"",NA,NA,74014927
 "71001","Cerastium fontanum ssp. vulgare","Cerastium","fontanum","","vulgare","","exotic","unlisted","",48.932847,-123.483024,"",NA,NA,2563618
-"12101","Crataegus monogyna var. monogyna","Crataegus","monogyna","","","","exotic","unlisted","",48.93155,-123.478003,"",NA,NA,2564074
+"12606","Crataegus monogyna var. monogyna","Crataegus","monogyna","","","","exotic","unlisted","",48.93155,-123.478003,"",NA,NA,2564074
 "16101","Prunella vulgaris var. vulgaris","Prunella","vulgaris","","","","exotic","unlisted","",48.928632,-123.468926,"",NA,NA,2564163
 "45101","Anthoxanthum aristatum spp. aristatum","Anthoxanthum","aristatum","","","","exotic","unlisted","",48.927631,-123.468218,"",NA,NA,2569330
 "69101","Crataegus monogyna var. monogyna","Crataegus","monogyna","","","","exotic","unlisted","",48.931189,-123.476629,"",NA,NA,2599925
 "74101","Bromus diandrus","Bromus","diandrus","","","","exotic","unlisted","",48.928169,-123.471116,"",NA,NA,2617736
 "86101","Cerastium fontanum ssp. vulgare","Cerastium","fontanum","","vulgare","","exotic","unlisted","",48.92921,-123.468132,"",NA,NA,2632626
-"11411","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.868951,-123.346027,"",NA,NA,2843467
+"114101","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.868951,-123.346027,"",NA,NA,2843467
 "13411","Anthoxanthum aristatum spp. aristatum","Anthoxanthum","aristatum","","","","exotic","unlisted","",48.866764,-123.33606,"",NA,NA,3027283
 "14211","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.867549,-123.339915,"",NA,NA,3041009
 "14911","Crataegus monogyna var. monogyna","Crataegus","monogyna","","","","exotic","unlisted","",48.8959166667,-123.3475283333,"",NA,NA,3083357
@@ -3132,9 +3492,9 @@
 "32111","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.942569,-123.498975,"",NA,NA,3903087
 "32311","Cakile maritima ssp. maritima","Cakile","maritima","","","","exotic","unlisted","",49.0123844648,-123.5736823082,"",NA,NA,3948551
 "32511","Prunella vulgaris var. vulgaris","Prunella","vulgaris","","","","exotic","unlisted","",48.9923753114,-123.5750985146,"",NA,NA,4005334
-"33310","Prunella vulgaris var. vulgaris","Prunella","vulgaris","","","","exotic","unlisted","",48.8708333371,-123.3214640762,"",NA,NA,4051304
-"33410","Prunella vulgaris var. vulgaris","Prunella","vulgaris","","","","exotic","unlisted","",48.9505580161,-123.5155964737,"",NA,NA,4058554
-"33510","Leontodon saxatilis ssp. saxatilis","Leontodon","saxatilis","","","","exotic","unlisted","",48.872912,-123.361487,"",NA,NA,4296023
+"33311","Prunella vulgaris var. vulgaris","Prunella","vulgaris","","","","exotic","unlisted","",48.8708333371,-123.3214640762,"",NA,NA,4051304
+"33411","Prunella vulgaris var. vulgaris","Prunella","vulgaris","","","","exotic","unlisted","",48.9505580161,-123.5155964737,"",NA,NA,4058554
+"33511","Leontodon saxatilis ssp. saxatilis","Leontodon","saxatilis","","","","exotic","unlisted","",48.872912,-123.361487,"",NA,NA,4296023
 "35310","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.8639635395,-123.3297093,"",NA,NA,5412749
 "35510","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.868785,-123.378711,"",NA,NA,5472949
 "36310","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.863825,-123.366723,"",NA,NA,5516505
@@ -3200,19 +3560,19 @@
 "88610","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.8721480145,-123.3108790306,"",NA,NA,22799494
 "88710","Cerastium fontanum ssp. vulgare","Cerastium","fontanum","","vulgare","","exotic","unlisted","",48.8727680256,-123.3112574394,"",NA,NA,22799496
 "96110","Taraxacum officinale agg.","Taraxacum","officinale","","","","exotic","unlisted","",48.8993916667,-123.4075,"",NA,NA,24672768
-"10161","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.8688472222,-123.3781972222,"",NA,NA,24687984
-"10361","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.9663083333,-123.4727555556,"",NA,NA,24690268
-"10441","Taraxacum officinale agg.","Taraxacum","officinale","","","","exotic","unlisted","",48.9630138889,-123.5196916667,"",NA,NA,24694141
-"10691","Taraxacum officinale agg.","Taraxacum","officinale","","","","exotic","unlisted","",48.8950583333,-123.4047083333,"",NA,NA,24701273
-"11281","Taraxacum officinale agg.","Taraxacum","officinale","","","","exotic","unlisted","",48.8979405351,-123.4083450773,"",NA,NA,24711746
-"11412","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.872126285,-123.3119642549,"",NA,NA,24712712
-"11821","Crataegus monogyna var. monogyna","Crataegus","monogyna","","","","exotic","unlisted","",48.8717805556,-123.3123333333,"",NA,NA,24806492
-"11891","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.8725444444,-123.31105,"",NA,NA,24806526
-"12012","Crataegus monogyna var. monogyna","Crataegus","monogyna","","","","exotic","unlisted","",48.8717583333,-123.3120277778,"",NA,NA,24824097
-"12021","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.8725444444,-123.31105,"",NA,NA,24824099
-"12412","Prunella vulgaris var. vulgaris","Prunella","vulgaris","","","","exotic","unlisted","",48.962907116,-123.516693581,"",NA,NA,24920014
-"12431","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.9634315297,-123.5160505214,"",NA,NA,24920078
-"12471","Taraxacum officinale agg.","Taraxacum","officinale","","","","exotic","unlisted","",48.9621244977,-123.518843623,"",NA,NA,24936983
+"101610","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.8688472222,-123.3781972222,"",NA,NA,24687984
+"103610","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.9663083333,-123.4727555556,"",NA,NA,24690268
+"104410","Taraxacum officinale agg.","Taraxacum","officinale","","","","exotic","unlisted","",48.9630138889,-123.5196916667,"",NA,NA,24694141
+"106910","Taraxacum officinale agg.","Taraxacum","officinale","","","","exotic","unlisted","",48.8950583333,-123.4047083333,"",NA,NA,24701273
+"112810","Taraxacum officinale agg.","Taraxacum","officinale","","","","exotic","unlisted","",48.8979405351,-123.4083450773,"",NA,NA,24711746
+"114110","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.872126285,-123.3119642549,"",NA,NA,24712712
+"118210","Crataegus monogyna var. monogyna","Crataegus","monogyna","","","","exotic","unlisted","",48.8717805556,-123.3123333333,"",NA,NA,24806492
+"118910","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.8725444444,-123.31105,"",NA,NA,24806526
+"120110","Crataegus monogyna var. monogyna","Crataegus","monogyna","","","","exotic","unlisted","",48.8717583333,-123.3120277778,"",NA,NA,24824097
+"120210","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.8725444444,-123.31105,"",NA,NA,24824099
+"124110","Prunella vulgaris var. vulgaris","Prunella","vulgaris","","","","exotic","unlisted","",48.962907116,-123.516693581,"",NA,NA,24920014
+"124310","Rubus bifrons","Rubus","bifrons","","","","exotic","unlisted","",48.9634315297,-123.5160505214,"",NA,NA,24920078
+"124710","Taraxacum officinale agg.","Taraxacum","officinale","","","","exotic","unlisted","",48.9621244977,-123.518843623,"",NA,NA,24936983
 "12651","Taraxacum officinale agg.","Taraxacum","officinale","","","","exotic","unlisted","",48.8721611111,-123.3124861111,"",NA,NA,25048259
 "12691","Erodium cicutarium ssp. cicutarium","Erodium","cicutarium","","","","exotic","unlisted","",48.8724138889,-123.31095,"",NA,NA,25048285
 "12721","Lamium purpureum","Lamium","purpureum","","","","exotic","unlisted","",48.8723416667,-123.3125611111,"",NA,NA,25048307

@@ -1,14 +1,14 @@
 "","Taxon","Genus","Species","Hybrid","Subspecies","Variety","Origin","Provincial.Status","National.Status","latitude","longitude","geoprivacy","private_latitude","private_longitude","id"
-"266","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.978878732,-123.5650235502,"",48.931029,-123.47708,2563709
-"267","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9340861427,-123.3364113952,"",48.86682,-123.338487,12819711
-"268","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.8437244421,-123.4230454705,"obscured",NA,NA,12871801
-"269","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9352740758,-123.3438819921,"",48.880657,-123.339343,12916676
-"270","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9170048103,-123.4841257985,"",48.9153722222,-123.4231194444,12996624
-"271","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.8566470685,-123.4023402538,"",48.951065,-123.5071,12996820
-"272","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9553686004,-123.4642060935,"",48.942078,-123.475971,13027602
-"273","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",49.0403806196,-123.4525776792,"",49.000513,-123.582308,13372380
-"274","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9086766828,-123.3108611005,"",48.9136541434,-123.3958829812,52033143
-"275","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.8546541071,-123.434567099,"",NA,NA,90752993
+"272","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.978878732,-123.5650235502,"",48.931029,-123.47708,2563709
+"273","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9340861427,-123.3364113952,"",48.86682,-123.338487,12819711
+"274","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.8437244421,-123.4230454705,"obscured",NA,NA,12871801
+"275","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9352740758,-123.3438819921,"",48.880657,-123.339343,12916676
+"276","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9170048103,-123.4841257985,"",48.9153722222,-123.4231194444,12996624
+"277","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.8566470685,-123.4023402538,"",48.951065,-123.5071,12996820
+"278","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9553686004,-123.4642060935,"",48.942078,-123.475971,13027602
+"279","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",49.0403806196,-123.4525776792,"",49.000513,-123.582308,13372380
+"280","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.9086766828,-123.3108611005,"",48.9136541434,-123.3958829812,52033143
+"281","Corallorhiza maculata var. ozettensis","Corallorhiza","maculata","","","ozettensis","native","S3 (2018)","",48.8546541071,-123.434567099,"",NA,NA,90752993
 "624","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.8974333333,-123.3386916667,"",NA,NA,6249542
 "625","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.8972716283,-123.3387261783,"",NA,NA,6447929
 "626","Allium amplectens","Allium","amplectens","","","","native","S3 (2019)","",48.8975416667,-123.33853,"",NA,NA,26057588
@@ -61,3 +61,8 @@
 "8852","Trifolium dichotomum","Trifolium","dichotomum","","","","native","S2 (2021)","",48.86345,-123.3638233333,"",NA,NA,120470376
 "9309","Uropappus lindleyi","Uropappus","lindleyi","","","","native","S1S2 (2019)","1-E (2010)",48.866945,-123.341328,"",NA,NA,12817804
 "9310","Uropappus lindleyi","Uropappus","lindleyi","","","","native","S1S2 (2019)","1-E (2010)",48.8618803558,-123.3293636424,"",NA,NA,114745571
+"10040","Epilobium densiflorum","Epilobium","densiflorum","","","","native","S2 (2019)","1-E (2006)",48.9307416667,-123.474245,"",NA,NA,3711497
+"10041","Epilobium densiflorum","Epilobium","densiflorum","","","","native","S2 (2019)","1-E (2006)",48.930818,-123.474376,"",NA,NA,3719840
+"10042","Epilobium densiflorum","Epilobium","densiflorum","","","","native","S2 (2019)","1-E (2006)",48.9306916667,-123.4743633333,"",NA,NA,14758645
+"10043","Epilobium densiflorum","Epilobium","densiflorum","","","","native","S2 (2019)","1-E (2006)",48.9314222222,-123.4766833333,"",NA,NA,125381632
+"10446","Meconella oregana","Meconella","oregana","","","","native","S1S2 (2019)","1-E (2006)",48.871567,-123.381984,"",NA,NA,9142345
