@@ -46,7 +46,6 @@ nrow(RBCM.georeferencing.corrected) # Confirm all records are retained after mer
 RBCM.vascular.plant.records <- RBCM.georeferencing.corrected.names.matched
 
 
-
 # Read Hans Roemer - 2004 - Mt. Sutil Records
 
 Roemer.2004.Mt.Sutil.plot.metadata <- read.csv("digitized/Roemer_2004_Mt_Sutil_plot_metadata.csv") # Note: georeferencing still needs to be reviewed; at least one obs incorrectly mapped on Mount Galiano
