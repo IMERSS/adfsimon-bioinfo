@@ -47,39 +47,41 @@ betagrid<-function(gridshp, comp, xfeature, yfeature, radius, phylotree, phylobe
 ## TEST DATA ##
 ###############
 
+# Test data works fine... suppress to work with your data
+
 # Then, load the grid (shapefile). This is a grid of 0.25 degree lat/long of Cerrado.
-shape <- readOGR("grided_analysis_test/final_shape.shp")
+# shape <- readOGR("grided_analysis_test/final_shape.shp")
 
 # Load the species occurrences. These are the occurrences (not real, just as example) of some mammals of Cerrado.
-occurrences <- read.table("grided_analysis_test/occur.cerr.txt", row.names=1, head=T)
+# occurrences <- read.table("grided_analysis_test/occur.cerr.txt", row.names=1, head=T)
 
 # And load the phylogeny of these species (if you want to calculate phylogenetic beta diversity):
-phylo <- read.tree("grided_analysis_test/phylo.txt")
+# phylo <- read.tree("grided_analysis_test/phylo.txt")
 
 # We have to know which features corresponds to the longitude (x) and latitude (y). Type the following code and observe that the second (2) feature corresponds to longitude while the third (3) corresponds to latitude. We need these numbers.
-names(shape)
+# names(shape)
 
 # Call the function and get results! Let us calculate beta diversity for each focal cell. Note that the function will return results containing four columns: number of grid cell, the mean turnover partition of beta diversity, the mean nestedness partition of beta diversity, and the mean total beta diversity. Also, note that radius equals 0.25 degree, which is the same size as the resolution of our grid. This will make the function use only the 8 (or fewer) adjacent cells in relation to the focal cells. If you want more neighbor cells to be included in the analysis, you can use the double (0.5 in this example) or greater values.
 
-results <- betagrid(gridshp=shape, comp=occurrences, xfeature=2, yfeature=3, radius=0.25, index="sorensen")
+# results <- betagrid(gridshp=shape, comp=occurrences, xfeature=2, yfeature=3, radius=0.25, index="sorensen")
 
 #### GRAPH ####
 
 # Create a new layer in our grid file for the mean total beta diversity.
-shape$betadiv <- results[,4]
+# shape$betadiv <- results[,4]
 
 # Now create a raster with the same extent and resolution as our previous grid (in our example, 0.25 degree lat/long):
-emptyraster <- raster(extent(shape))
-res(emptyraster)=0.25
+# emptyraster <- raster(extent(shape))
+# res(emptyraster)=0.25
 
 # Assign values to the new raster according to the beta diversity layer in our shapefile.
-rbeta <- rasterize(shape, field="betadiv", emptyraster)
+# rbeta <- rasterize(shape, field="betadiv", emptyraster)
 
 # Make a cool color palette:
-my.colors = colorRampPalette(c("white","lightblue", "yellow","orangered", "red"))
+# my.colors = colorRampPalette(c("white","lightblue", "yellow","orangered", "red"))
 
 # Plot the map
-plot(rbeta, col=my.colors(255), frame.plot=F, axes=F, box=F, add=F, legend.width=0.8, legend.shrink=1)
+# plot(rbeta, col=my.colors(255), frame.plot=F, axes=F, box=F, add=F, legend.width=0.8, legend.shrink=1)
 
 #############
 ## MY DATA ##
@@ -95,7 +97,7 @@ shape <- readOGR("gridded_analysis_mydata/1km_grid_TPI_extent_WGS84_intersect_pl
 
 # Read species occurrences
 
-data <- read.csv("gridded_analysis_mydata/Galiano_Island_vascular_plant_records_consolidated_obscured_coordinates_corrected_2022-10-15_intersect_1km_grid_TPI_extent_WGS84.csv")
+data <- read.csv("gridded_analysis_mydata/Galiano_vascular_plants_2022-10-15_intersect_1km_grid_TPI_extent_WGS84.csv")
 
 # Subset relevant fields
 
@@ -119,6 +121,12 @@ names(shape)
 # Call the function and get results! Let us calculate beta diversity for each focal cell. Note that the function will return results containing four columns: number of grid cell, the mean turnover partition of beta diversity, the mean nestedness partition of beta diversity, and the mean total beta diversity. Also, note that radius equals 0.25 degree, which is the same size as the resolution of our grid. This will make the function use only the 8 (or fewer) adjacent cells in relation to the focal cells. If you want more neighbor cells to be included in the analysis, you can use the double (0.5 in this example) or greater values.
 
 results <- betagrid(gridshp=shape, comp=matrix, xfeature=6, yfeature=7, radius=0.25, index="sorensen")
+
+# Standardize results fields to merge with grid in QGIS
+
+names(results) <- c('id','mean_turnover','mean_nestedness','mean_beta')
+
+# Output results
 
 # write.csv(results,"gridded_analysis_mydata/outputs/betagrid_vascular_plants_2022-10-15.csv")
 
