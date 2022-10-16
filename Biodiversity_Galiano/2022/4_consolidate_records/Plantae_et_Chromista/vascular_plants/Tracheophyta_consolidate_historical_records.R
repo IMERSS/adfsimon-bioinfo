@@ -53,7 +53,6 @@ nrow(Lomer.2022)
 nrow(Lomer.2022.names.matched)
 nrow(Lomer.2022.names.unmatched)
 nrow(Lomer.2022.names.matched)+nrow(Lomer.2022.names.unmatched)
-nrow(Lomer.2022.names.unmatched.matched)
 
 # Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 # Note: some of the code below is not needed after reviewing and generating new key
@@ -85,31 +84,41 @@ Lomer.2022.names.matched$Geo_Ref <- NA
 Lomer.2022.names.matched$Prov_State <- "British Columbia"
 Lomer.2022.names.matched$District <- "Gulf Islands"
 Lomer.2022.names.matched$LocationDe <- NA
+Lomer.2022.names.matched$PositionalAccuracy <- NA
+Lomer.2022.names.matched$GeoPrivacy <- NA
+Lomer.2022.names.matched$PrivateLatitude <- NA
+Lomer.2022.names.matched$PrivateLongitude <- NA
 
 Lomer.2022.names.matched <- Lomer.2022.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus.y,
       Species.y,Hybrid,Subspecies.y,Variety.y,Source,Number,Collector,Date,Degrees.Lat.,Degrees.Long,Geo_Ref,
-      Prov_State,District,Location,LocationDe,Habitat,Origin,Provincial.Status,National.Status)
+      PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,District,Location,LocationDe,
+      Habitat,Origin,Provincial.Status,National.Status)
 
 names(Lomer.2022.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
       'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
-      'Geo_Ref','Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
-      'National.Status')
+      'Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region',
+      'Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
 
-Lomer.2022.names.unmatched.matched$Source <- "UBC"
 Lomer.2022.names.unmatched.matched$Source <- "UBC"
 Lomer.2022.names.unmatched.matched$Geo_Ref <- NA
 Lomer.2022.names.unmatched.matched$Prov_State <- "British Columbia"
 Lomer.2022.names.unmatched.matched$District <- "Gulf Islands"
 Lomer.2022.names.unmatched.matched$LocationDe <- NA
+Lomer.2022.names.unmatched.matched$PositionalAccuracy <- NA
+Lomer.2022.names.unmatched.matched$GeoPrivacy <- NA
+Lomer.2022.names.unmatched.matched$PrivateLatitude <- NA
+Lomer.2022.names.unmatched.matched$PrivateLongitude <- NA
 
 Lomer.2022.names.unmatched.matched <- Lomer.2022.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,
-      Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,Number,Collector,Date,Degrees.Lat.,Degrees.Long,
-      Geo_Ref,Prov_State,District,Location,LocationDe,Habitat,Origin,Provincial.Status,National.Status)
+      Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,Number,Collector,Date,Degrees.Lat.,
+      Degrees.Long,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,District,
+      Location,LocationDe,Habitat,Origin,Provincial.Status,National.Status)
 
-names(Lomer.2022.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
-      'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude',
-      'Longitude','Geo_Ref','Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin',
-      'Provincial.Status','National.Status')
+names(Lomer.2022.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
+      'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
+      'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
+      'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
+      'National.Status')
 
 # Combine records
 
@@ -139,7 +148,8 @@ Lomer.2022.records <- rbind(Lomer.2022.names.matched,Lomer.2022.names.unmatched.
 
 
 
-# Read RBCM Records
+# Read RBCM Records 
+# Note: it looks like you may be losing 10 records; double check these data outputs!
 
 RBCM.georeferencing.corrected <- read.csv("digitized/RBCM_vascular_plant_records_georeferencing_corrected_2021-12-05.csv") # Note: georeferencing still needs to be reviewed; at least one obs incorrectly mapped on Mount Galiano
 
@@ -150,25 +160,34 @@ RBCM.georeferencing.corrected <-  RBCM.georeferencing.corrected %>% select(Genus
 
 # Merge with summary to standardize names and taxon metadata
 
-nrow(RBCM.georeferencing.corrected) # Confirm record #
+nrow(RBCM.georeferencing.corrected) # Confirm record # (139)
 
 RBCM.georeferencing.corrected.names.matched <- inner_join(summary, RBCM.georeferencing.corrected, by = c('Genus','Species'))
 
 # Standardize fields
 
 RBCM.georeferencing.corrected.names.matched$Source <- 'RBCM'
+RBCM.georeferencing.corrected.names.matched$PositionalAccuracy <- NA
+RBCM.georeferencing.corrected.names.matched$GeoPrivacy <- NA
+RBCM.georeferencing.corrected.names.matched$PrivateLatitude <- NA
+RBCM.georeferencing.corrected.names.matched$PrivateLongitude <- NA
 
-RBCM.georeferencing.corrected.names.matched <- RBCM.georeferencing.corrected.names.matched %>% select(Taxon,ID,Kingdom,
-    Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Collecti_1,Latitude,Longitude,
-    Geo_Ref,Prov_State,District,LocationNa,LocationDe,HabitatRem,Origin,Provincial.Status,National.Status)
+RBCM.georeferencing.corrected.names.matched <- RBCM.georeferencing.corrected.names.matched %>% select(Taxon,ID,
+    Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,
+    Collecti_1,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,
+    District,LocationNa,LocationDe,HabitatRem,Origin,Provincial.Status,National.Status)
 
 names(RBCM.georeferencing.corrected.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
-    'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
-    'Geo_Ref','Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+    'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
+    'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
+    'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
+    'National.Status')
 
 nrow(RBCM.georeferencing.corrected) # Confirm all records are retained after merging with summary columns
 
 RBCM.vascular.plant.records <- RBCM.georeferencing.corrected.names.matched
+
+nrow(RBCM.vascular.plant.records) # ten missing records?
 
 
 # Read Hans Roemer - 2004 - Mt. Sutil Records
@@ -265,15 +284,20 @@ Roemer.2004.obs$District <- "Gulf Islands"
 Roemer.2004.obs$LocationNa <- "Galiano Island; Mt. Sutil"
 Roemer.2004.obs$LocationDe <- NA
 Roemer.2004.obs$HabitatRem <- Roemer.2004.obs$description
+Roemer.2004.obs$PositionalAccuracy <- NA
+Roemer.2004.obs$GeoPrivacy <- NA
+Roemer.2004.obs$PrivateLatitude <- NA
+Roemer.2004.obs$PrivateLongitude <- NA
 
 Roemer.2004.obs <- Roemer.2004.obs %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,
-      Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Collecti_1,latitude,longitude,Geo_Ref,Prov_State,
-      District,LocationNa,LocationDe,HabitatRem,Origin,Provincial.Status,National.Status)
+      Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Collecti_1,latitude,longitude,Geo_Ref,
+      PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,District,LocationNa,
+      LocationDe,HabitatRem,Origin,Provincial.Status,National.Status)
 
-names(Roemer.2004.obs) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
-                            'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
-                            'Geo_Ref','Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
-
+names(Roemer.2004.obs) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
+      'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
+      'Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region',
+      'Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 # Read Simon 2018 data
 
@@ -320,14 +344,20 @@ Simon.2018.matched.records$Region <- "Gulf Islands"
 Simon.2018.matched.records$Location <- paste("Galiano Island; ",Simon.2018.matched.records$Site)
 Simon.2018.matched.records$LocationDescription <- NA
 Simon.2018.matched.records$HabitatRemarks <- Simon.2018.matched.records$Description
+Simon.2018.matched.records$PositionalAccuracy <- NA
+Simon.2018.matched.records$GeoPrivacy <- NA
+Simon.2018.matched.records$PrivateLatitude <- NA
+Simon.2018.matched.records$PrivateLongitude <- NA
 
-Simon.2018.matched.records <- Simon.2018.matched.records %>% select('Taxon','ID','Kingdom','Phylum','Class','Order','Family',
-                            'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','Date','Latitude','Longitude',
-                            'Geo_Ref','Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status','id')
+Simon.2018.matched.records <- Simon.2018.matched.records %>% select('Taxon','ID','Kingdom','Phylum','Class','Order',
+      'Family','Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','Date','Latitude',
+      'Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State',
+      'Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status','id')
 
-names(Simon.2018.matched.records) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
-                            'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
-                            'Geo_Ref','Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status','id')
+names(Simon.2018.matched.records) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
+      'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
+      'Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region',
+      'Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status','id')
 
 Simon.2018.matched.id <- Simon.2018.matched.records$id
 
@@ -361,27 +391,46 @@ Simon.2018.unmatched.records$Region <- "Gulf Islands"
 Simon.2018.unmatched.records$Location <- paste("Galiano Island; ",Simon.2018.unmatched.records$Site)
 Simon.2018.unmatched.records$LocationDescription <- NA
 Simon.2018.unmatched.records$HabitatRemarks <- Simon.2018.unmatched.records$Description
+Simon.2018.unmatched.records$PositionalAccuracy <- NA
+Simon.2018.unmatched.records$GeoPrivacy <- NA
+Simon.2018.unmatched.records$PrivateLatitude <- NA
+Simon.2018.unmatched.records$PrivateLongitude <- NA
 
-Simon.2018.unmatched.records <- Simon.2018.unmatched.records %>% select('Taxon','ID','Kingdom','Phylum','Class','Order','Family',
-                                                                    'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','Date','Latitude','Longitude',
-                                                                    'Geo_Ref','Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+Simon.2018.unmatched.records <- Simon.2018.unmatched.records %>% select('Taxon','ID','Kingdom','Phylum','Class',
+    'Order','Family','Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','Date',
+    'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
+    'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
+    'National.Status')
 
-names(Simon.2018.unmatched.records) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
-                                       'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
-                                       'Geo_Ref','Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+names(Simon.2018.unmatched.records) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
+    'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude',
+    'Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State',
+    'Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 # Combine Simon 2018 records
 
 Simon.2018.records <- rbind(Simon.2018.matched.records,Simon.2018.unmatched.records)
 
-# Combine historical occurrence records
 
-Historical.vascular.plant.records <- rbind(Roemer.2004.obs,RBCM.vascular.plant.records,Simon.2018.records,Lomer.2022.records)
+# Combine all source occurrence records
 
-# Tally records
-
-nrow(Historical.vascular.plant.records)
+Vascular.plant.records <- rbind(Roemer.2004.obs,RBCM.vascular.plant.records,Simon.2018.records,Lomer.2022.records)
 
 # Combine with iNaturalist observations
 
+iNaturalist.observations <- read.csv("digitized/iNaturalist_vascular_plant_observations.csv")
 
+names(Vascular.plant.records) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
+      'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude',
+      'Longitude','GeoRef','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','ProvState',
+      'Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+names(iNaturalist.observations) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
+      'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude',
+      'Longitude','GeoRef','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','ProvState',
+      'Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+
+Vascular.plant.records <- rbind(Vascular.plant.records,iNaturalist.observations)
+
+# Tally records
+
+nrow(Vascular.plant.records)
