@@ -431,6 +431,8 @@ names(iNaturalist.observations) <- c('Taxon','TaxonID','Kingdom','Phylum','Class
 
 Vascular.plant.records <- rbind(Vascular.plant.records,iNaturalist.observations)
 
+write.csv(Vascular.plant.records,"Galiano_Island_vascular_plant_records_consolidated.csv")
+
 # Tally records
 
 nrow(Vascular.plant.records)
