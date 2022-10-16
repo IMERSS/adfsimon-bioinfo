@@ -108,6 +108,8 @@ Tracheophyta.review.summary <- rbind(Tracheophyta.baseline, unmatched.iNat.obs.s
 
 Tracheophyta.review.summary[is.na(Tracheophyta.review.summary)] <- ""
 
-# Write review summary
+# Write review summary 
+# Note: be careful not to overwrite reviewed summary in case you revise through another workflow
+# This workflow needs to be improved to prevent any terrible errors!
 
-write.csv(Tracheophyta.review.summary, "Tracheophyta_review_summary.csv")
+# write.csv(Tracheophyta.review.summary, "Tracheophyta_review_summary.csv")
