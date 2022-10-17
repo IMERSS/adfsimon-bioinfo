@@ -12,13 +12,13 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("Tracheophyta_review_summary_reviewed.csv")
+baseline <- read.csv("summary/Tracheophyta_review_summary_reviewed_2022-10-16.csv")
 
 Tracheophyta.baseline <- baseline %>% filter(Phylum == 'Tracheophyta')
 
 # Read iNaturalist obs summary
 
-iNat.obs.summary <- read.csv("../../../1_split/vascular_plants/Tracheophyta_iNat_summary.csv")
+iNat.obs.summary <- read.csv("../../../1_split/vascular_plants/outputs/Tracheophyta_iNat_summary.csv")
 names(iNat.obs.summary)
 
 # Drop extraneous fields
@@ -112,4 +112,4 @@ Tracheophyta.review.summary[is.na(Tracheophyta.review.summary)] <- ""
 # Note: be careful not to overwrite reviewed summary in case you revise through another workflow
 # This workflow needs to be improved to prevent any terrible errors!
 
-# write.csv(Tracheophyta.review.summary, "Tracheophyta_review_summary.csv")
+# write.csv(Tracheophyta.review.summary, "outputs/Tracheophyta_review_summary.csv")

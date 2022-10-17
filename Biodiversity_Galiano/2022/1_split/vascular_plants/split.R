@@ -12,7 +12,7 @@ library(dplyr)
 
 # Read iNaturalist observations
 
-obs <- read.csv("iNaturalist_Tracheophyta_observations_2022-10-09.csv")
+obs <- read.csv("iNaturalist_source_data/iNaturalist_Tracheophyta_observations_2022-10-09.csv")
 head(obs)
 
 # Filter Taxa
@@ -35,9 +35,9 @@ Tracheophyta.summary <- Tracheophyta.summary %>% distinct('Taxon', .keep_all = T
 
 # Write iNaturalist summaries by Taxon
 
-write.csv(Tracheophyta.summary, "Tracheophyta_iNat_summary.csv")
+write.csv(Tracheophyta.summary, "outputs/Tracheophyta_iNat_summary.csv")
 
 # Write iNaturalist catalogs by Taxon
 
-write.csv(Tracheophyta, "Tracheophyta_iNat_obs.csv")
+write.csv(Tracheophyta, "outputs/Tracheophyta_iNat_obs.csv")
 
