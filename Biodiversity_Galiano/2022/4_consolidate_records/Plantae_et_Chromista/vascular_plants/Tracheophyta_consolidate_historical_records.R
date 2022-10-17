@@ -14,7 +14,71 @@ library(tidyr)
 
 summary <- read.csv("summary/Tracheophyta_review_summary_reviewed.csv")
 
-# Read historical records 
+# Read occurrence records
+
+# Read Hunterston Farm Bioblitz 2010 records
+
+Hunterston.2010 <- read.csv("digitized/Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16.csv")
+
+# Filter plants
+
+Hunterston.2010 <- Hunterston.2010 %>% filter(Group == 'Plants')
+
+# Select key columns
+
+Hunterston.2010 <- Hunterston.2010 %>% select(Scientific,Date,Zone_Description,Latitude,Longitude,Source)
+
+# Confirm number of records (303)
+
+nrow(Hunterston.2010) # 303 Galiano Island records
+
+# Standardize column names to facilitate join
+
+names(Hunterston.2010) <- c('Taxon','Date','HabitatRemarks','Latitude','Longitude','Source')
+
+# Merge with summary to standardize names and taxon metadata
+
+Hunterston.2010.names.matched <- left_join(Hunterston.2010,summary, by = c('Taxon'))
+
+# Unmatched records
+
+Hunterston.2010.names.unmatched <- Hunterston.2010.names.matched[is.na(Hunterston.2010.names.matched$Taxon.Author),]
+
+# Matched records
+
+Hunterston.2010.names.matched <- anti_join(Hunterston.2010.names.matched,Hunterston.2010.names.unmatched)
+
+# Confirm all records are represented 
+
+nrow(Hunterston.2010)
+nrow(Hunterston.2010.names.matched)
+nrow(Hunterston.2010.names.unmatched)
+nrow(Hunterston.2010.names.matched)+nrow(Hunterston.2010.names.unmatched)
+
+# Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+# Note: some of the code below is not needed after reviewing and generating new key
+
+Hunterston.key <- read.csv("keys/Lomer_2022_unmatched_taxon_key.csv") # Lomer key is the best key so far
+
+# Swap unmatched names using key
+
+Hunterston.2010.names.unmatched.matched <- Hunterston.2010.names.unmatched
+
+Hunterston.2010.names.unmatched.matched$Taxon <- Hunterston.key$Matched.Taxon[match(unlist(Hunterston.2010.names.unmatched.matched$Taxon), Hunterston.key$Taxon)]
+
+# Drop NAs (taxa not recognized in summary)
+
+Hunterston.2010.names.unmatched.matched <- Hunterston.2010.names.unmatched.matched %>% drop_na(Taxon)
+
+
+
+
+
+
+
+
+
+
 
 # Read Frank Lomer 2022 Records
 # Note specimens are all to be deposited at UBC and should be checked for duplicates against UBC records in the future 
