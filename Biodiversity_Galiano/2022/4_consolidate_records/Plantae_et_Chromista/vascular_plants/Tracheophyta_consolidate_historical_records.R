@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("Tracheophyta_review_summary_reviewed.csv")
+summary <- read.csv("summary/Tracheophyta_review_summary_reviewed.csv")
 
 # Read historical records 
 
@@ -57,7 +57,7 @@ nrow(Lomer.2022.names.matched)+nrow(Lomer.2022.names.unmatched)
 # Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 # Note: some of the code below is not needed after reviewing and generating new key
 
-Lomer.key <- read.csv("Lomer_2022_unmatched_taxon_key.csv")
+Lomer.key <- read.csv("keys/Lomer_2022_unmatched_taxon_key.csv")
 
 # Swap unmatched names using key
 
@@ -233,7 +233,7 @@ nrow(Roemer.2004.obs)
 
 # Read taxon key to facilitate join
 
-key <- read.csv("Roemer_2004_unmatched_taxon_key.csv")
+key <- read.csv("keys/Roemer_2004_unmatched_taxon_key.csv")
 
 Roemer.2004.obs.unmatched.names.matched <- inner_join(Roemer.2004.obs.unmatched.names,key)
 
@@ -370,7 +370,7 @@ Simon.2018.unmatched.records <- Simon.2018[!Simon.2018$id %in% Simon.2018.matche
 # Apply key to match names from Simon 2018 with those from curated summary 
 # Note: 39 records of domesticated plants are not integrated into the output catalog
 
-key.Simon <- read.csv("Simon_2018_unmatched_taxon_key.csv")
+key.Simon <- read.csv("keys/Simon_2018_unmatched_taxon_key.csv")
 
 Simon.2018.unmatched.records$Taxon <- key.Simon$Matched.Taxon[match(unlist(Simon.2018.unmatched.records$Taxon), key.Simon$Taxon)]
 
@@ -431,7 +431,9 @@ names(iNaturalist.observations) <- c('Taxon','TaxonID','Kingdom','Phylum','Class
 
 Vascular.plant.records <- rbind(Vascular.plant.records,iNaturalist.observations)
 
-write.csv(Vascular.plant.records,"Galiano_Island_vascular_plant_records_consolidated.csv")
+# Output synthesized catalog of occurrence records
+
+# write.csv(Vascular.plant.records,"Galiano_Island_vascular_plant_records_consolidated.csv")
 
 # Tally records
 
