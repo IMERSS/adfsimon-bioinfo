@@ -14,7 +14,7 @@ library(tidyr)
 
 # Read iNaturalist observations
 
-obs <- read.csv("iNaturalist_Tracheophyta_observations_2022-10-09.csv")
+obs <- read.csv("records/iNaturalist_Tracheophyta_observations_2022-10-09.csv")
 
 # Drop cultivated taxa from observations
 
@@ -22,7 +22,7 @@ obs <- subset(obs, captive_cultivated != "true")
 
 # Read summary
 
-summary <- read.csv("Tracheophyta_review_summary_reviewed.csv")
+summary <- read.csv("summary/Tracheophyta_review_summary_reviewed.csv")
 
 # Standardize obs fields to facilitate join with summary
 
@@ -140,7 +140,7 @@ nrow(obs.unmatched)+nrow(obs.matched)
 
 # Read unmatched taxon key
 
-unmatched.taxon.key <- read.csv("Lomer_2022_unmatched_taxon_key.csv")
+unmatched.taxon.key <- read.csv("keys/Lomer_2022_unmatched_taxon_key.csv")
 
 # Substitute names in ummatched dataframe with names from unmatched taxon key that correspond with summary
 

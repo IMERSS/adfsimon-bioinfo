@@ -50,13 +50,13 @@ betagrid<-function(gridshp, comp, xfeature, yfeature, radius, phylotree, phylobe
 # Test data works fine... suppress to work with your data
 
 # Then, load the grid (shapefile). This is a grid of 0.25 degree lat/long of Cerrado.
-# shape <- readOGR("grided_analysis_test/final_shape.shp")
+# shape <- readOGR("betagrid/inputs/test_data/final_shape.shp")
 
 # Load the species occurrences. These are the occurrences (not real, just as example) of some mammals of Cerrado.
-# occurrences <- read.table("grided_analysis_test/occur.cerr.txt", row.names=1, head=T)
+# occurrences <- read.table("betagrid/inputs/test_data/occur.cerr.txt", row.names=1, head=T)
 
 # And load the phylogeny of these species (if you want to calculate phylogenetic beta diversity):
-# phylo <- read.tree("grided_analysis_test/phylo.txt")
+# phylo <- read.tree("betagrid/inputs/test_data/phylo.txt")
 
 # We have to know which features corresponds to the longitude (x) and latitude (y). Type the following code and observe that the second (2) feature corresponds to longitude while the third (3) corresponds to latitude. We need these numbers.
 # names(shape)
@@ -90,14 +90,14 @@ betagrid<-function(gridshp, comp, xfeature, yfeature, radius, phylotree, phylobe
 # Adapting the above code to implement gridded beta diversity analysis of my data:
 
 # Load the grid
-shape <- readOGR("gridded_analysis_mydata/1km_grid_TPI_extent_WGS84_intersect_plant_data.shp")
+shape <- readOGR("betagrid/inputs/1km_grid_TPI_extent_WGS84_intersect_plant_data.shp")
 
 # Converting to UTM breaks the function 'betagrid' below
 # shape <- vect(shape, crs="+proj=utm +zone=10 +datum=WGS84  +units=m")
 
 # Read species occurrences
 
-data <- read.csv("gridded_analysis_mydata/Galiano_vascular_plants_2022-10-15_intersect_1km_grid_TPI_extent_WGS84.csv")
+data <- read.csv("betagrid/inputs/Galiano_vascular_plants_2022-10-15_intersect_1km_grid_TPI_extent_WGS84.csv")
 
 # Subset relevant fields
 
@@ -128,9 +128,10 @@ names(results) <- c('id','mean_turnover','mean_nestedness','mean_beta')
 
 # Output results
 
-# write.csv(results,"gridded_analysis_mydata/outputs/betagrid_vascular_plants_2022-10-15.csv")
+# write.csv(results,"betagrid/outputs/betagrid_vascular_plants_2022-10-15.csv")
 
 #### GRAPH ####
+# Note: code not working due to projection
 
 # Create a new layer in our grid file for the mean total beta diversity.
 shape$betadiv <- results[,4]
