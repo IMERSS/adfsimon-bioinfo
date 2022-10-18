@@ -16,6 +16,100 @@ summary <- read.csv("summary/Tracheophyta_review_summary_reviewed.csv")
 
 # Read occurrence records
 
+
+##### NOTE: There may be a mistake in one of the scripts below; make sure to test each data set to make sure they are complete
+
+
+# Read Ecological Reserve 128 records (Roemer & Janszen 1980, Roemer 2000)
+
+Ecological.Reserve.128 <- read.csv("digitized/Galiano_Bog_Plant_List_1980-&-2000.csv")
+
+# Filter plants
+
+Ecological.Reserve.128 <- Ecological.Reserve.128 %>% filter(Group == 'vascular plants')
+
+# Standardize columns
+
+Ecological.Reserve.128$Source <- "Galiano Bog Plant List (Janszen & Roemer 1980, Roemer 2000)"
+Ecological.Reserve.128$CatalogueN <- NA
+Ecological.Reserve.128$Latitude <- 48.983312863031706
+Ecological.Reserve.128$Longitude <- -123.55665029568577
+Ecological.Reserve.128$Geo_Ref <- "Coordinates generalized based on locality information"
+Ecological.Reserve.128$HabitatRemarks <- NA
+Ecological.Reserve.128$PositionalAccuracy <- 80
+Ecological.Reserve.128$GeoPrivacy <- NA
+Ecological.Reserve.128$PrivateLatitude <- NA
+Ecological.Reserve.128$PrivateLongitude <- NA
+Ecological.Reserve.128$PrivateLatitude <- NA
+Ecological.Reserve.128$PrivateLongitude <- NA
+Ecological.Reserve.128$Prov_State <- "British Columbia"
+Ecological.Reserve.128$Region <- "Gulf Islands"
+Ecological.Reserve.128$Location <- "Galiano Island"
+Ecological.Reserve.128$LocationDe <- "Ecological Reserve 128"
+
+# Select key columns
+
+Ecological.Reserve.128 <- Ecological.Reserve.128 %>% select(Species,Source,CatalogueN,Observer,Date,Latitude,
+        Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
+        Location,LocationDe,HabitatRemarks)
+
+# Standardize column names to facilitate join
+
+names(Ecological.Reserve.128) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref',
+        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
+        'LocationDe','HabitatRemarks')
+
+# Merge with summary to standardize names and taxon metadata
+
+Ecological.Reserve.128.names.matched <- left_join(Ecological.Reserve.128,summary, by = c('Taxon'))
+
+# Unmatched records
+
+Ecological.Reserve.128.names.unmatched <- Ecological.Reserve.128.names.matched[is.na(Ecological.Reserve.128.names.matched$Taxon.Author),]
+
+# Matched records
+
+Ecological.Reserve.128.names.matched <- anti_join(Ecological.Reserve.128.names.matched,Ecological.Reserve.128.names.unmatched)
+
+# Confirm all records are represented 
+
+nrow(Ecological.Reserve.128)
+nrow(Ecological.Reserve.128.names.matched)
+nrow(Ecological.Reserve.128.names.unmatched)
+nrow(Ecological.Reserve.128.names.matched)+nrow(Ecological.Reserve.128.names.unmatched)
+
+# Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+# Note: some of the code below is not needed after reviewing and generating new key
+
+Ecological.Reserve.128.key <- read.csv("keys/Lomer_2022_unmatched_taxon_key.csv") # Lomer key is the best key so far
+
+# Swap unmatched names using key
+
+Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.unmatched
+
+Ecological.Reserve.128.names.unmatched.matched$Taxon <- Ecological.Reserve.128.key$Matched.Taxon[match(unlist(Ecological.Reserve.128.names.unmatched.matched$Taxon), Ecological.Reserve.128.key$Taxon)]
+
+# Drop NAs (taxa not recognized in summary)
+
+Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.unmatched.matched %>% drop_na(Taxon)
+
+# Select names unmatched based on key
+
+Ecological.Reserve.128.names.unmatched.unmatched <- anti_join(Ecological.Reserve.128.names.unmatched,Ecological.Reserve.128.names.unmatched.matched)
+
+# Confirm all records are represented 
+
+nrow(Ecological.Reserve.128)
+nrow(Ecological.Reserve.128.names.matched)
+nrow(Ecological.Reserve.128.names.unmatched)
+nrow(Ecological.Reserve.128.names.unmatched.matched)
+nrow(Ecological.Reserve.128.names.unmatched.unmatched)
+nrow(Ecological.Reserve.128.names.matched)+nrow(Ecological.Reserve.128.names.unmatched.matched)+nrow(Ecological.Reserve.128.names.unmatched.unmatched)
+
+#### TO COMPLETE
+
+
+
 # Read Hunterston Farm Bioblitz 2010 records
 
 Hunterston.2010 <- read.csv("digitized/Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16.csv")
