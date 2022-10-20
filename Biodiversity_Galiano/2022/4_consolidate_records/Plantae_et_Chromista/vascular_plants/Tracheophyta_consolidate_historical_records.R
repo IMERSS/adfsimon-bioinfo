@@ -120,7 +120,7 @@ Ecological.Reserve.128.names.unmatched.matched <- left_join(Ecological.Reserve.1
 
 Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.unmatched.matched %>% drop_na(Taxon)
 
-# Standardize matched occcurence records
+# Standardize matched occurrence records
 
 Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.unmatched.matched %>% select(Taxon,
         ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,
@@ -136,7 +136,6 @@ names(Ecological.Reserve.128.names.unmatched.matched) <- c('Taxon','TaxonID','Ki
 # Select names unmatched based on key
 
 Ecological.Reserve.128.names.unmatched.unmatched <- anti_join(Ecological.Reserve.128.names.unmatched,Ecological.Reserve.128.names.unmatched.matched,by='CatalogueN')
-
 
 # Confirm all records are represented 
 
@@ -163,13 +162,15 @@ nrow(Ecological.Reserve.128.records) # Good: only five records discarded, accoun
 
 # Start record of unmatched names
 
-unmatched.vascular.plant.records <- unique(Ecological.Reserve.128.names.unmatched.unmatched$Taxon)
+unmatched.vascular.plant.records <- Ecological.Reserve.128.names.unmatched.unmatched %>% select(Taxon,
+        Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,
+        PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,
+        Provincial.Status,National.Status)
 
 unmatched.vascular.plant.records
 
-
 # Generate key to manually match unmatched names in Janszen 2000
-# Note: code no longer required once key once key was generated
+# Note: code no longer required once key was generated
 
 # key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
 
@@ -188,10 +189,6 @@ unmatched.vascular.plant.records
 
 
 
-
-
-
-
 # Read Hunterston Farm Bioblitz 2010 records
 
 Hunterston.2010 <- read.csv("digitized/Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16.csv")
@@ -200,17 +197,44 @@ Hunterston.2010 <- read.csv("digitized/Hunterston_Farms_Bioblitz_2010_sorted_202
 
 Hunterston.2010 <- Hunterston.2010 %>% filter(Group == 'Plants')
 
+# Create unique identifiers for observations
+
+unique.prefix <- "HUNTERSTON2010:"
+unique.suffix <- 1:nrow(Hunterston.2010)
+
+# Standardize columns
+
+Hunterston.2010$Source <- "Hunterston Farms Bioblitz 2010"
+Hunterston.2010$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
+Hunterston.2010$Observer <- NA
+Hunterston.2010$Geo_Ref <- "Coordinates generalized based on mapped locality information"
+Hunterston.2010$HabitatRemarks <- NA
+Hunterston.2010$PositionalAccuracy <- 50
+Hunterston.2010$GeoPrivacy <- NA
+Hunterston.2010$PrivateLatitude <- NA
+Hunterston.2010$PrivateLongitude <- NA
+Hunterston.2010$PrivateLatitude <- NA
+Hunterston.2010$PrivateLongitude <- NA
+Hunterston.2010$Prov_State <- "British Columbia"
+Hunterston.2010$Region <- "Gulf Islands"
+Hunterston.2010$Location <- "Galiano Island"
+Hunterston.2010$LocationDe <- "Hunterston Farms"
+
 # Select key columns
 
-Hunterston.2010 <- Hunterston.2010 %>% select(Scientific,Date,Zone_Description,Latitude,Longitude,Source)
+Hunterston.2010 <- Hunterston.2010 %>% select(Scientific,Source,CatalogueN,Observer,Date,Latitude,Longitude,
+        Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,
+        LocationDe,HabitatRemarks)
+
+# Standardize column names to facilitate join
+
+names(Hunterston.2010) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref',
+        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
+        'LocationDe','HabitatRemarks')
 
 # Confirm number of records (303)
 
 nrow(Hunterston.2010) # 303 Galiano Island records
-
-# Standardize column names to facilitate join
-
-names(Hunterston.2010) <- c('Taxon','Date','HabitatRemarks','Latitude','Longitude','Source')
 
 # Merge with summary to standardize names and taxon metadata
 
@@ -224,6 +248,18 @@ Hunterston.2010.names.unmatched <- Hunterston.2010.names.matched[is.na(Huntersto
 
 Hunterston.2010.names.matched <- anti_join(Hunterston.2010.names.matched,Hunterston.2010.names.unmatched)
 
+# Standardize matched occurence records
+
+Hunterston.2010.names.matched <- Hunterston.2010.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,
+        Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,
+        Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,
+        LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+names(Hunterston.2010.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
+        'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude',
+        'Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State',
+        'Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+
 # Confirm all records are represented 
 
 nrow(Hunterston.2010)
@@ -234,7 +270,7 @@ nrow(Hunterston.2010.names.matched)+nrow(Hunterston.2010.names.unmatched)
 # Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 # Note: some of the code below is not needed after reviewing and generating new key
 
-Hunterston.key <- read.csv("keys/Lomer_2022_unmatched_taxon_key.csv") # Lomer key is the best key so far
+Hunterston.key <- read.csv("keys/Hunterston.2010.key.csv") # Lomer key is the best key so far
 
 # Swap unmatched names using key
 
@@ -242,12 +278,78 @@ Hunterston.2010.names.unmatched.matched <- Hunterston.2010.names.unmatched
 
 Hunterston.2010.names.unmatched.matched$Taxon <- Hunterston.key$Matched.Taxon[match(unlist(Hunterston.2010.names.unmatched.matched$Taxon), Hunterston.key$Taxon)]
 
+# Remove unmatched fields prior to rejoining with summary
+
+Hunterston.2010.names.unmatched.matched <- select(Hunterston.2010.names.unmatched.matched, c(1:17))
+
+# Merge with newly matched records with  summary to standardize names and taxon metadata
+
+Hunterston.2010.names.unmatched.matched <- left_join(Hunterston.2010.names.unmatched.matched,summary, by = c('Taxon'))
+
 # Drop NAs (taxa not recognized in summary)
 
 Hunterston.2010.names.unmatched.matched <- Hunterston.2010.names.unmatched.matched %>% drop_na(Taxon)
 
-#### TO COMPLETE
+# Standardize matched occurrence records
 
+Hunterston.2010.names.unmatched.matched <- Hunterston.2010.names.unmatched.matched %>% select(Taxon,ID,Kingdom,
+        Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,
+        Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,
+        Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+names(Hunterston.2010.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
+        'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
+        'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
+        'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
+        'National.Status')
+
+# Select names unmatched based on key
+
+Hunterston.2010.names.unmatched.unmatched <- anti_join(Hunterston.2010.names.unmatched,Hunterston.2010.names.unmatched.matched,by='CatalogueN')
+
+# Confirm all records are represented 
+
+nrow(Hunterston.2010)
+nrow(Hunterston.2010.names.matched)
+nrow(Hunterston.2010.names.unmatched)
+nrow(Hunterston.2010.names.unmatched.matched)
+nrow(Hunterston.2010.names.unmatched.unmatched)
+nrow(Hunterston.2010.names.matched)+nrow(Hunterston.2010.names.unmatched.matched)+nrow(Hunterston.2010.names.unmatched.unmatched)
+
+# Bind records
+
+Hunterston.2010.records <- rbind(Hunterston.2010.names.matched,Hunterston.2010.names.unmatched.matched)
+
+# Compare records in and out
+
+nrow(Hunterston.2010)
+nrow(Hunterston.2010.records) # Good: only five records discarded, accounted for above.
+
+# Add to record of unmatched names
+
+Hunterston.2010.names.unmatched.unmatched <- Hunterston.2010.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,
+        Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,
+        Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Hunterston.2010.names.unmatched.unmatched)
+
+# Generate key to manually match unmatched names in Hunterston 2010
+# Note: code no longer required once key was generated
+
+# key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+
+# unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Hunterston.2010.names.unmatched.unmatched)))
+# names(unmatched.taxa) <- key.field.names
+
+# unmatched.taxa$Taxon <- Hunterston.2010.names.unmatched.unmatched$Taxon
+
+# unmatched.taxa$Genus <- word(Hunterston.2010.names.unmatched.unmatched$Taxon, 1)
+
+# unmatched.taxa$Species <- word(Hunterston.2010.names.unmatched.unmatched$Taxon, 2)
+
+# Hunterston.2010.key <- rbind(Ecological.Reserve.128.key,unmatched.taxa)
+
+# write.csv(Hunterston.2010.key,"Hunterston.2010.key.csv")
 
 
 
