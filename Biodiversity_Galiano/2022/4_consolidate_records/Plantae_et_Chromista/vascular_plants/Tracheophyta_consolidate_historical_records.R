@@ -189,6 +189,7 @@ unmatched.vascular.plant.records
 
 
 
+
 # Read Hunterston Farm Bioblitz 2010 records
 
 Hunterston.2010 <- read.csv("digitized/Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16.csv")
@@ -270,7 +271,7 @@ nrow(Hunterston.2010.names.matched)+nrow(Hunterston.2010.names.unmatched)
 # Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 # Note: some of the code below is not needed after reviewing and generating new key
 
-Hunterston.key <- read.csv("keys/Hunterston.2010.key.csv") # Lomer key is the best key so far
+Hunterston.key <- read.csv("keys/Hunterston.2010.key.csv")
 
 # Swap unmatched names using key
 
@@ -323,7 +324,7 @@ Hunterston.2010.records <- rbind(Hunterston.2010.names.matched,Hunterston.2010.n
 # Compare records in and out
 
 nrow(Hunterston.2010)
-nrow(Hunterston.2010.records) # Good: only five records discarded, accounted for above.
+nrow(Hunterston.2010.records) # 32 records discarded, identified only to level of genus, i.e., redundant to include in summary
 
 # Add to record of unmatched names
 
@@ -350,9 +351,6 @@ unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Hunte
 # Hunterston.2010.key <- rbind(Ecological.Reserve.128.key,unmatched.taxa)
 
 # write.csv(Hunterston.2010.key,"Hunterston.2010.key.csv")
-
-
-
 
 
 
@@ -490,6 +488,7 @@ Lomer.2022.records <- rbind(Lomer.2022.names.matched,Lomer.2022.names.unmatched.
 
 
 
+
 # Read RBCM Records 
 # Note: it looks like you may be losing 10 records; double check these data outputs!
 
@@ -530,6 +529,8 @@ nrow(RBCM.georeferencing.corrected) # Confirm all records are retained after mer
 RBCM.vascular.plant.records <- RBCM.georeferencing.corrected.names.matched
 
 nrow(RBCM.vascular.plant.records) # ten missing records?
+
+
 
 
 # Read Hans Roemer - 2004 - Mt. Sutil Records
@@ -640,6 +641,9 @@ names(Roemer.2004.obs) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order'
       'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
       'Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region',
       'Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+
+
+
 
 # Read Simon 2018 data
 
@@ -754,9 +758,11 @@ names(Simon.2018.unmatched.records) <- c('Taxon','TaxonID','Kingdom','Phylum','C
 Simon.2018.records <- rbind(Simon.2018.matched.records,Simon.2018.unmatched.records)
 
 
+
+
 # Combine all source occurrence records
 
-Vascular.plant.records <- rbind(Ecological.Reserve.128.records,Roemer.2004.obs,RBCM.vascular.plant.records,Simon.2018.records,Lomer.2022.records)
+Vascular.plant.records <- rbind(Ecological.Reserve.128.records,Hunterston.2010.records,Roemer.2004.obs,RBCM.vascular.plant.records,Simon.2018.records,Lomer.2022.records)
 
 # Combine with iNaturalist observations
 
