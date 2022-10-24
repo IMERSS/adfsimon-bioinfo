@@ -16,6 +16,17 @@ summary <- read.csv("summary/Tracheophyta_review_summary_reviewed.csv")
 
 # Read occurrence records
 
+# Sources:
+
+# BC Conservation Data Centre # not yet added
+# Consortium of PNW Herbaria: BABY, RBCM, UBC, WS, WTU : note some RBCM records already added; otherwise incomplete
+# Hunterston 2010
+# iNaturalist 2016-2022
+# Janszen 2000
+# Lomer 2022
+# RBCM # some records with georeferencing (partly) corrected
+# Roemer 2004
+# Simon 2018
 
 ##### NOTE: There may be a mistake in one of the scripts below; make sure to test each data set to make sure they are complete
 
@@ -356,7 +367,7 @@ unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Hunte
 
 
 # Read Frank Lomer 2022 Records
-# Note specimens are all to be deposited at UBC and should be checked for duplicates against UBC records in the future 
+# Note specimens will all be deposited at UBC and should be checked for duplicates against UBC records in the future 
 
 Lomer.2022 <- read.csv("digitized/Lomer_2022_Galiano_collections.csv")
 
@@ -373,6 +384,22 @@ Lomer.2022$Date <-  as.Date(Lomer.2022$Date)
 # Confirm number of records (67)
 
 nrow(Lomer.2022) # 67 Galiano Island records
+
+# Standardize fields to join records
+
+Lomer.2022$Source <- "UBC"
+Lomer.2022$Geo_Ref <- NA
+Lomer.2022$Prov_State <- "British Columbia"
+Lomer.2022$District <- "Gulf Islands"
+Lomer.2022$LocationDe <- NA
+Lomer.2022$PositionalAccuracy <- 3
+Lomer.2022$GeoPrivacy <- NA
+Lomer.2022$PrivateLatitude <- NA
+Lomer.2022$PrivateLongitude <- NA
+
+names(Lomer.2022) <- c('Taxon','Genus','Species','Subspecies','Variety','Location','Latitude','Longitude','HabitatRemarks',
+        'Date','Collector','CatalogueN','Source','Geo_Ref','Prov_State','Region','LocationDe','PositionalAccuracy',
+        'GeoPrivacy','PrivateLatitude','PrivateLongitude')
 
 # Merge with summary to standardize names and taxon metadata
 
@@ -408,31 +435,16 @@ Lomer.2022.names.unmatched.matched$Taxon <- Lomer.key$Matched.Taxon[match(unlist
 
 Lomer.2022.names.unmatched.matched <- Lomer.2022.names.unmatched.matched %>% drop_na(Taxon)
 
-# Select only essential fields to facilitate joins
-
-Lomer.2022.names.unmatched.matched <- Lomer.2022.names.unmatched.matched %>% select('Taxon','Location',
-        'Degrees.Lat.','Degrees.Long','Habitat','Date','Collector','Number')
-
 # Match keyed unmatched records with summary
 
 Lomer.2022.names.unmatched.matched <- left_join(Lomer.2022.names.unmatched.matched,summary)
 
-# Standardize fields to join records
-
-Lomer.2022.names.matched$Source <- "UBC"
-Lomer.2022.names.matched$Geo_Ref <- NA
-Lomer.2022.names.matched$Prov_State <- "British Columbia"
-Lomer.2022.names.matched$District <- "Gulf Islands"
-Lomer.2022.names.matched$LocationDe <- NA
-Lomer.2022.names.matched$PositionalAccuracy <- NA
-Lomer.2022.names.matched$GeoPrivacy <- NA
-Lomer.2022.names.matched$PrivateLatitude <- NA
-Lomer.2022.names.matched$PrivateLongitude <- NA
+names(Lomer.2022.names.matched)
 
 Lomer.2022.names.matched <- Lomer.2022.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus.y,
-      Species.y,Hybrid,Subspecies.y,Variety.y,Source,Number,Collector,Date,Degrees.Lat.,Degrees.Long,Geo_Ref,
-      PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,District,Location,LocationDe,
-      Habitat,Origin,Provincial.Status,National.Status)
+      Species.y,Hybrid,Subspecies.y,Variety.y,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,
+      PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,
+      HabitatRemarks,Origin,Provincial.Status,National.Status)
 
 names(Lomer.2022.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
       'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
@@ -450,9 +462,9 @@ Lomer.2022.names.unmatched.matched$PrivateLatitude <- NA
 Lomer.2022.names.unmatched.matched$PrivateLongitude <- NA
 
 Lomer.2022.names.unmatched.matched <- Lomer.2022.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,
-      Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,Number,Collector,Date,Degrees.Lat.,
-      Degrees.Long,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,District,
-      Location,LocationDe,Habitat,Origin,Provincial.Status,National.Status)
+      Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,
+      Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
+      Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
 
 names(Lomer.2022.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
       'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
@@ -460,9 +472,36 @@ names(Lomer.2022.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phyl
       'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
       'National.Status')
 
-# Combine records
+# Select names unmatched based on key
+
+Lomer.2022.names.unmatched.unmatched <- anti_join(Lomer.2022.names.unmatched,Lomer.2022.names.unmatched.matched,by='CatalogueN')
+
+# Confirm all records are represented 
+
+nrow(Lomer.2022)
+nrow(Lomer.2022.names.matched)
+nrow(Lomer.2022.names.unmatched)
+nrow(Lomer.2022.names.unmatched.matched)
+nrow(Lomer.2022.names.unmatched.unmatched)
+nrow(Lomer.2022.names.matched)+nrow(Lomer.2022.names.unmatched.matched)+nrow(Lomer.2022.names.unmatched.unmatched)
+
+# Bind records
 
 Lomer.2022.records <- rbind(Lomer.2022.names.matched,Lomer.2022.names.unmatched.matched)
+
+# Compare records in and out
+
+nrow(Lomer.2022)
+nrow(Lomer.2022.records) # 1 record discarded, considered domesticated and thus not included in summary
+
+# Add to record of unmatched names
+
+Lomer.2022.names.unmatched.unmatched <- Lomer.2022.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,
+        Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,
+        Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Lomer.2022.names.unmatched.unmatched)
+
 
 # Generate new key with mismatched names
 
