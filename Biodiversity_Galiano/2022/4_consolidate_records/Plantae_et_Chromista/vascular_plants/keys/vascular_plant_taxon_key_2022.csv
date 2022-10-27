@@ -58,10 +58,11 @@ Cerastium arvense,Cerastium,arvense,,,,,Cerastium arvense ssp. strictum
 Cerastium fontanum,Cerastium,fontanum,,,,,Cerastium fontanum ssp. vulgare
 Chimaphila umbellata,Chimaphila,umbellata,,,,,Chimaphila umbellata ssp. umbellata
 Clarkia amoena,Clarkia,amoena,,,,,Clarkia amoena
-Clarkia amoena caurina,Clarkia,amoena,,caurina,,,Clarkia amoena var. caurina
-Clarkia amoena caurina,Clarkia,amoena,,,caurina,,Clarkia amoena var. caurina
-Clarkia amoena lindleyi,Clarkia,amoena,,lindleyi,,,Clarkia amoena var. lindleyi
-Clarkia amoena lindleyi,Clarkia,amoena,,,lindleyi,,Clarkia amoena var. lindleyi
+Clarkia amoena caurina,Clarkia,amoena,,caurina,,,Clarkia amoena ssp. caurina
+Clarkia amoena caurina,Clarkia,amoena,,,caurina,,Clarkia amoena ssp. caurina
+Clarkia amoena var. caurina,Clarkia,amoena,,,caurina,,Clarkia amoena ssp. caurina
+Clarkia amoena lindleyi,Clarkia,amoena,,lindleyi,,,Clarkia amoena ssp. lindleyi
+Clarkia amoena lindleyi,Clarkia,amoena,,,lindleyi,,Clarkia amoena ssp. lindleyi
 Claytonia exigua,Claytonia,exigua,,,,,Claytonia exigua ssp. exigua
 Claytonia exigua exigua,Claytonia,exigua,,exigua,,,Claytonia exigua ssp. exigua
 Claytonia rubra,Claytonia,rubra,,,,,Claytonia rubra ssp. depressa
