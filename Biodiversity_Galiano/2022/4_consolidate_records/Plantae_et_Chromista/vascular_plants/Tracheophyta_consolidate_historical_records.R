@@ -12,21 +12,21 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("summary/Tracheophyta_review_summary_reviewed.csv")
+summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summary/Tracheophyta_review_summary_reviewed_2022-10-26.csv")
 
 # Read occurrence records
 
 # Sources:
 
-# BC Conservation Data Centre # not yet added
-# Consortium of PNW Herbaria: BABY, RBCM, UBC, WS, WTU : note some RBCM records already added; otherwise incomplete
-# Hunterston 2010
-# iNaturalist 2016-2022
-# Janszen 2000
-# Lomer 2022
-# RBCM # some records with georeferencing (partly) corrected
-# Roemer 2004
-# Simon 2018
+# BC Conservation Data Centre - not yet added
+# Consortium of PNW Herbaria: BABY, RBCM, UBC, WS, WTU - some RBCM records already added; otherwise incomplete
+# Hunterston 2010 - added
+# iNaturalist 2016-2022 - added
+# Janszen 2000 - added
+# Lomer 2022 - added
+# RBCM - added, but incomplete; some records with geo-referencing (partly) corrected
+# Roemer 2004 - added
+# Simon 2018 - added
 
 ##### NOTE: There may be a mistake in one of the scripts below; make sure to test each data set to make sure they are complete
 
@@ -109,7 +109,7 @@ nrow(Ecological.Reserve.128.names.matched)+nrow(Ecological.Reserve.128.names.unm
 # Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 # Note: some of the code below is not needed after reviewing and generating new key
 
-Ecological.Reserve.128.key <- read.csv("keys/Janszen.2000.key.csv") 
+Ecological.Reserve.128.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
 
 # Note: key updated based on this data set; code for generating key blotted out below
 
@@ -168,7 +168,7 @@ nrow(Ecological.Reserve.128.records) # Good: only five records discarded, accoun
 
 # Note: taxa unrecognized in summary, and hence excluded from catalog:
 # Juncus effusus - infrataxonomic resolution required to meaningfully discriminate this taxon
-# Epilobium cf ciliatum - could be E. ciliatum; could also be Epilobium leptophyllum, since documented at the bog
+# Epilobium cf ciliatum - could be E. ciliatum; could also be Epilobium leptophyllum, which has since documented at the bog
 # Glyceria sp.
 
 # Start record of unmatched names
@@ -223,8 +223,6 @@ Hunterston.2010$Geo_Ref <- "Coordinates generalized based on mapped locality inf
 Hunterston.2010$HabitatRemarks <- NA
 Hunterston.2010$PositionalAccuracy <- 50
 Hunterston.2010$GeoPrivacy <- NA
-Hunterston.2010$PrivateLatitude <- NA
-Hunterston.2010$PrivateLongitude <- NA
 Hunterston.2010$PrivateLatitude <- NA
 Hunterston.2010$PrivateLongitude <- NA
 Hunterston.2010$Prov_State <- "British Columbia"
@@ -282,7 +280,7 @@ nrow(Hunterston.2010.names.matched)+nrow(Hunterston.2010.names.unmatched)
 # Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 # Note: some of the code below is not needed after reviewing and generating new key
 
-Hunterston.key <- read.csv("keys/Hunterston.2010.key.csv")
+Hunterston.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv")
 
 # Swap unmatched names using key
 
@@ -335,7 +333,9 @@ Hunterston.2010.records <- rbind(Hunterston.2010.names.matched,Hunterston.2010.n
 # Compare records in and out
 
 nrow(Hunterston.2010)
-nrow(Hunterston.2010.records) # 32 records discarded, identified only to level of genus, i.e., redundant to include in summary
+nrow(Hunterston.2010.records) # 32 records discarded
+# discarded records identified only to level of genus, i.e., redundant to include in summary
+# also discarded: Juncus effusus, which requires infrataxonomic resolution
 
 # Add to record of unmatched names
 
@@ -423,7 +423,7 @@ nrow(Lomer.2022.names.matched)+nrow(Lomer.2022.names.unmatched)
 # Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 # Note: some of the code below is not needed after reviewing and generating new key
 
-Lomer.key <- read.csv("keys/Lomer_2022_unmatched_taxon_key.csv")
+Lomer.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv")
 
 # Swap unmatched names using key
 
@@ -527,48 +527,162 @@ unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Lomer
 
 
 
-
 # Read RBCM Records 
 # Note: it looks like you may be losing 10 records; double check these data outputs!
 
 RBCM.georeferencing.corrected <- read.csv("digitized/RBCM_vascular_plant_records_georeferencing_corrected_2021-12-05.csv") # Note: georeferencing still needs to be reviewed; at least one obs incorrectly mapped on Mount Galiano
 
+# Generate Taxon field to facilitate join
+
+RBCM.georeferencing.corrected$Taxon <- paste(RBCM.georeferencing.corrected$Genus,RBCM.georeferencing.corrected$Species)
+
+# Standardize columns
+
+RBCM.georeferencing.corrected$Source <- "RBCM"
+RBCM.georeferencing.corrected$Geo_Ref <- "Coordinates generalized based on mapped locality information"
+RBCM.georeferencing.corrected$PositionalAccuracy <- 100 # reconsider positional accuracy
+RBCM.georeferencing.corrected$GeoPrivacy <- NA
+RBCM.georeferencing.corrected$PrivateLatitude <- NA
+RBCM.georeferencing.corrected$PrivateLongitude <- NA
+
 # Select key columns
 
-RBCM.georeferencing.corrected <-  RBCM.georeferencing.corrected %>% select(Genus, Species, CatalogueN, Collector, 
-    Collecti_1, Prov_State, District, LocationNa, LocationDe, Latitude, Longitude, HabitatRem, Geo_Ref)
+RBCM.georeferencing.corrected <- RBCM.georeferencing.corrected %>% select(Taxon,Source,CatalogueN,Collector,
+        Collecti_1,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,
+        Prov_State,District,LocationNa,LocationDe,HabitatRem)
+
+# Standardize column names to facilitate join
+
+names(RBCM.georeferencing.corrected) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude',
+        'Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region',
+        'Location','LocationDe','HabitatRemarks')
+
+# Confirm number of records
+
+nrow(RBCM.georeferencing.corrected) # 139 records
 
 # Merge with summary to standardize names and taxon metadata
 
-nrow(RBCM.georeferencing.corrected) # Confirm record # (139)
+RBCM.georeferencing.corrected.names.matched <- left_join(RBCM.georeferencing.corrected, summary, by = c('Taxon'))
 
-RBCM.georeferencing.corrected.names.matched <- inner_join(summary, RBCM.georeferencing.corrected, by = c('Genus','Species'))
+# Unmatched records
 
-# Standardize fields
+RBCM.georeferencing.corrected.names.unmatched <- RBCM.georeferencing.corrected.names.matched[is.na(RBCM.georeferencing.corrected.names.matched$Taxon.Author),]
 
-RBCM.georeferencing.corrected.names.matched$Source <- 'RBCM'
-RBCM.georeferencing.corrected.names.matched$PositionalAccuracy <- NA
-RBCM.georeferencing.corrected.names.matched$GeoPrivacy <- NA
-RBCM.georeferencing.corrected.names.matched$PrivateLatitude <- NA
-RBCM.georeferencing.corrected.names.matched$PrivateLongitude <- NA
+# Matched records
+
+RBCM.georeferencing.corrected.names.matched <- anti_join(RBCM.georeferencing.corrected.names.matched,RBCM.georeferencing.corrected.names.unmatched,by='CatalogueN')
+
+# Standardize matched occurence records
 
 RBCM.georeferencing.corrected.names.matched <- RBCM.georeferencing.corrected.names.matched %>% select(Taxon,ID,
-    Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,
-    Collecti_1,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,
-    District,LocationNa,LocationDe,HabitatRem,Origin,Provincial.Status,National.Status)
+        Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,
+        Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
+        Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
 
 names(RBCM.georeferencing.corrected.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
-    'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
-    'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
-    'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
-    'National.Status')
+        'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
+        'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
+        'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
+        'National.Status')
 
-nrow(RBCM.georeferencing.corrected) # Confirm all records are retained after merging with summary columns
+# Confirm all records are represented 
 
-RBCM.vascular.plant.records <- RBCM.georeferencing.corrected.names.matched
+nrow(RBCM.georeferencing.corrected)
+nrow(RBCM.georeferencing.corrected.names.matched)
+nrow(RBCM.georeferencing.corrected.names.unmatched)
+nrow(RBCM.georeferencing.corrected.names.matched)+nrow(RBCM.georeferencing.corrected.names.unmatched)
 
-nrow(RBCM.vascular.plant.records) # ten missing records?
+# Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+# Note: some of the code below is not needed after reviewing and generating new key
 
+RBCM.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv")
+
+# Swap unmatched names using key
+
+RBCM.georeferencing.corrected.names.unmatched.matched <- RBCM.georeferencing.corrected.names.unmatched
+
+RBCM.georeferencing.corrected.names.unmatched.matched$Taxon <- RBCM.key$Matched.Taxon[match(unlist(RBCM.georeferencing.corrected.names.unmatched.matched$Taxon), RBCM.key$Taxon)]
+
+# Remove unmatched fields prior to rejoining with summary
+
+RBCM.georeferencing.corrected.names.unmatched.matched <- select(RBCM.georeferencing.corrected.names.unmatched.matched, c(1:17))
+
+# Merge with newly matched records with  summary to standardize names and taxon metadata
+
+RBCM.georeferencing.corrected.names.unmatched.matched <- left_join(RBCM.georeferencing.corrected.names.unmatched.matched,summary, by = c('Taxon'))
+
+# Drop NAs (taxa not recognized in summary)
+
+RBCM.georeferencing.corrected.names.unmatched.matched <- RBCM.georeferencing.corrected.names.unmatched.matched %>% drop_na(Taxon)
+
+# Standardize matched occurrence records
+
+RBCM.georeferencing.corrected.names.unmatched.matched <- RBCM.georeferencing.corrected.names.unmatched.matched %>% 
+          select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,
+          Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,
+          Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+names(RBCM.georeferencing.corrected.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order',
+        'Family','Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
+        'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
+        'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+
+# Select names unmatched based on key
+
+RBCM.georeferencing.corrected.names.unmatched.unmatched <- anti_join(RBCM.georeferencing.corrected.names.unmatched,RBCM.georeferencing.corrected.names.unmatched.matched,by='CatalogueN')
+
+# Confirm all records are represented 
+
+nrow(RBCM.georeferencing.corrected)
+nrow(RBCM.georeferencing.corrected.names.matched)
+nrow(RBCM.georeferencing.corrected.names.unmatched)
+nrow(RBCM.georeferencing.corrected.names.unmatched.matched)
+nrow(RBCM.georeferencing.corrected.names.unmatched.unmatched)
+nrow(RBCM.georeferencing.corrected.names.matched)+nrow(RBCM.georeferencing.corrected.names.unmatched.matched)+nrow(RBCM.georeferencing.corrected.names.unmatched.unmatched)
+
+# Bind records
+
+RBCM.georeferencing.corrected.records <- rbind(RBCM.georeferencing.corrected.names.matched,RBCM.georeferencing.corrected.names.unmatched.matched)
+
+# Compare records in and out
+
+nrow(RBCM.georeferencing.corrected)
+nrow(RBCM.georeferencing.corrected.records) # 5 records discarded
+
+# discarded records include those that cannot be reconciled with summary due to lack of infrataxonic specificity
+# Note: it should be possible to match Phragmites australis with a refresh of RBCM data
+
+# Add to record of unmatched names
+
+RBCM.georeferencing.corrected.names.unmatched.unmatched <- RBCM.georeferencing.corrected.names.unmatched.unmatched %>% 
+        select(Taxon,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,
+        PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
+        National.Status)
+
+unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,RBCM.georeferencing.corrected.names.unmatched.unmatched)
+
+# Generate new key with mismatched names
+
+# RBCM.unmatched.Genus <- RBCM.georeferencing.corrected.names.unmatched$Genus
+# RBCM.unmatched.Species <- RBCM.georeferencing.corrected.names.unmatched$Species
+# RBCM.unmatched.Subspecies <- RBCM.georeferencing.corrected.names.unmatched$Subspecies
+# RBCM.unmatched.Variety <- RBCM.georeferencing.corrected.names.unmatched$Variety
+# RBCM.unmatched.Hybrid <- RBCM.georeferencing.corrected.names.unmatched$Hybrid
+
+# RBCM.mismatched.key <- data.frame(RBCM.unmatched.Genus,RBCM.unmatched.Species,RBCM.unmatched.Subspecies,RBCM.unmatched.Variety,RBCM.unmatched.Hybrid)
+
+# RBCM.mismatched.key$Taxon <- paste(RBCM.unmatched.Genus,RBCM.unmatched.Species)
+# RBCM.mismatched.key$Form <- NA
+# RBCM.mismatched.key$Matched.Taxon <- NA
+
+# names(RBCM.mismatched.key) <- c('Genus','Species','Subspecies','Variety','Hybrid','Taxon','Form','Matched.Taxon')
+
+# RCM.mismatched.key <- RBCM.mismatched.key %>% select('Taxon','Genus','Species','Hybrid','Subspecies','Variety','Form','Matched.Taxon')
+
+# vascular.plant.taxon.key.review <- rbind(Lomer.key,RBCM.mismatched.key)
+
+# write.csv(vascular.plant.taxon.key.review,"vascular_plant_taxon_key_review.csv")
 
 
 
