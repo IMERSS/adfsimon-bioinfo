@@ -641,12 +641,12 @@ nrow(RBCM.georeferencing.corrected.names.matched)+nrow(RBCM.georeferencing.corre
 
 # Bind records
 
-RBCM.georeferencing.corrected.records <- rbind(RBCM.georeferencing.corrected.names.matched,RBCM.georeferencing.corrected.names.unmatched.matched)
+RBCM.records <- rbind(RBCM.georeferencing.corrected.names.matched,RBCM.georeferencing.corrected.names.unmatched.matched)
 
 # Compare records in and out
 
 nrow(RBCM.georeferencing.corrected)
-nrow(RBCM.georeferencing.corrected.records) # 5 records discarded
+nrow(RBCM.records) # 5 records discarded
 
 # discarded records include those that cannot be reconciled with summary due to lack of infrataxonic specificity
 # Note: it should be possible to match Phragmites australis with a refresh of RBCM data
@@ -991,7 +991,7 @@ unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Simon
 
 # Combine all source occurrence records
 
-Vascular.plant.records <- rbind(Ecological.Reserve.128.records,Hunterston.2010.records,Roemer.2004.records,RBCM.vascular.plant.records,Simon.2018.records,Lomer.2022.records)
+Vascular.plant.records <- rbind(Ecological.Reserve.128.records,Hunterston.2010.records,Roemer.2004.records,RBCM.records,Simon.2018.records,Lomer.2022.records)
 
 # Combine with iNaturalist observations
 
