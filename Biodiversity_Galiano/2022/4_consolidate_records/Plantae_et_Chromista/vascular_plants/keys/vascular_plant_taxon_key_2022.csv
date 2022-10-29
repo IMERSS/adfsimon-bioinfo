@@ -9,6 +9,7 @@ Agoseris grandiflora,Agoseris,grandiflora,,,,,Agoseris grandiflora var. leptophy
 Agoseris grandiflora leptophylla,Agoseris,grandiflora,,,leptophylla,,Agoseris grandiflora var. leptophylla
 Agoseris heterophylla,Agoseris,heterophylla,,,,,Agoseris heterophylla ssp. heterophylla
 Agoseris heterophylla heterophylla,Agoseris,heterophylla,,heterophylla,,,Agoseris heterophylla ssp. heterophylla
+Agropyron repens,Agropyron,repens,,,,,Elymus repens
 Amelanchier alnifolia semiintegrifolia,Amelanchier,alnifolia,,,semiintegrifolia,,Amelanchier alnifolia
 Amsinckia retrorsa,Amsinckia,retrorsa,,,,,Amsinckia menziesii
 Anthoxanthum aristatum,Anthoxanthum,aristatum,,,,,Anthoxanthum aristatum spp. aristatum
@@ -22,6 +23,7 @@ Artemisia campestris,Artemisia,campestris,,,,,Artemisia campestris ssp. pacifica
 Asplenium trichomanes,Asplenium,trichomanes,,,,,Asplenium trichomanes ssp. trichomanes
 Aster chilensis,Aster,chilensis,,,,,Symphyotrichum chilense
 Athyrium filix-femina,Athyrium,filix-femina,,,,,Athyrium filix-femina ssp. cyclosorum
+Blechnum spicant,Blechnum,spicant,,,,,Struthiopteris spicant
 Botrychium silaifolium,Botrychium,silaifolium,,,,,Sceptridium multifidum
 Brodiaea coronaria coronaria,Brodiaea,coronaria,,coronaria,,,Brodiaea coronaria
 Bromus carinatus,Bromus,carinatus,,,,,Bromus carinatus var. carinatus
@@ -60,9 +62,9 @@ Chimaphila umbellata,Chimaphila,umbellata,,,,,Chimaphila umbellata ssp. umbellat
 Clarkia amoena,Clarkia,amoena,,,,,Clarkia amoena
 Clarkia amoena caurina,Clarkia,amoena,,caurina,,,Clarkia amoena ssp. caurina
 Clarkia amoena caurina,Clarkia,amoena,,,caurina,,Clarkia amoena ssp. caurina
-Clarkia amoena var. caurina,Clarkia,amoena,,,caurina,,Clarkia amoena ssp. caurina
 Clarkia amoena lindleyi,Clarkia,amoena,,lindleyi,,,Clarkia amoena ssp. lindleyi
 Clarkia amoena lindleyi,Clarkia,amoena,,,lindleyi,,Clarkia amoena ssp. lindleyi
+Clarkia amoena var. caurina,Clarkia,amoena,,,caurina,,Clarkia amoena ssp. caurina
 Claytonia exigua,Claytonia,exigua,,,,,Claytonia exigua ssp. exigua
 Claytonia exigua exigua,Claytonia,exigua,,exigua,,,Claytonia exigua ssp. exigua
 Claytonia rubra,Claytonia,rubra,,,,,Claytonia rubra ssp. depressa
@@ -84,6 +86,7 @@ Danthonia decumbens x californica,Danthonia,decumbens,Danthonia decumbens x cali
 Dodecatheon pulchellum,Dodecatheon,pulchellum,,,,,Primula pauciflora var. pauciflora
 Elymus glaucus,Elymus,glaucus,,,,,Elymus glaucus ssp. glaucus
 Elymus glaucus glaucus,Elymus,glaucus,,glaucus,,,Elymus glaucus ssp. glaucus
+Epilobium angustifolium,Epilobium,angustifolium,,,,,Chamaenerion angustifolium
 Equisetum hyemale,Equisetum,hyemale,,,,,Equisetum hyemale ssp. affine
 Equisetum hyemale affine,Equisetum,hyemale,,affine,,,Equisetum hyemale ssp. affine
 Equisetum telmateia,Equisetum,telmateia,,,,,Equisetum telmateia ssp. braunii
@@ -131,6 +134,7 @@ Kalmia microphylla,Kalmia,microphylla,,,,,Kalmia microphylla var. occidentalis
 Kalmia microphylla occidentalis,Kalmia,microphylla,,,occidentalis,,Kalmia microphylla var. occidentalis
 Kalmia polifolia,Kalmia,polifolia,,,,,Kalmia microphylla var. occidentalis
 Kalmia polifolia ssp. microphylla,Kalmia,polifolia,,microphylla,,,Kalmia microphylla var. occidentalis
+Lactuca muralis,Lactuca,muralis,,,,,Mycelis muralis
 Lamium hybridum,Lamium,hybridum,,,,,Lamium purpureum var. hybridum
 Lamium purpureum purpureum,Lamium,purpureum,,,purpureum,,Lamium purpureum
 Lathyrus nevadensis,Lathyrus,nevadensis,,,,,Lathyrus nevadensis var. pilosellus
@@ -154,10 +158,12 @@ Lychnis coronaria,Lychnis,coronaria,,,,,Silene coronaria
 Lysichiton americanum,Lysichiton,americanum,,,,,Lysichiton americanus
 Lysimachia europaea,Lysimachia,europaea,,,,,Lysimachia europaea ssp. arctica
 Lysimachia europaea arctica,Lysimachia,europaea,,arctica,,,Lysimachia europaea ssp. arctica
+Mahonia nervosa,Mahonia,nervosa,,,,,Berberis nervosa
 Malus domestica,Malus,domestica,,,,,Malus pumila
 Malus x domestica,Malus,,Malus x domestica,Malus x domestica,,,Malus domestica
 Malus x_domestica,Malus,,Malus x domestica,,,,Malus domestica
 Mentha arvensis,Mentha,arvensis,,,,,Mentha canadensis
+Mimulus moschatus,Mimulus,moschatus,,,,,Erythranthe moschata
 Myriophyllum,Myriophyllum,,,,,,Myriophyllum sp.
 Myriophyllum ,Myriophyllum ,,,,,,Myriophyllum sp.
 Myriophyllum verticillatum,Myriophyllum,verticillatum,,,,,Myriophyllum sp.
@@ -171,6 +177,7 @@ Phragmites communis,Phragmites,communis,,,,,Phragmites australis ssp. americanus
 Pinus contorta,Pinus,contorta,,,,,Pinus contorta ssp. contorta
 Pinus contorta contorta,Pinus,contorta,,contorta,,,Pinus contorta ssp. contorta
 Pinus contorta contorta,Pinus,contorta,,,contorta,,Pinus contorta ssp. contorta
+Pinus contorta var. contorta,Pinus,contorta,,,contorta,,Pinus contorta ssp. contorta
 Pinus ponderosa,Pinus,ponderosa,,,,,Pinus ponderosa var. ponderosa
 Pinus ponderosa ponderosa,Pinus,ponderosa,,,ponderosa,,Pinus ponderosa var. ponderosa
 Piperia elegans,Piperia,elegans,,,,,Platanthera elongata
@@ -186,12 +193,14 @@ Poa secunda secunda,Poa,secunda,,secunda,,,Poa secunda
 Poa secunda ssp. secunda,Poa,secunda,,secunda,,,Poa secunda
 Polygonum amphibium,Polygonum,amphibium,,,,,Persicaria amphibia
 Potentilla egedii,Potentilla,egedii,,,,,Argentina anserina
+Potentilla palustris,Potentilla,palustris,,,,,Comarum palustre
 Prunella vulgaris,Prunella,vulgaris,,,,,Prunella vulgaris var. vulgaris
 Prunella vulgaris vulgaris,Prunella,vulgaris,,vulgaris,,,Prunella vulgaris var. vulgaris
 Prunus emarginata,Prunus,emarginata,,,,,Prunus emarginata var. emarginata
 Prunus emarginata emarginata,Prunus,emarginata,,,emarginata,,Prunus emarginata var. emarginata
 Pseudotsuga menziesii,Pseudotsuga,menziesii,,,,,Pseudotsuga menziesii var. menziesii
 Pseudotsuga menziesii menziesii,Pseudotsuga,menziesii,,,menziesii,,Pseudotsuga menziesii var. menziesii
+Pseudotsuga menziesii ssp. menziesii,Pseudotsuga,menziesii,,menziesii,,,Pseudotsuga menziesii var. menziesii
 Pteridium aquilinum,Pteridium,aquilinum,,,,,Pteridium aquilinum ssp. pubescens
 Pteridium aquilinum pubescens,Pteridium,aquilinum,,,pubescens,,Pteridium aquilinum ssp. pubescens
 Quercus garryana,Quercus,garryana,,,,,Quercus garryana var. garryana
@@ -212,6 +221,7 @@ Rosa gymnocarpa gymnocarpa,Rosa,gymnocarpa,,,gymnocarpa,,Rosa gymnocarpa
 Rosa nutkana,Rosa,nutkana,,,,,Rosa nutkana ssp. nutkana
 Rosa nutkana nutkana,Rosa,nutkana,,nutkana,,,Rosa nutkana ssp. nutkana
 Rubus armeniacus,Rubus,armeniacus,,,,,Rubus bifrons
+Rubus discolor,Rubus,discolor,,,,,Rubus bifrons
 Rubus spectabilis spectabilis,Rubus,spectabilis,,,spectabilis,,Rubus spectabilis
 Rumex salicifolius,Rumex,salicifolius,,,,,Rumex transitorius
 Sagina decumbens,Sagina,decumbens,,,,,Sagina decumbens ssp. occidentalis
@@ -222,6 +232,7 @@ Salix lasiandra lasiandra,Salix,lasiandra,,,lasiandra,,Salix lasiandra var. lasi
 Sambucus racemosa,Sambucus,racemosa,,,,,Sambucus racemosa var. arborescens
 Sambucus racemosa arborescens,Sambucus,racemosa,,,arborescens,,Sambucus racemosa var. arborescens
 Sambucus racemosa racemosa,Sambucus,racemosa,,racemosa,,,Sambucus racemosa var. arborescens
+Sambucus racemosa ssp. pubens,Sambucus,racemosa,,pubens,,,Sambucus racemosa var. arborescens
 Sanicula crassicaulis,Sanicula,crassicaulis,,,,,Sanicula crassicaulis var. crassicaulis
 Sanicula crassicaulis crassicaulis,Sanicula,crassicaulis,,,crassicaulis,,Sanicula crassicaulis var. crassicaulis
 Sanicula crassicaulis tripartita,Sanicula,crassicaulis,,,tripartita,,Sanicula crassicaulis var. tripartita
@@ -241,6 +252,7 @@ Spergularia macrotheca macrotheca,Spergularia,macrotheca,,,macrotheca,,Spergular
 Spergularia salina,Spergularia,salina,,,,,Spergularia marina
 Spiraea douglasii,Spiraea,douglasii,,,,,Spiraea douglasii var. douglasii
 Spiraea douglasii douglasii,Spiraea,douglasii,,,douglasii,,Spiraea douglasii var. douglasii
+Spirea douglasii spp. douglasii,Spirea,douglasii,,douglasii,,,Spiraea douglasii var. douglasii
 Stachys chamissonis,Stachys,chamissonis,,,,,Stachys chamissonis var. cooleyae
 Stachys chamissonis cooleyae,Stachys,chamissonis,,,cooleyae,,Stachys chamissonis var. cooleyae
 Stachys cooleyae,Stachys,cooleyae,,,,,Stachys chamissonis var. cooleyae
@@ -263,6 +275,7 @@ Trifolium willdenowii,Trifolium,willdenowii,,,,,Trifolium willdenovii
 Utricularia vulgaris,Utricularia,vulgaris,,,,,Utricularia vulgaris ssp. macrorhiza
 Vaccinium oxycoccus,Vaccinium,oxycoccus,,,,,Vaccinium oxycoccos
 Veronica beccabunga,Veronica,beccabunga,,,,,Veronica americana
+Veronica beccabunga ssp. americana,Veronica,beccabunga,,americana,,,Veronica americana
 Veronica peregrina,Veronica,peregrina,,,peregrina,,Veronica peregrina var. peregrina
 Veronica peregrina peregrina,Veronica,peregrina,,peregrina,,,Veronica peregrina var. peregrina
 Veronica serpyllifolia serpyllifolia,Veronica,serpyllifolia,,serpyllifolia,,,Veronica serpyllifolia

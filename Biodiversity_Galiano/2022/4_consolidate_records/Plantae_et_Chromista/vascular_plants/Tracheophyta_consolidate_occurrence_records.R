@@ -1,4 +1,4 @@
-# Script to consolidate occurrence records of Galiano Island's vascular plants
+# Script to consolidate records of Galiano Island's vascular plants
 
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
@@ -12,23 +12,28 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summary/Tracheophyta_review_summary_reviewed_2022-10-26.csv")
+summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summary/Tracheophyta_review_summary_reviewed_2022-10-29.csv")
 
-# Read occurrence records
+# Consolidate records
 
 # Sources:
 
-# BC Conservation Data Centre - not yet added
-# Consortium of PNW Herbaria: BABY, RBCM, UBC, WS, WTU - some RBCM records already added; otherwise incomplete
+# ! BC Conservation Data Centre - not yet added!
+# ! Brothers 2020 records - not yet added!
+# ! Consortium of PNW Herbaria: BABY, RBCM, UBC, WS, WTU - some RBCM records already added; otherwise incomplete
+# DL63 Veg List 2001-2002 - added - ! georeferencing might be improved!
+# Ecological Reserve 128 records - added
+# ! GCA DL63 VEGETATION INVENTORY - not yet added!
 # Hunterston 2010 - added
 # iNaturalist 2016-2022 - added
-# Janszen 2000 - added
+# ! Janszen 2001 - not yet added!
+# Laughlin Lake 2002 - added - ! georeferencing might be improved!
 # Lomer 2022 - added
-# RBCM - added, but incomplete; some records with geo-referencing (partly) corrected
+# ! RBCM - added, but incomplete; ! some records with geo-referencing (partly) corrected!
 # Roemer 2004 - added
 # Simon 2018 - added
-
-
+# ! Terry Taylor Galiano Island list 2012 - not yet added!
+# ! UBC records - not yet added! 
 
 # Read Ecological Reserve 128 records (Roemer & Janszen 1980, Roemer 2000)
 
@@ -40,12 +45,12 @@ Ecological.Reserve.128 <- Ecological.Reserve.128 %>% filter(Group == 'vascular p
 
 # Create unique identifiers for observations
 
-unique.prefix <- "JANSZEN2000:"
+unique.prefix <- "ROEMER2000:"
 unique.suffix <- 1:nrow(Ecological.Reserve.128)
 
 # Standardize columns
 
-Ecological.Reserve.128$Source <- "Galiano Bog Plant List (Janszen 2000)"
+Ecological.Reserve.128$Source <- "Galiano Bog Plant List (Roemer 2000)"
 Ecological.Reserve.128$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
 Ecological.Reserve.128$Latitude <- 48.983312863031706
 Ecological.Reserve.128$Longitude <- -123.55665029568577
@@ -64,15 +69,13 @@ Ecological.Reserve.128$LocationDe <- "Ecological Reserve 128"
 
 # Select key columns
 
-Ecological.Reserve.128 <- Ecological.Reserve.128 %>% select(Species,Source,CatalogueN,Observer,Date,Latitude,
-        Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
-        Location,LocationDe,HabitatRemarks)
+Ecological.Reserve.128 <- Ecological.Reserve.128 %>% select(Species,Source,CatalogueN,Observer,Date,Latitude,Longitude,Geo_Ref,
+        PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks)
 
 # Standardize column names to facilitate join
 
-names(Ecological.Reserve.128) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref',
-        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
-        'LocationDe','HabitatRemarks')
+names(Ecological.Reserve.128) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
+        'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDe','HabitatRemarks')
 
 # Merge with summary to standardize names and taxon metadata
 
@@ -88,15 +91,15 @@ Ecological.Reserve.128.names.matched <- anti_join(Ecological.Reserve.128.names.m
 
 # Standardize matched occcurence records
 
-Ecological.Reserve.128.names.matched <- Ecological.Reserve.128.names.matched %>% select(Taxon,ID,Kingdom,Phylum,
-        Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,
-        Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,
-        LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+Ecological.Reserve.128.names.matched <- Ecological.Reserve.128.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,
+        Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
+        GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
+        National.Status)
 
-names(Ecological.Reserve.128.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
-        'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude',
-        'Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State',
-        'Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+names(Ecological.Reserve.128.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
+        'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
+        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription'
+        ,'HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 # Confirm all records are represented 
 
@@ -132,16 +135,15 @@ Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.u
 
 # Standardize matched occurrence records
 
-Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.unmatched.matched %>% select(Taxon,
-        ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,
-        Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,
-        Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,
+        Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,
+        PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,
+        Provincial.Status,National.Status)
 
-names(Ecological.Reserve.128.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order',
-        'Family','Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
-        'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
-        'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
-        'National.Status')
+names(Ecological.Reserve.128.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
+        'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
+        'Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
+        'LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 # Select names unmatched based on key
 
@@ -172,10 +174,9 @@ nrow(Ecological.Reserve.128.records) # Good: only five records discarded, accoun
 
 # Start record of unmatched names
 
-unmatched.vascular.plant.records <- Ecological.Reserve.128.names.unmatched.unmatched %>% select(Taxon,
-        Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,
-        PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,
-        Provincial.Status,National.Status)
+unmatched.vascular.plant.records <- Ecological.Reserve.128.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,
+        Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
+        Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
 
 unmatched.vascular.plant.records
 
@@ -196,6 +197,181 @@ unmatched.vascular.plant.records
 # Janszen.2000.key <- rbind(Ecological.Reserve.128.key,unmatched.taxa)
 
 # write.csv(Janszen.2000.key,"Janszen.2000.key.csv")
+
+
+
+# Read DL63 records (GCA 2002)
+
+DL63 <- read.csv("digitized/DL63_veg_list_2001-2002.csv")
+
+# Filter plants
+
+DL63 <- DL63 %>% filter(Group == 'vascular')
+
+# Create unique identifiers for observations
+
+unique.prefix <- "GCA2002:"
+unique.suffix <- 1:nrow(DL63)
+
+# Standardize columns
+
+DL63$Source <- "DL63 Veg List (GCA 2002)"
+DL63$Observer <- "Nathan Gaylor, Odin Scholz, & Keith Erickson"
+DL63$Date <- '2002-03-01'
+DL63$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
+DL63$Latitude <- 48.9461935029653
+DL63$Longitude <- -123.4819644973277
+DL63$Geo_Ref <- "Coordinates generalized based on locality information"
+DL63$HabitatRemarks <- NA
+DL63$PositionalAccuracy <- 500
+DL63$GeoPrivacy <- NA
+DL63$PrivateLatitude <- NA
+DL63$PrivateLongitude <- NA
+DL63$PrivateLatitude <- NA
+DL63$PrivateLongitude <- NA
+DL63$Prov_State <- "British Columbia"
+DL63$Region <- "Gulf Islands"
+DL63$Location <- "Galiano Island"
+DL63$LocationDe <- "District Lot 63, Pebble Beach Reserve"
+
+# Drop / correct spurious reports
+
+DL63 <- DL63 %>% filter(!str_detect(Scientific.Name, 'Cardamine angulata')) # This might be Cardamine nuttallii but cannot be certain
+
+DL63 <- DL63 %>% filter(!str_detect(Scientific.Name, 'Fraxinus latifolia')) # Not known to southern Gulf Islands; likely misidentified
+
+DL63$Scientific.Name[DL63$Scientific.Name == 'Fragaria virginiana'] <- 'Fragaria vesca' # Reports of F. virginiana invariably apply to F. vesca on Galiano
+
+DL63$Scientific.Name[DL63$Scientific.Name == 'Sorbus sitchensis'] <- 'Sorbus aucuparia' # Sorbus sitchensis not known to occur on Galiano Island; S. aucuparia confirmed for Pebble Beach and commonly conflated
+
+DL63$Scientific.Name[DL63$Scientific.Name == 'Trientalis borealis'] <- 'Lysimachia latifolia' # Trientalis borealis misapplied; Lysimachia latifolia recognized as present
+
+DL63$Scientific.Name[DL63$Scientific.Name == 'Vaccinium ovalifolium'] <- 'Vaccinium ovatum' # Vaccinium ovalifolium likely misapplied, or typo (Keith Erickson, pers. comm. 2022); V. ovatum recognized as present
+  
+# Select key columns
+
+DL63 <- DL63 %>% select(Scientific.Name,Source,CatalogueN,Observer,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,
+        PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks)
+
+# Standardize column names to facilitate join
+
+names(DL63) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref',
+                 'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
+                 'LocationDe','HabitatRemarks')
+
+# Merge with summary to standardize names and taxon metadata
+
+DL63.names.matched <- left_join(DL63,summary, by = c('Taxon'))
+
+# Unmatched records
+
+DL63.names.unmatched <- DL63.names.matched[is.na(DL63.names.matched$Taxon.Author),]
+
+# Matched records
+
+DL63.names.matched <- anti_join(DL63.names.matched,DL63.names.unmatched)
+
+# Standardize matched occcurence records
+
+DL63.names.matched <- DL63.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,
+        Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,
+        PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+names(DL63.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid','Subspecies',
+        'Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy',
+        'PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin',
+        'Provincial.Status','National.Status')
+
+# Confirm all records are represented 
+
+nrow(DL63)
+nrow(DL63.names.matched)
+nrow(DL63.names.unmatched)
+nrow(DL63.names.matched)+nrow(DL63.names.unmatched)
+
+# Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+# Note: some of the code below is not needed after reviewing and generating new key
+
+DL63.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+
+# Note: key updated based on this data set; code for generating key blotted out below
+
+# key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+
+# unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(DL63.names.unmatched.unmatched)))
+# names(unmatched.taxa) <- key.field.names
+
+# unmatched.taxa$Taxon <- DL63.names.unmatched.unmatched$Taxon
+
+# unmatched.taxa$Genus <- word(DL63.names.unmatched.unmatched$Taxon, 1)
+
+# unmatched.taxa$Species <- word(DL63.names.unmatched.unmatched$Taxon, 2)
+
+# review.key <- rbind(DL63.key,unmatched.taxa)
+
+# write.csv(review.key,"review.key.csv")
+
+# Swap unmatched names using key
+
+DL63.names.unmatched.matched <- DL63.names.unmatched
+
+DL63.names.unmatched.matched$Taxon <- DL63.key$Matched.Taxon[match(unlist(DL63.names.unmatched.matched$Taxon), DL63.key$Taxon)]
+
+# Remove unmatched fields prior to rejoining with summary
+
+DL63.names.unmatched.matched <- select(DL63.names.unmatched.matched, c(1:17))
+
+# Merge with newly matched records with  summary to standardize names and taxon metadata
+
+DL63.names.unmatched.matched <- left_join(DL63.names.unmatched.matched,summary, by = c('Taxon'))
+
+# Drop NAs (taxa not recognized in summary)
+
+DL63.names.unmatched.matched <- DL63.names.unmatched.matched %>% drop_na(Taxon)
+
+# Standardize matched occurrence records
+
+DL63.names.unmatched.matched <- DL63.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,
+        Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,
+        PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+names(DL63.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid',
+        'Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
+        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription',
+        'HabitatRemarks','Origin','Provincial.Status','National.Status')
+
+# Select names unmatched based on key
+
+DL63.names.unmatched.unmatched <- anti_join(DL63.names.unmatched,DL63.names.unmatched.matched,by='CatalogueN')
+
+# Confirm all records are represented 
+
+nrow(DL63)
+nrow(DL63.names.matched)
+nrow(DL63.names.unmatched)
+nrow(DL63.names.unmatched.matched)
+nrow(DL63.names.unmatched.unmatched)
+nrow(DL63.names.matched)+nrow(DL63.names.unmatched.matched)+nrow(DL63.names.unmatched.unmatched)
+
+# Bind records
+
+DL63.records <- rbind(DL63.names.matched,DL63.names.unmatched.matched)
+
+# Compare records in and out
+
+nrow(DL63)
+nrow(DL63.records) # Good: only five records discarded, accounted for above.
+
+# Note: taxa unrecognized in summary, and hence excluded from catalog, are all species identified only to genus.
+# See also misreported taxa manually excluded from data set above
+
+# Add to record of unmatched names
+
+DL63.names.unmatched.unmatched <- DL63.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,Date,Latitude,
+        Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,
+        HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,DL63.names.unmatched.unmatched)
 
 
 
@@ -363,6 +539,172 @@ unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Hunte
 
 
 
+# Read Laughlin Lake 2002 records (GCA 2002)
+
+Laughlin.2002 <- read.csv("digitized/Laughlin_Vegetation_Data_2002-08-20.csv")
+
+# Create unique identifiers for observations
+
+unique.prefix <- "GCA2002-2:"
+unique.suffix <- 1:nrow(Laughlin.2002)
+
+# Standardize columns
+
+Laughlin.2002$Source <- "Laughlin Lake 2002 Vegetation Community List (GCA 2002)"
+Laughlin.2002$Observer <- "Keith Erickson & Steven Gates"
+Laughlin.2002$Date <- '2002-08-20'
+Laughlin.2002$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
+Laughlin.2002$Latitude <- 48.949776874128624
+Laughlin.2002$Longitude <- -123.50573155652819
+Laughlin.2002$Geo_Ref <- "Coordinates generalized based on locality information"
+Laughlin.2002$PositionalAccuracy <- 360
+Laughlin.2002$GeoPrivacy <- NA
+Laughlin.2002$PrivateLatitude <- NA
+Laughlin.2002$PrivateLongitude <- NA
+Laughlin.2002$PrivateLatitude <- NA
+Laughlin.2002$PrivateLongitude <- NA
+Laughlin.2002$Prov_State <- "British Columbia"
+Laughlin.2002$Region <- "Gulf Islands"
+Laughlin.2002$Location <- "Galiano Island"
+Laughlin.2002$LocationDe <- "Laughlin Lake"
+
+# Drop / correct spurious reports
+
+Laughlin.2002 <- Laughlin.2002 %>% filter(!str_detect(Taxon, 'Carex rostrata')) # Out of range on Galiano Island; misreported
+
+Laughlin.2002$Taxon[Laughlin.2002$Taxon == 'Typha latifola'] <- 'Typha angustifolia' # Bullrush at Laughlin Lake has since been confirmed as Typha angustifolium
+
+Laughlin.2002$Taxon[Laughlin.2002$Taxon == 'Epilobium watsonii'] <- 'Typha angustifolia' # Epilobium watsonii some recognize as infrataxon of Epilobium ciliatum; collapsed with Epilobium ciliatum (report noted in curated summary)
+
+# Select key columns
+
+Laughlin.2002 <- Laughlin.2002 %>% select(Taxon,Source,CatalogueN,Observer,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
+        GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,Description.Comments)
+
+# Standardize column names to facilitate join
+
+names(Laughlin.2002) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
+        'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDe','HabitatRemarks')
+
+# Merge with summary to standardize names and taxon metadata
+
+Laughlin.2002.names.matched <- left_join(Laughlin.2002,summary, by = c('Taxon'))
+
+# Unmatched records
+
+Laughlin.2002.names.unmatched <- Laughlin.2002.names.matched[is.na(Laughlin.2002.names.matched$Taxon.Author),]
+
+# Matched records
+
+Laughlin.2002.names.matched <- anti_join(Laughlin.2002.names.matched,Laughlin.2002.names.unmatched)
+
+# Standardize matched occcurence records
+
+Laughlin.2002.names.matched <- Laughlin.2002.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,
+        Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,
+        PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
+        National.Status)
+
+names(Laughlin.2002.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid',
+        'Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
+        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
+        'LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+
+# Confirm all records are represented 
+
+nrow(Laughlin.2002)
+nrow(Laughlin.2002.names.matched)
+nrow(Laughlin.2002.names.unmatched)
+nrow(Laughlin.2002.names.matched)+nrow(Laughlin.2002.names.unmatched)
+
+# Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+# Note: some of the code below is not needed after reviewing and generating new key
+
+Laughlin.2002.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+
+# Note: key updated based on this data set; code for generating key blotted out below
+
+# key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+
+# unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Laughlin.2002.names.unmatched.unmatched)))
+# names(unmatched.taxa) <- key.field.names
+
+# unmatched.taxa$Taxon <- Laughlin.2002.names.unmatched.unmatched$Taxon
+
+# unmatched.taxa$Genus <- word(Laughlin.2002.names.unmatched.unmatched$Taxon, 1)
+
+# unmatched.taxa$Species <- word(Laughlin.2002.names.unmatched.unmatched$Taxon, 2)
+
+# review.key <- rbind(Laughlin.2002.key,unmatched.taxa)
+
+# write.csv(review.key,"review.key.csv")
+
+# Swap unmatched names using key
+
+Laughlin.2002.names.unmatched.matched <- Laughlin.2002.names.unmatched
+
+Laughlin.2002.names.unmatched.matched$Taxon <- Laughlin.2002.key$Matched.Taxon[match(unlist(Laughlin.2002.names.unmatched.matched$Taxon), Laughlin.2002.key$Taxon)]
+
+# Remove unmatched fields prior to rejoining with summary
+
+Laughlin.2002.names.unmatched.matched <- select(Laughlin.2002.names.unmatched.matched, c(1:17))
+
+# Merge with newly matched records with  summary to standardize names and taxon metadata
+
+Laughlin.2002.names.unmatched.matched <- left_join(Laughlin.2002.names.unmatched.matched,summary, by = c('Taxon'))
+
+# Drop NAs (taxa not recognized in summary)
+
+Laughlin.2002.names.unmatched.matched <- Laughlin.2002.names.unmatched.matched %>% drop_na(Taxon)
+
+# Standardize matched occurrence records
+
+Laughlin.2002.names.unmatched.matched <- Laughlin.2002.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,
+        Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
+        GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
+        National.Status)
+
+names(Laughlin.2002.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
+        'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
+        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription',
+        'HabitatRemarks','Origin','Provincial.Status','National.Status')
+
+# Select names unmatched based on key
+
+Laughlin.2002.names.unmatched.unmatched <- anti_join(Laughlin.2002.names.unmatched,Laughlin.2002.names.unmatched.matched,by='CatalogueN')
+
+# Confirm all records are represented 
+
+nrow(Laughlin.2002)
+nrow(Laughlin.2002.names.matched)
+nrow(Laughlin.2002.names.unmatched)
+nrow(Laughlin.2002.names.unmatched.matched)
+nrow(Laughlin.2002.names.unmatched.unmatched)
+nrow(Laughlin.2002.names.matched)+nrow(Laughlin.2002.names.unmatched.matched)+nrow(Laughlin.2002.names.unmatched.unmatched)
+
+# Bind records
+
+Laughlin.2002.records <- rbind(Laughlin.2002.names.matched,Laughlin.2002.names.unmatched.matched)
+
+# Compare records in and out
+
+nrow(Laughlin.2002)
+nrow(Laughlin.2002.records) # 18 records discarded
+
+# Note: taxa unrecognized in summary, and hence excluded from catalog, are either indeterminate taxa or Juncus effusus,
+# which cannot be resolved based on the summary due to the lack of infraspecific resolution
+# See also misreported taxa manually addressed above
+
+# Add to record of unmatched names
+
+Laughlin.2002.names.unmatched.unmatched <- Laughlin.2002.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,Date,Latitude,
+                                                                                              Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,
+                                                                                              HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Laughlin.2002.names.unmatched.unmatched)
+
+
+
 # Read Frank Lomer 2022 Records
 # Note: specimens will all be deposited at UBC and should be checked for duplicates against UBC records in the future 
 # Note: review code below for consistency with others when standardizing fields; might be made more concise?
@@ -376,7 +718,6 @@ Lomer.2022 <- Lomer.2022 %>% select(Taxon,Genus,Species,Subspecies,Variety,Locat
 # Normalize date 
 
 Lomer.2022$Date <- strptime(Lomer.2022$Date, "%Y %b %d")
-
 Lomer.2022$Date <-  as.Date(Lomer.2022$Date)
 
 # Confirm number of records (67)
@@ -791,16 +1132,15 @@ Roemer.2004.names.unmatched.matched <- Roemer.2004.names.unmatched.matched %>% d
 
 # Standardize matched occurrence records
 
-Roemer.2004.names.unmatched.matched <- Roemer.2004.names.unmatched.matched %>% select(Taxon,ID,Kingdom,
-                                                                                      Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,
-                                                                                      Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,
-                                                                                      Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+Roemer.2004.names.unmatched.matched <- Roemer.2004.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,
+        Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
+        GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
+        National.Status)
 
-names(Roemer.2004.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
-                                                'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
-                                                'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
-                                                'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
-                                                'National.Status')
+names(Roemer.2004.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
+        'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
+        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription'
+        ,'HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 # Select names unmatched based on key
 
@@ -826,9 +1166,9 @@ nrow(Roemer.2004.records) # 0 records discarded
 
 # Add to record of unmatched names
 
-Roemer.2004.names.unmatched.unmatched <- Roemer.2004.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,
-                                                                                          Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,
-                                                                                          Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+Roemer.2004.names.unmatched.unmatched <- Roemer.2004.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,Date,
+        Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,
+        LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
 
 unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Roemer.2004.names.unmatched.unmatched)
 
@@ -991,7 +1331,8 @@ unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Simon
 
 # Combine all source occurrence records
 
-Vascular.plant.records <- rbind(Ecological.Reserve.128.records,Hunterston.2010.records,Roemer.2004.records,RBCM.records,Simon.2018.records,Lomer.2022.records)
+Vascular.plant.records <- rbind(DL63.records,Ecological.Reserve.128.records,Hunterston.2010.records,Laughlin.2002.records,
+                                Roemer.2004.records,RBCM.records,Simon.2018.records,Lomer.2022.records)
 
 # Combine with iNaturalist observations
 
