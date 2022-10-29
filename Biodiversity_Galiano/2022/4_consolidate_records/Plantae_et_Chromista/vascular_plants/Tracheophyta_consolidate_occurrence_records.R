@@ -219,11 +219,11 @@ DL63$Source <- "DL63 Veg List (GCA 2002)"
 DL63$Observer <- "Nathan Gaylor, Odin Scholz, & Keith Erickson"
 DL63$Date <- '2002-03-01'
 DL63$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
-DL63$Latitude <- 48.9461935029653
-DL63$Longitude <- -123.4819644973277
-DL63$Geo_Ref <- "Coordinates generalized based on locality information"
+DL63$Latitude <- 48.946327
+DL63$Longitude <- -123.493078
+DL63$Geo_Ref <- "Coordinates generalized based on locality information: centroid of District Lot; positional accuracy defining a circle that encompasses the property"
 DL63$HabitatRemarks <- NA
-DL63$PositionalAccuracy <- 500
+DL63$PositionalAccuracy <- 380
 DL63$GeoPrivacy <- NA
 DL63$PrivateLatitude <- NA
 DL63$PrivateLongitude <- NA
