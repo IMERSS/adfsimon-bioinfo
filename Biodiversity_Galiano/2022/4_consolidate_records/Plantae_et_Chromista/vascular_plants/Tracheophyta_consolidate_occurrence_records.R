@@ -18,7 +18,7 @@ summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summ
 
 # Sources:
 
-# ! BC Conservation Data Centre - not yet added!
+# BC Conservation Data Centre - added
 # ! Brothers 2020 records - not yet added!
 # ! Consortium of PNW Herbaria: BABY, RBCM, UBC, WS, WTU - some RBCM records already added; otherwise incomplete
 # DL63 Veg List 2001-2002 - added - ! georeferencing might be improved!
