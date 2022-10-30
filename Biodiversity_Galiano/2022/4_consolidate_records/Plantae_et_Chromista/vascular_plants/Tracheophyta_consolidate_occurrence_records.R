@@ -35,9 +35,174 @@ summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summ
 # ! Terry Taylor Galiano Island list 2012 - not yet added!
 # ! UBC records - not yet added! 
 
+
+
+# Read BC Conservation Data Centre SAR records (BC CDC 2019)
+# Note: request fresh data from BC CDC and ask them to include the EO ID for use as unique ID
+
+BC.CDC.2019 <- read.csv("digitized/BC_Conservation_Data_Centre_Galiano_Island_SAR_2019-10-24.csv")
+
+# Filter CDC obs from collections at other institutions
+
+BC.CDC.2019 <- BC.CDC.2019 %>% filter(InstitutionCode == 'CDC')
+
+# Create unique identifiers for observations
+# Note: this unique ID is not going to work in the long term as these data can be refreshed by the BC CDC at any point
+# Could ask the BC CDC for EO IDs or SF IDs?
+
+unique.prefix <- "BCCDC2019:" 
+unique.suffix <- 1:nrow(BC.CDC.2019)
+
+# Standardize columns
+
+BC.CDC.2019$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
+BC.CDC.2019$Geo_Ref <- NA
+BC.CDC.2019$HabitatRemarks <- NA
+BC.CDC.2019$PositionalAccuracy <- 80
+BC.CDC.2019$GeoPrivacy <- NA
+BC.CDC.2019$PrivateLatitude <- NA
+BC.CDC.2019$PrivateLongitude <- NA
+BC.CDC.2019$PrivateLatitude <- NA
+BC.CDC.2019$PrivateLongitude <- NA
+BC.CDC.2019$Prov_State <- "British Columbia"
+BC.CDC.2019$Region <- "Gulf Islands"
+BC.CDC.2019$Location <- "Galiano Island"
+
+# Select key columns
+
+BC.CDC.2019 <- BC.CDC.2019 %>% select(ScientificName,InstitutionCode,CatalogueN,Collector,EventDate,Latitude,Longitude,Geo_Ref,
+                                      PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,
+                                      Locality,OccurrenceRemarks)
+
+# Standardize column names to facilitate join
+
+names(BC.CDC.2019) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
+                        'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDe',
+                        'HabitatRemarks')
+
+# Merge with summary to standardize names and taxon metadata
+
+BC.CDC.2019.names.matched <- left_join(BC.CDC.2019,summary, by = c('Taxon'))
+
+# Unmatched records
+
+BC.CDC.2019.names.unmatched <- BC.CDC.2019.names.matched[is.na(BC.CDC.2019.names.matched$Taxon.Author),]
+
+# Matched records
+
+BC.CDC.2019.names.matched <- anti_join(BC.CDC.2019.names.matched,BC.CDC.2019.names.unmatched)
+
+# Standardize matched occcurrence records
+
+BC.CDC.2019.names.matched <- BC.CDC.2019.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,
+        Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,
+        PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
+        National.Status)
+
+names(BC.CDC.2019.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid',
+        'Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
+        'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription','HabitatRemarks',
+        'Origin','Provincial.Status','National.Status')
+
+# Confirm all records are represented 
+
+nrow(BC.CDC.2019)
+nrow(BC.CDC.2019.names.matched)
+nrow(BC.CDC.2019.names.unmatched)
+nrow(BC.CDC.2019.names.matched)+nrow(BC.CDC.2019.names.unmatched)
+
+# Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+# Note: some of the code below is not needed after reviewing and generating new key
+
+BC.CDC.2019.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+
+# Note: key updated based on this data set; code for generating key blotted out below
+
+# key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+
+# unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(BC.CDC.2019.names.unmatched.unmatched)))
+# names(unmatched.taxa) <- key.field.names
+
+# unmatched.taxa$Taxon <- BC.CDC.2019.names.unmatched.unmatched$Taxon
+
+# unmatched.taxa$Genus <- word(BC.CDC.2019.names.unmatched.unmatched$Taxon, 1)
+
+# unmatched.taxa$Species <- word(BC.CDC.2019.names.unmatched.unmatched$Taxon, 2)
+
+# review.key <- rbind(BC.CDC.2019.key,unmatched.taxa)
+
+# write.csv(review.key,"review.key.csv")
+
+# Swap unmatched names using key
+
+BC.CDC.2019.names.unmatched.matched <- BC.CDC.2019.names.unmatched
+
+BC.CDC.2019.names.unmatched.matched$Taxon <- BC.CDC.2019.key$Matched.Taxon[match(unlist(BC.CDC.2019.names.unmatched.matched$Taxon), BC.CDC.2019.key$Taxon)]
+
+# Remove unmatched fields prior to rejoining with summary
+
+BC.CDC.2019.names.unmatched.matched <- select(BC.CDC.2019.names.unmatched.matched, c(1:17))
+
+# Merge with newly matched records with  summary to standardize names and taxon metadata
+
+BC.CDC.2019.names.unmatched.matched <- left_join(BC.CDC.2019.names.unmatched.matched,summary, by = c('Taxon'))
+
+# Drop NAs (taxa not recognized in summary)
+
+BC.CDC.2019.names.unmatched.matched <- BC.CDC.2019.names.unmatched.matched %>% drop_na(Taxon)
+
+# Standardize matched occurrence records
+
+BC.CDC.2019.names.unmatched.matched <- BC.CDC.2019.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,
+        Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
+        GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
+        National.Status)
+
+names(BC.CDC.2019.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
+        'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
+        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription',
+        'HabitatRemarks','Origin','Provincial.Status','National.Status')
+
+# Select names unmatched based on key
+
+BC.CDC.2019.names.unmatched.unmatched <- anti_join(BC.CDC.2019.names.unmatched,BC.CDC.2019.names.unmatched.matched,by='CatalogueN')
+
+# Confirm all records are represented 
+
+nrow(BC.CDC.2019)
+nrow(BC.CDC.2019.names.matched)
+nrow(BC.CDC.2019.names.unmatched)
+nrow(BC.CDC.2019.names.unmatched.matched)
+nrow(BC.CDC.2019.names.unmatched.unmatched)
+nrow(BC.CDC.2019.names.matched)+nrow(BC.CDC.2019.names.unmatched.matched)+nrow(BC.CDC.2019.names.unmatched.unmatched)
+
+# Bind records
+
+BC.CDC.2019.records <- rbind(BC.CDC.2019.names.matched,BC.CDC.2019.names.unmatched.matched)
+
+# Compare records in and out
+
+nrow(BC.CDC.2019)
+nrow(BC.CDC.2019.records) # Good: only five records discarded, accounted for above.
+
+# Note: taxa unrecognized in summary, and hence excluded from catalog:
+# Juncus effusus - infrataxonomic resolution required to meaningfully discriminate this taxon
+# Epilobium cf ciliatum - could be E. ciliatum; could also be Epilobium leptophyllum, which has since documented at the bog
+# Glyceria sp.
+
+# Start record of unmatched names
+
+unmatched.vascular.plant.records <- BC.CDC.2019.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,
+                                                                                     Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
+                                                                                     Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+unmatched.vascular.plant.records
+
+
+
 # Read Ecological Reserve 128 records (Roemer & Janszen 1980, Roemer 2000)
 
-Ecological.Reserve.128 <- read.csv("digitized/Galiano_Bog_Plant_List_Janszen_2000.csv")
+Ecological.Reserve.128 <- read.csv("digitized/Galiano_Bog_Plant_List_Roemer_2000.csv")
 
 # Filter plants
 
@@ -115,6 +280,24 @@ Ecological.Reserve.128.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv")
 
 # Note: key updated based on this data set; code for generating key blotted out below
 
+# Generate key to manually match unmatched names in Roemer 2000
+# Note: code no longer required once key was generated
+
+# key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+
+# unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Ecological.Reserve.128.names.unmatched.unmatched)))
+# names(unmatched.taxa) <- key.field.names
+
+# unmatched.taxa$Taxon <- Ecological.Reserve.128.names.unmatched.unmatched$Taxon
+
+# unmatched.taxa$Genus <- word(Ecological.Reserve.128.names.unmatched.unmatched$Taxon, 1)
+
+# unmatched.taxa$Species <- word(Ecological.Reserve.128.names.unmatched.unmatched$Taxon, 2)
+
+# Janszen.2000.key <- rbind(Ecological.Reserve.128.key,unmatched.taxa)
+
+# write.csv(Janszen.2000.key,"Janszen.2000.key.csv")
+
 # Swap unmatched names using key
 
 Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.unmatched
@@ -172,31 +355,13 @@ nrow(Ecological.Reserve.128.records) # Good: only five records discarded, accoun
 # Epilobium cf ciliatum - could be E. ciliatum; could also be Epilobium leptophyllum, which has since documented at the bog
 # Glyceria sp.
 
-# Start record of unmatched names
+# Add to record of unmatched names
 
-unmatched.vascular.plant.records <- Ecological.Reserve.128.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,
+Ecological.Reserve.128.names.unmatched.unmatched <- Ecological.Reserve.128.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,
         Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
         Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
 
-unmatched.vascular.plant.records
-
-# Generate key to manually match unmatched names in Janszen 2000
-# Note: code no longer required once key was generated
-
-# key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
-
-# unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Ecological.Reserve.128.names.unmatched.unmatched)))
-# names(unmatched.taxa) <- key.field.names
-
-# unmatched.taxa$Taxon <- Ecological.Reserve.128.names.unmatched.unmatched$Taxon
-
-# unmatched.taxa$Genus <- word(Ecological.Reserve.128.names.unmatched.unmatched$Taxon, 1)
-
-# unmatched.taxa$Species <- word(Ecological.Reserve.128.names.unmatched.unmatched$Taxon, 2)
-
-# Janszen.2000.key <- rbind(Ecological.Reserve.128.key,unmatched.taxa)
-
-# write.csv(Janszen.2000.key,"Janszen.2000.key.csv")
+unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Ecological.Reserve.128.names.unmatched.unmatched)
 
 
 
@@ -1241,7 +1406,7 @@ Simon.2018.names.unmatched <- Simon.2018.names.matched[is.na(Simon.2018.names.ma
 
 Simon.2018.names.matched <- anti_join(Simon.2018.names.matched,Simon.2018.names.unmatched)
 
-# Standardize matched occurence records
+# Standardize matched occurrence records
 
 Simon.2018.names.matched <- Simon.2018.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,
         Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,
@@ -1331,8 +1496,8 @@ unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Simon
 
 # Combine all source occurrence records
 
-Vascular.plant.records <- rbind(DL63.records,Ecological.Reserve.128.records,Hunterston.2010.records,Laughlin.2002.records,
-                                Roemer.2004.records,RBCM.records,Simon.2018.records,Lomer.2022.records)
+Vascular.plant.records <- rbind(BC.CDC.2019.records,DL63.records,Ecological.Reserve.128.records,Hunterston.2010.records,
+                                Laughlin.2002.records,Roemer.2004.records,RBCM.records,Simon.2018.records,Lomer.2022.records)
 
 # Combine with iNaturalist observations
 
