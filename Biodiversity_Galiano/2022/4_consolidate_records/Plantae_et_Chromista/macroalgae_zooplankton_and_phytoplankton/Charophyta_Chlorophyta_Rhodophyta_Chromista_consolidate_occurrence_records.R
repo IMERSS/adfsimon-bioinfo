@@ -12,178 +12,164 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summary/Tracheophyta_review_summary_reviewed_2022-10-29.csv")
+summary <- read.csv("../../../2_review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Charophyta_Chlorophyta_Rhodophyta_Chromista_review_summary_reviewed_2022-10-30.csv")
 
 # Consolidate records
 
 # Sources:
 
-# BC Conservation Data Centre - added
-# ! Brothers 2020 records - not yet added!
-# ! Consortium of PNW Herbaria: BABY, RBCM, UBC, WS, WTU - some RBCM records already added; otherwise incomplete
-# DL63 Veg List 2001-2002 - added - ! georeferencing might be improved!
-# Ecological Reserve 128 records - added
-# ! GCA DL63 VEGETATION INVENTORY - not yet added!
-# Hunterston 2010 - added
-# iNaturalist 2016-2022 - added
-# ! Janszen 2001 - not yet added!
-# Laughlin Lake 2002 - added - ! georeferencing might be improved!
-# Lomer 2022 - added
-# ! RBCM - added, but incomplete; ! some records with geo-referencing (partly) corrected!
-# Roemer 2004 - added
-# Simon 2018 - added
-# ! Terry Taylor Galiano Island list 2012 - not yet added!
-# ! UBC records - not yet added! 
+# ! BOLD records 2021 - ! not yet added! # Need to figure out how to index BOLD records
+# ! CPNWH records 2022 - ! not yet added!
+# ! iNaturalist observations 2022 - ! not yet added!
+# ! PMLS Records 2021 - ! not yet added!
 
+# Read BOLD records 2021 #
+# Return to this once you know how to best index BOLD records
 
-
-# Read BC Conservation Data Centre SAR records (BC CDC 2019)
-# Note: request fresh data from BC CDC and ask them to include the EO ID for use as unique ID
-
-BC.CDC.2019 <- read.csv("digitized/BC_Conservation_Data_Centre_Galiano_Island_SAR_2019-10-24.csv")
+# BOLD.2021 <- read.csv("digitized/BOLD_marine_algae_2021-11-25.csv")
 
 # Filter CDC obs from collections at other institutions
 
-BC.CDC.2019 <- BC.CDC.2019 %>% filter(InstitutionCode == 'CDC')
+# BOLD.2021 <- BOLD.2021 %>% filter(InstitutionCode == 'CDC')
 
 # Create unique identifiers for observations
 # Note: this unique ID is not going to work in the long term as these data can be refreshed by the BC CDC at any point
 # Could ask the BC CDC for EO IDs or SF IDs?
 
-unique.prefix <- "BCCDC2019:" 
-unique.suffix <- 1:nrow(BC.CDC.2019)
+# unique.prefix <- "BCCDC2019:" 
+# unique.suffix <- 1:nrow(BOLD.2021)
 
 # Standardize columns
 
-BC.CDC.2019$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
-BC.CDC.2019$Geo_Ref <- NA
-BC.CDC.2019$HabitatRemarks <- NA
-BC.CDC.2019$PositionalAccuracy <- 80
-BC.CDC.2019$GeoPrivacy <- NA
-BC.CDC.2019$PrivateLatitude <- NA
-BC.CDC.2019$PrivateLongitude <- NA
-BC.CDC.2019$PrivateLatitude <- NA
-BC.CDC.2019$PrivateLongitude <- NA
-BC.CDC.2019$Prov_State <- "British Columbia"
-BC.CDC.2019$Region <- "Gulf Islands"
-BC.CDC.2019$Location <- "Galiano Island"
+# BOLD.2021$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
+# BOLD.2021$Geo_Ref <- NA
+# BOLD.2021$HabitatRemarks <- NA
+# BOLD.2021$PositionalAccuracy <- 80
+# BOLD.2021$GeoPrivacy <- NA
+# BOLD.2021$PrivateLatitude <- NA
+# BOLD.2021$PrivateLongitude <- NA
+# BOLD.2021$PrivateLatitude <- NA
+# BOLD.2021$PrivateLongitude <- NA
+# BOLD.2021$Prov_State <- "British Columbia"
+# BOLD.2021$Region <- "Gulf Islands"
+# BOLD.2021$Location <- "Galiano Island"
 
 # Select key columns
 
-BC.CDC.2019 <- BC.CDC.2019 %>% select(ScientificName,InstitutionCode,CatalogueN,Collector,EventDate,Latitude,Longitude,Geo_Ref,
-                                      PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,
-                                      Locality,OccurrenceRemarks)
+# BOLD.2021 <- BOLD.2021 %>% select(ScientificName,InstitutionCode,CatalogueN,Collector,EventDate,Latitude,Longitude,Geo_Ref,
+#       PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,
+#       Locality,OccurrenceRemarks)
 
 # Standardize column names to facilitate join
 
-names(BC.CDC.2019) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
-                        'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDe',
-                        'HabitatRemarks')
+# names(BOLD.2021) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
+#     'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDe',
+#       'HabitatRemarks')
 
 # Merge with summary to standardize names and taxon metadata
 
-BC.CDC.2019.names.matched <- left_join(BC.CDC.2019,summary, by = c('Taxon'))
+# BOLD.2021.names.matched <- left_join(BOLD.2021,summary, by = c('Taxon'))
 
 # Unmatched records
 
-BC.CDC.2019.names.unmatched <- BC.CDC.2019.names.matched[is.na(BC.CDC.2019.names.matched$Taxon.Author),]
+# BOLD.2021.names.unmatched <- BOLD.2021.names.matched[is.na(BOLD.2021.names.matched$Taxon.Author),]
 
 # Matched records
 
-BC.CDC.2019.names.matched <- anti_join(BC.CDC.2019.names.matched,BC.CDC.2019.names.unmatched)
+# BOLD.2021.names.matched <- anti_join(BOLD.2021.names.matched,BOLD.2021.names.unmatched)
 
 # Standardize matched occcurrence records
 
-BC.CDC.2019.names.matched <- BC.CDC.2019.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,
-        Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,
-        PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
-        National.Status)
+# BOLD.2021.names.matched <- BOLD.2021.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,
+#       Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,
+#       PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
+#       National.Status)
 
-names(BC.CDC.2019.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid',
-        'Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
-        'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription','HabitatRemarks',
-        'Origin','Provincial.Status','National.Status')
+# names(BOLD.2021.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid',
+#       'Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
+#       'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription','HabitatRemarks',
+#       'Origin','Provincial.Status','National.Status')
 
 # Confirm all records are represented 
 
-nrow(BC.CDC.2019)
-nrow(BC.CDC.2019.names.matched)
-nrow(BC.CDC.2019.names.unmatched)
-nrow(BC.CDC.2019.names.matched)+nrow(BC.CDC.2019.names.unmatched)
+# nrow(BOLD.2021)
+# nrow(BOLD.2021.names.matched)
+# nrow(BOLD.2021.names.unmatched)
+# nrow(BOLD.2021.names.matched)+nrow(BOLD.2021.names.unmatched)
 
 # Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 # Note: some of the code below is not needed after reviewing and generating new key
 
-BC.CDC.2019.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+# BOLD.2021.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
 
 # Note: key updated based on this data set; code for generating key blotted out below
 
 # key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
 
-# unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(BC.CDC.2019.names.unmatched.unmatched)))
+# unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(BOLD.2021.names.unmatched.unmatched)))
 # names(unmatched.taxa) <- key.field.names
 
-# unmatched.taxa$Taxon <- BC.CDC.2019.names.unmatched.unmatched$Taxon
+# unmatched.taxa$Taxon <- BOLD.2021.names.unmatched.unmatched$Taxon
 
-# unmatched.taxa$Genus <- word(BC.CDC.2019.names.unmatched.unmatched$Taxon, 1)
+# unmatched.taxa$Genus <- word(BOLD.2021.names.unmatched.unmatched$Taxon, 1)
 
-# unmatched.taxa$Species <- word(BC.CDC.2019.names.unmatched.unmatched$Taxon, 2)
+# unmatched.taxa$Species <- word(BOLD.2021.names.unmatched.unmatched$Taxon, 2)
 
-# review.key <- rbind(BC.CDC.2019.key,unmatched.taxa)
+# review.key <- rbind(BOLD.2021.key,unmatched.taxa)
 
 # write.csv(review.key,"review.key.csv")
 
 # Swap unmatched names using key
 
-BC.CDC.2019.names.unmatched.matched <- BC.CDC.2019.names.unmatched
+# BOLD.2021.names.unmatched.matched <- BOLD.2021.names.unmatched
 
-BC.CDC.2019.names.unmatched.matched$Taxon <- BC.CDC.2019.key$Matched.Taxon[match(unlist(BC.CDC.2019.names.unmatched.matched$Taxon), BC.CDC.2019.key$Taxon)]
+# BOLD.2021.names.unmatched.matched$Taxon <- BOLD.2021.key$Matched.Taxon[match(unlist(BOLD.2021.names.unmatched.matched$Taxon), BOLD.2021.key$Taxon)]
 
 # Remove unmatched fields prior to rejoining with summary
 
-BC.CDC.2019.names.unmatched.matched <- select(BC.CDC.2019.names.unmatched.matched, c(1:17))
+# BOLD.2021.names.unmatched.matched <- select(BOLD.2021.names.unmatched.matched, c(1:17))
 
 # Merge with newly matched records with  summary to standardize names and taxon metadata
 
-BC.CDC.2019.names.unmatched.matched <- left_join(BC.CDC.2019.names.unmatched.matched,summary, by = c('Taxon'))
+# BOLD.2021.names.unmatched.matched <- left_join(BOLD.2021.names.unmatched.matched,summary, by = c('Taxon'))
 
 # Drop NAs (taxa not recognized in summary)
 
-BC.CDC.2019.names.unmatched.matched <- BC.CDC.2019.names.unmatched.matched %>% drop_na(Taxon)
+# BOLD.2021.names.unmatched.matched <- BOLD.2021.names.unmatched.matched %>% drop_na(Taxon)
 
 # Standardize matched occurrence records
 
-BC.CDC.2019.names.unmatched.matched <- BC.CDC.2019.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,
-        Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
-        GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
-        National.Status)
+# BOLD.2021.names.unmatched.matched <- BOLD.2021.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,
+#       Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
+#       GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
+#       National.Status)
 
-names(BC.CDC.2019.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
-        'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
-        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription',
-        'HabitatRemarks','Origin','Provincial.Status','National.Status')
+# names(BOLD.2021.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
+#       'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
+#       'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription',
+#       'HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 # Select names unmatched based on key
 
-BC.CDC.2019.names.unmatched.unmatched <- anti_join(BC.CDC.2019.names.unmatched,BC.CDC.2019.names.unmatched.matched,by='CatalogueN')
+# BOLD.2021.names.unmatched.unmatched <- anti_join(BOLD.2021.names.unmatched,BOLD.2021.names.unmatched.matched,by='CatalogueN')
 
 # Confirm all records are represented 
 
-nrow(BC.CDC.2019)
-nrow(BC.CDC.2019.names.matched)
-nrow(BC.CDC.2019.names.unmatched)
-nrow(BC.CDC.2019.names.unmatched.matched)
-nrow(BC.CDC.2019.names.unmatched.unmatched)
-nrow(BC.CDC.2019.names.matched)+nrow(BC.CDC.2019.names.unmatched.matched)+nrow(BC.CDC.2019.names.unmatched.unmatched)
+# nrow(BOLD.2021)
+# nrow(BOLD.2021.names.matched)
+# nrow(BOLD.2021.names.unmatched)
+# nrow(BOLD.2021.names.unmatched.matched)
+# nrow(BOLD.2021.names.unmatched.unmatched)
+# nrow(BOLD.2021.names.matched)+nrow(BOLD.2021.names.unmatched.matched)+nrow(BOLD.2021.names.unmatched.unmatched)
 
 # Bind records
 
-BC.CDC.2019.records <- rbind(BC.CDC.2019.names.matched,BC.CDC.2019.names.unmatched.matched)
+# BOLD.2021.records <- rbind(BOLD.2021.names.matched,BOLD.2021.names.unmatched.matched)
 
 # Compare records in and out
 
-nrow(BC.CDC.2019)
-nrow(BC.CDC.2019.records) # Good: only five records discarded, accounted for above.
+# nrow(BOLD.2021)
+# nrow(BOLD.2021.records) # Good: only five records discarded, accounted for above.
 
 # Note: taxa unrecognized in summary, and hence excluded from catalog:
 # Juncus effusus - infrataxonomic resolution required to meaningfully discriminate this taxon
@@ -192,11 +178,11 @@ nrow(BC.CDC.2019.records) # Good: only five records discarded, accounted for abo
 
 # Start record of unmatched names
 
-unmatched.vascular.plant.records <- BC.CDC.2019.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,
-                                                                                     Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
-                                                                                     Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+# unmatched.vascular.plant.records <- BOLD.2021.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,
+#       Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
+#       Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
 
-unmatched.vascular.plant.records
+# unmatched.vascular.plant.records
 
 
 
