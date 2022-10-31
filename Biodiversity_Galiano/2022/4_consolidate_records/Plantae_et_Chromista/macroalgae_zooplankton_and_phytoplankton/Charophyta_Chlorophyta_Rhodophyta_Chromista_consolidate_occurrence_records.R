@@ -186,168 +186,148 @@ summary <- read.csv("../../../2_review/Plantae_et_Chromista/macroalgae_zooplankt
 
 
 
-# Read Ecological Reserve 128 records (Roemer & Janszen 1980, Roemer 2000)
+# Read Consortium of Pacific Northwest Herbaria records
 
-Ecological.Reserve.128 <- read.csv("digitized/Galiano_Bog_Plant_List_Roemer_2000.csv")
+CPNWH.2021 <- read.csv("digitized/CPNWH_Galiano_Island_macroalgae_2022-10-30.csv")
 
-# Filter plants
-
-Ecological.Reserve.128 <- Ecological.Reserve.128 %>% filter(Group == 'vascular plants')
-
-# Create unique identifiers for observations
-
-unique.prefix <- "ROEMER2000:"
-unique.suffix <- 1:nrow(Ecological.Reserve.128)
+names(CPNWH.2021)
 
 # Standardize columns
 
-Ecological.Reserve.128$Source <- "Galiano Bog Plant List (Roemer 2000)"
-Ecological.Reserve.128$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
-Ecological.Reserve.128$Latitude <- 48.983312863031706
-Ecological.Reserve.128$Longitude <- -123.55665029568577
-Ecological.Reserve.128$Geo_Ref <- "Coordinates generalized based on locality information"
-Ecological.Reserve.128$HabitatRemarks <- NA
-Ecological.Reserve.128$PositionalAccuracy <- 80
-Ecological.Reserve.128$GeoPrivacy <- NA
-Ecological.Reserve.128$PrivateLatitude <- NA
-Ecological.Reserve.128$PrivateLongitude <- NA
-Ecological.Reserve.128$PrivateLatitude <- NA
-Ecological.Reserve.128$PrivateLongitude <- NA
-Ecological.Reserve.128$Prov_State <- "British Columbia"
-Ecological.Reserve.128$Region <- "Gulf Islands"
-Ecological.Reserve.128$Location <- "Galiano Island"
-Ecological.Reserve.128$LocationDe <- "Ecological Reserve 128"
+CPNWH.2021$Geo_Ref <- NA
+CPNWH.2021$PositionalAccuracy <- NA
+CPNWH.2021$GeoPrivacy <- NA
+CPNWH.2021$PrivateLatitude <- NA
+CPNWH.2021$PrivateLongitude <- NA
+CPNWH.2021$PrivateLatitude <- NA
+CPNWH.2021$PrivateLongitude <- NA
+CPNWH.2021$Region <- "Gulf Islands"
+CPNWH.2021$LocationDe <- NA
 
 # Select key columns
 
-Ecological.Reserve.128 <- Ecological.Reserve.128 %>% select(Species,Source,CatalogueN,Observer,Date,Latitude,Longitude,Geo_Ref,
-        PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks)
+CPNWH.2021 <- CPNWH.2021 %>% select(Scientific.Name,Herbarium,Accession,Collector,Date,Decimal.Latitude,Decimal.Longitude,Geo_Ref,
+                                    PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,State.or.Province,Region,Locality,LocationDe,Site.Description)
 
 # Standardize column names to facilitate join
 
-names(Ecological.Reserve.128) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
-        'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDe','HabitatRemarks')
+names(CPNWH.2021) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
+                       'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDe','HabitatRemarks')
 
 # Merge with summary to standardize names and taxon metadata
 
-Ecological.Reserve.128.names.matched <- left_join(Ecological.Reserve.128,summary, by = c('Taxon'))
+CPNWH.2021.names.matched <- left_join(CPNWH.2021,summary, by = c('Taxon'))
 
 # Unmatched records
 
-Ecological.Reserve.128.names.unmatched <- Ecological.Reserve.128.names.matched[is.na(Ecological.Reserve.128.names.matched$Taxon.Author),]
+CPNWH.2021.names.unmatched <- CPNWH.2021.names.matched[is.na(CPNWH.2021.names.matched$Taxon.Author),]
 
 # Matched records
 
-Ecological.Reserve.128.names.matched <- anti_join(Ecological.Reserve.128.names.matched,Ecological.Reserve.128.names.unmatched)
+CPNWH.2021.names.matched <- anti_join(CPNWH.2021.names.matched,CPNWH.2021.names.unmatched)
 
 # Standardize matched occcurence records
 
-Ecological.Reserve.128.names.matched <- Ecological.Reserve.128.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,
-        Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
-        GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
-        National.Status)
+CPNWH.2021.names.matched <- CPNWH.2021.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,
+        Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,
+        PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
 
-names(Ecological.Reserve.128.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
-        'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
-        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription'
-        ,'HabitatRemarks','Origin','Provincial.Status','National.Status')
+names(CPNWH.2021.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid',
+        'Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
+        'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription','HabitatRemarks',
+        'Origin','Provincial.Status','National.Status')
 
 # Confirm all records are represented 
 
-nrow(Ecological.Reserve.128)
-nrow(Ecological.Reserve.128.names.matched)
-nrow(Ecological.Reserve.128.names.unmatched)
-nrow(Ecological.Reserve.128.names.matched)+nrow(Ecological.Reserve.128.names.unmatched)
+nrow(CPNWH.2021)
+nrow(CPNWH.2021.names.matched)
+nrow(CPNWH.2021.names.unmatched)
+nrow(CPNWH.2021.names.matched)+nrow(CPNWH.2021.names.unmatched)
 
 # Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 # Note: some of the code below is not needed after reviewing and generating new key
 
-Ecological.Reserve.128.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+CPNWH.2021.key <- read.csv("keys/algae_taxon_key_2022.csv") 
 
 # Note: key updated based on this data set; code for generating key blotted out below
 
-# Generate key to manually match unmatched names in Roemer 2000
+# Generate key to manually match unmatched names in CPNWH 2021
 # Note: code no longer required once key was generated
 
 # key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
 
-# unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Ecological.Reserve.128.names.unmatched.unmatched)))
+# unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(CPNWH.2021.names.unmatched)))
 # names(unmatched.taxa) <- key.field.names
 
-# unmatched.taxa$Taxon <- Ecological.Reserve.128.names.unmatched.unmatched$Taxon
+# unmatched.taxa$Taxon <- CPNWH.2021.names.unmatched$Taxon
 
-# unmatched.taxa$Genus <- word(Ecological.Reserve.128.names.unmatched.unmatched$Taxon, 1)
+# unmatched.taxa$Genus <- word(CPNWH.2021.names.unmatched$Taxon, 1)
 
-# unmatched.taxa$Species <- word(Ecological.Reserve.128.names.unmatched.unmatched$Taxon, 2)
+# unmatched.taxa$Species <- word(CPNWH.2021.names.unmatched$Taxon, 2)
 
-# Janszen.2000.key <- rbind(Ecological.Reserve.128.key,unmatched.taxa)
+# CPNWH.2021.key <- rbind(CPNWH.2021.key,unmatched.taxa)
 
-# write.csv(Janszen.2000.key,"Janszen.2000.key.csv")
+# write.csv(CPNWH.2021.key,"CPNWH_2021_key.csv")
 
 # Swap unmatched names using key
 
-Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.unmatched
+CPNWH.2021.names.unmatched.matched <- CPNWH.2021.names.unmatched
 
-Ecological.Reserve.128.names.unmatched.matched$Taxon <- Ecological.Reserve.128.key$Matched.Taxon[match(unlist(Ecological.Reserve.128.names.unmatched.matched$Taxon), Ecological.Reserve.128.key$Taxon)]
+CPNWH.2021.names.unmatched.matched$Taxon <- CPNWH.2021.key$Matched.Taxon[match(unlist(CPNWH.2021.names.unmatched.matched$Taxon), CPNWH.2021.key$Taxon)]
 
 # Remove unmatched fields prior to rejoining with summary
 
-Ecological.Reserve.128.names.unmatched.matched <- select(Ecological.Reserve.128.names.unmatched.matched, c(1:17))
+CPNWH.2021.names.unmatched.matched <- select(CPNWH.2021.names.unmatched.matched, c(1:17))
 
 # Merge with newly matched records with  summary to standardize names and taxon metadata
 
-Ecological.Reserve.128.names.unmatched.matched <- left_join(Ecological.Reserve.128.names.unmatched.matched,summary, by = c('Taxon'))
+CPNWH.2021.names.unmatched.matched <- left_join(CPNWH.2021.names.unmatched.matched,summary, by = c('Taxon'))
 
 # Drop NAs (taxa not recognized in summary)
 
-Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.unmatched.matched %>% drop_na(Taxon)
+CPNWH.2021.names.unmatched.matched <- CPNWH.2021.names.unmatched.matched %>% drop_na(Taxon)
 
 # Standardize matched occurrence records
 
-Ecological.Reserve.128.names.unmatched.matched <- Ecological.Reserve.128.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,
-        Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,
-        PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,
-        Provincial.Status,National.Status)
+CPNWH.2021.names.unmatched.matched <- CPNWH.2021.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,
+        Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
+        GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
+        National.Status)
 
-names(Ecological.Reserve.128.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
-        'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
-        'Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
-        'LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
+names(CPNWH.2021.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
+        'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
+        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription',
+        'HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 # Select names unmatched based on key
 
-Ecological.Reserve.128.names.unmatched.unmatched <- anti_join(Ecological.Reserve.128.names.unmatched,Ecological.Reserve.128.names.unmatched.matched,by='CatalogueN')
+CPNWH.2021.names.unmatched.unmatched <- anti_join(CPNWH.2021.names.unmatched,CPNWH.2021.names.unmatched.matched,by='CatalogueN')
 
 # Confirm all records are represented 
 
-nrow(Ecological.Reserve.128)
-nrow(Ecological.Reserve.128.names.matched)
-nrow(Ecological.Reserve.128.names.unmatched)
-nrow(Ecological.Reserve.128.names.unmatched.matched)
-nrow(Ecological.Reserve.128.names.unmatched.unmatched)
-nrow(Ecological.Reserve.128.names.matched)+nrow(Ecological.Reserve.128.names.unmatched.matched)+nrow(Ecological.Reserve.128.names.unmatched.unmatched)
+nrow(CPNWH.2021)
+nrow(CPNWH.2021.names.matched)
+nrow(CPNWH.2021.names.unmatched)
+nrow(CPNWH.2021.names.unmatched.matched)
+nrow(CPNWH.2021.names.unmatched.unmatched)
+nrow(CPNWH.2021.names.matched)+nrow(CPNWH.2021.names.unmatched.matched)+nrow(CPNWH.2021.names.unmatched.unmatched)
 
 # Bind records
 
-Ecological.Reserve.128.records <- rbind(Ecological.Reserve.128.names.matched,Ecological.Reserve.128.names.unmatched.matched)
+CPNWH.2021.records <- rbind(CPNWH.2021.names.matched,CPNWH.2021.names.unmatched.matched)
 
 # Compare records in and out
 
-nrow(Ecological.Reserve.128)
-nrow(Ecological.Reserve.128.records) # Good: only five records discarded, accounted for above.
-
-# Note: taxa unrecognized in summary, and hence excluded from catalog:
-# Juncus effusus - infrataxonomic resolution required to meaningfully discriminate this taxon
-# Epilobium cf ciliatum - could be E. ciliatum; could also be Epilobium leptophyllum, which has since documented at the bog
-# Glyceria sp.
+nrow(CPNWH.2021)
+nrow(CPNWH.2021.records) # Good: only four records discarded: all taxa unidentified beyond genus
 
 # Add to record of unmatched names
 
-Ecological.Reserve.128.names.unmatched.unmatched <- Ecological.Reserve.128.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,
-        Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
-        Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+CPNWH.2021.names.unmatched.unmatched <- CPNWH.2021.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,
+                                                                                        Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
+                                                                                        Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
 
-unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Ecological.Reserve.128.names.unmatched.unmatched)
+unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,CPNWH.2021.names.unmatched.unmatched)
 
 
 
