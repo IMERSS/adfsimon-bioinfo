@@ -29,7 +29,7 @@ summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summ
 # ! Janszen 2001 - not yet added!
 # Laughlin Lake 2002 - added - ! georeferencing might be improved!
 # Lomer 2022 - added
-# ! Matt Fairbarns - ! Need to get a digital copy of this... !
+# ! Matt Fairbarns Mt Sutil records - ! Need to get a digital copy of this... !
 # ! RBCM - added, but incomplete; ! some records with geo-referencing (partly) corrected!
 # Roemer 2004 - added
 # Simon 2018 - added
