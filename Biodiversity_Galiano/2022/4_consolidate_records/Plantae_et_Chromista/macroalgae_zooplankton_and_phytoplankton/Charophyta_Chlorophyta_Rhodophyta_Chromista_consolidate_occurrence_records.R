@@ -388,7 +388,7 @@ Webber.et.al.2022 <- rbind(Webber.et.al.2022.Lumina,Webber.et.al.2022.BOLD)
 
 Webber.et.al.2022 <- Webber.et.al.2022[ , -which(names(Webber.et.al.2022) %in% c("Taxon_resolved_Lumina","Taxon_BLAST"))]
 
-# Remove '_'s from taxon names
+# Remove '_'s from taxon names (replace with ' 's)
 
 Webber.et.al.2022$Taxon <- gsub("_", " ", Webber.et.al.2022$Taxon)
 
@@ -480,7 +480,7 @@ nrow(Webber.et.al.2022.names.unmatched.matched)
 nrow(Webber.et.al.2022.names.unmatched.unmatched)
 nrow(Webber.et.al.2022.names.matched)+nrow(Webber.et.al.2022.names.unmatched.matched)+nrow(Webber.et.al.2022.names.unmatched.unmatched)
 
-# Revise key to patch remaining  unmatched taxa
+# Revise key to patch remaining unmatched taxa
 # Note: key updated based on this data set; code for generating key blotted out below
 
 key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
@@ -510,7 +510,7 @@ nrow(DL63)
 nrow(DL63.records) # Good: only five records discarded, accounted for above.
 
 # Note: 
-# Navicula hippodontafallax not recognized by AlgaeBase
+# Proschkina not recognized as a genus by AlgaeBase or WoRMS (various other taxa to consider with that name in the species epithet)
 
 # Add to record of unmatched names
 
