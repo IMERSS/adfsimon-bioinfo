@@ -2,7 +2,12 @@ Taxon,Genus,Species,Hybrid,Subspecies,Variety,Form,Matched.Taxon
 Achnanthidium,Achnanthidium,,,,,,Achnanthidium sp.
 Agardhiella,Agardhiella,,,,,,Agardhiella sp.
 Amphora,Amphora,,,,,,Amphora sp.
-Antithamnionella pacifica var. pacifica,Antithamnionella,pacifica,,,,,Antithamnionella pacifica
+Antithamnionella pacifica var. pacifica,Antithamnionella,pacifica,,,pacifica,,Antithamnionella pacifica
+Attheya,Attheya,,,,,,Attheya sp.
+Atthyea,Atthyea,,,,,,Attheya sp.
+Bacillaria paxiillifer,Bacillaria,paxiillifer,,,,,Bacillaria paxillifera
+Bacillaria paxilifer,Bacillaria,paxilifer,,,,,Bacillaria paxiillifer
+Berkeleya,Berkeleya,,,,,,Berkeleya sp.
 Bolidomonas,Bolidomonas,,,,,,Bolidomonas sp.
 Chaetoceros,Chaetoceros,,,,,,Chaetoceros sp.
 Cocconeis,Cocconeis,,,,,,Cocconeis sp.
@@ -11,12 +16,14 @@ Diploneis,Diploneis,,,,,,Diploneis sp.
 Ellerbeckia,Ellerbeckia,,,,,,Ellerbeckia sp.
 Encyonema,Encyonema,,,,,,Encyonema sp.
 Entomoneis,Entomoneis,,,,,,Entomoneis sp.
+Extubocellulus spinifer ,Extubocellulus,spinifer,,,,,Extubocellulus spinifer
 Fallacia,Fallacia,,,,,,Fallacia sp.
 Fragilaria,Fragilaria,,,,,,Fragilaria sp.
 Fragilariopsis,Fragilariopsis,,,,,,Fragilariopsis sp.
 Fucus gardneri,Fucus,gardneri,,,,,Fucus distichus
 Gedaniella,Gedaniella,,,,,,Gedaniella sp.
 Gigartina exasperata,Gigartina,exasperata,,,,,Chondracanthus exasperatus
+Gomphoneis,Gomphoneis,,,,,,Gomphoneis sp.
 Gomphonemopsis pseudoexigua,Gomphonemopsis,pseudoexigua,,,,,Gomphonemopsis pseudexigua
 Halamphora,Halamphora,,,,,,Halamphora sp.
 Halothrix,Halothrix,,,,,,Halothrix sp.
@@ -24,12 +31,30 @@ Haslea,Haslea,,,,,,Haslea sp.
 Heterosigma,Heterosigma,,,,,,Heterosigma sp.
 Laminaria saccharina,Laminaria,saccharina,,,,,Saccharina latissima
 Licmophora,Licmophora,,,,,,Licmophora sp.
+Licmorphora paradoxa,Licmorphora,paradoxa,,,,,Licmophora paradoxa
 Melosira,Melosira,,,,,,Melosira sp.
 Membranoptera multiramosa,Membranoptera,multiramosa,,,,,Membranoptera platyphylla
 Mesophyllum,Mesophyllum,,,,,,Mesophyllum sp.
 Navicula,Navicula,,,,,,Navicula sp.
 Nitophyllum nottii,Nitophyllum,nottii,,,,,Polyneura latissima
+Nitzschia,Nitzschia,,,,,,Nitzschia sp.
+Odontella,Odontella,,,,,,Odontella sp.
+Phaeodactylum,Phaeodactylum,,,,,,Phaeodactylum sp.
+Pinnularia,Pinnularia,,,,,,Pinnularia sp.
+Plagiogramma,Plagiogramma,,,,,,Plagiogramma sp.
+Plagiotropis,Plagiotropis,,,,,,Plagiotropis sp.
+Planothidium,Planothidium,,,,,,Planothidium sp.
 Platythamnion,Platythamnion,,,,,,Platythamnion sp.
+Pleurosigma,Pleurosigma,,,,,,Pleurosigma sp.
 Porphyra,Porphyra,,,,,,Porphyra sp.
 Porphyra nereocystis,Porphyra,nereocystis,,,,,Pyropia nereocystis
-Scagelia corallina var. occidentale,Scagelia,corallina,,,,,Scagelia occidentalis
+Psammodictyon,Psammodictyon,,,,,,Psammodictyon sp.
+Pseudogomphonema kamschaticum,Pseudogomphonema,kamschaticum,,,,,Pseudogomphonema kamtschaticum
+Pylaiella,Pylaiella,,,,,,Pylaiella sp.
+Scagelia corallina var. occidentale,Scagelia,corallina,,,occidentale,,Scagelia occidentalis
+Seminavis,Seminavis,,,,,,Seminavis sp.
+Serratifera,Serratifera,,,,,,Pseudostaurosira sp.
+Serratifera andersonii,Serratifera,andersonii,,,,,Pseudostaurosira andersonii
+Skeletonema,Skeletonema,,,,,,Skeletonema sp.
+Tabularia,Tabularia,,,,,,Tabularia sp.
+Thalassiosira,Thalassiosira,,,,,,Thalassiosira sp.
