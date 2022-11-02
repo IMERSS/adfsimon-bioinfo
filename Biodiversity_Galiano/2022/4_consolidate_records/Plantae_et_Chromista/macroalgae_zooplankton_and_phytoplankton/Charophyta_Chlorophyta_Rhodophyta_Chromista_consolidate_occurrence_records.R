@@ -1,5 +1,7 @@
 # Script to consolidate records of Galiano Island's vascular plants
 
+# Note the best scripts developed so far are under the Webber et al. 2022 section
+
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
@@ -12,7 +14,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../2_review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Charophyta_Chlorophyta_Rhodophyta_Chromista_review_summary_reviewed_2022-11-01.csv")
+summary <- read.csv("../../../2_review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Charophyta_Chlorophyta_Rhodophyta_Chromista_review_summary_reviewed_2022-11-02.csv")
 
 # Consolidate records
 
@@ -334,7 +336,7 @@ unmatched.algae.records
 
 
 
-# Read DL63 records (GCA 2002)
+# Read Webber et al. 2022 records # TEMPORARY DATASET
 
 Webber.et.al.2022 <- read.csv("digitized/Webber_et_al_2022_Taxonomy_table_epiphytic_diatoms_Zostera_2022-11-01.csv")
 
@@ -436,25 +438,6 @@ nrow(Webber.et.al.2022.names.matched)+nrow(Webber.et.al.2022.names.unmatched)
 
 Webber.et.al.2022.key <- read.csv("keys/algae_taxon_key_2022.csv") 
 
-# Note: key updated based on this data set; code for generating key blotted out below
-
-key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
-
-unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Webber.et.al.2022.names.unmatched.unmatched)))
-names(unmatched.taxa) <- key.field.names
-
-unmatched.taxa$Taxon <- Webber.et.al.2022.names.unmatched.unmatched$Taxon
-
-unmatched.taxa$Genus <- word(Webber.et.al.2022.names.unmatched.unmatched$Taxon, 1)
-
-unmatched.taxa$Species <- word(Webber.et.al.2022.names.unmatched.unmatched$Taxon, 2)
-
-unmatched.taxa <- distinct(unmatched.taxa)
-
-review.key <- rbind(Webber.et.al.2022.key,unmatched.taxa)
-
-write.csv(review.key,"review.key.csv")
-
 # Swap unmatched names using key
 
 Webber.et.al.2022.names.unmatched.matched <- Webber.et.al.2022.names.unmatched
@@ -497,6 +480,26 @@ nrow(Webber.et.al.2022.names.unmatched.matched)
 nrow(Webber.et.al.2022.names.unmatched.unmatched)
 nrow(Webber.et.al.2022.names.matched)+nrow(Webber.et.al.2022.names.unmatched.matched)+nrow(Webber.et.al.2022.names.unmatched.unmatched)
 
+# Revise key to patch remaining  unmatched taxa
+# Note: key updated based on this data set; code for generating key blotted out below
+
+key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Webber.et.al.2022.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Webber.et.al.2022.names.unmatched.unmatched$Taxon
+
+unmatched.taxa$Genus <- word(Webber.et.al.2022.names.unmatched.unmatched$Taxon, 1)
+
+unmatched.taxa$Species <- word(Webber.et.al.2022.names.unmatched.unmatched$Taxon, 2)
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Webber.et.al.2022.key,unmatched.taxa)
+
+write.csv(review.key,"keys/review.key.csv")
+
 # Bind records
 
 DL63.records <- rbind(DL63.names.matched,DL63.names.unmatched.matched)
@@ -506,8 +509,8 @@ DL63.records <- rbind(DL63.names.matched,DL63.names.unmatched.matched)
 nrow(DL63)
 nrow(DL63.records) # Good: only five records discarded, accounted for above.
 
-# Note: taxa unrecognized in summary, and hence excluded from catalog, are all species identified only to genus.
-# See also misreported taxa manually excluded from data set above
+# Note: 
+# Navicula hippodontafallax not recognized by AlgaeBase
 
 # Add to record of unmatched names
 
