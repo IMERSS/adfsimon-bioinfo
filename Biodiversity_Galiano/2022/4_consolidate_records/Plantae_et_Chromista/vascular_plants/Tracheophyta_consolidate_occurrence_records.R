@@ -1680,3 +1680,6 @@ nrow(Vascular.plant.records)
 nrow(unmatched.vascular.plant.records)
 
 unique(unmatched.vascular.plant.records$Taxon)
+
+
+unique(Lomer.2022.records$CollectionDate)

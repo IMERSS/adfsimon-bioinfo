@@ -14,7 +14,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../2_review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Charophyta_Chlorophyta_Rhodophyta_Chromista_review_summary_reviewed_2022-11-02.csv")
+summary <- read.csv("../../../2_review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Charophyta_Chlorophyta_Rhodophyta_Chromista_review_summary_reviewed_2022-11-03.csv")
 
 # Consolidate records
 
@@ -23,8 +23,8 @@ summary <- read.csv("../../../2_review/Plantae_et_Chromista/macroalgae_zooplankt
 # ! BOLD records 2021 - ! not yet added! # Need to figure out how to index BOLD records
 # CPNWH records 2022 - added.
 # ! iNaturalist observations 2022 - ! not yet added!
-# ! PMLS Records 2021 - ! not yet added!
-# ! Webber et al. 2022 Epiphytic diatoms on Zostera 2022 - ! not yet added!
+# PMLS Records 2021 - added
+# Webber et al. 2022 Epiphytic diatoms on Zostera 2022 - added ! needs updating!
 
 # Read BOLD records 2021 #
 # Return to this once you know how to best index BOLD records
@@ -209,13 +209,14 @@ CPNWH.2021$LocationDe <- NA
 
 # Select key columns
 
-CPNWH.2021 <- CPNWH.2021 %>% select(Scientific.Name,Herbarium,Accession,Collector,Date,Decimal.Latitude,Decimal.Longitude,Geo_Ref,
-                                    PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,State.or.Province,Region,Locality,LocationDe,Site.Description)
+CPNWH.2021 <- CPNWH.2021 %>% select(Scientific.Name,Herbarium,Accession,Collector,Date,Decimal.Latitude,Decimal.Longitude,
+        Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,State.or.Province,Region,Locality,
+        LocationDe,Site.Description)
 
 # Standardize column names to facilitate join
 
 names(CPNWH.2021) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
-                       'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDe','HabitatRemarks')
+        'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDe','HabitatRemarks')
 
 # Merge with summary to standardize names and taxon metadata
 
@@ -231,14 +232,15 @@ CPNWH.2021.names.matched <- anti_join(CPNWH.2021.names.matched,CPNWH.2021.names.
 
 # Standardize matched occcurence records
 
-CPNWH.2021.names.matched <- CPNWH.2021.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,
-        Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,
-        PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+CPNWH.2021.names.matched <- CPNWH.2021.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,
+        Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
+        GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,
+        Provincial.Status,National.Status)
 
-names(CPNWH.2021.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid',
-        'Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
-        'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription','HabitatRemarks',
-        'Origin','Provincial.Status','National.Status')
+names(CPNWH.2021.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
+        'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
+        'Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
+        'LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 # Confirm all records are represented 
 
@@ -251,8 +253,6 @@ nrow(CPNWH.2021.names.matched)+nrow(CPNWH.2021.names.unmatched)
 # Note: some of the code below is not needed after reviewing and generating new key
 
 CPNWH.2021.key <- read.csv("keys/algae_taxon_key_2022.csv") 
-
-# Note: key updated based on this data set; code for generating key blotted out below
 
 # Generate key to manually match unmatched names in CPNWH 2021
 # Note: code no longer required once key was generated
@@ -332,7 +332,172 @@ unmatched.algae.records <- CPNWH.2021.names.unmatched.unmatched %>% select(Taxon
         Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,
         HabitatRemarks,Origin,Provincial.Status,National.Status)
 
-unmatched.algae.records
+
+# Read iNaturalist observations
+
+
+
+
+
+# Read PMLS 2021 records # TEMPORARY DATASET
+
+PMLS.2021 <- read.csv("digitized/PMLS_Records_Galiano_2021-07-27.csv")
+
+# Filter macroalgae (this step may be necessary for a future version of this list but not the current version which is already pruned)
+
+PMLS.2021 <- PMLS.2021 %>% filter(Phylum.Division == "Chlorophyta" | Phylum.Division == 'Rhodophyta' | Phylum.Division == 'Ochrophyta')
+
+# Create unique identifiers for observations
+
+unique.prefix <- "PMLS2021:"
+unique.suffix <- 1:nrow(PMLS.2021)
+
+# Standardize columns
+
+PMLS.2021$Source <- "PMLS"
+PMLS.2021$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
+PMLS.2021$Geo_Ref <- NA
+PMLS.2021$HabitatRemarks <- NA
+PMLS.2021$PositionalAccuracy <- 100
+PMLS.2021$GeoPrivacy <- NA
+PMLS.2021$PrivateLatitude <- NA
+PMLS.2021$PrivateLongitude <- NA
+PMLS.2021$PrivateLatitude <- NA
+PMLS.2021$PrivateLongitude <- NA
+PMLS.2021$Prov_State <- "British Columbia"
+PMLS.2021$Region <- "Gulf Islands"
+PMLS.2021$LocationDe <- NA
+
+# Select key columns
+
+PMLS.2021 <- PMLS.2021 %>% select(Scientific.name,Source,CatalogueN,Observer.name,Date.observed,Latitude,Longitude,Geo_Ref,
+                                  PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Place.name,LocationDe,HabitatRemarks)
+
+# Standardize column names to facilitate join
+
+names(PMLS.2021) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref',
+                      'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
+                      'LocationDe','HabitatRemarks')
+
+# Merge with summary to standardize names and taxon metadata
+
+PMLS.2021.names.matched <- left_join(PMLS.2021,summary, by = c('Taxon'))
+
+# Unmatched records
+
+PMLS.2021.names.unmatched <- PMLS.2021.names.matched[is.na(PMLS.2021.names.matched$Taxon.Author),]
+
+# Matched records
+
+PMLS.2021.names.matched <- anti_join(PMLS.2021.names.matched,PMLS.2021.names.unmatched)
+
+# Standardize matched occcurence records
+
+PMLS.2021.names.matched <- PMLS.2021.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,
+                                                              Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,
+                                                              PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,
+                                                              HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+names(PMLS.2021.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
+                                    'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
+                                    'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude',
+                                    'PrivateLongitude','Prov_State','Region','Location','LocationDescription','HabitatRemarks',
+                                    'Origin','Provincial.Status','National.Status')
+
+# Confirm all records are represented 
+
+nrow(PMLS.2021)
+nrow(PMLS.2021.names.matched)
+nrow(PMLS.2021.names.unmatched)
+nrow(PMLS.2021.names.matched)+nrow(PMLS.2021.names.unmatched)
+
+# Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+# Note: some of the code below is not needed after reviewing and generating new key
+
+PMLS.2021.key <- read.csv("keys/algae_taxon_key_2022.csv") 
+
+# Swap unmatched names using key
+
+PMLS.2021.names.unmatched.matched <- PMLS.2021.names.unmatched
+
+PMLS.2021.names.unmatched.matched$Taxon <- PMLS.2021.key$Matched.Taxon[match(unlist(PMLS.2021.names.unmatched.matched$Taxon), PMLS.2021.key$Taxon)]
+
+# Remove unmatched fields prior to rejoining with summary
+
+PMLS.2021.names.unmatched.matched <- select(PMLS.2021.names.unmatched.matched, c(1:17))
+
+# Merge with newly matched records with  summary to standardize names and taxon metadata
+
+PMLS.2021.names.unmatched.matched <- left_join(PMLS.2021.names.unmatched.matched,summary, by = c('Taxon'))
+
+# Drop NAs (taxa not recognized in summary)
+
+PMLS.2021.names.unmatched.matched <- PMLS.2021.names.unmatched.matched %>% drop_na(Taxon)
+
+# Standardize matched occurrence records
+
+PMLS.2021.names.unmatched.matched <- PMLS.2021.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,
+                                                                                  Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,
+                                                                                  Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy, PrivateLatitude,PrivateLongitude,
+                                                                                  Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+names(PMLS.2021.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
+                                              'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
+                                              'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
+                                              'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
+                                              'National.Status')
+
+# Select names unmatched based on key
+
+PMLS.2021.names.unmatched.unmatched <- anti_join(PMLS.2021.names.unmatched,PMLS.2021.names.unmatched.matched,by='CatalogueN')
+
+# Confirm all records are represented 
+
+nrow(PMLS.2021)
+nrow(PMLS.2021.names.matched)
+nrow(PMLS.2021.names.unmatched)
+nrow(PMLS.2021.names.unmatched.matched)
+nrow(PMLS.2021.names.unmatched.unmatched)
+nrow(PMLS.2021.names.matched)+nrow(PMLS.2021.names.unmatched.matched)+nrow(PMLS.2021.names.unmatched.unmatched)
+
+# Revise key to patch remaining unmatched taxa
+# Note: key updated based on this data set; code for generating key blotted out below
+
+key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(PMLS.2021.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- PMLS.2021.names.unmatched.unmatched$Taxon
+
+unmatched.taxa$Genus <- word(PMLS.2021.names.unmatched.unmatched$Taxon, 1)
+
+unmatched.taxa$Species <- word(PMLS.2021.names.unmatched.unmatched$Taxon, 2)
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(PMLS.2021.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv")
+
+# Bind records
+
+PMLS.2021.records <- rbind(PMLS.2021.names.matched,PMLS.2021.names.unmatched.matched)
+
+# Compare records in and out
+
+nrow(PMLS.2021)
+nrow(PMLS.2021.records) # Many discarded records owing to the cryptic nature of algae, difficult to identify through dive observations
+
+# Add to record of unmatched names
+
+PMLS.2021.names.unmatched.unmatched <- PMLS.2021.names.unmatched.unmatched %>% select(Taxon,Source,
+                                                                                      CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,
+                                                                                      PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+unmatched.algae.records <- rbind(unmatched.algae.records,PMLS.2021.names.unmatched.unmatched)
 
 
 
@@ -394,8 +559,9 @@ Webber.et.al.2022$Taxon <- gsub("_", " ", Webber.et.al.2022$Taxon)
 
 # Select key columns
 
-Webber.et.al.2022 <- Webber.et.al.2022 %>% select(Taxon,Source,CatalogueN,Observer,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,
-        PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks)
+Webber.et.al.2022 <- Webber.et.al.2022 %>% select(Taxon,Source,CatalogueN,Observer,Date,Latitude,Longitude,Geo_Ref,
+        PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,
+        HabitatRemarks)
 
 # Standardize column names to facilitate join
 
@@ -417,14 +583,15 @@ Webber.et.al.2022.names.matched <- anti_join(Webber.et.al.2022.names.matched,Web
 
 # Standardize matched occcurence records
 
-Webber.et.al.2022.names.matched <- Webber.et.al.2022.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,Subspecies,
-                                                                              Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,
-                                                                              PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+Webber.et.al.2022.names.matched <- Webber.et.al.2022.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,
+        Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,
+        PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,
+        HabitatRemarks,Origin,Provincial.Status,National.Status)
 
-names(Webber.et.al.2022.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid','Subspecies',
-                                            'Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy',
-                                            'PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin',
-                                            'Provincial.Status','National.Status')
+names(Webber.et.al.2022.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
+        'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
+        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
+        'LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 # Confirm all records are represented 
 
@@ -458,14 +625,15 @@ Webber.et.al.2022.names.unmatched.matched <- Webber.et.al.2022.names.unmatched.m
 
 # Standardize matched occurrence records
 
-Webber.et.al.2022.names.unmatched.matched <- Webber.et.al.2022.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,
-                                                                                                  Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,
-                                                                                                  PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+Webber.et.al.2022.names.unmatched.matched <- Webber.et.al.2022.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,
+        Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,
+        Geo_Ref,PositionalAccuracy,GeoPrivacy, PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,
+        HabitatRemarks,Origin,Provincial.Status,National.Status)
 
-names(Webber.et.al.2022.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid',
-                                                      'Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
-                                                      'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription',
-                                                      'HabitatRemarks','Origin','Provincial.Status','National.Status')
+names(Webber.et.al.2022.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
+        'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude',
+        'Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location',
+        'LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 # Select names unmatched based on key
 
@@ -498,34 +666,33 @@ unmatched.taxa <- distinct(unmatched.taxa)
 
 review.key <- rbind(Webber.et.al.2022.key,unmatched.taxa)
 
-write.csv(review.key,"keys/review.key.csv")
+write.csv(review.key,"keys/review_key.csv")
 
 # Bind records
 
-DL63.records <- rbind(DL63.names.matched,DL63.names.unmatched.matched)
+Webber.et.al.2022.records <- rbind(Webber.et.al.2022.names.matched,Webber.et.al.2022.names.unmatched.matched)
 
 # Compare records in and out
 
-nrow(DL63)
-nrow(DL63.records) # Good: only five records discarded, accounted for above.
+nrow(Webber.et.al.2022)
+nrow(Webber.et.al.2022.records) # Good: only five records discarded, accounted for above.
 
 # Note: 
 # Proschkina not recognized as a genus by AlgaeBase or WoRMS (various other taxa to consider with that name in the species epithet)
 
 # Add to record of unmatched names
 
-DL63.names.unmatched.unmatched <- DL63.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,Date,Latitude,
-        Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,
-        HabitatRemarks,Origin,Provincial.Status,National.Status)
+Webber.et.al.2022.names.unmatched.unmatched <- Webber.et.al.2022.names.unmatched.unmatched %>% select(Taxon,Source,
+        CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,
+        PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
 
-unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,DL63.names.unmatched.unmatched)
-
+unmatched.algae.records <- rbind(unmatched.algae.records,Webber.et.al.2022.names.unmatched.unmatched)
 
 
 
 # Combine all source occurrence records
 
-Algae.records <- rbind(CPNWH.2021.records,Webber.et.al.2022.records)
+Algae.records <- rbind(CPNWH.2021.records,PMLS.2021.records,Webber.et.al.2022.records)
 
 # Combine with iNaturalist observations
 
