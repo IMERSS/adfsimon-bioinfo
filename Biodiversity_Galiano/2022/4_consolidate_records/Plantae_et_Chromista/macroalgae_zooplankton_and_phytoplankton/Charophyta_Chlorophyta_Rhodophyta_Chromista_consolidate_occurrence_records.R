@@ -335,7 +335,156 @@ unmatched.algae.records <- CPNWH.2021.names.unmatched.unmatched %>% select(Taxon
 
 # Read iNaturalist observations
 
+iNaturalist <- read.csv("../../../1_split/macroalgae_zooplankton_and_phytoplankton/outputs/Algae_iNat_obs.csv")
 
+# Drop taxa that are not identified to genus at least
+
+iNaturalist <- iNaturalist %>% 
+  mutate_all(na_if, "")
+
+iNaturalist <- iNaturalist[!is.na(iNaturalist$taxon_genus_name),]
+
+# Standardize columns
+
+iNaturalist$Source <- "iNaturalist"
+iNaturalist$Geo_Ref <- NA
+iNaturalist$Prov_State <- "British Columbia"
+iNaturalist$Region <- "Gulf Islands"
+iNaturalist$Location <- NA
+iNaturalist$LocationDe <- NA
+iNaturalist$HabitatRemarks <- NA
+
+# Select key columns
+
+iNaturalist <- iNaturalist %>% select(scientific_name,Source,id,user_login,observed_on,latitude,longitude,
+                                      Geo_Ref,positional_accuracy,geoprivacy,private_latitude,private_longitude,Prov_State,Region,
+                                      Location,LocationDe,HabitatRemarks)
+
+# Standardize column names to facilitate join
+
+names(iNaturalist) <- c('Taxon','Source','CatalogueN','Collector','Date','Latitude','Longitude','Geo_Ref',
+                        'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region',
+                        'Location','LocationDe','HabitatRemarks')
+
+# Merge with summary to standardize names and taxon metadata
+
+iNaturalist.names.matched <- left_join(iNaturalist,summary, by = c('Taxon'))
+
+# Unmatched records
+
+iNaturalist.names.unmatched <- iNaturalist.names.matched[is.na(iNaturalist.names.matched$Taxon.Author),]
+
+# Matched records
+
+iNaturalist.names.matched <- anti_join(iNaturalist.names.matched,iNaturalist.names.unmatched)
+
+# Standardize matched occcurence records
+
+iNaturalist.names.matched <- iNaturalist.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,
+                                                                  Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,
+                                                                  Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,
+                                                                  Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+names(iNaturalist.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
+                                      'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector',
+                                      'CollectionDate','Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy',
+                                      'PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription',
+                                      'HabitatRemarks','Origin','Provincial.Status','National.Status')
+
+# Confirm all records are represented 
+
+nrow(iNaturalist)
+nrow(iNaturalist.names.matched)
+nrow(iNaturalist.names.unmatched)
+nrow(iNaturalist.names.matched)+nrow(iNaturalist.names.unmatched)
+
+# Generate key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+# Note: some of the code below is not needed after reviewing and generating new key
+
+iNaturalist.key <- read.csv("keys/algae_taxon_key_2022.csv") 
+
+# Swap unmatched names using key
+
+iNaturalist.names.unmatched.matched <- iNaturalist.names.unmatched
+
+iNaturalist.names.unmatched.matched$Taxon <- iNaturalist.key$Matched.Taxon[match(unlist(iNaturalist.names.unmatched.matched$Taxon), iNaturalist.key$Taxon)]
+
+# Remove unmatched fields prior to rejoining with summary
+
+iNaturalist.names.unmatched.matched <- select(iNaturalist.names.unmatched.matched, c(1:17))
+
+# Merge with newly matched records with  summary to standardize names and taxon metadata
+
+iNaturalist.names.unmatched.matched <- left_join(iNaturalist.names.unmatched.matched,summary, by = c('Taxon'))
+
+# Drop NAs (taxa not recognized in summary)
+
+iNaturalist.names.unmatched.matched <- iNaturalist.names.unmatched.matched %>% drop_na(Taxon)
+
+# Standardize matched occurrence records
+
+iNaturalist.names.unmatched.matched <- iNaturalist.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,
+                                                                                      Class,Order,Family,Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,
+                                                                                      Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy, PrivateLatitude,PrivateLongitude,
+                                                                                      Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+names(iNaturalist.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family',
+                                                'Genus','Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate',
+                                                'Latitude','Longitude','Geo_Ref','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude',
+                                                'Prov_State','Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status',
+                                                'National.Status')
+
+# Select names unmatched based on key
+
+iNaturalist.names.unmatched.unmatched <- anti_join(iNaturalist.names.unmatched,iNaturalist.names.unmatched.matched,by='CatalogueN')
+
+# Confirm all records are represented 
+
+nrow(iNaturalist)
+nrow(iNaturalist.names.matched)
+nrow(iNaturalist.names.unmatched)
+nrow(iNaturalist.names.unmatched.matched)
+nrow(iNaturalist.names.unmatched.unmatched)
+nrow(iNaturalist.names.matched)+nrow(iNaturalist.names.unmatched.matched)+nrow(iNaturalist.names.unmatched.unmatched)
+
+# Revise key to patch remaining unmatched taxa
+# Note: key updated based on this data set; code for generating key blotted out below
+
+key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(iNaturalist.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- iNaturalist.names.unmatched.unmatched$Taxon
+
+unmatched.taxa$Genus <- word(iNaturalist.names.unmatched.unmatched$Taxon, 1)
+
+unmatched.taxa$Species <- word(iNaturalist.names.unmatched.unmatched$Taxon, 2)
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(iNaturalist.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv")
+
+# Bind records
+
+iNaturalist.records <- rbind(iNaturalist.names.matched,iNaturalist.names.unmatched.matched)
+
+# Compare records in and out
+
+nrow(iNaturalist)
+nrow(iNaturalist.records) # Many discarded records owing to the cryptic nature of algae, difficult to identify through dive observations
+
+# Add to record of unmatched names
+
+iNaturalist.names.unmatched.unmatched <- iNaturalist.names.unmatched.unmatched %>% select(Taxon,Source,
+                                                                                          CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,
+                                                                                          PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+
+unmatched.algae.records <- rbind(unmatched.algae.records,iNaturalist.names.unmatched.unmatched)
 
 
 
@@ -692,7 +841,7 @@ unmatched.algae.records <- rbind(unmatched.algae.records,Webber.et.al.2022.names
 
 # Combine all source occurrence records
 
-Algae.records <- rbind(CPNWH.2021.records,PMLS.2021.records,Webber.et.al.2022.records)
+Algae.records <- rbind(CPNWH.2021.records,iNaturalist.records,PMLS.2021.records,Webber.et.al.2022.records)
 
 # Combine with iNaturalist observations
 
@@ -713,12 +862,14 @@ Algae.records <- rbind(CPNWH.2021.records,PMLS.2021.records,Webber.et.al.2022.re
 
 # write.csv(Vascular.plant.records,"Galiano_Island_vascular_plant_records_consolidated.csv")
 
-# Tally records
+# Tally matched records
 
 nrow(Algae.records)
+
+sort(unique(Algae.records$Taxon))
 
 # Summary of records that remain unmatched
 
 nrow(unmatched.algae.records)
 
-unique(unmatched.algae.records$Taxon)
+sort(unique(unmatched.algae.records$Taxon))
