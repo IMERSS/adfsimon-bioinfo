@@ -51,18 +51,18 @@ betagrid<-function(gridshp, comp, xfeature, yfeature, radius, phylotree, phylobe
 # Adapting the above code to implement gridded beta diversity analysis of my data:
 
 # Load the grid
-shape <- readOGR("betagrid/inputs/1km_grid_TPI_extent_WGS84_intersect_plant_data.shp")
+shape <- readOGR("betagrid/inputs/1km_grid_WGS84_overlap_vascular_plants_2022-11-04.shp")
 
 # Converting to UTM breaks the function 'betagrid' below
 # shape <- vect(shape, crs="+proj=utm +zone=10 +datum=WGS84  +units=m")
 
 # Read species occurrences
 
-data <- read.csv("betagrid/inputs/Galiano_vascular_plants_2022-10-15_intersect_1km_grid_TPI_extent_WGS84.csv")
+data <- read.csv("betagrid/inputs/Galiano_vascular_plants_intersect_1km_grid_WGS84.csv")
 
 # Subset relevant fields
 
-data <- data %>% dplyr::select('Taxon'|'grid_cell')
+data <- data %>% dplyr::select('Taxon'|'id')
 
 # Add count field to generate matrix
 
@@ -70,7 +70,7 @@ data$Count <- 1
 
 # Generate matrix 
 
-matrix <- ecodist::crosstab(data$grid_cell, data$Taxon, data$Count)
+matrix <- ecodist::crosstab(data$id, data$Taxon, data$Count)
 
 # Convert to presence / absence
 
@@ -87,9 +87,19 @@ results <- betagrid(gridshp=shape, comp=matrix, xfeature=6, yfeature=7, radius=0
 
 names(results) <- c('id','mean_turnover','mean_nestedness','mean_beta')
 
+# Add species richness to results
+
+matrix <- matrix %>% mutate(richness = rowSums(.))
+
+matrix$richness
+
+matrix$id <- row.names(matrix) 
+
+results$richness  <- matrix$richness[match(unlist(results$id), matrix$id)]
+
 # Output results
 
-# write.csv(results,"betagrid/outputs/betagrid_vascular_plants_2022-10-15.csv")
+write.csv(results,"betagrid/outputs/betagrid_vascular_plants.csv")
 
 #### GRAPH ####
 # Note: code not working due to projection
