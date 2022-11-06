@@ -21,8 +21,8 @@ summary <- read.csv("../../../2_review/Plantae_et_Chromista/macroalgae_zooplankt
 # Sources:
 
 # ! BOLD records 2021 - ! not yet added! # Need to figure out how to index BOLD records
-# CPNWH records 2022 - added.
-# ! iNaturalist observations 2022 - ! not yet added!
+# CPNWH records 2022 - added
+# iNaturalist observations 2022 - added
 # PMLS Records 2021 - added
 # Webber et al. 2022 Epiphytic diatoms on Zostera 2022 - added ! needs updating!
 
@@ -842,21 +842,6 @@ unmatched.algae.records <- rbind(unmatched.algae.records,Webber.et.al.2022.names
 # Combine all source occurrence records
 
 Algae.records <- rbind(CPNWH.2021.records,iNaturalist.records,PMLS.2021.records,Webber.et.al.2022.records)
-
-# Combine with iNaturalist observations
-
-# iNaturalist.observations <- read.csv("digitized/iNaturalist_vascular_plant_observations.csv")
-
-# names(Vascular.plant.records) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
-#      'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude',
-#      'Longitude','GeoRef','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','ProvState',
-#      'Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
-# names(iNaturalist.observations) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus',
-#      'Species','Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude',
-#      'Longitude','GeoRef','PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','ProvState',
-#      'Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
-
-# Algae.records <- rbind(Algae.records,iNaturalist.observations)
 
 # Output synthesized catalog of occurrence records
 
