@@ -8,6 +8,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 library(betapart)
 library(CommEcol)
+library(RColorBrewer)
 library(dplyr)
 library(ecodist)
 library(picante)
@@ -18,7 +19,6 @@ library(stringr)
 library(terra)
 library(tidyr)
 library(vegan)
-
 
 # Implementing grided beta diversity analysis using the function and test data from this site: https://rfunctions.blogspot.com/2015/08/calculating-beta-diversity-on-grid.html
 
@@ -77,6 +77,7 @@ matrix <- ecodist::crosstab(data$id, data$Taxon, data$Count)
 matrix[matrix > 0] <- 1 
 
 # Which fields correspond with LONG (7) & LAT (6)? 
+
 names(shape)
 
 # Call the function and get results! Let us calculate beta diversity for each focal cell. Note that the function will return results containing four columns: number of grid cell, the mean turnover partition of beta diversity, the mean nestedness partition of beta diversity, and the mean total beta diversity. Also, note that radius equals 0.25 degree, which is the same size as the resolution of our grid. This will make the function use only the 8 (or fewer) adjacent cells in relation to the focal cells. If you want more neighbor cells to be included in the analysis, you can use the double (0.5 in this example) or greater values.
@@ -99,7 +100,7 @@ results$richness  <- matrix$richness[match(unlist(results$id), matrix$id)]
 
 # Output results
 
-write.csv(results,"betagrid/outputs/betagrid_vascular_plants.csv")
+# write.csv(results,"betagrid/outputs/betagrid_vascular_plants.csv")
 
 #### GRAPH ####
 # Note: code not working due to projection
@@ -123,3 +124,85 @@ my.colors = colorRampPalette(c("white","lightblue", "yellow","orangered", "red")
 # Plot the map
 plot(rbeta, col=my.colors(255), frame.plot=F, axes=F, box=F, add=F, legend.width=0.8, legend.shrink=1)
 
+
+
+
+
+
+
+
+
+## Ordination of gridded vascular plant data
+
+# Read species occurrences
+
+data <- read.csv("betagrid/inputs/Galiano_vascular_plants_intersect_1km_grid_WGS84.csv")
+
+# Subset relevant fields
+
+data <- data %>% dplyr::select('Taxon'|'id')
+
+# Add count field to generate matrix
+
+data$Count <- 1
+
+# Generate matrix 
+
+matrix <- ecodist::crosstab(data$id, data$Taxon, data$Count)
+
+# Convert to presence / absence
+
+matrix[matrix > 0] <- 1 
+
+# Read labeled grid dataset
+
+labeled.grid <- read.csv("betagrid/outputs/betagrid_vascular_plants_labeled_grid_cells_geo_attributes_2022-11-09.csv")
+
+# Remove rows with <2 taxa
+
+matrix <- matrix[rowSums(matrix[])>2,]
+  
+nrow(matrix)
+
+# Create environment dataframe that matches cell IDs with labels
+
+env <- matrix
+
+env$id <- row.names(matrix)
+
+env$label <-  labeled.grid$label[match(unlist(env$id), labeled.grid$id)]
+
+env <- env[,730:731]
+
+env$geo <-  labeled.grid$geo[match(unlist(env$id), labeled.grid$id)]
+
+#### COMMUNITY ORDINATION PLOTS ####
+
+## Consider ordinations against environmental variables
+## http://kembellab.ca/r-workshop/biodivR/SK_Biodiversity_R.html
+
+## Create MDS Jaccard similarity Index for Site Commmunity Data
+
+matrix.MDS <- metaMDS(matrix, distance = "jaccard", k = 2, trymax = 100, zerodist = "add")
+
+stressplot(matrix.MDS)
+
+str(matrix.MDS)
+
+#### CLASSIC nMDS Plot
+
+ordiplot(matrix.MDS,type="p")
+ordiplot (matrix.MDS, display = 'sites', type = 'p')
+ordihull (matrix.MDS, groups = env$geo, lty = 'dotted')
+
+### Species contributing to clustering
+
+Galiano.spp.fit <- envfit(matrix.MDS, matrix, permutations = 999) 
+head(Galiano.spp.fit)
+
+# Plot with hulls based on geographic position
+
+ordiplot(matrix.MDS, type = "n", main = "hulls")
+orditorp(matrix.MDS, display = "sites", labels = F, pch = c(16, 8, 17, 18, 10, 1, 19, 14) [as.numeric(env$geo)], col = c("green", "blue", "orange", "black", "red", "brown", "pink", "purple") [as.numeric(env$geo)], cex = 1)
+ordihull(matrix.MDS, groups = env$geo, draw = "polygon", lty = 1, col = "grey90")
+legend(x="bottomleft", legend=levels(env$geo), col=env$geo, pch=env$geo)
