@@ -86,6 +86,7 @@ BC.CDC.2019$scientificNameAuthorship <- summary$Taxon.Author[match(unlist(BC.CDC
 BC.CDC.2019$taxonID <- summary$ID[match(unlist(BC.CDC.2019$scientificName), summary$Taxon)]
 BC.CDC.2019$kingdom <- summary$Kingdom[match(unlist(BC.CDC.2019$scientificName), summary$Taxon)]
 BC.CDC.2019$phylum <- summary$Phylum[match(unlist(BC.CDC.2019$scientificName), summary$Taxon)]
+BC.CDC.2019$class <- summary$Class[match(unlist(BC.CDC.2019$scientificName), summary$Taxon)]
 BC.CDC.2019$order <- summary$Order[match(unlist(BC.CDC.2019$scientificName), summary$Taxon)]
 BC.CDC.2019$suborder <- summary$Suborder[match(unlist(BC.CDC.2019$scientificName), summary$Taxon)]
 BC.CDC.2019$superfamily <- summary$Superfamily[match(unlist(BC.CDC.2019$scientificName), summary$Taxon)]
@@ -101,25 +102,11 @@ BC.CDC.2019nationalStatus <- summary$National.Status[match(unlist(BC.CDC.2019$sc
 
 # Unmatched records
 
-BC.CDC.2019.names.unmatched <- BC.CDC.2019.names.matched[is.na(BC.CDC.2019.names.matched$taxonID),]
+BC.CDC.2019.names.unmatched <- BC.CDC.2019[is.na(BC.CDC.2019$taxonID),]
 
 # Matched records
 
-BC.CDC.2019.names.matched <- anti_join(BC.CDC.2019.names.matched,BC.CDC.2019.names.unmatched)
-
-# Standardize matched occcurrence records
-
-names(BC.CDC.2019.names.matched)
-
-BC.CDC.2019.names.matched <- BC.CDC.2019.names.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Hybrid,
-                                                                  Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,
-                                                                  PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
-                                                                  National.Status)
-
-names(BC.CDC.2019.names.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species','Hybrid',
-                                      'Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref','PositionalAccuracy',
-                                      'GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription','HabitatRemarks',
-                                      'Origin','Provincial.Status','National.Status')
+BC.CDC.2019.names.matched <- anti_join(BC.CDC.2019,BC.CDC.2019.names.unmatched)
 
 # Confirm all records are represented 
 
@@ -154,35 +141,31 @@ BC.CDC.2019.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv")
 
 BC.CDC.2019.names.unmatched.matched <- BC.CDC.2019.names.unmatched
 
-BC.CDC.2019.names.unmatched.matched$Taxon <- BC.CDC.2019.key$Matched.Taxon[match(unlist(BC.CDC.2019.names.unmatched.matched$Taxon), BC.CDC.2019.key$Taxon)]
+BC.CDC.2019.names.unmatched.matched$scientificName <- BC.CDC.2019.key$Matched.Taxon[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), BC.CDC.2019.key$Taxon)]
 
-# Remove unmatched fields prior to rejoining with summary
+# Add values based on newly matched name
 
-BC.CDC.2019.names.unmatched.matched <- select(BC.CDC.2019.names.unmatched.matched, c(1:17))
+BC.CDC.2019.names.unmatched.matched$scientificNameAuthorship <- summary$Taxon.Author[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$taxonID <- summary$ID[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$kingdom <- summary$Kingdom[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$phylum <- summary$Phylum[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$class <- summary$Class[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$order <- summary$Order[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$suborder <- summary$Suborder[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$superfamily <- summary$Superfamily[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$family <- summary$Family[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$genus <- summary$Genus[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$specificEpithet <- summary$Species[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$hybrid <- summary$hybrid[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$variety <- summary$Variety[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
+BC.CDC.2019.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(BC.CDC.2019.names.unmatched.matched$scientificName), summary$Taxon)]
 
-# Merge with newly matched records with  summary to standardize names and taxon metadata
+# Filter taxa unrecognized in summary 
 
-BC.CDC.2019.names.unmatched.matched <- left_join(BC.CDC.2019.names.unmatched.matched,summary, by = c('Taxon'))
-
-# Drop NAs (taxa not recognized in summary)
-
-BC.CDC.2019.names.unmatched.matched <- BC.CDC.2019.names.unmatched.matched %>% drop_na(Taxon)
-
-# Standardize matched occurrence records
-
-BC.CDC.2019.names.unmatched.matched <- BC.CDC.2019.names.unmatched.matched %>% select(Taxon,ID,Kingdom,Phylum,Class,Order,Family,
-                                                                                      Genus,Species,Hybrid,Subspecies,Variety,Source,CatalogueN,Collector,Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,
-                                                                                      GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,
-                                                                                      National.Status)
-
-names(BC.CDC.2019.names.unmatched.matched) <- c('Taxon','TaxonID','Kingdom','Phylum','Class','Order','Family','Genus','Species',
-                                                'Hybrid','Subspecies','Variety','Source','CatalogueN','Collector','CollectionDate','Latitude','Longitude','Geo_Ref',
-                                                'PositionalAccuracy','GeoPrivacy','PrivateLatitude','PrivateLongitude','Prov_State','Region','Location','LocationDescription',
-                                                'HabitatRemarks','Origin','Provincial.Status','National.Status')
-
-# Select names unmatched based on key
-
-BC.CDC.2019.names.unmatched.unmatched <- anti_join(BC.CDC.2019.names.unmatched,BC.CDC.2019.names.unmatched.matched,by='CatalogueN')
+BC.CDC.2019.names.unmatched.unmatched <- BC.CDC.2019.names.unmatched.matched[is.na(BC.CDC.2019.names.unmatched.matched$taxonID),]
 
 # Confirm all records are represented 
 
@@ -199,7 +182,7 @@ BC.CDC.2019.records <- rbind(BC.CDC.2019.names.matched,BC.CDC.2019.names.unmatch
 
 # Set date formatting consistent with other data frames
 
-BC.CDC.2019.records$CollectionDate <- as.Date(BC.CDC.2019.records$CollectionDate)
+BC.CDC.2019.records$eventDate <- as.Date(BC.CDC.2019.records$eventDate)
 
 # Compare records in and out
 
@@ -208,9 +191,7 @@ nrow(BC.CDC.2019.records) # No records omited
 
 # Start record of unmatched names
 
-unmatched.vascular.plant.records <- BC.CDC.2019.names.unmatched.unmatched %>% select(Taxon,Source,CatalogueN,Collector,
-                                                                                     Date,Latitude,Longitude,Geo_Ref,PositionalAccuracy,GeoPrivacy,PrivateLatitude,PrivateLongitude,Prov_State,Region,
-                                                                                     Location,LocationDe,HabitatRemarks,Origin,Provincial.Status,National.Status)
+unmatched.vascular.plant.records <- BC.CDC.2019.names.unmatched.unmatched
 
 unmatched.vascular.plant.records
 
