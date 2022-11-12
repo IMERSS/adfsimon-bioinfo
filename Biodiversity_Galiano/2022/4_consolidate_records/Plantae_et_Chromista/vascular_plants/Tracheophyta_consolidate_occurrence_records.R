@@ -181,6 +181,10 @@ nrow(BC.CDC.2019.names.matched)+nrow(BC.CDC.2019.names.unmatched.matched)+nrow(B
 
 BC.CDC.2019.records <- rbind(BC.CDC.2019.names.matched,BC.CDC.2019.names.unmatched.matched)
 
+# Set date formatting consistent with other data frames
+
+BC.CDC.2019.records$CollectionDate <- as.Date(BC.CDC.2019.records$CollectionDate)
+
 # Compare records in and out
 
 nrow(BC.CDC.2019)
@@ -353,6 +357,10 @@ nrow(DL63.names.matched)+nrow(DL63.names.unmatched.matched)+nrow(DL63.names.unma
 
 DL63.records <- rbind(DL63.names.matched,DL63.names.unmatched.matched)
 
+# Set date formatting consistent with other data frames
+
+DL63.records$CollectionDate <- as.Date(DL63.records$CollectionDate)
+
 # Compare records in and out
 
 nrow(DL63)
@@ -516,6 +524,10 @@ nrow(Ecological.Reserve.128.names.matched)+nrow(Ecological.Reserve.128.names.unm
 
 Ecological.Reserve.128.records <- rbind(Ecological.Reserve.128.names.matched,Ecological.Reserve.128.names.unmatched.matched)
 
+# Set date formatting consistent with other data frames
+
+Ecological.Reserve.128.records$CollectionDate <- as.Date(Ecological.Reserve.128.records$CollectionDate)
+
 # Compare records in and out
 
 nrow(Ecological.Reserve.128)
@@ -664,6 +676,10 @@ nrow(Hunterston.2010.names.matched)+nrow(Hunterston.2010.names.unmatched.matched
 # Bind records
 
 Hunterston.2010.records <- rbind(Hunterston.2010.names.matched,Hunterston.2010.names.unmatched.matched)
+
+# Set date formatting consistent with other data frames
+
+Hunterston.2010.records$CollectionDate <- as.Date(Hunterston.2010.records$CollectionDate)
 
 # Compare records in and out
 
@@ -846,6 +862,10 @@ write.csv(review.key,"keys/review_key.csv")
 
 Janszen.2003.records <- rbind(Janszen.2003.names.matched,Janszen.2003.names.unmatched.matched)
 
+# Set date formatting consistent with other data frames
+
+Janszen.2003.records$CollectionDate <- as.Date(Janszen.2003.records$CollectionDate)
+
 # Compare records in and out
 
 nrow(Janszen.2003)
@@ -1013,6 +1033,10 @@ nrow(Laughlin.2002.names.matched)+nrow(Laughlin.2002.names.unmatched.matched)+nr
 # Bind records
 
 Laughlin.2002.records <- rbind(Laughlin.2002.names.matched,Laughlin.2002.names.unmatched.matched)
+
+# Set date formatting consistent with other data frames
+
+Laughlin.2002.records$CollectionDate <- as.Date(Laughlin.2002.records$CollectionDate)
 
 # Compare records in and out
 
@@ -1311,6 +1335,10 @@ nrow(RBCM.georeferencing.corrected.names.matched)+nrow(RBCM.georeferencing.corre
 
 RBCM.records <- rbind(RBCM.georeferencing.corrected.names.matched,RBCM.georeferencing.corrected.names.unmatched.matched)
 
+# Set date formatting consistent with other data frames
+
+RBCM.records$CollectionDate <- as.Date(RBCM.records$CollectionDate)
+
 # Compare records in and out
 
 nrow(RBCM.georeferencing.corrected)
@@ -1378,7 +1406,7 @@ unique.suffix <- 1:nrow(Roemer.2004)
 Roemer.2004$Source <- "Mt. Sutil Vegetation Study"
 Roemer.2004$CatalogueN <- paste(unique.prefix,unique.suffix, sep = "")
 Roemer.2004$Observer <- "Hans Roemer"
-Roemer.2004$Date <- '2004-07'
+Roemer.2004$Date <- '2004-07-01'
 Roemer.2004$Geo_Ref <- "Coordinates mapped by GPS"
 Roemer.2004$PositionalAccuracy <- 3 # Need to ask Hans how good his GPS was...
 Roemer.2004$GeoPrivacy <- NA
@@ -1485,6 +1513,10 @@ nrow(Roemer.2004.names.matched)+nrow(Roemer.2004.names.unmatched.matched)+nrow(R
 # Bind records
 
 Roemer.2004.records <- rbind(Roemer.2004.names.matched,Roemer.2004.names.unmatched.matched)
+
+# Set date formatting consistent with other data frames
+
+Roemer.2004.records$CollectionDate <- as.Date(Roemer.2004.records$CollectionDate)
 
 # Compare records in and out
 
@@ -1640,6 +1672,10 @@ nrow(Simon.2018.names.matched)+nrow(Simon.2018.names.unmatched.matched)+nrow(Sim
 
 Simon.2018.records <- rbind(Simon.2018.names.matched,Simon.2018.names.unmatched.matched)
 
+# Set date formatting consistent with other data frames
+
+Simon.2018.records$CollectionDate <- as.Date(Simon.2018.records$CollectionDate)
+
 # Compare records in and out
 
 nrow(Simon.2018)
@@ -1788,10 +1824,15 @@ nrow(UBC.2022.names.matched)+nrow(UBC.2022.names.unmatched.matched)+nrow(UBC.202
 
 UBC.2022.records <- rbind(UBC.2022.names.matched,UBC.2022.names.unmatched.matched)
 
+# Set date formatting consistent with other data frames
+
+UBC.2022.records$CollectionDate <- as.Date(UBC.2022.records$CollectionDate)
+
 # Compare records in and out
 
 nrow(UBC.2022)
 nrow(UBC.2022.records) # Good: only four records discarded, accounted for above.
+
 
 # Note: taxa unrecognized in summary, and hence excluded from catalog:
 # Two taxa identified only two genus
@@ -1809,8 +1850,9 @@ unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,UBC.2
 
 # Combine all source occurrence records
 
+
 Vascular.plant.records <- rbind(BC.CDC.2019.records,DL63.records,Ecological.Reserve.128.records,Hunterston.2010.records,
-                                Laughlin.2002.records,Roemer.2004.records,RBCM.records,Simon.2018.records,Lomer.2022.records,
+                                Janszen.2003.records,Laughlin.2002.records,Roemer.2004.records,RBCM.records,Simon.2018.records,Lomer.2022.records,
                                 UBC.2022.records)
 
 # Combine with iNaturalist observations
@@ -1827,6 +1869,8 @@ names(iNaturalist.observations) <- c('Taxon','TaxonID','Kingdom','Phylum','Class
       'Region','Location','LocationDescription','HabitatRemarks','Origin','Provincial.Status','National.Status')
 
 Vascular.plant.records <- rbind(Vascular.plant.records,iNaturalist.observations)
+
+unique(Vascular.plant.records$CollectionDate)
 
 # Output synthesized catalog of occurrence records
 
