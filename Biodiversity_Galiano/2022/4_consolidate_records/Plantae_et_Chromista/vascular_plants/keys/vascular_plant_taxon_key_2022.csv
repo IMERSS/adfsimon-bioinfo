@@ -29,7 +29,7 @@ Arctostaphylos x-media,Arctostaphylos,,Arctostaphylos × media,,,,Arctostaphylos
 Arenaria serpyllifolia,Arenaria,serpyllifolia,,,,,Arenaria serpyllifolia var. serpyllifolia
 Argentina pacifica,Argentina,pacifica,,,,,Argentina anserina
 Arrhenatherum elatius,Arrhenatherum,elatius,,,,,Arrhenatherum elatius ssp. elatius
-Artemisa campestris,Artemisa,campestris,,,,,Artemisia campestris
+Artemisa campestris,Artemisa,campestris,,,,,Artemisia campestris ssp. pacifica
 Artemisa suksdorfii,Artemisa,suksdorfii,,,,,Artemisia suksdorfii
 Artemisia campestris,Artemisia,campestris,,,,,Artemisia campestris ssp. pacifica
 Asplenium trichomanes,Asplenium,trichomanes,,,,,Asplenium trichomanes ssp. trichomanes
@@ -83,7 +83,7 @@ Cerastium arvense,Cerastium,arvense,,,,,Cerastium arvense ssp. strictum
 Cerastium fontanum,Cerastium,fontanum,,,,,Cerastium fontanum ssp. vulgare
 Chimaphila umbellata,Chimaphila,umbellata,,,,,Chimaphila umbellata ssp. umbellata
 Circea alpina,Circea,alpina,,,,,Circaea alpina
-Clarkia amoena,Clarkia,amoena,,,,,Clarkia amoena
+Clarkia amoena,Clarkia,amoena,,,,,Clarkia amoena ssp. caurina
 Clarkia amoena caurina,Clarkia,amoena,,caurina,,,Clarkia amoena ssp. caurina
 Clarkia amoena caurina,Clarkia,amoena,,,caurina,,Clarkia amoena ssp. caurina
 Clarkia amoena lindleyi,Clarkia,amoena,,lindleyi,,,Clarkia amoena ssp. lindleyi
@@ -107,9 +107,8 @@ Cornus sericea occidentalis,Cornus,sericea,,occidentalis,,,Cornus sericea ssp. o
 Cornus stolonifera,Cornus,stolonifera,,,,,Cornus sericea ssp. occidentalis
 Corylus cornuta,Corylus,cornuta,,,,,Corylus cornuta ssp. californica
 Corylus cornuta californica,Corylus,cornuta,,californica,,,Corylus cornuta ssp. californica
-Cotoneaster coriaceus,Cotoneaster,coriaceus,,,,,Cotoneaster lacteus
+Cotoneaster lacteus,Cotoneaster,coriaceus,,,,,Cotoneaster coriaceus
 Cotoneaster Dielsianus,Cotoneaster,Dielsianus,,,,,Cotoneaster simonsii
-Cotoneaster lacteus,Cotoneaster,lacteus,,,,,Cotoneaster lacteus
 Crassula connata var connata,Crassula,connata,,,,,Crassula connata
 Crataegus monogyna,Crataegus,monogyna,,,,,Crataegus monogyna var. monogyna
 Crataegus monogyna monogyna,Crataegus,monogyna,,,monogyna,,Crataegus monogyna var. monogyna
@@ -452,7 +451,7 @@ Silene alba,Silene,alba,,,,,Silene latifolia
 Sisyrinchium idahoense,Sisyrinchium,idahoense,,,,,Sisyrinchium idahoense var. idahoense
 Sisyrinchium idahoense idahoense,Sisyrinchium,idahoense,,,idahoense,,Sisyrinchium idahoense var. idahoense
 Sisyrinchium idahoensis,Sisyrinchium,idahoensis,,,,,Sisyrinchium idahoense var. idahoense
-Smilicina racemosa,Smilicina,racemosa,,,,,Maianthemum racemosum
+Smilicina racemosa,Smilicina,racemosa,,,,,Maianthemum racemosum ssp. amplexicaule
 Solanum americanum var. nodiflorum,Solanum,americanum,,,,,Solanum americanum
 Sonchus arvensis,Sonchus,arvensis,,,,,Sonchus arvensis ssp. arvensis
 Sonchus arvensis arvensis,Sonchus,arvensis,,arvensis,,,Sonchus arvensis ssp. arvensis
@@ -501,7 +500,7 @@ Trifolium willdenowii,Trifolium,willdenowii,,,,,Trifolium willdenovii
 Triglochin concinnum,Triglochin,concinnum,,,,,Triglochin concinna var. concinna
 Trisetum cernuum var. canescens,Trisetum,cernuum,,,canescens,,Trisetum canescens
 U. vulgaris,Utricularia,vulgaris,,,,,Utricularia macrorhiza
-Utricularia vulgaris,Utricularia,vulgaris,,,,,Utricularia vulgaris ssp. macrorhiza
+Utricularia vulgaris,Utricularia,vulgaris,,,,,Utricularia macrorhiza
 V. beccabunga ssp. americana,Veronica,beccabunga,,americana,,,Veronica americana
 V. filiformis,Veronica,filiformis,,,,,Veronica filiformis
 V. minor,Vinca,minor,,,,,Vinca minor
