@@ -16,7 +16,7 @@ summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summ
 
 # Create vector of DarwinCore fields for aggregating records
 
-DarwinCoreFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','phylum','class',
+DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','phylum','class',
                     'order','suborder','infraorder','superfamily','family','genus','subgenus','specificEpithet',
                     'hybrid','subspecies','variety','form','infraspecificEpithet','taxonRank','institutionCode',
                     'collectionCode','catalogNumber','datasetName','occurrenceID','recordedBy','recordNumber',
@@ -70,12 +70,12 @@ unique.suffix <- 1:nrow(BC.CDC.2019)
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(BC.CDC.2019)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(BC.CDC.2019)))
+names(data.frame) <- DwCFields
 
 data.frame[names(BC.CDC.2019)] <- BC.CDC.2019
 
-BC.CDC.2019 <- select(data.frame, c(1:length(DarwinCoreFields)))
+BC.CDC.2019 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -199,12 +199,12 @@ unique.suffix <- 1:nrow(DL63)
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(DL63)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(DL63)))
+names(data.frame) <- DwCFields
 
 data.frame[names(DL63)] <- DL63
 
-DL63 <- select(data.frame, c(1:length(DarwinCoreFields)))
+DL63 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -368,12 +368,12 @@ unique.suffix <- 1:nrow(Ecological.Reserve.128)
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(Ecological.Reserve.128)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Ecological.Reserve.128)))
+names(data.frame) <- DwCFields
 
 data.frame[names(Ecological.Reserve.128)] <- Ecological.Reserve.128
 
-Ecological.Reserve.128 <- select(data.frame, c(1:length(DarwinCoreFields)))
+Ecological.Reserve.128 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -527,12 +527,12 @@ unique.suffix <- 1:nrow(Hunterston.2010)
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(Hunterston.2010)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Hunterston.2010)))
+names(data.frame) <- DwCFields
 
 data.frame[names(Hunterston.2010)] <- Hunterston.2010
 
-Hunterston.2010 <- select(data.frame, c(1:length(DarwinCoreFields)))
+Hunterston.2010 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -676,12 +676,12 @@ unique.suffix <- 1:nrow(Janszen.2003)
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(Janszen.2003)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Janszen.2003)))
+names(data.frame) <- DwCFields
 
 data.frame[names(Janszen.2003)] <- Janszen.2003
 
-Janszen.2003 <- select(data.frame, c(1:length(DarwinCoreFields)))
+Janszen.2003 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -827,12 +827,12 @@ unique.suffix <- 1:nrow(Laughlin.2002)
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(Laughlin.2002)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Laughlin.2002)))
+names(data.frame) <- DwCFields
 
 data.frame[names(Laughlin.2002)] <- Laughlin.2002
 
-Laughlin.2002 <- select(data.frame, c(1:length(DarwinCoreFields)))
+Laughlin.2002 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -997,12 +997,12 @@ Lomer.2022 <- read.csv("digitized/DarwinCore/Lomer_2022_Galiano_collections_DwC.
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(Lomer.2022)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Lomer.2022)))
+names(data.frame) <- DwCFields
 
 data.frame[names(Lomer.2022)] <- Lomer.2022
 
-Lomer.2022 <- select(data.frame, c(1:length(DarwinCoreFields)))
+Lomer.2022 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -1141,12 +1141,12 @@ RBCM.georeferencing.corrected$scientificName <- paste(RBCM.georeferencing.correc
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(RBCM.georeferencing.corrected)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(RBCM.georeferencing.corrected)))
+names(data.frame) <- DwCFields
 
 data.frame[names(RBCM.georeferencing.corrected)] <- RBCM.georeferencing.corrected
 
-RBCM.georeferencing.corrected <- select(data.frame, c(1:length(DarwinCoreFields)))
+RBCM.georeferencing.corrected <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -1250,7 +1250,7 @@ nrow(RBCM.georeferencing.corrected.names.matched)+nrow(RBCM.georeferencing.corre
 
 # Bind records
 
-RBCM.georeferencing.corrected.records <- rbind(RBCM.georeferencing.corrected.names.matched,RBCM.georeferencing.corrected.names.unmatched.matched)
+RBCM.records <- rbind(RBCM.georeferencing.corrected.names.matched,RBCM.georeferencing.corrected.names.unmatched.matched)
 
 # Set date formatting consistent with other data frames
 
@@ -1296,12 +1296,12 @@ unique.suffix <- 1:nrow(Roemer.2004)
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(Roemer.2004)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Roemer.2004)))
+names(data.frame) <- DwCFields
 
 data.frame[names(Roemer.2004)] <- Roemer.2004
 
-Roemer.2004 <- select(data.frame, c(1:length(DarwinCoreFields)))
+Roemer.2004 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -1484,12 +1484,12 @@ unique.suffix <- 1:nrow(Simon.2018)
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(Simon.2018)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Simon.2018)))
+names(data.frame) <- DwCFields
 
 data.frame[names(Simon.2018)] <- Simon.2018
 
-Simon.2018 <- select(data.frame, c(1:length(DarwinCoreFields)))
+Simon.2018 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -1616,21 +1616,21 @@ unmatched.vascular.plant.records
 
 # Read UBC specimen records (UBC 2022)
 
-UBC.2022 <- read.csv("digitized/UBC_Galiano_Island_vascular_plants_2022-10-31.csv")
+UBC.2022 <- read.csv("digitized/DarwinCore/UBC_Galiano_Island_vascular_plants_2022-10-31_DwC.csv")
 
 # Change date format to POSIX
 
-UBC.2022$Date <- strptime(UBC.2022$Date, "%Y %b %d")
-UBC.2022$Date <-  as.Date(UBC.2022$Date)
+UBC.2022$eventDate <- strptime(UBC.2022$eventDate, "%Y %b %d")
+UBC.2022$eventDate <-  as.Date(UBC.2022$eventDate)
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DarwinCoreFields), nrow = nrow(UBC.2022)))
-names(data.frame) <- DarwinCoreFields
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(UBC.2022)))
+names(data.frame) <- DwCFields
 
 data.frame[names(UBC.2022)] <- UBC.2022
 
-UBC.2022 <- select(data.frame, c(1:length(DarwinCoreFields)))
+UBC.2022 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
@@ -1744,3 +1744,12 @@ nrow(UBC.2022.records) # All accounted for
 unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,UBC.2022.names.unmatched.unmatched)
 
 unmatched.vascular.plant.records
+
+
+
+# Combine all source occurrence records
+
+
+Vascular.plant.records <- rbind(BC.CDC.2019.records,DL63.records,Ecological.Reserve.128.records,Hunterston.2010.records,
+                                Janszen.2003.records,Laughlin.2002.records,Roemer.2004.records,RBCM.records,Simon.2018.records,Lomer.2022.records,
+                                UBC.2022.records)
