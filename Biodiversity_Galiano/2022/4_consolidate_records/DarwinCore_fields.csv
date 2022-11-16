@@ -18,7 +18,7 @@ taxonomic,16,beginning,NA,subspecies,,,Relevant DarwinCore field is infraspecifi
 taxonomic,17,beginning,NA,variety,,,Relevant DarwinCore field is infraspecificEpithet
 taxonomic,18,beginning,NA,form,,,Relevant DarwinCore field is infraspecificEpithet
 taxonomic,19,end,infraspecificEpithet,,,,
-taxonomic,20,end,taxonRank,,,,
+taxonomic,20,end,taxonRank,,The taxonomic rank of the most specific name in the scientificName.,"subspecies, varietas, forma, species, genus",
 source,21,beginning,institutionCode,,The name (or acronym) in use by the institution having custody of the object(s) or information referred to in the record.,,
 source,22,beginning,collectionCode,,,,
 identifier,23,beginning,catalogNumber,,An identifier (preferably unique) for the record within the data set or collection.,,
@@ -48,17 +48,18 @@ location,46,beginning,georeferenceRemarks,,"Notes or comments about the spatial 
 location,47,beginning,habitat,,A category or description of the habitat in which the Event occurred.,,
 location,48,beginning,verbatimDepth,,,,
 location,49,beginning,verbatimElevation,,,,
-metadata_methods,50,beginning,occurrenceStatus,,,,
-metadata_methods,51,beginning,samplingProtocol,,,,
-metadata_bio,52,beginning,occurrenceRemarks,,,,
-metadata_bio,53,beginning,individualCount,,,,
-metadata_bio,54,beginning,sex,,,,
-metadata_bio,55,beginning,establishmentMeans,,The process by which the biological individual(s) represented in the Occurrence became established at the location.,,
-metadata_bio,56,beginning,NA,provincialStatus,,,It doesn’t look like there are DarwinCore fields for conservation rankings
-metadata_bio,57,beginning,NA,nationalStatus,,,It doesn’t look like there are DarwinCore fields for conservation rankings
-metadata_taxonomy,58,beginning,identifiedBy,,"A list (concatenated and separated) of names of people, groups, or organizations who assigned the Taxon to the subject.",,
-metadata_taxonomy,59,beginning,identificationQualifier,,,,
-metadata_taxonomy,60,beginning,identificationRemarks,,,,
-metadata_taxonomy,61,beginning,previousIdentifications,,,,
-references,62,beginning,bibliographicCitation,,A bibliographic reference for the resource as a statement indicating how this record should be cited (attributed) when used.,,
-references,63,beginning,associatedReferences,,"A list (concatenated and separated) of identifiers (publication, bibliographic reference, global unique identifier, URI) of literature associated with the Occurrence.",,
+metadata_methods,50,beginning,occurrenceStatus,,A statement about the presence or absence of a Taxon at a Location.,"present, absent",
+metadata_methods,51,beginning,individualCount,,The number of individuals present at the time of the Occurrence.,,
+metadata_methods,52,beginning,samplingProtocol,,"The names of, references to, or descriptions of the methods or protocols used during an Event.",,
+metadata_bio,53,beginning,occurrenceRemarks,,,,
+metadata_bio,54,beginning,individualCount,,,,
+metadata_bio,55,beginning,sex,,,,
+metadata_bio,56,beginning,establishmentMeans,,The process by which the biological individual(s) represented in the Occurrence became established at the location.,,
+metadata_bio,57,beginning,NA,provincialStatus,,,It doesn’t look like there are DarwinCore fields for conservation rankings
+metadata_bio,58,beginning,NA,nationalStatus,,,It doesn’t look like there are DarwinCore fields for conservation rankings
+metadata_taxonomy,59,beginning,identifiedBy,,"A list (concatenated and separated) of names of people, groups, or organizations who assigned the Taxon to the subject.",,
+metadata_taxonomy,60,beginning,identificationQualifier,,,,
+metadata_taxonomy,61,beginning,identificationRemarks,,,,
+metadata_taxonomy,62,beginning,previousIdentifications,,,,
+references,63,beginning,bibliographicCitation,,A bibliographic reference for the resource as a statement indicating how this record should be cited (attributed) when used.,,
+references,64,beginning,associatedReferences,,"A list (concatenated and separated) of identifiers (publication, bibliographic reference, global unique identifier, URI) of literature associated with the Occurrence.",,

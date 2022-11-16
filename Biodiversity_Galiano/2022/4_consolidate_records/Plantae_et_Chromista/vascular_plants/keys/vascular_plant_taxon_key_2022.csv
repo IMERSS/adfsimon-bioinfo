@@ -38,6 +38,7 @@ Aster subspicatus,Aster,subspicatus,,,,,Symphyotrichum subspicatum
 Athyrium filix-femina,Athyrium,filix-femina,,,,,Athyrium filix-femina ssp. cyclosorum
 Atriplex subspicata,Atriplex,subspicata,,,,,Atriplex patula
 Blechnum spicant,Blechnum,spicant,,,,,Struthiopteris spicant
+Boschniakia hookeri,Boschniakia,hookeri,,,,,Kopsiopsis hookeri
 Botrychium multifidum,Botrychium,multifidum,,,,,Sceptridium multifidum
 Botrychium silaifolium,Botrychium,silaifolium,,,,,Sceptridium multifidum
 Brodiaea coronaria coronaria,Brodiaea,coronaria,,coronaria,,,Brodiaea coronaria
@@ -107,8 +108,8 @@ Cornus sericea occidentalis,Cornus,sericea,,occidentalis,,,Cornus sericea ssp. o
 Cornus stolonifera,Cornus,stolonifera,,,,,Cornus sericea ssp. occidentalis
 Corylus cornuta,Corylus,cornuta,,,,,Corylus cornuta ssp. californica
 Corylus cornuta californica,Corylus,cornuta,,californica,,,Corylus cornuta ssp. californica
-Cotoneaster lacteus,Cotoneaster,coriaceus,,,,,Cotoneaster coriaceus
 Cotoneaster Dielsianus,Cotoneaster,Dielsianus,,,,,Cotoneaster simonsii
+Cotoneaster lacteus,Cotoneaster,coriaceus,,,,,Cotoneaster coriaceus
 Crassula connata var connata,Crassula,connata,,,,,Crassula connata
 Crataegus monogyna,Crataegus,monogyna,,,,,Crataegus monogyna var. monogyna
 Crataegus monogyna monogyna,Crataegus,monogyna,,,monogyna,,Crataegus monogyna var. monogyna
@@ -134,6 +135,7 @@ Erodium cicutarium,Erodium,cicutarium,,,,,Erodium cicutarium ssp. cicutarium
 Erodium cicutarium cicutarium,Erodium,cicutarium,,cicutarium,,,Erodium cicutarium ssp. cicutarium
 Erysimum cheianthoides,Erysimum,cheianthoides,,,,,Erysimum cheiranthoides
 Erythranthe guttata,Erythranthe,guttata,,,,,Erythranthe cf guttata
+Erythranthe guttatus,Erythranthe,guttatus,,,,,Erythranthe cf guttata
 Erythranthe moschatus,Erythranthe,moschatus,,,,,Erythranthe moschata
 Festuca arundinaceae,Festuca,arundinaceae,,,,,Lolium arundinaceum
 Festuca idahoensis var. roemeri,Festuca,idahoensis,,,roemeri,,Festuca roemeri var. roemeri
@@ -265,6 +267,7 @@ M. suaveolens,Mentha,suaveolens,,,,,Mentha suaveolens
 M. verticillatum,Myriophyllum,verticillatum,,,,,Myriophyllum spicatum
 Madia madioides,Madia,madioides,,,,,Anisocarpus madioides
 Mahonia aquifolium,Mahonia,aquifolium,,,,,Berberis aquifolium
+Mahonia aquilifolium,Mahonia,aquilifolium,,,,,Berberis aquifolium
 Mahonia nervosa,Mahonia,nervosa,,,,,Berberis nervosa
 Maianthemum dilatum,Maianthemum,dilatum,,,,,Maianthemum dilatatum
 Malus domestica,Malus,domestica,,,,,Malus pumila
@@ -492,6 +495,7 @@ Torilis japonica (arvense?),Torilis,japonica,,,,,Torilis japonica
 Torreyochloa pallida pauciflora,Torreyochloa,pallida,,,pauciflora,,Torreyochloa pallida var. pauciflora
 Torreyochloa pauciflora,Torreyochloa,pauciflora,,,,,Torreyochloa pallida var. pauciflora
 Trientalis arctica,Trientalis,arctica,,,,,Lysimachia europaea ssp. arctica
+Trientalis borealis ssp. latifolia,Trientalis,borealis,,borealis,,,Lysimachia latifolia
 Trientalis latifolia,Trientalis,latifolia,,,,,Lysimachia latifolia
 Trifolium glomerata,Trifolium,glomerata,,,,,Trifolium glomeratum
 Trifolium oligathum,Trifolium,oligathum,,,,,Trifolium oliganthum
@@ -500,6 +504,7 @@ Trifolium willdenowii,Trifolium,willdenowii,,,,,Trifolium willdenovii
 Triglochin concinnum,Triglochin,concinnum,,,,,Triglochin concinna var. concinna
 Trisetum cernuum var. canescens,Trisetum,cernuum,,,canescens,,Trisetum canescens
 U. vulgaris,Utricularia,vulgaris,,,,,Utricularia macrorhiza
+Urtica gracilis gracilis,Urtica,gracilis,,,,,Urtica gracilis
 Utricularia vulgaris,Utricularia,vulgaris,,,,,Utricularia macrorhiza
 V. beccabunga ssp. americana,Veronica,beccabunga,,americana,,,Veronica americana
 V. filiformis,Veronica,filiformis,,,,,Veronica filiformis
