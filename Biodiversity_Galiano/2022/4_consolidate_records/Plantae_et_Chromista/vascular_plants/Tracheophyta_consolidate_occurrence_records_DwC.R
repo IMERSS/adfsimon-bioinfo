@@ -221,6 +221,11 @@ data.frame[names(Brothers.2020)] <- Brothers.2020
 
 Brothers.2020 <- select(data.frame, c(1:length(DwCFields)))
 
+# Create unique identifiers for observations
+
+unique.prefix <- "BROTHERS2020:" 
+unique.suffix <- 1:nrow(Brothers.2020)
+
 # Add metadata
 
 Brothers.2020$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
@@ -980,12 +985,12 @@ iNaturalist.records <- rbind(iNaturalist.observations.names.matched,iNaturalist.
 
 # Set date formatting consistent with other data frames
 
-iNaturalist.observations.records$eventDate <- as.Date(iNaturalist.observations.records$eventDate)
+iNaturalist.records$eventDate <- as.Date(iNaturalist.records$eventDate)
 
 # Compare records in and out
 
 nrow(iNaturalist.observations)
-nrow(iNaturalist.observations.records) # 783 records omitted: all species resolved only to genus (redundant to list) or unrecognized in summary (cultivated plants, etc.)
+nrow(iNaturalist.records) # 783 records omitted: all species resolved only to genus (redundant to list) or unrecognized in summary (cultivated plants, etc.)
 
 unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,iNaturalist.observations.names.unmatched.unmatched)
 
