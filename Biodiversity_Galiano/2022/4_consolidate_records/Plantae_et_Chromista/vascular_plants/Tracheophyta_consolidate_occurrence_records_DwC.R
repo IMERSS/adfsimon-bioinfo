@@ -44,7 +44,7 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 # Laughlin Lake 2002 - added (georeferencing might be improved)
 # Lomer 2022 voucher specimens - added
 # Lomer 2022 Gossip Island plant list - added
-# ! Matt Fairbarns Mt Sutil records - ! Need to get a digital copy of this... !
+# ! Matt Fairbarns Mt Sutil records - not yet added!
 # ! RBCM - added, but incomplete (georeferencing corrected only in part)
 # Roemer 2004 - added
 # Simon 2018 - added
@@ -299,8 +299,8 @@ Brothers.2020.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(Brot
 Brothers.2020.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(Brothers.2020.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Brothers.2020.names.unmatched.matched$variety <- summary$Variety[match(unlist(Brothers.2020.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Brothers.2020.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(Brothers.2020.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Brothers.2020.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(Brothers.2020.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Brothers.2020.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(Brothers.2020.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Brothers.2020.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(Brothers.2020.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Brothers.2020.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(Brothers.2020.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -353,12 +353,6 @@ DL63 <- read.csv("digitized/DarwinCore/DL63_veg_list_2001-2002_DwC.csv")
 # Filter plants
 
 DL63 <- DL63 %>% filter(Group == 'vascular')
-
-# Add coordinates from plot metadata
-
-DL63.plot.metadata <- read.csv("digitized/DarwinCore/DL63_plot_metadata_DwC.csv")
-
-DL63 <- left_join(DL63,DL63.plot.metadata)
 
 # Create unique identifiers for observations
 
@@ -471,8 +465,8 @@ DL63.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(DL63.names.un
 DL63.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(DL63.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 DL63.names.unmatched.matched$variety <- summary$Variety[match(unlist(DL63.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 DL63.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(DL63.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-DL63.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(DL63.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-DL63.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(DL63.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+DL63.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(DL63.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+DL63.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(DL63.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -628,8 +622,8 @@ Ecological.Reserve.128.names.unmatched.matched$hybrid <- summary$Hybrid[match(un
 Ecological.Reserve.128.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(Ecological.Reserve.128.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Ecological.Reserve.128.names.unmatched.matched$variety <- summary$Variety[match(unlist(Ecological.Reserve.128.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Ecological.Reserve.128.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(Ecological.Reserve.128.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Ecological.Reserve.128.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(Ecological.Reserve.128.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Ecological.Reserve.128.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(Ecological.Reserve.128.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Ecological.Reserve.128.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(Ecological.Reserve.128.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Ecological.Reserve.128.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(Ecological.Reserve.128.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -784,8 +778,8 @@ Hunterston.2010.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(Hu
 Hunterston.2010.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(Hunterston.2010.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Hunterston.2010.names.unmatched.matched$variety <- summary$Variety[match(unlist(Hunterston.2010.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Hunterston.2010.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(Hunterston.2010.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Hunterston.2010.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(Hunterston.2010.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Hunterston.2010.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(Hunterston.2010.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Hunterston.2010.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(Hunterston.2010.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Hunterston.2010.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(Hunterston.2010.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -960,8 +954,10 @@ iNaturalist.observations.names.unmatched.matched$hybrid <- summary$Hybrid[match(
 iNaturalist.observations.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 iNaturalist.observations.names.unmatched.matched$variety <- summary$Variety[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 iNaturalist.observations.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-iNaturalist.observations.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-iNaturalist.observations.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+iNaturalist.observations.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+iNaturalist.observations.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+
+write.csv(iNaturalist.observations.names.unmatched.matched,"test.csv")
 
 # Filter taxa unrecognized in summary 
 
@@ -1101,8 +1097,8 @@ Janszen.2003.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(Jansz
 Janszen.2003.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(Janszen.2003.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Janszen.2003.names.unmatched.matched$variety <- summary$Variety[match(unlist(Janszen.2003.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Janszen.2003.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(Janszen.2003.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Janszen.2003.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(Janszen.2003.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Janszen.2003.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(Janszen.2003.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Janszen.2003.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(Janszen.2003.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Janszen.2003.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(Janszen.2003.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -1276,8 +1272,8 @@ Laughlin.2002.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(Laug
 Laughlin.2002.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(Laughlin.2002.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Laughlin.2002.names.unmatched.matched$variety <- summary$Variety[match(unlist(Laughlin.2002.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Laughlin.2002.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(Laughlin.2002.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Laughlin.2002.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(Laughlin.2002.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Laughlin.2002.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(Laughlin.2002.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Laughlin.2002.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(Laughlin.2002.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Laughlin.2002.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(Laughlin.2002.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -1418,8 +1414,8 @@ Lomer.2022.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(Lomer.2
 Lomer.2022.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(Lomer.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Lomer.2022.names.unmatched.matched$variety <- summary$Variety[match(unlist(Lomer.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Lomer.2022.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(Lomer.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Lomer.2022.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(Lomer.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Lomer.2022.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(Lomer.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(Lomer.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(Lomer.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -1496,7 +1492,7 @@ Lomer.2022.Gossip.Is$countryCode <- "CA"
 Lomer.2022.Gossip.Is$georeferenceProtocol <- "Coordinates generalized based on locality information"
 Lomer.2022.Gossip.Is$georeferencedBy <- "Andrew Simon"
 Lomer.2022.Gossip.Is$georeferenceVerificationStatus <- "verified by contributor"
-Lomer.2022.Gossip.Is$Lomer.2022.Gossip.Is <- "Plants reported for Gossip Island; georeferencing imprecise"
+Lomer.2022.Gossip.Is$georeferenceRemarks <- "Plants reported for Gossip Island; georeferencing imprecise"
 Lomer.2022.Gossip.Is$basisOfRecord <- "HumanObservation"
 
 # Merge with summary to standardize names and taxon metadata
@@ -1561,8 +1557,8 @@ Lomer.2022.Gossip.Is.names.unmatched.matched$hybrid <- summary$Hybrid[match(unli
 Lomer.2022.Gossip.Is.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Lomer.2022.Gossip.Is.names.unmatched.matched$variety <- summary$Variety[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Lomer.2022.Gossip.Is.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Lomer.2022.Gossip.Is.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Lomer.2022.Gossip.Is.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -1703,8 +1699,8 @@ RBCM.georeferencing.corrected.names.unmatched.matched$hybrid <- summary$Hybrid[m
 RBCM.georeferencing.corrected.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(RBCM.georeferencing.corrected.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 RBCM.georeferencing.corrected.names.unmatched.matched$variety <- summary$Variety[match(unlist(RBCM.georeferencing.corrected.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 RBCM.georeferencing.corrected.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(RBCM.georeferencing.corrected.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-RBCM.georeferencing.corrected.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(RBCM.georeferencing.corrected.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-RBCM.georeferencing.corrected.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(RBCM.georeferencing.corrected.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+RBCM.georeferencing.corrected.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(RBCM.georeferencing.corrected.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+RBCM.georeferencing.corrected.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(RBCM.georeferencing.corrected.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -1883,8 +1879,8 @@ Roemer.2004.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(Roemer
 Roemer.2004.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(Roemer.2004.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Roemer.2004.names.unmatched.matched$variety <- summary$Variety[match(unlist(Roemer.2004.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Roemer.2004.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(Roemer.2004.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Roemer.2004.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(Roemer.2004.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Roemer.2004.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(Roemer.2004.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Roemer.2004.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(Roemer.2004.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Roemer.2004.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(Roemer.2004.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -2053,8 +2049,8 @@ Simon.2018.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(Simon.2
 Simon.2018.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(Simon.2018.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Simon.2018.names.unmatched.matched$variety <- summary$Variety[match(unlist(Simon.2018.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 Simon.2018.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(Simon.2018.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Simon.2018.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(Simon.2018.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-Simon.2018.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(Simon.2018.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Simon.2018.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(Simon.2018.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Simon.2018.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(Simon.2018.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -2186,8 +2182,8 @@ UBC.2022.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(UBC.2022.
 UBC.2022.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(UBC.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 UBC.2022.names.unmatched.matched$variety <- summary$Variety[match(unlist(UBC.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 UBC.2022.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(UBC.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-UBC.2022.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(UBC.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
-UBC.2022.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(UBC.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+UBC.2022.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(UBC.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+UBC.2022.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(UBC.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
@@ -2297,7 +2293,7 @@ nrow(Vascular.plant.records)
 
 nrow(unmatched.vascular.plant.records)
 
-unique(unmatched.vascular.plant.records$scientificName)
+sort(unique(unmatched.vascular.plant.records$scientificName))
 
 # Remove NAs
 
