@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_reviewed_2022-11-14.csv")
+summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_reviewed_2022-11-25.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -42,7 +42,8 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 # iNaturalist 2016-2022 - added
 # Janszen 2003 - added
 # Laughlin Lake 2002 - added (georeferencing might be improved)
-# Lomer 2022 - added
+# Lomer 2022 voucher specimens - added
+# Lomer 2022 Gossip Island plant list - added
 # ! Matt Fairbarns Mt Sutil records - ! Need to get a digital copy of this... !
 # ! RBCM - added, but incomplete (georeferencing corrected only in part)
 # Roemer 2004 - added
@@ -352,6 +353,12 @@ DL63 <- read.csv("digitized/DarwinCore/DL63_veg_list_2001-2002_DwC.csv")
 # Filter plants
 
 DL63 <- DL63 %>% filter(Group == 'vascular')
+
+# Add coordinates from plot metadata
+
+DL63.plot.metadata <- read.csv("digitized/DarwinCore/DL63_plot_metadata_DwC.csv")
+
+DL63 <- left_join(DL63,DL63.plot.metadata)
 
 # Create unique identifiers for observations
 
@@ -1322,7 +1329,6 @@ unmatched.vascular.plant.records
 
 # Read Frank Lomer 2022 Records
 # Note: specimens will all be deposited at UBC and should be checked for duplicates against UBC records in the future 
-# Note: review code below for consistency with others when standardizing fields; might be made more concise?
 
 Lomer.2022 <- read.csv("digitized/DarwinCore/Lomer_2022_Galiano_collections_DwC.csv")
 
@@ -1457,6 +1463,149 @@ ncol(unmatched.vascular.plant.records)
 ncol(Lomer.2022.names.unmatched.unmatched)
 
 unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Lomer.2022.names.unmatched.unmatched)
+
+unmatched.vascular.plant.records
+
+
+
+# Read Frank Lomer 2022 Records
+# Note: specimens will all be deposited at UBC and should be checked for duplicates against UBC records in the future 
+
+Lomer.2022.Gossip.Is <- read.csv("digitized/DarwinCore/Lomer_Gossip_Island_plant_list_2022-06-13.csv")
+
+# Create DarwinCore dataframe template 
+
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Lomer.2022.Gossip.Is)))
+names(data.frame) <- DwCFields
+
+data.frame[names(Lomer.2022.Gossip.Is)] <- Lomer.2022.Gossip.Is
+
+Lomer.2022.Gossip.Is <- select(data.frame, c(1:length(DwCFields)))
+
+# Create unique identifiers for observations
+
+unique.prefix <- "LOMER2022:" 
+unique.suffix <- 1:nrow(Lomer.2022.Gossip.Is)
+
+# Add metadata
+
+Lomer.2022.Gossip.Is$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
+Lomer.2022.Gossip.Is$stateProvince <- "British Columbia"
+Lomer.2022.Gossip.Is$country <- "Canada"
+Lomer.2022.Gossip.Is$countryCode <- "CA"
+Lomer.2022.Gossip.Is$georeferenceProtocol <- "Coordinates generalized based on locality information"
+Lomer.2022.Gossip.Is$georeferencedBy <- "Andrew Simon"
+Lomer.2022.Gossip.Is$georeferenceVerificationStatus <- "verified by contributor"
+Lomer.2022.Gossip.Is$Lomer.2022.Gossip.Is <- "Plants reported for Gossip Island; georeferencing imprecise"
+Lomer.2022.Gossip.Is$basisOfRecord <- "HumanObservation"
+
+# Merge with summary to standardize names and taxon metadata
+
+Lomer.2022.Gossip.Is$scientificNameAuthorship <- summary$Taxon.Author[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$taxonID <- summary$ID[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$kingdom <- summary$Kingdom[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$phylum <- summary$Phylum[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$class <- summary$Class[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$order <- summary$Order[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$suborder <- summary$Suborder[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$superfamily <- summary$Superfamily[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$family <- summary$Family[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$genus <- summary$Genus[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$specificEpithet <- summary$Species[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$hybrid <- summary$Hybrid[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$subspecies <- summary$Subspecies[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$variety <- summary$Variety[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$establishmentMeans <- summary$Origin[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$provincialStatus <- summary$Provincial.Status[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+Lomer.2022.Gossip.Is$nationalStatus <- summary$National.Status[match(unlist(Lomer.2022.Gossip.Is$scientificName), summary$Taxon)]
+
+# Unmatched records
+
+Lomer.2022.Gossip.Is.names.unmatched <- Lomer.2022.Gossip.Is[is.na(Lomer.2022.Gossip.Is$taxonID),]
+
+# Matched records
+
+Lomer.2022.Gossip.Is.names.matched <- anti_join(Lomer.2022.Gossip.Is,Lomer.2022.Gossip.Is.names.unmatched)
+
+# Confirm all records are represented 
+
+nrow(Lomer.2022.Gossip.Is)
+nrow(Lomer.2022.Gossip.Is.names.matched)
+nrow(Lomer.2022.Gossip.Is.names.unmatched)
+nrow(Lomer.2022.Gossip.Is.names.matched)+nrow(Lomer.2022.Gossip.Is.names.unmatched)
+
+# Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+
+Lomer.2022.Gossip.Is.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+
+# Swap unmatched names using key
+
+Lomer.2022.Gossip.Is.names.unmatched.matched <- Lomer.2022.Gossip.Is.names.unmatched
+
+Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp <- Lomer.2022.Gossip.Is.key$Matched.Taxon[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificName), Lomer.2022.Gossip.Is.key$Taxon)]
+
+# Add values based on newly matched name
+
+Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameAuthorship <- summary$Taxon.Author[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$taxonID <- summary$ID[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$kingdom <- summary$Kingdom[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$phylum <- summary$Phylum[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$class <- summary$Class[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$order <- summary$Order[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$suborder <- summary$Suborder[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$superfamily <- summary$Superfamily[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$family <- summary$Family[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$genus <- summary$Genus[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$specificEpithet <- summary$Species[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$variety <- summary$Variety[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matchedprovincialStatus <- summary$Provincial.Status[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+Lomer.2022.Gossip.Is.names.unmatched.matchednationalStatus <- summary$National.Status[match(unlist(Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+
+# Filter taxa unrecognized in summary 
+
+Lomer.2022.Gossip.Is.names.unmatched.unmatched <- Lomer.2022.Gossip.Is.names.unmatched.matched[is.na(Lomer.2022.Gossip.Is.names.unmatched.matched$taxonID),]
+
+Lomer.2022.Gossip.Is.names.unmatched.unmatched$scientificNameTemp <- NULL
+
+# Filter taxa recognized in summary
+
+Lomer.2022.Gossip.Is.names.unmatched.matched$scientificName <- Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp
+
+Lomer.2022.Gossip.Is.names.unmatched.matched$scientificNameTemp <- NULL
+
+Lomer.2022.Gossip.Is.names.unmatched.matched <- Lomer.2022.Gossip.Is.names.unmatched.matched %>% drop_na(taxonID)
+
+# Confirm all records are represented 
+
+nrow(Lomer.2022.Gossip.Is)
+nrow(Lomer.2022.Gossip.Is.names.matched)
+nrow(Lomer.2022.Gossip.Is.names.unmatched)
+nrow(Lomer.2022.Gossip.Is.names.unmatched.matched)
+nrow(Lomer.2022.Gossip.Is.names.unmatched.unmatched)
+nrow(Lomer.2022.Gossip.Is.names.matched)+nrow(Lomer.2022.Gossip.Is.names.unmatched.matched)+nrow(Lomer.2022.Gossip.Is.names.unmatched.unmatched)
+
+# Bind records
+
+Lomer.2022.Gossip.Is.records <- rbind(Lomer.2022.Gossip.Is.names.matched,Lomer.2022.Gossip.Is.names.unmatched.matched)
+
+# Set date formatting consistent with other data frames
+
+Lomer.2022.Gossip.Is.records$eventDate <- as.Date(Lomer.2022.Gossip.Is.records$eventDate)
+
+# Compare records in and out
+
+nrow(Lomer.2022.Gossip.Is)
+nrow(Lomer.2022.Gossip.Is.records)
+
+# Add to record of unmatched names
+
+ncol(unmatched.vascular.plant.records)
+ncol(Lomer.2022.Gossip.Is.names.unmatched.unmatched)
+
+unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Lomer.2022.Gossip.Is.names.unmatched.unmatched)
 
 unmatched.vascular.plant.records
 
@@ -2087,7 +2236,7 @@ unmatched.vascular.plant.records
 
 Vascular.plant.records <- rbind(BC.CDC.2019.records,DL63.records,Ecological.Reserve.128.records,Hunterston.2010.records,iNaturalist.records,
                                 Janszen.2003.records,Laughlin.2002.records,Roemer.2004.records,RBCM.records,Simon.2018.records,Lomer.2022.records,
-                                UBC.2022.records)
+                                Lomer.2022.Gossip.Is.records,UBC.2022.records)
 
 
 
