@@ -957,8 +957,6 @@ iNaturalist.observations.names.unmatched.matched$establishmentMeans <- summary$O
 iNaturalist.observations.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 iNaturalist.observations.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
-write.csv(iNaturalist.observations.names.unmatched.matched,"test.csv")
-
 # Filter taxa unrecognized in summary 
 
 iNaturalist.observations.names.unmatched.unmatched <- iNaturalist.observations.names.unmatched.matched[is.na(iNaturalist.observations.names.unmatched.matched$taxonID),]
