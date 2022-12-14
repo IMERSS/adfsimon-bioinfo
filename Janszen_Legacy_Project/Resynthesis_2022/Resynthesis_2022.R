@@ -25,7 +25,7 @@ Dunwiddie.Martin.San.Juans <- read.csv("Dunwiddie_and_Martin_2022/sji_master_flo
 # Read reintegrated lists matching records with taxa on iNaturalist
 
 Janszen.reintegrated <- read.csv("Janszen_Comprehensive_Summaries_2022/reintegrated.csv")
-Dunwiddie.reintegrated <- read.csv("Dunwiddie_and_Martin_2022/reintegrated-Dunwiddie.csv")
+Dunwiddie.reintegrated <- read.csv("Dunwiddie_and_Martin_2022/assigned-Dunwiddie.csv")
 
 # Merge records to assign corresponding iNaturalist names and determine mismatches
 # Janszen records
@@ -45,12 +45,31 @@ Janszen.San.Juans$Family <- Janszen.reintegrated$Family[match(unlist(Janszen.San
 # Merge records to assign corresponding iNaturalist names and determine mismatches
 # Dunwiddie & Martin recods
 
-Dunwiddie.Martin.San.Juans$iNat_taxon <- Dunwiddie.reintegrated$iNaturalist.taxon.name[match(unlist(Dunwiddie.Martin.San.Juans$TaxonName), Janszen.reintegrated$Taxon.name)]
+Dunwiddie.Martin.San.Juans$iNat_taxon <- Dunwiddie.reintegrated$Referred.iNaturalist.Name[match(unlist(Dunwiddie.Martin.San.Juans$Full.Species), Dunwiddie.reintegrated$Full.Species)]
+Dunwiddie.Martin.San.Juans$iNat_Family <- Dunwiddie.reintegrated$family[match(unlist(Dunwiddie.Martin.San.Juans$iNat_taxon), Dunwiddie.reintegrated$Referred.iNaturalist.Name)]
+
+# Assess mismatches in family names (iNat vs Dunwiddie)
+
+Dunwiddie.taxon <- Dunwiddie.Martin.San.Juans$Full.Species
+Dunwiddie.family <- Dunwiddie.Martin.San.Juans$Family
+Dunwiddie.iNat.family <- Dunwiddie.Martin.San.Juans$iNat_Family
+
+
+Dunwiddie.family.names <- data.frame(Dunwiddie.taxon,Dunwiddie.family)
+colnames(Dunwiddie.family.names) <- c('Taxon','Family')
+Dunwiddie.iNat.family.names <- data.frame(Dunwiddie.taxon,Dunwiddie.iNat.family)
+colnames(Dunwiddie.iNat.family.names) <- c('Taxon','Family')
+
+Dunwiddie.mismatched.family.names <- anti_join(Dunwiddie.family.names,Dunwiddie.iNat.family.names)
+
+Dunwiddie.mismatched.family.names$iNat_Family <- Dunwiddie.reintegrated$family[match(unlist(Dunwiddie.mismatched.family.names$Taxon), Dunwiddie.reintegrated$Full.Species)]
+
 
 # Write CSVs
 
-write.csv(Janszen.OGIs, "Janszen_OGIs_iNat_names.csv")
-write.csv(Janszen.SSI, "Janszen_SSI_iNat_names.csv")
-write.csv(Janszen.Saanich, "Janszen.Saanich_iNat_names.csv")
-write.csv(Janszen.San.Juans, "Janszen.San.Juans_iNat_names.csv")
-
+write.csv(Janszen.OGIs, "Outputs/Janszen_OGIs_iNat_names.csv")
+write.csv(Janszen.SSI, "Outputs/Janszen_SSI_iNat_names.csv")
+write.csv(Janszen.Saanich, "Outputs/Janszen.Saanich_iNat_names.csv")
+write.csv(Janszen.San.Juans, "Outputs/Janszen.San.Juans_iNat_names.csv")
+write.csv(Dunwiddie.Martin.San.Juans, "Outputs/Dunwiddie_Martin_San_Juans_iNat_names.csv")
+write.csv(Dunwiddie.mismatched.family.names, "Outputs/Dunwiddie_mismatched_family_names.csv")
