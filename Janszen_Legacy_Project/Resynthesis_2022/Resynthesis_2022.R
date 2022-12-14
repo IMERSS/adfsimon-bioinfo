@@ -16,11 +16,12 @@ library(tidyr)
 # Read original comprehensive plant lists for Saanich Peninsula, Southern Gulf Islands, San Juans
 # Based on records compiled by Harvey Janszen and by Peter Dunwiddie and Adam Martin
 
-Janszen.OGIs <- read.csv("Janszen_Comprehensive_Summaries_2022/Outer_Gulf_Island_Plant_List_2021-11-19.csv")
-Janszen.SSI <- read.csv("Janszen_Comprehensive_Summaries_2022/Salt_Spring_Island_Plant_List_2021-11-19.csv")
-Janszen.Saanich <- read.csv("Janszen_Comprehensive_Summaries_2022/Saanich_Peninsula_Plant_List_2021-11-19.csv")
-Janszen.San.Juans <- read.csv("Janszen_Comprehensive_Summaries_2022/San_Juan_Islands_Plant_List_2021-11-19.csv")
+Janszen.OGIs <- read.csv("Janszen_Comprehensive_Summaries_2022/Outer_Gulf_Island_Plant_List_2021-12-13.csv")
+Janszen.SSI <- read.csv("Janszen_Comprehensive_Summaries_2022/Salt_Spring_Island_Plant_List_2021-12-13.csv")
+Janszen.Saanich <- read.csv("Janszen_Comprehensive_Summaries_2022/Saanich_Peninsula_Plant_List_2021-12-13.csv")
+Janszen.San.Juans <- read.csv("Janszen_Comprehensive_Summaries_2022/San_Juan_Islands_Plant_List_2021-12-13.csv")
 Dunwiddie.Martin.San.Juans <- read.csv("Dunwiddie_and_Martin_2022/sji_master_flora.csv")
+Dunwiddie.Martin.San.Juans.AS <- read.csv("Dunwiddie_and_Martin_2022/sji_master_flora_iNat_names_&_families.csv")
 
 # Read reintegrated lists matching records with taxa on iNaturalist
 
@@ -54,7 +55,6 @@ Dunwiddie.taxon <- Dunwiddie.Martin.San.Juans$Full.Species
 Dunwiddie.family <- Dunwiddie.Martin.San.Juans$Family
 Dunwiddie.iNat.family <- Dunwiddie.Martin.San.Juans$iNat_Family
 
-
 Dunwiddie.family.names <- data.frame(Dunwiddie.taxon,Dunwiddie.family)
 colnames(Dunwiddie.family.names) <- c('Taxon','Family')
 Dunwiddie.iNat.family.names <- data.frame(Dunwiddie.taxon,Dunwiddie.iNat.family)
@@ -64,6 +64,23 @@ Dunwiddie.mismatched.family.names <- anti_join(Dunwiddie.family.names,Dunwiddie.
 
 Dunwiddie.mismatched.family.names$iNat_Family <- Dunwiddie.reintegrated$family[match(unlist(Dunwiddie.mismatched.family.names$Taxon), Dunwiddie.reintegrated$Full.Species)]
 
+# Assess mismatches between Dunwiddie and Martin's San Juan flora vs Janszen's San Juan flora
+
+Dunwiddie.SJI.family <- Dunwiddie.Martin.San.Juans.AS$Family
+Dunwiddie.SJI.taxon <- Dunwiddie.Martin.San.Juans.AS$iNat.Taxon
+
+Janszen.SJI.family <- Janszen.San.Juans$Family
+Janszen.SJI.taxon <- Janszen.San.Juans$iNat_taxon
+
+Dunwiddie.SJI <- data.frame(Dunwiddie.SJI.family,Dunwiddie.SJI.taxon)
+colnames(Dunwiddie.SJI) <- c('Family','Taxon')
+
+Janszen.SJI <- data.frame(Janszen.SJI.family,Janszen.SJI.taxon)
+colnames(Janszen.SJI) <- c('Family','Taxon')
+
+Janszen.diff.Dunwiddie.SJI <- anti_join(Janszen.SJI,Dunwiddie.SJI)
+Janszen.diff.Dunwiddie.SJI$HJ_comment <- Janszen.San.Juans$HJ_comment[match(unlist(Janszen.diff.Dunwiddie.SJI$Taxon), Janszen.San.Juans$iNatTaxon)]
+Janszen.diff.Dunwiddie.SJI$Taxon <- Janszen.San.Juans$TaxonName[match(unlist(Janszen.diff.Dunwiddie.SJI$Taxon), Janszen.San.Juans$iNatTaxon)]
 
 # Write CSVs
 
@@ -73,3 +90,4 @@ write.csv(Janszen.Saanich, "Outputs/Janszen.Saanich_iNat_names.csv")
 write.csv(Janszen.San.Juans, "Outputs/Janszen.San.Juans_iNat_names.csv")
 write.csv(Dunwiddie.Martin.San.Juans, "Outputs/Dunwiddie_Martin_San_Juans_iNat_names.csv")
 write.csv(Dunwiddie.mismatched.family.names, "Outputs/Dunwiddie_mismatched_family_names.csv")
+write.csv(Janszen.diff.Dunwiddie.SJI, "Outputs/Dunwiddie_&_Martin_vs_Janszen_mismatched_taxa")
