@@ -1,0 +1,6 @@
+GBIF Data downloaded for Howe Sound using project area geoJSON:
+
+GBIF.org (14 December 2022) GBIF Occurrence Download  https://doi.org/10.15468/dl.785w6h
+
+Data split by Kingdom, Phylum, Class, etc., to reduce file size and meet GitHub file size limits.
+
