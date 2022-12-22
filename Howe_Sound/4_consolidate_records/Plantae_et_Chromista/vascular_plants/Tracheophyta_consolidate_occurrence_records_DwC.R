@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_2022-12-18.csv")
+summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_2022-12-21.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -39,9 +39,13 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 
 # Read GBIF records 2022
-# GBIF exports TSV files which have to be wrangled different from CSVs
+# GBIF TSV converted to CSV from Mac Numbers and Filtered Taxonomically
 
-GBIF.2022 <- read.csv("digitized/DarwinCore/GBIF_2022_Plantae_DwC.csv", header = TRUE)
+GBIF.2022 <- read.csv("digitized/DarwinCore/GBIF_2022_Plantae_DwC-assigned_AS_erroneous_localities_removed.csv", header = TRUE)
+
+# Filter vascular plants
+
+GBIF.2022 <- GBIF.2022 %>% filter(phylum == "Tracheophyta")
 
 # Create DarwinCore dataframe template 
 
@@ -50,15 +54,16 @@ names(data.frame) <- DwCFields
 
 data.frame[names(GBIF.2022)] <- GBIF.2022
 
-GBIF.2022 <- select(data.frame, c(1:length(DwCFields)))
+data.frame <- select(data.frame, c(1:length(DwCFields)))
+
+# Add "unscrewed" GBIF names (via Basman 2022 scripts)
+
+data.frame$scientificName <- GBIF.2022$selectedName
+
+GBIF.2022 <- data.frame
 
 # Add metadata
-
-GBIF.2022$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
-GBIF.2022$stateProvince <- "British Columbia"
-GBIF.2022$island <- "Galiano Island"
 GBIF.2022$country <- "Canada"
-GBIF.2022$countryCode <- "CA"
 
 # Merge with summary to standardize names and taxon metadata
 
