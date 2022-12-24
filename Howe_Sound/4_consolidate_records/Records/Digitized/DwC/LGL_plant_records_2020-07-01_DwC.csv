@@ -1,484 +1,632 @@
-scientificName,eventDate,basisOfRecord,datasetName
-Vahlodea atropurpurea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Valeriana sitchensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Vaccinium uliginosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Potamogeton epihydrus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Potamogeton foliosus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Potamogeton pusillus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Potamogeton pusillus var. tenuissimus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Ruppia maritima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Triantha glutinosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Triantha occidentalis brevistyla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Triglochin maritima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Zannichellia palustris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Zostera marina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Allium cernuum var. cernuum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Brodiaea coronaria,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Calypso bulbosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Camassia leichtlinii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Corallorhiza maculata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Corallorhiza mertensiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Goodyera oblongifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Maianthemum dilatatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Maianthemum racemosum amplexicaule,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Maianthemum stellatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Neottia banksiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Neottia cordata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Platanthera dilatata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Platanthera dilatata var. leucostachys,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Platanthera orbiculata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Platanthera stricta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Triteleia grandiflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Triteleia hyacinthina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Clintonia uniflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erythronium grandiflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erythronium revolutum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Fritillaria camschatcensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lilium columbianum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Prosartes hookeri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Streptopus amplexifolius,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Streptopus lanceolatus var. curvipes,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Streptopus streptopoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Toxicoscordion venenosum var. venenosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Trillium ovatum var. ovatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Veratrum viride var. eschscholzianum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Achnatherum hymenoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Agrostis aequivalvis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Agrostis exarata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Agrostis mertensii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Agrostis scabra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Agrostis variabilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Bolboschoenus fluviatilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Bolboschoenus maritimus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Bolboschoenus maritimus var. paludosus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Bromus carinatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Bromus sitchensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Bromus vulgaris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Calamagrostis canadensis var. canadensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Calamagrostis canadensis var. langsdorffii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Calamagrostis stricta ssp. inexpansa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex albonigra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex aquatilis dives,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex arcta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex canescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex circinata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex deweyana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex engelmannii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex exsiccata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex feta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex foenea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex garberi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex hendersonii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex illota,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex kelloggii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex laeviculmis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex lenticularis limnophila,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex leporina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex leptopoda,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex luzulina var. ablata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex lyngbyei,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex macloviana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex macrocephala,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex macrochaeta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex magellanica ssp. irrigua,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex mertensii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex microptera,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex nigricans,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex obnupta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex pachystachya,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex pauciflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex phaeocephala,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex preslii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex pyrenaica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex rossii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex saxatilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex spectabilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex stylosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex viridula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Carex viridula ssp. viridula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cinna latifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Danthonia intermedia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Danthonia spicata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Deschampsia danthonioides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Deschampsia elongata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Dulichium arundinaceum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Eleocharis palustris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Elymus elymoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Elymus elymoides ssp. californicus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Elymus glaucus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Elymus hirsutus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Elymus trachycaulus ssp.  trachycaulus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Elymus violaceus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Eriophorum angustifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Festuca occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Festuca rubra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Festuca rubra ssp. mediana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Glyceria borealis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Glyceria elata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Glyceria striata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Hordeum brachyantherum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Hordeum jubatum ssp. intermedium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Isolepis cernua,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus acuminatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus alpinoarticulatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus balticus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus covillei,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus drummondii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus effusus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus ensifolius,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus mertensianus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus supiniformis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus tenuis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Koeleria macrantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Leymus mollis mollis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Luzula comosa var. comosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Luzula comosa var.  laxa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Luzula hitchcockii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Luzula macrantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Luzula parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Luzula parviflora ssp. parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Luzula spicata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Luzula subsessilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Melica subulata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Phleum alpinum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Pleuropogon refractus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa abbreviata ssp. pattersonii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa alpina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa cusickii ssp. epilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa interior,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa lettermanii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa macrantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa palustris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa paucispicula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa secunda,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa secunda ssp. secunda,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Poa stenantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Schoenoplectus pungens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Schoenoplectus subterminalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Schoenoplectus tabernaemontani,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Scirpus microcarpus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Sparganium angustifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Sparganium emersum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Sparganium natans,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Torreyochloa pallida var. pauciflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Trisetum canescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Trisetum cernuum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Trisetum spicatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Typha latifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Isoetes occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Dendrolycopodium dendroideum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Diphasiastrum alpinum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Diphasiastrum complanatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Diphasiastrum sitchense,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Huperzia occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lycopodiella inundata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lycopodium clavatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Spinulum annotinum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Angelica genuflexa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Angelica lucida,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cicuta douglasii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Conioselinum gmelinii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Glehnia littoralis ssp. leiocarpa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Heracleum maximum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lilaeopsis occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Oenanthe sarmentosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Oplopanax horridus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Osmorhiza berteroi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Osmorhiza depauperata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Osmorhiza occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Osmorhiza purpurea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Oenanthe sarmentosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Oplopanax horridus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Osmorhiza berteroi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Osmorhiza depauperata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Osmorhiza occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Osmorhiza purpurea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Sanicula crassicaulis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Sium suave,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Adenocaulon bicolor,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Agoseris aurantiaca ssp. aurantiaca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Agoseris glauca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Anaphalis margaritacea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Antennaria media,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Antennaria neglecta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Antennaria rosea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Antennaria umbrinella,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arnica angustifolia ssp. angustifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arnica cordifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arnica gracilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arnica latifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arnica ovata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arnica parryi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Artemisia norvegica saxatilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Askellia pygmaea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Bidens amplissima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Campanula alaskana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cirsium edule,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erigeron acris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erigeron canadensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erigeron compositus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erigeron glacialis glacialis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erigeron glabellus var. pubescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erigeron peregrinus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Eriophyllum lanatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Euthamia graminifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Grindelia hirsutula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Grindelia stricta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Heterocodon rariflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Hieracium albiflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Madia glomerata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Matricaria discoidea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Menyanthes trifoliata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Nabalus alatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Nephrophyllidium crista-galli,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Packera pauciflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Petasites frigidus var. nivalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Petasites frigidus var. palmatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Pilosella tristis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Pseudognaphalium thermale,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Senecio fremontii var. fremontii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Senecio triangularis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Solidago elongata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Solidago multiradiata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Symphyotrichum ciliolatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Taraxacum alaskanum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Tonestus lyallii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lappula occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Myosotis laxa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Phacelia hastata hastata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Phacelia sericea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Romanzoffia sitchensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arabis eschscholtziana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Barbarea orthoceras,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Boechera calderi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Boechera lyallii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Boechera stricta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cardamine breweri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cardamine oligosperma,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cardamine pensylvanica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cardamine umbellata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Draba aurea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Draba incerta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Draba praealta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Draba stenoloba,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lepidium virginicum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Physaria arctica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Rorippa curvisiliqua,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Turritis glabra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cerastium arvense ssp. strictum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cerastium nutans,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Sagina saginoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Salicornia virginica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Silene acaulis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Silene parryi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Spergularia canadensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Spergularia macrotheca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria borealis ssp. borealis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria calycantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria crassifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria crispa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria humifusa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria longipes ssp. longipes,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Claytonia exigua ssp. exigua,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Claytonia exigua ssp. glauca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Claytonia lanceolata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Claytonia parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Claytonia parviflora var. parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Claytonia perfoliata ssp. intermontana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Claytonia sibirica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Claytonia washingtoniana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Drosera anglica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Drosera rotundifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Minuartia biflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Minuartia rubella,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Minuartia tenella,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Moehringia macrophylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Montia diffusa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Montia parvifolia parvifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Persicaria lapathifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Polygonum minimum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Polygonum spergulariiforme,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Polygonum viviparum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Sagina saginoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Salicornia virginica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Silene acaulis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Silene parryi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Spergularia canadensis var occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria borealis ssp. borealis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria calycantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria crassifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria crispa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Stellaria longipes ssp. longipes,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Parnassia fimbriata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Paxistima myrsinites,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cornus nuttallii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cornus sericea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cornus unalaschkensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Philadelphus lewisii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Linnaea borealis ssp. longiflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lonicera ciliosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lonicera hispidula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lonicera involucrata var. involucrata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lonicera utahensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Plectritis congesta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Sambucus racemosa var. arborescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Symphoricarpos albus var laevigatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Viburnum edule,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Allotropa virgata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arctostaphylos columbiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arctostaphylos uva-ursi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arctostaphylos x media,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cassiope mertensiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cassiope mertensiana ssp. mertensiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cassiope tetragona,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Chimaphila menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Collomia heterophylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Elliottia pyroliflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Empetrum nigrum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arctostaphylos columbiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arctostaphylos uva-ursi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Arctostaphylos x media,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cassiope mertensiana ssp. mertensiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Cassiope tetragona,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Chimaphila menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Collomia heterophylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Elliottia pyroliflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Empetrum nigrum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Gaultheria hispidula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Gaultheria humifusa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Gaultheria ovatifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Gaultheria shallon,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Hemitomes congestum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Kalmia microphylla var. occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lysimachia borealis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lysimachia europaea arctica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lysimachia latifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lysimachia maritima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lysimachia thyrsiflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Microsteris gracilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Moneses uniflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Monotropa hypopitys,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Monotropa uniflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Orthilia secunda,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Phlox diffusa longistylis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Phyllodoce empetriformis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Phyllodoce glanduliflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Polemonium viscosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Primula pauciflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Pterospora andromedea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Pyrola asarifolia ssp. asarifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Pyrola asarifolia ssp. bracteata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Pyrola minor,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Pyrola picta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Rhododendron albiflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Rhododendron groenlandicum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Rhododendron macrophyllum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Rhododendron menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Vaccinium alaskaense,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Vaccinium cespitosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Vaccinium deliciosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Vaccinium membranaceum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Vaccinium ovalifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Vaccinium oxycoccos,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Vaccinium parvifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Acmispon parviflorus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Hosackia pinnata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Juncus albescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lathyrus japonicus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lathyrus palustris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lupinus arcticus subalpinus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lupinus littoralis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lupinus polyphyllus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Myrica gale,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Quercus garryana var. garryana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Trifolium microdon,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Trifolium variegatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Trifolium wormskioldii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Vicia americana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Vicia gigantea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Alnus alnobetula ssp. sinuata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Alnus incana ssp. tenuifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Alnus rubra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Betula glandulosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Betula papyrifera,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Corylus cornuta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Quercus garryana var. garryana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Apocynum androsaemifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Galium aparine,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Galium trifidum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Galium triflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Gentiana sceptrum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Gentiana glauca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Geranium carolinianum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Callitriche heterophylla var. bolanderi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Callitriche heterophylla var. heterophylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Callitriche palustris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Castilleja elmeri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Castilleja hispida var. hispida,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Castilleja miniata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Castilleja parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Castilleja parviflora albida,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Castilleja parviflora var. parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Castilleja rhexiifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Clinopodium douglasii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Collinsia grandiflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Collinsia parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erythranthe caespitosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erythranthe guttata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erythranthe lewisii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erythranthe microphylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Erythranthe nasuta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Kopsiopsis hookeri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Lycopus uniflorus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Melampyrum lineare var. lineare,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Mentha arvensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Oxyria digyna,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Pedicularis racemosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Penstemon davidsonii menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Penstemon procerus tolmiei,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Penstemon serrulatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Plantago elongata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Plantago macrocarpa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Plantago maritima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Plantago maritima juncoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Prunella vulgaris ssp. lanceolata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Veronica beccabunga,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Veronica scutellata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Euphorbia glyptosperma,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Hypericum anagalloides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Hypericum scouleri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Populus balsamifera,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Populus tremuloides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Populus trichocarpa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Salix arctica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Salix commutata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Salix hookeriana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Salix lasiandra lasiandra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Salix nivalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Salix scouleriana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Salix sitchensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Viola adunca var. adunca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Viola glabella,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Viola orbiculata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Viola sempervirens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Sidalcea hendersonii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Chamaenerion angustifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Chamaenerion latifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Circaea alpina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Circaea alpina ssp. alpina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Circaea alpina ssp. pacifica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium anagallidifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium brachycarpum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium ciliatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium clavatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium hornemannii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium hornemannii ssp. behringianum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium hornemannii ssp. hornemannii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium lactiflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium leptocarpum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium luteum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium minutum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Epilobium obscurum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Brasenia schreberi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Nuphar polysepala,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
-Asarum caudatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC"
+scientificName,eventDate,basisOfRecord,recordedBy,datasetName
+Abies amabilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Abies grandis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Abies lasiocarpa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Acer circinatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Acer glabrum var. douglasii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Acer macrophyllum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Achnatherum hymenoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Acmispon parviflorus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Actaea rubra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Adenocaulon bicolor,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Adiantum aleuticum var aleuticum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Agoseris aurantiaca ssp. aurantiaca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Agoseris glauca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Agrostis aequivalvis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Agrostis exarata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Agrostis mertensii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Agrostis scabra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Agrostis variabilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Alchemilla arvensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Allium cernuum var. cernuum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Allotropa virgata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Alnus alnobetula ssp. sinuata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Alnus incana ssp. tenuifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Alnus rubra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Amelanchier alnifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Anaphalis margaritacea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Anemone lyallii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Anemone parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Angelica genuflexa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Angelica lucida,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Antennaria media,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Antennaria neglecta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Antennaria rosea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Antennaria umbrinella,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Apocynum androsaemifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Aquilegia formosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arabis eschscholtziana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arceuthobium tsugense subsp. mertensianae,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arctostaphylos columbiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arctostaphylos columbiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arctostaphylos uva-ursi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arctostaphylos uva-ursi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arctostaphylos x media,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arctostaphylos x media,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Argentina pacifica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arnica angustifolia ssp. angustifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arnica cordifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arnica gracilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arnica latifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arnica ovata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Arnica parryi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Artemisia norvegica saxatilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Aruncus dioicus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Asarum caudatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Askellia pygmaea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Aspidotis densa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Asplenium trichomanes,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Athyrium alpestre var americanum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Athyrium filix-femina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Athyrium filix-femina cyclosorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Barbarea orthoceras,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Berberis aquifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Berberis nervosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Betula glandulosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Betula papyrifera,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Bidens amplissima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Boechera calderi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Boechera lyallii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Boechera stricta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Bolboschoenus fluviatilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Bolboschoenus maritimus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Bolboschoenus maritimus var. paludosus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Botrychium lanceolatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Botrychium spathulatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Botrychium virginianum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Boykinia occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Brasenia schreberi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Brodiaea coronaria,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Bromus carinatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Bromus sitchensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Bromus vulgaris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Calamagrostis canadensis var. canadensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Calamagrostis canadensis var. langsdorffii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Calamagrostis stricta ssp. inexpansa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Callitriche heterophylla var. bolanderi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Callitriche heterophylla var. heterophylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Callitriche palustris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Caltha leptosepala,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Calypso bulbosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Camassia leichtlinii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Campanula alaskana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Capnoides sempervirens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cardamine breweri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cardamine oligosperma,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cardamine pensylvanica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cardamine umbellata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex albonigra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex aquatilis dives,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex arcta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex canescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex circinata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex deweyana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex engelmannii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex exsiccata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex feta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex foenea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex garberi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex hendersonii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex illota,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex kelloggii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex laeviculmis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex lenticularis limnophila,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex leporina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex leptopoda,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex luzulina var. ablata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex lyngbyei,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex macloviana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex macrocephala,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex macrochaeta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex magellanica ssp. irrigua,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex mertensii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex microptera,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex nigricans,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex obnupta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex pachystachya,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex pauciflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex phaeocephala,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex preslii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex pyrenaica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex rossii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex saxatilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex spectabilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex stylosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex viridula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Carex viridula ssp. viridula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cassiope mertensiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cassiope mertensiana ssp. mertensiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cassiope mertensiana ssp. mertensiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cassiope tetragona,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cassiope tetragona,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Castilleja elmeri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Castilleja hispida var. hispida,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Castilleja miniata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Castilleja parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Castilleja parviflora albida,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Castilleja parviflora var. parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Castilleja rhexiifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ceanothus sanguineus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ceanothus velutinus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ceanothus velutinus hookeri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cerastium arvense ssp. strictum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cerastium nutans,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Chamaenerion angustifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Chamaenerion latifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Chimaphila menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Chimaphila menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cicuta douglasii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cinna latifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Circaea alpina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Circaea alpina ssp. alpina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Circaea alpina ssp. pacifica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cirsium edule,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Claytonia exigua ssp. exigua,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Claytonia exigua ssp. glauca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Claytonia lanceolata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Claytonia parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Claytonia parviflora var. parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Claytonia perfoliata ssp. intermontana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Claytonia sibirica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Claytonia washingtoniana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Clinopodium douglasii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Clintonia uniflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Collinsia grandiflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Collinsia parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Collomia heterophylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Collomia heterophylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Conioselinum gmelinii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Coptis aspleniifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Coptis trifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Corallorhiza maculata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Corallorhiza mertensiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cornus nuttallii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cornus sericea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cornus unalaschkensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Corylus cornuta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cryptogramma acrostichoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cupressus nootkatensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Cystopteris fragilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Danthonia intermedia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Danthonia spicata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Dendrolycopodium dendroideum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Deschampsia danthonioides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Deschampsia elongata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Dicentra formosa subsp formosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Diphasiastrum alpinum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Diphasiastrum complanatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Diphasiastrum sitchense,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Draba aurea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Draba incerta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Draba praealta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Draba stenoloba,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Drosera anglica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Drosera rotundifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Drymocallis glandulosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Dryopteris carthusiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Dryopteris expansa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Dulichium arundinaceum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Eleocharis palustris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Elliottia pyroliflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Elliottia pyroliflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Elymus elymoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Elymus elymoides ssp. californicus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Elymus glaucus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Elymus hirsutus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Elymus trachycaulus ssp.  trachycaulus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Elymus violaceus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Empetrum nigrum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Empetrum nigrum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium anagallidifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium brachycarpum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium ciliatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium clavatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium hornemannii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium hornemannii ssp. behringianum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium hornemannii ssp. hornemannii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium lactiflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium leptocarpum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium luteum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium minutum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Epilobium obscurum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Equisetum arvense,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Equisetum fluviatile,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Equisetum hyemale affine,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Equisetum telmateia braunii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Equisetum variegatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erigeron acris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erigeron canadensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erigeron compositus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erigeron glabellus var. pubescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erigeron glacialis glacialis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erigeron peregrinus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Eriophorum angustifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Eriophyllum lanatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erythranthe caespitosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erythranthe guttata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erythranthe lewisii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erythranthe microphylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erythranthe nasuta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erythronium grandiflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Erythronium revolutum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Euphorbia glyptosperma,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Euthamia graminifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Festuca occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Festuca rubra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Festuca rubra ssp. mediana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Fragaria chiloensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Fragaria vesca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Fragaria vesca subsp bracteata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Fragaria virginiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Fragaria virginiana subsp platypetala,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Frangula purshiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Fritillaria camschatcensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Galium aparine,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Galium trifidum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Galium triflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Gaultheria hispidula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Gaultheria humifusa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Gaultheria ovatifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Gaultheria shallon,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Gentiana glauca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Gentiana sceptrum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Geranium carolinianum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Geum calthifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Geum macrophyllum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Glehnia littoralis ssp. leiocarpa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Glyceria borealis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Glyceria elata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Glyceria striata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Goodyera oblongifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Grindelia hirsutula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Grindelia stricta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Gymnocarpium disjunctum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Gymnocarpium dryopteris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Halerpestes cymbalaria,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Hemitomes congestum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Heracleum maximum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Heterocodon rariflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Heuchera glabra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Heuchera micrantha diversifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Hieracium albiflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Holodiscus discolor,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Hordeum brachyantherum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Hordeum jubatum ssp. intermedium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Hosackia pinnata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Huperzia occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Hypericum anagalloides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Hypericum scouleri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Isoetes occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Isolepis cernua,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus acuminatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus albescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus alpinoarticulatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus balticus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus covillei,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus drummondii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus effusus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus ensifolius,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus mertensianus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus supiniformis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juncus tenuis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Juniperus maritima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Kalmia microphylla var. occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Koeleria macrantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Kopsiopsis hookeri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lappula occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lathyrus japonicus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lathyrus palustris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lepidium virginicum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Leptarrhena pyrolifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Leymus mollis mollis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lilaeopsis occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lilium columbianum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Linnaea borealis ssp. longiflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lonicera ciliosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lonicera hispidula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lonicera involucrata var. involucrata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lonicera utahensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Luetkea pectinata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lupinus arcticus subalpinus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lupinus littoralis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lupinus polyphyllus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Luzula comosa var.  laxa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Luzula comosa var. comosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Luzula hitchcockii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Luzula macrantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Luzula parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Luzula parviflora ssp. parviflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Luzula spicata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Luzula subsessilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lycopodiella inundata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lycopodium clavatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lycopus uniflorus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lysimachia borealis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lysimachia europaea arctica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lysimachia latifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lysimachia maritima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Lysimachia thyrsiflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Madia glomerata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Maianthemum dilatatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Maianthemum racemosum amplexicaule,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Maianthemum stellatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Malus fusca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Matricaria discoidea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Melampyrum lineare var. lineare,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Melica subulata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Mentha arvensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Menyanthes trifoliata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Micranthes ferruginea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Micranthes integrifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Micranthes lyallii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Micranthes nelsoniana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Micranthes nelsoniana cascadensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Micranthes occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Micranthes odontoloma,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Micranthes rufidula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Micranthes tolmiei,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Microsteris gracilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Minuartia biflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Minuartia rubella,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Minuartia tenella,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Mitella pentandra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Mitella trifida,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Moehringia macrophylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Moneses uniflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Monotropa hypopitys,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Monotropa uniflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Montia diffusa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Montia parvifolia parvifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Myosotis laxa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Myrica gale,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Nabalus alatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Neottia banksiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Neottia cordata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Nephrophyllidium crista-galli,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Nuphar polysepala,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Oemleria cerasiformis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Oenanthe sarmentosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Oenanthe sarmentosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Oplopanax horridus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Oplopanax horridus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Orthilia secunda,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Osmorhiza berteroi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Osmorhiza berteroi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Osmorhiza depauperata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Osmorhiza depauperata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Osmorhiza occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Osmorhiza occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Osmorhiza purpurea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Osmorhiza purpurea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Oxyria digyna,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Packera pauciflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Parnassia fimbriata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Paxistima myrsinites,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pedicularis racemosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Penstemon davidsonii menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Penstemon procerus tolmiei,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Penstemon serrulatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pentagramma triangularis triangularis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Persicaria lapathifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Petasites frigidus var. nivalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Petasites frigidus var. palmatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Phacelia hastata hastata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Phacelia sericea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Phegopteris connectilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Philadelphus lewisii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Phleum alpinum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Phlox diffusa longistylis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Phyllodoce empetriformis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Phyllodoce glanduliflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Physaria arctica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Physocarpus capitatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Picea sitchensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pilosella tristis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pinus albicaulis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pinus contorta contorta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pinus monticola,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Plantago elongata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Plantago macrocarpa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Plantago maritima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Plantago maritima juncoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Platanthera dilatata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Platanthera dilatata var. leucostachys,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Platanthera orbiculata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Platanthera stricta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Plectritis congesta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pleuropogon refractus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa abbreviata ssp. pattersonii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa alpina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa cusickii ssp. epilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa interior,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa lettermanii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa macrantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa palustris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa paucispicula,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa secunda,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa secunda ssp. secunda,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Poa stenantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polemonium viscosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polygonum minimum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polygonum spergulariiforme,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polygonum viviparum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polypodium amorphum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polypodium glycyrrhiza,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polypodium hesperium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polystichum andersonii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polystichum braunii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polystichum lemmonii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polystichum lonchitis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Polystichum munitum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Populus balsamifera,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Populus tremuloides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Populus trichocarpa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Potamogeton epihydrus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Potamogeton foliosus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Potamogeton pusillus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Potamogeton pusillus var. tenuissimus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Potentilla flabellifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Potentilla norvegica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Potentilla villosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Primula pauciflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Prosartes hookeri,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Prunella vulgaris ssp. lanceolata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Prunus emarginata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pseudognaphalium thermale,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pseudotsuga menziesii var. menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pteridium aquilinum var. pubescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pterospora andromedea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pulsatilla occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pyrola asarifolia ssp. asarifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pyrola asarifolia ssp. bracteata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pyrola minor,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Pyrola picta,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Quercus garryana var. garryana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Quercus garryana var. garryana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ranunculus aquatilis var. aquatilis?,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ranunculus eschscholtzii var. eschscholtzii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ranunculus flammula var. ovalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ranunculus uncinatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rhododendron albiflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rhododendron groenlandicum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rhododendron macrophyllum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rhododendron menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rhus glabra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ribes acerifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ribes bracteosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ribes divaricatum var. divaricatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ribes lacustre,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ribes laxiflorum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ribes sanguineum sanguineum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ribes triste,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Romanzoffia sitchensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rorippa curvisiliqua,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rosa gymnocarpa var gymnocarpa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rosa nutkana subsp nutkana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rosa pisocarpa subsp pisocarpa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rubus leucodermis var. leucodermis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rubus nivalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rubus parviflorus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rubus pedatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rubus spectabilis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Rubus ursinus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Ruppia maritima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sagina saginoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sagina saginoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Salicornia virginica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Salicornia virginica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Salix arctica,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Salix commutata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Salix hookeriana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Salix lasiandra lasiandra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Salix nivalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Salix scouleriana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Salix sitchensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sambucus racemosa var. arborescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sanguisorba stipulata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sanicula crassicaulis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Saxifraga bronchialis subsp. austromontana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Saxifraga cespitosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Saxifraga mertensiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sceptridium multifidum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Schoenoplectus pungens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Schoenoplectus subterminalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Schoenoplectus tabernaemontani,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Scirpus microcarpus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sedum divergens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sedum lanceolatum var. nesioticum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sedum oreganum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sedum spathulifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Senecio fremontii var. fremontii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Senecio triangularis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sibbaldia procumbens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sidalcea hendersonii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Silene acaulis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Silene acaulis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Silene parryi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Silene parryi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sium suave,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Solidago elongata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Solidago multiradiata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sorbus scopulina cascadensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sorbus sitchensis var sitchensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sorbus sitchensis var. grayi,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sparganium angustifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sparganium emersum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Sparganium natans,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Spergularia canadensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Spergularia canadensis var occidentalis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Spergularia macrotheca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Spinulum annotinum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Spiraea douglasii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Spiraea douglasii var menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Spiraea splendens var splendens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria borealis ssp. borealis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria borealis ssp. borealis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria calycantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria calycantha,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria crassifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria crassifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria crispa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria crispa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria humifusa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria longipes ssp. longipes,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Stellaria longipes ssp. longipes,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Streptopus amplexifolius,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Streptopus lanceolatus var. curvipes,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Streptopus streptopoides,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Struthiopteris spicant,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Symphoricarpos albus var laevigatus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Symphyotrichum ciliolatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Taraxacum alaskanum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Taxus brevifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Thuja plicata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Tiarella trifoliata laciniata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Tiarella trifoliata trifoliata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Tiarella trifoliata unifoliata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Tolmiea menziesii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Tonestus lyallii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Torreyochloa pallida var. pauciflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Toxicodendron diversilobum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Toxicoscordion venenosum var. venenosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Trautvetteria caroliniensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Triantha glutinosa,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Triantha occidentalis brevistyla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Trifolium microdon,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Trifolium variegatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Trifolium wormskioldii,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Triglochin maritima,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Trillium ovatum var. ovatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Trisetum canescens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Trisetum cernuum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Trisetum spicatum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Triteleia grandiflora,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Triteleia hyacinthina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Trollius laxus albiflorus or T. albiflorus,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Tsuga heterophylla,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Tsuga mertensiana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Turritis glabra,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Typha latifolia,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vaccinium alaskaense,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vaccinium cespitosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vaccinium deliciosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vaccinium membranaceum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vaccinium ovalifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vaccinium oxycoccos,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vaccinium parvifolium,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vaccinium uliginosum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vahlodea atropurpurea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Valeriana sitchensis,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Veratrum viride var. eschscholzianum,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Veronica beccabunga,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Veronica scutellata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Viburnum edule,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vicia americana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Vicia gigantea,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Viola adunca var. adunca,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Viola glabella,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Viola orbiculata,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Viola sempervirens,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Woodsia oregana subsp. oregana,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Zannichellia palustris,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices
+Zostera marina,2020-07-01,MaterialCitation,"LGL Limited, Environmental Research Associates, Sidney, BC",UNESCO Nomination | Átl’ka7tsem / Howe Sound Biosphere Reserve  | Appendices

@@ -108,31 +108,41 @@ GBIF.2022.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv")
 
 GBIF.2022.names.unmatched.matched <- GBIF.2022.names.unmatched
 
-GBIF.2022.names.unmatched.matched$scientificName <- GBIF.2022.key$Matched.Taxon[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), GBIF.2022.key$Taxon)]
+GBIF.2022.names.unmatched.matched$scientificNameTemp <- GBIF.2022.key$Matched.Taxon[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), GBIF.2022.key$Taxon)]
 
 # Add values based on newly matched name
 
-GBIF.2022.names.unmatched.matched$scientificNameAuthorship <- summary$Taxon.Author[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$taxonID <- summary$ID[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$kingdom <- summary$Kingdom[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$phylum <- summary$Phylum[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$class <- summary$Class[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$order <- summary$Order[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$suborder <- summary$Suborder[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$superfamily <- summary$Superfamily[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$family <- summary$Family[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$genus <- summary$Genus[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$specificEpithet <- summary$Species[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$variety <- summary$Variety[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
-GBIF.2022.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(GBIF.2022.names.unmatched.matched$scientificName), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$scientificNameAuthorship <- summary$Taxon.Author[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$taxonID <- summary$ID[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$kingdom <- summary$Kingdom[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$phylum <- summary$Phylum[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$class <- summary$Class[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$order <- summary$Order[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$suborder <- summary$Suborder[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$superfamily <- summary$Superfamily[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$family <- summary$Family[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$genus <- summary$Genus[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$specificEpithet <- summary$Species[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$hybrid <- summary$Hybrid[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$subspecies <- summary$Subspecies[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$variety <- summary$Variety[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$establishmentMeans <- summary$Origin[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$provincialStatus <- summary$Provincial.Status[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
+GBIF.2022.names.unmatched.matched$nationalStatus <- summary$National.Status[match(unlist(GBIF.2022.names.unmatched.matched$scientificNameTemp), summary$Taxon)]
 
 # Filter taxa unrecognized in summary 
 
 GBIF.2022.names.unmatched.unmatched <- GBIF.2022.names.unmatched.matched[is.na(GBIF.2022.names.unmatched.matched$taxonID),]
+
+GBIF.2022.names.unmatched.unmatched$scientificNameTemp <- NULL
+
+# Filter taxa recognized in summary
+
+GBIF.2022.names.unmatched.matched$scientificName <- GBIF.2022.names.unmatched.matched$scientificNameTemp
+
+GBIF.2022.names.unmatched.matched$scientificNameTemp <- NULL
+
+GBIF.2022.names.unmatched.matched <- GBIF.2022.names.unmatched.matched %>% drop_na(taxonID)
 
 # Confirm all records are represented 
 
@@ -142,6 +152,27 @@ nrow(GBIF.2022.names.unmatched)
 nrow(GBIF.2022.names.unmatched.matched)
 nrow(GBIF.2022.names.unmatched.unmatched)
 nrow(GBIF.2022.names.matched)+nrow(GBIF.2022.names.unmatched.matched)+nrow(GBIF.2022.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(GBIF.2022.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- GBIF.2022.names.unmatched.unmatched$scientificName
+
+unmatched.taxa$Genus <- word(GBIF.2022.names.unmatched.unmatched$scientificName, 1)
+
+unmatched.taxa$Species <- word(GBIF.2022.names.unmatched.unmatched$scientificName, 2)
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(GBIF.2022.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review.key.csv")
 
 # Bind records
 
@@ -279,6 +310,7 @@ nrow(LGL.2020.names.unmatched.unmatched)
 nrow(LGL.2020.names.matched)+nrow(LGL.2020.names.unmatched.matched)+nrow(LGL.2020.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
+# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
 key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
 
