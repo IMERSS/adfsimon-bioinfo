@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_2022-12-23.csv")
+summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_2022-12-24.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -341,9 +341,7 @@ LGL.2020.records$eventDate <- as.Date(LGL.2020.records$eventDate)
 # Compare records in and out
 
 nrow(LGL.2020)
-nrow(LGL.2020.records) # 3 records omitted: infrataxa ambiguous in relation to curated summary:
-# Circaea alpina (two infrataxa recognized), Petasites frigidus var. nivalis (iNat syn. P.f.frigidus), 
-# Platanthera dilatata (two infrataxa recognized)
+nrow(LGL.2020.records) #
 
 # Add to record of unmatched names
 
