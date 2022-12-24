@@ -41,7 +41,7 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 # Read GBIF records 2022
 # GBIF TSV converted to CSV from Mac Numbers and Filtered Taxonomically
 
-GBIF.2022 <- read.csv("digitized/DarwinCore/GBIF_2022_Plantae_DwC-assigned_AS_erroneous_localities_removed.csv", header = TRUE)
+GBIF.2022 <- read.csv("digitized/DarwinCore/GBIF_2022_Plantae_DwC-assigned_AS_erroneous_localities_removed_reevaluated.csv", header = TRUE)
 
 # Filter vascular plants
 
@@ -351,8 +351,7 @@ unmatched.vascular.plant.records
 
 
 
-
-# Read data from Nick Page, Raincoast Applied Ecology, vegetation assessment of Squamish Estuary
+# Read Nick Page, Raincoast Applied Ecology, vegetation assessment of Squamish Estuary
 
 Page.2004 <- read.csv("digitized/DarwinCore/Nick_Page_2004_SRWS_Squamish_Estuary_vegetation_assessment_DwC.csv")
 
@@ -514,10 +513,56 @@ unmatched.vascular.plant.records
 
 
 
+# Assign metadata to reports lacking infrataxonomic resolution based on species epithets
+
+unmatched.vascular.plant.records$scientificNameAuthorship <- summary$Taxon.Author[match(unlist(unmatched.vascular.plant.records$scientificName), summary$Species)]
+unmatched.vascular.plant.records$kingdom <- summary$Kingdom[match(unlist(unmatched.vascular.plant.records$scientificName), summary$Species)]
+unmatched.vascular.plant.records$phylum <- summary$Phylum[match(unlist(unmatched.vascular.plant.records$scientificName), summary$Species)]
+unmatched.vascular.plant.records$class <- summary$Class[match(unlist(unmatched.vascular.plant.records$scientificName), summary$Species)]
+unmatched.vascular.plant.records$order <- summary$Order[match(unlist(unmatched.vascular.plant.records$scientificName), summary$Species)]
+unmatched.vascular.plant.records$suborder <- summary$Suborder[match(unlist(unmatched.vascular.plant.records$scientificName), summary$Species)]
+unmatched.vascular.plant.records$superfamily <- summary$Superfamily[match(unlist(unmatched.vascular.plant.records$scientificName), summary$Species)]
+unmatched.vascular.plant.records$family <- summary$Family[match(unlist(unmatched.vascular.plant.records$scientificName), summary$Species)]
+unmatched.vascular.plant.records$genus <- summary$Genus[match(unlist(unmatched.vascular.plant.records$scientificName), summary$Species)]
+unmatched.vascular.plant.records$specificEpithet <- summary$Species[match(unlist(unmatched.vascular.plant.records$scientificName), summary$Species)]
+
+# Unmatched records
+
+unmatched.vascular.plant.records.unmatched <- unmatched.vascular.plant.records[is.na(unmatched.vascular.plant.records$kingdom),]
+
+# Matched records
+
+unmatched.vascular.plant.records.matched <- anti_join(unmatched.vascular.plant.records,unmatched.vascular.plant.records.unmatched)
+
+unique.unmatched.vascular.plant.records.matched <- unique(unmatched.vascular.plant.records.matched$scientificName)
+
+# Create key to attribute TaxonID to taxa that cannot be resolved infra-taxonomically with reference to summary
+
+key.field.names <- c('Taxon',"TaxonID")
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=length(unique.unmatched.vascular.plant.records.matched)))
+
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- unique.unmatched.vascular.plant.records.matched
+
+unmatched.taxa[is.na(unmatched.taxa)] <- ""
+
+write.csv(unmatched.taxa,"keys/taxonID_review_key.csv", row.names=FALSE)
+
+# Read key with TaxonIDs ascribed
+
+taxonID.key <- read.csv("keys/taxonID_key.csv")
+
+# Assign TaxonIDs to records of taxa unresolved infra-taxonomically
+
+unmatched.vascular.plant.records.matched$taxonID <- taxonID.key$TaxonID[match(unlist(unmatched.vascular.plant.records.matched$scientificName), taxonID.key$Taxon)]
+
+
+
 # Combine all source occurrence records
 
-
-Vascular.plant.records <- rbind(GBIF.2022.records,LGL.2020.records,Page.2004.records)
+Vascular.plant.records <- rbind(GBIF.2022.records,LGL.2020.records,Page.2004.records,unmatched.vascular.plant.records.matched)
 
 
 
