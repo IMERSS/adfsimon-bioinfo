@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_2022-12-21.csv")
+summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_2022-12-23.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -63,6 +63,7 @@ data.frame$scientificName <- GBIF.2022$selectedName
 GBIF.2022 <- data.frame
 
 # Add metadata
+
 GBIF.2022$country <- "Canada"
 
 # Merge with summary to standardize names and taxon metadata
@@ -154,17 +155,14 @@ nrow(GBIF.2022.names.unmatched.unmatched)
 nrow(GBIF.2022.names.matched)+nrow(GBIF.2022.names.unmatched.matched)+nrow(GBIF.2022.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
+# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(GBIF.2022.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
 
 unmatched.taxa$Taxon <- GBIF.2022.names.unmatched.unmatched$scientificName
-
-unmatched.taxa$Genus <- word(GBIF.2022.names.unmatched.unmatched$scientificName, 1)
-
-unmatched.taxa$Species <- word(GBIF.2022.names.unmatched.unmatched$scientificName, 2)
 
 unmatched.taxa <- distinct(unmatched.taxa)
 
@@ -172,7 +170,7 @@ review.key <- rbind(GBIF.2022.key,unmatched.taxa)
 
 review.key[is.na(review.key)] <- ""
 
-write.csv(review.key,"keys/review.key.csv")
+write.csv(review.key,"keys/review.key.csv", row.names=FALSE)
 
 # Bind records
 
@@ -184,8 +182,13 @@ GBIF.2022.records$eventDate <- as.Date(GBIF.2022.records$eventDate)
 
 # Compare records in and out
 
+nrow(GBIF.2022) - nrow(GBIF.2022.records)
+
 nrow(GBIF.2022)
-nrow(GBIF.2022.records) # No records omitted
+nrow(GBIF.2022.records) # ~400 records omitted; many taxa are cultivated species;
+# However, some are species that cannot be reconciled with the summary due to ambiguity
+# at the infrataxonomic level; these taxa should be sorted separately and integrated
+# with final catalog with reference to another summary dataframe perhaps?
 
 # Start record of unmatched names
 
@@ -312,16 +315,12 @@ nrow(LGL.2020.names.matched)+nrow(LGL.2020.names.unmatched.matched)+nrow(LGL.202
 # Generate review key with mismatched names
 # (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety','Form','Matched.Taxon')
+key.field.names <- c('Taxon','Matched.Taxon')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(LGL.2020.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
 
 unmatched.taxa$Taxon <- LGL.2020.names.unmatched.unmatched$scientificName
-
-unmatched.taxa$Genus <- word(LGL.2020.names.unmatched.unmatched$scientificName, 1)
-
-unmatched.taxa$Species <- word(LGL.2020.names.unmatched.unmatched$scientificName, 2)
 
 unmatched.taxa <- distinct(unmatched.taxa)
 
@@ -329,7 +328,7 @@ review.key <- rbind(LGL.2020.key,unmatched.taxa)
 
 review.key[is.na(review.key)] <- ""
 
-write.csv(review.key,"keys/review.key.csv")
+write.csv(review.key,"keys/review.key.csv", row.names=FALSE)
 
 # Bind records
 
