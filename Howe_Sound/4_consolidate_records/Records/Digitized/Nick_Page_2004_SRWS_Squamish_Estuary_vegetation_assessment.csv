@@ -1,74 +1,74 @@
-Species,frequency,mean_abundance_percent_cover
-Potentilla anserina ssp. pacifica,68.6,16.8
-Agrostis stolonifera,60.9,27.5
-Lathyrus palustris,51.7,19.3
-Atriplex patula,43.4,6.2
-Sonchus arvensis var. arvensis,42.9,7.1
-Carex lyngbyei,27.8,30.2
-Aster subspicatus,24.1,16.6
-Triglochin americanum,22.6,6.2
-Hordeum brachyantherum,21.7,1.3
-Calamagrostis canadensis var. canadensis,19.1,16.6
-Achillea millefolium,19.0,3.9
-Galium trifidum,19.0,0.9
-Typha latifolia,15.9,21.2
-Juncus effusus,15.5,48.4
-Sidalcea hendersonii,14.3,4.8
-Rubus spectabilis,14.1,4.1
-Alnus rubra,12.6,2.7
-Bidens amplissima,12.4,5.8
-Angelica lucida,10.5,6.8
-Juncus arcticus,10.5,14.4
-Ranunculus cymbalaria,10.5,4.8
-Conioselinum pacificum,10.3,3.2
-Maianthemum dilatatum,10.3,24.2
-Chenopodium rubrum var. rubrum,8.6,2.6
-Deschampsia caespitosa,8.6,25.2
-Picea sitchensis,8.6,13.6
-Rumex crispus,8.6,0.6
-Festuca sp.,8.6,0.0
-Vica gigantea,7.2,1.3
-Lonicera involucrata,7.1,11.6
-Elymus repens,6.9,38.8
-Holcus lanatus,5.3,0.7
-Myrica gale,5.3,4.0
-Epilobium ciliatum,5.2,0.1
-Phleum pratense,5.2,0.2
-Plantago major,5.2,0.7
-Rosa nutkana,5.2,30.0
-Symphoricarpos albus,5.2,5.7
-Vicia sp.,5.2,8.3
-Eleocharis palustris,3.4,36.0
-Epilobium angustifolium,3.4,0.3
-Fritillaria lanceolata,3.4,1.5
-Hierochloe odorata,3.4,1.3
-Malus fusca,3.4,2.6
-Poa pratensis,3.4,1.1
-Senecio spp.,3.4,0.3
-Solanum dulcamara,3.4,7.6
-Heracleum lanatum,1.9,2.3
-Polystichum munitum,1.9,2.3
-Rubus armeniacus,1.9,2.3
-Spergularia spp.,1.9,2.3
-Anaphalis margaritacea,1.7,0.5
-Athyrium filix-femina,1.7,5.0
-Claytonia sibirica,1.7,0.5
-Dicranum scoparium,1.7,5.0
-Dodecatheon pulchellum,1.7,1.0
-Eurhynchium pulchellum,1.7,25.0
-Gaultheria shallon,1.7,1.0
-Hypochaeris radicata,1.7,0.1
-Isothecium stoloniferum,1.7,2.0
-Juncus bufonius,1.7,0.1
-Lactuca muralis,1.7,1.0
-Plantago marítima ssp. juncoides,1.7,2.0
-Polygonum persicaria,1.7,0.5
-Prenanthes alata,1.7,2.0
-Quercus sp.,1.7,2.0
-Rhamnus purshiana,1.7,2.0
-Rhytidiadelphus loreus,1.7,40.0
-Rumex acetosella,1.7,1.0
-Ruppia maritima,1.7,65.0
-Salix sp.,1.7,0.5
-Sambucus racemosa,1.7,0.5
-Tsuga heterophylla,1.7,0.5
+scientificName,eventDate,recordedBy,frequency,mean_abundance_percent_cover
+Potentilla anserina ssp. pacifica,2004-08-12,Nick Page,68.6,16.8
+Agrostis stolonifera,2004-08-12,Nick Page,60.9,27.5
+Lathyrus palustris,2004-08-12,Nick Page,51.7,19.3
+Atriplex patula,2004-08-12,Nick Page,43.4,6.2
+Sonchus arvensis var. arvensis,2004-08-12,Nick Page,42.9,7.1
+Carex lyngbyei,2004-08-12,Nick Page,27.8,30.2
+Aster subspicatus,2004-08-12,Nick Page,24.1,16.6
+Triglochin americanum,2004-08-12,Nick Page,22.6,6.2
+Hordeum brachyantherum,2004-08-12,Nick Page,21.7,1.3
+Calamagrostis canadensis var. canadensis,2004-08-12,Nick Page,19.1,16.6
+Achillea millefolium,2004-08-12,Nick Page,19.0,3.9
+Galium trifidum,2004-08-12,Nick Page,19.0,0.9
+Typha latifolia,2004-08-12,Nick Page,15.9,21.2
+Juncus effusus,2004-08-12,Nick Page,15.5,48.4
+Sidalcea hendersonii,2004-08-12,Nick Page,14.3,4.8
+Rubus spectabilis,2004-08-12,Nick Page,14.1,4.1
+Alnus rubra,2004-08-12,Nick Page,12.6,2.7
+Bidens amplissima,2004-08-12,Nick Page,12.4,5.8
+Angelica lucida,2004-08-12,Nick Page,10.5,6.8
+Juncus arcticus,2004-08-12,Nick Page,10.5,14.4
+Ranunculus cymbalaria,2004-08-12,Nick Page,10.5,4.8
+Conioselinum pacificum,2004-08-12,Nick Page,10.3,3.2
+Maianthemum dilatatum,2004-08-12,Nick Page,10.3,24.2
+Chenopodium rubrum var. rubrum,2004-08-12,Nick Page,8.6,2.6
+Deschampsia caespitosa,2004-08-12,Nick Page,8.6,25.2
+Picea sitchensis,2004-08-12,Nick Page,8.6,13.6
+Rumex crispus,2004-08-12,Nick Page,8.6,0.6
+Festuca sp.,2004-08-12,Nick Page,8.6,0.0
+Vica gigantea,2004-08-12,Nick Page,7.2,1.3
+Lonicera involucrata,2004-08-12,Nick Page,7.1,11.6
+Elymus repens,2004-08-12,Nick Page,6.9,38.8
+Holcus lanatus,2004-08-12,Nick Page,5.3,0.7
+Myrica gale,2004-08-12,Nick Page,5.3,4.0
+Epilobium ciliatum,2004-08-12,Nick Page,5.2,0.1
+Phleum pratense,2004-08-12,Nick Page,5.2,0.2
+Plantago major,2004-08-12,Nick Page,5.2,0.7
+Rosa nutkana,2004-08-12,Nick Page,5.2,30.0
+Symphoricarpos albus,2004-08-12,Nick Page,5.2,5.7
+Vicia sp.,2004-08-12,Nick Page,5.2,8.3
+Eleocharis palustris,2004-08-12,Nick Page,3.4,36.0
+Epilobium angustifolium,2004-08-12,Nick Page,3.4,0.3
+Fritillaria camschatcensis,2004-08-12,Nick Page,3.4,1.5
+Hierochloe odorata,2004-08-12,Nick Page,3.4,1.3
+Malus fusca,2004-08-12,Nick Page,3.4,2.6
+Poa pratensis,2004-08-12,Nick Page,3.4,1.1
+Senecio spp.,2004-08-12,Nick Page,3.4,0.3
+Solanum dulcamara,2004-08-12,Nick Page,3.4,7.6
+Heracleum lanatum,2004-08-12,Nick Page,1.9,2.3
+Polystichum munitum,2004-08-12,Nick Page,1.9,2.3
+Rubus armeniacus,2004-08-12,Nick Page,1.9,2.3
+Spergularia spp.,2004-08-12,Nick Page,1.9,2.3
+Anaphalis margaritacea,2004-08-12,Nick Page,1.7,0.5
+Athyrium filix-femina,2004-08-12,Nick Page,1.7,5.0
+Claytonia sibirica,2004-08-12,Nick Page,1.7,0.5
+Dicranum scoparium,2004-08-12,Nick Page,1.7,5.0
+Dodecatheon pulchellum,2004-08-12,Nick Page,1.7,1.0
+Eurhynchium pulchellum,2004-08-12,Nick Page,1.7,25.0
+Gaultheria shallon,2004-08-12,Nick Page,1.7,1.0
+Hypochaeris radicata,2004-08-12,Nick Page,1.7,0.1
+Isothecium stoloniferum,2004-08-12,Nick Page,1.7,2.0
+Juncus bufonius,2004-08-12,Nick Page,1.7,0.1
+Lactuca muralis,2004-08-12,Nick Page,1.7,1.0
+Plantago marítima ssp. juncoides,2004-08-12,Nick Page,1.7,2.0
+Polygonum persicaria,2004-08-12,Nick Page,1.7,0.5
+Prenanthes alata,2004-08-12,Nick Page,1.7,2.0
+Quercus sp.,2004-08-12,Nick Page,1.7,2.0
+Rhamnus purshiana,2004-08-12,Nick Page,1.7,2.0
+Rhytidiadelphus loreus,2004-08-12,Nick Page,1.7,40.0
+Rumex acetosella,2004-08-12,Nick Page,1.7,1.0
+Ruppia maritima,2004-08-12,Nick Page,1.7,65.0
+Salix sp.,2004-08-12,Nick Page,1.7,0.5
+Sambucus racemosa,2004-08-12,Nick Page,1.7,0.5
+Tsuga heterophylla,2004-08-12,Nick Page,1.7,0.5
