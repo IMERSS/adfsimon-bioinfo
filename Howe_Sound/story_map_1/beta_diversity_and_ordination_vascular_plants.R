@@ -2,7 +2,6 @@
 
 # Exploratory analysis of Howe Sound vascular plant diversity
 
-
 # Implementing gridded beta diversity analysis of Howe Sound vegetation data based on:
 # https://rfunctions.blogspot.com/2015/08/calculating-beta-diversity-on-grid.html
 
@@ -56,7 +55,7 @@ betagrid<-function(gridshp, comp, xfeature, yfeature, radius, phylotree, phylobe
 
 # Load the grid
 
-shape <- readOGR("spatial_data/vectors/1km_grid_WGS84_clip_vascular_plant_2022-12-24_remove_georeferenced_data_grid.shp")
+shape <- readOGR("spatial_data/vectors/1km_grid_WGS84_coordinates_x_vascular_plant_grid_NA_omit.shp")
 
 # Read species occurrences
 
@@ -85,11 +84,12 @@ matrix[matrix > 0] <- 1
 # Compare dimensions of matrix and grid cells
 
 nrow(matrix) # matrix with 771 rows matching 771 grid cells found in shape below
-nrow(shape)  # shape with 771 grid cells 
+nrow(shape2)  # shape with 771 grid cells 
 
 # Which fields correspond with LONG (3) & LAT (2)? 
 
 names(shape)
+str(shape)
 
 # Call the function and get results! Let us calculate beta diversity for each focal cell. Note that the function will return results containing four columns: number of grid cell, the mean turnover partition of beta diversity, the mean nestedness partition of beta diversity, and the mean total beta diversity. Also, note that radius equals 0.25 degree, which is the same size as the resolution of our grid. This will make the function use only the 8 (or fewer) adjacent cells in relation to the focal cells. If you want more neighbor cells to be included in the analysis, you can use the double (0.5 in this example) or greater values.
 
@@ -111,7 +111,7 @@ results$richness  <- matrix$richness[match(unlist(results$id), matrix$id)]
 
 # Output results
 
-# write.csv(results,"betagrid/outputs/betagrid_vascular_plants.csv")
+write.csv(results,"outputs/betagrid_vascular_plants.csv", row.names = FALSE)
 
 #### GRAPH ####
 # Note: code not working due to projection
@@ -134,13 +134,6 @@ my.colors = colorRampPalette(c("white","lightblue", "yellow","orangered", "red")
 
 # Plot the map
 plot(rbeta, col=my.colors(255), frame.plot=F, axes=F, box=F, add=F, legend.width=0.8, legend.shrink=1)
-
-
-
-
-
-
-
 
 
 ## Ordination of gridded vascular plant data
