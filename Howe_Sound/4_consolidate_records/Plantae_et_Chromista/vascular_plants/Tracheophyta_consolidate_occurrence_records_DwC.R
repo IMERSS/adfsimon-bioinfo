@@ -632,3 +632,31 @@ Vascular.plant.records[is.na(Vascular.plant.records)] <- ""
 # Output synthesized catalog of occurrence records
 
 write.csv(Vascular.plant.records,"synthesized/Howe_Sound_vascular_plant_records_consolidated.csv", row.names = FALSE)
+
+# Evaluate georeferencing resolution of vascular plant records
+
+nrow(Vascular.plant.records) # 18K vascular plant occurrence records
+
+Vascular.plant.records$coordinateUncertaintyInMeters <- as.numeric(Vascular.plant.records$coordinateUncertaintyInMeters)
+
+hist(Vascular.plant.records$coordinateUncertaintyInMeters, 
+        xlim=c(0,1000), breaks = 100000, main="Vascular Plant Records: Coordinate Uncertainty", xlab = "Coordinate Uncertainty in meters")
+
+sum(is.na(Vascular.plant.records$coordinateUncertaintyInMeters))/nrow(Vascular.plant.records) 
+# 32% of records lack coordinate uncertainty
+sum(is.na(Vascular.plant.records$coordinateUncertaintyInMeters))/nrow(Vascular.plant.records) * nrow(Vascular.plant.records) 
+# Or nearly 6K of 18k records total
+
+georeferenced.records <- nrow(Vascular.plant.records)-sum(is.na(Vascular.plant.records$coordinateUncertaintyInMeters))
+
+sum(Vascular.plant.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records # 80% of georeferenced records mapped to < 100 m coordinate uncertainty
+
+sum(Vascular.plant.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records * georeferenced.records
+
+# That is, about 10K of total 18k records can be analysed with confidence at 100m grid scale
+
+# Some records with NAs are likely mapped at a reasonable degree of accuracy; it should be possible to evaluate the georeferencing by user
+# to improve data availability as may be necessary; for a first pass, however, it will suffice to map biodiversity at coarse
+# spatial scales (e.g., 500x500m grid)
+
+
