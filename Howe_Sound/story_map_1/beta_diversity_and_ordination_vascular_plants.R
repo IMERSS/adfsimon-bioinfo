@@ -4,6 +4,8 @@
 
 
 # Implementing gridded beta diversity analysis of Howe Sound vegetation data based on:
+# https://rfunctions.blogspot.com/2015/08/calculating-beta-diversity-on-grid.html
+
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
@@ -54,7 +56,7 @@ betagrid<-function(gridshp, comp, xfeature, yfeature, radius, phylotree, phylobe
 
 # Load the grid
 
-shape <- readOGR("spatial_data/vectors/1km_grid_clip_grid_intersect_vascular_plant_records_2022-12-24_NA_omit_WGS84_coordinates.shp")
+shape <- readOGR("spatial_data/vectors/1km_grid_WGS84_clip_vascular_plant_2022-12-24_remove_georeferenced_data_grid.shp")
 
 # Read species occurrences
 
@@ -66,11 +68,15 @@ head(data)
 
 data <- data %>% dplyr::select('scientific'|'id')
 
+nrow(data)
+
 # Add count field to generate matrix
 
 data$count <- 1
 
 # Generate matrix 
+
+matrix <- ecodist::crosstab(data$id, data$scientific, data$count)
 
 # Convert to presence / absence
 
@@ -78,10 +84,10 @@ matrix[matrix > 0] <- 1
 
 # Compare dimensions of matrix and grid cells
 
-nrow(matrix) # matrix with 771 rows matching 771 grid cells
+nrow(matrix) # matrix with 771 rows matching 771 grid cells found in shape below
 nrow(shape)  # shape with 771 grid cells 
 
-# Which fields correspond with LONG (13) & LAT (12)? 
+# Which fields correspond with LONG (3) & LAT (2)? 
 
 names(shape)
 

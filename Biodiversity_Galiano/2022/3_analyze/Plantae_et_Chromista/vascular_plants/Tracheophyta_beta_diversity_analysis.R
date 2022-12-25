@@ -20,7 +20,9 @@ library(terra)
 library(tidyr)
 library(vegan)
 
-# Implementing grided beta diversity analysis using the function and test data from this site: https://rfunctions.blogspot.com/2015/08/calculating-beta-diversity-on-grid.html
+
+# Implementing gridded beta diversity analysis using the function and test data from this site: 
+# https://rfunctions.blogspot.com/2015/08/calculating-beta-diversity-on-grid.html
 
 #### FUNCTION: copy and paste into R ####
 
@@ -42,7 +44,6 @@ betagrid<-function(gridshp, comp, xfeature, yfeature, radius, phylotree, phylobe
   }
   return(data.frame(cell=row.names(comp), mean_turnover, mean_nestedness, mean_beta))
 }
-
 
 #############
 ## MY DATA ##
