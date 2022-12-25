@@ -76,7 +76,7 @@ matrix <- ecodist::crosstab(data$id, data$Taxon, data$Count)
 
 matrix[matrix > 0] <- 1 
 
-# Which fields correspond with LONG (7) & LAT (6)? 
+# Which fields correspond with LONG (6) & LAT (7)? 
 
 names(shape)
 
