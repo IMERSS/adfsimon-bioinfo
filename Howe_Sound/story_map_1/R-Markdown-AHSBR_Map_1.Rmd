@@ -1,0 +1,288 @@
+---
+title: Maxwell Creek Watershed Project
+author: Ruth Waldick, Shauna Doll, Nicholas Courtier, Angeline Emmott, Andrew Simon, Antranig Basman
+date: December 14, 2022
+output: html_document
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "docs") })
+---
+
+The Maxwell Creek Watershed Project (MCWP or “the Project”) is tackling the complexities of addressing cumulative impacts of climate change on local ecosystems while also navigating interagency collaboration. The ultimate goal of the Project is to better understand and define the efficacy of nature-based solutions, such as the installation of green infrastructure, in increasing climate resilience and enhancing ecological integrity and biodiversity.
+
+There are three actionable objectives of the Project:
+
+1. **Forest restoration**  
+Like on many Gulf Islands, intensive silvicultural (i.e. timber harvest) activities on Salt Spring Island throughout the 20th century shifted characteristically structurally complex and biodiverse Coastal Douglas-fir (CDF) forests to stands that are predominantly homogeneous in age, with limited size and species diversity, closed canopies (i.e. dark), and a lack of  wildlife and wildlife features (e.g. wildlife trees, coarse woody debris, etc.). This is certainly the case in the Maxwell Creek Watershed (MCW). Despite more than 20 years of protection, the forests within this watershed are dominated by silvicultural characteristics. This has implications for biodiversity and increases vulnerability to climate change/weather extremes. The MCWP focuses on developing, testing, and demonstrating techniques to recover ecological functions and reduce fire hazards within modified forests of the Southern Gulf Islands.
+2. **Wetland restoration**  
+Climate induced drought, extreme heat, and exceptional rainfall events have increased the frequency and severity of local emergencies such as road washouts, landslides, and loss of electricity and emergency services.  The state of ecosystems in the Maxwell Creek Watershed exemplifies the  extent of modification imposed on the landscape since settler arrival in the late 1800s. This includes the loss of approximately 75% of wetlands from this area. The MCWP aims to understand and define priority areas for restoring wetland functions lost due to the installation of roads, ditches, and agricultural drainage systems. 
+3. **Baseline observational studies**  
+As described above, the Project has been designed to increase fire resilience and ecological integrity in forests and wetland ecosystems. Restoring a more complex forest structure requires an understanding of historic and baseline conditions. This means collecting information on hi factors creating areas of high vulnerability (eg., fire, washout/flooding, loss of biodiversity/habitat), and identifying key variables influencing the ecological functioning in the watershed. 
+The first step was to compile satellite imagery, ecological & biophysical maps, data layers, and any other field data from the watershed to begin to understand the surface water flows, hydrological features, forest structure, etc. This is further supported by a growing assortment of field observations from fixed, long-term monitoring stations (water flows, forest and vegetation plots, etc), experimental/treatment plots, data loggers and wildlife cameras. 
+
+## Introduction
+
+The Maxwell Creek Watershed was chosen as an area of focus for a number of reasons. Not least of which is that it is essential to the resilience of the Salt Spring Island community. It supplies potable water to nearly 50% of year-round island residents, including the Village of Ganges and the hospital. Maps 1 through 21 will provide additional information about the study area, land-use history, and many other additional details that have been considered in the design, and included in the and implementation of the MCWP. 
+
+Mount Maxwell, also known as Hwmet’utsum to the Hul’q’umi’num speaking peoples, is an important ecological feature of Salt Spring Island, BC. The mountain is the highest peak in the Gulf islands standing at 602 metres tall and comprises various unique ecosystems including second growth Coastal Douglas-fir forests, garry oak woodlands, and wetland habitat. Hwmet’utsum has gained ecological interest due to the unique history of logging, agriculture, and wildfire on the landscape. Specifically, the Maxwell Creek Watershed, extending over 296 acres of protected land, is the main area of interest. The Maxwell Creek Watershed project was initiated to understand and enhance the ecological integrity of the forests and wetland areas in this watershed through restoration and wildfire resilience. 
+
+Map 1:  Capital Regional District watersheds on Salt Spring Island. Maxwell Creek Watershed is outlined in red. 
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 2: Maxwell Creek Watershed on Salt Spring Island
+
+Map 2: Salt Spring Island. Maxwell Creek Watershed is outlined in red and Maxwell Lake is highlighted in blue. The watershed is currently well protected through private and public covenants, protected areas, and parks.
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 3: Study Area of the Maxwell Creek Watershed Project
+
+Maxwell Creek Watershed highlighted in red, with green circle indicating the study area of the Maxwell Creek Watershed Project. Water runs through the watershed from the southeast corner (near Maxwell Provincial Park) to the north-north west. Much of the upper watershed, which supports the water supply to Maxwell Lake, is owned and under the management of the local Improvement District, North Salt Spring Waterworks District, which has been delivering water to the community since 1914. 
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 4: Focus Area of the Maxwell Creek Watershed Project
+
+To provide some examples of the mapping work being done for the Maxwell Creek Watershed Project, thumbnail maps from the area circled have been provided in Maps 5 through 17. The focus of the MCWP is in the area immediately around Maxwell Lake, a large part of which is owned and stewarded by [NSSWD](https://northsaltspringwaterworks.ca/about-us/history/).
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 5: Aerial photos (1946 on)
+
+Aerial imagery provides a historic record of land-use change over time. These images are essential to understanding baseline ecological conditions. As shown in the image above, timber harvest was once a large-scale and recurring activity within the Maxwell Creek Watershed. This explains the structural and age homogeneity within present-day forests in this area.  Compare this photo (taken in 1957)  with the satellite and bare earth images in Maps 6 & 7. The site of the original Maxwell Farmstead appears in the top left.
+
+Considerations: Aerial photos may be obtained at a cost ([Digital Air Photos of B.C. - Province of British Columbia](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/digital-imagery/air-photos). Images are not georeferenced, and technical skills are required to process and interpret images. 
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 6: Satellite imagery (2021)
+
+Similar to aerial imagery, but taken at a much wider geographic scale and at a higher level of detail, satellite imagery provides snapshots in time of the different features (e.g. buildings, roads, vegetation) on the Earth’s surface. In the ecological context, scientists and other practitioners can identify and differentiate features at a landscape level, helping to identify potential sites for collecting information on vegetation coverage, canopy, and changes in land cover over time. 
+
+Natural regeneration since 1946, and abandonment has closed much of the canopy in this area. Intrusion into the old farmstead by trees is visible, and a site visit showed that the remaining open area is due to a high water table in the area. The site was formerly a  wet meadow.
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 7: Bare Earth LiDAR
+
+This LiDAR Digital Elevation Model (DEM) covers the same area seen in Maps 5 and 6. However, rather than treetops it shows the bare earth surface and reveals, along with the geological features, human disturbance -  such as old roadbeds, many of which are now trails or access routes, ditches, and agricultural drainage - and other items of interest not visible with aerial photography. In other words, it shows what is under the trees.  
+
+This map shows several depressions where water is able to accumulate, including the former farm site (top left).  
+
+**Considerations**: Bare earth information is incredibly useful for highlighting linear features and exposing hidden features. For example, linear features in the former farm  fields run perpendicular to the movement of water, serving as drainage and irrigation infrastructure. Although the farm has not operated in over 20 years, the drainage system remains, meaning without its removal the wet meadow will be unable to recover.
+
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 8: LiDAR forest inventory
+
+Light Detection and Ranging (LiDAR) provides detailed and accurate three-dimensional characterization of vertical forest structure, including tree height, basal area, and even tree type. 
+
+As the MCWP is focused on fire, and preventing the movement of fire into the canopy (i.e., reducing potential catastrophic canopy fire), the high density of trees and absence of natural gaps and structural complexity using LiDAR informs fire hazard and risk assessment.
+
+**Considerations**: LiDAR interpretation requires advanced GIS technical abilities. 
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+
+## Map 9: Canopy height (2019)
+
+LiDAR tree height information helps to highlight specific information that may not otherwise be apparent.
+
+In this case, the tallest trees are shown in green, and the shortest canopy (trails/low shrubs/grasses) are shown in yellow and pale brown. This information has proven extremely valuable in detecting areas of higher soil moisture, even when there are no streams or wetlands present (due to extent of ditching, draining, etc). 
+
+The green area of tall trees indicates areas of good growing conditions, and provides information about potential water availability across the landscape.
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 10: Recent logging (since 2000)
+Satellite data can be used over time to map out areas of harvest. Organizations like Global Forest Watch produce annual maps showing the area of forest lost (since 2020). This type of information allows tree age and regeneration to be evaluated from a ‘zero’ or baseline year. 
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 11: Forest planting and harvesting map (Texada)
+Official planting and harvesting maps are sometimes available. In this case  detailed breakdowns of cut blocks and their delineations are provided. If the limits of blocks in this map (from December, 2000) are compared to the variation in tree canopy in Map 10, the influence of these cutblocks is still visible on the landscape. 
+
+**Considerations**: These maps can be hard to track down and are often not available in digital format. They provide additional information about trees harvested and historic forest attributes. However, expertise is required to interpret this information.
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 12: Vegetation Resource Inventory (VRI)
+
+The [British Columbia VRI](https://www2.gov.bc.ca/gov/content/industry/forestry/managing-our-forest-resources/forest-inventory/data-management-and-access/vri-data-standards) is used to describe the location of a resource (e.g. trees to be harvested) and the amount of timber/woody material in a given unit area.  VRI begins with photo interpretation to estimate vegetation features within polygons, and is followed by ground sampling to collect the detailed information about tree age, basal area, tree height, volume and composition, as well as ecological characteristics.  
+
+**Considerations**: Although a generalized representation of forest characteristics, and forestry-derived, VRI units provide useful information about forest stands and are comparable to [Terrestrial Ecosystem Mapping (TEM) or Sensitive Ecosystem Inventory (SEI)](https://islandstrust.bc.ca/document/sem-tem-mapping-updates-and-disturbance-mapping/) polygons.
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 13: Historic fires
+
+The Maxwell Creek watershed resides within the Coastal Douglas-fir (CDF) forest biogeoclimatic zone, which when mature provides resilience to fires due to its multi-layered canopy, abundance of coarse woody debris, and deep root networks. Fire disturbance regimes are natural in this forest type, occurring periodically as stand-replacing events that take place on >100 year return cycles. Fire data indicates wildfire occurrences in the watershed throughout the 1930’s and 1940’s, and as recently as 2009. While in the surrounding areas, wildfires were recorded through the years of 1952, 1956, 1959, 1982, 1987, 1989, 1995, and 2008. Data on the severity of these fires are limited, however, visual fire damage is evident at the site. Historical logging of the Maxwell Creek watershed throughout the second half of the 20th century may play a role in the occurrence of such fires, due to diminished forest structure and complexity. 
+
+<!-- Courtier text: Records of historic fires, including the date and area burned, are being used to understand past fire events  (the ones shown in this map are both large scale forestry-related burns).  In the Maxwell Creek Watershed, there is an absence of historic stumps and coarse woody materials on the ground due to the occurrence of large intense fires. Without these historic forest attributes, it is a challenge to understand the ecological history of the place. The historic records are helpful in filling this knowledge gap.
+
+Note that map only shows 2 fires
+-->
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("scripts/MCW_fire_history_map_script.R")
+FirehistMap
+```
+
+## Map 14: Geology
+Base rock layers - or local geological layers - can provide information about soils and the movement of water. Salt Spring and other Gulf Islands are characterised by glaciated ridges and valleys that reflect the geometries of the underlying bedrock formations. The islands are underlain by highly faulted sedimentary rocks of the Nanaimo Group. Groundwater aquifers in the bedrock are important ecologically and as a community water supply, but are poorly understood and difficult to map because they are highly partitioned (often in faults). 
+
+**Consideration**s: This map’s resolution is low. 
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 15: Soils
+The Maxwell Creek watershed is characterised by ridges of erosion-resistant sandstone and conglomerate and lower valleys with eroded materials, such as shales, gravelly sand loam, and colluvial materials and a C-horizon consists of fractured bedrock.  The Maxwell farmstead was placed on Suffolk soil, which is characterised as loamy sand. 
+
+The CDF Biogeoclimatic Zone ranges in elevation with ecosystems varying according to aspect, soils, and other biophysical conditions. The topography and ecological niches across the Maxwell Creek Watershed are diverse; ranging from just under 300 m elevation, including valleys, wetlands, rocky ridges and ravines. Maxwell Creek ends at the Stuart Channel just north of Erskin Point (an area of suitable Surf smelt forage and spawning habitat).
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 16: Contours
+Contour lines show elevation over sea level. Lines that are close together indicate steep slopes, lines that are farther apart indicate gentle slopes. Contour maps are  important in the context of the MCWP, influencing surface water flows, water accumulation, and vegetation and tree cover.
+
+**Considerations**: Contour data is readily accessible and useful for identifying features in the landscape. It is also useful in models seeking to map surface water flows or identify catchment areas. 
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 17: LiDAR derived drainage channels
+Bare Earth information is used in surface-water modelling to understand how water flows within the watershed.  In this map, drainage channels (shown) were derived from surface topography to show overland flow. 
+
+The Maxwell farmstead (top left) shows how water has been rerouted using linear features within the fields, and using a trench running east-west immediately south of the farm. These features accelerate water flows and exacerbate flash flooding and erosion. In fact, the trench intercepts and redirects the waters from the upper watershed away from the fields, toward the Maxwell Road - which is experiencing significant erosion and contributing to sediment and nutrient loading into the creek supplying Maxwell lake. 
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 18: Cadastral (i.e. property) information. 
+
+Maxwell Creek Watershed is outlined in red and Maxwell Lake is highlighted in blue. Property lines and detail shown in white. Cadastral data layers are essential to this project as they denote land ownership and thus what land-use activities are/are not permitted. 
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_base_map_script.R")
+baseMap
+```
+
+## Map 19: Protected areas. 
+Maxwell Creek Watershed is outlined in red and Maxwell Lake is highlighted in blue.
+Parks (light green), EcoReserves (yellow), Watershed protection (hatched), covenants (pink). are shown.
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/Jurisdictional_reference_map_script.R")
+jurisMap
+```
+
+## Map 20: Zoning
+This information is important to help us delineate the areas we include in the study, and to connect with landowners to let them know about the project. 
+
+```{r, echo=FALSE, message=FALSE}
+jurisMap
+```
+
+## Map 21: Development permit areas
+These are areas designated as requiring permissions and limiting the types of activities that may be undertaken. Lake Maxwell is within a DPA for Lakes, Streams and Wetlands (Island Trust). 
+
+```{r, echo=FALSE, message=FALSE}
+jurisMap
+```
+
+## Map 22: Where does the water flow
+
+Drainage patterns and watershed sub-basins calculated from a Lidar digital elevation model DEM.
+The Maxwell Creek Watershed is shown with a red line.  Watershed sub-basin A feeds directly into the lake, the upper part of sub-basin B can be diverted into the lake at D, water from sub-basin C does not flow into the lake. Surveyed RAR watercourses shown in blue. Watershed sub-basins are derived from a LIDAR digital elevation model.
+
+<!-- Note - wrong map, from "background" but is closest relevant one to hydrology -->
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("scripts/MXC_watershed_map_script.R")
+WatershedMap
+```
+
+## Map 23: What’s under the trees
+
+A hill shaded LIDAR digital elevation model shows the bare earth surface and reveals, along with the geological features, human disturbance such as old roadbeds (R) which are now often trails or easy access routes, ditching and berms (B), agricultural drainage (A), and other items of interest which cannot be seen in the aerial photography.
+
+```{r, echo=FALSE, message=FALSE}
+baseMap
+```
+
+## Map 24: Baseline Observation Study Plots
+
+A total of 40 long term monitoring plots have been set up in the upper watershed. These sites will be monitored regularly and will form the basis of the reference continuum of forest conditions and ecologies occurring in this area, and to document and track changes over time. 
+Monitoring includes: vascular plant/shrubs (cover, type, height), woody materials (fine, coarse, standing dead and on the ground, state of decomposition, living and standing dead tree diameter, soil profile, tree age, soil moisture, canopy closure 
+
+These plots were selected using a randomized algorithm to capture four conditions within the upper watershed using map data: open canopy sites with wet and dry characteristics and closed canopy sites with wet and dry characteristics. Our initial monitoring of these sites in 2022 has allowed us to characterize these sites to validate the remote-assignments into these four categories, and is being analyzed to capture the range of conditions and characteristics occurring in the watershed. 
+In 2022/23 we are establishing an additional 10+ plots in which we will apply treatments to examine how the understorey, tree growth and recruitment, and other conditions observed in the forest are influenced by canopy closure/light (high canopy closure vs opening of canopy in treatment sites), browse/herbivory (lack of recruitment of younger age classes, through fencing treatments), seedbank and moisture effects (soil moisture and seed treatments). Pairwise treatments and use of references sites at treated stands will be contrasted with observations from the array of long-term monitoring plots. 
+
+### PLOT SURVEY TYPES
+
+1. Vegetation survey
+2. Coarse woody material, fine woody material, shrub cover, and DBH
+3. Prism plot
+4. Ground moisture measurements
+
+### PLOT PHOTOGRAPHY
+
+1. Canopy photography at centroid and ends of transects. Gap Light Analyzer software.
+2. Eight point horizontal panorama.  The iOS Theodolite app can embed site id and camera metadata in the photo image as well as making a clear copy. 
+3. Eight point ground photography from centroid or circumference as applicable. 
+
+```{r, echo=FALSE, message=FALSE}
+source("scripts/MCW_Study_site_map_script.R")
+StudySiteMap
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
