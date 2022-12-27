@@ -54,11 +54,7 @@ Select each plant family to track our progress documenting the regional flora. U
 
 ## Richness by region
 
-```{r, echo=FALSE, message=FALSE}
-source("scripts/Community_science_contributions.R")
-baseMap
-```
-
+# ...
 
 
 ```{r setup, include=FALSE}
