@@ -13,8 +13,13 @@ library(betapart)
 library(CommEcol)
 library(dplyr)
 library(ecodist)
+library(gapminder)
+library(gganimate)
 library(ggplot2)
 library(ggrepel)
+library(ggthemes)
+library(gifski)
+library(hrbrthemes)
 library(picante)
 library(raster)
 library(RColorBrewer)
@@ -24,6 +29,7 @@ library(stringr)
 library(terra)
 library(tidyr)
 library(vegan)
+
 
 #### FUNCTION: copy and paste into R ####
 

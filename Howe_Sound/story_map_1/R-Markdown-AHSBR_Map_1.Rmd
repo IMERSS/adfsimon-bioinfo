@@ -19,7 +19,7 @@ baseMap
 ```
 Map 1. Ecological communities
 
-Explore the region's flora by selecting from the following (selectable) biogeoclimatic units:
+Explore the region's flora by selecting from the following biogeoclimatic units:
 
 Alpine (CMA)
 Engelmann spruce subalpine fir communities (ESSFmw)
