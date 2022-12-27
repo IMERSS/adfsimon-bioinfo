@@ -172,8 +172,8 @@ plot <- history %>%
   ggplot(aes(x = year, y = cum.spp, color = 'green')) +
   geom_line(alpha=0.8) + 
   geom_point(size=2) +
-  labs(title="Vascular plant species recorded in Howe Sound 1990-2022",
-       caption="Source: Howe Sound Biosphere Region Initiative")+
+  labs(title="Vascular plant species recorded in Átl’ka7tsem/Howe Sound 1990-2022",
+       caption="Source: Átl’ka7tsem/Howe Sound Biosphere Region Initiative")+
   ylab('New Species')+xlab('Year') + 
   theme_solarized_2(light=F) +
   theme(text=element_text(colour="#EEEEEE"),
