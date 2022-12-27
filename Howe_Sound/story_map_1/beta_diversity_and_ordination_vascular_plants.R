@@ -1,6 +1,4 @@
-
-
-# Exploratory analysis of Howe Sound vascular plant diversity
+# Exploratory analysis of Átl'ka7tsem/Howe Sound vascular plant diversity
 
 # Implementing gridded beta diversity analysis of Howe Sound vegetation data based on:
 # https://rfunctions.blogspot.com/2015/08/calculating-beta-diversity-on-grid.html
@@ -13,11 +11,13 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 library(betapart)
 library(CommEcol)
-library(RColorBrewer)
 library(dplyr)
 library(ecodist)
+library(ggplot2)
+library(ggrepel)
 library(picante)
 library(raster)
+library(RColorBrewer)
 library(rgdal)
 library(rgeos)
 library(stringr)
@@ -63,11 +63,7 @@ data <- read.csv("tabular_data/1km_gridded_vascular_plant_records_2022-12-24_WGS
 
 # Subset relevant fields
 
-head(data)
-
 data <- data %>% dplyr::select('scientific'|'id')
-
-nrow(data)
 
 # Add count field to generate matrix
 
@@ -84,7 +80,7 @@ matrix[matrix > 0] <- 1
 # Compare dimensions of matrix and grid cells
 
 nrow(matrix) # matrix with 771 rows matching 771 grid cells found in shape below
-nrow(shape2)  # shape with 771 grid cells 
+nrow(shape)  # shape with 771 grid cells 
 
 # Which fields correspond with LONG (3) & LAT (2)? 
 
@@ -113,100 +109,168 @@ results$richness  <- matrix$richness[match(unlist(results$id), matrix$id)]
 
 write.csv(results,"outputs/betagrid_vascular_plants.csv", row.names = FALSE)
 
-#### GRAPH ####
-# Note: code not working due to projection
-
-# Create a new layer in our grid file for the mean total beta diversity.
-shape$betadiv <- results[,4]
-
-# writeOGR(shape, dsn = "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/gridded_analysis_mydata/", 
-# layer = "betagrid_plants.shp", driver = "ESRI Shapefile")
-
-# Now create a raster with the same extent and resolution as our previous grid (in our example, 0.25 degree lat/long):
-emptyraster <- raster(extent(shape))
-res(emptyraster)=1000
-
-# Assign values to the new raster according to the beta diversity layer in our shapefile.
-rbeta <- rasterize(shape, field="betadiv", emptyraster)
-
-# Make a cool color palette:
-my.colors = colorRampPalette(c("white","lightblue", "yellow","orangered", "red"))
-
-# Plot the map
-plot(rbeta, col=my.colors(255), frame.plot=F, axes=F, box=F, add=F, legend.width=0.8, legend.shrink=1)
-
 
 ## Ordination of gridded vascular plant data
 
+# Read environmental metadata
+
+metadata <- read.csv("tabular_data/1km_grid_metadata.csv")
+
+# Construct label using environmental metadata to index grid cells in ordination analysis
+
+# Assign BEC unit based on spatial representation of BEC units within grid cells
+
+# First simplify BEC unit labels
+
+bec.labels <- unique(metadata$BGC_LABEL)
+bec.labels.new <- c("A","Mmm","Mmm","Hvm","Hvm","Hdm","Hxm","Cmm","Hms","Hds","Emw")
+
+grid.bec.labels <- data.frame(bec.labels,bec.labels.new)
+
+metadata$BGC_LABEL_NEW <- grid.bec.labels$bec.labels.new[match(unlist(metadata$BGC_LABEL), grid.bec.labels$bec.labels)]
+
+# Identify most well represented BEC units in each grid cell:
+
+grid.bec <- metadata %>% group_by(id, BGC_LABEL_NEW) %>% summarise(HA = max(HA))
+
+grid.bec <- grid.bec %>% group_by(id) %>% top_n(1, HA)
+
+# Reassign BEC labels
+
+metadata$BGC_LABEL_NEW <- grid.bec$BGC_LABEL_NEW[match(unlist(metadata$id), grid.bec$id)]
+  
+# Concatenate grid cell labels
+
+metadata$GRID_ID <- paste(metadata$id, metadata$BGC_LABEL_NEW, metadata$REGION, sep = "", collapse = NULL)
+
+# Read betadiversity analysis results
+
+betadiversity <- read.csv("outputs/betagrid_vascular_plants.csv")
+
+# Merge betadiversity analysis results with metadata (note: betadiversity information only available for cells containing species)
+
+metadata <- left_join(metadata,betadiversity)
+
+# Reduce metadata frame to grid cells with biodiversity present
+
+metadata <- metadata %>% drop_na(richness)
+
+# Filter grid cells with species richness >30 (same is done with species dataframe below)
+
+metadata <- metadata %>% filter(richness>30)
+
+# How well are different biogeoclimatic units represented in this analysis?
+
+metadata %>% count(MAP_LABEL)
+
+# Table results: # grid cell representation of BEC units:
+
+# Coastal Western Hemlock dry maritime (48) - CWHdm
+
+# Coastal Western Hemlock (eastern) very dry maritime (29) - CWHxm1
+
+# Coastal Western Hemlock (montane) very wet maritime (12) - CWHvm2
+
+# Mountain henmlock (windward) moist maritime (10) - MHmm1
+
+# Alpine Tundra and Subalpine Parkland (7) - CMAunp
+
+# Mountain henmlock (leeward) moist maritime (5) - MHmm2
+
+# Coastal Western Hemlock (southern) dry sub-maritime (2) - CWHds1
+
+# Coastal Western Hemlock (southern)  moist maritime (2) - CWHms1
+
+
 # Read species occurrences
 
-data <- read.csv("betagrid/inputs/Galiano_vascular_plants_intersect_1km_grid_WGS84.csv")
+data <- read.csv("tabular_data/1km_gridded_vascular_plant_records_2022-12-24_WGS84.csv")
 
-# Subset relevant fields
+# Remove outlier grid cell (vascular plant records from early 1900s with problematic generalized coordinates)
 
-data <- data %>% dplyr::select('Taxon'|'id')
+data <- data[!(data$id == '2716'),]
+
+# Subset relevant fields from biodiversity data
+
+data <- data %>% dplyr::select('scientific'|'id')
 
 # Add count field to generate matrix
 
-data$Count <- 1
+data$count <- 1
 
 # Generate matrix 
 
-matrix <- ecodist::crosstab(data$id, data$Taxon, data$Count)
+matrix <- ecodist::crosstab(data$id, data$scientific, data$count)
 
 # Convert to presence / absence
 
 matrix[matrix > 0] <- 1 
 
-# Read labeled grid dataset
+# Focus analysis on grid cells with species richness >30
 
-labeled.grid <- read.csv("betagrid/outputs/betagrid_vascular_plants_labeled_grid_cells_geo_attributes_2022-11-09.csv")
+matrix <- matrix[rowSums(matrix[])>=30,]
 
-# Remove rows with <2 taxa
 
-matrix <- matrix[rowSums(matrix[])>2,]
 
-nrow(matrix)
+# Implement ordination analysis of grid cells with species richness >30
 
-# Create environment dataframe that matches cell IDs with labels
+# ( To consider ordinations against environmental variables, see:
+# http://kembellab.ca/r-workshop/biodivR/SK_Biodiversity_R.html )
+# OR : # https://www.rpubs.com/RGrieger/545184
 
-env <- matrix
+# Create MDS Jaccard similarity Index for Site Commmunity Data
 
-env$id <- row.names(matrix)
+AHSBR.MDS <- metaMDS(matrix, distance = "jaccard", k = 2, trymax = 100, zerodist = "add")
 
-env$label <-  labeled.grid$label[match(unlist(env$id), labeled.grid$id)]
-
-env <- env[,730:731]
-
-env$geo <-  labeled.grid$geo[match(unlist(env$id), labeled.grid$id)]
-
-#### COMMUNITY ORDINATION PLOTS ####
-
-## Consider ordinations against environmental variables
-## http://kembellab.ca/r-workshop/biodivR/SK_Biodiversity_R.html
-
-## Create MDS Jaccard similarity Index for Site Commmunity Data
-
-matrix.MDS <- metaMDS(matrix, distance = "jaccard", k = 2, trymax = 100, zerodist = "add")
+scores(matrix.MDS)
 
 stressplot(matrix.MDS)
 
-str(matrix.MDS)
+plot(matrix.MDS, type = 't')
 
-#### CLASSIC nMDS Plot
+# Save NMDS results into dataframe
+
+site.scrs <- as.data.frame(scores(AHSBR.MDS, display = "sites")) 
+
+site.scrs <- cbind(site.scrs, id = rownames(site.scrs)) #add site names as variable if you want to display on plot
+
+site.scrs$id <- as.integer(site.scrs$id)
+
+# Bind NMDS scores with environmental metadata
+
+AHSBR.MDS.results <- left_join(metadata, site.scrs, by = 'id')
+
+# Prepare dataset for NMDS species scores
+
+AHSBR.spp.fit <- envfit(AHSBR.MDS, matrix, permutations = 999) # this fits species vectors
+
+spp.scrs <- as.data.frame(scores(AHSBR.spp.fit, display = "vectors")) #save species intrinsic values into dataframe
+spp.scrs <- cbind(spp.scrs, Species = rownames(spp.scrs)) #add species names to dataframe
+spp.scrs <- cbind(spp.scrs, pval = AHSBR.spp.fit$vectors$pvals) #add pvalues to dataframe so you can select species which are significant
+spp.scrs<- cbind(spp.scrs, abrev = abbreviate(spp.scrs$Species, minlength = 6)) #abbreviate species names
+sig.spp.scrs <- subset(spp.scrs, pval<=0.05) #subset data to show species significant at 0.05
+
+# Classic nMDS Plot
 
 ordiplot(matrix.MDS,type="p")
 ordiplot (matrix.MDS, display = 'sites', type = 'p')
-ordihull (matrix.MDS, groups = env$geo, lty = 'dotted')
 
-### Species contributing to clustering
+# Plot using GGPlot
 
-Galiano.spp.fit <- envfit(matrix.MDS, matrix, permutations = 999) 
-head(Galiano.spp.fit)
+AHSBR.MDS.plot <- ggplot(AHSBR.MDS.results, aes(x=NMDS1, y=NMDS2, label=id))+ #sets up the plot
+  geom_point(aes(NMDS1, NMDS2, colour = factor(AHSBR.MDS.results$MAP_LABEL), shape = factor(AHSBR.MDS.results$ZONE)), size = 2)+ #adds site points to plot
+  geom_text(hjust=0, vjust=0)+
+  coord_fixed()+
+  theme_classic()+ 
+  theme(panel.background = element_rect(fill = NA, colour = "black", size = 1, linetype = "solid"))+
+  labs(colour = "BEC unit", shape = "ZONE")+ # add legend labels for Management and Landuse
+  theme(legend.position = "right", legend.text = element_text(size = 12), legend.title = element_text(size = 12), axis.text = element_text(size = 10)) # add legend at right of plot
 
-# Plot with hulls based on geographic position
+AHSBR.MDS.plot + labs(title = "Átl'ka7tsem/Howe Sound Biosphere Vascular Plant Communities") #displays plot
 
-ordiplot(matrix.MDS, type = "n", main = "hulls")
-orditorp(matrix.MDS, display = "sites", labels = F, pch = c(16, 8, 17, 18, 10, 1, 19, 14) [as.numeric(env$geo)], col = c("green", "blue", "orange", "black", "red", "brown", "pink", "purple") [as.numeric(env$geo)], cex = 1)
-ordihull(matrix.MDS, groups = env$geo, draw = "polygon", lty = 1, col = "grey90")
-legend(x="bottomleft", legend=levels(env$geo), col=env$geo, pch=env$geo)
+# With significant species:
+
+AHSBR.MDS.plot +
+  geom_segment(data = sig.spp.scrs, aes(x = 0, xend=NMDS1, y=0, yend=NMDS2), arrow = arrow(length = unit(0.25, "cm")), colour = "grey10", lwd=0.3) + #add vector arrows of significant species
+  ggrepel::geom_text_repel(data = sig.spp.scrs, aes(x=NMDS1, y=NMDS2, label = Species), cex = 3, direction = "both", segment.size = 0.25)+ #add labels for species, use ggrepel::geom_text_repel so that labels do not overlap
+  labs(title = "Ordination with species vectors")
