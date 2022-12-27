@@ -12,6 +12,7 @@ library(ggplot2)
 library(ggthemes)
 library(gifski)
 library(hrbrthemes)
+library(tidyr)
 
 # Analysis of historical collection activities
 
@@ -21,13 +22,7 @@ plants$yearRecorded <- as.numeric(substr(plants$eventDate, 1, 4))
 
 plants <- plants %>% drop_na(yearRecorded)
 
-min(plants$yearRecorded)
-
-hist(plants$yearRecorded) # Limited collection activities during the 1900s;
-# Most historical data collected in the 1920s and between 1960s and 1980;
-# Large increase in observations with the emergence of tools like iNat in 2010s;
-# No. species reported for Howe Sound has nearly doubled over the last two decades
-# (See figure below)
+min(plants$yearRecorded) # Earliest record dates to 1897 
 
 plants.1890.1900 <- plants %>% filter(between(yearRecorded,1890,1900))
 plants.1890.1910 <- plants %>% filter(between(yearRecorded,1890,1910))
@@ -174,7 +169,7 @@ plot <- history %>%
   geom_point(size=2) +
   labs(title="Vascular plant species recorded in Átl’ka7tsem/Howe Sound 1990-2022",
        caption="Source: Átl’ka7tsem/Howe Sound Biosphere Region Initiative")+
-  ylab('New Species')+xlab('Year') + 
+  ylab('Reported Species')+xlab('Year') + 
   theme_solarized_2(light=F) +
   theme(text=element_text(colour="#EEEEEE"),
         title=element_text(colour="#EEEEEE",size=9,face = "bold"),
@@ -198,3 +193,8 @@ animate(
   end_pause = 120)
 
 anim_save('../outputs/plants.gif')
+
+# Most historical data collected in the 1920s and between the 1960s and 1980;
+# Large increase in observations and recorded species with the emergence of 
+# iNaturalist in 2010s; No. species reported for Howe Sound has nearly doubled 
+# over the last two decades
