@@ -8,8 +8,11 @@
 library(sf)
 library(leaflet)
 library(dplyr)
+library(raster)
 
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
+
+dirname(rstudioapi::getActiveDocumentContext()$path)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
 
@@ -19,13 +22,13 @@ source("scripts/utils.R")
 hillshade <- raster("spatial_data/rasters/Hillshade_20m.tif")
 
 #Layer 2: coastline
-coastline <- mx_read("spatial_data/vectors/Islands_and_Mainland.shp")
+coastline <- mx_read("spatial_data/vectors/Islands_and_Mainland")
 
 #Layer 3: watershed boundary
-watershed.boundary <- mx_read("spatial_data/vectors/Howe_Sound.shp")
+watershed.boundary <- mx_read("spatial_data/vectors/Howe_Sound")
 
 #Layer 4: BEC Zones
-BEC.zones <- mx_read("spatial_data/vectors/BEC.shp")
+BEC.zones <- mx_read("spatial_data/vectors/BEC")
 
 speciesMap <- leaflet() %>%
   addTiles(options = providerTileOptions(opacity = 0.5)) %>%
