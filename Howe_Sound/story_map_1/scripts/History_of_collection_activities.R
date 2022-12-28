@@ -655,6 +655,14 @@ class(gridded.history)
 # But at least I have a shape object that I should be able to embed in Leaflet
 # Inc. gridded analysis of richness over time
 
+# Export sf object for historical analysis of species 
+# reported in Howe Sound through the decades:
+
+st_write(gridded.history, "../outputs/gridded_history.shp")
+
+
+# Plot...
+
 
 `map2` <- ggplot(data = gridded.history) +
   geom_sf(aes(fill = richness, group = id),
