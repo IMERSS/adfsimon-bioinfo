@@ -13,7 +13,7 @@ library(raster)
 
 # Set relative paths using 'here'
 
-here::i_am("R-Markdown-AHSBR_Map_1.Rmd")
+here::i_am("R-Markdown-AHSBR_Map_1.RmD")
 
 # Source dependencies
 
