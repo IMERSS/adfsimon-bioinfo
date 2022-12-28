@@ -22,7 +22,7 @@ source("scripts/utils.R")
 # Load map layers
 
 #Layer 1: hillshade raster
-hillshade <- raster("spatial_data/rasters/Hillshade_20m.tif")
+hillshade <- raster("spatial_data/rasters/Hillshade_80m.tif")
 
 #Layer 2: coastline
 coastline <- mx_read("spatial_data/vectors/Islands_and_Mainland")
