@@ -5,18 +5,21 @@
 # script using the R Markdown 'scrolly-telling' framework we've developed, but
 # it fails to knit...
 
+library(here)
 library(sf)
 library(leaflet)
 library(dplyr)
 library(raster)
 
-# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
+# Set relative paths using 'here'
 
-dirname(rstudioapi::getActiveDocumentContext()$path)
+here::i_am("R-Markdown-AHSBR_Map_1.Rmd")
 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
+# Source dependencies
 
 source("scripts/utils.R")
+
+# Load map layers
 
 #Layer 1: hillshade raster
 hillshade <- raster("spatial_data/rasters/Hillshade_20m.tif")
@@ -34,7 +37,7 @@ speciesMap <- leaflet() %>%
   addTiles(options = providerTileOptions(opacity = 0.5)) %>%
   addRasterImage(hillshade, opacity = 0.8) %>%
   addPolygons(data = coastline, color = "black", weight = 1.5, fillOpacity = 0, fillColor = NA) %>%
-  addPolygons(data = watershed.boundary, color = "black", weight = 2, fillOpacity = 0)
+  addPolygons(data = watershed.boundary, color = "black", weight = 2, fillOpacity = 0) %>%
   addPolygons(data = BEC.zones, color = "black", weight = 2, fillOpacity = 0)
 
 #Note that this statement is only effective in standalone R
