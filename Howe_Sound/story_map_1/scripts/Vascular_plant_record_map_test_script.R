@@ -38,7 +38,7 @@ speciesMap <- leaflet() %>%
   addRasterImage(hillshade, opacity = 0.8) %>%
   addPolygons(data = coastline, color = "black", weight = 1.5, fillOpacity = 0, fillColor = NA) %>%
   addPolygons(data = watershed.boundary, color = "black", weight = 2, fillOpacity = 0) %>%
-  addPolygons(data = BEC.zones, color = "black", weight = 2, fillOpacity = 0)
+  addPolygons(data = BEC.zones, color = "white", weight = 2, fillOpacity = 0)
 
 #Note that this statement is only effective in standalone R
 print(speciesMap)
