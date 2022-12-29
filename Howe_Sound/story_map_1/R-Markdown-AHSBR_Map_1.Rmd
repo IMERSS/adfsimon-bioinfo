@@ -7,12 +7,6 @@ knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_dir = "docs") })
 ---
 
-```{r, echo=FALSE, message=FALSE}
-library(here)
-root <- "Howe_Sound/story_map_1/"
-setwd(here(root))
-```
-
 ## Introduction
 
 ## Howe Sound's vascular plant diversity

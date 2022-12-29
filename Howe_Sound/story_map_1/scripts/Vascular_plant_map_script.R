@@ -6,14 +6,8 @@ library(here)
 library(sf)
 library(leaflet)
 library(dplyr)
-library(plyr)
 library(raster)
 library(viridis)
-
-# Set path
-
-root <- "Howe_Sound/story_map_1/"
-setwd(here(root))
 
 # Source dependencies
 
@@ -21,12 +15,12 @@ source("scripts/utils.R")
 
 # Intersect vascular plant data and BEC zones for viz
 
-# plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated.csv")
-# plants.gridded <- read.csv("tabular_data/1km_gridded_vascular_plant_records_2022-12-24_WGS84.csv")
+plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated.csv")
+plants.gridded <- read.csv("tabular_data/1km_gridded_vascular_plant_records_2022-12-24_WGS84.csv")
 
-# no.observations <- nrow(plants)
-# no.species <- length(unique(plants$scientificName))
-# no.species.rounded <- round_any(length(unique(plants$scientificName)),1000)
+no.observations <- nrow(plants)
+no.species <- length(unique(plants$scientificName))
+no.species.rounded <- round_any(length(unique(plants$scientificName)),1000)
 
 # Load additional map layers
 
