@@ -12,18 +12,20 @@ library(gifski)
 library(hrbrthemes)
 library(tidyr)
 
+# Set paths
+
+library(here)
+root <- "Howe_Sound/story_map_1/"
+
+setwd(here(root))
+
 # Source dependencies
 
 source("scripts/utils.R")
 
-# Set path
-
-root <- "Howe_Sound/story_map_1/"
-setwd(here(root))
-
 # Analysis of historical collection activities
 
-plants <- read.csv("../tabular_data/Howe_Sound_vascular_plant_records_consolidated.csv")
+plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated.csv")
 
 plants$yearRecorded <- as.numeric(substr(plants$eventDate, 1, 4))
 
@@ -174,7 +176,7 @@ plot <- history %>%
   ggplot(aes(x = year, y = cum.spp, color = 'green')) +
   geom_line(alpha=0.8) + 
   geom_point(size=2) +
-  labs(title="Vascular plant species recorded in Átl’ka7tsem/Howe Sound 1990-2022",
+  labs(title="Vascular plant species recorded in Átl’ka7tsem/Howe Sound 1890-2022",
        caption="Source: Átl’ka7tsem/Howe Sound Biosphere Region Initiative")+
   ylab('Reported Species')+xlab('Year') + 
   theme_solarized_2(light=F) +
@@ -187,14 +189,12 @@ plot <- history %>%
   theme(legend.position="none") +
   transition_reveal(year)
 
-plot
-
 animate(
   plot = plot,
   render = gifski_renderer(),
   height = 420,
   width = 700, 
-  duration = 10,
+  duration = 5,
   fps = 30,
   res = 100,
   end_pause = 120)
