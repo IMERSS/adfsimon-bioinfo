@@ -1,6 +1,6 @@
 ---
 title: Átl’ka7tsem/Howe Sound Biosphere Vegetation Analysis
-author: Andrew Simon & Antranig Basman
+author: Andrew Simon, Antranig Basman & Murray Journeay
 date: December 29, 2022
 output: html_document
 knit: (function(inputFile, encoding) {
