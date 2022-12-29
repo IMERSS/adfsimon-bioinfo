@@ -5,6 +5,8 @@
 # script using the R Markdown 'scrolly-telling' framework we've developed, but
 # it fails to knit...
 
+# Load libraries
+
 library(here)
 library(sf)
 library(leaflet)
