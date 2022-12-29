@@ -104,107 +104,58 @@ results$richness  <- matrix$richness[match(unlist(results$id), matrix$id)]
 
 # write.csv(results,"betagrid/outputs/betagrid_vascular_plants.csv")
 
-#### GRAPH ####
-# Note: code not working due to projection
 
-# Create a new layer in our grid file for the mean total beta diversity.
-shape$betadiv <- results[,4]
-
-# writeOGR(shape, dsn = "/Users/andrewsimon/GitHub/bioinformatics/adfsimon-bioinfo/Biodiversity_Galiano/2022/3_analyze/Plantae_et_Chromista/vascular_plants/gridded_analysis_mydata/", 
-         # layer = "betagrid_plants.shp", driver = "ESRI Shapefile")
-
-# Now create a raster with the same extent and resolution as our previous grid (in our example, 0.25 degree lat/long):
-emptyraster <- raster(extent(shape))
-res(emptyraster)=1000
-
-# Assign values to the new raster according to the beta diversity layer in our shapefile.
-rbeta <- rasterize(shape, field="betadiv", emptyraster)
-
-# Make a cool color palette:
-my.colors = colorRampPalette(c("white","lightblue", "yellow","orangered", "red"))
-
-# Plot the map
-plot(rbeta, col=my.colors(255), frame.plot=F, axes=F, box=F, add=F, legend.width=0.8, legend.shrink=1)
-
-
-
-
-
-
-
+#### SCRIPT PARTLY RECOVERED; SHOULDN'T TAKE TOO MUCH WORK TO GET ORDINATION WORKING AGAIN...
+# Load ENV metadata?
 
 
 ## Ordination of gridded vascular plant data
-
-# Read species occurrences
-
-data <- read.csv("betagrid/inputs/Galiano_vascular_plants_intersect_1km_grid_WGS84.csv")
-
-# Subset relevant fields
-
-data <- data %>% dplyr::select('Taxon'|'id')
-
-# Add count field to generate matrix
-
-data$Count <- 1
-
-# Generate matrix 
-
-matrix <- ecodist::crosstab(data$id, data$Taxon, data$Count)
-
-# Convert to presence / absence
-
-matrix[matrix > 0] <- 1 
-
-# Read labeled grid dataset
-
-labeled.grid <- read.csv("betagrid/outputs/betagrid_vascular_plants_labeled_grid_cells_geo_attributes_2022-11-09.csv")
-
-# Remove rows with <2 taxa
-
-matrix <- matrix[rowSums(matrix[])>2,]
-  
-nrow(matrix)
-
-# Create environment dataframe that matches cell IDs with labels
-
-env <- matrix
-
-env$id <- row.names(matrix)
-
-env$label <-  labeled.grid$label[match(unlist(env$id), labeled.grid$id)]
-
-env <- env[,730:731]
 
 env$geo <-  labeled.grid$geo[match(unlist(env$id), labeled.grid$id)]
 
 #### COMMUNITY ORDINATION PLOTS ####
 
+# First remove grid cells with <30 species
+
+matrix <- matrix[rowSums(matrix[])>=30,]
+
 ## Consider ordinations against environmental variables
 ## http://kembellab.ca/r-workshop/biodivR/SK_Biodiversity_R.html
 
-## Create MDS Jaccard similarity Index for Site Commmunity Data
-
-matrix.MDS <- metaMDS(matrix, distance = "jaccard", k = 2, trymax = 100, zerodist = "add")
-
-stressplot(matrix.MDS)
-
-str(matrix.MDS)
-
-#### CLASSIC nMDS Plot
-
-ordiplot(matrix.MDS,type="p")
-ordiplot (matrix.MDS, display = 'sites', type = 'p')
-ordihull (matrix.MDS, groups = env$geo, lty = 'dotted')
-
-### Species contributing to clustering
-
-Galiano.spp.fit <- envfit(matrix.MDS, matrix, permutations = 999) 
 head(Galiano.spp.fit)
-
-# Plot with hulls based on geographic position
-
 ordiplot(matrix.MDS, type = "n", main = "hulls")
 orditorp(matrix.MDS, display = "sites", labels = F, pch = c(16, 8, 17, 18, 10, 1, 19, 14) [as.numeric(env$geo)], col = c("green", "blue", "orange", "black", "red", "brown", "pink", "purple") [as.numeric(env$geo)], cex = 1)
 ordihull(matrix.MDS, groups = env$geo, draw = "polygon", lty = 1, col = "grey90")
 legend(x="bottomleft", legend=levels(env$geo), col=env$geo, pch=env$geo)
+legend(x="bottomleft", legend=levels(env$geo), col=env$geo, pch=env$geo)
+
+# Save NMDS results into dataframe
+
+site.scrs <- as.data.frame(scores(matrix.MDS, display = "sites")) 
+
+site.scrs <- cbind(site.scrs, id = rownames(site.scrs)) #add site names as variable if you want to display on plot
+
+site.scrs$id <- as.integer(site.scrs$id)
+
+# Bind NMDS scores with environmental metadata
+
+env$id <- as.integer(env$id)
+
+matrix.MDS.results <- left_join(env, site.scrs, by = 'id')
+
+# Concatenate grid cell labels
+
+matrix.MDS.results$label_new <- paste(matrix.MDS.results$id, matrix.MDS.results$label, sep = "", collapse = NULL)
+
+# Plot using GGPlot
+
+MDS.plot <- ggplot(matrix.MDS.results, aes(x=NMDS1, y=NMDS2, label=label_new))+ #sets up the plot
+  geom_point(aes(NMDS1, NMDS2, colour = factor(matrix.MDS.results$geo)), size = 2)+ #adds site points to plot
+  geom_text(hjust=0, vjust=0)+
+  coord_fixed()+
+  theme_classic()+ 
+  theme(panel.background = element_rect(fill = NA, colour = "black", size = 1, linetype = "solid"))+
+  labs(colour = "GEO", shape = "GEO")+ # add legend labels for Management and Landuse
+  theme(legend.position = "right", legend.text = element_text(size = 12), legend.title = element_text(size = 12), axis.text = element_text(size = 10)) # add legend at right of plot
+
+MDS.plot + labs(title = "Galiano Island Vascular Plant Communities") #displays plot
