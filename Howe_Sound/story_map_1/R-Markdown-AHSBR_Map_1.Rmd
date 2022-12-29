@@ -10,20 +10,20 @@ knit: (function(inputFile, encoding) {
 ```{r, echo=FALSE, message=FALSE}
 library(here)
 root <- "Howe_Sound/story_map_1/"
-setwd(here(root));
+setwd(here(root))
 ```
 
 ## Introduction
 
-Over XXX vascular plant species are known to occur within the Átl’ka7tsem/Howe Sound Biosphere, represented by XX species occurrence records. The flora of the region spans X biogeoclimatic units, from alpine to very dry coastal western hemlock forests and associated woodland communities.
-
 ## Howe Sound's vascular plant diversity
+
+Over XXX vascular plant species are known to occur within the Átl’ka7tsem/Howe Sound Biosphere, represented by XX species occurrence records. The flora of the region spans 11 biogeoclimatic units, from lowland dry coastal western hemlock forests and associated woodland communities to high elevation alpine communities.
 
 ```{r, echo=FALSE, message=FALSE}
 source("scripts/Vascular_plant_map_script.R")
 speciesMap
 ```
-Map 1. Ecological communities
+### Map 1. Ecological communities
 
 Explore the region's flora by selecting from the following biogeoclimatic units:
 
@@ -36,13 +36,13 @@ Coastal western hemlock communities (CWHvm,xm,ms,ds,dm)
 
 ## History of collection activities within the region
 
-Scientific documentation of Howe Sound's vascular plant communities dates to 1875, with the collection activities of XXXX. Over the last century and a half, the majority of records stem from collections made during the 19XXs and 2000s, including thousands of observations made by community members through the Howe Sound Biodiversity project over the last decade. [Also include note re: Indigenous knowledge of the regional flora]
+Scientific documentation of Howe Sound's vascular plant communities dates to 1897, with the collection activities of XXXX. Over the last century and a half, the majority of records stem from collections made during the 19XXs and 2000s, including thousands of observations made by community members through the Howe Sound Biodiversity project over the last decade. [Also include note re: Indigenous knowledge of the regional flora]
 
 # ```{r, echo=FALSE, message=FALSE}
 # source("scripts/History_of_collection_activities.R")
-# baseMap
+# plot
 # ```
-Map 2. Historical collection activities
+### Map 2. Historical collection activities
 
 Map cycles through twenty-five decades of search effort, synchronized with a graph showing new species reported over time (choropleth).
 

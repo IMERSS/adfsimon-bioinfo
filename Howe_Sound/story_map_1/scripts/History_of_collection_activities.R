@@ -1,11 +1,9 @@
+# Map history of vascular plant surveys in Átl’ka7tsem
 
-# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
-
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
-
-# Load packages
+# Load libraries
 
 library(dplyr)
+library(here)
 library(gapminder)
 library(gganimate)
 library(ggplot2)
@@ -13,6 +11,15 @@ library(ggthemes)
 library(gifski)
 library(hrbrthemes)
 library(tidyr)
+
+# Source dependencies
+
+source("scripts/utils.R")
+
+# Set path
+
+root <- "Howe_Sound/story_map_1/"
+setwd(here(root))
 
 # Analysis of historical collection activities
 
@@ -192,9 +199,10 @@ animate(
   res = 100,
   end_pause = 120)
 
-anim_save('../outputs/plants.gif')
+# Supress saving gif
+# anim_save('../outputs/plants.gif')
 
-# Most historical data collected in the 1920s and between the 1960s and 1980;
+# Most historical data collected in the 1920s and between the 1960s and 1980s;
 # Large increase in observations and recorded species with the emergence of 
-# iNaturalist in 2010s; No. species reported for Howe Sound has nearly doubled 
+# iNaturalist in 2010s; no. species reported for Howe Sound has nearly doubled 
 # over the last two decades
