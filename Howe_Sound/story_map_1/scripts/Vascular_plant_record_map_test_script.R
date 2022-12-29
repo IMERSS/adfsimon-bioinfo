@@ -5,18 +5,16 @@
 # script using the R Markdown 'scrolly-telling' framework we've developed, but
 # it fails to knit...
 
-root <- "Howe_Sound/story_map_1/"
-
-# This line is not actually necessary
-# here::i_am(file.path(root, "scripts/Vascular_plant_record_map_test_script.R"))
-
 library(here)
 library(sf)
 library(leaflet)
 library(dplyr)
 library(raster)
 
-setwd(here(root));
+# Set path
+
+root <- "Howe_Sound/story_map_1/"
+setwd(here(root))
 
 # Source dependencies
 

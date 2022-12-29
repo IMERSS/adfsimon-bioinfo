@@ -7,6 +7,12 @@ knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_dir = "docs") })
 ---
 
+```{r, echo=FALSE, message=FALSE}
+library(here)
+root <- "Howe_Sound/story_map_1/"
+setwd(here(root));
+```
+
 ## Introduction
 
 Over XXX vascular plant species are known to occur within the Átl’ka7tsem/Howe Sound Biosphere, represented by XX species occurrence records. The flora of the region spans X biogeoclimatic units, from alpine to very dry coastal western hemlock forests and associated woodland communities.
@@ -14,7 +20,7 @@ Over XXX vascular plant species are known to occur within the Átl’ka7tsem/How
 ## Howe Sound's vascular plant diversity
 
 ```{r, echo=FALSE, message=FALSE}
-source("scripts/Vascular_plant_records.R")
+source("scripts/Vascular_plant_map_script.R")
 speciesMap
 ```
 Map 1. Ecological communities
