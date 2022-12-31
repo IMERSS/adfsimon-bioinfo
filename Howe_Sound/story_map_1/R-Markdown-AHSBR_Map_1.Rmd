@@ -42,18 +42,20 @@ While Indigenous knowledge of Átl’ka7tsem's plant life traces back to time im
 ## Temporarily disabling map / graph of historical search effort because the analyses to generate the 
 ## "gridded history" choropleth take a long time to run...
 
-# ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-# source("scripts/History_of_collection_activities.R")
-# animate(
-#   plot = plot,
-#   render = gifski_renderer(),
-#   height = 420,
-#   width = 700, 
-#   duration = 10,
-#   fps = 30,
-#   res = 100,
-#   end_pause = 120)
-# ```
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("scripts/History_of_collection_activities.R")
+animate(
+   plot = plot,
+   render = gifski_renderer(),
+   height = 420,
+   width = 700, 
+   duration = 10,
+   fps = 30,
+   res = 100,
+   end_pause = 120)
+
+heatMap
+```
 \
 
 ### Figure 1. Historical collection activities
@@ -68,7 +70,7 @@ Through the combined efforts of XXXX individuals using iNaturalist, the Átl’k
 
 # ```{r, echo=FALSE, message=FALSE}
 # source("scripts/Community_science_contributions.R")
-# baseMap
+# speciesMap
 # ```
 \
 
