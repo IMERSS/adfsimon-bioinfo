@@ -10,6 +10,7 @@ library(ggplot2)
 library(ggthemes)
 library(gifski)
 library(hrbrthemes)
+library(sf)
 library(tidyr)
 
 # Set paths
