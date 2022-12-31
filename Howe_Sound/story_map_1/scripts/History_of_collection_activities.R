@@ -213,7 +213,7 @@ animate(
 
 # First load 1km2 grid
 
-grid <- st_read("../spatial_data/vectors/1km_grid_WGS84_coordinates_x_vascular_plant_grid_NA_omit.shp")
+grid <- st_read("spatial_data/vectors/1km2_grid")
 
 # Create CRS object
 
@@ -229,7 +229,7 @@ plants.1890.1900.points <- st_as_sf(plants.1890.1900, coords = c("decimalLongitu
 
 grid.1890.1900 <- st_intersection(plants.1890.1900.points, grid)
 
-# Sum species richness by grid cell
+# Sum species richness by <- cell
 
 grid.1890.1900$count <- 1
 
