@@ -30,22 +30,46 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Consolidate records
 
-# Sources (X/4 added):
+# Sources (3/5 added):
 
+# CPNWH records 2023 -
 # GBIF records 2022 - added
 # LGL records 2020-07-01 - added
 # Page Squamish River Estuary records 2004 - added
-# Whistler Bioblitz records 2015
+# Whistler Bioblitz records 2015 -
 
+# First read GBIF and CPNWH records to detect and remove duplicate records between datasets
 
-# Read GBIF records 2022
-# GBIF TSV converted to CSV from Mac Numbers and Filtered Taxonomically
-
+# GBIF TSV converted to CSV from Mac Numbers and Filtered by Taxa (Plantae)
 GBIF.2022 <- read.csv("../../records/digitized/DwC/GBIF_2022_Plantae_DwC-assigned_AS_erroneous_localities_removed_reevaluated.csv", header = TRUE)
 
 # Filter vascular plants
 
 GBIF.2022 <- GBIF.2022 %>% filter(phylum == "Tracheophyta")
+
+# CPNWH TSV locally processed to intersect complete CPNWH dataset with polygon representing AHSBR 
+# (Data too large to host on GitHub)
+CPNWH.2023 <- read.csv("../../records/digitized/DwC/AHSBR_CPNWH_data_spatial_query_2023-03-03_DwC.csv", header = TRUE)
+
+# No values for phylum :( Must filter by family (note: the following code is out of sorts
+#  because R is not reading in the CSV correctly, or has not previously converted TSV
+# to CSV correctly; change field name from order to family later)
+
+sort(unique(CPNWH.2023$order))
+
+# Import vector of vascular plant family names from FPNW2 to filter CPNWH.2023 dataset by vascular plant family 
+
+vascular.plant.families <- read.csv("FPNW2_vascular_plant_families.csv", header = TRUE)
+vascular.plant.families <- vascular.plant.families$family
+vascular.plant.families <- vascular.plant.families %>% paste(collapse = "|")
+
+CPNWH.2023 <- CPNWH.2023 %>% filter(str_detect(order, vascular.plant.families))
+
+sort(unique(CPNWH.2023$scientificName)) # Yup, these all look like vascular plant names
+# (Need to double-check this method to make sure this is fool-proof...)
+
+
+## Synthesize Records
 
 # Create DarwinCore dataframe template 
 
