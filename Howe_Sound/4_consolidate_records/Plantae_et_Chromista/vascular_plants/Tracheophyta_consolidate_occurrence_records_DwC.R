@@ -41,7 +41,7 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 # Read GBIF records 2022
 # GBIF TSV converted to CSV from Mac Numbers and Filtered Taxonomically
 
-GBIF.2022 <- read.csv("digitized/DarwinCore/GBIF_2022_Plantae_DwC-assigned_AS_erroneous_localities_removed_reevaluated.csv", header = TRUE)
+GBIF.2022 <- read.csv("../../records/digitized/DwC/GBIF_2022_Plantae_DwC-assigned_AS_erroneous_localities_removed_reevaluated.csv", header = TRUE)
 
 # Filter vascular plants
 
@@ -200,7 +200,7 @@ unmatched.vascular.plant.records
 
 # Read data from LGL HSBRI Application Appendices (2020)
 
-LGL.2020 <- read.csv("digitized/DarwinCore/LGL_plant_records_2020-07-01_DwC.csv")
+LGL.2020 <- read.csv("../../records/digitized/DwC/LGL_plant_records_2020-07-01_DwC.csv")
 
 # Create DarwinCore dataframe template 
 
@@ -353,7 +353,7 @@ unmatched.vascular.plant.records
 
 # Read Nick Page, Raincoast Applied Ecology, vegetation assessment of Squamish Estuary
 
-Page.2004 <- read.csv("digitized/DarwinCore/Nick_Page_2004_SRWS_Squamish_Estuary_vegetation_assessment_DwC.csv")
+Page.2004 <- read.csv("../../records/digitized/DwC/Nick_Page_2004_SRWS_Squamish_Estuary_vegetation_assessment_DwC.csv")
 
 # Create DarwinCore dataframe template 
 
