@@ -390,7 +390,7 @@ Page.2004 <- select(data.frame, c(1:length(DwCFields)))
 
 # Create unique identifiers for observations
 
-unique.prefix <- "LGL2020:" 
+unique.prefix <- "NPAGE2004:" 
 unique.suffix <- 1:nrow(Page.2004)
 
 # Add metadata
@@ -652,6 +652,10 @@ sort(unique(unmatched.vascular.plant.records$scientificName))
 # Remove NAs
 
 Vascular.plant.records[is.na(Vascular.plant.records)] <- ""
+
+# Replace 'ca.ubc' with 'UBC'
+
+Vascular.plant.records$institutionCode[Vascular.plant.records$institutionCode == 'ca.ubc'] <- 'UBC'
 
 # Output synthesized catalog of occurrence records
 

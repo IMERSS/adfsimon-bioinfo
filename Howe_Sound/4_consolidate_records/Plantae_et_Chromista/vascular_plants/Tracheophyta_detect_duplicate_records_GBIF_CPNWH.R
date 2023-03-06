@@ -135,14 +135,19 @@ CPNWH.2023.records.eventDate <- CPNWH.2023$fieldNumber
 GBIF.2022.records.recordedBy <- GBIF.2022$recordedBy
 CPNWH.2023.records.recordedBy <- CPNWH.2023$dynamicProperties
 
-GBIF.2022.records <- data.frame(GBIF.2022.records.occurrenceID,GBIF.2022.records.catalog.numbers,GBIF.2022.records.taxa,GBIF.2022.records.eventDate,GBIF.2022.records.recordedBy)
+GBIF.2022.records.lastInterpreted <- GBIF.2022$lastInterpreted
+
+
+GBIF.2022.records <- data.frame(GBIF.2022.records.occurrenceID,GBIF.2022.records.catalog.numbers,GBIF.2022.records.taxa,GBIF.2022.records.eventDate,GBIF.2022.records.recordedBy,GBIF.2022.records.lastInterpreted)
 CPNWH.2023.records <- data.frame(CPNWH.2023.records.occurrenceID,CPNWH.2023.records.catalog.numbers,CPNWH.2023.records.taxa,CPNWH.2023.records.eventDate,CPNWH.2023.records.recordedBy)
+
+CPNWH.2023.records$lastInterpreted <- NA
 
 GBIF.2022.records$source <- "GBIF"
 CPNWH.2023.records$source <- "CPNWH"
 
-colnames(GBIF.2022.records) <- c("occurrenceID","catalogNumber","scientificName","eventDate","recordedBy","source")
-colnames(CPNWH.2023.records) <- c("occurrenceID","catalogNumber","scientificName","eventDate","recordedBy","source")
+colnames(GBIF.2022.records) <- c("occurrenceID","catalogNumber","scientificName","eventDate","recordedBy","lastInterpreted","source")
+colnames(CPNWH.2023.records) <- c("occurrenceID","catalogNumber","scientificName","eventDate","recordedBy","lastInterpreted","source")
 
 GBIF.2022.CPNWH.2023.records <- rbind(GBIF.2022.records,CPNWH.2023.records)
 
@@ -184,7 +189,9 @@ GBIF.CPNWH.duplicate.records <- GBIF.CPNWH.duplicate.records[order(GBIF.CPNWH.du
 
 (nrow(GBIF.CPNWH.duplicates)/2)/nrow(CPNWH.2023)
 
-# write.csv(GBIF.CPNWH.duplicates, "GBIF_CPNWH_duplicates.csv", row.names = FALSE)
+unique(GBIF.CPNWH.duplicate.records$lastInterpreted)
+
+#write.csv(GBIF.CPNWH.duplicate.records, "GBIF_CPNWH_duplicates.csv", row.names = FALSE)
 
 # Identify CPNWH records that appear unique wrt GBIF
 
@@ -201,6 +208,18 @@ locality <- CPNWH.unique.records$county
 
 CPNWH.unique.records <- data.frame(occurrenceID,scientificName,catalogNumber,recordedBy,eventDate,country,stateProvince,locality)
 
-write.csv(CPNWH.unique.records,"CPNWH_unique_records.csv")
+# write.csv(CPNWH.unique.records,"CPNWH_unique_records.csv")
 
+# Identify GBIF records that appear unique wrt CPNWH
 
+GBIF.unique.records <- GBIF.2022 %>% filter(!catalogNumber %in% GBIF.CPNWH.duplicates)
+
+nrow(GBIF.unique.records)
+
+# write.csv(GBIF.unique.records, "GBIF_unique_records.csv")
+
+GBIF.unique.iNat <- GBIF.unique.records %>% filter(institutionCode == "iNaturalist")
+
+GBIF.unique.wo.iNat <- GBIF.unique.records %>% filter(!institutionCode == "iNaturalist")
+
+# write.csv(GBIF.unique.wo.iNat, "GBIF_unique_records_wo_iNat.csv")
