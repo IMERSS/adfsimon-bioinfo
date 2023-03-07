@@ -48,6 +48,10 @@ dateless.records.unique <- distinct(dateless.records, scientificName)
 
 dateless.records.unique$count <- taxon.record.count$count[match(unlist(dateless.records.unique$scientificName), taxon.record.count$scientificName)]
 
+# Are there taxa unique represented by dateless records?
+
+dateless.records.unique$count <- taxon.record.count$count[match(unlist(dateless.records.unique$scientificName), taxon.record.count$scientificName)]
+
 # Filter unique records without dates to be reintegrated into historical data later
 
 dateless.records.unique.n1 <- dateless.records.unique %>% filter(count == 1)
@@ -59,10 +63,6 @@ dateless.records.unique.n1 <- left_join(dateless.records.unique.n1, records)
 # Remove dateless records from records
 
 records <- records %>% filter(!is.na(eventDate))
-
-# Are there taxa unique represented by dateless records?
-
-dateless.records.unique$count <- taxon.record.count$count[match(unlist(dateless.records.unique$scientificName), taxon.record.count$scientificName)]
 
 # Summarize first observed vs last observed
 
@@ -86,6 +86,10 @@ new.records <- anti_join(distinct.post.2016,distinct.pre.2016)
 
 new.records$count <- taxon.record.count$count[match(unlist(new.records$scientificName), taxon.record.count$scientificName)]
 
+new.records.years <- new.records
+
+new.records.years$year <- first.observed$year[match(unlist(new.records.years$scientificName), first.observed$scientificName)]
+
 # Identify taxa previously known
 
 previously.known <- anti_join(taxon.record.count,new.records)
@@ -106,6 +110,10 @@ past.records <- records %>% filter(str_detect(scientificName, previously.reporte
 
 current.date <- max(last.observed$year)
 recent <- current.date-10
+
+# Remove list records that misrepresent the provenance of records
+
+past.records <- past.records %>% filter(!str_detect(datasetName, "UNESCO Nomination"))
 
 past.records$observationCount <- taxon.record.count$count[match(unlist(past.records$scientificName), taxon.record.count$scientificName)]
   
@@ -148,10 +156,8 @@ new.summary$lastReportedSource <- last.observed$institutionCode[match(unlist(new
 new.summary$lastReportedCollectionNumber <- last.observed$catalogNumber[match(unlist(new.summary$scientificName), first.observed$scientificName)]
 
 new.summary$recordCount <- taxon.record.count$count[match(unlist(new.summary$scientificName), taxon.record.count$scientificName)]
-new.summary$reportingStatus <- paste("new", new.records$year, sep = " ")
+new.summary$reportingStatus <- paste("new", new.records.years$year, sep = " ")
 new.summary$iNatObservationStatus <- iNat.observation.status$iNatObservationStatus[match(unlist(new.summary$scientificName), iNat.observation.status$scientificName)]
-
-nrow(new.summary)
 
 # Add values where missing from source (first reported and last reported) by subsetting rows with missing values, adding values from datasetName, and remerging
 
@@ -188,8 +194,6 @@ confirmed.summary$lastReportedCollectionNumber <- last.observed$catalogNumber[ma
 confirmed.summary$recordCount <- taxon.record.count$count[match(unlist(confirmed.summary$scientificName), taxon.record.count$scientificName)]
 confirmed.summary$reportingStatus <- "confirmed"
 confirmed.summary$iNatObservationStatus <- iNat.observation.status$iNatObservationStatus[match(unlist(confirmed.summary$scientificName), iNat.observation.status$scientificName)]
-
-nrow(confirmed.summary)
 
 # Add values where missing from source (first reported and last reported) by subsetting rows with missing values, adding values from datasetName, and remerging
 
