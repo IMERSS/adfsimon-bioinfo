@@ -4,26 +4,37 @@
 
 library(dplyr)
 library(here)
-library(gapminder)
-library(gganimate)
+# library(gapminder)
 library(ggplot2)
 library(ggthemes)
-library(gifski)
-library(hrbrthemes)
 library(sf)
 library(tidyr)
 
-# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
+# Source dependencies
 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
+source("scripts/utils.R")
 
 # Analysis of native plant diversity as represented in Howe Sound protected areas
 
 plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated.csv")
 
+# Limit analysis to native vascular plants
+
+native.plants <- plants %>% filter(establishmentMeans == 'native')
+
+native.plant.diversity <- length(unique(native.plants$scientificName))
+
+# Remove vascular plants lacking coordinates
+
+native.plants$yearRecorded <- as.numeric(substr(native.plants$eventDate, 1, 4))
+
+native.plants <- native.plants %>% drop_na(yearRecorded)
+
 # Load protected areas map
 
 protected.areas <- st_read("spatial_data/vectors/Protected_Areas")
+
+names(protected.areas)[names(protected.areas) == 'NAME_E'] <- 'protectedArea'
 
 # Create CRS object
 
@@ -31,25 +42,33 @@ WGS84 <- st_crs("WGS84")
 
 # Convert plant records to sf points
 
-plants <- st_as_sf(plants, coords = c("decimalLongitude", "decimalLatitude"), crs = WGS84)
+native.plants <- native.plants %>% drop_na(decimalLatitude)
+
+native.plants <- st_as_sf(native.plants, coords = c("decimalLongitude", "decimalLatitude"), crs = WGS84)
 
 # Intersect plant occurrences x protected areas
 
-plants.x.protected.areas <- st_intersection(plants, protected.areas)
+plants.x.protected.areas <- st_intersection(native.plants, protected.areas)
+
+# Summarize native plant diversity in protected areas
+
+protected.native.plant.diversity <- length(unique(plants.x.protected.areas$scientificName))
 
 # Sum species richness by protected area
 
 plants.x.protected.areas$count <- 1
 
-matrix <- ecodist::crosstab(plants.x.protected.areas$id, plants.x.protected.areas$scientificName, plants.x.protected.areas$count)
+matrix <- ecodist::crosstab(plants.x.protected.areas$protectedArea, plants.x.protected.areas$scientificName, plants.x.protected.areas$count)
+
+matrix[matrix > 1] <- 1
 
 matrix$richness <- rowSums(matrix)
 
-matrix$id <- row.names(matrix)
+matrix$protectedArea <- row.names(matrix)
 
 # Assign richness values to grid
 
-protected.areas$richness <- matrix$richness[match(unlist(protected.areas$id), matrix.$id)]
+protected.areas$richness <- matrix$richness[match(unlist(protected.areas$protectedArea), matrix$protectedArea)]
 
 
 

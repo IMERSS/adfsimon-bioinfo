@@ -13,9 +13,9 @@ library(hrbrthemes)
 library(sf)
 library(tidyr)
 
-# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
+# Source dependencies
 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
+source("scripts/utils.R")
 
 # Analysis of historical collection activities
 
