@@ -230,6 +230,8 @@ grid.1890.1900$count <- 1
 
 matrix.1890.1900 <- ecodist::crosstab(grid.1890.1900$id, grid.1890.1900$scientificName, grid.1890.1900$count)
 
+matrix.1890.1900[matrix.1890.1900 > 1] <- 1
+
 matrix.1890.1900$richness <- rowSums(matrix.1890.1900)
 
 matrix.1890.1900$id <- row.names(matrix.1890.1900)
@@ -258,6 +260,8 @@ grid.1890.1910 <- st_intersection(plants.1890.1910.points, grid)
 grid.1890.1910$count <- 1
 
 matrix.1890.1910 <- ecodist::crosstab(grid.1890.1910$id, grid.1890.1910$scientificName, grid.1890.1910$count)
+
+matrix.1890.1910[matrix.1890.1910 > 1] <- 1
 
 matrix.1890.1910$richness <- rowSums(matrix.1890.1910)
 
@@ -289,6 +293,8 @@ grid.1890.1920$count <- 1
 
 matrix.1890.1920 <- ecodist::crosstab(grid.1890.1920$id, grid.1890.1920$scientificName, grid.1890.1920$count)
 
+matrix.1890.1920[matrix.1890.1920 > 1] <- 1
+
 matrix.1890.1920$richness <- rowSums(matrix.1890.1920)
 
 matrix.1890.1920$id <- row.names(matrix.1890.1920)
@@ -318,6 +324,8 @@ grid.1890.1930 <- st_intersection(plants.1890.1930.points, grid)
 grid.1890.1930$count <- 1
 
 matrix.1890.1930 <- ecodist::crosstab(grid.1890.1930$id, grid.1890.1930$scientificName, grid.1890.1930$count)
+
+matrix.1890.1930[matrix.1890.1930 > 1] <- 1
 
 matrix.1890.1930$richness <- rowSums(matrix.1890.1930)
 
@@ -349,6 +357,8 @@ grid.1890.1940$count <- 1
 
 matrix.1890.1940 <- ecodist::crosstab(grid.1890.1940$id, grid.1890.1940$scientificName, grid.1890.1940$count)
 
+matrix.1890.1940[matrix.1890.1940 > 1] <- 1
+
 matrix.1890.1940$richness <- rowSums(matrix.1890.1940)
 
 matrix.1890.1940$id <- row.names(matrix.1890.1940)
@@ -378,6 +388,8 @@ grid.1890.1950 <- st_intersection(plants.1890.1950.points, grid)
 grid.1890.1950$count <- 1
 
 matrix.1890.1950 <- ecodist::crosstab(grid.1890.1950$id, grid.1890.1950$scientificName, grid.1890.1950$count)
+
+matrix.1890.1950[matrix.1890.1950 > 1] <- 1
 
 matrix.1890.1950$richness <- rowSums(matrix.1890.1950)
 
@@ -409,6 +421,8 @@ grid.1890.1960$count <- 1
 
 matrix.1890.1960 <- ecodist::crosstab(grid.1890.1960$id, grid.1890.1960$scientificName, grid.1890.1960$count)
 
+matrix.1890.1960[matrix.1890.1960 > 1] <- 1
+
 matrix.1890.1960$richness <- rowSums(matrix.1890.1960)
 
 matrix.1890.1960$id <- row.names(matrix.1890.1960)
@@ -438,6 +452,8 @@ grid.1890.1970 <- st_intersection(plants.1890.1970.points, grid)
 grid.1890.1970$count <- 1
 
 matrix.1890.1970 <- ecodist::crosstab(grid.1890.1970$id, grid.1890.1970$scientificName, grid.1890.1970$count)
+
+matrix.1890.1970[matrix.1890.1970 > 1] <- 1
 
 matrix.1890.1970$richness <- rowSums(matrix.1890.1970)
 
@@ -469,6 +485,8 @@ grid.1890.1980$count <- 1
 
 matrix.1890.1980 <- ecodist::crosstab(grid.1890.1980$id, grid.1890.1980$scientificName, grid.1890.1980$count)
 
+matrix.1890.1980[matrix.1890.1980 > 1] <- 1
+
 matrix.1890.1980$richness <- rowSums(matrix.1890.1980)
 
 matrix.1890.1980$id <- row.names(matrix.1890.1980)
@@ -498,6 +516,8 @@ grid.1890.1990 <- st_intersection(plants.1890.1990.points, grid)
 grid.1890.1990$count <- 1
 
 matrix.1890.1990 <- ecodist::crosstab(grid.1890.1990$id, grid.1890.1990$scientificName, grid.1890.1990$count)
+
+matrix.1890.1990[matrix.1890.1990 > 1] <- 1
 
 matrix.1890.1990$richness <- rowSums(matrix.1890.1990)
 
@@ -529,6 +549,8 @@ grid.1890.2000$count <- 1
 
 matrix.1890.2000 <- ecodist::crosstab(grid.1890.2000$id, grid.1890.2000$scientificName, grid.1890.2000$count)
 
+matrix.1890.2000[matrix.1890.2000 > 1] <- 1
+
 matrix.1890.2000$richness <- rowSums(matrix.1890.2000)
 
 matrix.1890.2000$id <- row.names(matrix.1890.2000)
@@ -558,6 +580,8 @@ grid.1890.2010 <- st_intersection(plants.1890.2010.points, grid)
 grid.1890.2010$count <- 1
 
 matrix.1890.2010 <- ecodist::crosstab(grid.1890.2010$id, grid.1890.2010$scientificName, grid.1890.2010$count)
+
+matrix.1890.2010[matrix.1890.2010 > 1] <- 1
 
 matrix.1890.2010$richness <- rowSums(matrix.1890.2010)
 
@@ -590,6 +614,8 @@ grid.1890.2020 <- st_intersection(plants.1890.2020.points, grid)
 grid.1890.2020$count <- 1
 
 matrix.1890.2020 <- ecodist::crosstab(grid.1890.2020$id, grid.1890.2020$scientificName, grid.1890.2020$count)
+
+matrix.1890.2020[matrix.1890.2020 > 1] <- 1
 
 matrix.1890.2020$richness <- rowSums(matrix.1890.2020)
 
@@ -627,6 +653,8 @@ grid.1890.2022 <- st_intersection(plants.1890.2022.points, grid)
 grid.1890.2022$count <- 1
 
 matrix.1890.2022 <- ecodist::crosstab(grid.1890.2022$id, grid.1890.2022$scientificName, grid.1890.2022$count)
+
+matrix.1890.2022[matrix.1890.2022 > 1] <- 1
 
 matrix.1890.2022$richness <- rowSums(matrix.1890.2022)
 
