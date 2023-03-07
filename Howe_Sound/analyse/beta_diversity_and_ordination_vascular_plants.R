@@ -61,7 +61,7 @@
 
  # Load the grid
 
- shape <- readOGR("spatial_data/vectors/1km_grid_WGS84_coordinates_x_vascular_plant_grid_NA_omit.shp")
+ shape <- readOGR("spatial_data/vectors/1km_grid_WGS84_coordinates_x_vascular_plant_grid_NA_omit")
 
  # Read species occurrences
 
