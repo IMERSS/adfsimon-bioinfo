@@ -13,12 +13,9 @@ library(hrbrthemes)
 library(sf)
 library(tidyr)
 
-# Set paths
+# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
-library(here)
-root <- "Howe_Sound/story_map_1/"
-
-setwd(here(root))
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
 
 # Source dependencies
 
@@ -213,7 +210,9 @@ animate(
 
 # First load 1km2 grid
 
-grid <- st_read("spatial_data/vectors/1km2_grid")
+# Note: algorithms time out if you use the entire 1km2 grid; use grid limited to cells intersecting with vascular plant data instead
+
+grid <- st_read("spatial_data/vectors/1km2_grid_x_vascular_plants_2022-12-24")
 
 # Create CRS object
 
