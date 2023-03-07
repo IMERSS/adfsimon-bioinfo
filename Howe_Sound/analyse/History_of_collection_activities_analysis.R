@@ -17,10 +17,6 @@ library(tidyr)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
 
-# Source dependencies
-
-source("scripts/utils.R")
-
 # Analysis of historical collection activities
 
 plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated.csv")
@@ -673,17 +669,17 @@ ncol(grid.1890.2022)
 gridded.history <- rbind(grid.1890.1900,grid.1890.1910,grid.1890.1920,grid.1890.1930,
                          grid.1890.1940,grid.1890.1950,grid.1890.1960,grid.1890.1970,
                          grid.1890.1980,grid.1890.1990,grid.1890.2000,grid.1890.2010,
-                         grid.1890.2020)
+                         grid.1890.2020,grid.1890.2022)
 
 # Export sf object for historical analysis of species 
 # reported in Howe Sound through the decades:
 # Note object exported is missing data from 2020-2022
 # Need to figure out another approach to processing this dataset!
 
-st_write(gridded.history, "outputs/gridded_history_1897-2020.shp")
+st_write(gridded.history, "outputs/gridded_history_1897-2022_cumulative.shp")
+
 
 # Write each historical chunk as separate SHP file
-
 
 st_write(grid.1890.1900, "outputs/gridded_history_1897-1900.shp")
 
