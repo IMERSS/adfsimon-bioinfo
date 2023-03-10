@@ -1,5 +1,9 @@
 # Map history of vascular plant surveys in Átl’ka7tsem
 
+# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
+
 # Load libraries
 
 library(dplyr)

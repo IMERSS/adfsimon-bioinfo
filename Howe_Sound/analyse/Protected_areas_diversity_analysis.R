@@ -1,5 +1,9 @@
 # Howe Sound native vascular plant x protected areas analysis
 
+# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
+
 # Load libraries
 
 library(dplyr)
@@ -17,6 +21,10 @@ source("scripts/utils.R")
 # Analysis of native plant diversity as represented in Howe Sound protected areas
 
 plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated.csv")
+
+# Add temporary unique identifier to reassign coordinates later
+
+plants$temp_id <- 1:nrow(plants)
 
 # Limit analysis to native vascular plants
 
@@ -84,4 +92,33 @@ type.matrix$protectedAreaType <- row.names(type.matrix)
 protected.areas$protected.area.richness <- protected.area.matrix$richness[match(unlist(protected.areas$protectedArea), protected.area.matrix$protectedArea)]
 
 protected.areas$protected.area.type.richness <- type.matrix$richness[match(unlist(protected.areas$protectedAreaType), type.matrix$protectedAreaType)]
+
+# Write protected area analysis geospatial dataset
+
+# st_write(protected.areas, "outputs/AHSBR_vascular_plant_diversity_x_protected.areas.shp")
+
+# Write catalogs of vascular plant diversity by protected area
+
+plants.x.protected.areas$geometry <- NULL
+plants.x.protected.areas$count <- NULL
+plants.x.protected.areas$native.plant.diversity <- NULL
+
+plants.x.protected.areas$decimalLatitude <- plants$decimalLatitude[match(unlist(plants.x.protected.areas$temp_id), plants$temp_id)]
+plants.x.protected.areas$decimalLongitude <- plants$decimalLongitude[match(unlist(plants.x.protected.areas$temp_id), plants$temp_id)]
+
+# write.csv(plants.x.protected.areas, "outputs/plants_x_protected_areas.csv")
+
+# Create dataframes of species recorded for each protected area type
+
+OECM <- plants.x.protected.areas %>% filter(protectedAreaType == 'Other Effective Area-Based Conservation Measure')
+A_Park <- plants.x.protected.areas %>% filter(protectedAreaType == 'A - Park')
+POCA <- plants.x.protected.areas %>% filter(protectedAreaType == 'Privately Owned Conservation Area')
+WHA <- plants.x.protected.areas %>% filter(protectedAreaType == 'Wildlife Habitat Areas')
+PA <- plants.x.protected.areas %>% filter(protectedAreaType == 'Protected Area')
+S2SWZ <- plants.x.protected.areas %>% filter(protectedAreaType == 'Sea to Sky Wildland Zones')
+MBS <- plants.x.protected.areas %>% filter(protectedAreaType == 'Migratory Bird Sanctuary')
+Conservancy <- plants.x.protected.areas %>% filter(protectedAreaType == 'Conservancy')
+ER <- plants.x.protected.areas %>% filter(protectedAreaType == 'Ecological Reserve')
+OGMA <- plants.x.protected.areas %>% filter(protectedAreaType == 'Old Growth Management Area (Mapped Legal)')
+WMA <- plants.x.protected.areas %>% filter(protectedAreaType == 'Wildlife Management Area')
 
