@@ -95,7 +95,7 @@ protected.areas$protected.area.type.richness <- type.matrix$richness[match(unlis
 
 # Write protected area analysis geospatial dataset
 
-# st_write(protected.areas, "outputs/AHSBR_vascular_plant_diversity_x_protected.areas.shp")
+st_write(protected.areas, "outputs/AHSBR_vascular_plant_diversity_x_protected_areas.shp")
 
 # Write catalogs of vascular plant diversity by protected area
 
