@@ -56,7 +56,7 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 # Read BC Conservation Data Centre SAR records (BC CDC 2019)
 # Note: request fresh data from BC CDC and ask them to include the EO ID for use as unique ID
 
-BC.CDC.2019 <- read.csv("digitized/DarwinCore/BC_Conservation_Data_Centre_Galiano_Island_SAR_2019-10-24_DwC.csv")
+BC.CDC.2019 <- read.csv("../../records/digitized/DarwinCore/BC_Conservation_Data_Centre_Galiano_Island_SAR_2019-10-24_DwC.csv")
 
 # Filter CDC obs from collections at other institutions
 
@@ -188,7 +188,7 @@ unmatched.vascular.plant.records
 # Read data from Brothers (2020)
 # Note: check in with Kent re: datasetName field
 
-Brothers.2020 <- read.csv("digitized/DarwinCore/Brothers_2020_Galiano_Records_DwC.csv")
+Brothers.2020 <- read.csv("../../records/digitized/DarwinCore/Brothers_2020_Galiano_Records_DwC.csv")
 
 # Filter out UBC collections (redundant to include alongside raw data from UBC)
 
@@ -348,7 +348,7 @@ unmatched.vascular.plant.records
 
 # Read DL63 records (GCA 2002)
 
-DL63 <- read.csv("digitized/DarwinCore/DL63_veg_list_2001-2002_DwC.csv")
+DL63 <- read.csv("../../records/digitized/DarwinCore/DL63_veg_list_2001-2002_DwC.csv")
 
 # Filter plants
 
@@ -517,7 +517,7 @@ unmatched.vascular.plant.records
 
 # Read Ecological Reserve 128 records (Roemer & Janszen 1980, Roemer 2000)
 
-Ecological.Reserve.128 <- read.csv("digitized/DarwinCore/Galiano_Bog_Plant_List_Roemer_2000_DwC.csv")
+Ecological.Reserve.128 <- read.csv("../../records/digitized/DarwinCore/Galiano_Bog_Plant_List_Roemer_2000_DwC.csv")
 
 # Filter plants
 
@@ -676,7 +676,7 @@ unmatched.vascular.plant.records
 
 # Read Hunterston Farm Bioblitz 2010 records
 
-Hunterston.2010 <- read.csv("digitized/DarwinCore/Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv")
+Hunterston.2010 <- read.csv("../../records/digitized/DarwinCore/Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv")
 
 # Filter plants
 
@@ -829,7 +829,7 @@ unmatched.vascular.plant.records
 
 # Read iNaturalist data
 
-iNaturalist.observations <- read.csv("digitized/DarwinCore/iNaturalist_observations_2022-10-16_DwC.csv")
+iNaturalist.observations <- read.csv("../../records/digitized/DarwinCore/iNaturalist_observations_2022-10-16_DwC.csv")
 
 # Substitute iNaturalist usernames where actual observer names are missing
 
@@ -1001,7 +1001,7 @@ unmatched.vascular.plant.records
 
 # Read Janszen 2003 Outer Gulf Islands Vascular Plant Checklist records
 
-Janszen.2003 <- read.csv("digitized/DarwinCore/Janszen_2003_Outer_Gulf_Islands_Vascular_Plant_Checklist_DwC.csv")
+Janszen.2003 <- read.csv("../../records/digitized/DarwinCore/Janszen_2003_Outer_Gulf_Islands_Vascular_Plant_Checklist_DwC.csv")
 
 # Create unique identifiers for observations
 
@@ -1150,7 +1150,7 @@ unmatched.vascular.plant.records
 
 # Read Laughlin Lake 2002 records (GCA 2002)
 
-Laughlin.2002 <- read.csv("digitized/DarwinCore/Laughlin_Vegetation_Data_2002-08-20_DwC.csv")
+Laughlin.2002 <- read.csv("../../records/digitized/DarwinCore/Laughlin_Vegetation_Data_2002-08-20_DwC.csv")
 
 # Create unique identifiers for observations
 
@@ -1324,7 +1324,7 @@ unmatched.vascular.plant.records
 # Read Frank Lomer 2022 Records
 # Note: specimens will all be deposited at UBC and should be checked for duplicates against UBC records in the future 
 
-Lomer.2022 <- read.csv("digitized/DarwinCore/Lomer_2022_Galiano_collections_DwC.csv")
+Lomer.2022 <- read.csv("../../records/digitized/DarwinCore/Lomer_2022_Galiano_collections_DwC.csv")
 
 # Create DarwinCore dataframe template 
 
@@ -1465,7 +1465,7 @@ unmatched.vascular.plant.records
 # Read Frank Lomer 2022 Records
 # Note: specimens will all be deposited at UBC and should be checked for duplicates against UBC records in the future 
 
-Lomer.2022.Gossip.Is <- read.csv("digitized/DarwinCore/Lomer_Gossip_Island_plant_list_2022-06-13.csv")
+Lomer.2022.Gossip.Is <- read.csv("../../records/digitized/DarwinCore/Lomer_Gossip_Island_plant_list_2022-06-13.csv")
 
 # Create DarwinCore dataframe template 
 
@@ -1608,7 +1608,7 @@ unmatched.vascular.plant.records
 # Read RBCM Records 
 # Note: see email from Bill Crins re: locality information
 
-RBCM.georeferencing.corrected <- read.csv("digitized/DarwinCore/RBCM_vascular_plant_records_georeferencing_corrected_2021-12-05_DwC.csv") # Note: georeferencing still needs to be reviewed; at least one obs incorrectly mapped on Mount Galiano
+RBCM.georeferencing.corrected <- read.csv("../../records/digitized/DarwinCore/RBCM_vascular_plant_records_georeferencing_corrected_2021-12-05_DwC.csv") # Note: georeferencing still needs to be reviewed; at least one obs incorrectly mapped on Mount Galiano
 
 # Generate Taxon field to facilitate join
 
@@ -1752,9 +1752,9 @@ unmatched.vascular.plant.records
 
 # Read Hans Roemer - 2004 - Mt. Sutil Records
 
-Roemer.2004.Mt.Sutil.plot.metadata <- read.csv("digitized/DarwinCore/Roemer_2004_Mt_Sutil_plot_metadata_DwC.csv") # Note: georeferencing still needs to be reviewed; at least one obs incorrectly mapped on Mount Galiano
+Roemer.2004.Mt.Sutil.plot.metadata <- read.csv("../../records/digitized/DarwinCore/Roemer_2004_Mt_Sutil_plot_metadata_DwC.csv") # Note: georeferencing still needs to be reviewed; at least one obs incorrectly mapped on Mount Galiano
 
-Roemer.2004.Mt.Sutil.vegetation <- read.csv("digitized/DarwinCore/Roemer_2004_Mt_Sutil_vegetation_DwC.csv") # Note: georeferencing still needs to be reviewed; at least one obs incorrectly mapped on Mount Galiano
+Roemer.2004.Mt.Sutil.vegetation <- read.csv("../../records/digitized/DarwinCore/Roemer_2004_Mt_Sutil_vegetation_DwC.csv") # Note: georeferencing still needs to be reviewed; at least one obs incorrectly mapped on Mount Galiano
 
 # Remove non-vasculars from vegetation dataframe
 
@@ -1924,9 +1924,9 @@ unmatched.vascular.plant.records
 
 # Read Simon 2018 data
 
-Simon.2018.transects <- read.csv("digitized/DarwinCore/Simon_2018_transect_coordinates_DwC.csv")
+Simon.2018.transects <- read.csv("../../records/digitized/DarwinCore/Simon_2018_transect_coordinates_DwC.csv")
 
-Simon.2018.veg.data <- read.csv("digitized/DarwinCore/Simon_2018_vegetation_data_DwC.csv")
+Simon.2018.veg.data <- read.csv("../../records/digitized/DarwinCore/Simon_2018_vegetation_data_DwC.csv")
 
 # Add common name for transect ID to facilitate join
 
@@ -2094,7 +2094,7 @@ unmatched.vascular.plant.records
 
 # Read UBC specimen records (UBC 2022)
 
-UBC.2022 <- read.csv("digitized/DarwinCore/UBC_Galiano_Island_vascular_plants_2022-10-31_DwC.csv")
+UBC.2022 <- read.csv("../../records/digitized/DarwinCore/UBC_Galiano_Island_vascular_plants_2022-10-31_DwC.csv")
 
 # Change date format to POSIX
 

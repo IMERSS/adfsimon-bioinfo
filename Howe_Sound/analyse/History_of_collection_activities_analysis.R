@@ -248,7 +248,6 @@ grid.1890.1900$richness <- matrix.1890.1900$richness[match(unlist(grid.1890.1900
 
 grid.1890.1900$year <- 1900
 
-
 # 1890 - 1910 records
 
 # Convert plant records to sf points

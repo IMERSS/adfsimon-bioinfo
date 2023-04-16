@@ -146,3 +146,47 @@ confirmed.matrix$id <- row.names(confirmed.matrix)
 
 confirmed.plants.grid$richness <- confirmed.matrix$richness[match(unlist(confirmed.plants.grid$id), confirmed.matrix$id)]
 
+# Consolidate gridded plant data
+
+reporting.status.grid <- rbind(reported.plants.grid, confirmed.plants.grid, new.plants.grid)
+
+# Create vectors summarizing plant species by status
+
+plants.status <- reporting.status.grid %>% group_by(status) %>% 
+  summarize(taxa = paste(sort(unique(scientificName)),collapse=", "))
+
+# Gridded historic taxa
+
+grid.reported <- grid 
+
+grid.reported$status <- reported.plants.grid$status[match(unlist(grid.reported$id), reported.plants.grid$id)]
+
+grid.reported <- grid.reported %>% drop_na(status)
+
+grid.reported$richness <- reported.plants.grid$richness[match(unlist(grid.reported$id), reported.plants.grid$id)]
+
+st_write(grid.reported, "outputs/gridded_historic_records.shp")
+
+# Gridded new taxa
+
+grid.new <- grid 
+
+grid.new$status <- new.plants.grid$status[match(unlist(grid.new$id), new.plants.grid$id)]
+
+grid.new <- grid.new %>% drop_na(status)
+
+grid.new$richness <- new.plants.grid$richness[match(unlist(grid.new$id), new.plants.grid$id)]
+
+st_write(grid.new, "outputs/gridded_new_records.shp")
+
+# Gridded confirmed taxa
+
+grid.confirmed <- grid 
+
+grid.confirmed$status <- confirmed.plants.grid$status[match(unlist(grid.confirmed$id), confirmed.plants.grid$id)]
+
+grid.confirmed <- grid.confirmed %>% drop_na(status)
+
+grid.confirmed$richness <- confirmed.plants.grid$richness[match(unlist(grid.confirmed$id), confirmed.plants.grid$id)]
+
+st_write(grid.confirmed, "outputs/gridded_confirmed_records.shp")
