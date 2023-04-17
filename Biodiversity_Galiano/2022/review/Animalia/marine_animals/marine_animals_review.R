@@ -126,7 +126,7 @@ past.records <- records %>% filter(str_detect(scientificName, previously.reporte
 # Summarize confirmed records = records not new, observed more than once, and seen in the last ten years
 
 current.date <- max(last.observed$year)
-recent <- current.date-10
+recent <- current.date-20
 
 # Remove list records that misrepresent the provenance of records
 
