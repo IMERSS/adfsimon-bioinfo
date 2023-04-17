@@ -1,4 +1,4 @@
-# Script to compare iNaturalist observations against a historical baseline
+# Script to synthesize occurrence records into baseline dataset
 
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
