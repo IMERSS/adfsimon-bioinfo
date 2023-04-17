@@ -278,6 +278,7 @@ unique.suffix <- 1:nrow(Chu.Leys.2012)
 # Add metadata
 
 Chu.Leys.2012$eventDate <- "2012-06-01" # Confirm date with Jackson
+Chu.Leys.2012$datasetName <- "Chu & Leys (2012)"
 Chu.Leys.2012$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
 Chu.Leys.2012$stateProvince <- "British Columbia"
 Chu.Leys.2012$country <- "Canada"
