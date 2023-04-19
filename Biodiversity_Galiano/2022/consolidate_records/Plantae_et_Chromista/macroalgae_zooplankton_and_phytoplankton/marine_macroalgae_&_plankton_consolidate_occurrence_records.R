@@ -14,7 +14,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/marine_algae_summary_resynthesized_2023-04-18.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Galiano_marine_algae_summary_resynthesized_2023-04-18.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -555,6 +555,7 @@ PMLS.2021$island <- "Galiano Island"
 PMLS.2021$stateProvince <- "British Columbia"
 PMLS.2021$country <- "Canada"
 PMLS.2021$countryCode <- "CA"
+PMLS.2021$basisOfRecord <- "HumanObservation"
 
 # Merge with summary to standardize names and taxon metadata
 
@@ -715,9 +716,12 @@ Webber.et.al.2022$decimalLatitude <- 48.90071443043615
 Webber.et.al.2022$decimalLongitude <- -123.40790606380006
 Webber.et.al.2022$georeferenceProtocol <- "Coordinates mapped based on precise location of study area"
 Webber.et.al.2022$coordinateUncertaintyInMeters <- 50
+Webber.et.al.2022$countryCode <- "CA"
+Webber.et.al.2022$country <- "Canada"
 Webber.et.al.2022$stateProvince <- "British Columbia"
 Webber.et.al.2022$island <- "Galiano Island"
 Webber.et.al.2022$locality <- "Montague Harbour Marine Provincial Park (Hulq'umi'num: 'Sumnuw')"
+Webber.et.al.2022$basisOfRecord <- "MaterialSample"
 
 # Remove '_' from 'scientificName'
 
@@ -907,6 +911,11 @@ marine.algae.records <- rbind(Genera, Species, Varieties)
 # occurrenceStatus
 
 marine.algae.records$occurrenceStatus <- "present"
+
+# Standardize values in basisOfRecord
+
+marine.algae.records$basisOfRecord <- str_replace(marine.algae.records$basisOfRecord, 'MATERIAL_SAMPLE', 'MaterialSample')
+marine.algae.records$basisOfRecord <- str_replace(marine.algae.records$basisOfRecord, 'PRESERVED_SPECIMEN', 'PreservedSpecimen')
 
 # Order by taxon
 
