@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Marine_animals_review_summary_2023-04-18.csv")
+baseline <- read.csv("summaries/Marine_animals_review_summary_2023-04-19.csv")
 
 # Read catalog of consolidated occurrence records
 
@@ -34,7 +34,7 @@ nrow(unique.taxa.records)
 nrow(unique.taxa.summary)
 nrow(unique.taxa.resynthesized)
 
-intersect(unique.taxa, unique.taxa.summary)
+intersect(unique.taxa.records, unique.taxa.summary)
 
 setdiff(unique.taxa.records, unique.taxa.summary)
 setdiff(unique.taxa.summary, unique.taxa.records)
@@ -52,7 +52,7 @@ iNat.observed <- distinct(iNat.observed, scientificName)
 
 iNat.observed$iNatObservationStatus <- "observed"
 
-iNat.unobserved <- anti_join(unique.taxa,iNat.observed)
+iNat.unobserved <- anti_join(unique.taxa.records,iNat.observed)
 
 iNat.unobserved$iNatObservationStatus <- "unobserved"
 
@@ -111,7 +111,7 @@ new.records.years$year <- first.observed$year[match(unlist(new.records.years$sci
 
 previously.known <- anti_join(taxon.record.count,new.records)
 
-nrow(new.records)+nrow(previously.known)==nrow(unique.taxa) # All taxa accounted for
+nrow(new.records)+nrow(previously.known)==nrow(unique.taxa.records) # All taxa accounted for
 
 # Create vector to filter records of previously known species
 
@@ -150,7 +150,7 @@ historic.records <- anti_join(historic.records,confirmed.records)
 
 # Ensure all records are accounted for
 
-nrow(new.records)+nrow(confirmed.records)+nrow(historic.records) == nrow(unique.taxa)
+nrow(new.records)+nrow(confirmed.records)+nrow(historic.records) == nrow(unique.taxa.records)
 
 # Construct summary dataframe for new records
 
