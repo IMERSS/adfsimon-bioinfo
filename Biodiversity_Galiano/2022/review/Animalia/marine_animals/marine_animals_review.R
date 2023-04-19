@@ -16,28 +16,28 @@ baseline <- read.csv("summaries/Marine_animals_review_summary_2023-04-18.csv")
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated.csv")
+records <- read.csv("../../../consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated_2023-04-19.csv")
 
 # Read resynthesized summary
 
-synthesized.summary <- read.csv("outputs/marine_animal_summary_resynthesized_2023-04-18.csv")
+synthesized.summary <- read.csv("outputs/marine_animal_summary_resynthesized.csv")
 
 # Summarize unique taxa
 
-unique.taxa <- distinct(records, scientificName)
+unique.taxa.records <- distinct(records, scientificName)
 
 unique.taxa.summary <- distinct(baseline, scientificName)
 
 unique.taxa.resynthesized <- distinct(synthesized.summary, scientificName)
 
-nrow(unique.taxa)
+nrow(unique.taxa.records)
 nrow(unique.taxa.summary)
 nrow(unique.taxa.resynthesized)
 
 intersect(unique.taxa, unique.taxa.summary)
 
-setdiff(unique.taxa, unique.taxa.summary)
-setdiff(unique.taxa.summary, unique.taxa)
+setdiff(unique.taxa.records, unique.taxa.summary)
+setdiff(unique.taxa.summary, unique.taxa.records)
 
 # Tally records by taxon
 
@@ -330,5 +330,5 @@ summary$statsCode <- "VAS"
 
 summary <- summary[order(summary$scientificName),] 
 
-write.csv(summary, "outputs/marine_animal_summary_resynthesized_2023-04-18.csv", row.names = FALSE, na = '')
+write.csv(summary, "outputs/marine_animal_summary_resynthesized.csv", row.names = FALSE, na = '')
 
