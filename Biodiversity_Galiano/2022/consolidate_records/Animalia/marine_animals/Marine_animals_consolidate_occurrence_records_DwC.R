@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Marine_animals_review_summary_2023-04-16.csv")
+summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Marine_animals_review_summary_2023-04-18.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -33,10 +33,11 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 # Sources (1/1 added):
 
 # Galiano Island BC Canada - Marine Zoology 1893–2021 (Simon et al., 2022)
+# Note this version includes updated from iNat as of 2023-04-17
 
 # Read Galiano Island BC Canada - Marine Zoology 1893–2021 
 
-GI.1893.2021 <- read.csv("../../records/digitized/DarwinCore/Galiano_Island_BC_Canada_Marine_Zoology_1893–2021_DwC.csv")
+GI.1893.2021 <- read.csv("../../records/digitized/DarwinCore/Galiano_Island_BC_Canada_Marine_Zoology_1893–2021_updated_2023-04-18_AB_DwC.csv")
 
 # Create DarwinCore dataframe template 
 
@@ -87,8 +88,6 @@ nrow(GI.1893.2021.names.matched)+nrow(GI.1893.2021.names.unmatched)
 GI.1893.2021.key <- read.csv("keys/marine_animal_taxon_key_2023.csv") 
 
 # Swap unmatched names using key
-
-head(GI.1893.2021.key)
 
 GI.1893.2021.names.unmatched.matched <- GI.1893.2021.names.unmatched
 

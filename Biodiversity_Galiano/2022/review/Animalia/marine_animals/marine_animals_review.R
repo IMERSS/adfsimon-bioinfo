@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Marine_animals_review_summary_2023-04-16.csv")
+baseline <- read.csv("summaries/Marine_animals_review_summary_2023-04-18.csv")
 
 # Read catalog of consolidated occurrence records
 
@@ -20,7 +20,7 @@ records <- read.csv("../../../consolidate_records/Animalia/marine_animals/synthe
 
 # Read resynthesized summary
 
-synthesized.summary <- read.csv("outputs/marine_animal_summary_resynthesized_2023-04-16.csv")
+synthesized.summary <- read.csv("outputs/marine_animal_summary_resynthesized_2023-04-18.csv")
 
 # Summarize unique taxa
 
@@ -330,5 +330,5 @@ summary$statsCode <- "VAS"
 
 summary <- summary[order(summary$scientificName),] 
 
-write.csv(summary, "outputs/marine_animal_summary_resynthesized_2023-04-16.csv", row.names = FALSE, na = '')
+write.csv(summary, "outputs/marine_animal_summary_resynthesized_2023-04-18.csv", row.names = FALSE, na = '')
 
