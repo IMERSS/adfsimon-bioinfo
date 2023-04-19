@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../2_review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_reviewed_2022-11-25.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_reviewed_2022-11-25.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -829,7 +829,7 @@ unmatched.vascular.plant.records
 
 # Read iNaturalist data
 
-iNaturalist.observations <- read.csv("../../records/digitized/DarwinCore/iNaturalist_observations_2022-10-16_DwC.csv")
+iNaturalist.observations <- read.csv("../../records/digitized/DarwinCore/iNaturalist_vascular_plant_observations_2022-10-16_DwC.csv")
 
 # Substitute iNaturalist usernames where actual observer names are missing
 

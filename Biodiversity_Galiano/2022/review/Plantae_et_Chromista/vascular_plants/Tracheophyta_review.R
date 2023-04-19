@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summary/Tracheophyta_review_summary_reviewed_2022-10-16.csv")
+baseline <- read.csv("summaries/Tracheophyta_review_summary_reviewed_2023-02-25.csv")
 
 Tracheophyta.baseline <- baseline %>% filter(Phylum == 'Tracheophyta')
 

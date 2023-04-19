@@ -1,8 +1,12 @@
-# Script to consolidate records of Galiano Island's vascular plants
+# Script to consolidate records of Galiano Island's marine animal diversity
+
+
 
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
+
+
 
 # Load packages
 
@@ -10,9 +14,13 @@ library(dplyr)
 library(stringr)
 library(tidyr)
 
+
+
 # Read baseline summary for standardizing species names
 
 summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Marine_animals_review_summary_2023-04-18.csv")
+
+
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -28,12 +36,20 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
                     'identificationQualifier','identificationRemarks','previousIdentifications','bibliographicCitation',
                     'associatedReferences')
 
+
+
 # Consolidate records
 
-# Sources (1/1 added):
+# Sources (3/3 added):
 
-# Galiano Island BC Canada - Marine Zoology 1893–2021 (Simon et al., 2022)
-# Note this version includes updated from iNat as of 2023-04-17
+# Galiano Island BC Canada - Marine Zoology 1893–2021 (Simon et al., 2022) - added
+# Note this version includes updated from iNat as of 2023-04-18
+
+# Agassiz (ex McMurrich 1921) - added
+
+# Chu & Leys 2012 - added
+
+
 
 # Read Galiano Island BC Canada - Marine Zoology 1893–2021 
 
@@ -152,7 +168,7 @@ review.key <- rbind(GI.1893.2021.key,unmatched.taxa)
 
 review.key[is.na(review.key)] <- ""
 
-write.csv(review.key,"keys/review.key.csv", row.names=FALSE)
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
 
 # Bind records
 
@@ -201,7 +217,7 @@ A.Agassiz$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
 A.Agassiz$stateProvince <- "British Columbia"
 A.Agassiz$country <- "Canada"
 A.Agassiz$countryCode <- "CA"
-A.Agassiz$locality <- "Galiano Island"
+A.Agassiz$island <- "Galiano Island"
 A.Agassiz$basisOfRecord <- "MaterialCitation"
 
 # Merge with summary to standardize names and taxon metadata
@@ -256,7 +272,8 @@ nrow(A.Agassiz)
 nrow(A.Agassiz.records)
 
 
-# Read records from Agassiz (ex McMurrich 1921)
+
+# Read records from Chu & Leys 2012
 
 Chu.Leys.2012 <- read.csv("../../records/digitized/DarwinCore/Chu_&_Leys_2012_Galiano_Heterochone_calyx_record_DwC.csv")
 
