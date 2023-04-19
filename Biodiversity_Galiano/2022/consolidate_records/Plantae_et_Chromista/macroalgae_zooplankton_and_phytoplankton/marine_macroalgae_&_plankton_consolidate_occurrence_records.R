@@ -14,7 +14,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Charophyta_Chlorophyta_Rhodophyta_Chromista_review_summary_reviewed_2023-04-18.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/marine_algae_summary_resynthesized_2023-04-18.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -59,6 +59,7 @@ BOLD.2021 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
+BOLD.2021$datasetName <- "BOLD"
 BOLD.2021$stateProvince <- "British Columbia"
 BOLD.2021$country <- "Canada"
 BOLD.2021$island <- "Galiano Island"
@@ -392,7 +393,7 @@ iNaturalist.observations$island <- "Galiano Island"
 iNaturalist.observations$country <- "Canada"
 iNaturalist.observations$countryCode <- "CA"
 iNaturalist.observations$basisOfRecord <- "HumanObservation"
-iNaturalist.observations$datasetName <- "iNaturalist"
+iNaturalist.observations$institutionCode <- "iNaturalist"
 
 # Merge with summary to standardize names and taxon metadata
 
@@ -889,17 +890,19 @@ Species <- subset(Species, select = -c(hybrid, subspecies, variety, form))
 # Hybrids$infraspecificEpithet <- Hybrids$hybrid
 # Hybrids <- subset(Hybrids, select = -c(hybrid, subspecies, variety, form))
 
-Subspecies <- subset(marine.algae.records, subspecies != "")
-Subspecies$taxonRank <- "subspecies"
-Subspecies$infraspecificEpithet <- Subspecies$subspecies
-Subspecies <- subset(Subspecies, select = -c(hybrid, subspecies, variety, form))
+# No subspecies
+
+# Subspecies <- subset(marine.algae.records, subspecies != "")
+# Subspecies$taxonRank <- "subspecies"
+# Subspecies$infraspecificEpithet <- Subspecies$subspecies
+# Subspecies <- subset(Subspecies, select = -c(hybrid, subspecies, variety, form))
 
 Varieties <- subset(marine.algae.records, variety != "")
 Varieties$taxonRank <- "varietas"
 Varieties$infraspecificEpithet <- Varieties$variety
 Varieties <- subset(Varieties, select = -c(hybrid, subspecies, variety, form))
 
-marine.algae.records <- rbind(Genera, Species, Subspecies, Varieties)
+marine.algae.records <- rbind(Genera, Species, Varieties)
 
 # occurrenceStatus
 
@@ -925,7 +928,7 @@ marine.algae.records[is.na(marine.algae.records)] <- ""
 
 # Output synthesized catalog of occurrence records
 
-write.csv(marine.algae.records,"synthesized/Galiano_marine_animal_records_consolidated.csv", row.names = FALSE)
+write.csv(marine.algae.records,"synthesized/Galiano_marine_algae_records_consolidated.csv", row.names = FALSE)
 
 # Evaluate georeferencing resolution of vascular plant records
 
