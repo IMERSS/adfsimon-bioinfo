@@ -252,14 +252,14 @@ algae.grid.map
 
 # Export shapes
 
-st_write(algae.grid, "outputs/vectors/algae_grid.shp")
+st_write(algae.grid.count, "outputs/vectors/algae_grid.shp")
 write.csv(algae.records.gridded, "outputs/tabular/algae_records_gridded.csv", row.names = FALSE)
 
-st_write(green.algae.grid, "outputs/vectors/green_algae_grid.shp")
+st_write(green.algae.grid.count, "outputs/vectors/green_algae_grid.shp")
 write.csv(green.algae.records.gridded, "outputs/tabular/green_algae_records_gridded.csv", row.names = FALSE)
 
-st_write(red.algae.grid, "outputs/vectors/red_algae_grid.shp")
+st_write(red.algae.grid.count, "outputs/vectors/red_algae_grid.shp")
 write.csv(red.algae.records.gridded, "outputs/tabular/red_algae_records_gridded.csv", row.names = FALSE)
 
-st_write(brown.algae.grid, "outputs/vectors/brown_algae_grid.shp")
+st_write(brown.algae.grid.count, "outputs/vectors/brown_algae_grid.shp")
 write.csv(brown.algae.records.gridded, "outputs/tabular/brown_algae_records_gridded.csv", row.names = FALSE)
