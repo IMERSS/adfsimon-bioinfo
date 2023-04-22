@@ -123,7 +123,7 @@ previously.reported <- previously.reported %>% paste(collapse = "|")
 
 past.records <- records %>% filter(str_detect(scientificName, previously.reported))
 
-# Summarize confirmed records = records not new, observed more than once, and seen in the last ten years
+# Summarize confirmed records = records not new, observed more than once, and seen in the last twenty years
 
 current.date <- max(last.observed$year)
 recent <- current.date-20
@@ -142,7 +142,7 @@ confirmed.records  <- distinct(confirmed.records , scientificName)
 
 confirmed.records$count <- taxon.record.count$count[match(unlist(confirmed.records$scientificName), taxon.record.count$scientificName)]
 
-# Summarize historic records = records observed only once in the last ten years, or otherwise not seen in the last ten years
+# Summarize historic records = records observed only once in the last twenty years, or otherwise not seen in the last twenty years
 
 historic.records <- anti_join(taxon.record.count,new.records)
 
