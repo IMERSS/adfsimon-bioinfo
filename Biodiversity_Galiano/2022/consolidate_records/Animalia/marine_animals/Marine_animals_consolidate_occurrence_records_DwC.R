@@ -24,7 +24,7 @@ summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Marine_an
 
 # Create vector of DarwinCore fields for aggregating records
 
-DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','phylum','class',
+DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','phylum','subphylum','class',
                     'order','suborder','infraorder','superfamily','family','genus','subgenus','specificEpithet',
                     'hybrid','subspecies','variety','form','infraspecificEpithet','taxonRank','institutionCode',
                     'collectionCode','catalogNumber','datasetName','occurrenceID','recordedBy','recordNumber',
@@ -70,6 +70,7 @@ GI.1893.2021$scientificNameAuthorship <- summary$scientificNameAuthorship[match(
 GI.1893.2021$taxonID <- summary$ID[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
 GI.1893.2021$kingdom <- summary$kingdom[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
 GI.1893.2021$phylum <- summary$phylum[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
+GI.1893.2021$subphylum <- summary$subphylum[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
 GI.1893.2021$class <- summary$class[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
 GI.1893.2021$order <- summary$order[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
 GI.1893.2021$suborder <- summary$suborder[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
@@ -115,6 +116,7 @@ GI.1893.2021.names.unmatched.matched$scientificNameAuthorship <- summary$scienti
 GI.1893.2021.names.unmatched.matched$taxonID <- summary$ID[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 GI.1893.2021.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 GI.1893.2021.names.unmatched.matched$phylum <- summary$phylum[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GI.1893.2021.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 GI.1893.2021.names.unmatched.matched$class <- summary$class[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 GI.1893.2021.names.unmatched.matched$order <- summary$order[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 GI.1893.2021.names.unmatched.matched$suborder <- summary$suborder[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
@@ -226,6 +228,7 @@ A.Agassiz$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unl
 A.Agassiz$taxonID <- summary$ID[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
 A.Agassiz$kingdom <- summary$kingdom[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
 A.Agassiz$phylum <- summary$phylum[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
+A.Agassiz$subphylum <- summary$subphylum[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
 A.Agassiz$class <- summary$class[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
 A.Agassiz$order <- summary$order[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
 A.Agassiz$suborder <- summary$suborder[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
@@ -308,6 +311,7 @@ Chu.Leys.2012$scientificNameAuthorship <- summary$scientificNameAuthorship[match
 Chu.Leys.2012$taxonID <- summary$ID[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
 Chu.Leys.2012$kingdom <- summary$kingdom[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
 Chu.Leys.2012$phylum <- summary$phylum[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
+Chu.Leys.2012$subphylum <- summary$subphylum[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
 Chu.Leys.2012$class <- summary$class[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
 Chu.Leys.2012$order <- summary$order[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
 Chu.Leys.2012$suborder <- summary$suborder[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]

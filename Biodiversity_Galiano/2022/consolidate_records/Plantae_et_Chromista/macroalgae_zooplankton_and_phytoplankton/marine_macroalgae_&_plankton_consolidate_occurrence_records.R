@@ -12,11 +12,11 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Galiano_marine_algae_summary_resynthesized_2023-04-18.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Galiano_marine_algae_review_summary_reviewed_2023-04-22.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
-DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','phylum','class',
+DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','phylum','subphylum','class',
                'order','suborder','infraorder','superfamily','family','genus','subgenus','specificEpithet',
                'hybrid','subspecies','variety','form','infraspecificEpithet','taxonRank','institutionCode',
                'collectionCode','catalogNumber','datasetName','occurrenceID','recordedBy','recordNumber',
@@ -68,6 +68,7 @@ BOLD.2021$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unl
 BOLD.2021$taxonID <- summary$ID[match(unlist(BOLD.2021$scientificName), summary$scientificName)]
 BOLD.2021$kingdom <- summary$kingdom[match(unlist(BOLD.2021$scientificName), summary$scientificName)]
 BOLD.2021$phylum <- summary$phylum[match(unlist(BOLD.2021$scientificName), summary$scientificName)]
+BOLD.2021$subphylum <- summary$subphylum[match(unlist(BOLD.2021$scientificName), summary$scientificName)]
 BOLD.2021$class <- summary$class[match(unlist(BOLD.2021$scientificName), summary$scientificName)]
 BOLD.2021$order <- summary$order[match(unlist(BOLD.2021$scientificName), summary$scientificName)]
 BOLD.2021$suborder <- summary$suborder[match(unlist(BOLD.2021$scientificName), summary$scientificName)]
@@ -113,6 +114,7 @@ BOLD.2021.names.unmatched.matched$scientificNameAuthorship <- summary$scientific
 BOLD.2021.names.unmatched.matched$taxonID <- summary$ID[match(unlist(BOLD.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 BOLD.2021.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(BOLD.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 BOLD.2021.names.unmatched.matched$phylum <- summary$phylum[match(unlist(BOLD.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BOLD.2021.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(BOLD.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 BOLD.2021.names.unmatched.matched$class <- summary$class[match(unlist(BOLD.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 BOLD.2021.names.unmatched.matched$order <- summary$order[match(unlist(BOLD.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 BOLD.2021.names.unmatched.matched$suborder <- summary$suborder[match(unlist(BOLD.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
@@ -209,6 +211,7 @@ CPNWH.2021$scientificNameAuthorship <- summary$scientificNameAuthorship[match(un
 CPNWH.2021$taxonID <- summary$ID[match(unlist(CPNWH.2021$scientificName), summary$scientificName)]
 CPNWH.2021$kingdom <- summary$kingdom[match(unlist(CPNWH.2021$scientificName), summary$scientificName)]
 CPNWH.2021$phylum <- summary$phylum[match(unlist(CPNWH.2021$scientificName), summary$scientificName)]
+CPNWH.2021$subphylum <- summary$subphylum[match(unlist(CPNWH.2021$scientificName), summary$scientificName)]
 CPNWH.2021$class <- summary$class[match(unlist(CPNWH.2021$scientificName), summary$scientificName)]
 CPNWH.2021$order <- summary$order[match(unlist(CPNWH.2021$scientificName), summary$scientificName)]
 CPNWH.2021$suborder <- summary$suborder[match(unlist(CPNWH.2021$scientificName), summary$scientificName)]
@@ -254,6 +257,7 @@ CPNWH.2021.names.unmatched.matched$scientificNameAuthorship <- summary$scientifi
 CPNWH.2021.names.unmatched.matched$taxonID <- summary$ID[match(unlist(CPNWH.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 CPNWH.2021.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(CPNWH.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 CPNWH.2021.names.unmatched.matched$phylum <- summary$phylum[match(unlist(CPNWH.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+CPNWH.2021.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(CPNWH.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 CPNWH.2021.names.unmatched.matched$class <- summary$class[match(unlist(CPNWH.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 CPNWH.2021.names.unmatched.matched$order <- summary$order[match(unlist(CPNWH.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 CPNWH.2021.names.unmatched.matched$suborder <- summary$suborder[match(unlist(CPNWH.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
@@ -399,6 +403,7 @@ iNaturalist.observations$scientificNameAuthorship <- summary$scientificNameAutho
 iNaturalist.observations$taxonID <- summary$ID[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
 iNaturalist.observations$kingdom <- summary$kingdom[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
 iNaturalist.observations$phylum <- summary$phylum[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$subphylum <- summary$subphylum[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
 iNaturalist.observations$class <- summary$class[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
 iNaturalist.observations$order <- summary$order[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
 iNaturalist.observations$suborder <- summary$suborder[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
@@ -444,6 +449,7 @@ iNaturalist.observations.names.unmatched.matched$scientificNameAuthorship <- sum
 iNaturalist.observations.names.unmatched.matched$taxonID <- summary$ID[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 iNaturalist.observations.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 iNaturalist.observations.names.unmatched.matched$phylum <- summary$phylum[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 iNaturalist.observations.names.unmatched.matched$class <- summary$class[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 iNaturalist.observations.names.unmatched.matched$order <- summary$order[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 iNaturalist.observations.names.unmatched.matched$suborder <- summary$suborder[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
@@ -561,6 +567,7 @@ PMLS.2021$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unl
 PMLS.2021$taxonID <- summary$ID[match(unlist(PMLS.2021$scientificName), summary$scientificName)]
 PMLS.2021$kingdom <- summary$kingdom[match(unlist(PMLS.2021$scientificName), summary$scientificName)]
 PMLS.2021$phylum <- summary$phylum[match(unlist(PMLS.2021$scientificName), summary$scientificName)]
+PMLS.2021$subphylum <- summary$subphylum[match(unlist(PMLS.2021$scientificName), summary$scientificName)]
 PMLS.2021$class <- summary$class[match(unlist(PMLS.2021$scientificName), summary$scientificName)]
 PMLS.2021$order <- summary$order[match(unlist(PMLS.2021$scientificName), summary$scientificName)]
 PMLS.2021$suborder <- summary$suborder[match(unlist(PMLS.2021$scientificName), summary$scientificName)]
@@ -606,6 +613,7 @@ PMLS.2021.names.unmatched.matched$scientificNameAuthorship <- summary$scientific
 PMLS.2021.names.unmatched.matched$taxonID <- summary$ID[match(unlist(PMLS.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 PMLS.2021.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(PMLS.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 PMLS.2021.names.unmatched.matched$phylum <- summary$phylum[match(unlist(PMLS.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+PMLS.2021.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(PMLS.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 PMLS.2021.names.unmatched.matched$class <- summary$class[match(unlist(PMLS.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 PMLS.2021.names.unmatched.matched$order <- summary$order[match(unlist(PMLS.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 PMLS.2021.names.unmatched.matched$suborder <- summary$suborder[match(unlist(PMLS.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
@@ -731,6 +739,7 @@ Webber.et.al.2022$scientificNameAuthorship <- summary$scientificNameAuthorship[m
 Webber.et.al.2022$taxonID <- summary$ID[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
 Webber.et.al.2022$kingdom <- summary$kingdom[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
 Webber.et.al.2022$phylum <- summary$phylum[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
+Webber.et.al.2022$subphylum <- summary$subphylum[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
 Webber.et.al.2022$class <- summary$class[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
 Webber.et.al.2022$order <- summary$order[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
 Webber.et.al.2022$suborder <- summary$suborder[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
@@ -776,6 +785,7 @@ Webber.et.al.2022.names.unmatched.matched$scientificNameAuthorship <- summary$sc
 Webber.et.al.2022.names.unmatched.matched$taxonID <- summary$ID[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 Webber.et.al.2022.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 Webber.et.al.2022.names.unmatched.matched$phylum <- summary$phylum[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2022.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 Webber.et.al.2022.names.unmatched.matched$class <- summary$class[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 Webber.et.al.2022.names.unmatched.matched$order <- summary$order[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 Webber.et.al.2022.names.unmatched.matched$suborder <- summary$suborder[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]

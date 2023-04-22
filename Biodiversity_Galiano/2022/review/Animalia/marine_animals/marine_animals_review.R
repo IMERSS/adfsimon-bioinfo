@@ -12,11 +12,11 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Marine_animals_review_summary_2023-04-19.csv")
+baseline <- read.csv("summaries/Marine_animals_review_summary_2023-04-22.csv")
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated_2023-04-19.csv")
+records <- read.csv("../../../consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated_2023-04-22.csv")
 
 # Read resynthesized summary
 
@@ -331,4 +331,30 @@ summary$statsCode <- "VAS"
 summary <- summary[order(summary$scientificName),] 
 
 write.csv(summary, "outputs/marine_animal_summary_resynthesized.csv", row.names = FALSE, na = '')
+
+# Output summaries for major clades
+
+unique(summary$phylum)
+
+sponge.summary <- summary %>% filter(phylum == 'Porifera')
+write.csv(sponge.summary, "outputs/taxon_summaries/sponge_summary.csv", row.names = FALSE, na = '')
+
+cnidarian.summary <- summary %>% filter(phylum == 'Cnidaria')
+write.csv(cnidarian.summary, "outputs/taxon_summaries/cnidarian_summary.csv", row.names = FALSE, na = '')
+
+ctenophore.summary <- summary %>% filter(phylum == 'Ctenophora')
+write.csv(ctenophore.summary, "outputs/taxon_summaries/ctenophore_summary.csv", row.names = FALSE, na = '')
+
+nemertean.summary <- summary %>% filter(phylum == 'Nemertea')
+write.csv(nemertean.summary, "outputs/taxon_summaries/nemertean_summary.csv", row.names = FALSE, na = '')
+
+platyhelminthe.summary <- summary %>% filter(phylum == 'Platyhelminthes')
+write.csv(platyhelminthe.summary, "outputs/taxon_summaries/platyhelminthe_summary.csv", row.names = FALSE, na = '')
+
+platyhelminthe.summary <- summary %>% filter(phylum == 'Platyhelminthes')
+write.csv(platyhelminthe.summary, "outputs/taxon_summaries/platyhelminthe_summary.csv", row.names = FALSE, na = '')
+
+
+mollusc.summary <- summary %>% filter(phylum == 'Mollusca')
+write.csv(mollusc.summary, "outputs/taxon_summaries/mollusc_summary.csv", row.names = FALSE, na = '')
 
