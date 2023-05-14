@@ -770,7 +770,7 @@ st_write(platyhelminthes.grid.count, "outputs/vectors/platyhelminthes_grid.shp")
 write.csv(platyhelminthes.records.gridded, "outputs/tabular/platyhelminthes_records_gridded.csv", row.names = FALSE)
 
 st_write(arrow.worms.grid.count, "outputs/vectors/arrow.worms_grid.shp")
-write.csv(arrow.worms.records.gridded, "outputs/tabular/arrow.worms_records_gridded.csv", row.names = FALSE)
+write.csv(arrow.worms.records.gridded, "outputs/tabular/arrow_worms_records_gridded.csv", row.names = FALSE)
 
 st_write(molluscs.grid.count, "outputs/vectors/molluscs_grid.shp")
 write.csv(molluscs.records.gridded, "outputs/tabular/molluscs_records_gridded.csv", row.names = FALSE)
@@ -778,14 +778,14 @@ write.csv(molluscs.records.gridded, "outputs/tabular/molluscs_records_gridded.cs
 st_write(annelids.grid.count, "outputs/vectors/annelids_grid.shp")
 write.csv(annelids.records.gridded, "outputs/tabular/annelids_records_gridded.csv", row.names = FALSE)
 
-st_write(peanut.worms.grid.count, "outputs/vectors/peanut.worms_grid.shp")
-write.csv(peanut.worms.records.gridded, "outputs/tabular/peanut.worms_records_gridded.csv", row.names = FALSE)
+st_write(peanut.worms.grid.count, "outputs/vectors/peanut_worms_grid.shp")
+write.csv(peanut.worms.records.gridded, "outputs/tabular/peanut_worms_records_gridded.csv", row.names = FALSE)
 
 st_write(crustaceans.grid.count, "outputs/vectors/crustaceans_grid.shp")
 write.csv(crustaceans.records.gridded, "outputs/tabular/crustaceans_records_gridded.csv", row.names = FALSE)
 
 st_write(nodding.heads.grid.count, "outputs/vectors/nodding_heads_grid.shp")
-write.csv(nodding.heads.records.gridded, "outputs/tabular/nodding.heads_records_gridded.csv", row.names = FALSE)
+write.csv(nodding.heads.records.gridded, "outputs/tabular/nodding_heads_records_gridded.csv", row.names = FALSE)
 
 st_write(brachiopods.grid.count, "outputs/vectors/brachiopods_grid.shp")
 write.csv(brachiopods.records.gridded, "outputs/tabular/brachiopods_records_gridded.csv", row.names = FALSE)
@@ -793,8 +793,8 @@ write.csv(brachiopods.records.gridded, "outputs/tabular/brachiopods_records_grid
 st_write(bryozoans.grid.count, "outputs/vectors/bryozoans_grid.shp")
 write.csv(bryozoans.records.gridded, "outputs/tabular/bryozoans_records_gridded.csv", row.names = FALSE)
 
-st_write(horseshoe.worms.grid.count, "outputs/vectors/horseshoe.worms_grid.shp")
-write.csv(horseshoe.worms.records.gridded, "outputs/tabular/horseshoe.worms_records_gridded.csv", row.names = FALSE)
+st_write(horseshoe.worms.grid.count, "outputs/vectors/horseshoe_worms_grid.shp")
+write.csv(horseshoe.worms.records.gridded, "outputs/tabular/horseshoe_worms_records_gridded.csv", row.names = FALSE)
 
 st_write(echinoderms.grid.count, "outputs/vectors/echinoderms_grid.shp")
 write.csv(echinoderms.records.gridded, "outputs/tabular/echinoderms_records_gridded.csv", row.names = FALSE)
