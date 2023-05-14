@@ -351,10 +351,42 @@ write.csv(nemertean.summary, "outputs/taxon_summaries/nemertean_summary.csv", ro
 platyhelminthe.summary <- summary %>% filter(phylum == 'Platyhelminthes')
 write.csv(platyhelminthe.summary, "outputs/taxon_summaries/platyhelminthe_summary.csv", row.names = FALSE, na = '')
 
-platyhelminthe.summary <- summary %>% filter(phylum == 'Platyhelminthes')
-write.csv(platyhelminthe.summary, "outputs/taxon_summaries/platyhelminthe_summary.csv", row.names = FALSE, na = '')
-
+chaetognath.summary <- summary %>% filter(phylum == 'Chaetognatha')
+write.csv(chaetognath.summary, "outputs/taxon_summaries/chaetognath_summary.csv", row.names = FALSE, na = '')
 
 mollusc.summary <- summary %>% filter(phylum == 'Mollusca')
 write.csv(mollusc.summary, "outputs/taxon_summaries/mollusc_summary.csv", row.names = FALSE, na = '')
+
+annelid.summary <- summary %>% filter(phylum == 'Annelida')
+write.csv(annelid.summary, "outputs/taxon_summaries/annelid_summary.csv", row.names = FALSE, na = '')
+
+peanut.worm.summary <- summary %>% filter(phylum == 'Sipuncula')
+write.csv(peanut.worm.summary, "outputs/taxon_summaries/peanut_worm_summary.csv", row.names = FALSE, na = '')
+
+crustacean.summary <- summary %>% filter(subphylum == 'Crustacea')
+write.csv(crustacean.summary, "outputs/taxon_summaries/crustacean_summary.csv", row.names = FALSE, na = '')
+
+nodding.head.summary <- summary %>% filter(phylum == 'Entoprocta')
+write.csv(nodding.head.summary, "outputs/taxon_summaries/nodding_head_summary.csv", row.names = FALSE, na = '')
+
+lampshell.summary <- summary %>% filter(phylum == 'Brachiopoda')
+write.csv(lampshell.summary, "outputs/taxon_summaries/lampshell_summary.csv", row.names = FALSE, na = '')
+
+bryozoan.summary <- summary %>% filter(phylum == 'Bryozoa')
+write.csv(bryozoan.summary, "outputs/taxon_summaries/bryozoan_summary.csv", row.names = FALSE, na = '')
+
+horseshoe.worm.summary <- summary %>% filter(phylum == 'Phoronida')
+write.csv(horseshoe.worm.summary, "outputs/taxon_summaries/horseshoe_worm_summary.csv", row.names = FALSE, na = '')
+
+echinoderm.summary <- summary %>% filter(phylum == 'Echinodermata')
+write.csv(echinoderm.summary, "outputs/taxon_summaries/echinoderm_summary.csv", row.names = FALSE, na = '')
+
+tunicate.summary <- summary %>% filter(subphylum == 'Tunicata')
+write.csv(tunicate.summary, "outputs/taxon_summaries/tunicate_summary.csv", row.names = FALSE, na = '')
+
+fishes.summary <- summary %>% filter(class == 'Actinopterygii' | class == 'Elasmobranchii')
+write.csv(fishes.summary, "outputs/taxon_summaries/fishes_summary.csv", row.names = FALSE, na = '')
+
+mammal.summary <- summary %>% filter(class == 'Mammalia')
+write.csv(mammal.summary, "outputs/taxon_summaries/mammal_summary.csv", row.names = FALSE, na = '')
 

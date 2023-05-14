@@ -237,12 +237,187 @@ plot(molluscs.reported.grid)
 
 # Write choropleths
 
-st_write(molluscs.confirmed.grid, "outputs/vectors/molluscs_confirmed_grid.shp")
-st_write(molluscs.new.grid, "outputs/vectors/molluscs_new_grid.shp")
-st_write(molluscs.reported.grid, "outputs/vectors/molluscs_reported_grid.shp")
+# st_write(molluscs.confirmed.grid, "outputs/vectors/molluscs_confirmed_grid.shp")
+# st_write(molluscs.new.grid, "outputs/vectors/molluscs_new_grid.shp")
+# st_write(molluscs.reported.grid, "outputs/vectors/molluscs_reported_grid.shp")
 
 # Write gridded dataframes
 
-write.csv(molluscs.confirmed.records.gridded, "outputs/tabular_data/molluscs_confirmed_records_gridded.csv", row.names = FALSE)
-write.csv(molluscs.new.records.gridded, "outputs/tabular_data/molluscs_new_records_gridded.csv", row.names = FALSE)
-write.csv(molluscs.reported.records.gridded, "outputs/tabular_data/molluscs_reported_records_gridded.csv", row.names = FALSE)
+# write.csv(molluscs.confirmed.records.gridded, "outputs/tabular_data/molluscs_confirmed_records_gridded.csv", row.names = FALSE)
+# write.csv(molluscs.new.records.gridded, "outputs/tabular_data/molluscs_new_records_gridded.csv", row.names = FALSE)
+# write.csv(molluscs.reported.records.gridded, "outputs/tabular_data/molluscs_reported_records_gridded.csv", row.names = FALSE)
+
+
+
+# Fishes
+
+unique(summary$class)
+
+fishes <- summary %>% filter(class == 'Actinopterygii' | class == 'Elasmobranchii')
+fishes.records <- animals %>% filter(class == 'Actinopterygii' | class == 'Elasmobranchii')
+
+# Subset historic, confirmed and new records
+
+fishes.new <- fishes %>% filter(str_detect(reportingStatus, "new"))
+fishes.confirmed <- fishes %>% filter(reportingStatus == "confirmed")
+fishes.reported <- fishes %>% filter(reportingStatus == "reported")
+
+# Create vectors of historic, confirmed and new taxa to query catalog of occurrence records
+
+fishes.new.taxa <- unique(fishes.new$scientificName)
+fishes.new.taxa <- fishes.new.taxa %>% paste(collapse = "|")
+
+fishes.confirmed.taxa <- unique(fishes.confirmed$scientificName)
+fishes.confirmed.taxa <- fishes.confirmed.taxa %>% paste(collapse = "|")
+
+fishes.reported.taxa <- unique(fishes.reported$scientificName)
+fishes.reported.taxa <- fishes.reported.taxa %>% paste(collapse = "|")
+
+fishes.new.taxa.records <- fishes.records %>% filter(str_detect(scientificName, fishes.new.taxa))
+
+fishes.confirmed.taxa.records <- fishes.records %>% filter(str_detect(scientificName, fishes.confirmed.taxa))
+
+fishes.reported.taxa.records <- fishes.records %>% filter(str_detect(scientificName, fishes.reported.taxa))
+
+fishes.new.taxa.records <- fishes.new.taxa.records %>% drop_na(decimalLatitude)
+fishes.confirmed.taxa.records <- fishes.confirmed.taxa.records %>% drop_na(decimalLatitude)
+fishes.reported.taxa.records <- fishes.reported.taxa.records %>% drop_na(decimalLatitude)
+
+# Prepare gridded choropleths of historic, confirmed, new records
+
+# New records
+
+# Convert records to sf points
+
+fishes.new.taxa.points <- st_as_sf(fishes.new.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+
+# # Reproject to NAD83 UTM Zone 10
+
+# Generate gridded dataframes (each record assigned cell_id)
+
+fishes.new.taxa.points <- st_transform(fishes.new.taxa.points, crs = st_crs(EPSG.32610))
+
+fishes.new.records.gridded <- fishes.new.taxa.points %>% 
+  st_join(grid)
+
+fishes.new.records.gridded <- as.data.frame(fishes.new.records.gridded)
+
+fishes.new.records.gridded$geometry <- NULL
+
+# Summarized points (for choropleths)
+
+fishes.new.taxa.points.sum <- st_transform(fishes.new.taxa.points, crs = st_crs(EPSG.32610)) %>%
+  group_by(scientificName) %>%
+  summarize()
+
+# Generate species richness choropleths
+# Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
+# and https://luisdva.github.io/rstats/richness/
+
+fishes.new.grid <- grid %>%
+  st_join(fishes.new.taxa.points.sum) %>%
+  mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
+  group_by(cell_id) %>%
+  summarize(richness = sum(overlap))
+
+# Remove grid cell with zero records
+
+fishes.new.grid = filter(fishes.new.grid, richness > 0)
+
+fishes.new.grid$status <- 'new'
+
+# Historic records
+
+# Convert records to sf points
+
+fishes.reported.taxa.points <- st_as_sf(fishes.reported.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+
+# Reproject to NAD83 UTM Zone 10
+
+# Generate gridded dataframes (each record assigned cell_id)
+
+fishes.reported.taxa.points <- st_transform(fishes.reported.taxa.points, crs = st_crs(EPSG.32610))
+
+fishes.reported.records.gridded <- fishes.reported.taxa.points %>% 
+  st_join(grid)
+
+fishes.reported.records.gridded <- as.data.frame(fishes.reported.records.gridded)
+
+fishes.reported.records.gridded$geometry <- NULL
+
+# Summarized points (for choropleths)
+
+fishes.reported.taxa.points.sum <- st_transform(fishes.reported.taxa.points, crs = st_crs(EPSG.32610)) %>%
+  group_by(scientificName) %>%
+  summarize()
+
+# Generate species richness choropleths
+# Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
+# and https://luisdva.github.io/rstats/richness/
+
+fishes.reported.grid <- grid %>%
+  st_join(fishes.reported.taxa.points.sum) %>%
+  mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
+  group_by(cell_id) %>%
+  summarize(richness = sum(overlap))
+
+# Remove grid cell with zero records
+
+fishes.reported.grid = filter(fishes.reported.grid, richness > 0)
+
+fishes.reported.grid$status <- 'historic'
+
+# Confirmed records
+
+# Convert records to sf points
+
+fishes.confirmed.taxa.points <- st_as_sf(fishes.confirmed.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+
+# Reproject to NAD83 UTM Zone 10
+
+# Generate gridded dataframes (each record assigned cell_id)
+
+fishes.confirmed.taxa.points <- st_transform(fishes.confirmed.taxa.points, crs = st_crs(EPSG.32610))
+
+fishes.confirmed.records.gridded <- fishes.confirmed.taxa.points %>% 
+  st_join(grid)
+
+fishes.confirmed.records.gridded <- as.data.frame(fishes.confirmed.records.gridded)
+
+fishes.confirmed.records.gridded$geometry <- NULL
+
+# Summarized points (for choropleths)
+
+fishes.confirmed.taxa.points.sum <- st_transform(fishes.confirmed.taxa.points, crs = st_crs(EPSG.32610)) %>%
+  group_by(scientificName) %>%
+  summarize()
+
+# Generate species richness choropleths
+# Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
+# and https://luisdva.github.io/rstats/richness/
+
+fishes.confirmed.grid <- grid %>%
+  st_join(fishes.confirmed.taxa.points.sum) %>%
+  mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
+  group_by(cell_id) %>%
+  summarize(richness = sum(overlap))
+
+# Remove grid cell with zero records
+
+fishes.confirmed.grid = filter(fishes.confirmed.grid, richness > 0)
+
+fishes.confirmed.grid$status <- 'confirmed'
+
+plot(fishes.reported.grid)
+
+# Write choropleths
+
+# st_write(fishes.confirmed.grid, "outputs/vectors/fishes_confirmed_grid.shp")
+# st_write(fishes.new.grid, "outputs/vectors/fishes_new_grid.shp")
+# st_write(fishes.reported.grid, "outputs/vectors/fishes_reported_grid.shp")
+
+# Write gridded dataframes
+
+# write.csv(fishes.confirmed.records.gridded, "outputs/tabular_data/fishes_confirmed_records_gridded.csv", row.names = FALSE)
+# write.csv(fishes.new.records.gridded, "outputs/tabular_data/fishes_new_records_gridded.csv", row.names = FALSE)
+# write.csv(fishes.reported.records.gridded, "outputs/tabular_data/fishes_reported_records_gridded.csv", row.names = FALSE)
