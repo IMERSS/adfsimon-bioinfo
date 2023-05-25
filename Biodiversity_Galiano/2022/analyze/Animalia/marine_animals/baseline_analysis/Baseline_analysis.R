@@ -956,35 +956,35 @@ plot(platyhelminthes.reported.grid)
 
 # Chaetognatha
 
-arrow.worms <- summary %>% filter(phylum == 'Chaetognatha')
-arrow.worms.records <- animals %>% filter(phylum == 'Chaetognatha')
+chaetognaths <- summary %>% filter(phylum == 'Chaetognatha')
+chaetognaths.records <- animals %>% filter(phylum == 'Chaetognatha')
 
 # Subset historic, confirmed and new records
 
-arrow.worms.new <- arrow.worms %>% filter(str_detect(reportingStatus, "new"))
-arrow.worms.confirmed <- arrow.worms %>% filter(reportingStatus == "confirmed")
-arrow.worms.reported <- arrow.worms %>% filter(reportingStatus == "reported")
+chaetognaths.new <- chaetognaths %>% filter(str_detect(reportingStatus, "new"))
+chaetognaths.confirmed <- chaetognaths %>% filter(reportingStatus == "confirmed")
+chaetognaths.reported <- chaetognaths %>% filter(reportingStatus == "reported")
 
 # Create vectors of historic, confirmed and new taxa to query catalog of occurrence records
 
-arrow.worms.new.taxa <- unique(arrow.worms.new$scientificName)
-arrow.worms.new.taxa <- arrow.worms.new.taxa %>% paste(collapse = "|")
+chaetognaths.new.taxa <- unique(chaetognaths.new$scientificName)
+chaetognaths.new.taxa <- chaetognaths.new.taxa %>% paste(collapse = "|")
 
-arrow.worms.confirmed.taxa <- unique(arrow.worms.confirmed$scientificName)
-arrow.worms.confirmed.taxa <- arrow.worms.confirmed.taxa %>% paste(collapse = "|")
+chaetognaths.confirmed.taxa <- unique(chaetognaths.confirmed$scientificName)
+chaetognaths.confirmed.taxa <- chaetognaths.confirmed.taxa %>% paste(collapse = "|")
 
-arrow.worms.reported.taxa <- unique(arrow.worms.reported$scientificName)
-arrow.worms.reported.taxa <- arrow.worms.reported.taxa %>% paste(collapse = "|")
+chaetognaths.reported.taxa <- unique(chaetognaths.reported$scientificName)
+chaetognaths.reported.taxa <- chaetognaths.reported.taxa %>% paste(collapse = "|")
 
-arrow.worms.new.taxa.records <- arrow.worms.records %>% filter(str_detect(scientificName, arrow.worms.new.taxa))
+chaetognaths.new.taxa.records <- chaetognaths.records %>% filter(str_detect(scientificName, chaetognaths.new.taxa))
 
-arrow.worms.confirmed.taxa.records <- arrow.worms.records %>% filter(str_detect(scientificName, arrow.worms.confirmed.taxa))
+chaetognaths.confirmed.taxa.records <- chaetognaths.records %>% filter(str_detect(scientificName, chaetognaths.confirmed.taxa))
 
-arrow.worms.reported.taxa.records <- arrow.worms.records %>% filter(str_detect(scientificName, arrow.worms.reported.taxa))
+chaetognaths.reported.taxa.records <- chaetognaths.records %>% filter(str_detect(scientificName, chaetognaths.reported.taxa))
 
-arrow.worms.new.taxa.records <- arrow.worms.new.taxa.records %>% drop_na(decimalLatitude)
-arrow.worms.confirmed.taxa.records <- arrow.worms.confirmed.taxa.records %>% drop_na(decimalLatitude)
-arrow.worms.reported.taxa.records <- arrow.worms.reported.taxa.records %>% drop_na(decimalLatitude)
+chaetognaths.new.taxa.records <- chaetognaths.new.taxa.records %>% drop_na(decimalLatitude)
+chaetognaths.confirmed.taxa.records <- chaetognaths.confirmed.taxa.records %>% drop_na(decimalLatitude)
+chaetognaths.reported.taxa.records <- chaetognaths.reported.taxa.records %>% drop_na(decimalLatitude)
 
 # Prepare gridded choropleths of historic, confirmed, new records
 
@@ -992,24 +992,24 @@ arrow.worms.reported.taxa.records <- arrow.worms.reported.taxa.records %>% drop_
 
 # Convert records to sf points
 
-arrow.worms.new.taxa.points <- st_as_sf(arrow.worms.new.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+chaetognaths.new.taxa.points <- st_as_sf(chaetognaths.new.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-arrow.worms.new.taxa.points <- st_transform(arrow.worms.new.taxa.points, crs = st_crs(EPSG.32610))
+chaetognaths.new.taxa.points <- st_transform(chaetognaths.new.taxa.points, crs = st_crs(EPSG.32610))
 
-arrow.worms.new.records.gridded <- arrow.worms.new.taxa.points %>% 
+chaetognaths.new.records.gridded <- chaetognaths.new.taxa.points %>% 
   st_join(grid)
 
-arrow.worms.new.records.gridded <- as.data.frame(arrow.worms.new.records.gridded)
+chaetognaths.new.records.gridded <- as.data.frame(chaetognaths.new.records.gridded)
 
-arrow.worms.new.records.gridded$geometry <- NULL
+chaetognaths.new.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-arrow.worms.new.taxa.points.sum <- st_transform(arrow.worms.new.taxa.points, crs = st_crs(EPSG.32610)) %>%
+chaetognaths.new.taxa.points.sum <- st_transform(chaetognaths.new.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -1017,40 +1017,40 @@ arrow.worms.new.taxa.points.sum <- st_transform(arrow.worms.new.taxa.points, crs
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-arrow.worms.new.grid <- grid %>%
-  st_join(arrow.worms.new.taxa.points.sum) %>%
+chaetognaths.new.grid <- grid %>%
+  st_join(chaetognaths.new.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-arrow.worms.new.grid = filter(arrow.worms.new.grid, richness > 0)
+chaetognaths.new.grid = filter(chaetognaths.new.grid, richness > 0)
 
-arrow.worms.new.grid$status <- 'new'
+chaetognaths.new.grid$status <- 'new'
 
 # Historic records
 
 # Convert records to sf points
 
-arrow.worms.reported.taxa.points <- st_as_sf(arrow.worms.reported.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+chaetognaths.reported.taxa.points <- st_as_sf(chaetognaths.reported.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-arrow.worms.reported.taxa.points <- st_transform(arrow.worms.reported.taxa.points, crs = st_crs(EPSG.32610))
+chaetognaths.reported.taxa.points <- st_transform(chaetognaths.reported.taxa.points, crs = st_crs(EPSG.32610))
 
-arrow.worms.reported.records.gridded <- arrow.worms.reported.taxa.points %>% 
+chaetognaths.reported.records.gridded <- chaetognaths.reported.taxa.points %>% 
   st_join(grid)
 
-arrow.worms.reported.records.gridded <- as.data.frame(arrow.worms.reported.records.gridded)
+chaetognaths.reported.records.gridded <- as.data.frame(chaetognaths.reported.records.gridded)
 
-arrow.worms.reported.records.gridded$geometry <- NULL
+chaetognaths.reported.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-arrow.worms.reported.taxa.points.sum <- st_transform(arrow.worms.reported.taxa.points, crs = st_crs(EPSG.32610)) %>%
+chaetognaths.reported.taxa.points.sum <- st_transform(chaetognaths.reported.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -1058,40 +1058,40 @@ arrow.worms.reported.taxa.points.sum <- st_transform(arrow.worms.reported.taxa.p
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-arrow.worms.reported.grid <- grid %>%
-  st_join(arrow.worms.reported.taxa.points.sum) %>%
+chaetognaths.reported.grid <- grid %>%
+  st_join(chaetognaths.reported.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-arrow.worms.reported.grid = filter(arrow.worms.reported.grid, richness > 0)
+chaetognaths.reported.grid = filter(chaetognaths.reported.grid, richness > 0)
 
-arrow.worms.reported.grid$status <- 'historic'
+chaetognaths.reported.grid$status <- 'historic'
 
 # Confirmed records
 
 # Convert records to sf points
 
-arrow.worms.confirmed.taxa.points <- st_as_sf(arrow.worms.confirmed.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+chaetognaths.confirmed.taxa.points <- st_as_sf(chaetognaths.confirmed.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-arrow.worms.confirmed.taxa.points <- st_transform(arrow.worms.confirmed.taxa.points, crs = st_crs(EPSG.32610))
+chaetognaths.confirmed.taxa.points <- st_transform(chaetognaths.confirmed.taxa.points, crs = st_crs(EPSG.32610))
 
-arrow.worms.confirmed.records.gridded <- arrow.worms.confirmed.taxa.points %>% 
+chaetognaths.confirmed.records.gridded <- chaetognaths.confirmed.taxa.points %>% 
   st_join(grid)
 
-arrow.worms.confirmed.records.gridded <- as.data.frame(arrow.worms.confirmed.records.gridded)
+chaetognaths.confirmed.records.gridded <- as.data.frame(chaetognaths.confirmed.records.gridded)
 
-arrow.worms.confirmed.records.gridded$geometry <- NULL
+chaetognaths.confirmed.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-arrow.worms.confirmed.taxa.points.sum <- st_transform(arrow.worms.confirmed.taxa.points, crs = st_crs(EPSG.32610)) %>%
+chaetognaths.confirmed.taxa.points.sum <- st_transform(chaetognaths.confirmed.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -1099,31 +1099,31 @@ arrow.worms.confirmed.taxa.points.sum <- st_transform(arrow.worms.confirmed.taxa
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-arrow.worms.confirmed.grid <- grid %>%
-  st_join(arrow.worms.confirmed.taxa.points.sum) %>%
+chaetognaths.confirmed.grid <- grid %>%
+  st_join(chaetognaths.confirmed.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-arrow.worms.confirmed.grid = filter(arrow.worms.confirmed.grid, richness > 0)
+chaetognaths.confirmed.grid = filter(chaetognaths.confirmed.grid, richness > 0)
 
-arrow.worms.confirmed.grid$status <- 'confirmed'
+chaetognaths.confirmed.grid$status <- 'confirmed'
 
-plot(arrow.worms.reported.grid)
+plot(chaetognaths.reported.grid)
 
 # Write choropleths
 
-# st_write(arrow.worms.confirmed.grid, "outputs/vectors/arrow_worms_confirmed_grid.shp")
-# st_write(arrow.worms.new.grid, "outputs/vectors/arrow_worms_new_grid.shp")
-# st_write(arrow.worms.reported.grid, "outputs/vectors/arrow_worms_reported_grid.shp")
+# st_write(chaetognaths.confirmed.grid, "outputs/vectors/arrow_worms_confirmed_grid.shp")
+# st_write(chaetognaths.new.grid, "outputs/vectors/arrow_worms_new_grid.shp")
+# st_write(chaetognaths.reported.grid, "outputs/vectors/arrow_worms_reported_grid.shp")
 
 # Write gridded dataframes
 
-# write.csv(arrow.worms.confirmed.records.gridded, "outputs/tabular_data/arrow_worms_confirmed_records_gridded.csv", row.names = FALSE)
-# write.csv(arrow.worms.new.records.gridded, "outputs/tabular_data/arrow_worms_new_records_gridded.csv", row.names = FALSE)
-# write.csv(arrow.worms.reported.records.gridded, "outputs/tabular_data/arrow_worms_reported_records_gridded.csv", row.names = FALSE)
+# write.csv(chaetognaths.confirmed.records.gridded, "outputs/tabular_data/arrow_worms_confirmed_records_gridded.csv", row.names = FALSE)
+# write.csv(chaetognaths.new.records.gridded, "outputs/tabular_data/arrow_worms_new_records_gridded.csv", row.names = FALSE)
+# write.csv(chaetognaths.reported.records.gridded, "outputs/tabular_data/arrow_worms_reported_records_gridded.csv", row.names = FALSE)
 
 
 # Molluscs
@@ -2504,35 +2504,35 @@ plot(horseshoe.worms.reported.grid)
 
 # Echinodermata
 
-echinoderms <- summary %>% filter(phylum == 'Echinodermata')
-echinoderms.records <- animals %>% filter(phylum == 'Echinodermata')
+echinodermata <- summary %>% filter(phylum == 'Echinodermata')
+echinodermata.records <- animals %>% filter(phylum == 'Echinodermata')
 
 # Subset historic, confirmed and new records
 
-echinoderms.new <- echinoderms %>% filter(str_detect(reportingStatus, "new"))
-echinoderms.confirmed <- echinoderms %>% filter(reportingStatus == "confirmed")
-echinoderms.reported <- echinoderms %>% filter(reportingStatus == "reported")
+echinodermata.new <- echinodermata %>% filter(str_detect(reportingStatus, "new"))
+echinodermata.confirmed <- echinodermata %>% filter(reportingStatus == "confirmed")
+echinodermata.reported <- echinodermata %>% filter(reportingStatus == "reported")
 
 # Create vectors of historic, confirmed and new taxa to query catalog of occurrence records
 
-echinoderms.new.taxa <- unique(echinoderms.new$scientificName)
-echinoderms.new.taxa <- echinoderms.new.taxa %>% paste(collapse = "|")
+echinodermata.new.taxa <- unique(echinodermata.new$scientificName)
+echinodermata.new.taxa <- echinodermata.new.taxa %>% paste(collapse = "|")
 
-echinoderms.confirmed.taxa <- unique(echinoderms.confirmed$scientificName)
-echinoderms.confirmed.taxa <- echinoderms.confirmed.taxa %>% paste(collapse = "|")
+echinodermata.confirmed.taxa <- unique(echinodermata.confirmed$scientificName)
+echinodermata.confirmed.taxa <- echinodermata.confirmed.taxa %>% paste(collapse = "|")
 
-echinoderms.reported.taxa <- unique(echinoderms.reported$scientificName)
-echinoderms.reported.taxa <- echinoderms.reported.taxa %>% paste(collapse = "|")
+echinodermata.reported.taxa <- unique(echinodermata.reported$scientificName)
+echinodermata.reported.taxa <- echinodermata.reported.taxa %>% paste(collapse = "|")
 
-echinoderms.new.taxa.records <- echinoderms.records %>% filter(str_detect(scientificName, echinoderms.new.taxa))
+echinodermata.new.taxa.records <- echinodermata.records %>% filter(str_detect(scientificName, echinodermata.new.taxa))
 
-echinoderms.confirmed.taxa.records <- echinoderms.records %>% filter(str_detect(scientificName, echinoderms.confirmed.taxa))
+echinodermata.confirmed.taxa.records <- echinodermata.records %>% filter(str_detect(scientificName, echinodermata.confirmed.taxa))
 
-echinoderms.reported.taxa.records <- echinoderms.records %>% filter(str_detect(scientificName, echinoderms.reported.taxa))
+echinodermata.reported.taxa.records <- echinodermata.records %>% filter(str_detect(scientificName, echinodermata.reported.taxa))
 
-echinoderms.new.taxa.records <- echinoderms.new.taxa.records %>% drop_na(decimalLatitude)
-echinoderms.confirmed.taxa.records <- echinoderms.confirmed.taxa.records %>% drop_na(decimalLatitude)
-echinoderms.reported.taxa.records <- echinoderms.reported.taxa.records %>% drop_na(decimalLatitude)
+echinodermata.new.taxa.records <- echinodermata.new.taxa.records %>% drop_na(decimalLatitude)
+echinodermata.confirmed.taxa.records <- echinodermata.confirmed.taxa.records %>% drop_na(decimalLatitude)
+echinodermata.reported.taxa.records <- echinodermata.reported.taxa.records %>% drop_na(decimalLatitude)
 
 # Prepare gridded choropleths of historic, confirmed, new records
 
@@ -2540,24 +2540,24 @@ echinoderms.reported.taxa.records <- echinoderms.reported.taxa.records %>% drop_
 
 # Convert records to sf points
 
-echinoderms.new.taxa.points <- st_as_sf(echinoderms.new.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+echinodermata.new.taxa.points <- st_as_sf(echinodermata.new.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-echinoderms.new.taxa.points <- st_transform(echinoderms.new.taxa.points, crs = st_crs(EPSG.32610))
+echinodermata.new.taxa.points <- st_transform(echinodermata.new.taxa.points, crs = st_crs(EPSG.32610))
 
-echinoderms.new.records.gridded <- echinoderms.new.taxa.points %>% 
+echinodermata.new.records.gridded <- echinodermata.new.taxa.points %>% 
   st_join(grid)
 
-echinoderms.new.records.gridded <- as.data.frame(echinoderms.new.records.gridded)
+echinodermata.new.records.gridded <- as.data.frame(echinodermata.new.records.gridded)
 
-echinoderms.new.records.gridded$geometry <- NULL
+echinodermata.new.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-echinoderms.new.taxa.points.sum <- st_transform(echinoderms.new.taxa.points, crs = st_crs(EPSG.32610)) %>%
+echinodermata.new.taxa.points.sum <- st_transform(echinodermata.new.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -2565,40 +2565,40 @@ echinoderms.new.taxa.points.sum <- st_transform(echinoderms.new.taxa.points, crs
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-echinoderms.new.grid <- grid %>%
-  st_join(echinoderms.new.taxa.points.sum) %>%
+echinodermata.new.grid <- grid %>%
+  st_join(echinodermata.new.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-echinoderms.new.grid = filter(echinoderms.new.grid, richness > 0)
+echinodermata.new.grid = filter(echinodermata.new.grid, richness > 0)
 
-echinoderms.new.grid$status <- 'new'
+echinodermata.new.grid$status <- 'new'
 
 # Historic records
 
 # Convert records to sf points
 
-echinoderms.reported.taxa.points <- st_as_sf(echinoderms.reported.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+echinodermata.reported.taxa.points <- st_as_sf(echinodermata.reported.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-echinoderms.reported.taxa.points <- st_transform(echinoderms.reported.taxa.points, crs = st_crs(EPSG.32610))
+echinodermata.reported.taxa.points <- st_transform(echinodermata.reported.taxa.points, crs = st_crs(EPSG.32610))
 
-echinoderms.reported.records.gridded <- echinoderms.reported.taxa.points %>% 
+echinodermata.reported.records.gridded <- echinodermata.reported.taxa.points %>% 
   st_join(grid)
 
-echinoderms.reported.records.gridded <- as.data.frame(echinoderms.reported.records.gridded)
+echinodermata.reported.records.gridded <- as.data.frame(echinodermata.reported.records.gridded)
 
-echinoderms.reported.records.gridded$geometry <- NULL
+echinodermata.reported.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-echinoderms.reported.taxa.points.sum <- st_transform(echinoderms.reported.taxa.points, crs = st_crs(EPSG.32610)) %>%
+echinodermata.reported.taxa.points.sum <- st_transform(echinodermata.reported.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -2606,40 +2606,40 @@ echinoderms.reported.taxa.points.sum <- st_transform(echinoderms.reported.taxa.p
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-echinoderms.reported.grid <- grid %>%
-  st_join(echinoderms.reported.taxa.points.sum) %>%
+echinodermata.reported.grid <- grid %>%
+  st_join(echinodermata.reported.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-echinoderms.reported.grid = filter(echinoderms.reported.grid, richness > 0)
+echinodermata.reported.grid = filter(echinodermata.reported.grid, richness > 0)
 
-echinoderms.reported.grid$status <- 'historic'
+echinodermata.reported.grid$status <- 'historic'
 
 # Confirmed records
 
 # Convert records to sf points
 
-echinoderms.confirmed.taxa.points <- st_as_sf(echinoderms.confirmed.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+echinodermata.confirmed.taxa.points <- st_as_sf(echinodermata.confirmed.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-echinoderms.confirmed.taxa.points <- st_transform(echinoderms.confirmed.taxa.points, crs = st_crs(EPSG.32610))
+echinodermata.confirmed.taxa.points <- st_transform(echinodermata.confirmed.taxa.points, crs = st_crs(EPSG.32610))
 
-echinoderms.confirmed.records.gridded <- echinoderms.confirmed.taxa.points %>% 
+echinodermata.confirmed.records.gridded <- echinodermata.confirmed.taxa.points %>% 
   st_join(grid)
 
-echinoderms.confirmed.records.gridded <- as.data.frame(echinoderms.confirmed.records.gridded)
+echinodermata.confirmed.records.gridded <- as.data.frame(echinodermata.confirmed.records.gridded)
 
-echinoderms.confirmed.records.gridded$geometry <- NULL
+echinodermata.confirmed.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-echinoderms.confirmed.taxa.points.sum <- st_transform(echinoderms.confirmed.taxa.points, crs = st_crs(EPSG.32610)) %>%
+echinodermata.confirmed.taxa.points.sum <- st_transform(echinodermata.confirmed.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -2647,64 +2647,64 @@ echinoderms.confirmed.taxa.points.sum <- st_transform(echinoderms.confirmed.taxa
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-echinoderms.confirmed.grid <- grid %>%
-  st_join(echinoderms.confirmed.taxa.points.sum) %>%
+echinodermata.confirmed.grid <- grid %>%
+  st_join(echinodermata.confirmed.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-echinoderms.confirmed.grid = filter(echinoderms.confirmed.grid, richness > 0)
+echinodermata.confirmed.grid = filter(echinodermata.confirmed.grid, richness > 0)
 
-echinoderms.confirmed.grid$status <- 'confirmed'
+echinodermata.confirmed.grid$status <- 'confirmed'
 
-plot(echinoderms.reported.grid)
+plot(echinodermata.reported.grid)
 
 # Write choropleths
 
-# st_write(echinoderms.confirmed.grid, "outputs/vectors/echinoderms_confirmed_grid.shp")
-# st_write(echinoderms.new.grid, "outputs/vectors/echinoderms_new_grid.shp")
-# st_write(echinoderms.reported.grid, "outputs/vectors/echinoderms_reported_grid.shp")
+# st_write(echinodermata.confirmed.grid, "outputs/vectors/echinodermata_confirmed_grid.shp")
+# st_write(echinodermata.new.grid, "outputs/vectors/echinodermata_new_grid.shp")
+# st_write(echinodermata.reported.grid, "outputs/vectors/echinodermata_reported_grid.shp")
 
 # Write gridded dataframes
 
-# write.csv(echinoderms.confirmed.records.gridded, "outputs/tabular_data/echinoderms_confirmed_records_gridded.csv", row.names = FALSE)
-# write.csv(echinoderms.new.records.gridded, "outputs/tabular_data/echinoderms_new_records_gridded.csv", row.names = FALSE)
-# write.csv(echinoderms.reported.records.gridded, "outputs/tabular_data/echinoderms_reported_records_gridded.csv", row.names = FALSE)
+# write.csv(echinodermata.confirmed.records.gridded, "outputs/tabular_data/echinodermata_confirmed_records_gridded.csv", row.names = FALSE)
+# write.csv(echinodermata.new.records.gridded, "outputs/tabular_data/echinodermata_new_records_gridded.csv", row.names = FALSE)
+# write.csv(echinodermata.reported.records.gridded, "outputs/tabular_data/echinodermata_reported_records_gridded.csv", row.names = FALSE)
 
 
 # Tunicata
 
-tunicates <- summary %>% filter(subphylum == 'Tunicata')
-tunicates.records <- animals %>% filter(subphylum == 'Tunicata')
+tunicata <- summary %>% filter(subphylum == 'Tunicata')
+tunicata.records <- animals %>% filter(subphylum == 'Tunicata')
 
 # Subset historic, confirmed and new records
 
-tunicates.new <- tunicates %>% filter(str_detect(reportingStatus, "new"))
-tunicates.confirmed <- tunicates %>% filter(reportingStatus == "confirmed")
-tunicates.reported <- tunicates %>% filter(reportingStatus == "reported")
+tunicata.new <- tunicata %>% filter(str_detect(reportingStatus, "new"))
+tunicata.confirmed <- tunicata %>% filter(reportingStatus == "confirmed")
+tunicata.reported <- tunicata %>% filter(reportingStatus == "reported")
 
 # Create vectors of historic, confirmed and new taxa to query catalog of occurrence records
 
-tunicates.new.taxa <- unique(tunicates.new$scientificName)
-tunicates.new.taxa <- tunicates.new.taxa %>% paste(collapse = "|")
+tunicata.new.taxa <- unique(tunicata.new$scientificName)
+tunicata.new.taxa <- tunicata.new.taxa %>% paste(collapse = "|")
 
-tunicates.confirmed.taxa <- unique(tunicates.confirmed$scientificName)
-tunicates.confirmed.taxa <- tunicates.confirmed.taxa %>% paste(collapse = "|")
+tunicata.confirmed.taxa <- unique(tunicata.confirmed$scientificName)
+tunicata.confirmed.taxa <- tunicata.confirmed.taxa %>% paste(collapse = "|")
 
-tunicates.reported.taxa <- unique(tunicates.reported$scientificName)
-tunicates.reported.taxa <- tunicates.reported.taxa %>% paste(collapse = "|")
+tunicata.reported.taxa <- unique(tunicata.reported$scientificName)
+tunicata.reported.taxa <- tunicata.reported.taxa %>% paste(collapse = "|")
 
-tunicates.new.taxa.records <- tunicates.records %>% filter(str_detect(scientificName, tunicates.new.taxa))
+tunicata.new.taxa.records <- tunicata.records %>% filter(str_detect(scientificName, tunicata.new.taxa))
 
-tunicates.confirmed.taxa.records <- tunicates.records %>% filter(str_detect(scientificName, tunicates.confirmed.taxa))
+tunicata.confirmed.taxa.records <- tunicata.records %>% filter(str_detect(scientificName, tunicata.confirmed.taxa))
 
-tunicates.reported.taxa.records <- tunicates.records %>% filter(str_detect(scientificName, tunicates.reported.taxa))
+tunicata.reported.taxa.records <- tunicata.records %>% filter(str_detect(scientificName, tunicata.reported.taxa))
 
-tunicates.new.taxa.records <- tunicates.new.taxa.records %>% drop_na(decimalLatitude)
-tunicates.confirmed.taxa.records <- tunicates.confirmed.taxa.records %>% drop_na(decimalLatitude)
-tunicates.reported.taxa.records <- tunicates.reported.taxa.records %>% drop_na(decimalLatitude)
+tunicata.new.taxa.records <- tunicata.new.taxa.records %>% drop_na(decimalLatitude)
+tunicata.confirmed.taxa.records <- tunicata.confirmed.taxa.records %>% drop_na(decimalLatitude)
+tunicata.reported.taxa.records <- tunicata.reported.taxa.records %>% drop_na(decimalLatitude)
 
 # Prepare gridded choropleths of historic, confirmed, new records
 
@@ -2712,24 +2712,24 @@ tunicates.reported.taxa.records <- tunicates.reported.taxa.records %>% drop_na(d
 
 # Convert records to sf points
 
-tunicates.new.taxa.points <- st_as_sf(tunicates.new.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+tunicata.new.taxa.points <- st_as_sf(tunicata.new.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-tunicates.new.taxa.points <- st_transform(tunicates.new.taxa.points, crs = st_crs(EPSG.32610))
+tunicata.new.taxa.points <- st_transform(tunicata.new.taxa.points, crs = st_crs(EPSG.32610))
 
-tunicates.new.records.gridded <- tunicates.new.taxa.points %>% 
+tunicata.new.records.gridded <- tunicata.new.taxa.points %>% 
   st_join(grid)
 
-tunicates.new.records.gridded <- as.data.frame(tunicates.new.records.gridded)
+tunicata.new.records.gridded <- as.data.frame(tunicata.new.records.gridded)
 
-tunicates.new.records.gridded$geometry <- NULL
+tunicata.new.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-tunicates.new.taxa.points.sum <- st_transform(tunicates.new.taxa.points, crs = st_crs(EPSG.32610)) %>%
+tunicata.new.taxa.points.sum <- st_transform(tunicata.new.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -2737,40 +2737,40 @@ tunicates.new.taxa.points.sum <- st_transform(tunicates.new.taxa.points, crs = s
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-tunicates.new.grid <- grid %>%
-  st_join(tunicates.new.taxa.points.sum) %>%
+tunicata.new.grid <- grid %>%
+  st_join(tunicata.new.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-tunicates.new.grid = filter(tunicates.new.grid, richness > 0)
+tunicata.new.grid = filter(tunicata.new.grid, richness > 0)
 
-tunicates.new.grid$status <- 'new'
+tunicata.new.grid$status <- 'new'
 
 # Historic records
 
 # Convert records to sf points
 
-tunicates.reported.taxa.points <- st_as_sf(tunicates.reported.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+tunicata.reported.taxa.points <- st_as_sf(tunicata.reported.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-tunicates.reported.taxa.points <- st_transform(tunicates.reported.taxa.points, crs = st_crs(EPSG.32610))
+tunicata.reported.taxa.points <- st_transform(tunicata.reported.taxa.points, crs = st_crs(EPSG.32610))
 
-tunicates.reported.records.gridded <- tunicates.reported.taxa.points %>% 
+tunicata.reported.records.gridded <- tunicata.reported.taxa.points %>% 
   st_join(grid)
 
-tunicates.reported.records.gridded <- as.data.frame(tunicates.reported.records.gridded)
+tunicata.reported.records.gridded <- as.data.frame(tunicata.reported.records.gridded)
 
-tunicates.reported.records.gridded$geometry <- NULL
+tunicata.reported.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-tunicates.reported.taxa.points.sum <- st_transform(tunicates.reported.taxa.points, crs = st_crs(EPSG.32610)) %>%
+tunicata.reported.taxa.points.sum <- st_transform(tunicata.reported.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -2778,40 +2778,40 @@ tunicates.reported.taxa.points.sum <- st_transform(tunicates.reported.taxa.point
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-tunicates.reported.grid <- grid %>%
-  st_join(tunicates.reported.taxa.points.sum) %>%
+tunicata.reported.grid <- grid %>%
+  st_join(tunicata.reported.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-tunicates.reported.grid = filter(tunicates.reported.grid, richness > 0)
+tunicata.reported.grid = filter(tunicata.reported.grid, richness > 0)
 
-tunicates.reported.grid$status <- 'historic'
+tunicata.reported.grid$status <- 'historic'
 
 # Confirmed records
 
 # Convert records to sf points
 
-tunicates.confirmed.taxa.points <- st_as_sf(tunicates.confirmed.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+tunicata.confirmed.taxa.points <- st_as_sf(tunicata.confirmed.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-tunicates.confirmed.taxa.points <- st_transform(tunicates.confirmed.taxa.points, crs = st_crs(EPSG.32610))
+tunicata.confirmed.taxa.points <- st_transform(tunicata.confirmed.taxa.points, crs = st_crs(EPSG.32610))
 
-tunicates.confirmed.records.gridded <- tunicates.confirmed.taxa.points %>% 
+tunicata.confirmed.records.gridded <- tunicata.confirmed.taxa.points %>% 
   st_join(grid)
 
-tunicates.confirmed.records.gridded <- as.data.frame(tunicates.confirmed.records.gridded)
+tunicata.confirmed.records.gridded <- as.data.frame(tunicata.confirmed.records.gridded)
 
-tunicates.confirmed.records.gridded$geometry <- NULL
+tunicata.confirmed.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-tunicates.confirmed.taxa.points.sum <- st_transform(tunicates.confirmed.taxa.points, crs = st_crs(EPSG.32610)) %>%
+tunicata.confirmed.taxa.points.sum <- st_transform(tunicata.confirmed.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -2819,31 +2819,31 @@ tunicates.confirmed.taxa.points.sum <- st_transform(tunicates.confirmed.taxa.poi
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-tunicates.confirmed.grid <- grid %>%
-  st_join(tunicates.confirmed.taxa.points.sum) %>%
+tunicata.confirmed.grid <- grid %>%
+  st_join(tunicata.confirmed.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-tunicates.confirmed.grid = filter(tunicates.confirmed.grid, richness > 0)
+tunicata.confirmed.grid = filter(tunicata.confirmed.grid, richness > 0)
 
-tunicates.confirmed.grid$status <- 'confirmed'
+tunicata.confirmed.grid$status <- 'confirmed'
 
-plot(tunicates.reported.grid)
+plot(tunicata.reported.grid)
 
 # Write choropleths
 
-# st_write(tunicates.confirmed.grid, "outputs/vectors/tunicates_confirmed_grid.shp")
-# st_write(tunicates.new.grid, "outputs/vectors/tunicates_new_grid.shp")
-# st_write(tunicates.reported.grid, "outputs/vectors/tunicates_reported_grid.shp")
+# st_write(tunicata.confirmed.grid, "outputs/vectors/tunicata_confirmed_grid.shp")
+# st_write(tunicata.new.grid, "outputs/vectors/tunicata_new_grid.shp")
+# st_write(tunicata.reported.grid, "outputs/vectors/tunicata_reported_grid.shp")
 
 # Write gridded dataframes
 
-# write.csv(tunicates.confirmed.records.gridded, "outputs/tabular_data/tunicates_confirmed_records_gridded.csv", row.names = FALSE)
-# write.csv(tunicates.new.records.gridded, "outputs/tabular_data/tunicates_new_records_gridded.csv", row.names = FALSE)
-# write.csv(tunicates.reported.records.gridded, "outputs/tabular_data/tunicates_reported_records_gridded.csv", row.names = FALSE)
+# write.csv(tunicata.confirmed.records.gridded, "outputs/tabular_data/tunicata_confirmed_records_gridded.csv", row.names = FALSE)
+# write.csv(tunicata.new.records.gridded, "outputs/tabular_data/tunicata_new_records_gridded.csv", row.names = FALSE)
+# write.csv(tunicata.reported.records.gridded, "outputs/tabular_data/tunicata_reported_records_gridded.csv", row.names = FALSE)
 
 
 # Fishes

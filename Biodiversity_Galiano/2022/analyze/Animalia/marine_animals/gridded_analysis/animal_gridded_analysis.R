@@ -40,7 +40,7 @@ nemerteans <- animals %>% filter(phylum == 'Nemertea')
 
 platyhelminthes <- animals %>% filter(phylum == 'Platyhelminthes')
 
-arrow.worms <- animals %>% filter(phylum == 'Chaetognatha')
+chaetognaths <- animals %>% filter(phylum == 'Chaetognatha')
 
 molluscs <- animals %>% filter(phylum == 'Mollusca')
 
@@ -58,9 +58,9 @@ bryozoa <- animals %>% filter(phylum == 'Bryozoa')
 
 horseshoe.worms <- animals %>% filter(phylum == 'Phoronida')
 
-echinoderms <- animals %>% filter(phylum == 'Echinodermata')
+echinodermata <- animals %>% filter(phylum == 'Echinodermata')
 
-tunicates <- animals %>% filter(subphylum == 'Tunicata')
+tunicata <- animals %>% filter(subphylum == 'Tunicata')
 
 fishes <- animals %>% filter(class == 'Actinopterygii'| class == 'Elasmobranchii')
 
@@ -83,7 +83,7 @@ nemerteans <- nemerteans %>% drop_na(decimalLongitude)
 
 platyhelminthes <- platyhelminthes %>% drop_na(decimalLongitude)
 
-arrow.worms <- arrow.worms %>% drop_na(decimalLongitude)
+chaetognaths <- chaetognaths %>% drop_na(decimalLongitude)
 
 molluscs <- molluscs %>% drop_na(decimalLongitude)
 
@@ -101,9 +101,9 @@ bryozoa <- bryozoa %>% drop_na(decimalLongitude)
 
 horseshoe.worms <- horseshoe.worms %>% drop_na(decimalLongitude)
 
-echinoderms <- echinoderms %>% drop_na(decimalLongitude)
+echinodermata <- echinodermata %>% drop_na(decimalLongitude)
 
-tunicates <- tunicates %>% drop_na(decimalLongitude)
+tunicata <- tunicata %>% drop_na(decimalLongitude)
 
 fishes <- fishes %>% drop_na(decimalLongitude)
 
@@ -132,7 +132,7 @@ nemerteans.points <- st_as_sf(nemerteans, coords = c("decimalLongitude", "decima
 
 platyhelminthes.points <- st_as_sf(platyhelminthes, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
-arrow.worms.points <- st_as_sf(arrow.worms, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+chaetognaths.points <- st_as_sf(chaetognaths, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 molluscs.points <- st_as_sf(molluscs, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
@@ -150,9 +150,9 @@ bryozoa.points <- st_as_sf(bryozoa, coords = c("decimalLongitude", "decimalLatit
 
 horseshoe.worms.points <- st_as_sf(horseshoe.worms, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
-echinoderms.points <- st_as_sf(echinoderms, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+echinodermata.points <- st_as_sf(echinodermata, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
-tunicates.points <- st_as_sf(tunicates, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+tunicata.points <- st_as_sf(tunicata, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 fishes.points <- st_as_sf(fishes, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
@@ -184,7 +184,7 @@ nemerteans.points <- st_transform(nemerteans.points, crs = st_crs(EPSG.32610))
 
 platyhelminthes.points <- st_transform(platyhelminthes.points, crs = st_crs(EPSG.32610))
 
-arrow.worms.points <- st_transform(arrow.worms.points, crs = st_crs(EPSG.32610))
+chaetognaths.points <- st_transform(chaetognaths.points, crs = st_crs(EPSG.32610))
 
 molluscs.points <- st_transform(molluscs.points, crs = st_crs(EPSG.32610))
 
@@ -202,9 +202,9 @@ bryozoa.points <- st_transform(bryozoa.points, crs = st_crs(EPSG.32610))
 
 horseshoe.worms.points <- st_transform(horseshoe.worms.points, crs = st_crs(EPSG.32610))
 
-echinoderms.points <- st_transform(echinoderms.points, crs = st_crs(EPSG.32610))
+echinodermata.points <- st_transform(echinodermata.points, crs = st_crs(EPSG.32610))
 
-tunicates.points <- st_transform(tunicates.points, crs = st_crs(EPSG.32610))
+tunicata.points <- st_transform(tunicata.points, crs = st_crs(EPSG.32610))
 
 fishes.points <- st_transform(fishes.points, crs = st_crs(EPSG.32610))
 
@@ -241,7 +241,7 @@ platyhelminthes.points.sum <- st_transform(platyhelminthes.points, crs = st_crs(
   group_by(scientificName) %>%
   summarize()
 
-arrow.worms.points.sum <- st_transform(arrow.worms.points, crs = st_crs(EPSG.32610)) %>%
+chaetognaths.points.sum <- st_transform(chaetognaths.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -277,11 +277,11 @@ horseshoe.worms.points.sum <- st_transform(horseshoe.worms.points, crs = st_crs(
   group_by(scientificName) %>%
   summarize()
 
-echinoderms.points.sum <- st_transform(echinoderms.points, crs = st_crs(EPSG.32610)) %>%
+echinodermata.points.sum <- st_transform(echinodermata.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
-tunicates.points.sum <- st_transform(tunicates.points, crs = st_crs(EPSG.32610)) %>%
+tunicata.points.sum <- st_transform(tunicata.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -372,12 +372,12 @@ platyhelminthes.records.gridded$geometry <- NULL
 
 # Arrow worms
 
-arrow.worms.records.gridded <- arrow.worms.points %>% 
+chaetognaths.records.gridded <- chaetognaths.points %>% 
   st_join(grid)
 
-arrow.worms.records.gridded <- as.data.frame(arrow.worms.records.gridded)
+chaetognaths.records.gridded <- as.data.frame(chaetognaths.records.gridded)
 
-arrow.worms.records.gridded$geometry <- NULL
+chaetognaths.records.gridded$geometry <- NULL
 
 # Molluscs
 
@@ -451,23 +451,23 @@ horseshoe.worms.records.gridded <- as.data.frame(horseshoe.worms.records.gridded
 
 horseshoe.worms.records.gridded$geometry <- NULL
 
-# Echinoderms
+# echinodermata
 
-echinoderms.records.gridded <- echinoderms.points %>% 
+echinodermata.records.gridded <- echinodermata.points %>% 
   st_join(grid)
 
-echinoderms.records.gridded <- as.data.frame(echinoderms.records.gridded)
+echinodermata.records.gridded <- as.data.frame(echinodermata.records.gridded)
 
-echinoderms.records.gridded$geometry <- NULL
+echinodermata.records.gridded$geometry <- NULL
 
-# Tunicates
+# tunicata
 
-tunicates.records.gridded <- tunicates.points %>% 
+tunicata.records.gridded <- tunicata.points %>% 
   st_join(grid)
 
-tunicates.records.gridded <- as.data.frame(tunicates.records.gridded)
+tunicata.records.gridded <- as.data.frame(tunicata.records.gridded)
 
-tunicates.records.gridded$geometry <- NULL
+tunicata.records.gridded$geometry <- NULL
 
 # Fishes
 
@@ -566,15 +566,15 @@ platyhelminthes.grid.count = filter(platyhelminthes.grid, richness > 0)
 
 # Arrow worms
 
-arrow.worms.grid <- grid %>%
-  st_join(arrow.worms.points.sum) %>%
+chaetognaths.grid <- grid %>%
+  st_join(chaetognaths.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-arrow.worms.grid.count = filter(arrow.worms.grid, richness > 0)
+chaetognaths.grid.count = filter(chaetognaths.grid, richness > 0)
 
 # Molluscs
 
@@ -672,29 +672,29 @@ horseshoe.worms.grid <- grid %>%
 
 horseshoe.worms.grid.count = filter(horseshoe.worms.grid, richness > 0)
 
-# Echinoderms
+# echinodermata
 
-echinoderms.grid <- grid %>%
-  st_join(echinoderms.points.sum) %>%
+echinodermata.grid <- grid %>%
+  st_join(echinodermata.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-echinoderms.grid.count = filter(echinoderms.grid, richness > 0)
+echinodermata.grid.count = filter(echinodermata.grid, richness > 0)
 
-# Tunicates
+# tunicata
 
-tunicates.grid <- grid %>%
-  st_join(tunicates.points.sum) %>%
+tunicata.grid <- grid %>%
+  st_join(tunicata.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-tunicates.grid.count = filter(tunicates.grid, richness > 0)
+tunicata.grid.count = filter(tunicata.grid, richness > 0)
 
 # Fishes
 
@@ -767,8 +767,8 @@ write.csv(nemerteans.records.gridded, "outputs/tabular/nemerteans_records_gridde
 st_write(platyhelminthes.grid.count, "outputs/vectors/platyhelminthes_grid.shp")
 write.csv(platyhelminthes.records.gridded, "outputs/tabular/platyhelminthes_records_gridded.csv", row.names = FALSE)
 
-st_write(arrow.worms.grid.count, "outputs/vectors/arrow_worms_grid.shp")
-write.csv(arrow.worms.records.gridded, "outputs/tabular/arrow_worms_records_gridded.csv", row.names = FALSE)
+st_write(chaetognaths.grid.count, "outputs/vectors/chaetognaths_grid.shp")
+write.csv(chaetognaths.records.gridded, "outputs/tabular/chaetognaths_records_gridded.csv", row.names = FALSE)
 
 st_write(molluscs.grid.count, "outputs/vectors/molluscs_grid.shp")
 write.csv(molluscs.records.gridded, "outputs/tabular/molluscs_records_gridded.csv", row.names = FALSE)
@@ -794,11 +794,11 @@ write.csv(bryozoa.records.gridded, "outputs/tabular/bryozoa_records_gridded.csv"
 st_write(horseshoe.worms.grid.count, "outputs/vectors/horseshoe_worms_grid.shp")
 write.csv(horseshoe.worms.records.gridded, "outputs/tabular/horseshoe_worms_records_gridded.csv", row.names = FALSE)
 
-st_write(echinoderms.grid.count, "outputs/vectors/echinoderms_grid.shp")
-write.csv(echinoderms.records.gridded, "outputs/tabular/echinoderms_records_gridded.csv", row.names = FALSE)
+st_write(echinodermata.grid.count, "outputs/vectors/echinodermata_grid.shp")
+write.csv(echinodermata.records.gridded, "outputs/tabular/echinodermata_records_gridded.csv", row.names = FALSE)
 
-st_write(tunicates.grid.count, "outputs/vectors/tunicates_grid.shp")
-write.csv(tunicates.records.gridded, "outputs/tabular/tunicates_records_gridded.csv", row.names = FALSE)
+st_write(tunicata.grid.count, "outputs/vectors/tunicata_grid.shp")
+write.csv(tunicata.records.gridded, "outputs/tabular/tunicata_records_gridded.csv", row.names = FALSE)
 
 st_write(fishes.grid.count, "outputs/vectors/fishes_grid.shp")
 write.csv(fishes.records.gridded, "outputs/tabular/fishes_records_gridded.csv", row.names = FALSE)
