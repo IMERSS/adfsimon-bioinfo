@@ -54,7 +54,7 @@ nodding.heads <- animals %>% filter(phylum == 'Entoprocta')
 
 brachiopods <- animals %>% filter(phylum == 'Brachiopoda')
 
-bryozoans <- animals %>% filter(phylum == 'Bryozoa')
+bryozoa <- animals %>% filter(phylum == 'Bryozoa')
 
 horseshoe.worms <- animals %>% filter(phylum == 'Phoronida')
 
@@ -97,7 +97,7 @@ nodding.heads <- nodding.heads %>% drop_na(decimalLongitude)
 
 brachiopods <- brachiopods %>% drop_na(decimalLongitude)
 
-bryozoans <- bryozoans %>% drop_na(decimalLongitude)
+bryozoa <- bryozoa %>% drop_na(decimalLongitude)
 
 horseshoe.worms <- horseshoe.worms %>% drop_na(decimalLongitude)
 
@@ -146,7 +146,7 @@ nodding.heads.points <- st_as_sf(nodding.heads, coords = c("decimalLongitude", "
 
 brachiopods.points <- st_as_sf(brachiopods, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
-bryozoans.points <- st_as_sf(bryozoans, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+bryozoa.points <- st_as_sf(bryozoa, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 horseshoe.worms.points <- st_as_sf(horseshoe.worms, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
@@ -198,7 +198,7 @@ nodding.heads.points <- st_transform(nodding.heads.points, crs = st_crs(EPSG.326
 
 brachiopods.points <- st_transform(brachiopods.points, crs = st_crs(EPSG.32610))
 
-bryozoans.points <- st_transform(bryozoans.points, crs = st_crs(EPSG.32610))
+bryozoa.points <- st_transform(bryozoa.points, crs = st_crs(EPSG.32610))
 
 horseshoe.worms.points <- st_transform(horseshoe.worms.points, crs = st_crs(EPSG.32610))
 
@@ -269,7 +269,7 @@ brachiopods.points.sum <- st_transform(brachiopods.points, crs = st_crs(EPSG.326
   group_by(scientificName) %>%
   summarize()
 
-bryozoans.points.sum <- st_transform(bryozoans.points, crs = st_crs(EPSG.32610)) %>%
+bryozoa.points.sum <- st_transform(bryozoa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -433,14 +433,14 @@ brachiopods.records.gridded <- as.data.frame(brachiopods.records.gridded)
 
 brachiopods.records.gridded$geometry <- NULL
 
-# Bryozoans
+# bryozoa
 
-bryozoans.records.gridded <- bryozoans.points %>% 
+bryozoa.records.gridded <- bryozoa.points %>% 
   st_join(grid)
 
-bryozoans.records.gridded <- as.data.frame(bryozoans.records.gridded)
+bryozoa.records.gridded <- as.data.frame(bryozoa.records.gridded)
 
-bryozoans.records.gridded$geometry <- NULL
+bryozoa.records.gridded$geometry <- NULL
 
 # Horseshoe worms
 
@@ -648,17 +648,17 @@ brachiopods.grid <- grid %>%
 
 brachiopods.grid.count = filter(brachiopods.grid, richness > 0)
 
-# Bryozoans
+# bryozoa
 
-bryozoans.grid <- grid %>%
-  st_join(bryozoans.points.sum) %>%
+bryozoa.grid <- grid %>%
+  st_join(bryozoa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-bryozoans.grid.count = filter(bryozoans.grid, richness > 0)
+bryozoa.grid.count = filter(bryozoa.grid, richness > 0)
 
 # Horseshoe worms
 
@@ -767,7 +767,7 @@ write.csv(nemerteans.records.gridded, "outputs/tabular/nemerteans_records_gridde
 st_write(platyhelminthes.grid.count, "outputs/vectors/platyhelminthes_grid.shp")
 write.csv(platyhelminthes.records.gridded, "outputs/tabular/platyhelminthes_records_gridded.csv", row.names = FALSE)
 
-st_write(arrow.worms.grid.count, "outputs/vectors/arrow.worms_grid.shp")
+st_write(arrow.worms.grid.count, "outputs/vectors/arrow_worms_grid.shp")
 write.csv(arrow.worms.records.gridded, "outputs/tabular/arrow_worms_records_gridded.csv", row.names = FALSE)
 
 st_write(molluscs.grid.count, "outputs/vectors/molluscs_grid.shp")
@@ -788,8 +788,8 @@ write.csv(nodding.heads.records.gridded, "outputs/tabular/nodding_heads_records_
 st_write(brachiopods.grid.count, "outputs/vectors/brachiopods_grid.shp")
 write.csv(brachiopods.records.gridded, "outputs/tabular/brachiopods_records_gridded.csv", row.names = FALSE)
 
-st_write(bryozoans.grid.count, "outputs/vectors/bryozoans_grid.shp")
-write.csv(bryozoans.records.gridded, "outputs/tabular/bryozoans_records_gridded.csv", row.names = FALSE)
+st_write(bryozoa.grid.count, "outputs/vectors/bryozoa_grid.shp")
+write.csv(bryozoa.records.gridded, "outputs/tabular/bryozoa_records_gridded.csv", row.names = FALSE)
 
 st_write(horseshoe.worms.grid.count, "outputs/vectors/horseshoe_worms_grid.shp")
 write.csv(horseshoe.worms.records.gridded, "outputs/tabular/horseshoe_worms_records_gridded.csv", row.names = FALSE)

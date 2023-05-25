@@ -90,7 +90,6 @@ st_crs(area.grid)$proj4string
 grid = st_sf(area.grid) %>%
   mutate(cell_id = 1:length(lengths(area.grid)))
 
-
 # Sponges
 
 unique(summary$class)
@@ -2161,35 +2160,35 @@ plot(brachiopods.reported.grid)
 
 # Bryozoa
 
-bryozoans <- summary %>% filter(phylum == 'Bryozoa')
-bryozoans.records <- animals %>% filter(phylum == 'Bryozoa')
+bryozoa <- summary %>% filter(phylum == 'Bryozoa')
+bryozoa.records <- animals %>% filter(phylum == 'Bryozoa')
 
 # Subset historic, confirmed and new records
 
-bryozoans.new <- bryozoans %>% filter(str_detect(reportingStatus, "new"))
-bryozoans.confirmed <- bryozoans %>% filter(reportingStatus == "confirmed")
-bryozoans.reported <- bryozoans %>% filter(reportingStatus == "reported")
+bryozoa.new <- bryozoa %>% filter(str_detect(reportingStatus, "new"))
+bryozoa.confirmed <- bryozoa %>% filter(reportingStatus == "confirmed")
+bryozoa.reported <- bryozoa %>% filter(reportingStatus == "reported")
 
 # Create vectors of historic, confirmed and new taxa to query catalog of occurrence records
 
-bryozoans.new.taxa <- unique(bryozoans.new$scientificName)
-bryozoans.new.taxa <- bryozoans.new.taxa %>% paste(collapse = "|")
+bryozoa.new.taxa <- unique(bryozoa.new$scientificName)
+bryozoa.new.taxa <- bryozoa.new.taxa %>% paste(collapse = "|")
 
-bryozoans.confirmed.taxa <- unique(bryozoans.confirmed$scientificName)
-bryozoans.confirmed.taxa <- bryozoans.confirmed.taxa %>% paste(collapse = "|")
+bryozoa.confirmed.taxa <- unique(bryozoa.confirmed$scientificName)
+bryozoa.confirmed.taxa <- bryozoa.confirmed.taxa %>% paste(collapse = "|")
 
-bryozoans.reported.taxa <- unique(bryozoans.reported$scientificName)
-bryozoans.reported.taxa <- bryozoans.reported.taxa %>% paste(collapse = "|")
+bryozoa.reported.taxa <- unique(bryozoa.reported$scientificName)
+bryozoa.reported.taxa <- bryozoa.reported.taxa %>% paste(collapse = "|")
 
-bryozoans.new.taxa.records <- bryozoans.records %>% filter(str_detect(scientificName, bryozoans.new.taxa))
+bryozoa.new.taxa.records <- bryozoa.records %>% filter(str_detect(scientificName, bryozoa.new.taxa))
 
-bryozoans.confirmed.taxa.records <- bryozoans.records %>% filter(str_detect(scientificName, bryozoans.confirmed.taxa))
+bryozoa.confirmed.taxa.records <- bryozoa.records %>% filter(str_detect(scientificName, bryozoa.confirmed.taxa))
 
-bryozoans.reported.taxa.records <- bryozoans.records %>% filter(str_detect(scientificName, bryozoans.reported.taxa))
+bryozoa.reported.taxa.records <- bryozoa.records %>% filter(str_detect(scientificName, bryozoa.reported.taxa))
 
-bryozoans.new.taxa.records <- bryozoans.new.taxa.records %>% drop_na(decimalLatitude)
-bryozoans.confirmed.taxa.records <- bryozoans.confirmed.taxa.records %>% drop_na(decimalLatitude)
-bryozoans.reported.taxa.records <- bryozoans.reported.taxa.records %>% drop_na(decimalLatitude)
+bryozoa.new.taxa.records <- bryozoa.new.taxa.records %>% drop_na(decimalLatitude)
+bryozoa.confirmed.taxa.records <- bryozoa.confirmed.taxa.records %>% drop_na(decimalLatitude)
+bryozoa.reported.taxa.records <- bryozoa.reported.taxa.records %>% drop_na(decimalLatitude)
 
 # Prepare gridded choropleths of historic, confirmed, new records
 
@@ -2197,24 +2196,24 @@ bryozoans.reported.taxa.records <- bryozoans.reported.taxa.records %>% drop_na(d
 
 # Convert records to sf points
 
-bryozoans.new.taxa.points <- st_as_sf(bryozoans.new.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+bryozoa.new.taxa.points <- st_as_sf(bryozoa.new.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-bryozoans.new.taxa.points <- st_transform(bryozoans.new.taxa.points, crs = st_crs(EPSG.32610))
+bryozoa.new.taxa.points <- st_transform(bryozoa.new.taxa.points, crs = st_crs(EPSG.32610))
 
-bryozoans.new.records.gridded <- bryozoans.new.taxa.points %>% 
+bryozoa.new.records.gridded <- bryozoa.new.taxa.points %>% 
   st_join(grid)
 
-bryozoans.new.records.gridded <- as.data.frame(bryozoans.new.records.gridded)
+bryozoa.new.records.gridded <- as.data.frame(bryozoa.new.records.gridded)
 
-bryozoans.new.records.gridded$geometry <- NULL
+bryozoa.new.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-bryozoans.new.taxa.points.sum <- st_transform(bryozoans.new.taxa.points, crs = st_crs(EPSG.32610)) %>%
+bryozoa.new.taxa.points.sum <- st_transform(bryozoa.new.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -2222,40 +2221,40 @@ bryozoans.new.taxa.points.sum <- st_transform(bryozoans.new.taxa.points, crs = s
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-bryozoans.new.grid <- grid %>%
-  st_join(bryozoans.new.taxa.points.sum) %>%
+bryozoa.new.grid <- grid %>%
+  st_join(bryozoa.new.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-bryozoans.new.grid = filter(bryozoans.new.grid, richness > 0)
+bryozoa.new.grid = filter(bryozoa.new.grid, richness > 0)
 
-bryozoans.new.grid$status <- 'new'
+bryozoa.new.grid$status <- 'new'
 
 # Historic records
 
 # Convert records to sf points
 
-bryozoans.reported.taxa.points <- st_as_sf(bryozoans.reported.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+bryozoa.reported.taxa.points <- st_as_sf(bryozoa.reported.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-bryozoans.reported.taxa.points <- st_transform(bryozoans.reported.taxa.points, crs = st_crs(EPSG.32610))
+bryozoa.reported.taxa.points <- st_transform(bryozoa.reported.taxa.points, crs = st_crs(EPSG.32610))
 
-bryozoans.reported.records.gridded <- bryozoans.reported.taxa.points %>% 
+bryozoa.reported.records.gridded <- bryozoa.reported.taxa.points %>% 
   st_join(grid)
 
-bryozoans.reported.records.gridded <- as.data.frame(bryozoans.reported.records.gridded)
+bryozoa.reported.records.gridded <- as.data.frame(bryozoa.reported.records.gridded)
 
-bryozoans.reported.records.gridded$geometry <- NULL
+bryozoa.reported.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-bryozoans.reported.taxa.points.sum <- st_transform(bryozoans.reported.taxa.points, crs = st_crs(EPSG.32610)) %>%
+bryozoa.reported.taxa.points.sum <- st_transform(bryozoa.reported.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -2263,40 +2262,40 @@ bryozoans.reported.taxa.points.sum <- st_transform(bryozoans.reported.taxa.point
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-bryozoans.reported.grid <- grid %>%
-  st_join(bryozoans.reported.taxa.points.sum) %>%
+bryozoa.reported.grid <- grid %>%
+  st_join(bryozoa.reported.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-bryozoans.reported.grid = filter(bryozoans.reported.grid, richness > 0)
+bryozoa.reported.grid = filter(bryozoa.reported.grid, richness > 0)
 
-bryozoans.reported.grid$status <- 'historic'
+bryozoa.reported.grid$status <- 'historic'
 
 # Confirmed records
 
 # Convert records to sf points
 
-bryozoans.confirmed.taxa.points <- st_as_sf(bryozoans.confirmed.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+bryozoa.confirmed.taxa.points <- st_as_sf(bryozoa.confirmed.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 # Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
-bryozoans.confirmed.taxa.points <- st_transform(bryozoans.confirmed.taxa.points, crs = st_crs(EPSG.32610))
+bryozoa.confirmed.taxa.points <- st_transform(bryozoa.confirmed.taxa.points, crs = st_crs(EPSG.32610))
 
-bryozoans.confirmed.records.gridded <- bryozoans.confirmed.taxa.points %>% 
+bryozoa.confirmed.records.gridded <- bryozoa.confirmed.taxa.points %>% 
   st_join(grid)
 
-bryozoans.confirmed.records.gridded <- as.data.frame(bryozoans.confirmed.records.gridded)
+bryozoa.confirmed.records.gridded <- as.data.frame(bryozoa.confirmed.records.gridded)
 
-bryozoans.confirmed.records.gridded$geometry <- NULL
+bryozoa.confirmed.records.gridded$geometry <- NULL
 
 # Summarized points (for choropleths)
 
-bryozoans.confirmed.taxa.points.sum <- st_transform(bryozoans.confirmed.taxa.points, crs = st_crs(EPSG.32610)) %>%
+bryozoa.confirmed.taxa.points.sum <- st_transform(bryozoa.confirmed.taxa.points, crs = st_crs(EPSG.32610)) %>%
   group_by(scientificName) %>%
   summarize()
 
@@ -2304,31 +2303,31 @@ bryozoans.confirmed.taxa.points.sum <- st_transform(bryozoans.confirmed.taxa.poi
 # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
 # and https://luisdva.github.io/rstats/richness/
 
-bryozoans.confirmed.grid <- grid %>%
-  st_join(bryozoans.confirmed.taxa.points.sum) %>%
+bryozoa.confirmed.grid <- grid %>%
+  st_join(bryozoa.confirmed.taxa.points.sum) %>%
   mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
   group_by(cell_id) %>%
   summarize(richness = sum(overlap))
 
 # Remove grid cell with zero records
 
-bryozoans.confirmed.grid = filter(bryozoans.confirmed.grid, richness > 0)
+bryozoa.confirmed.grid = filter(bryozoa.confirmed.grid, richness > 0)
 
-bryozoans.confirmed.grid$status <- 'confirmed'
+bryozoa.confirmed.grid$status <- 'confirmed'
 
-plot(bryozoans.reported.grid)
+plot(bryozoa.reported.grid)
 
 # Write choropleths
 
-# st_write(bryozoans.confirmed.grid, "outputs/vectors/bryozoans_confirmed_grid.shp")
-# st_write(bryozoans.new.grid, "outputs/vectors/bryozoans_new_grid.shp")
-# st_write(bryozoans.reported.grid, "outputs/vectors/bryozoans_reported_grid.shp")
+# st_write(bryozoa.confirmed.grid, "outputs/vectors/bryozoa_confirmed_grid.shp")
+# st_write(bryozoa.new.grid, "outputs/vectors/bryozoa_new_grid.shp")
+# st_write(bryozoa.reported.grid, "outputs/vectors/bryozoa_reported_grid.shp")
 
 # Write gridded dataframes
 
-# write.csv(bryozoans.confirmed.records.gridded, "outputs/tabular_data/bryozoans_confirmed_records_gridded.csv", row.names = FALSE)
-# write.csv(bryozoans.new.records.gridded, "outputs/tabular_data/bryozoans_new_records_gridded.csv", row.names = FALSE)
-# write.csv(bryozoans.reported.records.gridded, "outputs/tabular_data/bryozoans_reported_records_gridded.csv", row.names = FALSE)
+# write.csv(bryozoa.confirmed.records.gridded, "outputs/tabular_data/bryozoa_confirmed_records_gridded.csv", row.names = FALSE)
+# write.csv(bryozoa.new.records.gridded, "outputs/tabular_data/bryozoa_new_records_gridded.csv", row.names = FALSE)
+# write.csv(bryozoa.reported.records.gridded, "outputs/tabular_data/bryozoa_reported_records_gridded.csv", row.names = FALSE)
 
 
 # Phoronida
