@@ -124,8 +124,6 @@ animals.points <- st_as_sf(animals, coords = c("decimalLongitude", "decimalLatit
 
 sponges.points <- st_as_sf(sponges, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
-animals.points <- st_as_sf(sponges, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
-
 cnidarians.points <- st_as_sf(cnidarians, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
 ctenophores.points <- st_as_sf(ctenophores, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)

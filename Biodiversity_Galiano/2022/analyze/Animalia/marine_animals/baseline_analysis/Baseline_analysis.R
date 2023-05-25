@@ -32,6 +32,10 @@ summary <- read.csv("../../../../review/Animalia/marine_animals/summaries/Marine
 
 animals <- read.csv("../../../../consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated_2023-04-22.csv")
 
+algae <- read.csv("../../../../consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2023-04-22.csv")
+
+# Note: algae are called here to define a grid with an extent that includes all marine observations, to ensure a normalised extent
+# for all marine diversity choropleths
 
 # Create grid
 
@@ -43,9 +47,14 @@ EPSG.4326 <- st_crs(4326)
 
 animals.points <- animals %>% drop_na(decimalLatitude)
 
+algae.points <- algae %>% drop_na(decimalLatitude)
+
 # Convert records to sf points
 
 animals.points <- st_as_sf(animals.points, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+
+algae.points <- st_as_sf(algae.points, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
+
 
 # Transform to NAD84 UTM Zone 10
 
@@ -59,13 +68,19 @@ EPSG.32610 <- st_crs(32610)
 
 animals.points <- st_transform(animals.points, crs = st_crs(EPSG.32610))
 
+algae.points <- st_transform(algae.points, crs = st_crs(EPSG.32610))
+
+# Combine points to create grid
+
+points <- rbind(animals.points, algae.points)
+
 # Set cell size
 
 cs <- c(1000, 1000)
 
 # Create grid
 
-area.grid = st_make_grid(animals.points, what = "polygons", square = TRUE, cellsize = cs)
+area.grid = st_make_grid(points, what = "polygons", square = TRUE, cellsize = cs)
 
 sf::st_length(area.grid)
 st_crs(area.grid)$proj4string
@@ -2874,7 +2889,7 @@ fishes.reported.taxa.records <- fishes.reported.taxa.records %>% drop_na(decimal
 
 fishes.new.taxa.points <- st_as_sf(fishes.new.taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
 
-# # Reproject to NAD83 UTM Zone 10
+# Reproject to NAD83 UTM Zone 10
 
 # Generate gridded dataframes (each record assigned cell_id)
 
