@@ -4,7 +4,6 @@
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
 
-
 # Load libraries
 
 library(dplyr)
