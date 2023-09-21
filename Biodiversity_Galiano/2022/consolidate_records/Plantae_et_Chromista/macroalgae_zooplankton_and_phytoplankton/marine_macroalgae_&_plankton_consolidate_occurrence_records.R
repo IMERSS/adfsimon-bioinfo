@@ -488,7 +488,7 @@ nrow(iNaturalist.observations.names.unmatched.unmatched)
 nrow(iNaturalist.observations.names.matched)+nrow(iNaturalist.observations.names.unmatched.matched)+nrow(iNaturalist.observations.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
-# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
+# (Once key is revised, save as 'algae_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
 key.field.names <- c('Taxon', 'Matched.Taxon')
 
