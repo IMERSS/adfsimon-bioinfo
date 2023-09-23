@@ -952,26 +952,3 @@ marine.algae.records[is.na(marine.algae.records)] <- ""
 # Output synthesized catalog of occurrence records
 
 write.csv(marine.algae.records,"synthesized/Galiano_marine_algae_records_consolidated.csv", row.names = FALSE)
-
-# Evaluate georeferencing resolution of algae records
-
-nrow(marine.algae.records) # >2K algae occurrence records
-
-marine.algae.records$coordinateUncertaintyInMeters <- as.numeric(marine.algae.records$coordinateUncertaintyInMeters)
-
-hist(marine.algae.records$coordinateUncertaintyInMeters, 
-     xlim=c(0,1000), breaks = 100000, main="Vascular Plant Records: Coordinate Uncertainty", xlab = "Coordinate Uncertainty in meters")
-
-sum(is.na(marine.algae.records$coordinateUncertaintyInMeters))/nrow(marine.algae.records) 
-# 7% of records lack coordinate uncertainty
-
-sum(is.na(marine.algae.records$coordinateUncertaintyInMeters))/nrow(marine.algae.records) * nrow(marine.algae.records) 
-# Or 156/2339 records total
-
-georeferenced.records <- nrow(marine.algae.records)-sum(is.na(marine.algae.records$coordinateUncertaintyInMeters))
-
-sum(marine.algae.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records # Only 20% of georeferenced records mapped to < 100 m coordinate uncertainty
-
-sum(marine.algae.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records * georeferenced.records
-
-# Only about 446 of >2K records can be analysed with confidence at 100m grid scale
