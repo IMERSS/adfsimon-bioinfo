@@ -14,6 +14,11 @@ library(tidyr)
 
 summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Galiano_marine_algae_review_summary_reviewed_2023-04-22.csv")
 
+# Note in Sept. 2023 this summary was revised to incorporate critical feedback from Sandra Lindstrom;
+# multiple taxa have been effectively removed from the summary which has resulted in discrepancies w
+# taxa reported in the various data sources aggregated by this script. These discrepancies are noted below as 
+# mismatched taxa for each data source.
+
 # Create vector of DarwinCore fields for aggregating records
 
 DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','phylum','subphylum','class',
@@ -947,9 +952,9 @@ marine.algae.records[is.na(marine.algae.records)] <- ""
 
 write.csv(marine.algae.records,"synthesized/Galiano_marine_algae_records_consolidated.csv", row.names = FALSE)
 
-# Evaluate georeferencing resolution of vascular plant records
+# Evaluate georeferencing resolution of algae records
 
-nrow(marine.algae.records) # >2K marine animal occurrence records
+nrow(marine.algae.records) # >2K algae occurrence records
 
 marine.algae.records$coordinateUncertaintyInMeters <- as.numeric(marine.algae.records$coordinateUncertaintyInMeters)
 
