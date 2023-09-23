@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Galiano_marine_algae_review_summary_reviewed_2023-04-22.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Galiano_marine_algae_review_summary_reviewed_2023-09-22.csv")
 
 # Note in Sept. 2023 this summary was revised to incorporate critical feedback from Sandra Lindstrom;
 # multiple taxa have been effectively removed from the summary which has resulted in discrepancies w
@@ -37,12 +37,13 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Consolidate records
 
-# Sources (5/5 added):
+# Sources (5/6 added):
 
 # BOLD records 2021 - ! not yet added! # Need to figure out how to index BOLD records
 # CPNWH records 2022 - added
-# iNaturalist observations 2022 - added
-# PMLS Records 2021 - added
+# iNaturalist observations 2022 - ! added # Need to update for 2023
+# Sandra Lindstrom BioBlitz collections 2023 - ! not yet added
+# PMLS Records 2021 - added # ! Need to update dataset
 # Webber et al. 2022 Epiphytic diatoms on Zostera 2022 - added ! needs updating!
 
 
@@ -105,7 +106,7 @@ nrow(BOLD.2021.names.matched)+nrow(BOLD.2021.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-BOLD.2021.key <- read.csv("keys/algae_taxon_key_2022.csv") 
+BOLD.2021.key <- read.csv("keys/algae_taxon_key_2023.csv") 
 
 # Swap unmatched names using key
 
@@ -160,7 +161,7 @@ nrow(BOLD.2021.names.matched)+nrow(BOLD.2021.names.unmatched.matched)+nrow(BOLD.
 # Generate review key with mismatched names
 # (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon', 'Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(BOLD.2021.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
@@ -248,7 +249,7 @@ nrow(CPNWH.2021.names.matched)+nrow(CPNWH.2021.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-CPNWH.2021.key <- read.csv("keys/algae_taxon_key_2022.csv") 
+CPNWH.2021.key <- read.csv("keys/algae_taxon_key_2023.csv") 
 
 # Swap unmatched names using key
 
@@ -303,7 +304,7 @@ nrow(CPNWH.2021.names.matched)+nrow(CPNWH.2021.names.unmatched.matched)+nrow(CPN
 # Generate review key with mismatched names
 # (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon', 'Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(CPNWH.2021.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
@@ -440,7 +441,7 @@ nrow(iNaturalist.observations.names.matched)+nrow(iNaturalist.observations.names
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-iNaturalist.observations.key <- read.csv("keys/algae_taxon_key_2022.csv") 
+iNaturalist.observations.key <- read.csv("keys/algae_taxon_key_2023.csv") 
 
 # Swap unmatched names using key
 
@@ -495,7 +496,7 @@ nrow(iNaturalist.observations.names.matched)+nrow(iNaturalist.observations.names
 # Generate review key with mismatched names
 # (Once key is revised, save as 'algae_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon', 'Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(iNaturalist.observations.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
@@ -604,7 +605,7 @@ nrow(PMLS.2021.names.matched)+nrow(PMLS.2021.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-PMLS.2021.key <- read.csv("keys/algae_taxon_key_2022.csv") 
+PMLS.2021.key <- read.csv("keys/algae_taxon_key_2023.csv") 
 
 # Swap unmatched names using key
 
@@ -659,7 +660,7 @@ nrow(PMLS.2021.names.matched)+nrow(PMLS.2021.names.unmatched.matched)+nrow(PMLS.
 # Generate review key with mismatched names
 # (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon', 'Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(PMLS.2021.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
@@ -776,7 +777,7 @@ nrow(Webber.et.al.2022.names.matched)+nrow(Webber.et.al.2022.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Webber.et.al.2022.key <- read.csv("keys/algae_taxon_key_2022.csv") 
+Webber.et.al.2022.key <- read.csv("keys/algae_taxon_key_2023.csv") 
 
 # Swap unmatched names using key
 
@@ -831,7 +832,7 @@ nrow(Webber.et.al.2022.names.matched)+nrow(Webber.et.al.2022.names.unmatched.mat
 # Generate review key with mismatched names
 # (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon', 'Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Webber.et.al.2022.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
