@@ -533,6 +533,151 @@ unmatched.algae.records
 
 
 
+# Read Sandra Lindstrom's 2023 BioBlitz records # Note: this code is not complete! 
+
+Lindstrom.2023 <- read.csv("../../records/digitized/DarwinCore/Sandra_Lindstrom_Galiano_seaweed_collections_May_2023_DwC.csv")
+
+# Create DarwinCore dataframe template 
+
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Lindstrom.2023)))
+names(data.frame) <- DwCFields
+
+data.frame[names(Lindstrom.2023)] <- Lindstrom.2023
+
+Lindstrom.2023 <- select(data.frame, c(1:length(DwCFields)))
+
+# Add metadata
+
+Lindstrom.2023$datasetName <- "Lindstrom 2023"
+Lindstrom.2023$stateProvince <- "British Columbia"
+Lindstrom.2023$country <- "Canada"
+Lindstrom.2023$island <- "Galiano Island"
+
+# Merge with summary to standardize names and taxon metadata
+
+Lindstrom.2023$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$taxonID <- summary$ID[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$kingdom <- summary$kingdom[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$phylum <- summary$phylum[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$subphylum <- summary$subphylum[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$class <- summary$class[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$order <- summary$order[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$suborder <- summary$suborder[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$superfamily <- summary$superfamily[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$family <- summary$family[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$genus <- summary$genus[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$specificEpithet <- summary$specificEpithet[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$hybrid <- summary$hybrid[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$subspecies <- summary$subspecies[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$variety <- summary$variety[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$establishmentMeans <- summary$establishmentMeans[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$provincialStatus <- summary$provincialStatus[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+Lindstrom.2023$nationalStatus <- summary$nationalStatus[match(unlist(Lindstrom.2023$scientificName), summary$scientificName)]
+
+# Unmatched records
+
+Lindstrom.2023.names.unmatched <- Lindstrom.2023[is.na(Lindstrom.2023$taxonID),]
+
+# Matched records
+
+Lindstrom.2023.names.matched <- anti_join(Lindstrom.2023,Lindstrom.2023.names.unmatched)
+
+# Confirm all records are represented 
+
+nrow(Lindstrom.2023)
+nrow(Lindstrom.2023.names.matched)
+nrow(Lindstrom.2023.names.unmatched)
+nrow(Lindstrom.2023.names.matched)+nrow(Lindstrom.2023.names.unmatched)
+
+# Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+
+Lindstrom.2023.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+
+# Swap unmatched names using key
+
+Lindstrom.2023.names.unmatched.matched <- Lindstrom.2023.names.unmatched
+
+Lindstrom.2023.names.unmatched.matched$scientificNameTemp <- Lindstrom.2023.key$Matched.Taxon[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificName), Lindstrom.2023.key$Taxon)]
+
+# Add values based on newly matched name
+
+Lindstrom.2023.names.unmatched.matched$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$taxonID <- summary$ID[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$phylum <- summary$phylum[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$class <- summary$class[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$order <- summary$order[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$suborder <- summary$suborder[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$superfamily <- summary$superfamily[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$family <- summary$family[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$genus <- summary$genus[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$specificEpithet <- summary$specificEpithet[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$hybrid <- summary$hybrid[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$subspecies <- summary$subspecies[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$variety <- summary$variety[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$establishmentMeans <- summary$establishmentMeans[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$provincialStatus <- summary$provincialStatus[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Lindstrom.2023.names.unmatched.matched$nationalStatus <- summary$nationalStatus[match(unlist(Lindstrom.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+
+# Filter taxa unrecognized in summary 
+
+Lindstrom.2023.names.unmatched.unmatched <- Lindstrom.2023.names.unmatched.matched[is.na(Lindstrom.2023.names.unmatched.matched$taxonID),]
+
+Lindstrom.2023.names.unmatched.unmatched$scientificNameTemp <- NULL
+
+# Filter taxa recognized in summary
+
+Lindstrom.2023.names.unmatched.matched$scientificName <- Lindstrom.2023.names.unmatched.matched$scientificNameTemp
+
+Lindstrom.2023.names.unmatched.matched$scientificNameTemp <- NULL
+
+Lindstrom.2023.names.unmatched.matched <- Lindstrom.2023.names.unmatched.matched %>% drop_na(taxonID)
+
+# Confirm all records are represented 
+
+nrow(Lindstrom.2023)
+nrow(Lindstrom.2023.names.matched)
+nrow(Lindstrom.2023.names.unmatched)
+nrow(Lindstrom.2023.names.unmatched.matched)
+nrow(Lindstrom.2023.names.unmatched.unmatched)
+nrow(Lindstrom.2023.names.matched)+nrow(Lindstrom.2023.names.unmatched.matched)+nrow(Lindstrom.2023.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Lindstrom.2023.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Lindstrom.2023.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Lindstrom.2023.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
+# Bind records
+
+Lindstrom.2023.records <- rbind(Lindstrom.2023.names.matched,Lindstrom.2023.names.unmatched.matched)
+
+# Set date formatting consistent with other data frames
+
+Lindstrom.2023.records$eventDate <- as.Date(Lindstrom.2023.records$eventDate)
+
+# Compare records in and out
+
+nrow(Lindstrom.2023) - nrow(Lindstrom.2023.records)
+
+nrow(Lindstrom.2023)
+nrow(Lindstrom.2023.records) # no records omitted
+
+
+
 # Read PMLS 2021 records # TEMPORARY DATASET
 
 PMLS.2021 <- read.csv("../../records/digitized/DarwinCore/PMLS_Plantae_Records_Galiano_2021-07-27_DwC.csv")

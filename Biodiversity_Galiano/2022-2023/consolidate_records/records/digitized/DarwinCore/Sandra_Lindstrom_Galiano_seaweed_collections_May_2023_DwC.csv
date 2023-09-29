@@ -1,4 +1,4 @@
-Intended disposition,Herbarium,Number,Species,Phenology,Habitat,Site,Lat,Long,Date,Collector(s),Identified,Date identified,Notes,Image,Checked morphology,,,,,PCR Primer,Date,Result,PCR Primer,Date,Result,PCR Primer,Date,Result,PCR Primer,Date,Result
+Intended disposition,institutionCode,catalogNumber,scientificName,occurrenceRemarks,habitat,locality,Lat,Long,eventDate,recordedBy,identifiedBy,Date identified,Notes,Image,Checked morphology,,,,,PCR Primer,Date,Result,PCR Primer,Date,Result,PCR Primer,Date,Result,PCR Primer,Date,Result
 UBC,SCL,17855,Sarcodiotheca gaudichaudii,,"bedrock, 2.8 m @ 1448",Retreat Cove,,,26-May-2023,Zach Montieth,S.C. Lindstrom,27-May-2023,"Bags 008, 016, 017",,Filamentous cells in center of axis,,,,,,,,,,,,,,,,
 UBC,SCL,17856,Ceramium pacificum,,"bedrock, 3.1 m @ 1448",Retreat Cove,,,26-May-2023,Zach Montieth,S.C. Lindstrom,27-May-2023,Bag 011,Micrograph,Yes,,,,,,,,,,,,,,,,
 UBC,SCL,17857,Polyneura latissima,,"bedrock, 14'",Retreat Cove,,,26-May-2023,Zach Montieth,S.C. Lindstrom,27-May-2023,Bag 018,,Morphologically correct,,,,,,,,,,,,,,,,
