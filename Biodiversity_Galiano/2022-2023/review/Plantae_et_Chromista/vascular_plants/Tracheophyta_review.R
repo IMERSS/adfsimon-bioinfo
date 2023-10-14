@@ -16,6 +16,19 @@ baseline <- read.csv("summaries/Tracheophyta_review_summary_reviewed_2023-02-25.
 
 Tracheophyta.baseline <- baseline %>% filter(Phylum == 'Tracheophyta')
 
+# TEMP: Update Tracheophyta baseline iNaturalist observation id 
+
+# Tracheophyta.baseline$iNaturalist.Link <- gsub("http://www.inaturalist.org/observations/", "", as.character(Tracheophyta.baseline$iNaturalist.Link))
+# Tracheophyta.baseline$iNaturalist.Link <- gsub("https://www.inaturalist.org/observations/", "", as.character(Tracheophyta.baseline$iNaturalist.Link))
+# Tracheophyta.baseline$iNaturalist.Link <- gsub("http://inaturalist.ca/observations/", "", as.character(Tracheophyta.baseline$iNaturalist.Link))
+  
+# Tracheophyta.baseline$iNaturalist.Link <- paste0("iNat:", Tracheophyta.baseline$iNaturalist.Link)
+
+# Remove non-established species from iNaturalist observations:
+
+# Geranium macrorrhizum
+# Wisteria
+
 # Read iNaturalist obs
 
 iNat.obs.summary <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_Tracheophyta.csv")
