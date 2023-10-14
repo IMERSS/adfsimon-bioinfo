@@ -16,45 +16,89 @@ baseline <- read.csv("summaries/Tracheophyta_review_summary_reviewed_2023-02-25.
 
 Tracheophyta.baseline <- baseline %>% filter(Phylum == 'Tracheophyta')
 
-# Read iNaturalist obs summary
+# Read iNaturalist obs
 
-iNat.obs.summary <- read.csv("../../../1_split/vascular_plants/outputs/Tracheophyta_iNat_summary.csv")
+iNat.obs.summary <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_Tracheophyta.csv")
 names(iNat.obs.summary)
+
+# Summarize by first observed
+
+iNat.obs.summary <- iNat.obs.summary %>% group_by(iNaturalist.taxon.name) %>% filter(Date.observed == min(Date.observed))
 
 # Drop extraneous fields
 
-drop <- c("X","X.Taxon.")
+drop <- c("X")
 iNat.obs.summary = iNat.obs.summary[,!(names(iNat.obs.summary) %in% drop)]
 
-# Drop cultivated species
+# Drop cultivated species # Note: this field is currently missing
 
-iNat.obs.summary <- subset(iNat.obs.summary, captive_cultivated != "true")
+# iNat.obs.summary <- subset(iNat.obs.summary, captive_cultivated != "true")
 
 # Standardize 'Taxon', 'species', 'subspecies', 'variety' fields in observation summary to facilitate merges
 
-iNat.obs.summary$taxon_species_name <- word(iNat.obs.summary$taxon_species_name, 2)
-iNat.obs.summary$taxon_subspecies_name <- word(iNat.obs.summary$taxon_subspecies_name, 3)
-iNat.obs.summary$taxon_variety_name <- word(iNat.obs.summary$taxon_variety_name, 3)
+iNat.obs.summary$taxon_subspecies_name <- word(iNat.obs.summary$Taxon.name, 3)
+iNat.obs.summary$taxon_variety_name <- word(iNat.obs.summary$Taxon.name, 3)
 
-iNat.obs.summary <- rename(iNat.obs.summary, Taxon = scientific_name)
-iNat.obs.summary <- rename(iNat.obs.summary, Genus = taxon_genus_name)
-iNat.obs.summary <- rename(iNat.obs.summary, Species = taxon_species_name)
-iNat.obs.summary <- rename(iNat.obs.summary, Hybrid = taxon_hybrid_name)
+# Add field for Hybrid
+
+iNat.obs.summary$Hybrid <- ""
+
+# Rename fields in iNat observation summary to correspond with fields in baseline summary
+
+iNat.obs.summary <- rename(iNat.obs.summary, Taxon = Taxon.name)
 iNat.obs.summary <- rename(iNat.obs.summary, Subspecies = taxon_subspecies_name)
 iNat.obs.summary <- rename(iNat.obs.summary, Variety = taxon_variety_name)
+iNat.obs.summary <- rename(iNat.obs.summary, First.Observed = Date.observed)
+iNat.obs.summary <- rename(iNat.obs.summary, Observer = Recorded.by)
+iNat.obs.summary <- rename(iNat.obs.summary, iNaturalist.Link = observationId)
 
-iNat.obs.summary[is.na(iNat.obs.summary)] <- ""
+# Create template dataframe for iNat obs summary that matches with baseline summary dataset
 
-# Match observation summary against baseline summary by Genus, Species, Subspecies, Variety
+iNat.obs.summary.fields <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','Kingdom','Phylum',
+                                    'Subphylum','Superclass','Class','Subclass','Superorder','Order','Suborder',
+                                    'Superfamily','Family','Subfamily','Tribe','Genus','Species','Hybrid',
+                                    'Subspecies','Variety','Origin','Provincial.Status','National.Status','Reporting.Status',
+                                    'Observation','Collected.Reported..y.m.d.','Collector.Source','Collection.List',
+                                    'Accession.Number','GBIF.ID','First.Observed','Observer','iNaturalist.Link','Notes',
+                                    'ID','Stats.Code')
 
-matched.iNat.obs.summary <- inner_join(Tracheophyta.baseline, iNat.obs.summary, by = c("Genus", "Hybrid", "Species", "Subspecies", "Variety"))
+data.frame <- as.data.frame(matrix(ncol = length(iNat.obs.summary.fields), nrow = nrow(iNat.obs.summary)))
+names(data.frame) <- iNat.obs.summary.fields
+
+data.frame[names(iNat.obs.summary)] <- iNat.obs.summary
+
+iNat.obs.summary <- select(data.frame, c(1:length(iNat.obs.summary.fields)))
+
+# Replace NAs with empty strings ""
+
+# First convert logical to character
+
+iNat.obs.summary <- iNat.obs.summary %>% mutate_if(is.logical, as.character)
+
+iNat.obs.summary <-  iNat.obs.summary %>% mutate_if(is.character, ~replace_na(.,""))
+
+# Match observation summary against baseline summary by Genus, Species, Infrataxon
+
+# First create common 'Infrataxon' field between data frames to facilitate join
+
+Tracheophyta.baseline <- Tracheophyta.baseline %>% mutate(Infrataxon = coalesce(Subspecies,Variety))
+iNat.obs.summary$Infrataxon <- iNat.obs.summary$Subspecies
+
+# Now match with inner_join
+
+matched.iNat.obs.summary <- inner_join(Tracheophyta.baseline, iNat.obs.summary, by = c("Genus","Species","Infrataxon"))
 names(matched.iNat.obs.summary)
-matched.iNat.obs.summary <- matched.iNat.obs.summary[,c(1,39:76)]
+matched.iNat.obs.summary <- matched.iNat.obs.summary[,c(1,1:38)]
+
+# Drop the field 'Infrataxon' from summaries
+
+Tracheophyta.baseline$Infrataxon <- NULL
+iNat.obs.summary$Infrataxon <- NULL
 
 # Match observation summary against baseline by Taxon and Date Observed
 
 matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, Taxon = Taxon.x)
-matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, First.Observed = observed_on)
+matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, First.Observed = First.Observed.x)
 matched.iNat.date.observed <- inner_join(Tracheophyta.baseline, matched.iNat.obs.summary, by = c('Taxon','First.Observed'))
 
 # Matched summary
@@ -68,23 +112,15 @@ Tracheophyta.summary.matched <- Tracheophyta.summary.matched %>% select('Taxon',
 
 # Unmatched summary
 
-unmatched.iNat.obs = anti_join(iNat.obs.summary, Tracheophyta.summary.matched, by = c("Genus", "Hybrid", "Species", "Subspecies", "Variety"))
-unmatched.iNat.obs <- unmatched.iNat.obs %>% select(c('Taxon','common_name','observed_on', 'user_login', 'url','taxon_id', 'taxon_kingdom_name','taxon_phylum_name','taxon_subphylum_name','taxon_superclass_name','taxon_class_name','taxon_subclass_name','taxon_superorder_name','taxon_order_name','taxon_suborder_name','taxon_superfamily_name','taxon_family_name','taxon_subfamily_name','taxon_tribe_name','Genus','Species', 'Hybrid','Subspecies', 'Variety'))
-other.summary.column.names <- c('Taxon.Author', 'Subtaxon.Author', 'Origin', 'Provincial.Status', 'National.Status', 'Reporting.Status','Observation','Collected.Reported..y.m.d.','Collector.Source','Collection.List','Accession.Number','GBIF.ID','Notes','Stats.Code')
-other.summary.columns <- data.frame(matrix(ncol=length(other.summary.column.names),nrow=nrow(unmatched.iNat.obs)))
-names(other.summary.columns) <- other.summary.column.names
-unmatched.iNat.obs.summary <- cbind(unmatched.iNat.obs,other.summary.columns)
-unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>% select(Taxon, Taxon.Author, Subtaxon.Author, common_name, taxon_kingdom_name, taxon_phylum_name,taxon_subphylum_name,taxon_superclass_name,taxon_class_name,taxon_subclass_name,taxon_superorder_name,taxon_order_name,taxon_suborder_name,taxon_superfamily_name,taxon_family_name,taxon_subfamily_name,taxon_tribe_name,Genus,Species,Hybrid,Subspecies,Variety,Origin,Provincial.Status,National.Status,Reporting.Status,Observation,Collected.Reported..y.m.d.,Collector.Source,Collection.List,Accession.Number,GBIF.ID,observed_on,user_login,url,Notes,taxon_id,Stats.Code)
+unmatched.iNat.obs.summary = anti_join(iNat.obs.summary, Tracheophyta.summary.matched, by = c("Genus", "Hybrid", "Species", "Subspecies", "Variety"))
 
 # Add Stats Code to unmatched Taxa
 
-names(unmatched.iNat.obs.summary)
 unmatched.iNat.obs.summary$Stats.Code <- 'VAS'
 
-# Add standardized column headings
+# Merge baseline and unmatched summary for review 
 
-names(Tracheophyta.baseline) <- c('Taxon', 'Taxon Author', 'Subtaxon Author', 'Common Name', 'Kingdom', 'Phylum', 'Subphylum', 'Superclass', 'Class', 'Subclass', 'Superorder', 'Order', 'Suborder', 'Superfamily', 'Family', 'Subfamily', 'Tribe', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety', 'Origin', 'Provincial Status', 'National Status','Reporting Status', 'Observation', 'Collected/Reported (y-m-d)', 'Collector/Source', 'Collection/List', 'Accession Number', 'GBIF ID', 'First Observed', 'Observer', 'iNaturalist Link', 'Notes', 'ID', 'Stats Code')
-names(unmatched.iNat.obs.summary) <- c('Taxon', 'Taxon Author', 'Subtaxon Author', 'Common Name', 'Kingdom', 'Phylum', 'Subphylum', 'Superclass', 'Class', 'Subclass', 'Superorder', 'Order', 'Suborder', 'Superfamily', 'Family', 'Subfamily', 'Tribe', 'Genus', 'Species', 'Hybrid', 'Subspecies', 'Variety', 'Origin', 'Provincial Status', 'National Status','Reporting Status', 'Observation', 'Collected/Reported (y-m-d)', 'Collector/Source', 'Collection/List', 'Accession Number', 'GBIF ID', 'First Observed', 'Observer', 'iNaturalist Link', 'Notes', 'ID', 'Stats Code')
+Tracheophyta.review.summary <- rbind(Tracheophyta.baseline, unmatched.iNat.obs.summary)
 
 # Review dataframes
 
@@ -92,24 +128,13 @@ nrow(iNat.obs.summary)
 nrow(Tracheophyta.baseline)
 nrow(Tracheophyta.summary.matched)
 nrow(unmatched.iNat.obs.summary)
-
-# Optional: drop taxa identified to genus 
-# Generally, it may be useful to review species determined only to genus to see if any novel taxa are present 
-# Dropping these makes for a more efficient review, at the risk of overlooking novel taxa
-# Best practice: include genera!
-
-unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary[!(is.na(unmatched.iNat.obs.summary$Species) | unmatched.iNat.obs.summary$Species==""), ]
-
-# Merge baseline and unmatched summary for review 
-
-Tracheophyta.review.summary <- rbind(Tracheophyta.baseline, unmatched.iNat.obs.summary)
+nrow(Tracheophyta.review.summary)
+nrow(Tracheophyta.review.summary) - nrow(Tracheophyta.baseline) # observations for review
 
 # Replace NA values with ""
 
 Tracheophyta.review.summary[is.na(Tracheophyta.review.summary)] <- ""
 
 # Write review summary 
-# Note: be careful not to overwrite reviewed summary in case you revise through another workflow
-# This workflow needs to be improved to prevent any terrible errors!
 
-# write.csv(Tracheophyta.review.summary, "outputs/Tracheophyta_review_summary.csv")
+write.csv(Tracheophyta.review.summary, "outputs/Tracheophyta_review_summary.csv", row.names = FALSE)
