@@ -37,12 +37,13 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Consolidate records
 
-# Sources (5/6 added):
+# Sources (6/7 added):
 
 # BOLD records 2021 - ! added, but needs attention
 # CPNWH records 2022 - added
 # iNaturalist observations 2022 - ! added # Need to update for 2023
 # Sandra Lindstrom BioBlitz collections 2023 - ! added
+# Simon - Sanger sequencing data - ! Not yet incorporated
 # PMLS Records 2021 - added # ! Need to update dataset
 # Webber et al. 2022 Epiphytic diatoms on Zostera 2022 - added ! needs updating!
 
@@ -552,6 +553,7 @@ Lindstrom.2023$datasetName <- "Lindstrom 2023"
 Lindstrom.2023$stateProvince <- "British Columbia"
 Lindstrom.2023$country <- "Canada"
 Lindstrom.2023$island <- "Galiano Island"
+Lindstrom.2023$countryCode <- "CA"
 
 # Merge with summary to standardize names and taxon metadata
 
@@ -1016,7 +1018,7 @@ unmatched.algae.records
 
 # Combine all source occurrence records
 
-marine.algae.records <- rbind(BOLD.2021.records, CPNWH.2021.records,iNaturalist.records,PMLS.2021.records,Webber.et.al.2022.records)
+marine.algae.records <- rbind(BOLD.2021.records, CPNWH.2021.records,iNaturalist.records,Lindstrom.2023.records,PMLS.2021.records,Webber.et.al.2022.records)
 
 
 
