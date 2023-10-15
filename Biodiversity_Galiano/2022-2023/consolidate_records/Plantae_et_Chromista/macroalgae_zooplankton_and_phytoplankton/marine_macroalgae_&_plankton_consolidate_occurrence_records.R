@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Galiano_marine_algae_review_summary_reviewed_2023-09-22.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Galiano_marine_algae_review_summary_reviewed_2023-10-14.csv")
 
 # Note in Sept. 2023 this summary was revised to incorporate critical feedback from Sandra Lindstrom;
 # multiple taxa have been effectively removed from the summary which has resulted in discrepancies w
@@ -39,10 +39,10 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Sources (5/6 added):
 
-# BOLD records 2021 - ! not yet added! # Need to figure out how to index BOLD records
+# BOLD records 2021 - ! added, but needs attention
 # CPNWH records 2022 - added
 # iNaturalist observations 2022 - ! added # Need to update for 2023
-# Sandra Lindstrom BioBlitz collections 2023 - ! not yet added
+# Sandra Lindstrom BioBlitz collections 2023 - ! added
 # PMLS Records 2021 - added # ! Need to update dataset
 # Webber et al. 2022 Epiphytic diatoms on Zostera 2022 - added ! needs updating!
 
@@ -674,7 +674,7 @@ Lindstrom.2023.records$eventDate <- as.Date(Lindstrom.2023.records$eventDate)
 nrow(Lindstrom.2023) - nrow(Lindstrom.2023.records)
 
 nrow(Lindstrom.2023)
-nrow(Lindstrom.2023.records) # no records omitted
+nrow(Lindstrom.2023.records) # few records omitted; will update when dna results come in
 
 
 
