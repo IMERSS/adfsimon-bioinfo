@@ -1,4 +1,4 @@
-# Script to consolidate records of Galiano Island's vascular plants
+# Script to consolidate records of Howe Sound's lichens
 
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
