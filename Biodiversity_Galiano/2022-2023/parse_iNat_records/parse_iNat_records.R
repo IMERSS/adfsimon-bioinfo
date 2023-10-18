@@ -18,7 +18,9 @@ iNat.obs <- read.csv("iNat_records/BioGaliano_iNat_data_2023-10-18.csv")
 
 iNat.obs <- iNat.obs[!(is.na(iNat.obs$Date.observed) | iNat.obs$Date.observed == ""), ]
 
-nrow(iNat.obs)
+# Eliminate captive/cultivated records
+
+iNat.obs <- iNat.obs %>% filter(Captive.Cultivated == 'false')
 
 # Eliminate extraneous time stamp from date observed string
 
