@@ -63,6 +63,7 @@ iNat.obs.summary <- rename(iNat.obs.summary, Variety = taxon_variety_name)
 iNat.obs.summary <- rename(iNat.obs.summary, First.Observed = Date.observed)
 iNat.obs.summary <- rename(iNat.obs.summary, Observer = Recorded.by)
 iNat.obs.summary <- rename(iNat.obs.summary, iNaturalist.Link = observationId)
+iNat.obs.summary <- rename(iNat.obs.summary, ID = iNaturalist.taxon.ID)
 
 # Create template dataframe for iNat obs summary that matches with baseline summary dataset
 
@@ -107,10 +108,19 @@ matched.iNat.obs.summary <- matched.iNat.obs.summary[,c(1,1:38)]
 baseline$Infrataxon <- NULL
 iNat.obs.summary$Infrataxon <- NULL
 
-# Match observation summary against baseline by Taxon and Date Observed
+# Add lost iNat metadata values for confirmed records
 
 matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, Taxon = Taxon.x)
 matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, First.Observed = First.Observed.x)
+matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, Observer = Observer.x)
+matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, iNaturalist.Link = iNaturalist.Link.x)
+
+matched.iNat.obs.summary$First.Observed  <- iNat.obs.summary$First.Observed[match(unlist(matched.iNat.obs.summary$Taxon), iNat.obs.summary$Taxon)]
+matched.iNat.obs.summary$Observer  <- iNat.obs.summary$Observer[match(unlist(matched.iNat.obs.summary$Taxon), iNat.obs.summary$Taxon)]
+matched.iNat.obs.summary$iNaturalist.Link  <- iNat.obs.summary$iNaturalist.Link[match(unlist(matched.iNat.obs.summary$Taxon), iNat.obs.summary$Taxon)]
+
+# Match observation summary against baseline by Taxon and Date Observed
+
 summary.matched <- inner_join(baseline, matched.iNat.obs.summary, by = c('Taxon','First.Observed'))
 
 summary.matched <- summary.matched[,c(1:38)]
@@ -148,7 +158,6 @@ nrow(baseline)
 nrow(summary.matched)
 nrow(unmatched.iNat.obs.summary)
 nrow(review.summary)
-nrow(review.summary) - nrow(baseline) # observations for review
 
 # Replace NA values with ""
 
