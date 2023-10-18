@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Terrestrial_arthropods_review_summary_2023-10-16.csv")
+baseline <- read.csv("summaries/Terrestrial_arthropods_review_summary_2023-10-17.csv")
 
 # Apply standardized field names to baseline
 
@@ -49,7 +49,7 @@ iNat.obs.summary = iNat.obs.summary[,!(names(iNat.obs.summary) %in% drop)]
 # Standardize 'Taxon', 'species', 'subspecies', 'variety' fields in observation summary to facilitate merges
 
 iNat.obs.summary$taxon_subspecies_name <- word(iNat.obs.summary$Taxon.name, 3)
-iNat.obs.summary$taxon_variety_name <- word(iNat.obs.summary$Taxon.name, 3)
+iNat.obs.summary$taxon_variety_name <- ""
 
 # Add field for Hybrid
 
@@ -111,24 +111,23 @@ iNat.obs.summary$Infrataxon <- NULL
 
 matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, Taxon = Taxon.x)
 matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, First.Observed = First.Observed.x)
-Tracheophyta.summary.matched <- inner_join(baseline, matched.iNat.obs.summary, by = c('Taxon','First.Observed'))
+summary.matched <- inner_join(baseline, matched.iNat.obs.summary, by = c('Taxon','First.Observed'))
 
-Tracheophyta.summary.matched <- Tracheophyta.summary.matched[,c(1:38)]
-colnames(Tracheophyta.summary.matched) <- colnames(baseline)
-names(Tracheophyta.summary.matched) <- iNat.obs.summary.fields
+summary.matched <- summary.matched[,c(1:38)]
+colnames(summary.matched) <- colnames(baseline)
+names(summary.matched) <- iNat.obs.summary.fields
 
 names(iNat.obs.summary) <- iNat.obs.summary.fields
 
 # Again convert logical to character
 
-Tracheophyta.summary.matched <- Tracheophyta.summary.matched %>% mutate_if(is.logical, as.character)
+summary.matched <- summary.matched %>% mutate_if(is.logical, as.character)
 
-Tracheophyta.summary.matched <-  Tracheophyta.summary.matched %>% mutate_if(is.character, ~replace_na(.,""))
-
+summary.matched <-  summary.matched %>% mutate_if(is.character, ~replace_na(.,""))
 
 # Unmatched summary
 
-unmatched.iNat.obs.summary = anti_join(iNat.obs.summary, Tracheophyta.summary.matched, by = c("Genus", "Hybrid", "Species", "Subspecies", "Variety"))
+unmatched.iNat.obs.summary = anti_join(iNat.obs.summary, summary.matched, by = c("Genus", "Hybrid", "Species", "Subspecies", "Variety"))
 
 # Add Stats Code to unmatched Taxa
 
@@ -140,21 +139,21 @@ unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary[!(is.na(unmatched.iNat.
 
 # Merge baseline and unmatched summary for review 
 
-Tracheophyta.review.summary <- rbind(baseline, unmatched.iNat.obs.summary)
+review.summary <- rbind(baseline, unmatched.iNat.obs.summary)
 
 # Review dataframes
 
 nrow(iNat.obs.summary)
 nrow(baseline)
-nrow(Tracheophyta.summary.matched)
+nrow(summary.matched)
 nrow(unmatched.iNat.obs.summary)
-nrow(Tracheophyta.review.summary)
-nrow(Tracheophyta.review.summary) - nrow(baseline) # observations for review
+nrow(review.summary)
+nrow(review.summary) - nrow(baseline) # observations for review
 
 # Replace NA values with ""
 
-Tracheophyta.review.summary[is.na(Tracheophyta.review.summary)] <- ""
+review.summary[is.na(review.summary)] <- ""
 
 # Write review summary 
 
-write.csv(Tracheophyta.review.summary, "outputs/Tracheophyta_review_summary.csv", row.names = FALSE)
+write.csv(review.summary, "outputs/Terrestrial_arthropods_review_summary.csv", row.names = FALSE)
