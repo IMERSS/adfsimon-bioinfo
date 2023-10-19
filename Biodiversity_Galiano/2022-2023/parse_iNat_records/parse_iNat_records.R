@@ -22,7 +22,7 @@ iNat.obs <- iNat.obs[!(is.na(iNat.obs$Date.observed) | iNat.obs$Date.observed ==
 
 iNat.obs <- iNat.obs %>% filter(Captive.Cultivated == 'false')
 
-# Eliminate extraneous time stamp from date observed string
+# Eliminate extraneous time stamp from 'date observed' string
 
 iNat.obs$Date.observed <- substr(iNat.obs$Date.observed,1,10)
 
@@ -41,7 +41,6 @@ Terrestrial.arthropods.obs <- rbind(Terrestrial.arthropods.1.obs, Terrestrial.ar
 Terrestrial.mammals.obs <- iNat.obs %>% filter(Class == 'Mammalia')
 
 Terrestrial.mammals.obs <- subset(Terrestrial.mammals.obs, Infraorder != 'Cetacea' & Taxon.name != 'Neogale vison' & Superfamily != 'Phocoidea' & Subfamily != 'Lutrinae')
-
 
 # Tracheophyta
 

@@ -16,13 +16,15 @@ baseline <- read.csv("summaries/Terrestrial_arthropods_review_summary_2023-10-17
 
 # Apply standardized field names to baseline
 
-names(baseline)  <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','Kingdom','Phylum',
-                      'Subphylum','Superclass','Class','Subclass','Superorder','Order','Suborder',
-                      'Superfamily','Family','Subfamily','Tribe','Genus','Species','Hybrid',
-                      'Subspecies','Variety','Origin','Provincial.Status','National.Status','Reporting.Status',
-                      'Observation','Collected.Reported..y.m.d.','Collector.Source','Collection.List',
-                      'Accession.Number','GBIF.ID','First.Observed','Observer','iNaturalist.Link','Notes',
-                      'ID','Stats.Code')
+summary.fields <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','Kingdom','Phylum',
+                    'Subphylum','Superclass','Class','Subclass','Superorder','Order','Suborder',
+                    'Superfamily','Family','Subfamily','Tribe','Genus','Species','Hybrid',
+                    'Subspecies','Variety','Origin','Provincial.Status','National.Status','Reporting.Status',
+                    'Observation','Collected.Reported..y.m.d.','Collector.Source','Collection.List',
+                    'Accession.Number','GBIF.ID','First.Observed','Observer','iNaturalist.Link','Notes',
+                    'ID','Stats.Code')
+
+names(baseline) <- summary.fields
 
 # TEMP: Update baseline iNaturalist observation id 
 
@@ -31,7 +33,6 @@ names(baseline)  <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','Ki
 # baseline$iNaturalist.Link <- gsub("http://inaturalist.ca/observations/", "", as.character(baseline$iNaturalist.Link))
   
 # baseline$iNaturalist.Link <- paste0("iNat:", baseline$iNaturalist.Link)
-
 
 # Read iNaturalist obs
 
@@ -67,13 +68,7 @@ iNat.obs.summary <- rename(iNat.obs.summary, ID = iNaturalist.taxon.ID)
 
 # Create template dataframe for iNat obs summary that matches with baseline summary dataset
 
-iNat.obs.summary.fields <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','Kingdom','Phylum',
-                                    'Subphylum','Superclass','Class','Subclass','Superorder','Order','Suborder',
-                                    'Superfamily','Family','Subfamily','Tribe','Genus','Species','Hybrid',
-                                    'Subspecies','Variety','Origin','Provincial.Status','National.Status','Reporting.Status',
-                                    'Observation','Collected.Reported..y.m.d.','Collector.Source','Collection.List',
-                                    'Accession.Number','GBIF.ID','First.Observed','Observer','iNaturalist.Link','Notes',
-                                    'ID','Stats.Code')
+iNat.obs.summary.fields <- summary.fields
 
 data.frame <- as.data.frame(matrix(ncol = length(iNat.obs.summary.fields), nrow = nrow(iNat.obs.summary)))
 names(data.frame) <- iNat.obs.summary.fields
@@ -108,7 +103,7 @@ matched.iNat.obs.summary <- matched.iNat.obs.summary[,c(1,1:38)]
 baseline$Infrataxon <- NULL
 iNat.obs.summary$Infrataxon <- NULL
 
-# Add lost iNat metadata values for confirmed records
+# Match observation summary against baseline by Taxon and Date Observed
 
 matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, Taxon = Taxon.x)
 matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, First.Observed = First.Observed.x)
@@ -119,7 +114,7 @@ matched.iNat.obs.summary$First.Observed  <- iNat.obs.summary$First.Observed[matc
 matched.iNat.obs.summary$Observer  <- iNat.obs.summary$Observer[match(unlist(matched.iNat.obs.summary$Taxon), iNat.obs.summary$Taxon)]
 matched.iNat.obs.summary$iNaturalist.Link  <- iNat.obs.summary$iNaturalist.Link[match(unlist(matched.iNat.obs.summary$Taxon), iNat.obs.summary$Taxon)]
 
-# Match observation summary against baseline by Taxon and Date Observed
+# Matched summary
 
 summary.matched <- inner_join(baseline, matched.iNat.obs.summary, by = c('Taxon','First.Observed'))
 
