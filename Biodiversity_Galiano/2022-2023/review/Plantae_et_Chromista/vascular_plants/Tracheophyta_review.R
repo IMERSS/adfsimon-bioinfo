@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Tracheophyta_review_summary_reviewed_2023-02-25.csv")
+baseline <- read.csv("summaries/Tracheophyta_review_summary_reviewed_2023-10-14.csv")
 
 baseline <- baseline %>% filter(Phylum == 'Tracheophyta')
 
@@ -168,4 +168,4 @@ review.summary[is.na(review.summary)] <- ""
 
 # Write review summary 
 
-write.csv(Tracheophyta.review.summary, "outputs/Tracheophyta_review_summary.csv", row.names = FALSE)
+write.csv(review.summary, "outputs/Tracheophyta_review_summary.csv", row.names = FALSE)
