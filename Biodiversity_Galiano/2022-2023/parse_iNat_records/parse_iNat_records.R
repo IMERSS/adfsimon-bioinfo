@@ -46,11 +46,13 @@ Ascomycota.obs.RG <- Ascomycota.obs %>% filter(Quality.grade == 'research')
 
 # Combine RG obs w non-RG obs from trusted observers
 
-Ascomycota.obs <- rbind(Ascomycota.obs.RG, Ascomycota.obs.trusted)
+# Ascomycota.obs <- rbind(Ascomycota.obs.RG, Ascomycota.obs.trusted)
+
+Ascomycota.obs <- Ascomycota.obs.RG
 
 Lichenized.Ascomycota.obs <- Ascomycota.obs %>% filter(Class == 'Arthoniomycetes' | Class == 'Dothideomycetes' | Class == 'Eurotiomycetes' | Class == 'Lecanoromycetes' | Class == 'Lichinomycetes')
 
-Lichenized.Ascomycota.obs<- subset(Lichenized.Ascomycota.obs, Order != 'Geoglossales' & Order != 'Venturiales' & Order != 'Sareales' & Family != 'Stictidaceae' & Order != 'Eurotiales' & Order != 'Chaetothyriales' & Order != 'Capnodiales' & Order != 'Botryosphaeriales')
+Lichenized.Ascomycota.obs<- subset(Lichenized.Ascomycota.obs, Order != 'Pleosporales' & Order != 'Geoglossales' & Order != 'Venturiales' & Order != 'Sareales' & Family != 'Stictidaceae' & Order != 'Eurotiales' & Order != 'Chaetothyriales' & Order != 'Capnodiales' & Order != 'Botryosphaeriales')
 
 # Ascomycota (unlichenized)
 
