@@ -28,6 +28,35 @@ iNat.obs$Date.observed <- substr(iNat.obs$Date.observed,1,10)
 
 # Parse taxa
 
+# Ascomycota (lichenized)
+
+Ascomycota.obs <- iNat.obs %>% filter(Phylum == 'Ascomycota')
+
+# Filter to RG # Currently missing quality.grade field
+
+Ascomycota.obs.RG <- Ascomycota.obs %>% filter(Quality.grade == 'research')
+
+# Otherwise filter obs from trusted observers # This dataset is manageable without filtering by trusted observers
+
+# Ascomycota.obs.non.RG <- anti_join(Ascomycota.obs, Ascomycota.obs.RG)
+
+# unique(Ascomycota.obs.non.RG$Recorded.by)
+
+# Ascomycota.obs.trusted <- Ascomycota.obs.non.RG %>% filter(Recorded.by == 'Randal' | Recorded.by == 'Andrew Simon')
+
+# Combine RG obs w non-RG obs from trusted observers
+
+Ascomycota.obs <- rbind(Ascomycota.obs.RG, Ascomycota.obs.trusted)
+
+Lichenized.Ascomycota.obs <- Ascomycota.obs %>% filter(Class == 'Arthoniomycetes' | Class == 'Dothideomycetes' | Class == 'Eurotiomycetes' | Class == 'Lecanoromycetes' | Class == 'Lichinomycetes')
+
+Lichenized.Ascomycota.obs<- subset(Lichenized.Ascomycota.obs, Order != 'Geoglossales' & Order != 'Venturiales' & Order != 'Sareales' & Family != 'Stictidaceae' & Order != 'Eurotiales' & Order != 'Chaetothyriales' & Order != 'Capnodiales' & Order != 'Botryosphaeriales')
+
+# Ascomycota (unlichenized)
+
+Unlichenized.Ascomycota.obs <- anti_join(Ascomycota.obs,Lichenized.Ascomycota.obs)
+
+
 # Terrestrial Arthropods
 
 Terrestrial.arthropods.1.obs <- iNat.obs %>% filter(Class == 'Insecta' | Class == 'Arachnida' | Class == 'Entognatha' | Class == 'Diplopoda' | Class == 'Chilopoda' | Class == 'Ostracoda')
@@ -48,7 +77,8 @@ Tracheophyta.obs <- iNat.obs %>% filter(Phylum == 'Tracheophyta')
 
 # Export taxonomically parsed catalogs
 
-
+write.csv(Unlichenized.Ascomycota.obs, "outputs/iNat_obs_unlichenized_Ascomycota.csv")
+write.csv(Lichenized.Ascomycota.obs, "outputs/iNat_obs_lichenized_Ascomycota.csv")
 write.csv(Terrestrial.arthropods.obs, "outputs/iNat_obs_terrestrial_arthropods.csv")
 write.csv(Terrestrial.mammals.obs, "outputs/iNat_obs_terrestrial_mammals.csv")
 write.csv(Tracheophyta.obs, "outputs/iNat_obs_Tracheophyta.csv")

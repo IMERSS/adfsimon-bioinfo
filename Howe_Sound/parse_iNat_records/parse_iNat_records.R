@@ -81,7 +81,7 @@ Tracheophyta.obs <- iNat.obs %>% filter(Phylum == 'Tracheophyta')
 # Export taxonomically parsed catalogs
 
 write.csv(Unlichenized.Ascomycota.obs, "outputs/iNat_obs_unlichenized_Ascomycota.csv")
-write.csv(Lichenized.Ascomycota.obs, "outputs/iNat_obs_Lichenized_Ascomycota.csv")
+write.csv(Lichenized.Ascomycota.obs, "outputs/iNat_obs_lichenized_Ascomycota.csv")
 write.csv(Terrestrial.arthropods.obs, "outputs/iNat_obs_terrestrial_arthropods.csv")
 write.csv(Terrestrial.mammals.obs, "outputs/iNat_obs_terrestrial_mammals.csv")
 write.csv(Tracheophyta.obs, "outputs/iNat_obs_Tracheophyta.csv")
