@@ -144,7 +144,7 @@ Terrestrial.molluscs.obs <- rbind(Terrestrial.molluscs.1.obs, Terrestrial.mollus
 
 Animals <- iNat.obs %>% filter(Kingdom == 'Animalia')
 
-Terrestrial.animals <- rbind(Aves.obs, Freshwater.bryozoa.obs, Herptiles.obs, Terrestrial.arthropods.obs, Terrestrial.mammals.obs, Terrestrial.molluscs.obs)
+Terrestrial.animals <- rbind(Aves.obs, Freshwater.bryozoans.obs, Herptiles.obs, Terrestrial.arthropods.obs, Terrestrial.mammals.obs, Terrestrial.molluscs.obs)
 
 Marine.animals.obs <- anti_join(Animals, Terrestrial.animals)
 
@@ -177,7 +177,7 @@ write.csv(Lichens.obs, "outputs/iNat_obs_lichens.csv")
 
 write.csv(Marine.algae.and.protozoa.obs, "outputs/iNat_obs_marine_algae_and_protozoa.csv")
 
-write.csv(Marine.animals, "outputs/iNat_obs_marine_animals.csv")
+write.csv(Marine.animals.obs, "outputs/iNat_obs_marine_animals.csv")
 
 write.csv(Myxogastria.obs, "outputs/iNat_obs_Myxogastria.csv")
 
