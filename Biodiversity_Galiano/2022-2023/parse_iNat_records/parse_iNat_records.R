@@ -49,9 +49,11 @@ Marine.algae.and.protozoa.2.obs <- subset(Marine.algae.and.protozoa.2.obs, Order
 
 Marine.algae.and.protozoa.obs <- rbind(Marine.algae.and.protozoa.1.obs, Marine.algae.and.protozoa.2.obs)
 
+
 ## BACTERIA
 
 Bacteria.obs <- iNat.obs %>% filter(Kingdom == 'Bacteria')
+
 
 ## FUNGI, LICHENS, MYXOGASTRIA
 
@@ -106,9 +108,9 @@ unique(Tracheophyta.obs$Phylum)
 
 Aves.obs <- iNat.obs %>% filter(Class == 'Aves')
 
-# Freshwater bryozoa
+# Freshwater bryozoans
 
-Freshwater.bryozoa.obs <- iNat.obs %>% filter(Taxon.name == 'Pectinatella magnifica')
+Freshwater.bryozoans.obs <- iNat.obs %>% filter(Taxon.name == 'Pectinatella magnifica')
 
 # Herptiles
 
@@ -149,7 +151,7 @@ Marine.animals.obs <- anti_join(Animals, Terrestrial.animals)
 # Check that all taxa are accounted for
 
 taxa <- rbind(Aves.obs,Bacteria.obs,Bryophyta.Marchantiophyta.Anthocerotophyta.obs,Desmids.etc.obs,
-              Freshwater.bryozoa.obs,Herptiles.obs,Marine.algae.and.protozoa.obs,Lichens.obs,
+              Freshwater.bryozoans.obs,Herptiles.obs,Marine.algae.and.protozoa.obs,Lichens.obs,
               Marine.animals.obs,Myxogastria.obs,Terrestrial.arthropods.obs,Terrestrial.mammals.obs,
               Terrestrial.molluscs.obs,Tracheophyta.obs,Unlichenized.Ascomycota.obs,Unlichenized.Basidiomycota.Mucoromycota.obs)
 
@@ -167,13 +169,9 @@ write.csv(Bryophyta.Marchantiophyta.Anthocerotophyta.obs, "outputs/iNat_obs_moss
 
 write.csv(Desmids.etc.obs, "outputs/iNat_obs_freshwater_and_terrestrial_algae.csv")
 
-write.csv(Freshwater.bryozoa.obs, "outputs/iNat_obs_freshwater_bryozoans.csv")
+write.csv(Freshwater.bryozoans.obs, "outputs/iNat_obs_freshwater_bryozoans.csv")
 
 write.csv(Herptiles.obs, "outputs/iNat_obs_herptiles.csv")
-
-write.csv(Unlichenized.Ascomycota.obs, "outputs/iNat_obs_unlichenized_Ascomycota.csv")
-
-write.csv(Unlichenized.Basidiomycota.Mucoromycota.obs, "outputs/iNat_obs_unlichenized_Basidiomycota_and_Mucoromycota.csv")
 
 write.csv(Lichens.obs, "outputs/iNat_obs_lichens.csv")
 
@@ -191,3 +189,6 @@ write.csv(Terrestrial.molluscs.obs, "outputs/iNat_obs_terrestrial_molluscs.csv")
 
 write.csv(Tracheophyta.obs, "outputs/iNat_obs_Tracheophyta.csv")
 
+write.csv(Unlichenized.Ascomycota.obs, "outputs/iNat_obs_unlichenized_Ascomycota.csv")
+
+write.csv(Unlichenized.Basidiomycota.Mucoromycota.obs, "outputs/iNat_obs_unlichenized_Basidiomycota_and_Mucoromycota.csv")
