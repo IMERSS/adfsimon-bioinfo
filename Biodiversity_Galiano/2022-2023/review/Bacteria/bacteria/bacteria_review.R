@@ -26,11 +26,6 @@ summary.fields <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','King
 
 names(baseline) <- summary.fields
 
-# Remove non-established species from iNaturalist observations:
-
-# Geranium macrorrhizum
-# Wisteria
-
 # Read iNaturalist obs
 
 iNat.obs.summary <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_bacteria.csv")
