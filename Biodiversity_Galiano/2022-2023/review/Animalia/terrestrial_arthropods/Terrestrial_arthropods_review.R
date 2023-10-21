@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Terrestrial_arthropods_review_summary_2023-10-17.csv")
+baseline <- read.csv("summaries/Galiano_terrestrial_arthropods_review_summary_2023-10-21.csv")
 
 # Apply standardized field names to baseline
 
@@ -161,3 +161,25 @@ review.summary[is.na(review.summary)] <- ""
 # Write review summary 
 
 write.csv(review.summary, "outputs/Terrestrial_arthropods_review_summary.csv", row.names = FALSE)
+
+# Check summary attributes (based on Basman's JavaScript outputs)
+# Note: the following code supports a manual review process that is not yet systematized:
+# The attributed summary produced by Basman's code is manually checked and errors addressed based on
+# its attributes with guidance from the mismatch analysis below.
+
+review.summary.attributed <- read.csv("summaries/Galiano_terrestrial_arthropods_review_summary_assigned_2023-10-21.csv")
+
+# Check ascribed Taxon IDs against iNaturalist taxonomic backbone
+
+Referred.ID <- review.summary.attributed$Referred.iNaturalist.Id
+ID <- review.summary.attributed$ID
+
+setdiff(ID, Referred.ID)
+
+# Check that taxa indexed by observations match with taxa recorded in summary
+# Note: expected mismatches include taxa recorded with uncertainty ('cf') and taxa recorded belonging to subgenera or subtribes
+
+Observation.Taxon.Name <- review.summary.attributed$Observation.Taxon.Name
+Referred.iNaturalist.Name <- review.summary.attributed$Referred.iNaturalist.Name
+
+setdiff(Observation.Taxon.Name, Referred.iNaturalist.Name) 
