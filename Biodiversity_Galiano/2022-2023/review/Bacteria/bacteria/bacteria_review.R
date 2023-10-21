@@ -12,9 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Tracheophyta_review_summary_reviewed_2023-10-14.csv")
-
-baseline <- baseline %>% filter(Phylum == 'Tracheophyta')
+baseline <- read.csv("summaries/Galiano_bacteria_review_summary_2023-10-21.csv")
 
 # Apply standardized field names to baseline
 
@@ -28,14 +26,6 @@ summary.fields <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','King
 
 names(baseline) <- summary.fields
 
-# TEMP: Update Tracheophyta baseline iNaturalist observation id 
-
-# baseline$iNaturalist.Link <- gsub("http://www.inaturalist.org/observations/", "", as.character(baseline$iNaturalist.Link))
-# baseline$iNaturalist.Link <- gsub("https://www.inaturalist.org/observations/", "", as.character(baseline$iNaturalist.Link))
-# baseline$iNaturalist.Link <- gsub("http://inaturalist.ca/observations/", "", as.character(baseline$iNaturalist.Link))
-  
-# baseline$iNaturalist.Link <- paste0("iNat:", baseline$iNaturalist.Link)
-
 # Remove non-established species from iNaturalist observations:
 
 # Geranium macrorrhizum
@@ -43,7 +33,7 @@ names(baseline) <- summary.fields
 
 # Read iNaturalist obs
 
-iNat.obs.summary <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_Tracheophyta.csv")
+iNat.obs.summary <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_bacteria.csv")
 names(iNat.obs.summary)
 
 # Summarize by first observed
@@ -90,19 +80,13 @@ iNat.obs.summary <- select(data.frame, c(1:length(iNat.obs.summary.fields)))
 # First convert logical to character
 
 iNat.obs.summary <- iNat.obs.summary %>% mutate_if(is.logical, as.character)
-
 iNat.obs.summary <-  iNat.obs.summary %>% mutate_if(is.character, ~replace_na(.,""))
 
-# Match observation summary against baseline summary by Genus, Species, Infrataxon
-
-# First create common 'Infrataxon' field between data frames to facilitate join
-
-baseline <- baseline %>% mutate(Infrataxon = coalesce(Subspecies,Variety))
-iNat.obs.summary$Infrataxon <- iNat.obs.summary$Subspecies
+# Match observation summary against baseline summary by Genus, Species
 
 # Now match with inner_join
 
-matched.iNat.obs.summary <- inner_join(baseline, iNat.obs.summary, by = c("Genus","Species","Infrataxon"))
+matched.iNat.obs.summary <- inner_join(baseline, iNat.obs.summary, by = c("Genus","Species"))
 names(matched.iNat.obs.summary)
 matched.iNat.obs.summary <- matched.iNat.obs.summary[,c(1,1:38)]
 
@@ -144,7 +128,7 @@ unmatched.iNat.obs.summary = anti_join(iNat.obs.summary, summary.matched, by = c
 
 # Add Stats Code to unmatched Taxa
 
-unmatched.iNat.obs.summary$Stats.Code <- 'VAS'
+unmatched.iNat.obs.summary$Stats.Code <- 'BAC'
 
 # Optional: trim to unmatched summary to observations identified at least to genus
 
@@ -168,4 +152,4 @@ review.summary[is.na(review.summary)] <- ""
 
 # Write review summary 
 
-write.csv(review.summary, "outputs/Tracheophyta_review_summary.csv", row.names = FALSE)
+write.csv(review.summary, "outputs/Bacteria_review_summary.csv", row.names = FALSE)
