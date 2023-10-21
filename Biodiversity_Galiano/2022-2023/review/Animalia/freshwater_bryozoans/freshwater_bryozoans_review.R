@@ -12,9 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Tracheophyta_review_summary_reviewed_2023-10-14.csv")
-
-baseline <- baseline %>% filter(Phylum == 'Tracheophyta')
+baseline <- read.csv("summaries/Galiano_freshwater_bryozoans_review_summary_2023-10-21.csv")
 
 # Apply standardized field names to baseline
 
@@ -43,7 +41,7 @@ names(baseline) <- summary.fields
 
 # Read iNaturalist obs
 
-iNat.obs.summary <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_Tracheophyta.csv")
+iNat.obs.summary <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_freshwater_bryozoans.csv")
 names(iNat.obs.summary)
 
 # Summarize by first observed
@@ -90,8 +88,10 @@ iNat.obs.summary <- select(data.frame, c(1:length(iNat.obs.summary.fields)))
 # First convert logical to character
 
 iNat.obs.summary <- iNat.obs.summary %>% mutate_if(is.logical, as.character)
-
 iNat.obs.summary <-  iNat.obs.summary %>% mutate_if(is.character, ~replace_na(.,""))
+
+baseline <- baseline %>% mutate_if(is.logical, as.character)
+baseline <-  baseline %>% mutate_if(is.character, ~replace_na(.,""))
 
 # Match observation summary against baseline summary by Genus, Species, Infrataxon
 
@@ -144,7 +144,7 @@ unmatched.iNat.obs.summary = anti_join(iNat.obs.summary, summary.matched, by = c
 
 # Add Stats Code to unmatched Taxa
 
-unmatched.iNat.obs.summary$Stats.Code <- 'VAS'
+unmatched.iNat.obs.summary$Stats.Code <- 'LOP'
 
 # Optional: trim to unmatched summary to observations identified at least to genus
 
@@ -168,4 +168,4 @@ review.summary[is.na(review.summary)] <- ""
 
 # Write review summary 
 
-write.csv(review.summary, "outputs/Tracheophyta_review_summary.csv", row.names = FALSE)
+write.csv(review.summary, "outputs/Galiano_freshwater_bryozoans_review_summary.csv", row.names = FALSE)

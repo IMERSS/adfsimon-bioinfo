@@ -153,4 +153,4 @@ review.summary[is.na(review.summary)] <- ""
 
 # Write review summary 
 
-write.csv(review.summary, "outputs/birds_review_summary.csv", row.names = FALSE)
+write.csv(review.summary, "outputs/Galiano_birds_review_summary.csv", row.names = FALSE)
