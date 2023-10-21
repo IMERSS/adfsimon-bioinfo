@@ -28,42 +28,97 @@ iNat.obs$Date.observed <- substr(iNat.obs$Date.observed,1,10)
 
 # Parse taxa
 
-# Ascomycota (lichenized)
+## ALGAE
+
+# Freshwater and terrestrial algae and protozoa
+
+Desmids.etc.1.obs <- iNat.obs %>% filter(Phylum == 'Charophyta')
+unique(Desmids.etc.1.obs$Taxon.name)
+Desmids.etc.2.obs <- iNat.obs %>% filter(Phylum == 'Chlorophyta')
+unique(Desmids.etc.2.obs$Taxon.name)
+Desmids.etc.2.obs <- Desmids.etc.2.obs %>% filter(Order == 'Trentepohliales' | Class == 'Chlorophyceae')
+Desmids.etc.3.obs <- iNat.obs %>% filter(Genus == 'Arcella')
+
+Desmids.etc.obs <- rbind(Desmids.etc.1.obs, Desmids.etc.2.obs, Desmids.etc.3.obs)
+
+# Marine algae and protozoa
+
+Marine.algae.and.protozoa.1.obs <- iNat.obs %>% filter(Kingdom == 'Chromista' | Phylum == 'Rhodophyta')
+Marine.algae.and.protozoa.2.obs <- iNat.obs %>% filter(Phylum == 'Chlorophyta')
+Marine.algae.and.protozoa.2.obs <- subset(Marine.algae.and.protozoa.2.obs, Order != 'Trentepohliales' & Class != 'Chlorophyceae')
+
+Marine.algae.and.protozoa.obs <- rbind(Marine.algae.and.protozoa.1.obs, Marine.algae.and.protozoa.2.obs)
+
+## BACTERIA
+
+Bacteria.obs <- iNat.obs %>% filter(Kingdom == 'Bacteria')
+
+## FUNGI, LICHENS, MYXOGASTRIA
+
+# Lichens
 
 Ascomycota.obs <- iNat.obs %>% filter(Phylum == 'Ascomycota')
-
-# Filter to RG # Currently missing quality.grade field
-
-Ascomycota.obs.RG <- Ascomycota.obs %>% filter(Quality.grade == 'research')
-
-# Otherwise filter obs from trusted observers # This dataset is manageable without filtering by trusted observers
-
-# Ascomycota.obs.non.RG <- anti_join(Ascomycota.obs, Ascomycota.obs.RG)
-
-# unique(Ascomycota.obs.non.RG$Recorded.by)
-
-# Ascomycota.obs.trusted <- Ascomycota.obs.non.RG %>% filter(Recorded.by == 'Randal' | Recorded.by == 'Andrew Simon')
-
-# Combine RG obs w non-RG obs from trusted observers
-
-# Ascomycota.obs <- rbind(Ascomycota.obs.RG, Ascomycota.obs.trusted)
-
-Ascomycota.obs <- Ascomycota.obs.RG
 
 Lichenized.Ascomycota.obs <- Ascomycota.obs %>% filter(Class == 'Arthoniomycetes' | Class == 'Dothideomycetes' | Class == 'Eurotiomycetes' | Class == 'Lecanoromycetes' | Class == 'Lichinomycetes')
 
 Lichenized.Ascomycota.obs<- subset(Lichenized.Ascomycota.obs, Order != 'Pleosporales' & Order != 'Geoglossales' & Order != 'Venturiales' & Order != 'Sareales' & Family != 'Stictidaceae' & Order != 'Eurotiales' & Order != 'Chaetothyriales' & Order != 'Capnodiales' & Order != 'Botryosphaeriales')
 
+Basidiomycota.obs <- iNat.obs %>% filter(Phylum == 'Basidiomycota')
+
+Lichenized.Basidiomycota.obs <- Basidiomycota.obs %>% filter(Genus == 'Lichenomphalia' | Genus == 'Multiclavula')
+
+Lichens.obs <- rbind(Lichenized.Ascomycota.obs, Lichenized.Basidiomycota.obs)
+
 # Ascomycota (unlichenized)
 
 Unlichenized.Ascomycota.obs <- anti_join(Ascomycota.obs,Lichenized.Ascomycota.obs)
 
+# Basidiomycota (unlichenized) and Mucoromycota
+
+Unlichenized.Basidiomycota.obs <- anti_join(Basidiomycota.obs,Lichenized.Basidiomycota.obs)
+
+Mucoromycota.obs <- iNat.obs %>% filter(Phylum == 'Mucoromycota')
+
+Unlichenized.Basidiomycota.Mucoromycota.obs <- rbind(Unlichenized.Basidiomycota.obs,Mucoromycota.obs)
+
+# Myxogastria
+
+Myxogastria.obs <- iNat.obs %>% filter(Kingdom == 'Protozoa')
+Myxogastria.obs <- subset(Myxogastria.obs, Phylum != 'Retaria' & Phylum != 'Sarcomastigophora')
+
+
+## PLANTS
+
+# Bryophyta, Marchantiophyta, Anthocerotophyta
+
+Bryophyta.Marchantiophyta.Anthocerotophyta.obs <- iNat.obs %>% filter(Phylum == 'Bryophyta' | Phylum == 'Marchantiophyta' | Phylum == 'Anthocerotophyta')
+
+# Tracheophyta
+
+Tracheophyta.obs <- iNat.obs %>% filter(Phylum == 'Tracheophyta')
+
+unique(Tracheophyta.obs$Phylum)
+
+
+## TERRESTRIAL ANIMALS
+
+# Birds
+
+Aves.obs <- iNat.obs %>% filter(Class == 'Aves')
+
+# Freshwater bryozoa
+
+Freshwater.bryozoa.obs <- iNat.obs %>% filter(Taxon.name == 'Pectinatella magnifica')
+
+# Herptiles
+
+Herptiles.obs <- iNat.obs %>% filter(Class == 'Amphibia' | Class == 'Reptilia')
 
 # Terrestrial Arthropods
 
 Terrestrial.arthropods.1.obs <- iNat.obs %>% filter(Class == 'Insecta' | Class == 'Arachnida' | Class == 'Entognatha' | Class == 'Diplopoda' | Class == 'Chilopoda' | Class == 'Ostracoda')
 Terrestrial.arthropods.2.obs <- iNat.obs %>% filter(Order == 'Isopoda')
-Terrestrial.arthropods.2.obs<- subset(Terrestrial.arthropods.2.obs, Taxon.name != 'Bopyroides hippolytes' & Taxon.name != 'Gnorimosphaeroma oregonense' & Taxon.name != 'Pentidotea resecata' & Taxon.name != 'Pentidotea wosnesenskii')
+Terrestrial.arthropods.2.obs <- subset(Terrestrial.arthropods.2.obs, Taxon.name != 'Bopyroides hippolytes' & Taxon.name != 'Gnorimosphaeroma oregonense' & Taxon.name != 'Pentidotea resecata' & Taxon.name != 'Pentidotea wosnesenskii')
 
 Terrestrial.arthropods.obs <- rbind(Terrestrial.arthropods.1.obs, Terrestrial.arthropods.2.obs)
 
@@ -73,15 +128,66 @@ Terrestrial.mammals.obs <- iNat.obs %>% filter(Class == 'Mammalia')
 
 Terrestrial.mammals.obs <- subset(Terrestrial.mammals.obs, Infraorder != 'Cetacea' & Taxon.name != 'Neogale vison' & Superfamily != 'Phocoidea' & Subfamily != 'Lutrinae')
 
-# Tracheophyta
+# Terrestrial Molluscs
 
-Tracheophyta.obs <- iNat.obs %>% filter(Phylum == 'Tracheophyta')
+Molluscs <- iNat.obs %>% filter(Phylum == 'Mollusca')
 
-# Export taxonomically parsed catalogs
+Terrestrial.molluscs.1.obs <- Molluscs %>% filter(Superorder == 'Eupulmonata')
+
+Terrestrial.molluscs.2.obs <- Molluscs %>% filter(Order == 'Sphaeriida')
+
+Terrestrial.molluscs.obs <- rbind(Terrestrial.molluscs.1.obs, Terrestrial.molluscs.2.obs)
+
+## MARINE ANIMALS
+
+Animals <- iNat.obs %>% filter(Kingdom == 'Animalia')
+
+Terrestrial.animals <- rbind(Aves.obs, Freshwater.bryozoa.obs, Herptiles.obs, Terrestrial.arthropods.obs, Terrestrial.mammals.obs, Terrestrial.molluscs.obs)
+
+Marine.animals.obs <- anti_join(Animals, Terrestrial.animals)
+
+# Check that all taxa are accounted for
+
+taxa <- rbind(Aves.obs,Bacteria.obs,Bryophyta.Marchantiophyta.Anthocerotophyta.obs,Desmids.etc.obs,
+              Freshwater.bryozoa.obs,Herptiles.obs,Marine.algae.and.protozoa.obs,Lichens.obs,
+              Marine.animals.obs,Myxogastria.obs,Terrestrial.arthropods.obs,Terrestrial.mammals.obs,
+              Terrestrial.molluscs.obs,Tracheophyta.obs,Unlichenized.Ascomycota.obs,Unlichenized.Basidiomycota.Mucoromycota.obs)
+
+missing.taxa <- anti_join(iNat.obs,taxa)
+
+unique(missing.taxa$Taxon.name)
+
+# Export catalogs
+
+write.csv(Aves.obs, "outputs/iNat_obs_birds.csv")
+
+write.csv(Bacteria.obs, "outputs/iNat_obs_bacteria.csv")
+
+write.csv(Bryophyta.Marchantiophyta.Anthocerotophyta.obs, "outputs/iNat_obs_mosses_liverworts_and_hornworts.csv")
+
+write.csv(Desmids.etc.obs, "outputs/iNat_obs_freshwater_and_terrestrial_algae.csv")
+
+write.csv(Freshwater.bryozoa.obs, "outputs/iNat_obs_freshwater_bryozoans.csv")
+
+write.csv(Herptiles.obs, "outputs/iNat_obs_herptiles.csv")
 
 write.csv(Unlichenized.Ascomycota.obs, "outputs/iNat_obs_unlichenized_Ascomycota.csv")
-write.csv(Lichenized.Ascomycota.obs, "outputs/iNat_obs_lichenized_Ascomycota.csv")
+
+write.csv(Unlichenized.Basidiomycota.Mucoromycota.obs, "outputs/iNat_obs_unlichenized_Basidiomycota_and_Mucoromycota.csv")
+
+write.csv(Lichens.obs, "outputs/iNat_obs_lichens.csv")
+
+write.csv(Marine.algae.and.protozoa.obs, "outputs/iNat_obs_marine_algae_and_protozoa.csv")
+
+write.csv(Marine.animals, "outputs/iNat_obs_marine_animals.csv")
+
+write.csv(Myxogastria.obs, "outputs/iNat_obs_Myxogastria.csv")
+
 write.csv(Terrestrial.arthropods.obs, "outputs/iNat_obs_terrestrial_arthropods.csv")
+
 write.csv(Terrestrial.mammals.obs, "outputs/iNat_obs_terrestrial_mammals.csv")
+
+write.csv(Terrestrial.molluscs.obs, "outputs/iNat_obs_terrestrial_molluscs.csv")
+
 write.csv(Tracheophyta.obs, "outputs/iNat_obs_Tracheophyta.csv")
 
