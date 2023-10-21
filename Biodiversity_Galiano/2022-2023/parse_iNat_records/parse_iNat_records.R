@@ -136,6 +136,8 @@ Molluscs <- iNat.obs %>% filter(Phylum == 'Mollusca')
 
 Terrestrial.molluscs.1.obs <- Molluscs %>% filter(Superorder == 'Eupulmonata')
 
+Terrestrial.molluscs.1.obs <- subset(Terrestrial.molluscs.1.obs, Order != 'Ellobiida')
+
 Terrestrial.molluscs.2.obs <- Molluscs %>% filter(Order == 'Sphaeriida')
 
 Terrestrial.molluscs.obs <- rbind(Terrestrial.molluscs.1.obs, Terrestrial.molluscs.2.obs)
