@@ -63,7 +63,7 @@ Ascomycota.obs <- iNat.obs %>% filter(Phylum == 'Ascomycota')
 
 Lichenized.Ascomycota.obs <- Ascomycota.obs %>% filter(Class == 'Arthoniomycetes' | Class == 'Dothideomycetes' | Class == 'Eurotiomycetes' | Class == 'Lecanoromycetes' | Class == 'Lichinomycetes')
 
-Lichenized.Ascomycota.obs<- subset(Lichenized.Ascomycota.obs, Order != 'Pleosporales' & Order != 'Geoglossales' & Order != 'Venturiales' & Order != 'Sareales' & Family != 'Stictidaceae' & Order != 'Eurotiales' & Order != 'Chaetothyriales' & Order != 'Capnodiales' & Order != 'Botryosphaeriales')
+Lichenized.Ascomycota.obs<- subset(Lichenized.Ascomycota.obs, Order != 'Abrothallales' & Genus != 'Arthophacopsis' & Order != 'Pleosporales' & Order != 'Geoglossales' & Order != 'Venturiales' & Order != 'Sareales' & Family != 'Stictidaceae' & Order != 'Eurotiales' & Order != 'Chaetothyriales' & Order != 'Capnodiales' & Order != 'Botryosphaeriales')
 
 Basidiomycota.obs <- iNat.obs %>% filter(Phylum == 'Basidiomycota')
 
@@ -71,23 +71,20 @@ Lichenized.Basidiomycota.obs <- Basidiomycota.obs %>% filter(Genus == 'Lichenomp
 
 Lichens.obs <- rbind(Lichenized.Ascomycota.obs, Lichenized.Basidiomycota.obs)
 
-# Ascomycota (unlichenized)
+# Fungi (unlichenized Ascomycota and Basidiomycota, and Mucoromycota
 
 Unlichenized.Ascomycota.obs <- anti_join(Ascomycota.obs,Lichenized.Ascomycota.obs)
-
-# Basidiomycota (unlichenized) and Mucoromycota
 
 Unlichenized.Basidiomycota.obs <- anti_join(Basidiomycota.obs,Lichenized.Basidiomycota.obs)
 
 Mucoromycota.obs <- iNat.obs %>% filter(Phylum == 'Mucoromycota')
 
-Unlichenized.Basidiomycota.Mucoromycota.obs <- rbind(Unlichenized.Basidiomycota.obs,Mucoromycota.obs)
+Fungi.obs <- rbind(Unlichenized.Ascomycota.obs,Unlichenized.Basidiomycota.obs,Mucoromycota.obs)
 
 # Myxogastria
 
 Myxogastria.obs <- iNat.obs %>% filter(Kingdom == 'Protozoa')
-Myxogastria.obs <- subset(Myxogastria.obs, Phylum != 'Retaria' & Phylum != 'Sarcomastigophora')
-
+Myxogastria.obs <- subset(Myxogastria.obs, Phylum != 'Amoebozoa' & Phylum != 'Retaria' & Phylum != 'Sarcomastigophora')
 
 ## PLANTS
 
@@ -153,9 +150,9 @@ Marine.animals.obs <- anti_join(Animals, Terrestrial.animals)
 # Check that all taxa are accounted for
 
 taxa <- rbind(Aves.obs,Bacteria.obs,Bryophyta.Marchantiophyta.Anthocerotophyta.obs,Desmids.etc.obs,
-              Freshwater.bryozoans.obs,Herptiles.obs,Marine.algae.and.protozoa.obs,Lichens.obs,
+              Freshwater.bryozoans.obs,Fungi.obs,Herptiles.obs,Marine.algae.and.protozoa.obs,Lichens.obs,
               Marine.animals.obs,Myxogastria.obs,Terrestrial.arthropods.obs,Terrestrial.mammals.obs,
-              Terrestrial.molluscs.obs,Tracheophyta.obs,Unlichenized.Ascomycota.obs,Unlichenized.Basidiomycota.Mucoromycota.obs)
+              Terrestrial.molluscs.obs,Tracheophyta.obs)
 
 missing.taxa <- anti_join(iNat.obs,taxa)
 
@@ -172,6 +169,8 @@ write.csv(Bryophyta.Marchantiophyta.Anthocerotophyta.obs, "outputs/iNat_obs_moss
 write.csv(Desmids.etc.obs, "outputs/iNat_obs_freshwater_and_terrestrial_algae.csv")
 
 write.csv(Freshwater.bryozoans.obs, "outputs/iNat_obs_freshwater_bryozoans.csv")
+
+write.csv(Fungi.obs, "outputs/iNat_obs_fungi.csv")
 
 write.csv(Herptiles.obs, "outputs/iNat_obs_herptiles.csv")
 
@@ -190,7 +189,3 @@ write.csv(Terrestrial.mammals.obs, "outputs/iNat_obs_terrestrial_mammals.csv")
 write.csv(Terrestrial.molluscs.obs, "outputs/iNat_obs_terrestrial_molluscs.csv")
 
 write.csv(Tracheophyta.obs, "outputs/iNat_obs_Tracheophyta.csv")
-
-write.csv(Unlichenized.Ascomycota.obs, "outputs/iNat_obs_unlichenized_Ascomycota.csv")
-
-write.csv(Unlichenized.Basidiomycota.Mucoromycota.obs, "outputs/iNat_obs_unlichenized_Basidiomycota_and_Mucoromycota.csv")
