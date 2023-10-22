@@ -12,9 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Tracheophyta_review_summary_reviewed_2023-10-14.csv")
-
-baseline <- baseline %>% filter(Phylum == 'Tracheophyta')
+baseline <- read.csv("summaries/Galiano_fungi_review_summary_2023-10-21.csv")
 
 # Apply standardized field names to baseline
 
@@ -27,19 +25,6 @@ summary.fields <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','King
                     'ID','Stats.Code')
 
 names(baseline) <- summary.fields
-
-# TEMP: Update Tracheophyta baseline iNaturalist observation id 
-
-# baseline$iNaturalist.Link <- gsub("http://www.inaturalist.org/observations/", "", as.character(baseline$iNaturalist.Link))
-# baseline$iNaturalist.Link <- gsub("https://www.inaturalist.org/observations/", "", as.character(baseline$iNaturalist.Link))
-# baseline$iNaturalist.Link <- gsub("http://inaturalist.ca/observations/", "", as.character(baseline$iNaturalist.Link))
-  
-# baseline$iNaturalist.Link <- paste0("iNat:", baseline$iNaturalist.Link)
-
-# Remove non-established species from iNaturalist observations:
-
-# Geranium macrorrhizum
-# Wisteria
 
 # Read iNaturalist obs
 
