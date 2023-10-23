@@ -1,5 +1,10 @@
 # Script to parse iNat records taxonomically
 
+### NOTE: YOU NEED TO REMOVE THE TERRESTRIAL ANIMALS FROM THE MARINE TAXA:
+# e.g., Amynthas (?), Octolasion cyaneum (?), Habrotrocha sp., Lumbricus terrestris
+
+## NOTE: Request that future obs inc. common names and also the 'casual' field to filter out casual obs
+
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 

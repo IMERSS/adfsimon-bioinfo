@@ -28,14 +28,6 @@ summary.fields <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','King
 
 names(baseline) <- summary.fields
 
-# TEMP: Update Tracheophyta baseline iNaturalist observation id 
-
-# baseline$iNaturalist.Link <- gsub("http://www.inaturalist.org/observations/", "", as.character(baseline$iNaturalist.Link))
-# baseline$iNaturalist.Link <- gsub("https://www.inaturalist.org/observations/", "", as.character(baseline$iNaturalist.Link))
-# baseline$iNaturalist.Link <- gsub("http://inaturalist.ca/observations/", "", as.character(baseline$iNaturalist.Link))
-  
-# baseline$iNaturalist.Link <- paste0("iNat:", baseline$iNaturalist.Link)
-
 # Remove non-established species from iNaturalist observations:
 
 # Geranium macrorrhizum
