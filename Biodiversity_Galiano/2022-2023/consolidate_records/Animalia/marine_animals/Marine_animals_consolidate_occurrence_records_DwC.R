@@ -18,7 +18,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Marine_animals_review_summary_2023-04-19.csv")
+summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-10-22.csv")
 
 
 
@@ -54,6 +54,10 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 # Read Galiano Island BC Canada - Marine Zoology 1893–2021 
 
 GI.1893.2021 <- read.csv("../../records/digitized/DarwinCore/Galiano_Island_BC_Canada_Marine_Zoology_1893–2021_updated_2023-04-18_AB_DwC.csv")
+
+# Remove iNaturalist records (to be incorporated separately as a live data source)
+
+GI.1893.2021 <- GI.1893.2021 %>% filter(institutionCode != 'iNaturalist')
 
 # Create DarwinCore dataframe template 
 
