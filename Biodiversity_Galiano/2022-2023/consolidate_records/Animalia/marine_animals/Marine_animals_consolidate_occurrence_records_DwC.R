@@ -18,7 +18,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-10-22.csv")
+summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-10-31.csv")
 
 
 
@@ -40,15 +40,15 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Consolidate records
 
-# Sources (3/3 added):
-
-# Galiano Island BC Canada - Marine Zoology 1893–2021 (Simon et al., 2022) - added
-# Note this version includes updated from iNat as of 2023-04-18
+# Sources (4/4 added):
 
 # Agassiz (ex McMurrich 1921) - added
 
 # Chu & Leys 2012 - added
 
+# Galiano Island BC Canada - Marine Zoology 1893–2021 (Simon et al., 2022) - added
+
+# iNaturalist data - added 
 
 
 # Read Galiano Island BC Canada - Marine Zoology 1893–2021 
@@ -359,6 +359,9 @@ Chu.Leys.2012.records$eventDate <- as.Date(Chu.Leys.2012.records$eventDate)
 
 nrow(Chu.Leys.2012)
 nrow(Chu.Leys.2012.records)
+
+
+
 
 
 
