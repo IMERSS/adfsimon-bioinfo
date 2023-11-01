@@ -19,8 +19,8 @@ baseline <- read.csv("summaries/Galiano_marine_animals_summary_2023-10-22.csv")
 summary.fields <- c('scientificName','scientificNameAuthorship','subtaxonAuthorship','commonName','kingdom','phylum',
                     'subphylum','superclass','class','subclass','superorder','order','suborder',
                     'superfamily','family','subfamily','tribe','genus','specificEpithet','hybrid',
-                    'subspecies','variety','establishmentMeans','provincialStatus','nationalStatus','Reporting.Status',
-                    'Observation','firstReported','firstReportedBy','Collection.List',
+                    'subspecies','variety','establishmentMeans','provincialStatus','nationalStatus','reportingStatus',
+                    'observation','firstReported','firstReportedBy','Collection.List',
                     'firstReportedCollectionNumber','firstReportedGBIF','firstObservediNat','firstObservedBy','firstObservedID','notes',
                     'ID','statsCode')
 
@@ -85,9 +85,7 @@ data.frame[names(iNat.obs.summary)] <- iNat.obs.summary
 
 iNat.obs.summary <- select(data.frame, c(1:length(iNat.obs.summary.fields)))
 
-# Replace NAs with empty strings ""
-
-# First convert logical to character
+# Replace NAs with empty strings "" and convert logical to character
 
 iNat.obs.summary <- iNat.obs.summary %>% mutate_if(is.logical, as.character)
 iNat.obs.summary <-  iNat.obs.summary %>% mutate_if(is.character, ~replace_na(.,""))
@@ -104,7 +102,7 @@ iNat.obs.summary$infrataxon <- iNat.obs.summary$subspecies
 
 # Now match with inner_join
 
-matched.iNat.obs.summary <- inner_join(baseline, iNat.obs.summary, by = c("genus","specificEpithet","infrataxon"))
+matched.iNat.obs.summary <- inner_join(baseline, iNat.obs.summary, by = c("ID"))
 names(matched.iNat.obs.summary)
 matched.iNat.obs.summary <- matched.iNat.obs.summary[,c(1,1:38)]
 
@@ -116,7 +114,7 @@ iNat.obs.summary$infrataxon <- NULL
 # Match observation summary against baseline by Taxon and Date Observed
 
 matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, scientificName = scientificName.x)
-matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, firstObserved = firstObserved.x)
+matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, firstObservediNat = firstObservediNat.x)
 matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, firstObservedBy = firstObservedBy.x)
 matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, firstObservedID = firstObservedID.x)
 
@@ -126,7 +124,7 @@ matched.iNat.obs.summary$firstObservedID  <- iNat.obs.summary$firstObservedID[ma
 
 # Matched summary
 
-summary.matched <- inner_join(baseline, matched.iNat.obs.summary, by = c('scientificName','firstObserved'))
+summary.matched <- inner_join(baseline, matched.iNat.obs.summary, by = c('scientificName','firstObservediNat'))
 
 summary.matched <- summary.matched[,c(1:38)]
 colnames(summary.matched) <- colnames(baseline)
@@ -141,15 +139,15 @@ summary.matched <-  summary.matched %>% mutate_if(is.character, ~replace_na(.,""
 
 # Unmatched summary
 
-unmatched.iNat.obs.summary = anti_join(iNat.obs.summary, summary.matched, by = c("Genus", "Hybrid", "Species", "Subspecies", "Variety"))
+unmatched.iNat.obs.summary = anti_join(iNat.obs.summary, summary.matched, by = c("ID"))
 
 # Add Stats Code to unmatched Taxa (note: this code is imperfect but will at least add codes for new records of species within previously recorded familes)
 
 unmatched.iNat.obs.summary$Stats.Code  <- baseline$Stats.Code[match(unlist(unmatched.iNat.obs.summary$Family), baseline$Family)]
 
-# Optional: trim to unmatched summary to observations identified at least to genus
+# Optional: trim unmatched summary to observations identified at least to genus
 
-unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary[!(is.na(unmatched.iNat.obs.summary$Genus) | unmatched.iNat.obs.summary$Genus == ""), ]
+unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary[!(is.na(unmatched.iNat.obs.summary$genus) | unmatched.iNat.obs.summary$genus == ""), ]
 
 # Merge baseline and unmatched summary for review 
 
