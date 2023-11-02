@@ -1,8 +1,5 @@
 # Script to parse iNat records taxonomically
 
-### NOTE: YOU NEED TO REMOVE THE TERRESTRIAL ANIMALS FROM THE MARINE TAXA:
-# e.g., Amynthas (?), Octolasion cyaneum (?), Habrotrocha sp., Lumbricus terrestris
-
 ## NOTE: Request that future obs inc. common names and also the 'casual' field to filter out casual obs
 
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
@@ -17,7 +14,7 @@ library(tidyr)
 
 # Read iNat records
 
-iNat.obs <- read.csv("iNat_records/BioGaliano_iNat_data_2023-10-18.csv")
+iNat.obs <- read.csv("iNat_records/BioGaliano_iNat_data_2023-11-01.csv")
 
 # Eliminate records without dates
 
@@ -144,11 +141,15 @@ Terrestrial.molluscs.2.obs <- Molluscs %>% filter(Order == 'Sphaeriida')
 
 Terrestrial.molluscs.obs <- rbind(Terrestrial.molluscs.1.obs, Terrestrial.molluscs.2.obs)
 
-## MARINE ANIMALS
+# Terrestrial Annelids, Rotifers, etc.
+
+Terrestrial.annelids.etc <- iNat.obs %>% filter(Genus == 'Amynthas' | Taxon.name == 'Octolasion cyaneum' | Genus == 'Habrotrocha' | Taxon.name == 'Lumbricus terrestris')
+
+# Marine Animals
 
 Animals <- iNat.obs %>% filter(Kingdom == 'Animalia')
 
-Terrestrial.animals <- rbind(Aves.obs, Freshwater.bryozoans.obs, Herptiles.obs, Terrestrial.arthropods.obs, Terrestrial.mammals.obs, Terrestrial.molluscs.obs)
+Terrestrial.animals <- rbind(Aves.obs, Freshwater.bryozoans.obs, Herptiles.obs, Terrestrial.annelids.etc, Terrestrial.arthropods.obs, Terrestrial.mammals.obs, Terrestrial.molluscs.obs)
 
 Marine.animals.obs <- anti_join(Animals, Terrestrial.animals)
 
@@ -186,6 +187,8 @@ write.csv(Marine.algae.and.protozoa.obs, "outputs/iNat_obs_marine_algae_and_prot
 write.csv(Marine.animals.obs, "outputs/iNat_obs_marine_animals.csv", row.names = FALSE)
 
 write.csv(Myxogastria.obs, "outputs/iNat_obs_Myxogastria.csv", row.names = FALSE)
+
+write.csv(Terrestrial.annelids.etc, "outputs/iNat_obs_Terrestrial_annelids_etc.csv", row.names = FALSE)
 
 write.csv(Terrestrial.arthropods.obs, "outputs/iNat_obs_terrestrial_arthropods.csv", row.names = FALSE)
 

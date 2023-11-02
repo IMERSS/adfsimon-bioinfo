@@ -546,6 +546,16 @@ unmatched.marine.animal.records
 
 marine.animal.records <- rbind(GI.1893.2021.records, A.Agassiz.records, Chu.Leys.2012.records, iNaturalist.records)
 
+# Compare catalog of occurrence records with baseline summary to see whether catalog is complete
+# with respect to diversity reported in baseline summary
+
+marine.animal.records.taxa <- unique(marine.animal.records$scientificName)
+summary.taxa <-summary$scientificName
+
+length(marine.animal.records.taxa)
+length(summary.taxa)
+
+setdiff(summary.taxa, marine.animal.records.taxa)
 
 # Finalize DwC fields (day, month, year, infraspecificEpithet, occurrenceStatus)
 
@@ -618,7 +628,9 @@ marine.animal.records[is.na(marine.animal.records)] <- ""
 
 write.csv(marine.animal.records,"synthesized/Galiano_marine_animal_records_consolidated.csv", row.names = FALSE)
 
-# Evaluate georeferencing resolution of vascular plant records
+length(unique(marine.animal.records$scientificName))
+
+# Evaluate georeferencing resolution of marine animal records
 
 nrow(marine.animal.records) # 19K marine animal occurrence records
 
