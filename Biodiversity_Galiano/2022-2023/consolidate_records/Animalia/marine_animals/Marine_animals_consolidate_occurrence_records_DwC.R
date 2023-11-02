@@ -552,10 +552,15 @@ marine.animal.records <- rbind(GI.1893.2021.records, A.Agassiz.records, Chu.Leys
 marine.animal.records.taxa <- unique(marine.animal.records$scientificName)
 summary.taxa <-summary$scientificName
 
+unique(marine.animal.records.taxa)
+unique(summary.taxa)
+
+
 length(marine.animal.records.taxa)
 length(summary.taxa)
 
 setdiff(summary.taxa, marine.animal.records.taxa)
+setdiff(marine.animal.records.taxa, summary.taxa)
 
 # Finalize DwC fields (day, month, year, infraspecificEpithet, occurrenceStatus)
 
