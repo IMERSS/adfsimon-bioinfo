@@ -1,12 +1,8 @@
 # Script to consolidate records of Galiano Island's marine animal diversity
 
-
-
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
-
-
 
 # Load packages
 
@@ -14,13 +10,9 @@ library(dplyr)
 library(stringr)
 library(tidyr)
 
-
-
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-10-31.csv")
-
-
+summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-11-01.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -35,8 +27,6 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
                     'individualCount','sex','establishmentMeans','provincialStatus','nationalStatus','identifiedBy',
                     'identificationQualifier','identificationRemarks','previousIdentifications','bibliographicCitation',
                     'associatedReferences')
-
-
 
 # Consolidate records
 
@@ -161,7 +151,7 @@ nrow(GI.1893.2021.names.matched)+nrow(GI.1893.2021.names.unmatched.matched)+nrow
 # Generate review key with mismatched names
 # (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon', 'Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(GI.1893.2021.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
@@ -361,13 +351,200 @@ nrow(Chu.Leys.2012)
 nrow(Chu.Leys.2012.records)
 
 
+# Read iNaturalist data
 
+iNaturalist.observations <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_marine_animals.csv")
+
+# Substitute iNaturalist usernames where actual observer names are missing
+
+iNaturalist.observations.nameless <- iNaturalist.observations %>% filter(!str_detect(Recorded.by, '')) 
+
+iNaturalist.observations.names <- anti_join(iNaturalist.observations,iNaturalist.observations.nameless)
+
+iNaturalist.observations.nameless$recordedBy <- iNaturalist.observations.nameless$user_login
+
+iNaturalist.observations <- rbind(iNaturalist.observations.nameless,iNaturalist.observations.names)
+
+# Swap coordinates with private coordinates for obscured records
+
+# iNaturalist.observations.coordinates.obscured <- iNaturalist.observations %>% drop_na(private_latitude)
+
+# iNaturalist.observations.coordinates.unobscured <- anti_join(iNaturalist.observations,iNaturalist.observations.coordinates.obscured)
+
+# iNaturalist.observations.coordinates.obscured$decimalLatitude <- iNaturalist.observations.coordinates.obscured$private_latitude
+# iNaturalist.observations.coordinates.obscured$decimalLongitude <- iNaturalist.observations.coordinates.obscured$private_longitude
+
+# iNaturalist.observations <- rbind(iNaturalist.observations.coordinates.obscured,iNaturalist.observations.coordinates.unobscured)
+
+# Drop observations of taxa that are not identified to genus at least
+
+iNaturalist.observations <- subset(iNaturalist.observations, Genus != "")
+
+# Substitute iNaturalist taxon names with names from curated summary based on taxonID
+
+iNaturalist.observations$swappedNames <- summary$scientificName[match(unlist(iNaturalist.observations$iNaturalist.taxon.ID), summary$ID)]
+
+iNaturalist.observations.swapped.names <- iNaturalist.observations %>% drop_na(swappedNames)
+
+iNaturalist.observations.unswapped.names <- anti_join(iNaturalist.observations,iNaturalist.observations.swapped.names)
+
+iNaturalist.observations.swapped.names$iNaturalist.taxon.name <- iNaturalist.observations.swapped.names$swappedNames
+
+iNaturalist.observations <- rbind(iNaturalist.observations.swapped.names,iNaturalist.observations.unswapped.names)
+
+iNaturalist.observations$swappedNames <- NULL
+
+# Add DwC fields to facilitate joins
+
+iNaturalist.observations <- iNaturalist.observations %>% rename(scientificName = iNaturalist.taxon.name)
+
+# Create DarwinCore dataframe template 
+
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(iNaturalist.observations)))
+names(data.frame) <- DwCFields
+
+data.frame[names(iNaturalist.observations)] <- iNaturalist.observations
+
+iNaturalist.observations <- select(data.frame, c(1:length(DwCFields)))
+
+# Add metadata
+
+iNaturalist.observations$stateProvince <- "British Columbia"
+iNaturalist.observations$island <- "Galiano Island"
+iNaturalist.observations$country <- "Canada"
+iNaturalist.observations$countryCode <- "CA"
+iNaturalist.observations$basisOfRecord <- "HumanObservation"
+iNaturalist.observations$datasetName <- "iNaturalist"
+
+# Merge with summary to standardize names and taxon metadata
+
+iNaturalist.observations$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$taxonID <- summary$ID[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$kingdom <- summary$kingdom[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$phylum <- summary$phylum[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$subphylum <- summary$subphylum[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$class <- summary$class[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$order <- summary$order[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$suborder <- summary$suborder[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$superfamily <- summary$superfamily[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$family <- summary$family[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$genus <- summary$genus[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$specificEpithet <- summary$specificEpithet[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$hybrid <- summary$hybrid[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$subspecies <- summary$subspecies[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$variety <- summary$variety[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$establishmentMeans <- summary$establishmentMeans[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$provincialStatus <- summary$provincialStatus[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+iNaturalist.observations$nationalStatus <- summary$nationalStatus[match(unlist(iNaturalist.observations$scientificName), summary$scientificName)]
+
+# Unmatched records
+
+iNaturalist.observations.names.unmatched <- iNaturalist.observations[is.na(iNaturalist.observations$taxonID),]
+
+# Matched records
+
+iNaturalist.observations.names.matched <- anti_join(iNaturalist.observations,iNaturalist.observations.names.unmatched)
+
+# Confirm all records are represented 
+
+nrow(iNaturalist.observations)
+nrow(iNaturalist.observations.names.matched)
+nrow(iNaturalist.observations.names.unmatched)
+nrow(iNaturalist.observations.names.matched)+nrow(iNaturalist.observations.names.unmatched)
+
+# Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+
+iNaturalist.observations.key <- read.csv("keys/marine_animal_taxon_key_2023.csv") 
+
+# Swap unmatched names using key
+
+iNaturalist.observations.names.unmatched.matched <- iNaturalist.observations.names.unmatched
+
+iNaturalist.observations.names.unmatched.matched$scientificNameTemp <- iNaturalist.observations.key$Matched.Taxon[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificName), iNaturalist.observations.key$Taxon)]
+
+# Add values based on newly matched name
+
+iNaturalist.observations.names.unmatched.matched$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$taxonID <- summary$ID[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$phylum <- summary$phylum[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$class <- summary$class[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$order <- summary$order[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$suborder <- summary$suborder[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$superfamily <- summary$superfamily[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$family <- summary$family[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$genus <- summary$genus[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$specificEpithet <- summary$specificEpithet[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$hybrid <- summary$hybrid[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$subspecies <- summary$subspecies[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$variety <- summary$variety[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$establishmentMeans <- summary$establishmentMeans[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$provincialStatus <- summary$provincialStatus[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.observations.names.unmatched.matched$nationalStatus <- summary$nationalStatus[match(unlist(iNaturalist.observations.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+
+# Filter taxa unrecognized in summary 
+
+iNaturalist.observations.names.unmatched.unmatched <- iNaturalist.observations.names.unmatched.matched[is.na(iNaturalist.observations.names.unmatched.matched$taxonID),]
+
+iNaturalist.observations.names.unmatched.unmatched$scientificNameTemp <- NULL
+
+# Filter taxa recognized in summary
+
+iNaturalist.observations.names.unmatched.matched$scientificName <- iNaturalist.observations.names.unmatched.matched$scientificNameTemp
+
+iNaturalist.observations.names.unmatched.matched$scientificNameTemp <- NULL
+
+iNaturalist.observations.names.unmatched.matched <- iNaturalist.observations.names.unmatched.matched %>% drop_na(taxonID)
+
+# Confirm all records are represented 
+
+nrow(iNaturalist.observations)
+nrow(iNaturalist.observations.names.matched)
+nrow(iNaturalist.observations.names.unmatched)
+nrow(iNaturalist.observations.names.unmatched.matched)
+nrow(iNaturalist.observations.names.unmatched.unmatched)
+nrow(iNaturalist.observations.names.matched)+nrow(iNaturalist.observations.names.unmatched.matched)+nrow(iNaturalist.observations.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(iNaturalist.observations.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- iNaturalist.observations.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(GI.1893.2021.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
+# Bind records
+
+iNaturalist.records <- rbind(iNaturalist.observations.names.matched,iNaturalist.observations.names.unmatched.matched)
+
+# Set date formatting consistent with other data frames
+
+iNaturalist.records$eventDate <- as.Date(iNaturalist.records$eventDate)
+
+# Compare records in and out
+
+nrow(iNaturalist.observations)
+nrow(iNaturalist.records) # 432 records omitted: all species resolved only to genus (redundant to list) or unrecognized in summary
+
+unmatched.marine.animal.records <- rbind(unmatched.marine.animal.records,iNaturalist.observations.names.unmatched.unmatched)
+
+unmatched.marine.animal.records
 
 
 
 # Combine all source occurrence records
 
-marine.animal.records <- rbind(GI.1893.2021.records, A.Agassiz.records, Chu.Leys.2012.records)
+marine.animal.records <- rbind(GI.1893.2021.records, A.Agassiz.records, Chu.Leys.2012.records, iNaturalist.records)
 
 
 # Finalize DwC fields (day, month, year, infraspecificEpithet, occurrenceStatus)
