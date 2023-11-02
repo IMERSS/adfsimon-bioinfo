@@ -165,32 +165,32 @@ unique(missing.taxa$Taxon.name)
 
 # Export catalogs
 
-write.csv(Aves.obs, "outputs/iNat_obs_birds.csv")
+write.csv(Aves.obs, "outputs/iNat_obs_birds.csv", row.names = FALSE)
 
-write.csv(Bacteria.obs, "outputs/iNat_obs_bacteria.csv")
+write.csv(Bacteria.obs, "outputs/iNat_obs_bacteria.csv", row.names = FALSE)
 
-write.csv(Bryophyta.Marchantiophyta.Anthocerotophyta.obs, "outputs/iNat_obs_mosses_liverworts_and_hornworts.csv")
+write.csv(Bryophyta.Marchantiophyta.Anthocerotophyta.obs, "outputs/iNat_obs_mosses_liverworts_and_hornworts.csv", row.names = FALSE)
 
-write.csv(Desmids.etc.obs, "outputs/iNat_obs_freshwater_and_terrestrial_algae.csv")
+write.csv(Desmids.etc.obs, "outputs/iNat_obs_freshwater_and_terrestrial_algae.csv", row.names = FALSE)
 
-write.csv(Freshwater.bryozoans.obs, "outputs/iNat_obs_freshwater_bryozoans.csv")
+write.csv(Freshwater.bryozoans.obs, "outputs/iNat_obs_freshwater_bryozoans.csv", row.names = FALSE)
 
-write.csv(Fungi.obs, "outputs/iNat_obs_fungi.csv")
+write.csv(Fungi.obs, "outputs/iNat_obs_fungi.csv", row.names = FALSE)
 
-write.csv(Herptiles.obs, "outputs/iNat_obs_herptiles.csv")
+write.csv(Herptiles.obs, "outputs/iNat_obs_herptiles.csv", row.names = FALSE)
 
-write.csv(Lichens.obs, "outputs/iNat_obs_lichens.csv")
+write.csv(Lichens.obs, "outputs/iNat_obs_lichens.csv", row.names = FALSE)
 
-write.csv(Marine.algae.and.protozoa.obs, "outputs/iNat_obs_marine_algae_and_protozoa.csv")
+write.csv(Marine.algae.and.protozoa.obs, "outputs/iNat_obs_marine_algae_and_protozoa.csv", row.names = FALSE)
 
-write.csv(Marine.animals.obs, "outputs/iNat_obs_marine_animals.csv")
+write.csv(Marine.animals.obs, "outputs/iNat_obs_marine_animals.csv", row.names = FALSE)
 
-write.csv(Myxogastria.obs, "outputs/iNat_obs_Myxogastria.csv")
+write.csv(Myxogastria.obs, "outputs/iNat_obs_Myxogastria.csv", row.names = FALSE)
 
-write.csv(Terrestrial.arthropods.obs, "outputs/iNat_obs_terrestrial_arthropods.csv")
+write.csv(Terrestrial.arthropods.obs, "outputs/iNat_obs_terrestrial_arthropods.csv", row.names = FALSE)
 
-write.csv(Terrestrial.mammals.obs, "outputs/iNat_obs_terrestrial_mammals.csv")
+write.csv(Terrestrial.mammals.obs, "outputs/iNat_obs_terrestrial_mammals.csv", row.names = FALSE)
 
-write.csv(Terrestrial.molluscs.obs, "outputs/iNat_obs_terrestrial_molluscs.csv")
+write.csv(Terrestrial.molluscs.obs, "outputs/iNat_obs_terrestrial_molluscs.csv", row.names = FALSE)
 
-write.csv(Tracheophyta.obs, "outputs/iNat_obs_Tracheophyta.csv")
+write.csv(Tracheophyta.obs, "outputs/iNat_obs_Tracheophyta.csv", row.names = FALSE)
