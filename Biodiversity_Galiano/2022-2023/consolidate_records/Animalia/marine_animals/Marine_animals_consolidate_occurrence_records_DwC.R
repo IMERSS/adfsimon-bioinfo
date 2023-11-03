@@ -377,7 +377,7 @@ iNaturalist.observations <- iNaturalist.observations %>% rename(scientificName =
 iNaturalist.observations <- iNaturalist.observations %>% rename(eventDate = Date.observed)
 iNaturalist.observations <- iNaturalist.observations %>% rename(occurrenceID = observationId)
 iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLatitude = Latitude)
-iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLongitude = Latitude)
+iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLongitude = Longitude)
 
 # Substitute iNaturalist taxon names with names from curated summary based on taxonID
 
@@ -387,7 +387,7 @@ iNaturalist.observations.swapped.names <- iNaturalist.observations %>% drop_na(s
 
 iNaturalist.observations.unswapped.names <- anti_join(iNaturalist.observations,iNaturalist.observations.swapped.names)
 
-iNaturalist.observations.swapped.names$iNaturalist.taxon.name <- iNaturalist.observations.swapped.names$swappedNames
+iNaturalist.observations.swapped.names$scientificName <- iNaturalist.observations.swapped.names$swappedNames
 
 iNaturalist.observations <- rbind(iNaturalist.observations.swapped.names,iNaturalist.observations.unswapped.names)
 
