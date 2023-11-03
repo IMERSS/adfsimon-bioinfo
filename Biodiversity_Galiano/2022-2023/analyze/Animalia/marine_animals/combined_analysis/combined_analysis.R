@@ -13,7 +13,7 @@ setwd(str_glue("{projroot}/Biodiversity_Galiano/2022-2023"))
 
 summary <- read.csv("review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-11-01.csv")
 
-animals <- read.csv("consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated-2023-11-01.csv")
+animals <- read.csv("consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated-2023-11-03.csv")
 
 algae <- read.csv("consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2023-04-22.csv")
 
