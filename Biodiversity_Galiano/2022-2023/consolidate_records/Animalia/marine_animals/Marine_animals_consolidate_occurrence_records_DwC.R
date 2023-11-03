@@ -365,20 +365,19 @@ iNaturalist.observations.nameless$recordedBy <- iNaturalist.observations.nameles
 
 iNaturalist.observations <- rbind(iNaturalist.observations.nameless,iNaturalist.observations.names)
 
-# Swap coordinates with private coordinates for obscured records
-
-# iNaturalist.observations.coordinates.obscured <- iNaturalist.observations %>% drop_na(private_latitude)
-
-# iNaturalist.observations.coordinates.unobscured <- anti_join(iNaturalist.observations,iNaturalist.observations.coordinates.obscured)
-
-# iNaturalist.observations.coordinates.obscured$decimalLatitude <- iNaturalist.observations.coordinates.obscured$private_latitude
-# iNaturalist.observations.coordinates.obscured$decimalLongitude <- iNaturalist.observations.coordinates.obscured$private_longitude
-
-# iNaturalist.observations <- rbind(iNaturalist.observations.coordinates.obscured,iNaturalist.observations.coordinates.unobscured)
-
 # Drop observations of taxa that are not identified to genus at least
 
 iNaturalist.observations <- subset(iNaturalist.observations, Genus != "")
+
+# Add DwC fields to iNaturalist catalog to facilitate joins with DwC dataframe template
+
+names(marine.animal.records)
+
+iNaturalist.observations <- iNaturalist.observations %>% rename(scientificName = iNaturalist.taxon.name)
+iNaturalist.observations <- iNaturalist.observations %>% rename(eventDate = Date.observed)
+iNaturalist.observations <- iNaturalist.observations %>% rename(occurrenceID = observationId)
+iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLatitude = Latitude)
+iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLongitude = Latitude)
 
 # Substitute iNaturalist taxon names with names from curated summary based on taxonID
 
@@ -393,10 +392,6 @@ iNaturalist.observations.swapped.names$iNaturalist.taxon.name <- iNaturalist.obs
 iNaturalist.observations <- rbind(iNaturalist.observations.swapped.names,iNaturalist.observations.unswapped.names)
 
 iNaturalist.observations$swappedNames <- NULL
-
-# Add DwC fields to facilitate joins
-
-iNaturalist.observations <- iNaturalist.observations %>% rename(scientificName = iNaturalist.taxon.name)
 
 # Create DarwinCore dataframe template 
 
