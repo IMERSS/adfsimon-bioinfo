@@ -1,5 +1,9 @@
 #### R Script for synthesizing taxon summaries for the Biodiversity Galiano project
 
+# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
+
 ## Load R packages
 
 library(dplyr)
@@ -14,61 +18,41 @@ substrRight <- function(x, n){
   substr(x, nchar(x)-n+1, nchar(x))
 }
 
-## Set directory
-
-setwd("/Users/Simon/Sync/Simon/Biodiversity_Galiano_Project/Species_Lists/2021_Lists/BioGaliano_2021_Species_Synthesis")
-
 ## Read in data
 
-dir()
+dir("../review/Fungi_Lichens_Myxogastria/myxos/summaries")
 
-BACTERIA <- read.csv("Bacteria_2021-11-25.csv")
+BACTERIA <- read.csv("../review/Bacteria/bacteria/summaries/Galiano_bacteria_review_summary_2023-11-05.csv")
 
-PROTOZOA <- read.csv("Protozoa_2021-11-25.csv")
+FUNGI <- read.csv("../review/Fungi_Lichens_Myxogastria/fungi/summaries/Galiano_fungi_review_summary_2023-11-05.csv")
+LICHENS <- read.csv("../review/Fungi_Lichens_Myxogastria/lichens/summaries/Galiano_lichens_review_summary_reviewed_2023-11-05.csv")
+MYXOS <- read.csv("../review/Fungi_Lichens_Myxogastria/myxos/summaries/Galiano_myxos_review_summary_2023-11-05.csv")
 
-FUNGI <- read.csv("Fungi_2021-11-25.csv")
-LICHENS <- read.csv("Lichens_2021-08-18.csv")
+BRYOPHYTES <- read.csv("../review/Plantae_et_Chromista/mosses_liverworts_and_hornworts/summaries/Galiano_mosses_liverworts_and_hornworts_review_summary_2023-11-05.csv")
+FRESH_ALGAE <- read.csv("../review/Plantae_et_Chromista/freshwater_and_terrestrial_algae/summaries/Galiano_freshwater_and_terrestrial_algae_review_summary_reviewed_2023-11-05.csv")
+# MARINE_ALGAE <- read.csv("../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-10-14.csv") # MARINE ALGAE NOT CONSIDERED FOR NOW, BC NEW SCHOOL FORMAT
+VASCULARS <- read.csv("../review/Plantae_et_Chromista/vascular_plants/summaries/Galiano_Tracheophyta_review_summary_reviewed_2023-11-05.csv")
 
-ALGAE <- read.csv("Algae_2021-11-25.csv")
-BRYOPHYTES <- read.csv("Bryophyta_2021-08-19.csv")
-VASCULARS <- read.csv("Vascular_Plants_021-09-19_no_comments.csv")
+BIRDS <- read.csv("../review/Animalia/birds/summaries/Galiano_birds_review_summary_2023-11-05.csv")
+FRESH_BRYOZOANS <- read.csv("../review/Animalia/freshwater_bryozoans/summaries/Galiano_freshwater_bryozoans_review_summary_2023-11-05.csv")
+HERPTILES <- read.csv("../review/Animalia/herptiles/summaries/Galiano_herptiles_summary_2023-11-05.csv")
+MARINE_ANIMALS <- read.csv("../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-11-01.csv")
+TERRESTRIAL_ANNELIDS_ETC <- read.csv("../review/Animalia/terrestrial_annelids_etc/summaries/Galiano_terrestrial_annelids_etc_review_summary_2023-11-04.csv")
+TERRESTRIAL_ARTHROPODS <- read.csv("../review/Animalia/terrestrial_arthropods/summaries/Galiano_terrestrial_arthropods_review_summary_2023-10-21.csv")
+TERRESTRIAL_MAMMALS <- read.csv("../review/Animalia/terrestrial_mammals/summaries/Galiano_terrestrial_mammals_review_summary_2023-11-05.csv")
+TERRESTRIAL_MOLLUSCS <- read.csv("../review/Animalia/terrestrial_molluscs/summaries/Galiano_terrestrial_molluscs_review_summary_2023-11-05.csv")
 
-PORIFERA <- read.csv("Porifera_2021-01-27.csv")
-JELLIES <- read.csv("Cnidaria_et_Ctenophora_2021-01-27.csv")
-CRUSTACEANS <- read.csv("Crustacea_2021-02-05.csv")
-MARINE_MOLLUSCS <- read.csv("Marine_Molluscs_2021-01-31.csv")
-WORMS <- read.csv("Annelida_Chaetognatha_Nemertea_Platyhelminthes_et_Sipuncula_2021-02-05.csv")
-LOPHOPHORATES <- read.csv("Brachiopoda_Bryozoa_Entoprocta_et_Phoronida_2021-02-04.csv")
-ECHINODERMS <- read.csv("Echinodermata_2021-02-04.csv")
-TUNICATES <- read.csv("Tunicata_2021-02-05.csv")
-FISH <- read.csv("Actinopterygii_et_Chondrichthyes_2021-01-28.csv")
-MARINE_MAMMALS <- read.csv("Marine_Mammals_2021-02-04.csv")
+names(MARINE_ANIMALS) <- names(BIRDS) # temporary fix while we transition all data to same format
 
-TERRESTRIAL_MOLLUSCS <- read.csv("Terrestrial_molluscs_2021-11-25.csv")
-SPRINGTAILS <- read.csv("Collembola_2021-11-25.csv")
-ISOPODS <- read.csv("Oniscidea_2021-11-25.csv")
-MYRIAPODS <- read.csv("Myriapoda_2021-11-25.csv")
-INSECTS <- read.csv("Insects_2021-09-04.csv")
-SPIDERS <- read.csv("Arachnida_2021-11-25.csv")
-GOLDFISH <- read.csv("Cypriniformes_2021-11-25.csv")
-HERPTILES <- read.csv("Herptiles_2021-11-25.csv")
-BIRDS <- read.csv("Birds_2021-11-25.csv")
-TERRESTRIAL_MAMMALS <- read.csv("Terrestrial_Mammals_2021-11-25.csv")
+ALGAE_PLANTS <- rbind(BRYOPHYTES, FRESH_ALGAE, VASCULARS)
 
-ANIMALS <- rbind(PORIFERA, JELLIES, CRUSTACEANS, MARINE_MOLLUSCS, WORMS, LOPHOPHORATES, ECHINODERMS,
-                 TUNICATES, FISH, MARINE_MAMMALS, TERRESTRIAL_MOLLUSCS, SPRINGTAILS, ISOPODS,
-                 MYRIAPODS, INSECTS, SPIDERS, GOLDFISH, HERPTILES, BIRDS, TERRESTRIAL_MAMMALS)
+ANIMALS <- rbind(BIRDS, FRESH_BRYOZOANS, HERPTILES, MARINE_ANIMALS, TERRESTRIAL_ANNELIDS_ETC, 
+                 TERRESTRIAL_ARTHROPODS, TERRESTRIAL_MAMMALS, TERRESTRIAL_MOLLUSCS)
 
-unique(PORIFERA$Stats.Code)
-
-PROTOZOA_FUNGI_LICHENS <- rbind(PROTOZOA, FUNGI, LICHENS)
-
-BACTERIA <- BACTERIA
-
-ALGAE_PLANTS <- rbind(ALGAE, BRYOPHYTES, VASCULARS)
+FUNGI_LICHENS_MYXOS <- rbind(FUNGI, LICHENS, MYXOS)
 
 nrow(BACTERIA)
-nrow(PROTOZOA_FUNGI_LICHENS)
+nrow(FUNGI_LICHENS_MYXOS)
 nrow(ALGAE_PLANTS)
 nrow(ANIMALS)
 
@@ -117,11 +101,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         BAC.count$new.2019 <- sum(str_count(BAC.new$Reporting.Status, pattern = "2019"))
         BAC.count$new.2020 <- sum(str_count(BAC.new$Reporting.Status, pattern = "2020"))
         BAC.count$new.2021 <- sum(str_count(BAC.new$Reporting.Status, pattern = "2021"))
-        BAC.count$new.prior.2015 <- BAC.count$New - (BAC.count$new.2015+BAC.count$new.2016+BAC.count$new.2017+BAC.count$new.2018+BAC.count$new.2019+BAC.count$new.2020+BAC.count$new.2021)
+        BAC.count$new.2022 <- sum(str_count(BAC.new$Reporting.Status, pattern = "2022"))
+        BAC.count$new.2023 <- sum(str_count(BAC.new$Reporting.Status, pattern = "2023"))
+        BAC.count$new.prior.2015 <- BAC.count$New - (BAC.count$new.2015+BAC.count$new.2016+BAC.count$new.2017+BAC.count$new.2018+BAC.count$new.2019+BAC.count$new.2020+BAC.count$new.2021+BAC.count$new.2022+BAC.count$new.2023)
         
         BAC.count
         
-        BAC.count.chronology <- BAC.count %>% pivot_longer(cols = new.2015:new.2021)
+        BAC.count.chronology <- BAC.count %>% pivot_longer(cols = new.2015:new.2023)
         BAC.count.chronology <- BAC.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(BAC.count.chronology)<- c("Taxon","Year","New.spp")
@@ -137,7 +123,7 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         PRO.count <- data.frame(Taxa.PRO,Reported,Confirmed,New,Total,Prop.confirmed,Prop.new)
         names(PRO.count)[names(PRO.count) == 'Taxa.PRO'] <- 'Taxon'
         
-        PRO <- PROTOZOA_FUNGI_LICHENS %>% dplyr::filter(Stats.Code == 'PRO')
+        PRO <- FUNGI_LICHENS_MYXOS %>% dplyr::filter(Stats.Code == 'PRO')
         PRO.reported <- PRO %>% dplyr::filter(Reporting.Status == 'reported')
         PRO.confirmed <- PRO %>% dplyr::filter(Reporting.Status == 'confirmed')
         PRO.new <- PRO %>% dplyr::filter(grepl("new",Reporting.Status))
@@ -157,11 +143,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         PRO.count$new.2019 <- sum(str_count(PRO.new$Reporting.Status, pattern = "2019"))
         PRO.count$new.2020 <- sum(str_count(PRO.new$Reporting.Status, pattern = "2020"))
         PRO.count$new.2021 <- sum(str_count(PRO.new$Reporting.Status, pattern = "2021"))
-        PRO.count$new.prior.2015 <- PRO.count$New - (PRO.count$new.2015+PRO.count$new.2016+PRO.count$new.2017+PRO.count$new.2018+PRO.count$new.2019+PRO.count$new.2020+PRO.count$new.2021)
+        PRO.count$new.2022 <- sum(str_count(PRO.new$Reporting.Status, pattern = "2022"))
+        PRO.count$new.2023 <- sum(str_count(PRO.new$Reporting.Status, pattern = "2023"))
+        PRO.count$new.prior.2015 <- PRO.count$New - (PRO.count$new.2015+PRO.count$new.2016+PRO.count$new.2017+PRO.count$new.2018+PRO.count$new.2019+PRO.count$new.2020+PRO.count$new.2021+PRO.count$new.2022+PRO.count$new.2023)
         
         PRO.count
         
-        PRO.count.chronology <- PRO.count %>% pivot_longer(cols = new.2015:new.2021)
+        PRO.count.chronology <- PRO.count %>% pivot_longer(cols = new.2015:new.2023)
         PRO.count.chronology <- PRO.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(PRO.count.chronology)<- c("Taxon","Year","New.spp")
@@ -177,7 +165,7 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         FUN.count <- data.frame(Taxa.FUN,Reported,Confirmed,New,Total,Prop.confirmed,Prop.new)
         names(FUN.count)[names(FUN.count) == 'Taxa.FUN'] <- 'Taxon'
         
-        FUN <- PROTOZOA_FUNGI_LICHENS %>% dplyr::filter(Stats.Code == 'FUN')
+        FUN <- FUNGI_LICHENS_MYXOS %>% dplyr::filter(Stats.Code == 'FUN')
         FUN.reported <- FUN %>% dplyr::filter(Reporting.Status == 'reported')
         FUN.confirmed <- FUN %>% dplyr::filter(Reporting.Status == 'confirmed')
         FUN.new <- FUN %>% dplyr::filter(grepl("new",Reporting.Status))
@@ -197,11 +185,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         FUN.count$new.2019 <- sum(str_count(FUN.new$Reporting.Status, pattern = "2019"))
         FUN.count$new.2020 <- sum(str_count(FUN.new$Reporting.Status, pattern = "2020"))
         FUN.count$new.2021 <- sum(str_count(FUN.new$Reporting.Status, pattern = "2021"))
-        FUN.count$new.prior.2015 <- FUN.count$New - (FUN.count$new.2015+FUN.count$new.2016+FUN.count$new.2017+FUN.count$new.2018+FUN.count$new.2019+FUN.count$new.2020+FUN.count$new.2021)
+        FUN.count$new.2022 <- sum(str_count(FUN.new$Reporting.Status, pattern = "2022"))
+        FUN.count$new.2023 <- sum(str_count(FUN.new$Reporting.Status, pattern = "2023"))
+        FUN.count$new.prior.2015 <- FUN.count$New - (FUN.count$new.2015+FUN.count$new.2016+FUN.count$new.2017+FUN.count$new.2018+FUN.count$new.2019+FUN.count$new.2020+FUN.count$new.2021+FUN.count$new.2022+FUN.count$new.2023)
         
         FUN.count
         
-        FUN.count.chronology <- FUN.count %>% pivot_longer(cols = new.2015:new.2021)
+        FUN.count.chronology <- FUN.count %>% pivot_longer(cols = new.2015:new.2023)
         FUN.count.chronology <- FUN.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(FUN.count.chronology)<- c("Taxon","Year","New.spp")
@@ -217,7 +207,7 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         LIC.count <- data.frame(Taxa.LIC,Reported,Confirmed,New,Total,Prop.confirmed,Prop.new)
         names(LIC.count)[names(LIC.count) == 'Taxa.LIC'] <- 'Taxon'
         
-        LIC <- PROTOZOA_FUNGI_LICHENS %>% dplyr::filter(Stats.Code == 'LIC')
+        LIC <- FUNGI_LICHENS_MYXOS %>% dplyr::filter(Stats.Code == 'LIC')
         LIC.reported <- LIC %>% dplyr::filter(Reporting.Status == 'reported')
         LIC.confirmed <- LIC %>% dplyr::filter(Reporting.Status == 'confirmed')
         LIC.new <- LIC %>% dplyr::filter(grepl("new",Reporting.Status))
@@ -237,11 +227,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         LIC.count$new.2019 <- sum(str_count(LIC.new$Reporting.Status, pattern = "2019"))
         LIC.count$new.2020 <- sum(str_count(LIC.new$Reporting.Status, pattern = "2020"))
         LIC.count$new.2021 <- sum(str_count(LIC.new$Reporting.Status, pattern = "2021"))
-        LIC.count$new.prior.2015 <- LIC.count$New - (LIC.count$new.2015+LIC.count$new.2016+LIC.count$new.2017+LIC.count$new.2018+LIC.count$new.2019+LIC.count$new.2020+LIC.count$new.2021)
+        LIC.count$new.2022 <- sum(str_count(LIC.new$Reporting.Status, pattern = "2022"))
+        LIC.count$new.2023 <- sum(str_count(LIC.new$Reporting.Status, pattern = "2023"))
+        LIC.count$new.prior.2015 <- LIC.count$New - (LIC.count$new.2015+LIC.count$new.2016+LIC.count$new.2017+LIC.count$new.2018+LIC.count$new.2019+LIC.count$new.2020+LIC.count$new.2021+LIC.count$new.2022+LIC.count$new.2023)
         
         LIC.count
         
-        LIC.count.chronology <- LIC.count %>% pivot_longer(cols = new.2015:new.2021)
+        LIC.count.chronology <- LIC.count %>% pivot_longer(cols = new.2015:new.2023)
         LIC.count.chronology <- LIC.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(LIC.count.chronology)<- c("Taxon","Year","New.spp")
@@ -277,11 +269,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         ALG.count$new.2019 <- sum(str_count(ALG.new$Reporting.Status, pattern = "2019"))
         ALG.count$new.2020 <- sum(str_count(ALG.new$Reporting.Status, pattern = "2020"))
         ALG.count$new.2021 <- sum(str_count(ALG.new$Reporting.Status, pattern = "2021"))
-        ALG.count$new.prior.2015 <- ALG.count$New - (ALG.count$new.2015+ALG.count$new.2016+ALG.count$new.2017+ALG.count$new.2018+ALG.count$new.2019+ALG.count$new.2020+ALG.count$new.2021)
+        ALG.count$new.2022 <- sum(str_count(ALG.new$Reporting.Status, pattern = "2022"))
+        ALG.count$new.2023 <- sum(str_count(ALG.new$Reporting.Status, pattern = "2023"))
+        ALG.count$new.prior.2015 <- ALG.count$New - (ALG.count$new.2015+ALG.count$new.2016+ALG.count$new.2017+ALG.count$new.2018+ALG.count$new.2019+ALG.count$new.2020+ALG.count$new.2021+ALG.count$new.2022+ALG.count$new.2023)
         
         ALG.count
         
-        ALG.count.chronology <- ALG.count %>% pivot_longer(cols = new.2015:new.2021)
+        ALG.count.chronology <- ALG.count %>% pivot_longer(cols = new.2015:new.2023)
         ALG.count.chronology <- ALG.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(ALG.count.chronology)<- c("Taxon","Year","New.spp")
@@ -317,11 +311,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         BRY.count$new.2019 <- sum(str_count(BRY.new$Reporting.Status, pattern = "2019"))
         BRY.count$new.2020 <- sum(str_count(BRY.new$Reporting.Status, pattern = "2020"))
         BRY.count$new.2021 <- sum(str_count(BRY.new$Reporting.Status, pattern = "2021"))
-        BRY.count$new.prior.2015 <- BRY.count$New - (BRY.count$new.2015+BRY.count$new.2016+BRY.count$new.2017+BRY.count$new.2018+BRY.count$new.2019+BRY.count$new.2020+BRY.count$new.2021)
+        BRY.count$new.2022 <- sum(str_count(BRY.new$Reporting.Status, pattern = "2022"))
+        BRY.count$new.2023 <- sum(str_count(BRY.new$Reporting.Status, pattern = "2023"))
+        BRY.count$new.prior.2015 <- BRY.count$New - (BRY.count$new.2015+BRY.count$new.2016+BRY.count$new.2017+BRY.count$new.2018+BRY.count$new.2019+BRY.count$new.2020+BRY.count$new.2021+BRY.count$new.2022+BRY.count$new.2023)
         
         BRY.count
         
-        BRY.count.chronology <- BRY.count %>% pivot_longer(cols = new.2015:new.2021)
+        BRY.count.chronology <- BRY.count %>% pivot_longer(cols = new.2015:new.2023)
         BRY.count.chronology <- BRY.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(BRY.count.chronology)<- c("Taxon","Year","New.spp")
@@ -357,11 +353,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         VAS.count$new.2019 <- sum(str_count(VAS.new$Reporting.Status, pattern = "2019"))
         VAS.count$new.2020 <- sum(str_count(VAS.new$Reporting.Status, pattern = "2020"))
         VAS.count$new.2021 <- sum(str_count(VAS.new$Reporting.Status, pattern = "2021"))
-        VAS.count$new.prior.2015 <- VAS.count$New - (VAS.count$new.2015+VAS.count$new.2016+VAS.count$new.2017+VAS.count$new.2018+VAS.count$new.2019+VAS.count$new.2020+VAS.count$new.2021)
+        VAS.count$new.2022 <- sum(str_count(VAS.new$Reporting.Status, pattern = "2022"))
+        VAS.count$new.2023 <- sum(str_count(VAS.new$Reporting.Status, pattern = "2023"))
+        VAS.count$new.prior.2015 <- VAS.count$New - (VAS.count$new.2015+VAS.count$new.2016+VAS.count$new.2017+VAS.count$new.2018+VAS.count$new.2019+VAS.count$new.2020+VAS.count$new.2021+VAS.count$new.2022+VAS.count$new.2023)
         
         VAS.count
         
-        VAS.count.chronology <- VAS.count %>% pivot_longer(cols = new.2015:new.2021)
+        VAS.count.chronology <- VAS.count %>% pivot_longer(cols = new.2015:new.2023)
         VAS.count.chronology <- VAS.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(VAS.count.chronology)<- c("Taxon","Year","New.spp")
@@ -398,11 +396,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         POR.count$new.2019 <- sum(str_count(POR.new$Reporting.Status, pattern = "2019"))
         POR.count$new.2020 <- sum(str_count(POR.new$Reporting.Status, pattern = "2020"))
         POR.count$new.2021 <- sum(str_count(POR.new$Reporting.Status, pattern = "2021"))
-        POR.count$new.prior.2015 <- POR.count$New - (POR.count$new.2015+POR.count$new.2016+POR.count$new.2017+POR.count$new.2018+POR.count$new.2019+POR.count$new.2020+POR.count$new.2021)
+        POR.count$new.2022 <- sum(str_count(POR.new$Reporting.Status, pattern = "2022"))
+        POR.count$new.2023 <- sum(str_count(POR.new$Reporting.Status, pattern = "2023"))
+        POR.count$new.prior.2015 <- POR.count$New - (POR.count$new.2015+POR.count$new.2016+POR.count$new.2017+POR.count$new.2018+POR.count$new.2019+POR.count$new.2020+POR.count$new.2021+POR.count$new.2022+POR.count$new.2023)
         
         POR.count
         
-        POR.count.chronology <- POR.count %>% pivot_longer(cols = new.2015:new.2021)
+        POR.count.chronology <- POR.count %>% pivot_longer(cols = new.2015:new.2023)
         POR.count.chronology <- POR.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(POR.count.chronology)<- c("Taxon","Year","New.spp")
@@ -438,7 +438,9 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         CNI.count$new.2019 <- sum(str_count(CNI.new$Reporting.Status, pattern = "2019"))
         CNI.count$new.2020 <- sum(str_count(CNI.new$Reporting.Status, pattern = "2020"))
         CNI.count$new.2021 <- sum(str_count(CNI.new$Reporting.Status, pattern = "2021"))
-        CNI.count$new.prior.2015 <- CNI.count$New - (CNI.count$new.2015+CNI.count$new.2016+CNI.count$new.2017+CNI.count$new.2018+CNI.count$new.2019+CNI.count$new.2020+CNI.count$new.2021)
+        CNI.count$new.2022 <- sum(str_count(CNI.new$Reporting.Status, pattern = "2022"))
+        CNI.count$new.2023 <- sum(str_count(CNI.new$Reporting.Status, pattern = "2023"))
+        CNI.count$new.prior.2015 <- CNI.count$New - (CNI.count$new.2015+CNI.count$new.2016+CNI.count$new.2017+CNI.count$new.2018+CNI.count$new.2019+CNI.count$new.2020+CNI.count$new.2021+CNI.count$new.2022+CNI.count$new.2023)
         
         CNI.count
         
@@ -478,11 +480,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         WOR.count$new.2019 <- sum(str_count(WOR.new$Reporting.Status, pattern = "2019"))
         WOR.count$new.2020 <- sum(str_count(WOR.new$Reporting.Status, pattern = "2020"))
         WOR.count$new.2021 <- sum(str_count(WOR.new$Reporting.Status, pattern = "2021"))
-        WOR.count$new.prior.2015 <- WOR.count$New - (WOR.count$new.2015+WOR.count$new.2016+WOR.count$new.2017+WOR.count$new.2018+WOR.count$new.2019+WOR.count$new.2020+WOR.count$new.2021)
+        WOR.count$new.2022 <- sum(str_count(WOR.new$Reporting.Status, pattern = "2022"))
+        WOR.count$new.2023 <- sum(str_count(WOR.new$Reporting.Status, pattern = "2023"))
+        WOR.count$new.prior.2015 <- WOR.count$New - (WOR.count$new.2015+WOR.count$new.2016+WOR.count$new.2017+WOR.count$new.2018+WOR.count$new.2019+WOR.count$new.2020+WOR.count$new.2021+WOR.count$new.2022+WOR.count$new.2023)
         
         WOR.count
         
-        WOR.count.chronology <- WOR.count %>% pivot_longer(cols = new.2015:new.2021)
+        WOR.count.chronology <- WOR.count %>% pivot_longer(cols = new.2015:new.2023)
         WOR.count.chronology <- WOR.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(WOR.count.chronology)<- c("Taxon","Year","New.spp")
@@ -519,11 +523,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         MOL.count$new.2019 <- sum(str_count(MOL.new$Reporting.Status, pattern = "2019"))
         MOL.count$new.2020 <- sum(str_count(MOL.new$Reporting.Status, pattern = "2020"))
         MOL.count$new.2021 <- sum(str_count(MOL.new$Reporting.Status, pattern = "2021"))
-        MOL.count$new.prior.2015 <- MOL.count$New - (MOL.count$new.2015+MOL.count$new.2016+MOL.count$new.2017+MOL.count$new.2018+MOL.count$new.2019+MOL.count$new.2020+MOL.count$new.2021)
+        MOL.count$new.2022 <- sum(str_count(MOL.new$Reporting.Status, pattern = "2022"))
+        MOL.count$new.2023 <- sum(str_count(MOL.new$Reporting.Status, pattern = "2023"))
+        MOL.count$new.prior.2015 <- MOL.count$New - (MOL.count$new.2015+MOL.count$new.2016+MOL.count$new.2017+MOL.count$new.2018+MOL.count$new.2019+MOL.count$new.2020+MOL.count$new.2021+MOL.count$new.2022+MOL.count$new.2023)
         
         MOL.count
         
-        MOL.count.chronology <- MOL.count %>% pivot_longer(cols = new.2015:new.2021)
+        MOL.count.chronology <- MOL.count %>% pivot_longer(cols = new.2015:new.2023)
         MOL.count.chronology <- MOL.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(MOL.count.chronology)<- c("Taxon","Year","New.spp")
@@ -560,11 +566,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         ART.count$new.2019 <- sum(str_count(ART.new$Reporting.Status, pattern = "2019"))
         ART.count$new.2020 <- sum(str_count(ART.new$Reporting.Status, pattern = "2020"))
         ART.count$new.2021 <- sum(str_count(ART.new$Reporting.Status, pattern = "2021"))
-        ART.count$new.prior.2015 <- ART.count$New - (ART.count$new.2015+ART.count$new.2016+ART.count$new.2017+ART.count$new.2018+ART.count$new.2019+ART.count$new.2020+ART.count$new.2021)
+        ART.count$new.2022 <- sum(str_count(ART.new$Reporting.Status, pattern = "2022"))
+        ART.count$new.2023 <- sum(str_count(ART.new$Reporting.Status, pattern = "2023"))
+        ART.count$new.prior.2015 <- ART.count$New - (ART.count$new.2015+ART.count$new.2016+ART.count$new.2017+ART.count$new.2018+ART.count$new.2019+ART.count$new.2020+ART.count$new.2021+ART.count$new.2022+ART.count$new.2023)
         
         ART.count
         
-        ART.count.chronology <- ART.count %>% pivot_longer(cols = new.2015:new.2021)
+        ART.count.chronology <- ART.count %>% pivot_longer(cols = new.2015:new.2023)
         ART.count.chronology <- ART.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(ART.count.chronology)<- c("Taxon","Year","New.spp")
@@ -600,11 +608,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         LOP.count$new.2019 <- sum(str_count(LOP.new$Reporting.Status, pattern = "2019"))
         LOP.count$new.2020 <- sum(str_count(LOP.new$Reporting.Status, pattern = "2020"))
         LOP.count$new.2021 <- sum(str_count(LOP.new$Reporting.Status, pattern = "2021"))
-        LOP.count$new.prior.2015 <- LOP.count$New - (LOP.count$new.2015+LOP.count$new.2016+LOP.count$new.2017+LOP.count$new.2018+LOP.count$new.2019+LOP.count$new.2020+LOP.count$new.2021)
+        LOP.count$new.2022 <- sum(str_count(LOP.new$Reporting.Status, pattern = "2022"))
+        LOP.count$new.2023 <- sum(str_count(LOP.new$Reporting.Status, pattern = "2023"))
+        LOP.count$new.prior.2015 <- LOP.count$New - (LOP.count$new.2015+LOP.count$new.2016+LOP.count$new.2017+LOP.count$new.2018+LOP.count$new.2019+LOP.count$new.2020+LOP.count$new.2021+LOP.count$new.2022+LOP.count$new.2023)
         
         LOP.count
         
-        LOP.count.chronology <- LOP.count %>% pivot_longer(cols = new.2015:new.2021)
+        LOP.count.chronology <- LOP.count %>% pivot_longer(cols = new.2015:new.2023)
         LOP.count.chronology <- LOP.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(LOP.count.chronology)<- c("Taxon","Year","New.spp")
@@ -641,11 +651,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         ECH.count$new.2019 <- sum(str_count(ECH.new$Reporting.Status, pattern = "2019"))
         ECH.count$new.2020 <- sum(str_count(ECH.new$Reporting.Status, pattern = "2020"))
         ECH.count$new.2021 <- sum(str_count(ECH.new$Reporting.Status, pattern = "2021"))
-        ECH.count$new.prior.2015 <- ECH.count$New - (ECH.count$new.2015+ECH.count$new.2016+ECH.count$new.2017+ECH.count$new.2018+ECH.count$new.2019+ECH.count$new.2020+ECH.count$new.2021)
+        ECH.count$new.2022 <- sum(str_count(ECH.new$Reporting.Status, pattern = "2022"))
+        ECH.count$new.2023 <- sum(str_count(ECH.new$Reporting.Status, pattern = "2023"))
+        ECH.count$new.prior.2015 <- ECH.count$New - (ECH.count$new.2015+ECH.count$new.2016+ECH.count$new.2017+ECH.count$new.2018+ECH.count$new.2019+ECH.count$new.2020+ECH.count$new.2021+ECH.count$new.2022+ECH.count$new.2023)
         
         ECH.count
         
-        ECH.count.chronology <- ECH.count %>% pivot_longer(cols = new.2015:new.2021)
+        ECH.count.chronology <- ECH.count %>% pivot_longer(cols = new.2015:new.2023)
         ECH.count.chronology <- ECH.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(ECH.count.chronology)<- c("Taxon","Year","New.spp")
@@ -682,11 +694,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         TUN.count$new.2019 <- sum(str_count(TUN.new$Reporting.Status, pattern = "2019"))
         TUN.count$new.2020 <- sum(str_count(TUN.new$Reporting.Status, pattern = "2020"))
         TUN.count$new.2021 <- sum(str_count(TUN.new$Reporting.Status, pattern = "2021"))
-        TUN.count$new.prior.2015 <- TUN.count$New - (TUN.count$new.2015+TUN.count$new.2016+TUN.count$new.2017+TUN.count$new.2018+TUN.count$new.2019+TUN.count$new.2020+TUN.count$new.2021)
+        TUN.count$new.2022 <- sum(str_count(TUN.new$Reporting.Status, pattern = "2022"))
+        TUN.count$new.2023 <- sum(str_count(TUN.new$Reporting.Status, pattern = "2023"))
+        TUN.count$new.prior.2015 <- TUN.count$New - (TUN.count$new.2015+TUN.count$new.2016+TUN.count$new.2017+TUN.count$new.2018+TUN.count$new.2019+TUN.count$new.2020+TUN.count$new.2021+TUN.count$new.2022+TUN.count$new.2023)
         
         TUN.count
         
-        TUN.count.chronology <- TUN.count %>% pivot_longer(cols = new.2015:new.2021)
+        TUN.count.chronology <- TUN.count %>% pivot_longer(cols = new.2015:new.2023)
         TUN.count.chronology <- TUN.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(TUN.count.chronology)<- c("Taxon","Year","New.spp")
@@ -722,11 +736,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         FIS.count$new.2019 <- sum(str_count(FIS.new$Reporting.Status, pattern = "2019"))
         FIS.count$new.2020 <- sum(str_count(FIS.new$Reporting.Status, pattern = "2020"))
         FIS.count$new.2021 <- sum(str_count(FIS.new$Reporting.Status, pattern = "2021"))
-        FIS.count$new.prior.2015 <- FIS.count$New - (FIS.count$new.2015+FIS.count$new.2016+FIS.count$new.2017+FIS.count$new.2018+FIS.count$new.2019+FIS.count$new.2020+FIS.count$new.2021)
+        FIS.count$new.2022 <- sum(str_count(FIS.new$Reporting.Status, pattern = "2022"))
+        FIS.count$new.2023 <- sum(str_count(FIS.new$Reporting.Status, pattern = "2023"))
+        FIS.count$new.prior.2015 <- FIS.count$New - (FIS.count$new.2015+FIS.count$new.2016+FIS.count$new.2017+FIS.count$new.2018+FIS.count$new.2019+FIS.count$new.2020+FIS.count$new.2021+FIS.count$new.2022+FIS.count$new.2023)
         
         FIS.count
         
-        FIS.count.chronology <- FIS.count %>% pivot_longer(cols = new.2015:new.2021)
+        FIS.count.chronology <- FIS.count %>% pivot_longer(cols = new.2015:new.2023)
         FIS.count.chronology <- FIS.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(FIS.count.chronology)<- c("Taxon","Year","New.spp")
@@ -762,11 +778,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         HER.count$new.2019 <- sum(str_count(HER.new$Reporting.Status, pattern = "2019"))
         HER.count$new.2020 <- sum(str_count(HER.new$Reporting.Status, pattern = "2020"))
         HER.count$new.2021 <- sum(str_count(HER.new$Reporting.Status, pattern = "2021"))
-        HER.count$new.prior.2015 <- HER.count$New - (HER.count$new.2015+HER.count$new.2016+HER.count$new.2017+HER.count$new.2018+HER.count$new.2019+HER.count$new.2020+HER.count$new.2021)
+        HER.count$new.2022 <- sum(str_count(HER.new$Reporting.Status, pattern = "2022"))
+        HER.count$new.2023 <- sum(str_count(HER.new$Reporting.Status, pattern = "2023"))
+        HER.count$new.prior.2015 <- HER.count$New - (HER.count$new.2015+HER.count$new.2016+HER.count$new.2017+HER.count$new.2018+HER.count$new.2019+HER.count$new.2020+HER.count$new.2021+HER.count$new.2022+HER.count$new.2023)
         
         HER.count
         
-        HER.count.chronology <- HER.count %>% pivot_longer(cols = new.2015:new.2021)
+        HER.count.chronology <- HER.count %>% pivot_longer(cols = new.2015:new.2023)
         HER.count.chronology <- HER.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(HER.count.chronology)<- c("Taxon","Year","New.spp")
@@ -802,11 +820,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         BIR.count$new.2019 <- sum(str_count(BIR.new$Reporting.Status, pattern = "2019"))
         BIR.count$new.2020 <- sum(str_count(BIR.new$Reporting.Status, pattern = "2020"))
         BIR.count$new.2021 <- sum(str_count(BIR.new$Reporting.Status, pattern = "2021"))
-        BIR.count$new.prior.2015 <- BIR.count$New - (BIR.count$new.2015+BIR.count$new.2016+BIR.count$new.2017+BIR.count$new.2018+BIR.count$new.2019+BIR.count$new.2020+BIR.count$new.2021)
+        BIR.count$new.2022 <- sum(str_count(BIR.new$Reporting.Status, pattern = "2022"))
+        BIR.count$new.2023 <- sum(str_count(BIR.new$Reporting.Status, pattern = "2023"))
+        BIR.count$new.prior.2015 <- BIR.count$New - (BIR.count$new.2015+BIR.count$new.2016+BIR.count$new.2017+BIR.count$new.2018+BIR.count$new.2019+BIR.count$new.2020+BIR.count$new.2021+BIR.count$new.2022+BIR.count$new.2023)
         
         BIR.count
         
-        BIR.count.chronology <- BIR.count %>% pivot_longer(cols = new.2015:new.2021)
+        BIR.count.chronology <- BIR.count %>% pivot_longer(cols = new.2015:new.2023)
         BIR.count.chronology <- BIR.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(BIR.count.chronology)<- c("Taxon","Year","New.spp")
@@ -842,11 +862,13 @@ BAC <-  BACTERIA %>% dplyr::filter(Stats.Code == 'BAC')
         MAM.count$new.2019 <- sum(str_count(MAM.new$Reporting.Status, pattern = "2019"))
         MAM.count$new.2020 <- sum(str_count(MAM.new$Reporting.Status, pattern = "2020"))
         MAM.count$new.2021 <- sum(str_count(MAM.new$Reporting.Status, pattern = "2021"))
-        MAM.count$new.prior.2015 <- MAM.count$New - (MAM.count$new.2015+MAM.count$new.2016+MAM.count$new.2017+MAM.count$new.2018+MAM.count$new.2019+MAM.count$new.2020+MAM.count$new.2021)
+        MAM.count$new.2022 <- sum(str_count(MAM.new$Reporting.Status, pattern = "2022"))
+        MAM.count$new.2023 <- sum(str_count(MAM.new$Reporting.Status, pattern = "2023"))
+        MAM.count$new.prior.2015 <- MAM.count$New - (MAM.count$new.2015+MAM.count$new.2016+MAM.count$new.2017+MAM.count$new.2018+MAM.count$new.2019+MAM.count$new.2020+MAM.count$new.2021+MAM.count$new.2022+MAM.count$new.2023)
         
         MAM.count
         
-        MAM.count.chronology <- MAM.count %>% pivot_longer(cols = new.2015:new.2021)
+        MAM.count.chronology <- MAM.count %>% pivot_longer(cols = new.2015:new.2023)
         MAM.count.chronology <- MAM.count.chronology %>% dplyr::select(Taxon,name,value)
         
         colnames(MAM.count.chronology)<- c("Taxon","Year","New.spp")
@@ -873,9 +895,11 @@ new.2018 <- NA
 new.2019 <- NA
 new.2020 <- NA
 new.2021 <- NA
+new.2022 <- NA
+new.2023 <- NA
 
 TAXON.TOTAL <- c('TOTAL')
-TOTAL.count <- data.frame(TAXON.TOTAL,Reported,Confirmed,New,Total,Prop.confirmed,Prop.new,new.2015,new.2016,new.2017,new.2018,new.2019,new.2020,new.2021,new.prior.2015)
+TOTAL.count <- data.frame(TAXON.TOTAL,Reported,Confirmed,New,Total,Prop.confirmed,Prop.new,new.2015,new.2016,new.2017,new.2018,new.2019,new.2020,new.2021,new.2022,new.2023,new.prior.2015)
 names(TOTAL.count)[names(TOTAL.count) == 'TAXON.TOTAL'] <- 'Taxon'
 
 TOTAL.count$Reported <- sum(BioGaliano.Summary.Stats$Reported)
@@ -893,6 +917,8 @@ TOTAL.count$new.2018 <- sum(BioGaliano.Summary.Stats$new.2018)
 TOTAL.count$new.2019 <- sum(BioGaliano.Summary.Stats$new.2019)
 TOTAL.count$new.2020 <- sum(BioGaliano.Summary.Stats$new.2020)
 TOTAL.count$new.2021 <- sum(BioGaliano.Summary.Stats$new.2021)
+TOTAL.count$new.2022 <- sum(BioGaliano.Summary.Stats$new.2022)
+TOTAL.count$new.2023 <- sum(BioGaliano.Summary.Stats$new.2023)
 
 # Add Total to Summary 
 
@@ -954,7 +980,6 @@ p <- p + scale_fill_viridis(discrete = TRUE, direction = -1, option = 'A')
 p <- p + ggtitle('Biodiversity Galiano Island Species Count')
 p <- p + xlab('Taxonomic Group')
 p <- p + ylab('Species')
-p <- p + theme(text=element_text(size=14,family="Calibri"))
 p
 
 ## Synthesize and plot summary stats of annual progress
@@ -998,5 +1023,4 @@ p <- p + scale_fill_viridis(option = 'A')
 p <- p + ggtitle('Biodiversity Galiano Island - novel species reports (2015-2021)')
 p <- p + xlab('Taxonomic Group')
 p <- p + ylab('New Species')
-p <- p + theme(text=element_text(size=14,family="Calibri"))
 p
