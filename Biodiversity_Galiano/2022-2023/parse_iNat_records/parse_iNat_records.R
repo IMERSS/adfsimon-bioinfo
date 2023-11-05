@@ -101,6 +101,9 @@ Tracheophyta.obs <- iNat.obs %>% filter(Phylum == 'Tracheophyta')
 unique(Tracheophyta.obs$Phylum)
 
 
+animalia <- iNat.obs %>% filter(Kingdom == 'Animalia')
+
+
 ## TERRESTRIAL ANIMALS
 
 # Birds
