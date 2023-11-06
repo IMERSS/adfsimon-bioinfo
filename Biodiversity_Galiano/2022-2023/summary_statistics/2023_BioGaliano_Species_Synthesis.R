@@ -29,22 +29,22 @@ LICHENS <- read.csv("../review/Fungi_Lichens_Myxogastria/lichens/summaries/Galia
 MYXOS <- read.csv("../review/Fungi_Lichens_Myxogastria/myxos/summaries/Galiano_myxos_review_summary_2023-11-05.csv")
 
 BRYOPHYTES <- read.csv("../review/Plantae_et_Chromista/mosses_liverworts_and_hornworts/summaries/Galiano_mosses_liverworts_and_hornworts_review_summary_2023-11-05.csv")
-FRESH_ALGAE <- read.csv("../review/Plantae_et_Chromista/freshwater_and_terrestrial_algae/summaries/Galiano_freshwater_and_terrestrial_algae_review_summary_reviewed_2023-11-05.csv")
+FRESHWATER_AND_TERRESTRIAL_ALGAE <- read.csv("../review/Plantae_et_Chromista/freshwater_and_terrestrial_algae/summaries/Galiano_freshwater_and_terrestrial_algae_review_summary_reviewed_2023-11-05.csv")
 MARINE_ALGAE <- read.csv("../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-11-05.csv")
 VASCULARS <- read.csv("../review/Plantae_et_Chromista/vascular_plants/summaries/Galiano_Tracheophyta_review_summary_reviewed_2023-11-05.csv")
 
 BIRDS <- read.csv("../review/Animalia/birds/summaries/Galiano_birds_review_summary_2023-11-05.csv")
 FRESH_BRYOZOANS <- read.csv("../review/Animalia/freshwater_bryozoans/summaries/Galiano_freshwater_bryozoans_review_summary_2023-11-05.csv")
 HERPTILES <- read.csv("../review/Animalia/herptiles/summaries/Galiano_herptiles_summary_2023-11-05.csv")
-MARINE_ANIMALS <- read.csv("../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-11-01.csv")
-TERRESTRIAL_ANNELIDS_ETC <- read.csv("../review/Animalia/terrestrial_annelids_etc/summaries/Galiano_terrestrial_annelids_etc_review_summary_2023-11-04.csv")
+MARINE_ANIMALS <- read.csv("../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-11-06.csv")
+TERRESTRIAL_ANNELIDS_ETC <- read.csv("../review/Animalia/terrestrial_annelids_etc/summaries/Galiano_terrestrial_annelids_etc_review_summary_2023-11-06.csv")
 TERRESTRIAL_ARTHROPODS <- read.csv("../review/Animalia/terrestrial_arthropods/summaries/Galiano_terrestrial_arthropods_review_summary_2023-10-21.csv")
 TERRESTRIAL_MAMMALS <- read.csv("../review/Animalia/terrestrial_mammals/summaries/Galiano_terrestrial_mammals_review_summary_2023-11-05.csv")
 TERRESTRIAL_MOLLUSCS <- read.csv("../review/Animalia/terrestrial_molluscs/summaries/Galiano_terrestrial_molluscs_review_summary_2023-11-05.csv")
 
 names(MARINE_ANIMALS) <- names(BIRDS) # temporary fix while we transition all data to same format
 
-ALGAE_PLANTS <- rbind(BRYOPHYTES, FRESH_ALGAE, MARINE_ALGAE, VASCULARS)
+ALGAE_PLANTS <- rbind(BRYOPHYTES, FRESHWATER_AND_TERRESTRIAL_ALGAE, MARINE_ALGAE, VASCULARS)
 
 ANIMALS <- rbind(BIRDS, FRESH_BRYOZOANS, HERPTILES, MARINE_ANIMALS, TERRESTRIAL_ANNELIDS_ETC, 
                  TERRESTRIAL_ARTHROPODS, TERRESTRIAL_MAMMALS, TERRESTRIAL_MOLLUSCS)
@@ -924,10 +924,9 @@ TOTAL.count$new.2023 <- sum(BioGaliano.Summary.Stats$new.2023)
 
 BioGaliano.Summary.Stats <- rbind(BioGaliano.Summary.Stats,TOTAL.count)
 
-dev.off()
 grid.table(BioGaliano.Summary.Stats)
 
-# write.csv(BioGaliano.Summary.Stats, "Biodiversity_Galiano_Island_2021_summary_statistics.csv")
+# write.csv(BioGaliano.Summary.Stats, "outputs/Biodiversity_Galiano_Island_2023_summary_statistics.csv", row.names = FALSE)
 
 ## Plot total species counts as stacked bar plot
 
@@ -975,10 +974,13 @@ BioGaliano.Summary.Stats.Basic$Taxon <- factor(BioGaliano.Summary.Stats.Basic$Ta
 p <- ggplot(BioGaliano.Summary.Stats.Basic, aes(fill=Reporting_Status, y=Count, x=Taxon)) 
 p <- p + geom_bar(position="stack", stat="identity")
 p <- p + coord_flip()
-p <- p + scale_fill_viridis(discrete = TRUE, direction = -1, option = 'A')
-p <- p + ggtitle('Biodiversity Galiano Island Species Count 2023')
-p <- p + xlab('Taxonomic Group')
+p <- p + scale_fill_viridis(discrete = TRUE, direction = -1, option = 'C')
+p <- p + ggtitle('The Flora and Fauna of Galiano Island (1859 to 2023)')
+p <- p + xlab('Life')
 p <- p + ylab('Species')
+p <- p + theme_linedraw()
+p <- p + theme(legend.key.size = unit(0.35, 'cm'))
+p <- p + labs(fill = "Reporting Status")
 p
 
 ## Synthesize and plot summary stats of annual progress
@@ -1016,6 +1018,10 @@ BioGaliano.Timeline.Summary <- BioGaliano.Summary.Stats.Basic %>% pivot_longer(c
 ## Plot results
 
 p <- ggplot(BioGaliano.Timeline.Summary, aes(fill=Year, y=New.spp, x=Taxon)) 
+p <- p + theme_linedraw()
+p <- p + theme(axis.title = element_text(size = 12, face = "bold"),
+               axis.title.y = element_text(face = "bold"))
+p + theme(axis.text.x= element_text(size = 16))
 p <- p + geom_bar(position="stack", stat="identity")
 p <- p + coord_flip()
 p <- p + scale_fill_viridis(option = 'A')
