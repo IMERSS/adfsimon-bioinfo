@@ -976,7 +976,7 @@ p <- ggplot(BioGaliano.Summary.Stats.Basic, aes(fill=Reporting_Status, y=Count, 
 p <- p + geom_bar(position="stack", stat="identity")
 p <- p + coord_flip()
 p <- p + scale_fill_viridis(discrete = TRUE, direction = -1, option = 'A')
-p <- p + ggtitle('Biodiversity Galiano Island Species Count')
+p <- p + ggtitle('Biodiversity Galiano Island Species Count 2023')
 p <- p + xlab('Taxonomic Group')
 p <- p + ylab('Species')
 p
@@ -1019,7 +1019,7 @@ p <- ggplot(BioGaliano.Timeline.Summary, aes(fill=Year, y=New.spp, x=Taxon))
 p <- p + geom_bar(position="stack", stat="identity")
 p <- p + coord_flip()
 p <- p + scale_fill_viridis(option = 'A')
-p <- p + ggtitle('Biodiversity Galiano Island - novel species reports (2015-2021)')
+p <- p + ggtitle('Biodiversity Galiano Island - novel species reports (2015-2023)')
 p <- p + xlab('Taxonomic Group')
 p <- p + ylab('New Species')
 p
