@@ -975,6 +975,8 @@ BioGaliano.Summary.Stats.Basic <- BioGaliano.Summary.Stats.Basic %>% filter(!(Ta
 BioGaliano.Summary.Stats.Basic$Reporting_Status <- factor(BioGaliano.Summary.Stats.Basic$Reporting_Status, levels = c("New","Confirmed","Reported"))
 BioGaliano.Summary.Stats.Basic$Taxon <- factor(BioGaliano.Summary.Stats.Basic$Taxon, levels = c("Bacteria","Protozoa","Fungi","Lichens","Algae","Bryophytes","Vascular plants","Sponges","Cnidarians and Ctenophores","Worms","Molluscs","Arthropods","Lophophores","Echinoderms","Tunicates","Fish","Herptiles","Birds","Mammals"))
 
+write.csv(BioGaliano.Summary.Stats.Basic, "outputs/BioGaliano.Summary.Stats.Basic.csv")
+
 p <- ggplot(BioGaliano.Summary.Stats.Basic, aes(fill=Reporting_Status, y=Count, x=Taxon)) 
 p <- p + geom_bar(position="stack", stat="identity")
 p <- p + coord_flip()
