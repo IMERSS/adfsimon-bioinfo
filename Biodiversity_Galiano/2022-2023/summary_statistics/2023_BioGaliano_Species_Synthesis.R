@@ -30,7 +30,7 @@ MYXOS <- read.csv("../review/Fungi_Lichens_Myxogastria/myxos/summaries/Galiano_m
 
 BRYOPHYTES <- read.csv("../review/Plantae_et_Chromista/mosses_liverworts_and_hornworts/summaries/Galiano_mosses_liverworts_and_hornworts_review_summary_2023-11-05.csv")
 FRESH_ALGAE <- read.csv("../review/Plantae_et_Chromista/freshwater_and_terrestrial_algae/summaries/Galiano_freshwater_and_terrestrial_algae_review_summary_reviewed_2023-11-05.csv")
-# MARINE_ALGAE <- read.csv("../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-10-14.csv") # MARINE ALGAE NOT CONSIDERED FOR NOW, BC NEW SCHOOL FORMAT
+MARINE_ALGAE <- read.csv("../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-11-05.csv")
 VASCULARS <- read.csv("../review/Plantae_et_Chromista/vascular_plants/summaries/Galiano_Tracheophyta_review_summary_reviewed_2023-11-05.csv")
 
 BIRDS <- read.csv("../review/Animalia/birds/summaries/Galiano_birds_review_summary_2023-11-05.csv")
@@ -44,7 +44,7 @@ TERRESTRIAL_MOLLUSCS <- read.csv("../review/Animalia/terrestrial_molluscs/summar
 
 names(MARINE_ANIMALS) <- names(BIRDS) # temporary fix while we transition all data to same format
 
-ALGAE_PLANTS <- rbind(BRYOPHYTES, FRESH_ALGAE, VASCULARS)
+ALGAE_PLANTS <- rbind(BRYOPHYTES, FRESH_ALGAE, MARINE_ALGAE, VASCULARS)
 
 ANIMALS <- rbind(BIRDS, FRESH_BRYOZOANS, HERPTILES, MARINE_ANIMALS, TERRESTRIAL_ANNELIDS_ETC, 
                  TERRESTRIAL_ARTHROPODS, TERRESTRIAL_MAMMALS, TERRESTRIAL_MOLLUSCS)
@@ -927,7 +927,6 @@ BioGaliano.Summary.Stats <- rbind(BioGaliano.Summary.Stats,TOTAL.count)
 dev.off()
 grid.table(BioGaliano.Summary.Stats)
 
-
 # write.csv(BioGaliano.Summary.Stats, "Biodiversity_Galiano_Island_2021_summary_statistics.csv")
 
 ## Plot total species counts as stacked bar plot
@@ -977,7 +976,7 @@ p <- ggplot(BioGaliano.Summary.Stats.Basic, aes(fill=Reporting_Status, y=Count, 
 p <- p + geom_bar(position="stack", stat="identity")
 p <- p + coord_flip()
 p <- p + scale_fill_viridis(discrete = TRUE, direction = -1, option = 'A')
-p <- p + ggtitle('Biodiversity Galiano Island Species Count')
+p <- p + ggtitle('Biodiversity Galiano Island Species Count 2023')
 p <- p + xlab('Taxonomic Group')
 p <- p + ylab('Species')
 p
@@ -1020,7 +1019,7 @@ p <- ggplot(BioGaliano.Timeline.Summary, aes(fill=Year, y=New.spp, x=Taxon))
 p <- p + geom_bar(position="stack", stat="identity")
 p <- p + coord_flip()
 p <- p + scale_fill_viridis(option = 'A')
-p <- p + ggtitle('Biodiversity Galiano Island - novel species reports (2015-2021)')
+p <- p + ggtitle('Biodiversity Galiano Island - novel species reports (2015-2023)')
 p <- p + xlab('Taxonomic Group')
 p <- p + ylab('New Species')
 p
