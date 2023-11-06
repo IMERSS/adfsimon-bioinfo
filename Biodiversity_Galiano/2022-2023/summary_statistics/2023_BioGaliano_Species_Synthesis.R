@@ -62,7 +62,7 @@ LIFE <- LIFE %>% mutate_if(is.logical, as.character)
 
 LIFE <-  LIFE %>% mutate_if(is.character, ~replace_na(.,""))
 
-write.csv(LIFE, "outputs/Biodiversity_Galiano_Island_biodiversity_summary_2023.csv", row.names = FALSE)
+write.csv(LIFE, "outputs/Biodiversity_Galiano_Island_biodiversity_summary.csv", row.names = FALSE)
 
 
 ## CALCULATE PROJECT STATS
@@ -972,6 +972,10 @@ BioGaliano.Summary.Stats.Basic <- BioGaliano.Summary.Stats.Basic %>% filter(!(Ta
 
 ## Plot results
 
+
+
+
+
 BioGaliano.Summary.Stats.Basic$Reporting_Status <- factor(BioGaliano.Summary.Stats.Basic$Reporting_Status, levels = c("New","Confirmed","Reported"))
 BioGaliano.Summary.Stats.Basic$Taxon <- factor(BioGaliano.Summary.Stats.Basic$Taxon, levels = c("Bacteria","Protozoa","Fungi","Lichens","Algae","Bryophytes","Vascular plants","Sponges","Cnidarians and Ctenophores","Worms","Molluscs","Arthropods","Lophophores","Echinoderms","Tunicates","Fish","Herptiles","Birds","Mammals"))
 
@@ -980,7 +984,8 @@ write.csv(BioGaliano.Summary.Stats.Basic, "outputs/BioGaliano.Summary.Stats.Basi
 p <- ggplot(BioGaliano.Summary.Stats.Basic, aes(fill=Reporting_Status, y=Count, x=Taxon)) 
 p <- p + geom_bar(position="stack", stat="identity")
 p <- p + coord_flip()
-p <- p + scale_fill_viridis(discrete = TRUE, direction = -1, option = 'C')
+p <- p + scale_fill_manual(values = c("#CCCCCC", "#6699cc",  "#3366ff"))
+#p <- p + scale_fill_manual(discrete = TRUE, direction = -1, option = 'C')
 p <- p + ggtitle('The Flora and Fauna of Galiano Island (1859 to 2023)')
 p <- p + xlab('Life')
 p <- p + ylab('Species')
@@ -988,6 +993,7 @@ p <- p + theme_linedraw()
 p <- p + theme(legend.key.size = unit(0.35, 'cm'))
 p <- p + labs(fill = "Reporting Status")
 p
+
 
 ## Synthesize and plot summary stats of annual progress
 
