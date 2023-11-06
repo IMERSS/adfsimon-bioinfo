@@ -51,15 +51,19 @@ ANIMALS <- rbind(BIRDS, FRESH_BRYOZOANS, HERPTILES, MARINE_ANIMALS, TERRESTRIAL_
 
 FUNGI_LICHENS_MYXOS <- rbind(FUNGI, LICHENS, MYXOS)
 
-nrow(BACTERIA)
-nrow(FUNGI_LICHENS_MYXOS)
 nrow(ALGAE_PLANTS)
 nrow(ANIMALS)
+nrow(BACTERIA)
+nrow(FUNGI_LICHENS_MYXOS)
 
-# write.csv(PROTOZOA_FUNGI_LICHENS, "Protozoa_Fungi_and_Lichens_2021.csv")
-# write.csv(BACTERIA, "Bacteria_2021.csv")
-# write.csv(ANIMALS, "Animals_2021.csv")
-# write.csv(ALGAE_PLANTS, "Algae_and_Plants_2021.csv")
+LIFE <- rbind(ALGAE_PLANTS, ANIMALS, BACTERIA,FUNGI_LICHENS_MYXOS)
+
+LIFE <- LIFE %>% mutate_if(is.logical, as.character)
+
+LIFE <-  LIFE %>% mutate_if(is.character, ~replace_na(.,""))
+
+write.csv(LIFE, "outputs/Biodiversity_Galiano_Island_biodiversity_summary_2023.csv", row.names = FALSE)
+
 
 ## CALCULATE PROJECT STATS
 
