@@ -355,7 +355,7 @@ summary$statsCode <- baseline$statsCode[match(unlist(summary$scientificName), ba
 
 summary <- summary[order(summary$scientificName),] 
 
-write.csv(summary, "outputs/marine_animal_summary_resynthesized.csv", row.names = FALSE, na = '')
+write.csv(summary, "outputs/Galiano_marine_animal_summary_resynthesized.csv", row.names = FALSE, na = '')
 
 # Output summaries for major clades
 
