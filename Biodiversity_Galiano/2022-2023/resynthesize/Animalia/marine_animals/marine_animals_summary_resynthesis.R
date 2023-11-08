@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("../../../review/Animalia/terrestrial_mammals/summaries/Galiano_terrestrial_mammals_review_summary_2023-11-05.csv")
+baseline <- read.csv("../../../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-11-06.csv")
 
 # TEMP: Add DarwinCore fields to bridge outmoded summary format with new
 
@@ -21,16 +21,31 @@ names(baseline) <- c('scientificName', 'scientificNameAuthorship','subtaxonAutho
                       'subfamily','tribe','genus','specificEpithet','hybrid','subspecies','variety','establishmentMeans',
                       'provincialStatus','nationalStatus','reportingStatus','iNatObservationStatus','firstReported', 
                       'firstReportedBy','firstReportedSource','firstReportedCollectionNumber', 'firstReportedGBIF',
-                      'firstObserved','Observer','iNatObsID','notes','ID','statsCode')
+                      'lastReported','lastReportedBy','lastReportedCollectionNumber','notes','ID','statsCode')
+
+# TEMP: Add updated DwC fields to bridge
+ 
+baseline$lastReportedSource <- NA
+baseline$lastReportedGBIF <- NA
+baseline$recordCount <- NA
+
+# TEMP: Reorganize DwC fields to align with newschool format
+
+baseline <- baseline %>% select('scientificName', 'scientificNameAuthorship','subtaxonAuthorship','commonName','kingdom','phylum', 
+                                'subphylum','superclass','class','subclass','superorder','order','suborder','superfamily','family', 
+                                'subfamily','tribe','genus','specificEpithet','hybrid','subspecies','variety','establishmentMeans',
+                                'provincialStatus','nationalStatus','firstReported','firstReportedBy','firstReportedSource',
+                                'firstReportedCollectionNumber', 'firstReportedGBIF','lastReported','lastReportedBy',
+                                'lastReportedSource','lastReportedCollectionNumber','lastReportedGBIF','recordCount',
+                                'reportingStatus','iNatObservationStatus','notes','ID','statsCode')
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated-2023-11-05.csv")
+records <- read.csv("../../../consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated-2023-11-07.csv")
 
 # Read resynthesized summary
 
 synthesized.summary <- read.csv("outputs/Galiano_marine_animal_summary_resynthesized_2023-10-22.csv")
-
 
 # Summarize unique taxa
 

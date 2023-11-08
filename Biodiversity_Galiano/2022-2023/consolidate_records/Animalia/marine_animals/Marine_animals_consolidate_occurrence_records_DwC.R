@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-11-01.csv")
+summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-11-06.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -165,6 +165,7 @@ review.key <- rbind(GI.1893.2021.key,unmatched.taxa)
 review.key[is.na(review.key)] <- ""
 
 write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
 
 # Bind records
 
@@ -516,6 +517,7 @@ review.key <- rbind(GI.1893.2021.key,unmatched.taxa)
 review.key[is.na(review.key)] <- ""
 
 write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
 
 # Bind records
 
