@@ -12,15 +12,25 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Galiano_marine_animals_review_summary_2023-10-22.csv")
+baseline <- read.csv("../../../review/Animalia/terrestrial_mammals/summaries/Galiano_terrestrial_mammals_review_summary_2023-11-05.csv")
+
+# TEMP: Add DarwinCore fields to bridge outmoded summary format with new
+
+names(baseline) <- c('scientificName', 'scientificNameAuthorship','subtaxonAuthorship','commonName','kingdom','phylum', 
+                      'subphylum','superclass','class','subclass','superorder','order','suborder','superfamily','family', 
+                      'subfamily','tribe','genus','specificEpithet','hybrid','subspecies','variety','establishmentMeans',
+                      'provincialStatus','nationalStatus','reportingStatus','iNatObservationStatus','firstReported', 
+                      'firstReportedBy','firstReportedSource','firstReportedCollectionNumber', 'firstReportedGBIF',
+                      'firstObserved','Observer','iNatObsID','notes','ID','statsCode')
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated_2023-04-22.csv")
+records <- read.csv("../../../consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated-2023-11-05.csv")
 
 # Read resynthesized summary
 
 synthesized.summary <- read.csv("outputs/Galiano_marine_animal_summary_resynthesized_2023-10-22.csv")
+
 
 # Summarize unique taxa
 

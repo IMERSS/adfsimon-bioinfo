@@ -371,8 +371,6 @@ iNaturalist.observations <- subset(iNaturalist.observations, Genus != "")
 
 # Add DwC fields to iNaturalist catalog to facilitate joins with DwC dataframe template
 
-names(marine.animal.records)
-
 iNaturalist.observations <- iNaturalist.observations %>% rename(scientificName = iNaturalist.taxon.name)
 iNaturalist.observations <- iNaturalist.observations %>% rename(eventDate = Date.observed)
 iNaturalist.observations <- iNaturalist.observations %>% rename(occurrenceID = observationId)
@@ -410,6 +408,7 @@ iNaturalist.observations$country <- "Canada"
 iNaturalist.observations$countryCode <- "CA"
 iNaturalist.observations$basisOfRecord <- "HumanObservation"
 iNaturalist.observations$datasetName <- "iNaturalist"
+iNaturalist.observations$institutionCode <- "iNaturalist"
 
 # Merge with summary to standardize names and taxon metadata
 
