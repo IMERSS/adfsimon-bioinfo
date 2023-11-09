@@ -53,8 +53,14 @@ plants.points <- st_as_sf(plants, coords = c("decimalLongitude", "decimalLatitud
 
 plants.grid <- st_intersection(plants.points, grid)
 
+# Convert to CSV
+
+plants.grid.csv <- plants.grid
+
+plants.grid.csv$geometry <- NULL
+
+write.csv(plants.grid.csv, "outputs/gridded_plants_WGS84")
+
 # Export grid
 
 st_write(plants.grid, "outputs/gridded_plants.shp")
-
-
