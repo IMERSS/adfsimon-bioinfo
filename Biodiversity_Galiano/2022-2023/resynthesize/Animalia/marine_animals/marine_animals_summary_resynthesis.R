@@ -23,8 +23,6 @@ names(baseline) <- c('scientificName', 'scientificNameAuthorship','subtaxonAutho
                       'firstReportedBy','firstReportedSource','firstReportedCollectionNumber', 'firstReportedGBIF',
                       'lastReported','lastReportedBy','lastReportedCollectionNumber','notes','ID','statsCode')
 
-# TEMP: Add updated DwC fields to bridge
- 
 baseline$lastReportedSource <- NA
 baseline$lastReportedGBIF <- NA
 baseline$recordCount <- NA
