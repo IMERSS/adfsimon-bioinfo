@@ -930,8 +930,6 @@ BioGaliano.Summary.Stats <- rbind(BioGaliano.Summary.Stats,TOTAL.count)
 
 grid.table(BioGaliano.Summary.Stats)
 
-# write.csv(BioGaliano.Summary.Stats, "outputs/Biodiversity_Galiano_Island_2023_summary_statistics.csv", row.names = FALSE)
-
 ## Plot total species counts as stacked bar plot
 
 ## First rename taxa
@@ -960,6 +958,8 @@ BioGaliano.Summary.Stats$Taxon[BioGaliano.Summary.Stats$Taxon == 'MAM'] <- 'Mamm
 
 BioGaliano.Summary.Stats$Taxon <- as.factor(BioGaliano.Summary.Stats$Taxon)
 
+write.csv(BioGaliano.Summary.Stats, "outputs/Biodiversity_Galiano_Island_summary_statistics.csv", row.names = FALSE)
+
 # Now subset to only the relevant columns and rows
 
 BioGaliano.Summary.Stats.Basic <- BioGaliano.Summary.Stats %>% dplyr::select(Taxon,Reported,Confirmed,New)
@@ -971,10 +971,6 @@ colnames(BioGaliano.Summary.Stats.Basic)<- c('Taxon','Reporting_Status','Count')
 BioGaliano.Summary.Stats.Basic <- BioGaliano.Summary.Stats.Basic %>% filter(!(Taxon == 'TOTAL'))
 
 ## Plot results
-
-
-
-
 
 BioGaliano.Summary.Stats.Basic$Reporting_Status <- factor(BioGaliano.Summary.Stats.Basic$Reporting_Status, levels = c("New","Confirmed","Reported"))
 BioGaliano.Summary.Stats.Basic$Taxon <- factor(BioGaliano.Summary.Stats.Basic$Taxon, levels = c("Bacteria","Protozoa","Fungi","Lichens","Algae","Bryophytes","Vascular plants","Sponges","Cnidarians and Ctenophores","Worms","Molluscs","Arthropods","Lophophores","Echinoderms","Tunicates","Fish","Herptiles","Birds","Mammals"))
