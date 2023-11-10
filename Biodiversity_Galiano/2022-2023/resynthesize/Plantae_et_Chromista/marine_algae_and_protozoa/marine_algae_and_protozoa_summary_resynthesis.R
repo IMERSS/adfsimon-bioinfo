@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Galiano_marine_algae_review_summary_reviewed_2023-04-22.csv")
+baseline <- read.csv("summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-09-28.csv")
 
 # Read catalog of consolidated occurrence records
 
