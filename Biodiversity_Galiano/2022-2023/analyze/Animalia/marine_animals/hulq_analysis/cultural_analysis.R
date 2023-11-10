@@ -30,6 +30,10 @@ summary <- summary %>% filter(scientificName %in% hulq.names)
 
 cultural.animals <- animals %>% filter(scientificName %in% hulq.names)
 
+unique(cultural.animals$scientificName)
+
+hulq.names
+
 # Create grid
 
 # Create CRS object
