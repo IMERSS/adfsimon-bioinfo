@@ -13,6 +13,8 @@ setwd(str_glue("{projroot}/Biodiversity_Galiano/2022-2023"))
 
 summary <- read.csv("review/Animalia/marine_animals/summaries/Galiano_marine_animals_summary_2023-11-01.csv")
 
+hulq.summary <- read.csv("analyze/Animalia/marine_animals/combined_analysis/inputs/tabular_data/reintegrated-hulq.csv")
+
 animals <- read.csv("consolidate_records/Animalia/marine_animals/synthesized/Galiano_marine_animal_records_consolidated-2023-11-03.csv")
 
 algae <- read.csv("consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2023-04-22.csv")
@@ -103,7 +105,7 @@ allTaxaRecords <- list(annelida = annelida, brachiopoda = brachiopoda, bryozoa =
 #   recs - The upstream records for the taxon, including elements `summary` and `records`
 #   taxon - The taxon name
 #   grid - The grid to which the records are to be binned
-#   status - The status to be processed (new, reported, confirmed)
+#   status - The status to be processed (new, reported, confirmed, hulq, all)
 # Returns a structure containing all gridded data, and various other preparatory fields - unique taxa, counts, etc.
 process_one_status <- function (recs, taxon, grid, status) {
     togo <- list()
@@ -111,6 +113,8 @@ process_one_status <- function (recs, taxon, grid, status) {
     togo$summary <- recs$summary 
     if (status == "all") {
         togo$summary <- recs$summary 
+    } else if (status == "hulq") {
+        togo$summary <- togo$summary %>% filter(scientificName %in% hulq.summary$Taxon.name)
     } else {
         togo$summary <- recs$summary %>% filter(str_detect(reportingStatus, status))
     }
@@ -177,6 +181,7 @@ process_one_taxon <- function (recs, taxon, grid) {
   togo <- list(new = process_one_status(recs, taxon, grid, "new"),
                confirmed = process_one_status(recs, taxon, grid, "confirmed"), 
                reported = process_one_status(recs, taxon, grid, "reported"),
+               hulq = process_one_status(recs, taxon, grid, "hulq"),
                all = process_one_status(recs, taxon, grid, "all"))
   
   #plot(togo$reported$grid)
@@ -186,6 +191,7 @@ process_one_taxon <- function (recs, taxon, grid) {
   write_grid(togo$confirmed$grid, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/vectors/{taxon}_confirmed_grid"))
   write_grid(togo$new$grid, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/vectors/{taxon}_new_grid"))
   write_grid(togo$reported$grid, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/vectors/{taxon}_reported_grid"))
+  write_grid(togo$hulq$grid, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/vectors/{taxon}_hulq_grid"))
   write_grid(togo$all$grid, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/vectors/{taxon}_all_grid"))
   
   # Write gridded dataframes
@@ -193,6 +199,7 @@ process_one_taxon <- function (recs, taxon, grid) {
   write.csv(togo$confirmed$records.gridded, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/tabular_data/{taxon}_confirmed_records_gridded.csv"), row.names = FALSE)
   write.csv(togo$new$records.gridded, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/tabular_data/{taxon}_new_records_gridded.csv"), row.names = FALSE)
   write.csv(togo$reported$records.gridded, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/tabular_data/{taxon}_reported_records_gridded.csv"), row.names = FALSE)
+  write.csv(togo$hulq$records.gridded, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/tabular_data/{taxon}_hulq_records_gridded.csv"), row.names = FALSE)
   write.csv(togo$all$records.gridded, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/tabular_data/{taxon}_all_records_gridded.csv"), row.names = FALSE)
 
   # Write summary

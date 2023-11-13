@@ -1,0 +1,10 @@
+Culturally_significant_species_synthesized_Thom_2011_Turner_2014_&_Luschim_2021-assigned.csv
+taken from imerss-bioinfo/data/Xetthecum/Culturally_significant_species_synthesized_Thom_2011_Turner_2014_&_Luschim_2021-assigned.csv
+
+and thence from Culturally Significant Species: From https://docs.google.com/spreadsheets/d/1c2aJosx35RhudJa1_rdtE7qgiRlNoB-jwJOSmI55iaI/edit#gid=0
+
+reintegrated-hulq.csv taken from imerss-bioinfo/Galiano 2023/reintegrated-hulq.csv
+
+Generated from reintegrated.csv by simple filtering, which in turn is derived from Galiano_marine_animal_records_consolidated_2023-04-22.csv
+
+
