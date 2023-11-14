@@ -55,11 +55,9 @@ plants.grid <- st_intersection(plants.points, grid)
 
 # Convert to CSV
 
-plants.grid.csv <- plants.grid
+plants.grid.csv <- dplyr::select(as.data.frame(plants.grid), -geometry)
 
-plants.grid.csv$geometry <- NULL
-
-write.csv(plants.grid.csv, "outputs/gridded_plants_WGS84")
+write.csv(plants.grid.csv, "outputs/gridded_plants_WGS84.csv")
 
 # Export grid
 
