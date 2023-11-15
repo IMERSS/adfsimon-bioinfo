@@ -12,7 +12,15 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/summaries/Galiano_marine_algae_review_summary_reviewed_2023-10-14.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-11-14.csv")
+
+# Temporarily assign pseudo-DWC fields until system is transitioned to newschool reporting methods
+
+names(summary) <- c("scientificName","scientificNameAuthorship","subtaxonAuthorship","commonName","kingdom","phylum","subphylum",
+                    "superclass","class","subclass","superorder","order","suborder","superfamily","family","subfamily","tribe",
+                    "genus","specificEpithet","hybrid","subspecies","variety","establishmentMeans","provincialStatus","nationalStatus",    
+                    "reportingStatus","observation","firstReported","firstReportedBy","Collection.List","firstReportedCollectionNumber",
+                    "firstReportedGBIF","firstObservediNat","firstObservedBy","firstObservedID","notes","ID","statsCode")
 
 # Note in Sept. 2023 this summary was revised to incorporate critical feedback from Sandra Lindstrom;
 # multiple taxa have been effectively removed from the summary which has resulted in discrepancies w
@@ -33,8 +41,6 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
                'identificationQualifier','identificationRemarks','previousIdentifications','bibliographicCitation',
                'associatedReferences')
 
-
-
 # Consolidate records
 
 # Sources (6/7 added):
@@ -45,7 +51,7 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 # Sandra Lindstrom BioBlitz collections 2023 - ! added
 # Simon - Sanger sequencing data - ! Not yet incorporated
 # PMLS Records 2021 - added # ! Need to update dataset
-# Webber et al. 2022 Epiphytic diatoms on Zostera 2022 - added ! needs updating!
+# Webber et al. 2022 Zostera epiphytes and pelagic diatom records - added ! needs updating!
 
 
 
@@ -190,8 +196,13 @@ BOLD.2021.records$eventDate <- as.Date(BOLD.2021.records$eventDate)
 nrow(BOLD.2021) - nrow(BOLD.2021.records)
 
 nrow(BOLD.2021)
-nrow(BOLD.2021.records) # no records omitted
-
+nrow(BOLD.2021.records) # one record, Prasiola furfuracea, omitted. See note to Sandra:
+# As noted previously, there is a specimen in the collection at UBC under this name. 
+# You noted that this is more likely P. meridionalis, suggesting we report P. meridionalis or just Prasiola. 
+# Because we already have a record of P. meridionalis (UBC A64665) in our dataset, however, I had removed the 
+# spurious record of P. furfuracea (UBC A64646) and included a critical note referring to this specimen under 
+# the report of P. meridionalis in our summary. However, I thought I would bring it to your attention that 
+# UBC A64646 is also recorded in the BOLD database under P. furfuracea.
 
 
 # Read records from the Consortium of Pacific Northwest Herbaria
@@ -333,7 +344,7 @@ CPNWH.2021.records$eventDate <- as.Date(CPNWH.2021.records$eventDate)
 nrow(CPNWH.2021) - nrow(CPNWH.2021.records)
 
 nrow(CPNWH.2021)
-nrow(CPNWH.2021.records) # 3 records omitted; those indeterminate with reference to summary
+nrow(CPNWH.2021.records) # 6 records omitted; those determined only to genus; Pasiola furfuracea( UBC A64646) also omitted; see above
 
 # Start record of unmatched names
 
@@ -345,11 +356,11 @@ unmatched.algae.records
 
 # Read iNaturalist data
 
-iNaturalist.observations <- read.csv("../../records/digitized/DarwinCore/iNaturalist_algae_observations_2022-10-30_DwC.csv")
+iNaturalist.observations <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_marine_algae_and_protozoa.csv")
 
 # Substitute iNaturalist usernames where actual observer names are missing
 
-iNaturalist.observations.nameless <- iNaturalist.observations %>% filter(!str_detect(recordedBy, '')) 
+iNaturalist.observations.nameless <- iNaturalist.observations %>% filter(!str_detect(Recorded.by, '')) 
 
 iNaturalist.observations.names <- anti_join(iNaturalist.observations,iNaturalist.observations.nameless)
 
@@ -357,24 +368,21 @@ iNaturalist.observations.nameless$recordedBy <- iNaturalist.observations.nameles
 
 iNaturalist.observations <- rbind(iNaturalist.observations.nameless,iNaturalist.observations.names)
 
-# Swap coordinates with private coordinates for obscured records
-
-iNaturalist.observations.coordinates.obscured <- iNaturalist.observations %>% drop_na(private_latitude)
-
-iNaturalist.observations.coordinates.unobscured <- anti_join(iNaturalist.observations,iNaturalist.observations.coordinates.obscured)
-
-iNaturalist.observations.coordinates.obscured$decimalLatitude <- iNaturalist.observations.coordinates.obscured$private_latitude
-iNaturalist.observations.coordinates.obscured$decimalLongitude <- iNaturalist.observations.coordinates.obscured$private_longitude
-
-iNaturalist.observations <- rbind(iNaturalist.observations.coordinates.obscured,iNaturalist.observations.coordinates.unobscured)
-
 # Drop observations of taxa that are not identified to genus at least
 
-iNaturalist.observations <- subset(iNaturalist.observations, taxon_genus_name != "")
+iNaturalist.observations <- subset(iNaturalist.observations, Genus != "")
+
+# Add DwC fields to iNaturalist catalog to facilitate joins with DwC dataframe template
+
+iNaturalist.observations <- iNaturalist.observations %>% rename(scientificName = iNaturalist.taxon.name)
+iNaturalist.observations <- iNaturalist.observations %>% rename(eventDate = Date.observed)
+iNaturalist.observations <- iNaturalist.observations %>% rename(occurrenceID = observationId)
+iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLatitude = Latitude)
+iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLongitude = Longitude)
 
 # Substitute iNaturalist taxon names with names from curated summary based on taxonID
 
-iNaturalist.observations$swappedNames <- summary$scientificName[match(unlist(iNaturalist.observations$taxon_id), summary$ID)]
+iNaturalist.observations$swappedNames <- summary$scientificName[match(unlist(iNaturalist.observations$iNaturalist.taxon.ID), summary$ID)]
 
 iNaturalist.observations.swapped.names <- iNaturalist.observations %>% drop_na(swappedNames)
 
@@ -402,6 +410,7 @@ iNaturalist.observations$island <- "Galiano Island"
 iNaturalist.observations$country <- "Canada"
 iNaturalist.observations$countryCode <- "CA"
 iNaturalist.observations$basisOfRecord <- "HumanObservation"
+iNaturalist.observations$datasetName <- "iNaturalist"
 iNaturalist.observations$institutionCode <- "iNaturalist"
 
 # Merge with summary to standardize names and taxon metadata
@@ -495,7 +504,6 @@ nrow(iNaturalist.observations.names.unmatched.unmatched)
 nrow(iNaturalist.observations.names.matched)+nrow(iNaturalist.observations.names.unmatched.matched)+nrow(iNaturalist.observations.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
-# (Once key is revised, save as 'algae_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
 key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
 
@@ -526,7 +534,7 @@ iNaturalist.records$eventDate <- as.Date(iNaturalist.records$eventDate)
 # Compare records in and out
 
 nrow(iNaturalist.observations)
-nrow(iNaturalist.records) # 673 records omitted: all species resolved only to genus (redundant to list) or unrecognized in summary (cultivated plants, etc.)
+nrow(iNaturalist.records) # 673 records omitted: all species resolved only to genus, or otherwise suprious records under review in consultation with Sandra
 
 unmatched.algae.records <- rbind(unmatched.algae.records,iNaturalist.observations.names.unmatched.unmatched)
 
@@ -536,7 +544,7 @@ unmatched.algae.records
 
 # Read Sandra Lindstrom's 2023 BioBlitz records # Note: this code is not complete! 
 
-Lindstrom.2023 <- read.csv("../../records/digitized/DarwinCore/Sandra_Lindstrom_Galiano_seaweed_collections_May_2023_DwC.csv")
+Lindstrom.2023 <- read.csv("../../records/digitized/DarwinCore/Sandra_Lindstrom_Galiano_seaweed_collections_May_2023_Oct_updates_DwC.csv")
 
 # Create DarwinCore dataframe template 
 
@@ -676,7 +684,7 @@ Lindstrom.2023.records$eventDate <- as.Date(Lindstrom.2023.records$eventDate)
 nrow(Lindstrom.2023) - nrow(Lindstrom.2023.records)
 
 nrow(Lindstrom.2023)
-nrow(Lindstrom.2023.records) # few records omitted; will update when dna results come in
+nrow(Lindstrom.2023.records) # few records omitted; records need updating !
 
 
 
@@ -834,7 +842,7 @@ PMLS.2021.records$eventDate <- as.Date(PMLS.2021.records$eventDate)
 
 nrow(PMLS.2021) - nrow(PMLS.2021.records)
 nrow(PMLS.2021)
-nrow(PMLS.2021.records) # >1,000 records omitted; all indeterminate with reference to summary
+nrow(PMLS.2021.records) # 791 records omitted; all indeterminate with reference to summary
 
 # Add to record of unmatched names
 
@@ -849,7 +857,7 @@ unmatched.algae.records
 
 # Read Webber et al. 2022 records (Illumina taxon table)
 
-Webber.et.al.2022 <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2022_Taxonomy_table_epiphytic_diatoms_Zostera_2022-11-01_DwC.csv")
+Webber.et.al.2022 <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2022_SS_DiatBarcodeV10_2023-11-14_DwC.csv")
 
 # Create unique identifiers for observations
 
@@ -867,7 +875,7 @@ Webber.et.al.2022 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
-Webber.et.al.2022$datasetName <- "Webber et al. 2022"
+Webber.et.al.2022$datasetName <- "Webber et al. 2020"
 Webber.et.al.2022$recordedBy<- "Mark Webber, Siobhan Schenck & Arjan van Asselt"
 Webber.et.al.2022$eventDate <- '2020-11-15' # temporary date, update
 Webber.et.al.2022$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
@@ -1006,7 +1014,9 @@ Webber.et.al.2022.records$eventDate <- as.Date(Webber.et.al.2022.records$eventDa
 
 nrow(Webber.et.al.2022) - nrow(Webber.et.al.2022.records)
 nrow(Webber.et.al.2022)
-nrow(Webber.et.al.2022.records) # 677 records omitted; all indeterminate with reference to summary
+nrow(Webber.et.al.2022.records) # 41 records omitted; most indeterminate with reference to summary; Note:
+# Nitzschia traheaformis is missing only because it lacks a taxonID (add to iNat); Thalassiosira spinulifera is not a known entity;
+# Thalassiosira spinulifera = Thalassiosira spinulata Takano, 1981 ?
 
 # Add to record of unmatched names
 
@@ -1015,11 +1025,19 @@ unmatched.algae.records <- rbind(unmatched.algae.records,Webber.et.al.2022.names
 unmatched.algae.records
 
 
-
 # Combine all source occurrence records
 
 marine.algae.records <- rbind(BOLD.2021.records, CPNWH.2021.records,iNaturalist.records,Lindstrom.2023.records,PMLS.2021.records,Webber.et.al.2022.records)
 
+
+# Compare to see if summary is complete with reference to source occurrence records
+
+setdiff(summary$scientificName , marine.algae.records$scientificName)
+
+# Note: as of 2023-11-14 there are three discrepancies:
+# "Acrosiphonia arcta" - to be solved based on Susan's review of iNat obs            
+# "Hildenbrandia species complex" - to be solved once iNat data is refreshed
+# "Nitzschia traheaformis" - to be solved by generating a new taxon on iNat (and adding taxonID to summary)
 
 
 # Finalize DwC fields (day, month, year, infraspecificEpithet, occurrenceStatus)
