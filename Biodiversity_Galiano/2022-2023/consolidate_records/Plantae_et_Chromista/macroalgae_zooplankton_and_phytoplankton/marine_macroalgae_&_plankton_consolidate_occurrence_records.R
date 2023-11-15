@@ -1035,7 +1035,7 @@ marine.algae.records <- rbind(BOLD.2021.records, CPNWH.2021.records,iNaturalist.
 setdiff(summary$scientificName , marine.algae.records$scientificName)
 
 # Note: as of 2023-11-14 there are three discrepancies:
-# "Acrosiphonia arcta" - to be solved based on Susan's review of iNat obs            
+# "Acrosiphonia arcta" - to be solved based on Sandra's review of iNat obs            
 # "Hildenbrandia species complex" - to be solved once iNat data is refreshed
 # "Nitzschia traheaformis" - to be solved by generating a new taxon on iNat (and adding taxonID to summary)
 
