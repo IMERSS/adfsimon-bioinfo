@@ -14,7 +14,7 @@ library(tidyr)
 
 # Read iNat records
 
-iNat.obs <- read.csv("iNat_records/BioGaliano_iNat_data_2023-11-01.csv")
+iNat.obs <- read.csv("iNat_records/BioGaliano_iNat_data_2023-11-15.csv")
 
 # Eliminate records without dates
 

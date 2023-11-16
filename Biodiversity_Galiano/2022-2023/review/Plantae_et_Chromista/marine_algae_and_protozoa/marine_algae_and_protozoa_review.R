@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-11-05_oldschool.csv")
+baseline <- read.csv("summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-11-14.csv")
 
 # Apply standardized field names to baseline
 

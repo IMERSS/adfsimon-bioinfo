@@ -11,9 +11,9 @@
 "10","Lichens","Reported",57
 "11","Lichens","Confirmed",113
 "12","Lichens","New",111
-"13","Algae","Reported",33
-"14","Algae","Confirmed",23
-"15","Algae","New",259
+"13","Algae","Reported",48
+"14","Algae","Confirmed",21
+"15","Algae","New",305
 "16","Bryophytes","Reported",21
 "17","Bryophytes","Confirmed",110
 "18","Bryophytes","New",59
@@ -32,9 +32,9 @@
 "31","Molluscs","Reported",92
 "32","Molluscs","Confirmed",86
 "33","Molluscs","New",63
-"34","Arthropods","Reported",411
+"34","Arthropods","Reported",410
 "35","Arthropods","Confirmed",229
-"36","Arthropods","New",859
+"36","Arthropods","New",858
 "37","Lophophores","Reported",10
 "38","Lophophores","Confirmed",8
 "39","Lophophores","New",2
