@@ -179,5 +179,5 @@ Eukaryota,Mollusca,Bivalvia,Veneroida,Veneroida,Veneroida,Veneroida,y,y
 Eukaryota,Mollusca,Gastropoda,Vetigastropoda,Vetigastropoda,Vetigastropoda,Vetigastropoda,y,y
 NA,NA,NA,NA,NA,NA,Eukaryota,y,y
 NA,NA,NA,NA,NA,NA,Halodaphnea,n,y
-NA,NA,NA,NA,NA,NA,Pithites,n,y
-NA,NA,NA,NA,NA,NA,Ulvaria,n,y
+Chromista ,Ciliophora ,NA,NA,NA,NA,Pithites,n,y
+Eukaryota,Chlorophyta,NA,NA,NA,NA,Ulvaria,n,y

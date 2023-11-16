@@ -14,7 +14,7 @@ library(tidyr)
 
 summary <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-11-14.csv")
 
-# Temporarily assign pseudo-DWC fields until system is transitioned to newschool reporting methods
+# Temporarily assign pseudo-DWC fields until system is transitioned to new school reporting methods
 
 names(summary) <- c("scientificName","scientificNameAuthorship","subtaxonAuthorship","commonName","kingdom","phylum","subphylum",
                     "superclass","class","subclass","superorder","order","suborder","superfamily","family","subfamily","tribe",
@@ -50,13 +50,15 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 # CPNWH records 2022 - ! added, needs to be updated for 2023
 # iNaturalist observations 2023- ! added, needs update
 # Sandra Lindstrom BioBlitz collections 2023 - ! added, needs update
-# Simon - Sanger sequencing data - ! Not yet added!
+# Simon 2023 - Sanger sequencing data - ! Not yet added!
 # PMLS Records 2021 - added # ! Need to update dataset
-# Webber et al. 2022a Sanger sequencing of clones - ! Not yet added!
-# Webber et al. 2022b Zostera epiphytes - added
-# Webber et al. 2023 General Plankton Samples - ! Not yet added!
+# Webber et al. 2020 Zostera epiphytes - added
+# Webber et al. 2023a Sanger sequencing of clones - ! Not yet added!
+# Webber et al. 2023b General Plankton Samples - ! Not yet added!
 
-# Read Webber et al. 2022 records (Illumina taxon table)
+
+
+# Read Bioblitz 2023 Illumina sequence data
 
 BioBlitz.2023 <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_diatoms_eelgrass_plankton_2023_bioblitz_DwC.csv")
 
@@ -1036,162 +1038,167 @@ unmatched.algae.records <- rbind(unmatched.algae.records,PMLS.2021.names.unmatch
 unmatched.algae.records
 
 
-# Read Webber et al. 2022 records (Eelgrass Illumina sequencing data)
+# Read Webber.et.al.2020 records (Eelgrass Illumina sequencing data)
 
-Webber.et.al.2022.diatoms <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_diatoms_eelgrass_plankton_2023_bioblitz_DwC.csv")
+Webber.et.al.2020.diatoms <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_diatoms_eelgrass_plankton_2023_bioblitz_DwC.csv")
 
-Webber.et.al.2022.diatoms <- Webber.et.al.2022.diatoms %>% subset(InSeagrass == 'y')
+Webber.et.al.2020.diatoms <- Webber.et.al.2020.diatoms %>% subset(InSeagrass == 'y')
 
-Webber.et.al.2022.diatoms <- Webber.et.al.2022.diatoms %>% select(scientificName)
+Webber.et.al.2020.diatoms <- Webber.et.al.2020.diatoms %>% select(scientificName)
 
-Webber.et.al.2022.eukaryotes <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_eukaryotes_eelgrass_plankton_2023_bioblitz_DwC.csv")
+Webber.et.al.2020.eukaryotes <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_eukaryotes_eelgrass_plankton_2023_bioblitz_DwC.csv")
 
-Webber.et.al.2022.eukaryotes <- Webber.et.al.2022.eukaryotes %>% subset(Phylum == 'Ochrophyta')
+Webber.et.al.2020.eukaryotes <- Webber.et.al.2020.eukaryotes %>% filter(Phylum == 'Ochrophyta' | Phylum == 'Chlorophyta' | 
+                                                                          Phylum == 'Chlorophyta_ph' | Phylum == 'Ciliophora' | 
+                                                                          Phylum == 'Dinoflagellata' | Phylum == 'Euglenozoa' | 
+                                                                          Phylum == 'Florideophycidae' | Phylum == 'Gracilipodida' | 
+                                                                          Phylum == 'Kathablepharidae' | Phylum == 'Labyrinthulomycetes' | 
+                                                                          Phylum == 'Phragmoplastophyta' | Phylum == 'Protalveolata')
 
-Webber.et.al.2022.eukaryotes <- Webber.et.al.2022.eukaryotes %>% subset(InSeagrass == 'y')
+Webber.et.al.2020.eukaryotes <- Webber.et.al.2020.eukaryotes %>% subset(InSeagrass == 'y')
 
-Webber.et.al.2022.eukaryotes <- Webber.et.al.2022.eukaryotes %>% select(scientificName)
+Webber.et.al.2020.eukaryotes <- Webber.et.al.2020.eukaryotes %>% select(scientificName)
 
-Webber.et.al.2022 <- rbind(Webber.et.al.2022.diatoms,Webber.et.al.2022.eukaryotes)
+Webber.et.al.2020 <- rbind(Webber.et.al.2020.diatoms,Webber.et.al.2020.eukaryotes)
 
 # Create unique identifiers for observations
 
-unique.prefix <- "WEBBERETAL2022:"
-unique.suffix <- 1:nrow(Webber.et.al.2022)
+unique.prefix <- "WEBBERETAL2020:"
+unique.suffix <- 1:nrow(Webber.et.al.2020)
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Webber.et.al.2022)))
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Webber.et.al.2020)))
 names(data.frame) <- DwCFields
 
-data.frame[names(Webber.et.al.2022)] <- Webber.et.al.2022
+data.frame[names(Webber.et.al.2020)] <- Webber.et.al.2020
 
-Webber.et.al.2022 <- select(data.frame, c(1:length(DwCFields)))
+Webber.et.al.2020 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
-Webber.et.al.2022$datasetName <- "Webber et al. 2020"
-Webber.et.al.2022$recordedBy<- "Mark Webber, Siobhan Schenck & Arjan van Asselt"
-Webber.et.al.2022$eventDate <- '2020-11-15' # temporary date, update
-Webber.et.al.2022$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
-Webber.et.al.2022$decimalLatitude <- 48.90071443043615
-Webber.et.al.2022$decimalLongitude <- -123.40790606380006
-Webber.et.al.2022$georeferenceProtocol <- "Coordinates mapped based on precise location of study area"
-Webber.et.al.2022$coordinateUncertaintyInMeters <- 50
-Webber.et.al.2022$countryCode <- "CA"
-Webber.et.al.2022$country <- "Canada"
-Webber.et.al.2022$stateProvince <- "British Columbia"
-Webber.et.al.2022$island <- "Galiano Island"
-Webber.et.al.2022$locality <- "Montague Harbour Marine Provincial Park (Hulq'umi'num: 'Sumnuw')"
-Webber.et.al.2022$basisOfRecord <- "MaterialSample"
+Webber.et.al.2020$datasetName <- "Webber et al. 2020"
+Webber.et.al.2020$recordedBy<- "Mark Webber, Siobhan Schenck & Arjan van Asselt"
+Webber.et.al.2020$eventDate <- '2020-11-15' # temporary date, update
+Webber.et.al.2020$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
+Webber.et.al.2020$decimalLatitude <- 48.90071443043615
+Webber.et.al.2020$decimalLongitude <- -123.40790606380006
+Webber.et.al.2020$georeferenceProtocol <- "Coordinates mapped based on precise location of study area"
+Webber.et.al.2020$coordinateUncertaintyInMeters <- 50
+Webber.et.al.2020$countryCode <- "CA"
+Webber.et.al.2020$country <- "Canada"
+Webber.et.al.2020$stateProvince <- "British Columbia"
+Webber.et.al.2020$island <- "Galiano Island"
+Webber.et.al.2020$locality <- "Montague Harbour Marine Provincial Park (Hulq'umi'num: 'Sumnuw')"
+Webber.et.al.2020$basisOfRecord <- "MaterialSample"
 
 # Remove '_' from 'scientificName'
 
-Webber.et.al.2022$scientificName <-  gsub("_", " ", Webber.et.al.2022$scientificName)
+Webber.et.al.2020$scientificName <-  gsub("_", " ", Webber.et.al.2020$scientificName)
 
 # Merge with summary to standardize names and taxon metadata
 
-Webber.et.al.2022$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$taxonID <- summary$ID[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$kingdom <- summary$kingdom[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$phylum <- summary$phylum[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$subphylum <- summary$subphylum[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$class <- summary$class[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$order <- summary$order[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$suborder <- summary$suborder[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$superfamily <- summary$superfamily[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$family <- summary$family[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$genus <- summary$genus[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$specificEpithet <- summary$specificEpithet[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$hybrid <- summary$hybrid[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$subspecies <- summary$subspecies[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$variety <- summary$variety[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$establishmentMeans <- summary$establishmentMeans[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$provincialStatus <- summary$provincialStatus[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
-Webber.et.al.2022$nationalStatus <- summary$nationalStatus[match(unlist(Webber.et.al.2022$scientificName), summary$scientificName)]
+Webber.et.al.2020$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$taxonID <- summary$ID[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$kingdom <- summary$kingdom[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$phylum <- summary$phylum[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$subphylum <- summary$subphylum[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$class <- summary$class[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$order <- summary$order[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$suborder <- summary$suborder[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$superfamily <- summary$superfamily[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$family <- summary$family[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$genus <- summary$genus[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$specificEpithet <- summary$specificEpithet[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$hybrid <- summary$hybrid[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$subspecies <- summary$subspecies[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$variety <- summary$variety[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$establishmentMeans <- summary$establishmentMeans[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$provincialStatus <- summary$provincialStatus[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
+Webber.et.al.2020$nationalStatus <- summary$nationalStatus[match(unlist(Webber.et.al.2020$scientificName), summary$scientificName)]
 
 # Unmatched records
 
-Webber.et.al.2022.names.unmatched <- Webber.et.al.2022[is.na(Webber.et.al.2022$taxonID),]
+Webber.et.al.2020.names.unmatched <- Webber.et.al.2020[is.na(Webber.et.al.2020$taxonID),]
 
 # Matched records
 
-Webber.et.al.2022.names.matched <- anti_join(Webber.et.al.2022,Webber.et.al.2022.names.unmatched)
+Webber.et.al.2020.names.matched <- anti_join(Webber.et.al.2020,Webber.et.al.2020.names.unmatched)
 
 # Confirm all records are represented 
 
-nrow(Webber.et.al.2022)
-nrow(Webber.et.al.2022.names.matched)
-nrow(Webber.et.al.2022.names.unmatched)
-nrow(Webber.et.al.2022.names.matched)+nrow(Webber.et.al.2022.names.unmatched)
+nrow(Webber.et.al.2020)
+nrow(Webber.et.al.2020.names.matched)
+nrow(Webber.et.al.2020.names.unmatched)
+nrow(Webber.et.al.2020.names.matched)+nrow(Webber.et.al.2020.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Webber.et.al.2022.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+Webber.et.al.2020.key <- read.csv("keys/algae_taxon_key_2023.csv") 
 
 # Swap unmatched names using key
 
-Webber.et.al.2022.names.unmatched.matched <- Webber.et.al.2022.names.unmatched
+Webber.et.al.2020.names.unmatched.matched <- Webber.et.al.2020.names.unmatched
 
-Webber.et.al.2022.names.unmatched.matched$scientificNameTemp <- Webber.et.al.2022.key$Matched.Taxon[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificName), Webber.et.al.2022.key$Taxon)]
+Webber.et.al.2020.names.unmatched.matched$scientificNameTemp <- Webber.et.al.2020.key$Matched.Taxon[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificName), Webber.et.al.2020.key$Taxon)]
 
 # Add values based on newly matched name
 
-Webber.et.al.2022.names.unmatched.matched$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$taxonID <- summary$ID[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$phylum <- summary$phylum[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$class <- summary$class[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$order <- summary$order[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$suborder <- summary$suborder[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$superfamily <- summary$superfamily[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$family <- summary$family[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$genus <- summary$genus[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$specificEpithet <- summary$specificEpithet[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$hybrid <- summary$hybrid[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$subspecies <- summary$subspecies[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$variety <- summary$variety[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$establishmentMeans <- summary$establishmentMeans[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$provincialStatus <- summary$provincialStatus[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-Webber.et.al.2022.names.unmatched.matched$nationalStatus <- summary$nationalStatus[match(unlist(Webber.et.al.2022.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$taxonID <- summary$ID[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$phylum <- summary$phylum[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$class <- summary$class[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$order <- summary$order[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$suborder <- summary$suborder[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$superfamily <- summary$superfamily[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$family <- summary$family[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$genus <- summary$genus[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$specificEpithet <- summary$specificEpithet[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$hybrid <- summary$hybrid[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$subspecies <- summary$subspecies[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$variety <- summary$variety[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$establishmentMeans <- summary$establishmentMeans[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$provincialStatus <- summary$provincialStatus[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2020.names.unmatched.matched$nationalStatus <- summary$nationalStatus[match(unlist(Webber.et.al.2020.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 
 # Filter taxa unrecognized in summary 
 
-Webber.et.al.2022.names.unmatched.unmatched <- Webber.et.al.2022.names.unmatched.matched[is.na(Webber.et.al.2022.names.unmatched.matched$taxonID),]
+Webber.et.al.2020.names.unmatched.unmatched <- Webber.et.al.2020.names.unmatched.matched[is.na(Webber.et.al.2020.names.unmatched.matched$taxonID),]
 
-Webber.et.al.2022.names.unmatched.unmatched$scientificNameTemp <- NULL
+Webber.et.al.2020.names.unmatched.unmatched$scientificNameTemp <- NULL
 
 # Filter taxa recognized in summary
 
-Webber.et.al.2022.names.unmatched.matched$scientificName <- Webber.et.al.2022.names.unmatched.matched$scientificNameTemp
+Webber.et.al.2020.names.unmatched.matched$scientificName <- Webber.et.al.2020.names.unmatched.matched$scientificNameTemp
 
-Webber.et.al.2022.names.unmatched.matched$scientificNameTemp <- NULL
+Webber.et.al.2020.names.unmatched.matched$scientificNameTemp <- NULL
 
-Webber.et.al.2022.names.unmatched.matched <- Webber.et.al.2022.names.unmatched.matched %>% drop_na(taxonID)
+Webber.et.al.2020.names.unmatched.matched <- Webber.et.al.2020.names.unmatched.matched %>% drop_na(taxonID)
 
 # Confirm all records are represented 
 
-nrow(Webber.et.al.2022)
-nrow(Webber.et.al.2022.names.matched)
-nrow(Webber.et.al.2022.names.unmatched)
-nrow(Webber.et.al.2022.names.unmatched.matched)
-nrow(Webber.et.al.2022.names.unmatched.unmatched)
-nrow(Webber.et.al.2022.names.matched)+nrow(Webber.et.al.2022.names.unmatched.matched)+nrow(Webber.et.al.2022.names.unmatched.unmatched)
+nrow(Webber.et.al.2020)
+nrow(Webber.et.al.2020.names.matched)
+nrow(Webber.et.al.2020.names.unmatched)
+nrow(Webber.et.al.2020.names.unmatched.matched)
+nrow(Webber.et.al.2020.names.unmatched.unmatched)
+nrow(Webber.et.al.2020.names.matched)+nrow(Webber.et.al.2020.names.unmatched.matched)+nrow(Webber.et.al.2020.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
 # (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
 key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
 
-unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Webber.et.al.2022.names.unmatched.unmatched)))
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Webber.et.al.2020.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
 
-unmatched.taxa$Taxon <- Webber.et.al.2022.names.unmatched.unmatched$scientificName
+unmatched.taxa$Taxon <- Webber.et.al.2020.names.unmatched.unmatched$scientificName
 
 unmatched.taxa <- distinct(unmatched.taxa)
 
-review.key <- rbind(Webber.et.al.2022.key,unmatched.taxa)
+review.key <- rbind(Webber.et.al.2020.key,unmatched.taxa)
 
 review.key[is.na(review.key)] <- ""
 
@@ -1199,31 +1206,220 @@ write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
 
 # Bind records
 
-Webber.et.al.2022.records <- rbind(Webber.et.al.2022.names.matched,Webber.et.al.2022.names.unmatched.matched)
+Webber.et.al.2020.records <- rbind(Webber.et.al.2020.names.matched,Webber.et.al.2020.names.unmatched.matched)
 
 # Set date formatting consistent with other data frames
 
-Webber.et.al.2022.records$eventDate <- as.Date(Webber.et.al.2022.records$eventDate)
+Webber.et.al.2020.records$eventDate <- as.Date(Webber.et.al.2020.records$eventDate)
 
 # Compare records in and out
 
-nrow(Webber.et.al.2022) - nrow(Webber.et.al.2022.records)
-nrow(Webber.et.al.2022)
-nrow(Webber.et.al.2022.records) # 77 records omitted; most indeterminate with reference to summary; Note:
+nrow(Webber.et.al.2020) - nrow(Webber.et.al.2020.records)
+nrow(Webber.et.al.2020)
+nrow(Webber.et.al.2020.records) # 107 records omitted; most indeterminate with reference to summary; Note:
 # Thalassiosira spinulifera is not a known entity; Thalassiosira spinulifera = Thalassiosira spinulata Takano, 1981 ?
 # Heribaudiella sp. - a freshwater species?
 # Lessonia sp. - kelp genus restricted to the Southern Hemisphere?
 
 # Add to record of unmatched names
 
-unmatched.algae.records <- rbind(unmatched.algae.records,Webber.et.al.2022.names.unmatched.unmatched)
+unmatched.algae.records <- rbind(unmatched.algae.records,Webber.et.al.2020.names.unmatched.unmatched)
 
 unmatched.algae.records
 
 
+# Read Webber et al. 2022 records (General Plankton Samples)
+
+Webber.et.al.2023.diatoms <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_diatoms_eelgrass_plankton_2023_bioblitz_DwC.csv")
+
+Webber.et.al.2023.diatoms <- Webber.et.al.2023.diatoms %>% subset(InMark == 'y')
+
+Webber.et.al.2023.diatoms <- Webber.et.al.2023.diatoms %>% select(scientificName)
+
+Webber.et.al.2023.eukaryotes <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_eukaryotes_eelgrass_plankton_2023_bioblitz_DwC.csv")
+
+Webber.et.al.2023.eukaryotes <- Webber.et.al.2023.eukaryotes %>% filter(Phylum == 'Ochrophyta' | Phylum == 'Chlorophyta' | 
+                                                                          Phylum == 'Chlorophyta_ph' | Phylum == 'Ciliophora' | 
+                                                                          Phylum == 'Dinoflagellata' | Phylum == 'Euglenozoa' | 
+                                                                          Phylum == 'Florideophycidae' | Phylum == 'Gracilipodida' | 
+                                                                          Phylum == 'Kathablepharidae' | Phylum == 'Labyrinthulomycetes' | 
+                                                                          Phylum == 'Phragmoplastophyta' | Phylum == 'Protalveolata')
+
+Webber.et.al.2023.eukaryotes <- Webber.et.al.2023.eukaryotes %>% subset(InMark == 'y')
+
+Webber.et.al.2023.eukaryotes <- Webber.et.al.2023.eukaryotes %>% select(scientificName)
+
+Webber.et.al.2023 <- rbind(Webber.et.al.2023.diatoms,Webber.et.al.2023.eukaryotes)
+
+# Create unique identifiers for observations
+
+unique.prefix <- "WEBBERETAL2023:"
+unique.suffix <- 1:nrow(Webber.et.al.2023)
+
+# Create DarwinCore dataframe template 
+
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Webber.et.al.2023)))
+names(data.frame) <- DwCFields
+
+data.frame[names(Webber.et.al.2023)] <- Webber.et.al.2023
+
+Webber.et.al.2023 <- select(data.frame, c(1:length(DwCFields)))
+
+# Add metadata
+
+Webber.et.al.2023$datasetName <- "Webber et al. 2023"
+Webber.et.al.2023$recordedBy<- "Mark Webber, Arjan van Asselt"
+Webber.et.al.2023$eventDate <- '2023-01-01' # temporary date, update
+Webber.et.al.2023$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
+Webber.et.al.2023$decimalLatitude <- 48.90071443043615 # update
+Webber.et.al.2023$decimalLongitude <- -123.40790606380006 # update
+Webber.et.al.2023$georeferenceProtocol <- "Coordinates mapped based on precise location of study area"
+Webber.et.al.2023$coordinateUncertaintyInMeters <- 50 # update
+Webber.et.al.2023$countryCode <- "CA"
+Webber.et.al.2023$country <- "Canada"
+Webber.et.al.2023$stateProvince <- "British Columbia"
+Webber.et.al.2023$island <- "Galiano Island"
+Webber.et.al.2023$locality <- "Update" # Update
+Webber.et.al.2023$basisOfRecord <- "MaterialSample"
+
+# Remove '_' from 'scientificName'
+
+Webber.et.al.2023$scientificName <-  gsub("_", " ", Webber.et.al.2023$scientificName)
+
+# Merge with summary to standardize names and taxon metadata
+
+Webber.et.al.2023$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$taxonID <- summary$ID[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$kingdom <- summary$kingdom[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$phylum <- summary$phylum[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$subphylum <- summary$subphylum[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$class <- summary$class[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$order <- summary$order[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$suborder <- summary$suborder[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$superfamily <- summary$superfamily[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$family <- summary$family[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$genus <- summary$genus[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$specificEpithet <- summary$specificEpithet[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$hybrid <- summary$hybrid[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$subspecies <- summary$subspecies[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$variety <- summary$variety[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$establishmentMeans <- summary$establishmentMeans[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$provincialStatus <- summary$provincialStatus[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+Webber.et.al.2023$nationalStatus <- summary$nationalStatus[match(unlist(Webber.et.al.2023$scientificName), summary$scientificName)]
+
+# Unmatched records
+
+Webber.et.al.2023.names.unmatched <- Webber.et.al.2023[is.na(Webber.et.al.2023$taxonID),]
+
+# Matched records
+
+Webber.et.al.2023.names.matched <- anti_join(Webber.et.al.2023,Webber.et.al.2023.names.unmatched)
+
+# Confirm all records are represented 
+
+nrow(Webber.et.al.2023)
+nrow(Webber.et.al.2023.names.matched)
+nrow(Webber.et.al.2023.names.unmatched)
+nrow(Webber.et.al.2023.names.matched)+nrow(Webber.et.al.2023.names.unmatched)
+
+# Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+
+Webber.et.al.2023.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+
+# Swap unmatched names using key
+
+Webber.et.al.2023.names.unmatched.matched <- Webber.et.al.2023.names.unmatched
+
+Webber.et.al.2023.names.unmatched.matched$scientificNameTemp <- Webber.et.al.2023.key$Matched.Taxon[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificName), Webber.et.al.2023.key$Taxon)]
+
+# Add values based on newly matched name
+
+Webber.et.al.2023.names.unmatched.matched$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$taxonID <- summary$ID[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$phylum <- summary$phylum[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$class <- summary$class[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$order <- summary$order[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$suborder <- summary$suborder[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$superfamily <- summary$superfamily[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$family <- summary$family[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$genus <- summary$genus[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$specificEpithet <- summary$specificEpithet[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$hybrid <- summary$hybrid[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$subspecies <- summary$subspecies[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$variety <- summary$variety[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$establishmentMeans <- summary$establishmentMeans[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$provincialStatus <- summary$provincialStatus[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+Webber.et.al.2023.names.unmatched.matched$nationalStatus <- summary$nationalStatus[match(unlist(Webber.et.al.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+
+# Filter taxa unrecognized in summary 
+
+Webber.et.al.2023.names.unmatched.unmatched <- Webber.et.al.2023.names.unmatched.matched[is.na(Webber.et.al.2023.names.unmatched.matched$taxonID),]
+
+Webber.et.al.2023.names.unmatched.unmatched$scientificNameTemp <- NULL
+
+# Filter taxa recognized in summary
+
+Webber.et.al.2023.names.unmatched.matched$scientificName <- Webber.et.al.2023.names.unmatched.matched$scientificNameTemp
+
+Webber.et.al.2023.names.unmatched.matched$scientificNameTemp <- NULL
+
+Webber.et.al.2023.names.unmatched.matched <- Webber.et.al.2023.names.unmatched.matched %>% drop_na(taxonID)
+
+# Confirm all records are represented 
+
+nrow(Webber.et.al.2023)
+nrow(Webber.et.al.2023.names.matched)
+nrow(Webber.et.al.2023.names.unmatched)
+nrow(Webber.et.al.2023.names.unmatched.matched)
+nrow(Webber.et.al.2023.names.unmatched.unmatched)
+nrow(Webber.et.al.2023.names.matched)+nrow(Webber.et.al.2023.names.unmatched.matched)+nrow(Webber.et.al.2023.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Webber.et.al.2023.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Webber.et.al.2023.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Webber.et.al.2023.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
+# Bind records
+
+Webber.et.al.2023.records <- rbind(Webber.et.al.2023.names.matched,Webber.et.al.2023.names.unmatched.matched)
+
+# Set date formatting consistent with other data frames
+
+Webber.et.al.2023.records$eventDate <- as.Date(Webber.et.al.2023.records$eventDate)
+
+# Compare records in and out
+
+nrow(Webber.et.al.2023) - nrow(Webber.et.al.2023.records)
+nrow(Webber.et.al.2023)
+nrow(Webber.et.al.2023.records) # 87 unmatched taxa, mostly taxa unresolved to genus or redundant alongside other taxa in the summary
+# Note: Thalassiosira spinulifera ??
+
+# Add to record of unmatched names
+
+unmatched.algae.records <- rbind(unmatched.algae.records,Webber.et.al.2023.names.unmatched.unmatched)
+
+unmatched.algae.records
+
+
+
 # Combine all source occurrence records
 
-marine.algae.records <- rbind(BioBlitz.2023.records, BOLD.2021.records, CPNWH.2021.records, iNaturalist.records, Lindstrom.2023.records, PMLS.2021.records, Webber.et.al.2022.records)
+marine.algae.records <- rbind(BioBlitz.2023.records, BOLD.2021.records, CPNWH.2021.records, iNaturalist.records, Lindstrom.2023.records, PMLS.2021.records, Webber.et.al.2020.records, Webber.et.al.2023.records)
 
 
 # Compare to see if summary is complete with reference to source occurrence records
