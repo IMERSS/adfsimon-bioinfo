@@ -43,16 +43,189 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Consolidate records
 
-# Sources (6/7 added):
+# Sources (7/10 added):
 
-# BOLD records 2021 - ! added, but needs attention
-# CPNWH records 2022 - added
-# iNaturalist observations 2022 - ! added # Need to update for 2023
-# Sandra Lindstrom BioBlitz collections 2023 - ! added
-# Simon - Sanger sequencing data - ! Not yet incorporated
+# BioBlitz 2023 records (Illumina sequencing data) - ! added, but needs attention
+# BOLD records 2021 - ! added, but needs updating for 2023
+# CPNWH records 2022 - ! added, needs to be updated for 2023
+# iNaturalist observations 2023- ! added, needs update
+# Sandra Lindstrom BioBlitz collections 2023 - ! added, needs update
+# Simon - Sanger sequencing data - ! Not yet added!
 # PMLS Records 2021 - added # ! Need to update dataset
-# Webber et al. 2022 Zostera epiphytes and pelagic diatom records - added ! needs updating!
+# Webber et al. 2022a Sanger sequencing of clones - ! Not yet added!
+# Webber et al. 2022b Zostera epiphytes - added
+# Webber et al. 2023 General Plankton Samples - ! Not yet added!
 
+# Read Webber et al. 2022 records (Illumina taxon table)
+
+BioBlitz.2023 <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_diatoms_eelgrass_plankton_2023_bioblitz_DwC.csv")
+
+BioBlitz.2023 <- BioBlitz.2023 %>% subset(InBioBlitz == 'y')
+
+BioBlitz.2023 <- BioBlitz.2023 %>% select(scientificName)
+
+# Create unique identifiers for observations
+
+unique.prefix <- "GALIANOBIOBLITZDIATOMS2023:"
+unique.suffix <- 1:nrow(BioBlitz.2023)
+
+# Create DarwinCore dataframe template 
+
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(BioBlitz.2023)))
+names(data.frame) <- DwCFields
+
+data.frame[names(BioBlitz.2023)] <- BioBlitz.2023
+
+BioBlitz.2023 <- select(data.frame, c(1:length(DwCFields)))
+
+# Add metadata
+
+BioBlitz.2023$datasetName <- "Galiano BioBlitz 2023"
+BioBlitz.2023$recordedBy<- "Mark Webber, Arjan van Asselt, Elaine Humphrey, Sandra Lindstrom, Laura Parfrey"
+BioBlitz.2023$eventDate <- '2023-05-26' # temporary date, update
+BioBlitz.2023$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
+BioBlitz.2023$decimalLatitude <- 48.90071443043615 # update
+BioBlitz.2023$decimalLongitude <- -123.40790606380006 # update
+BioBlitz.2023$georeferenceProtocol <- "Coordinates mapped based on precise locations of BioBlitz sampling sites"
+BioBlitz.2023$coordinateUncertaintyInMeters <- 50
+BioBlitz.2023$countryCode <- "CA"
+BioBlitz.2023$country <- "Canada"
+BioBlitz.2023$stateProvince <- "British Columbia"
+BioBlitz.2023$island <- "Galiano Island"
+BioBlitz.2023$locality <- "Update" # Update
+BioBlitz.2023$basisOfRecord <- "MaterialSample"
+
+# Remove '_' from 'scientificName'
+
+BioBlitz.2023$scientificName <-  gsub("_", " ", BioBlitz.2023$scientificName)
+
+# Merge with summary to standardize names and taxon metadata
+
+BioBlitz.2023$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$taxonID <- summary$ID[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$kingdom <- summary$kingdom[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$phylum <- summary$phylum[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$subphylum <- summary$subphylum[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$class <- summary$class[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$order <- summary$order[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$suborder <- summary$suborder[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$superfamily <- summary$superfamily[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$family <- summary$family[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$genus <- summary$genus[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$specificEpithet <- summary$specificEpithet[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$hybrid <- summary$hybrid[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$subspecies <- summary$subspecies[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$variety <- summary$variety[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$establishmentMeans <- summary$establishmentMeans[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$provincialStatus <- summary$provincialStatus[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+BioBlitz.2023$nationalStatus <- summary$nationalStatus[match(unlist(BioBlitz.2023$scientificName), summary$scientificName)]
+
+# Unmatched records
+
+BioBlitz.2023.names.unmatched <- BioBlitz.2023[is.na(BioBlitz.2023$taxonID),]
+
+# Matched records
+
+BioBlitz.2023.names.matched <- anti_join(BioBlitz.2023,BioBlitz.2023.names.unmatched)
+
+# Confirm all records are represented 
+
+nrow(BioBlitz.2023)
+nrow(BioBlitz.2023.names.matched)
+nrow(BioBlitz.2023.names.unmatched)
+nrow(BioBlitz.2023.names.matched)+nrow(BioBlitz.2023.names.unmatched)
+
+# Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+
+BioBlitz.2023.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+
+# Swap unmatched names using key
+
+BioBlitz.2023.names.unmatched.matched <- BioBlitz.2023.names.unmatched
+
+BioBlitz.2023.names.unmatched.matched$scientificNameTemp <- BioBlitz.2023.key$Matched.Taxon[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificName), BioBlitz.2023.key$Taxon)]
+
+# Add values based on newly matched name
+
+BioBlitz.2023.names.unmatched.matched$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$taxonID <- summary$ID[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$phylum <- summary$phylum[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$class <- summary$class[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$order <- summary$order[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$suborder <- summary$suborder[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$superfamily <- summary$superfamily[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$family <- summary$family[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$genus <- summary$genus[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$specificEpithet <- summary$specificEpithet[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$hybrid <- summary$hybrid[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$subspecies <- summary$subspecies[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$variety <- summary$variety[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$establishmentMeans <- summary$establishmentMeans[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$provincialStatus <- summary$provincialStatus[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+BioBlitz.2023.names.unmatched.matched$nationalStatus <- summary$nationalStatus[match(unlist(BioBlitz.2023.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+
+# Filter taxa unrecognized in summary 
+
+BioBlitz.2023.names.unmatched.unmatched <- BioBlitz.2023.names.unmatched.matched[is.na(BioBlitz.2023.names.unmatched.matched$taxonID),]
+
+BioBlitz.2023.names.unmatched.unmatched$scientificNameTemp <- NULL
+
+# Filter taxa recognized in summary
+
+BioBlitz.2023.names.unmatched.matched$scientificName <- BioBlitz.2023.names.unmatched.matched$scientificNameTemp
+
+BioBlitz.2023.names.unmatched.matched$scientificNameTemp <- NULL
+
+BioBlitz.2023.names.unmatched.matched <- BioBlitz.2023.names.unmatched.matched %>% drop_na(taxonID)
+
+# Confirm all records are represented 
+
+nrow(BioBlitz.2023)
+nrow(BioBlitz.2023.names.matched)
+nrow(BioBlitz.2023.names.unmatched)
+nrow(BioBlitz.2023.names.unmatched.matched)
+nrow(BioBlitz.2023.names.unmatched.unmatched)
+nrow(BioBlitz.2023.names.matched)+nrow(BioBlitz.2023.names.unmatched.matched)+nrow(BioBlitz.2023.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(BioBlitz.2023.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- BioBlitz.2023.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(BioBlitz.2023.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
+# Bind records
+
+BioBlitz.2023.records <- rbind(BioBlitz.2023.names.matched,BioBlitz.2023.names.unmatched.matched)
+
+# Set date formatting consistent with other data frames
+
+BioBlitz.2023.records$eventDate <- as.Date(BioBlitz.2023.records$eventDate)
+
+# Compare records in and out
+
+nrow(BioBlitz.2023) - nrow(BioBlitz.2023.records)
+nrow(BioBlitz.2023)
+nrow(BioBlitz.2023.records) # 
+
+# Start record of unmatched names
+
+unmatched.algae.records <- BioBlitz.2023.names.unmatched.unmatched
+
+unmatched.algae.records
 
 
 # Read BOLD records 2021 # Note: requires updating to ensure appropriate metadata are recorded in DwC format
@@ -204,6 +377,12 @@ nrow(BOLD.2021.records) # one record, Prasiola furfuracea, omitted. See note to 
 # the report of P. meridionalis in our summary. However, I thought I would bring it to your attention that 
 # UBC A64646 is also recorded in the BOLD database under P. furfuracea.
 
+# Add to record of unmatched names
+
+unmatched.algae.records <- rbind(unmatched.algae.records,BOLD.2021.names.unmatched.unmatched)
+
+unmatched.algae.records
+
 
 # Read records from the Consortium of Pacific Northwest Herbaria
 
@@ -346,12 +525,11 @@ nrow(CPNWH.2021) - nrow(CPNWH.2021.records)
 nrow(CPNWH.2021)
 nrow(CPNWH.2021.records) # 6 records omitted; those determined only to genus; Pasiola furfuracea( UBC A64646) also omitted; see above
 
-# Start record of unmatched names
+# Add to record of unmatched names
 
-unmatched.algae.records <- CPNWH.2021.names.unmatched.unmatched
+unmatched.algae.records <- rbind(unmatched.algae.records,CPNWH.2021.names.unmatched.unmatched)
 
 unmatched.algae.records
-
 
 
 # Read iNaturalist data
@@ -536,6 +714,8 @@ iNaturalist.records$eventDate <- as.Date(iNaturalist.records$eventDate)
 nrow(iNaturalist.observations)
 nrow(iNaturalist.records) # 673 records omitted: all species resolved only to genus, or otherwise suprious records under review in consultation with Sandra
 
+# Add to record of unmatched names
+
 unmatched.algae.records <- rbind(unmatched.algae.records,iNaturalist.observations.names.unmatched.unmatched)
 
 unmatched.algae.records
@@ -686,6 +866,11 @@ nrow(Lindstrom.2023) - nrow(Lindstrom.2023.records)
 nrow(Lindstrom.2023)
 nrow(Lindstrom.2023.records) # few records omitted; records need updating !
 
+# Add to record of unmatched names
+
+unmatched.algae.records <- rbind(unmatched.algae.records,Lindstrom.2023.names.unmatched.unmatched)
+
+unmatched.algae.records
 
 
 # Read PMLS 2021 records # TEMPORARY DATASET
@@ -846,18 +1031,28 @@ nrow(PMLS.2021.records) # 791 records omitted; all indeterminate with reference 
 
 # Add to record of unmatched names
 
-names(unmatched.algae.records)
-names(PMLS.2021.names.unmatched.unmatched)
-
 unmatched.algae.records <- rbind(unmatched.algae.records,PMLS.2021.names.unmatched.unmatched)
 
 unmatched.algae.records
 
 
+# Read Webber et al. 2022 records (Eelgrass Illumina sequencing data)
 
-# Read Webber et al. 2022 records (Illumina taxon table)
+Webber.et.al.2022.diatoms <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_diatoms_eelgrass_plankton_2023_bioblitz_DwC.csv")
 
-Webber.et.al.2022 <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2022_SS_DiatBarcodeV10_2023-11-14_DwC.csv")
+Webber.et.al.2022.diatoms <- Webber.et.al.2022.diatoms %>% subset(InSeagrass == 'y')
+
+Webber.et.al.2022.diatoms <- Webber.et.al.2022.diatoms %>% select(scientificName)
+
+Webber.et.al.2022.eukaryotes <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_eukaryotes_eelgrass_plankton_2023_bioblitz_DwC.csv")
+
+Webber.et.al.2022.eukaryotes <- Webber.et.al.2022.eukaryotes %>% subset(Phylum == 'Ochrophyta')
+
+Webber.et.al.2022.eukaryotes <- Webber.et.al.2022.eukaryotes %>% subset(InSeagrass == 'y')
+
+Webber.et.al.2022.eukaryotes <- Webber.et.al.2022.eukaryotes %>% select(scientificName)
+
+Webber.et.al.2022 <- rbind(Webber.et.al.2022.diatoms,Webber.et.al.2022.eukaryotes)
 
 # Create unique identifiers for observations
 
@@ -1014,9 +1209,10 @@ Webber.et.al.2022.records$eventDate <- as.Date(Webber.et.al.2022.records$eventDa
 
 nrow(Webber.et.al.2022) - nrow(Webber.et.al.2022.records)
 nrow(Webber.et.al.2022)
-nrow(Webber.et.al.2022.records) # 41 records omitted; most indeterminate with reference to summary; Note:
-# Nitzschia traheaformis is missing only because it lacks a taxonID (add to iNat); Thalassiosira spinulifera is not a known entity;
-# Thalassiosira spinulifera = Thalassiosira spinulata Takano, 1981 ?
+nrow(Webber.et.al.2022.records) # 77 records omitted; most indeterminate with reference to summary; Note:
+# Thalassiosira spinulifera is not a known entity; Thalassiosira spinulifera = Thalassiosira spinulata Takano, 1981 ?
+# Heribaudiella sp. - a freshwater species?
+# Lessonia sp. - kelp genus restricted to the Southern Hemisphere?
 
 # Add to record of unmatched names
 
@@ -1027,7 +1223,7 @@ unmatched.algae.records
 
 # Combine all source occurrence records
 
-marine.algae.records <- rbind(BOLD.2021.records, CPNWH.2021.records,iNaturalist.records,Lindstrom.2023.records,PMLS.2021.records,Webber.et.al.2022.records)
+marine.algae.records <- rbind(BioBlitz.2023.records, BOLD.2021.records, CPNWH.2021.records, iNaturalist.records, Lindstrom.2023.records, PMLS.2021.records, Webber.et.al.2022.records)
 
 
 # Compare to see if summary is complete with reference to source occurrence records
