@@ -118,26 +118,24 @@ process_one_status <- function (recs, taxon, grid, status) {
     } else {
         togo$summary <- recs$summary %>% filter(str_detect(reportingStatus, status))
     }
+    # Rename this field back to what .Rmd in galiano-marine-atlas is expecting
+    togo$summary <- togo$summary %>% rename(iNatObservationStatus = observation)
 
     togo$taxa <- unique(togo$summary$scientificName)
 
     togo$taxa.records <- recs$records %>% filter(scientificName %in% togo$taxa)
     togo$taxa.records <- togo$taxa.records %>% drop_na(decimalLatitude)
     
-    # Prepare gridded choropleths of historic, confirmed, new records
-    
-    # New records
-    
-    # Convert records to sf points
+    # Convert records to sf points using WGS 84
     
     togo$taxa.points <- st_as_sf(togo$taxa.records, coords = c("decimalLongitude", "decimalLatitude"), crs = EPSG.4326)
     
-    # # Reproject to NAD83 UTM Zone 10
-    
-    # Generate gridded dataframes (each record assigned cell_id)
-    
+    # Reproject to NAD83 UTM Zone 10
+
     togo$taxa.points <- st_transform(togo$taxa.points, crs = st_crs(EPSG.32610))
-    
+
+    # Generate gridded dataframes (each record assigned cell_id)
+        
     togo$records.gridded <- togo$taxa.points %>% st_join(grid)
     
     togo$records.gridded <- as.data.frame(togo$records.gridded)
@@ -145,27 +143,18 @@ process_one_status <- function (recs, taxon, grid, status) {
     togo$records.gridded$geometry <- NULL
     
     # Summarized points (for choropleths)
-    
-    togo$taxa.points.sum <- st_transform(togo$taxa.points, crs = st_crs(EPSG.32610)) %>%
-      group_by(scientificName) %>%
-      summarize()
-    
+
+    # Method 2 from https://statisticsglobe.com/count-unique-values-by-group-in-r for computing richness
     # Generate species richness choropleths
-    # Cribbed from https://gis.stackexchange.com/questions/323698/counting-points-in-polygons-with-sf-package-of-r
-    # and https://luisdva.github.io/rstats/richness/
+    togo$taxa.points.sum <- togo$records.gridded %>% group_by(cell_id) %>% summarize(richness = n_distinct(scientificName))
     
-    togo$grid <- grid %>%
-      st_join(togo$taxa.points.sum) %>%
-      mutate(overlap = ifelse(!is.na(scientificName), 1, 0)) %>%
-      group_by(cell_id) %>%
-      summarize(richness = sum(overlap))
+    togo$grid <- merge(grid, togo$taxa.points.sum, by = "cell_id")
+
+    if (nrow(togo$grid) > 0) {
+        togo$grid$status <- status
+    }
     
-    # Remove grid cell with zero records
-    
-    togo$grid = filter(togo$grid, richness > 0)
-    
-    togo$grid$status <- status
-    togo
+    return(togo)
 }
 
 # Write an SHP file, ensuring to delete anything at the target path first
@@ -204,9 +193,9 @@ process_one_taxon <- function (recs, taxon, grid) {
 
   # Write summary
 
-  write.csv(recs$summary, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/tabular_data/{taxon}_summary.csv"), row.names = FALSE)  
+  write.csv(togo$all$summary, str_glue("analyze/Animalia/marine_animals/combined_analysis/outputs/tabular_data/{taxon}_summary.csv"), row.names = FALSE)  
     
-  togo
+  return (togo)
 }
 
 allTaxaGridded = list()
