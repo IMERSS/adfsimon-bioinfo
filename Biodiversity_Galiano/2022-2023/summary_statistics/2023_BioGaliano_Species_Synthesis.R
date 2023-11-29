@@ -986,7 +986,7 @@ p <- p + ggtitle('The Flora and Fauna of Galiano Island (1859 to 2023)')
 p <- p + xlab('Life')
 p <- p + ylab('Species')
 p <- p + theme_linedraw()
-p <- p + theme(legend.key.size = unit(0.35, 'cm'))
+p <- p + theme(legend.key.size = unit(0.5, 'cm'))
 p <- p + labs(fill = "Reporting Status")
 p
 
