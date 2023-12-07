@@ -1,0 +1,4 @@
+Downloaded from "Export Entire Taxonomy As CSV" link at http://www.departments.bucknell.edu/biology/resources/msw3/ on 2023-12-07
+Converted to UTF-8 using command 
+
+iconv -f "ISO-8859-1" -t "UTF-8" msw3-all.csv > msw3-all-utf8.csv
