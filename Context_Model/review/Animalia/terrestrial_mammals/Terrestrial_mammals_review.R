@@ -109,3 +109,4 @@ reconstituted <- rbind(baseline,records,iNat.obs)
 # Write review summary 
 
 write.csv(reconstituted, "outputs/Terrestrial_mammal_review_summary.csv", row.names = FALSE)
+
