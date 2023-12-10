@@ -1,12 +1,10 @@
-# Script to consolidate records of Galiano Island's marine animal diversity
-
-
+# SQUAMISH ENVIRONMENT SOCIETY
+# WILDLIFE CONNECTIVITY PROJECT
+# CONTEXT MODEL: MAMMAL DIVERSITY
 
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
-
-
 
 # Load packages
 
@@ -14,13 +12,9 @@ library(dplyr)
 library(stringr)
 library(tidyr)
 
-
-
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Animalia/marine_animals/summaries/Marine_animals_review_summary_2023-04-19.csv")
-
-
+summary <- read.csv("../../../review/Animalia/terrestrial_mammals/summaries/Context_model_terrestrial_mammals_review_summary_2023-12-08.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -36,137 +30,132 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
                     'identificationQualifier','identificationRemarks','previousIdentifications','bibliographicCitation',
                     'associatedReferences')
 
-
-
 # Consolidate records
 
-# Sources (3/3 added):
+# Sources (1/1 added):
 
-# Galiano Island BC Canada - Marine Zoology 1893–2021 (Simon et al., 2022) - added
-# Note this version includes updated from iNat as of 2023-04-18
+# GBIF data
 
-# Agassiz (ex McMurrich 1921) - added
+# Read GBIF Data
 
-# Chu & Leys 2012 - added
+GBIF <- read.csv("../../../parse_records/outputs/records_terrestrial_mammals.csv")
 
+# Replace 'scientificName' w 'verbatimScientificName'
 
-
-# Read Galiano Island BC Canada - Marine Zoology 1893–2021 
-
-GI.1893.2021 <- read.csv("../../records/digitized/DarwinCore/Galiano_Island_BC_Canada_Marine_Zoology_1893–2021_updated_2023-04-18_AB_DwC.csv")
+GBIF$scientificName <- GBIF$verbatimScientificName
 
 # Create DarwinCore dataframe template 
 
-data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(GI.1893.2021)))
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(GBIF)))
 names(data.frame) <- DwCFields
 
-data.frame[names(GI.1893.2021)] <- GI.1893.2021
+data.frame[names(GBIF)] <- GBIF
 
-GI.1893.2021 <- select(data.frame, c(1:length(DwCFields)))
+GBIF <- select(data.frame, c(1:length(DwCFields)))
 
 # Merge with summary to standardize names and taxon metadata
 
-GI.1893.2021$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$taxonID <- summary$ID[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$kingdom <- summary$kingdom[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$phylum <- summary$phylum[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$subphylum <- summary$subphylum[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$class <- summary$class[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$order <- summary$order[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$suborder <- summary$suborder[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$superfamily <- summary$superfamily[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$family <- summary$family[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$genus <- summary$genus[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$specificEpithet <- summary$specificEpithet[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$hybrid <- summary$hybrid[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$subspecies <- summary$subspecies[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$variety <- summary$variety[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$establishmentMeans <- summary$establishmentMeans[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$provincialStatus <- summary$provincialStatus[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
-GI.1893.2021$nationalStatus <- summary$nationalStatus[match(unlist(GI.1893.2021$scientificName), summary$scientificName)]
+GBIF$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$taxonID <- summary$ID[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$kingdom <- summary$kingdom[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$phylum <- summary$phylum[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$subphylum <- summary$subphylum[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$class <- summary$class[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$order <- summary$order[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$suborder <- summary$suborder[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$superfamily <- summary$superfamily[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$family <- summary$family[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$genus <- summary$genus[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$specificEpithet <- summary$specificEpithet[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$hybrid <- summary$hybrid[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$subspecies <- summary$subspecies[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$variety <- summary$variety[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$establishmentMeans <- summary$establishmentMeans[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$provincialStatus <- summary$provincialStatus[match(unlist(GBIF$scientificName), summary$scientificName)]
+GBIF$nationalStatus <- summary$nationalStatus[match(unlist(GBIF$scientificName), summary$scientificName)]
 
 # Unmatched records
 
-GI.1893.2021.names.unmatched <- GI.1893.2021[is.na(GI.1893.2021$taxonID),]
+GBIF.names.unmatched <- GBIF[is.na(GBIF$taxonID),]
 
 # Matched records
 
-GI.1893.2021.names.matched <- anti_join(GI.1893.2021,GI.1893.2021.names.unmatched)
+GBIF.names.matched <- anti_join(GBIF,GBIF.names.unmatched)
 
 # Confirm all records are represented 
 
-nrow(GI.1893.2021)
-nrow(GI.1893.2021.names.matched)
-nrow(GI.1893.2021.names.unmatched)
-nrow(GI.1893.2021.names.matched)+nrow(GI.1893.2021.names.unmatched)
+nrow(GBIF)
+nrow(GBIF.names.matched)
+nrow(GBIF.names.unmatched)
+nrow(GBIF.names.matched)+nrow(GBIF.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-GI.1893.2021.key <- read.csv("keys/marine_animal_taxon_key_2023.csv") 
+GBIF.key <- read.csv("keys/GBIF_key.csv") 
 
 # Swap unmatched names using key
 
-GI.1893.2021.names.unmatched.matched <- GI.1893.2021.names.unmatched
+GBIF.names.unmatched.matched <- GBIF.names.unmatched
 
-GI.1893.2021.names.unmatched.matched$scientificNameTemp <- GI.1893.2021.key$Matched.Taxon[match(unlist(GI.1893.2021.names.unmatched.matched$scientificName), GI.1893.2021.key$Taxon)]
+GBIF.names.unmatched.matched$scientificNameTemp <- GBIF.key$Matched.Taxon[match(unlist(GBIF.names.unmatched.matched$scientificName), GBIF.key$Taxon)]
 
 # Add values based on newly matched name
 
-GI.1893.2021.names.unmatched.matched$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$taxonID <- summary$ID[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$phylum <- summary$phylum[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$class <- summary$class[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$order <- summary$order[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$suborder <- summary$suborder[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$superfamily <- summary$superfamily[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$family <- summary$family[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$genus <- summary$genus[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$specificEpithet <- summary$specificEpithet[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$hybrid <- summary$hybrid[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$subspecies <- summary$subspecies[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$variety <- summary$variety[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$establishmentMeans <- summary$establishmentMeans[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$provincialStatus <- summary$provincialStatus[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
-GI.1893.2021.names.unmatched.matched$nationalStatus <- summary$nationalStatus[match(unlist(GI.1893.2021.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$taxonID <- summary$ID[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$phylum <- summary$phylum[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$subphylum <- summary$subphylum[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$class <- summary$class[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$order <- summary$order[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$suborder <- summary$suborder[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$superfamily <- summary$superfamily[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$family <- summary$family[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$genus <- summary$genus[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$specificEpithet <- summary$specificEpithet[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$hybrid <- summary$hybrid[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$subspecies <- summary$subspecies[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$variety <- summary$variety[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$establishmentMeans <- summary$establishmentMeans[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$provincialStatus <- summary$provincialStatus[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+GBIF.names.unmatched.matched$nationalStatus <- summary$nationalStatus[match(unlist(GBIF.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
 
 # Filter taxa unrecognized in summary 
 
-GI.1893.2021.names.unmatched.unmatched <- GI.1893.2021.names.unmatched.matched[is.na(GI.1893.2021.names.unmatched.matched$taxonID),]
+GBIF.names.unmatched.unmatched <- GBIF.names.unmatched.matched[is.na(GBIF.names.unmatched.matched$taxonID),]
 
-GI.1893.2021.names.unmatched.unmatched$scientificNameTemp <- NULL
+GBIF.names.unmatched.unmatched$scientificNameTemp <- NULL
 
 # Filter taxa recognized in summary
 
-GI.1893.2021.names.unmatched.matched$scientificName <- GI.1893.2021.names.unmatched.matched$scientificNameTemp
+GBIF.names.unmatched.matched$scientificName <- GBIF.names.unmatched.matched$scientificNameTemp
 
-GI.1893.2021.names.unmatched.matched$scientificNameTemp <- NULL
+GBIF.names.unmatched.matched$scientificNameTemp <- NULL
 
-GI.1893.2021.names.unmatched.matched <- GI.1893.2021.names.unmatched.matched %>% drop_na(taxonID)
+GBIF.names.unmatched.matched <- GBIF.names.unmatched.matched %>% drop_na(taxonID)
 
 # Confirm all records are represented 
 
-nrow(GI.1893.2021)
-nrow(GI.1893.2021.names.matched)
-nrow(GI.1893.2021.names.unmatched)
-nrow(GI.1893.2021.names.unmatched.matched)
-nrow(GI.1893.2021.names.unmatched.unmatched)
-nrow(GI.1893.2021.names.matched)+nrow(GI.1893.2021.names.unmatched.matched)+nrow(GI.1893.2021.names.unmatched.unmatched)
+nrow(GBIF)
+nrow(GBIF.names.matched)
+nrow(GBIF.names.unmatched)
+nrow(GBIF.names.unmatched.matched)
+nrow(GBIF.names.unmatched.unmatched)
+nrow(GBIF.names.matched)+nrow(GBIF.names.unmatched.matched)+nrow(GBIF.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
 # (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
 key.field.names <- c('Taxon', 'Matched.Taxon')
 
-unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(GI.1893.2021.names.unmatched.unmatched)))
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(GBIF.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
 
-unmatched.taxa$Taxon <- GI.1893.2021.names.unmatched.unmatched$scientificName
+unmatched.taxa$Taxon <- GBIF.names.unmatched.unmatched$scientificName
 
 unmatched.taxa <- distinct(unmatched.taxa)
 
-review.key <- rbind(GI.1893.2021.key,unmatched.taxa)
+review.key <- rbind(GBIF.key,unmatched.taxa)
 
 review.key[is.na(review.key)] <- ""
 
@@ -174,193 +163,29 @@ write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
 
 # Bind records
 
-GI.1893.2021.records <- rbind(GI.1893.2021.names.matched,GI.1893.2021.names.unmatched.matched)
+GBIF.records <- rbind(GBIF.names.matched,GBIF.names.unmatched.matched)
 
 # Set date formatting consistent with other data frames
 
-GI.1893.2021.records$eventDate <- as.Date(GI.1893.2021.records$eventDate)
+GBIF.records$eventDate <- as.Date(GBIF.records$eventDate)
 
 # Compare records in and out
 
-nrow(GI.1893.2021) - nrow(GI.1893.2021.records)
+nrow(GBIF) - nrow(GBIF.records)
 
-nrow(GI.1893.2021)
-nrow(GI.1893.2021.records) # 237 records omitted; those indeterminate with reference to summary
+nrow(GBIF)
+nrow(GBIF.records) # 237 records omitted; those indeterminate with reference to summary
 
 # Start record of unmatched names
 
-unmatched.marine.animal.records <- GI.1893.2021.names.unmatched.unmatched
+unmatched.marine.animal.records <- GBIF.names.unmatched.unmatched
 
 unmatched.marine.animal.records
 
 
-
-# Read records from Agassiz (ex McMurrich 1921)
-
-A.Agassiz <- read.csv("../../records/digitized/DarwinCore/McMurrich_1921_Galiano_cnidarian_records_DwC.csv")
-
-# Create DarwinCore dataframe template 
-
-data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(A.Agassiz)))
-names(data.frame) <- DwCFields
-
-data.frame[names(A.Agassiz)] <- A.Agassiz
-
-A.Agassiz <- select(data.frame, c(1:length(DwCFields)))
-
-# Create unique identifiers for observations
-
-unique.prefix <- "AGASSIZGI:" 
-unique.suffix <- 1:nrow(A.Agassiz)
-
-# Add metadata
-
-A.Agassiz$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
-A.Agassiz$stateProvince <- "British Columbia"
-A.Agassiz$country <- "Canada"
-A.Agassiz$countryCode <- "CA"
-A.Agassiz$island <- "Galiano Island"
-A.Agassiz$basisOfRecord <- "MaterialCitation"
-
-# Merge with summary to standardize names and taxon metadata
-
-A.Agassiz$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$taxonID <- summary$ID[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$kingdom <- summary$kingdom[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$phylum <- summary$phylum[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$subphylum <- summary$subphylum[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$class <- summary$class[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$order <- summary$order[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$suborder <- summary$suborder[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$superfamily <- summary$superfamily[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$family <- summary$family[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$genus <- summary$genus[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$specificEpithet <- summary$specificEpithet[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$hybrid <- summary$hybrid[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$subspecies <- summary$subspecies[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$variety <- summary$variety[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$establishmentMeans <- summary$establishmentMeans[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$provincialStatus <- summary$provincialStatus[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-A.Agassiz$nationalStatus <- summary$nationalStatus[match(unlist(A.Agassiz$scientificName), summary$scientificName)]
-
-# Unmatched records
-
-A.Agassiz.names.unmatched <- A.Agassiz[is.na(A.Agassiz$taxonID),]
-
-# Matched records
-
-A.Agassiz.names.matched <- anti_join(A.Agassiz,A.Agassiz.names.unmatched)
-
-# Confirm all records are represented 
-
-nrow(A.Agassiz)
-nrow(A.Agassiz.names.matched)
-nrow(A.Agassiz.names.unmatched)
-nrow(A.Agassiz.names.matched)+nrow(A.Agassiz.names.unmatched)
-
-# All matched
-
-A.Agassiz.records <- A.Agassiz.names.matched
-
-A.Agassiz.records$scientificNameTemp <- NULL
-
-
-# Set date formatting consistent with other data frames
-
-A.Agassiz.records$eventDate <- as.Date(A.Agassiz.records$eventDate)
-
-# Compare records in and out
-
-nrow(A.Agassiz)
-nrow(A.Agassiz.records)
-
-
-
-# Read records from Chu & Leys 2012
-
-Chu.Leys.2012 <- read.csv("../../records/digitized/DarwinCore/Chu_&_Leys_2012_Galiano_Heterochone_calyx_record_DwC.csv")
-
-# Create DarwinCore dataframe template 
-
-data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Chu.Leys.2012)))
-names(data.frame) <- DwCFields
-
-data.frame[names(Chu.Leys.2012)] <- Chu.Leys.2012
-
-Chu.Leys.2012 <- select(data.frame, c(1:length(DwCFields)))
-
-# Create unique identifiers for observations
-
-unique.prefix <- "CHU&LEYS2012:" 
-unique.suffix <- 1:nrow(Chu.Leys.2012)
-
-# Add metadata
-
-Chu.Leys.2012$eventDate <- "2012-06-01" # Confirm date with Jackson
-Chu.Leys.2012$datasetName <- "Chu & Leys (2012)"
-Chu.Leys.2012$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
-Chu.Leys.2012$stateProvince <- "British Columbia"
-Chu.Leys.2012$country <- "Canada"
-Chu.Leys.2012$countryCode <- "CA"
-Chu.Leys.2012$locality <- "Galiano Island"
-Chu.Leys.2012$basisOfRecord <- "MaterialCitation"
-
-# Merge with summary to standardize names and taxon metadata
-
-Chu.Leys.2012$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$taxonID <- summary$ID[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$kingdom <- summary$kingdom[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$phylum <- summary$phylum[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$subphylum <- summary$subphylum[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$class <- summary$class[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$order <- summary$order[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$suborder <- summary$suborder[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$superfamily <- summary$superfamily[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$family <- summary$family[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$genus <- summary$genus[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$specificEpithet <- summary$specificEpithet[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$hybrid <- summary$hybrid[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$subspecies <- summary$subspecies[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$variety <- summary$variety[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$establishmentMeans <- summary$establishmentMeans[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$provincialStatus <- summary$provincialStatus[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-Chu.Leys.2012$nationalStatus <- summary$nationalStatus[match(unlist(Chu.Leys.2012$scientificName), summary$scientificName)]
-
-# Unmatched records
-
-Chu.Leys.2012.names.unmatched <- Chu.Leys.2012[is.na(Chu.Leys.2012$taxonID),]
-
-# Matched records
-
-Chu.Leys.2012.names.matched <- anti_join(Chu.Leys.2012,Chu.Leys.2012.names.unmatched)
-
-# Confirm all records are represented 
-
-nrow(Chu.Leys.2012)
-nrow(Chu.Leys.2012.names.matched)
-nrow(Chu.Leys.2012.names.unmatched)
-nrow(Chu.Leys.2012.names.matched)+nrow(Chu.Leys.2012.names.unmatched)
-
-# All matched
-
-Chu.Leys.2012.records <- Chu.Leys.2012.names.matched
-
-Chu.Leys.2012.records$scientificNameTemp <- NULL
-
-# Set date formatting consistent with other data frames
-
-Chu.Leys.2012.records$eventDate <- as.Date(Chu.Leys.2012.records$eventDate)
-
-# Compare records in and out
-
-nrow(Chu.Leys.2012)
-nrow(Chu.Leys.2012.records)
-
-
-
 # Combine all source occurrence records
 
-marine.animal.records <- rbind(GI.1893.2021.records, A.Agassiz.records, Chu.Leys.2012.records)
+marine.animal.records <- GBIF
 
 
 # Finalize DwC fields (day, month, year, infraspecificEpithet, occurrenceStatus)
