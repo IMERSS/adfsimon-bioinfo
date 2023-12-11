@@ -186,11 +186,13 @@ new.summary$firstReported <- first.observed$eventDate[match(unlist(new.summary$s
 new.summary$firstReportedBy <- first.observed$recordedBy[match(unlist(new.summary$scientificName), first.observed$scientificName)]
 new.summary$firstReportedSource <- first.observed$institutionCode[match(unlist(new.summary$scientificName), first.observed$scientificName)]
 new.summary$firstReportedCollectionNumber <- first.observed$catalogNumber[match(unlist(new.summary$scientificName), first.observed$scientificName)]
+new.summary$firstReportedGBIF <- first.observed$gbifID[match(unlist(new.summary$scientificName), first.observed$scientificName)]
 
 new.summary$lastReported <- last.observed$eventDate[match(unlist(new.summary$scientificName), first.observed$scientificName)]
 new.summary$lastReportedBy <- last.observed$recordedBy[match(unlist(new.summary$scientificName), first.observed$scientificName)]
 new.summary$lastReportedSource <- last.observed$institutionCode[match(unlist(new.summary$scientificName), first.observed$scientificName)]
 new.summary$lastReportedCollectionNumber <- last.observed$catalogNumber[match(unlist(new.summary$scientificName), first.observed$scientificName)]
+new.summary$lastReportedGBIF <- last.observed$gbifID[match(unlist(new.summary$scientificName), first.observed$scientificName)]
 
 new.summary$recordCount <- taxon.record.count$count[match(unlist(new.summary$scientificName), taxon.record.count$scientificName)]
 new.summary$reportingStatus <- paste("new", new.records.years$year, sep = " ")
@@ -222,11 +224,13 @@ confirmed.summary$firstReported <- first.observed$eventDate[match(unlist(confirm
 confirmed.summary$firstReportedBy <- first.observed$recordedBy[match(unlist(confirmed.summary$scientificName), first.observed$scientificName)]
 confirmed.summary$firstReportedSource <- first.observed$institutionCode[match(unlist(confirmed.summary$scientificName), first.observed$scientificName)]
 confirmed.summary$firstReportedCollectionNumber <- first.observed$catalogNumber[match(unlist(confirmed.summary$scientificName), first.observed$scientificName)]
+confirmed.summary$firstReportedGBIF <- first.observed$gbifID[match(unlist(confirmed.summary$scientificName), first.observed$scientificName)]
 
 confirmed.summary$lastReported <- last.observed$eventDate[match(unlist(confirmed.summary$scientificName), first.observed$scientificName)]
 confirmed.summary$lastReportedBy <- last.observed$recordedBy[match(unlist(confirmed.summary$scientificName), first.observed$scientificName)]
 confirmed.summary$lastReportedSource <- last.observed$institutionCode[match(unlist(confirmed.summary$scientificName), first.observed$scientificName)]
 confirmed.summary$lastReportedCollectionNumber <- last.observed$catalogNumber[match(unlist(confirmed.summary$scientificName), first.observed$scientificName)]
+confirmed.summary$lastReportedGBIF <- last.observed$gbifID[match(unlist(confirmed.summary$scientificName), first.observed$scientificName)]
 
 confirmed.summary$recordCount <- taxon.record.count$count[match(unlist(confirmed.summary$scientificName), taxon.record.count$scientificName)]
 confirmed.summary$reportingStatus <- "confirmed"
@@ -258,11 +262,13 @@ historic.summary$firstReported <- first.observed$eventDate[match(unlist(historic
 historic.summary$firstReportedBy <- first.observed$recordedBy[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
 historic.summary$firstReportedSource <- first.observed$institutionCode[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
 historic.summary$firstReportedCollectionNumber <- first.observed$catalogNumber[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
+historic.summary$firstReportedGBIF <- first.observed$gbifID[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
 
 historic.summary$lastReported <- last.observed$eventDate[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
 historic.summary$lastReportedBy <- last.observed$recordedBy[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
 historic.summary$lastReportedSource <- last.observed$institutionCode[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
 historic.summary$lastReportedCollectionNumber <- last.observed$catalogNumber[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
+historic.summary$lastReportedGBIF <- last.observed$gbifID[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
 
 historic.summary$recordCount <- taxon.record.count$count[match(unlist(historic.summary$scientificName), taxon.record.count$scientificName)]
 historic.summary$reportingStatus <- "reported"
@@ -350,63 +356,5 @@ summary$statsCode <- baseline$statsCode[match(unlist(summary$scientificName), ba
 
 summary <- summary[order(summary$scientificName),] 
 
-write.csv(summary, "outputs/Galiano_marine_animal_summary_resynthesized.csv", row.names = FALSE, na = '')
-
-# Output summaries for major clades
-
-unique(summary$phylum)
-
-sponge.summary <- summary %>% filter(phylum == 'Porifera')
-write.csv(sponge.summary, "outputs/taxon_summaries/sponge_summary.csv", row.names = FALSE, na = '')
-
-cnidarian.summary <- summary %>% filter(phylum == 'Cnidaria')
-write.csv(cnidarian.summary, "outputs/taxon_summaries/cnidarian_summary.csv", row.names = FALSE, na = '')
-
-ctenophore.summary <- summary %>% filter(phylum == 'Ctenophora')
-write.csv(ctenophore.summary, "outputs/taxon_summaries/ctenophore_summary.csv", row.names = FALSE, na = '')
-
-nemertean.summary <- summary %>% filter(phylum == 'Nemertea')
-write.csv(nemertean.summary, "outputs/taxon_summaries/nemertean_summary.csv", row.names = FALSE, na = '')
-
-platyhelminthe.summary <- summary %>% filter(phylum == 'Platyhelminthes')
-write.csv(platyhelminthe.summary, "outputs/taxon_summaries/platyhelminthe_summary.csv", row.names = FALSE, na = '')
-
-chaetognath.summary <- summary %>% filter(phylum == 'Chaetognatha')
-write.csv(chaetognath.summary, "outputs/taxon_summaries/chaetognath_summary.csv", row.names = FALSE, na = '')
-
-mollusc.summary <- summary %>% filter(phylum == 'Mollusca')
-write.csv(mollusc.summary, "outputs/taxon_summaries/mollusc_summary.csv", row.names = FALSE, na = '')
-
-annelid.summary <- summary %>% filter(phylum == 'Annelida')
-write.csv(annelid.summary, "outputs/taxon_summaries/annelid_summary.csv", row.names = FALSE, na = '')
-
-peanut.worm.summary <- summary %>% filter(phylum == 'Sipuncula')
-write.csv(peanut.worm.summary, "outputs/taxon_summaries/peanut_worm_summary.csv", row.names = FALSE, na = '')
-
-crustacean.summary <- summary %>% filter(subphylum == 'Crustacea')
-write.csv(crustacean.summary, "outputs/taxon_summaries/crustacean_summary.csv", row.names = FALSE, na = '')
-
-nodding.head.summary <- summary %>% filter(phylum == 'Entoprocta')
-write.csv(nodding.head.summary, "outputs/taxon_summaries/nodding_head_summary.csv", row.names = FALSE, na = '')
-
-lampshell.summary <- summary %>% filter(phylum == 'Brachiopoda')
-write.csv(lampshell.summary, "outputs/taxon_summaries/lampshell_summary.csv", row.names = FALSE, na = '')
-
-bryozoan.summary <- summary %>% filter(phylum == 'Bryozoa')
-write.csv(bryozoan.summary, "outputs/taxon_summaries/bryozoan_summary.csv", row.names = FALSE, na = '')
-
-horseshoe.worm.summary <- summary %>% filter(phylum == 'Phoronida')
-write.csv(horseshoe.worm.summary, "outputs/taxon_summaries/horseshoe_worm_summary.csv", row.names = FALSE, na = '')
-
-echinoderm.summary <- summary %>% filter(phylum == 'Echinodermata')
-write.csv(echinoderm.summary, "outputs/taxon_summaries/echinoderm_summary.csv", row.names = FALSE, na = '')
-
-tunicate.summary <- summary %>% filter(subphylum == 'Tunicata')
-write.csv(tunicate.summary, "outputs/taxon_summaries/tunicate_summary.csv", row.names = FALSE, na = '')
-
-fishes.summary <- summary %>% filter(class == 'Actinopterygii' | class == 'Elasmobranchii')
-write.csv(fishes.summary, "outputs/taxon_summaries/fishes_summary.csv", row.names = FALSE, na = '')
-
-mammal.summary <- summary %>% filter(class == 'Mammalia')
-write.csv(mammal.summary, "outputs/taxon_summaries/mammal_summary.csv", row.names = FALSE, na = '')
+write.csv(summary, "outputs/Context_model_terrestrial_mammal_summary_resynthesized.csv", row.names = FALSE, na = '')
 

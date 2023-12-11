@@ -22,7 +22,7 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
                     'order','suborder','infraorder','superfamily','family','genus','subgenus','specificEpithet',
                     'hybrid','subspecies','variety','form','infraspecificEpithet','taxonRank','institutionCode',
                     'collectionCode','catalogNumber','datasetName','occurrenceID','recordedBy','recordNumber',
-                    'fieldNumber','eventDate','year','month','day','basisOfRecord','locality','locationRemarks','island',
+                    'fieldNumber','gbifID','eventDate','year','month','day','basisOfRecord','locality','locationRemarks','island',
                     'stateProvince','country','countryCode','decimalLatitude','decimalLongitude','coordinateUncertaintyInMeters',
                     'georeferencedBy','georeferenceVerificationStatus','georeferenceProtocol','georeferenceRemarks',
                     'habitat','verbatimDepth','verbatimElevation','occurrenceStatus','samplingProtocol','occurrenceRemarks',
@@ -299,7 +299,7 @@ sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))/nrow(terres
 
 georeferenced.records <- nrow(terrestrial.mammal.records)-sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))
 
-sum(terrestrial.mammal.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records # Only 10% of georeferenced records mapped to < 100 m coordinate uncertainty
+sum(terrestrial.mammal.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records # 47% of georeferenced records mapped to < 100 m coordinate uncertainty
 
 sum(terrestrial.mammal.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records * georeferenced.records
 
