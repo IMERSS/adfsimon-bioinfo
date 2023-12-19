@@ -49,7 +49,7 @@ GI.1893.2021 <- read.csv("../../records/digitized/DarwinCore/Galiano_Island_BC_C
 
 GI.1893.2021 <- GI.1893.2021 %>% filter(institutionCode != 'iNaturalist')
 
-# Create DarwinCore dataframe template 
+# Create DarwinCore dataframe template
 
 data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(GI.1893.2021)))
 names(data.frame) <- DwCFields
@@ -178,7 +178,6 @@ GI.1893.2021.records$eventDate <- as.Date(GI.1893.2021.records$eventDate)
 # Compare records in and out
 
 nrow(GI.1893.2021) - nrow(GI.1893.2021.records)
-
 nrow(GI.1893.2021)
 nrow(GI.1893.2021.records) # 237 records omitted; those indeterminate with reference to summary
 
@@ -550,7 +549,6 @@ summary.taxa <-summary$scientificName
 
 unique(marine.animal.records.taxa)
 unique(summary.taxa)
-
 
 length(marine.animal.records.taxa)
 length(summary.taxa)

@@ -28,7 +28,7 @@ names(baseline) <- summary.fields
 
 # Read iNaturalist obs
 
-iNat.obs.summary <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_marine_animals.csv")
+iNat.obs.summary <- read.csv("../../../parse_records/outputs/iNat_obs_marine_animals.csv")
 names(iNat.obs.summary)
 
 # Summarize by first observed
