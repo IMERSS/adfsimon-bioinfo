@@ -1,0 +1,304 @@
+BIODIVERSITY GALIANO PROJECT
+Source Records by Taxonomic Group
+Curated by: Andrew D.F. Simon & Antranig Basman
+
+Path for records: "/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/2022-2023/consolidate_records/records/"
+
+>> Denotes records that have yet to be compiled on GitHub
+* Denotes records that are periodically updated, drawing from live sources
+
+
+
+ASCOMYCETES (NON-LICHENIZED)
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+>> *Canadian Museum of Nature
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+*iNaturalist
+
+>> Galiano Naturalist Mushroom Festival Lists*
+
+>> *UBC
+
+>> Zich, Rene (2016)
+
+
+
+BASIDIOMYCETES & ZYGOMYCETES (NON-LICHENIZED)
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+>> *Canadian Museum of Nature
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+*iNaturalist
+
+>> Galiano Naturalist Mushroom Festival Lists*
+
+>> *UBC
+
+>> Zich, Rene (2016)
+
+
+
+BIRDS
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+>> *eBird
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+*iNaturalist
+
+>> *Galiano Naturalists Galiano Island Bird Checklist
+
+>> *UBC
+
+>> Zich, Rene (2016)
+
+
+
+BRYOPHYTES
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+>> *Canadian Museum of Nature
+
+>> *Consortium of Bryophyte Herbaria
+
+Roemer, Hans (2000): Galiano_Bog_Plant_List_Roemer_2000_DwC.csv
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+*iNaturalist
+
+>> McIntosh, Terry (2010, 2014, 2015, 2021)
+
+>> *UBC
+
+>> Zich, Rene (2016)
+
+
+
+FRESHWATER ALGAE
+
+>> ?
+
+
+
+HERPTILES
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+>> *Canadian Museum of Nature
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+*iNaturalist
+
+>> *UBC
+
+>> Zich, Rene (2016)
+
+
+
+LICHENS
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+>> *Canadian Museum of Nature
+
+>> *Consortium of Lichen Herbaria
+
+>> *Consortium of Pacific Northwest Herbaria
+
+Galiano_Bog_Plant_List_Roemer_2000_DwC.csv
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+*iNaturalist
+
+>> McIntosh, Terry
+
+>> Zich, Rene (2016)
+
+
+
+MAMMALS
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+>> *Canadian Museum of Nature
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+*iNaturalist
+
+>> *Royal BC Museum
+
+>> *UBC
+
+>> Weinert, Frieda (XXXX)
+
+>> Zich, Rene (2016)
+
+
+
+MARINE ALGAE AND PROTISTS
+
+BOLD_marine_algae_2021-11-25_DwC.csv
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+*Consortium of Pacific Northwest Herbaria: CPNWH_Galiano_Island_macroalgae_2022-10-30_DwC.csv (note: redundancies with UBC)
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+*iNaturalist
+
+Lindstrom, Sandra (2023): Sandra_Lindstrom_Galiano_seaweed_collections_May_2023_DwC.csv
+
+Webber et al. (2022): Webber_et_al_2022_Taxonomy_table_epiphytic_diatoms_Zostera_2022-11-01_DwC.csv
+
+>> *UBC (note: redundancies with CPNWH)
+
+
+
+
+MARINE ANIMALS
+
+Brothers_2020_Galiano_Records_DwC.csv
+
+>> *Canadian Museum of Nature (records incorporated up until 2021)
+
+Chu & Leys (2012): Chu_&_Leys_2012_Galiano_Heterochone_calyx_record_DwC.csv
+
+>> Gorgopa, Stefania (2018)
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+IMERSS: Galiano_Island_BC_Canada_Marine_Zoology_1893–2021_updated_2023-04-18_AB_DwC.csv
+
+   inc.	BC Cetacean Sightings Network
+	
+	Canadian Museum of Nature
+
+	Chu & Leys (2010)
+	
+	Erickson, Keith (2000)
+
+	Pacific Marine Life Surveys
+
+	Royal BC Museum
+
+	UBC
+
+*iNaturalist
+
+McMurrich (1921): McMurrich_1921_Galiano_cnidarian_records_DwC.csv
+
+>> *Royal BC Museum (records incorporated up until 2021)
+
+>> *UBC (records incorporated up until 2021)
+
+
+
+MYXOGASTRIA
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+>> Janszen, Pam
+
+*iNaturalist
+
+>> Zich, Rene (2016)
+
+
+
+TERRESTRIAL ARTHROPODS
+
+>> Avis, Libby & Rick
+
+>> Ratzlaff, Chris
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+*iNaturalist
+
+>> *Royal BC Museum
+
+>> *UBC Spencer Entomological Collection
+
+>> Zich, Rene (2016)?
+
+
+
+TERRESTRIAL MOLLUSCS
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+*iNaturalist
+
+>> Zich, Rene (2016)?
+
+
+
+VASCULAR PLANTS 
+
+*BC Conservation Data Centre: BC_Conservation_Data_Centre_Galiano_Island_SAR_2019-10-24_DwC.csv
+
+Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
+
+>> *Canadian Museum of Nature
+
+>> *Consortium of Pacific Northwest Herbaria 
+(note: redundancies with Canadian Museum of Nature, UBC, Royal BC Museum)
+
+>> Erickson, Keith (2016, 2022)
+
+Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
+
+>> Fairbarns, Matt (Aruncus Consulting) (2016)
+
+Galiano Conservancy Association (2002a): DL63_plot_metadata_DwC.csv
+
+Galiano Conservancy Association (2002b): DL63_veg_list_2001-2002_DwC.csv
+
+Galiano Conservancy Association (2002c): Laughlin_Vegetation_Data_2002-08-20_DwC.csv
+
+*iNaturalist
+
+Janszen, Harvey (2003): Janszen_2003_Outer_Gulf_Islands_Vascular_Plant_Checklist_DwC.csv
+
+Lomer, Frank (2022a): Lomer_2022_Galiano_collections_DwC.csv
+
+Lomer, Frank (2022b): Lomer_Gossip_Island_plant_list_2022-06-13.csv
+
+>> Lomer, Frank (2023)
+
+Pacific Marine Life Surveys: PMLS_Plantae_Records_Galiano_2021-07-27_DwC.csv
+
+Roemer, Hans (2000): Galiano_Bog_Plant_List_Roemer_2000_DwC.csv
+
+Roemer, Hans (2004): Roemer_2004_Mt_Sutil_plot_metadata_DwC.csv, Roemer_2004_Mt_Sutil_vegetation_DwC.csv
+
+*Royal BC Museum: RBCM_vascular_plant_records_georeferencing_corrected_2021-12-05_DwC.csv
+
+Simon, Andrew (2018): Simon_2018_transect_coordinates_DwC.csv, Simon_2018_vegetation_data_DwC.csv
+
+>> Taylor, Terry (2016)
+
+>> Thompson, Undine (2013)
+
+*UBC: UBC_Galiano_Island_vascular_plants_2022-10-31_DwC.csv
+
+>> Zich, Rene (2016)
