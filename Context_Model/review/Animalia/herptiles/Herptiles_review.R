@@ -1,4 +1,4 @@
-# Script to compare iNaturalist observations against a historical baseline
+# Comparing iNaturalist observations against a historical baseline
 
 # Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
 
@@ -16,13 +16,15 @@ baseline <- read.csv("summaries/Context_model_herptiles_review_summary_2023-12-2
 
 # Apply standardized field names to baseline
 
-names(baseline)  <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','Kingdom','Phylum',
-                      'Subphylum','Superclass','Class','Subclass','Superorder','Order','Suborder',
-                      'Superfamily','Family','Subfamily','Tribe','Genus','Species','Hybrid',
-                      'Subspecies','Variety','Origin','Provincial.Status','National.Status','Reporting.Status',
-                      'Observation','Collected.Reported..y.m.d.','Collector.Source','Collection.List',
-                      'Accession.Number','GBIF.ID','First.Observed','Observer','iNaturalist.Link','Notes',
-                      'ID','Stats.Code')
+field.names <- c('scientificName','scientificNameAuthorship','subtaxonAuthorship','commonName','kingdom','phylum',
+                 'subphylum','superclass','class','subclass','superorder','order','suborder',
+                 'superfamily','family','subfamily','tribe','genus','specificEpithet','hybrid',
+                 'subspecies','variety','establishmentMeans','provincialStatus','nationalStatus','reportingStatus',
+                 'observationStatus','firstReported','firstReportedBy','firstReportedSource',
+                 'firstReportedCollectionNumber','firstReportedGBIF','firstObservediNat','firstObservedBy','firstObservedID','notes',
+                 'ID','statsCode')
+
+names(baseline)  <- field.names
 
 # TEMP: Update baseline iNaturalist observation id 
 
@@ -50,29 +52,27 @@ records <- records %>% group_by(verbatimScientificName) %>% filter(eventDate == 
 
 # iNat observations
 
-iNat.obs <- rename(iNat.obs, Taxon = verbatimScientificName)
-iNat.obs <- rename(iNat.obs, First.Observed = eventDate)
-iNat.obs <- rename(iNat.obs, Observer = recordedBy)
-iNat.obs <- rename(iNat.obs, iNaturalist.Link = occurrenceID)
+iNat.obs$scientificName <- NULL
+
+iNat.obs <- rename(iNat.obs, scientificName = verbatimScientificName)
+iNat.obs <- rename(iNat.obs, firstOberved = eventDate)
+iNat.obs <- rename(iNat.obs, firstObservedBy = recordedBy)
+iNat.obs <- rename(iNat.obs, firstObservedID = occurrenceID)
 
 # Other records
 
-records <- rename(records, Taxon = verbatimScientificName)
-records <- rename(records, Collected.Reported..y.m.d. = eventDate)
-records <- rename(records, Collector.Source = recordedBy)
-records <- rename(records, Collection.List = institutionCode)
-records <- rename(records, Accession.Number = catalogNumber)
-records <- rename(records, GBIF.ID = gbifID)
+records$scientificName <- NULL
+
+records <- rename(records, scientificName = verbatimScientificName)
+records <- rename(records, firstReported = eventDate)
+records <- rename(records, firstReportedBy = recordedBy)
+records <- rename(records, firstReportedSource = institutionCode)
+records <- rename(records,firstReportedCollectionNumber = catalogNumber)
+records <- rename(records, firstReportedGBIF = gbifID)
 
 # Create template dataframe for record / iNat obs summaries that matches with baseline summary dataset
 
-records.fields <- c('Taxon','Taxon.Author','Subtaxon.Author','Common.Name','Kingdom','Phylum',
-                                    'Subphylum','Superclass','Class','Subclass','Superorder','Order','Suborder',
-                                    'Superfamily','Family','Subfamily','Tribe','Genus','Species','Hybrid',
-                                    'Subspecies','Variety','Origin','Provincial.Status','National.Status','Reporting.Status',
-                                    'Observation','Collected.Reported..y.m.d.','Collector.Source','Collection.List',
-                                    'Accession.Number','GBIF.ID','First.Observed','Observer','iNaturalist.Link','Notes',
-                                    'ID','Stats.Code')
+records.fields <- field.names 
 
 # iNaturalist observations
 
@@ -109,4 +109,3 @@ reconstituted <- rbind(baseline,records,iNat.obs)
 # Write review summary 
 
 write.csv(reconstituted, "outputs/herptiles_review_summary.csv", row.names = FALSE, na="")
-
