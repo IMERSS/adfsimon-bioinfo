@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Galiano_Tracheophyta_review_summary_reviewed_2023-10-19.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Galiano_Tracheophyta_review_summary_reviewed_2023-11-05.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -123,7 +123,7 @@ nrow(BC.CDC.2019.names.matched)+nrow(BC.CDC.2019.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-BC.CDC.2019.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+BC.CDC.2019.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -274,7 +274,7 @@ nrow(Brothers.2020.names.matched)+nrow(Brothers.2020.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Brothers.2020.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+Brothers.2020.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -440,7 +440,7 @@ nrow(DL63.names.matched)+nrow(DL63.names.unmatched)
 
 # Read key to reconcile mismatches with summary
 
-DL63.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+DL63.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -597,7 +597,7 @@ nrow(Ecological.Reserve.128.names.matched)+nrow(Ecological.Reserve.128.names.unm
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Ecological.Reserve.128.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+Ecological.Reserve.128.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -753,7 +753,7 @@ nrow(Hunterston.2010.names.matched)+nrow(Hunterston.2010.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Hunterston.2010.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+Hunterston.2010.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -829,50 +829,22 @@ unmatched.vascular.plant.records
 
 # Read iNaturalist data
 
-iNaturalist.observations <- read.csv("../../records/digitized/DarwinCore/iNaturalist_vascular_plant_observations_2022-10-16_DwC.csv")
-
-# Substitute iNaturalist usernames where actual observer names are missing
-
-iNaturalist.observations.nameless <- iNaturalist.observations %>% filter(!str_detect(recordedBy, '')) 
-
-iNaturalist.observations.names <- anti_join(iNaturalist.observations,iNaturalist.observations.nameless)
-
-iNaturalist.observations.nameless$recordedBy <- iNaturalist.observations.nameless$user_login
-
-iNaturalist.observations <- rbind(iNaturalist.observations.nameless,iNaturalist.observations.names)
-
-# Swap coordinates with private coordinates for obscured records
-
-iNaturalist.observations.coordinates.obscured <- iNaturalist.observations %>% drop_na(private_latitude)
-
-iNaturalist.observations.coordinates.unobscured <- anti_join(iNaturalist.observations,iNaturalist.observations.coordinates.obscured)
-
-iNaturalist.observations.coordinates.obscured$decimalLatitude <- iNaturalist.observations.coordinates.obscured$private_latitude
-iNaturalist.observations.coordinates.obscured$decimalLongitude <- iNaturalist.observations.coordinates.obscured$private_longitude
-
-iNaturalist.observations <- rbind(iNaturalist.observations.coordinates.obscured,iNaturalist.observations.coordinates.unobscured)
+iNaturalist.observations <- read.csv("../../..//parse_records/outputs/iNat_obs_Tracheophyta.csv")
 
 # Drop observations of taxa that are not identified to genus at least
 
-iNaturalist.observations <- subset(iNaturalist.observations, taxon_genus_name != "")
+iNaturalist.observations <- subset(iNaturalist.observations, Genus != "")
 
-# Drop cultivated taxa from observations
+# Change iNat obs field names to DwC format
 
-iNaturalist.observations <- subset(iNaturalist.observations, captive_cultivated != "TRUE")
+iNaturalist.observations
 
-# Substitute iNaturalist taxon names with names from curated summary based on taxonID
-
-iNaturalist.observations$swappedNames <- summary$Taxon[match(unlist(iNaturalist.observations$taxon_id), summary$ID)]
-
-iNaturalist.observations.swapped.names <- iNaturalist.observations %>% drop_na(swappedNames)
-
-iNaturalist.observations.unswapped.names <- anti_join(iNaturalist.observations,iNaturalist.observations.swapped.names)
-
-iNaturalist.observations.swapped.names$scientificName <- iNaturalist.observations.swapped.names$swappedNames
-
-iNaturalist.observations <- rbind(iNaturalist.observations.swapped.names,iNaturalist.observations.unswapped.names)
-
-iNaturalist.observations$swappedNames <- NULL
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'iNaturalist.taxon.name'] <- 'scientificName'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'observationID'] <- 'occurrenceID'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'Latitude'] <- 'decimalLatitude'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'Longitude'] <- 'decimalLongitude'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'Date.observed'] <- 'eventDate'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'Recorded.by'] <- 'recordedBy'
 
 # Create DarwinCore dataframe template 
 
@@ -929,7 +901,7 @@ nrow(iNaturalist.observations.names.matched)+nrow(iNaturalist.observations.names
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-iNaturalist.observations.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+iNaturalist.observations.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -1070,7 +1042,7 @@ nrow(Janszen.2003.names.matched)+nrow(Janszen.2003.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Janszen.2003.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+Janszen.2003.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -1245,7 +1217,7 @@ nrow(Laughlin.2002.names.matched)+nrow(Laughlin.2002.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Laughlin.2002.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+Laughlin.2002.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -1387,7 +1359,7 @@ nrow(Lomer.2022.names.matched)+nrow(Lomer.2022.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Lomer.2022.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+Lomer.2022.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -1530,7 +1502,7 @@ nrow(Lomer.2022.Gossip.Is.names.matched)+nrow(Lomer.2022.Gossip.Is.names.unmatch
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Lomer.2022.Gossip.Is.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+Lomer.2022.Gossip.Is.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -1672,7 +1644,7 @@ nrow(RBCM.georeferencing.corrected.names.matched)+nrow(RBCM.georeferencing.corre
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-RBCM.georeferencing.corrected.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+RBCM.georeferencing.corrected.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -1852,7 +1824,7 @@ nrow(Roemer.2004.names.matched)+nrow(Roemer.2004.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Roemer.2004.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+Roemer.2004.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -2022,7 +1994,7 @@ nrow(Simon.2018.names.matched)+nrow(Simon.2018.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Simon.2018.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+Simon.2018.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -2155,7 +2127,7 @@ nrow(UBC.2022.names.matched)+nrow(UBC.2022.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-UBC.2022.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+UBC.2022.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
