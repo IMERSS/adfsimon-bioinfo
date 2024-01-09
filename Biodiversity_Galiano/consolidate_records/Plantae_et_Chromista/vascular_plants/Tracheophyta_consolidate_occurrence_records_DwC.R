@@ -2272,3 +2272,10 @@ Vascular.plant.records[is.na(Vascular.plant.records)] <- ""
 # Output synthesized catalog of occurrence records
 
 write.csv(Vascular.plant.records,"synthesized/Galiano_Island_vascular_plant_records_consolidated.csv", row.names = FALSE)
+
+# Note: the following records are missing from this catalog of occurrence records:
+# ALL ARE RBCM RECORDS!
+# Acmispon americanus (V097714, RBCM)
+# Crassula connata (V129552, RBCM)
+# Meconella oregana (V107366, RBCM)
+# Trifolium dichotomum (V113443, RBCM)
