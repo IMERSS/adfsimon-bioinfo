@@ -289,7 +289,7 @@ nrow(terrestrial.mammal.records) # 26K terrestrial mammal records
 terrestrial.mammal.records$coordinateUncertaintyInMeters <- as.numeric(terrestrial.mammal.records$coordinateUncertaintyInMeters)
 
 hist(terrestrial.mammal.records$coordinateUncertaintyInMeters, 
-     xlim=c(0,1000), breaks = 100000, main="Terrestrial Mammal Records: Coordinate Uncertainty", xlab = "Coordinate Uncertainty in meters")
+     xlim=c(0,1000), breaks = 400000, main="Terrestrial Mammal Records: Coordinate Uncertainty", xlab = "Coordinate Uncertainty in meters")
 
 sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))/nrow(terrestrial.mammal.records) 
 # 23% of records lack coordinate uncertainty
@@ -299,8 +299,22 @@ sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))/nrow(terres
 
 georeferenced.records <- nrow(terrestrial.mammal.records)-sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))
 
-sum(terrestrial.mammal.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records # 47% of georeferenced records mapped to < 100 m coordinate uncertainty
+sum(terrestrial.mammal.records$coordinateUncertaintyInMeters <= 100, na.rm=TRUE)/georeferenced.records # 47% of georeferenced records mapped to < 100 m coordinate uncertainty
 
-sum(terrestrial.mammal.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records * georeferenced.records
+sum(terrestrial.mammal.records$coordinateUncertaintyInMeters <= 100, na.rm=TRUE)/georeferenced.records * georeferenced.records
 
-# Only about 9K of total 26k records can be analysed with confidence at 100m grid scale
+# About 9K of total 26k records (47% of records) can be analysed with confidence at 100m grid scale
+
+georeferenced.records <- nrow(terrestrial.mammal.records)-sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))
+
+sum(terrestrial.mammal.records$coordinateUncertaintyInMeters <= 30, na.rm=TRUE)/georeferenced.records # 32% of georeferenced records mapped to < 100 m coordinate uncertainty
+
+sum(terrestrial.mammal.records$coordinateUncertaintyInMeters < 30, na.rm=TRUE)/georeferenced.records * georeferenced.records
+
+# About 6.5K of total 26k records (32% of records) can be analysed with confidence at 30m grid scale
+
+# Count records by species
+
+terrestrial.mammal.records <- terrestrial.mammal.records[order(scientificName)]
+      
+(terrestrial.mammal.records %>% count(scientificName))

@@ -289,7 +289,7 @@ nrow(herptile.records) # 16K herptile records
 herptile.records$coordinateUncertaintyInMeters <- as.numeric(herptile.records$coordinateUncertaintyInMeters)
 
 hist(herptile.records$coordinateUncertaintyInMeters, 
-     xlim=c(0,1000), breaks = 100000, main="Herptile Records: Coordinate Uncertainty", xlab = "Coordinate Uncertainty in meters")
+     xlim=c(0,1000), breaks = 400000, main="Herptile Records: Coordinate Uncertainty", xlab = "Coordinate Uncertainty in meters")
 
 sum(is.na(herptile.records$coordinateUncertaintyInMeters))/nrow(herptile.records) 
 # 19% of records lack coordinate uncertainty
@@ -303,4 +303,12 @@ sum(herptile.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferen
 
 sum(herptile.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records * georeferenced.records
 
-# Only about 7.5K of total 16k records can be analysed with confidence at 100m grid scale
+# About 7.5K of total 16k records can be analysed with confidence at 100m grid scale
+
+georeferenced.records <- nrow(herptile.records)-sum(is.na(herptile.records$coordinateUncertaintyInMeters))
+
+sum(herptile.records$coordinateUncertaintyInMeters <= 30, na.rm=TRUE)/georeferenced.records # 44% of georeferenced records mapped to < 100 m coordinate uncertainty
+
+sum(herptile.records$coordinateUncertaintyInMeters <= 30, na.rm=TRUE)/georeferenced.records * georeferenced.records
+
+# About 5.7K of total 16k records (44% of all records) can be analysed with confidence at 30m grid scale
