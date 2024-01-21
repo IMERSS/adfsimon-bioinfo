@@ -60,7 +60,7 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Read Bioblitz 2023 Illumina sequence data
 
-BioBlitz.2023 <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_diatoms_eelgrass_plankton_2023_bioblitz_DwC.csv")
+BioBlitz.2023 <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galiano_Island_diatom_eelgrass_plankton_2023_bioblitz_DwC.csv")
 
 BioBlitz.2023 <- BioBlitz.2023 %>% subset(InBioBlitz == 'y')
 
@@ -536,7 +536,7 @@ unmatched.algae.records
 
 # Read iNaturalist data
 
-iNaturalist.observations <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_marine_algae_and_protozoa.csv")
+iNaturalist.observations <- read.csv("../../../parse_records/outputs/iNat_obs_marine_algae_and_protozoa.csv")
 
 # Substitute iNaturalist usernames where actual observer names are missing
 
@@ -726,9 +726,11 @@ unmatched.algae.records
 
 # Read Sandra Lindstrom's 2023 BioBlitz records # Note: this code is not complete! 
 
-Lindstrom.2023 <- read.csv("../../records/digitized/DarwinCore/Sandra_Lindstrom_Galiano_seaweed_collections_May_2023_Oct_updates_DwC.csv")
+Lindstrom.2023 <- read.csv("../../records/digitized/DarwinCore/Sandra_Lindstrom_Galiano_seaweed_collections_May_2023_Jan_2024_updates_DwC.csv")
 
-# Create DarwinCore dataframe template 
+Lindstrom.2023.genetic <- read.csv("../../records/digitized/DarwinCore/Sandra_Lindstrom_Galiano_Seaweed_2023_Genetic_Data_Reporting_unique_reports_DwC.csv")
+
+# Create DarwinCore dataframe template (for both genetic and catalog datasets)
 
 data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Lindstrom.2023)))
 names(data.frame) <- DwCFields
@@ -736,6 +738,17 @@ names(data.frame) <- DwCFields
 data.frame[names(Lindstrom.2023)] <- Lindstrom.2023
 
 Lindstrom.2023 <- select(data.frame, c(1:length(DwCFields)))
+
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Lindstrom.2023.genetic)))
+names(data.frame) <- DwCFields
+
+data.frame[names(Lindstrom.2023.genetic)] <- Lindstrom.2023.genetic
+
+Lindstrom.2023.genetic <- select(data.frame, c(1:length(DwCFields)))
+
+## Merge catalogs (redundancy already assessed; only unique records represented in genetic datasets)
+
+Lindstrom.2023 <- rbind(Lindstrom.2023, Lindstrom.2023.genetic)
 
 # Add metadata
 
@@ -1230,13 +1243,13 @@ unmatched.algae.records
 
 # Read Webber et al. 2022 records (General Plankton Samples)
 
-Webber.et.al.2023.diatoms <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_diatoms_eelgrass_plankton_2023_bioblitz_DwC.csv")
+Webber.et.al.2023.diatoms <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galiano_Island_diatoms_eelgrass_plankton_2023_bioblitz_DwC.csv")
 
 Webber.et.al.2023.diatoms <- Webber.et.al.2023.diatoms %>% subset(InMark == 'y')
 
 Webber.et.al.2023.diatoms <- Webber.et.al.2023.diatoms %>% select(scientificName)
 
-Webber.et.al.2023.eukaryotes <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_eukaryotes_eelgrass_plankton_2023_bioblitz_DwC.csv")
+Webber.et.al.2023.eukaryotes <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galiano_Island_eukaryotes_eelgrass_plankton_2023_bioblitz_DwC.csv")
 
 Webber.et.al.2023.eukaryotes <- Webber.et.al.2023.eukaryotes %>% filter(Phylum == 'Ochrophyta' | Phylum == 'Chlorophyta' | 
                                                                           Phylum == 'Chlorophyta_ph' | Phylum == 'Ciliophora' | 
