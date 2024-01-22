@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-11-14.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-01-21.csv")
 
 # Temporarily assign pseudo-DWC fields until system is transitioned to new school reporting methods
 
@@ -45,16 +45,16 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Sources (7/10 added):
 
-# BioBlitz 2023 records (Illumina sequencing data) - ! added, but needs attention
-# BOLD records 2021 - ! added, but needs updating for 2023
-# CPNWH records 2022 - ! added, needs to be updated for 2023
-# iNaturalist observations 2023- ! added, needs update
-# Sandra Lindstrom BioBlitz collections 2023 - ! added, needs update
+# BioBlitz 2023 records (Illumina sequencing data) - ! Added, but Hakai to update
+# BOLD records 2021 - ! Added, but needs updating for 2023
+# CPNWH records 2022 - ! Added, needs to be updated for 2023
+# iNaturalist observations 2023 - ! Added, needs update
+# Sandra Lindstrom BioBlitz collections 2023 - ! Added, needs update
 # Simon 2023 - Sanger sequencing data - ! Not yet added!
-# PMLS Records 2021 - added # ! Need to update dataset
-# Webber et al. 2020 Zostera epiphytes - added
-# Webber et al. 2023a Sanger sequencing of clones - ! Not yet added!
-# Webber et al. 2023b General Plankton Samples - ! Not yet added!
+# PMLS Records 2021 - Added # - ! Need to update dataset
+# Webber et al. 2020 Zostera epiphytes - ! added - ! Hakai to update
+# Webber et al. 2023a Sanger sequencing of clones - ! Not yet added! - Hakai to add
+# Webber et al. 2023b General Plankton Samples - ! Not yet added! - Hakai to add
 
 
 
@@ -341,7 +341,6 @@ nrow(BOLD.2021.names.unmatched.unmatched)
 nrow(BOLD.2021.names.matched)+nrow(BOLD.2021.names.unmatched.matched)+nrow(BOLD.2021.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
-# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
 key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
 
@@ -371,13 +370,7 @@ BOLD.2021.records$eventDate <- as.Date(BOLD.2021.records$eventDate)
 nrow(BOLD.2021) - nrow(BOLD.2021.records)
 
 nrow(BOLD.2021)
-nrow(BOLD.2021.records) # one record, Prasiola furfuracea, omitted. See note to Sandra:
-# As noted previously, there is a specimen in the collection at UBC under this name. 
-# You noted that this is more likely P. meridionalis, suggesting we report P. meridionalis or just Prasiola. 
-# Because we already have a record of P. meridionalis (UBC A64665) in our dataset, however, I had removed the 
-# spurious record of P. furfuracea (UBC A64646) and included a critical note referring to this specimen under 
-# the report of P. meridionalis in our summary. However, I thought I would bring it to your attention that 
-# UBC A64646 is also recorded in the BOLD database under P. furfuracea.
+nrow(BOLD.2021.records)
 
 # Add to record of unmatched names
 
