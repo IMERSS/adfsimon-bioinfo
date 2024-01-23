@@ -381,7 +381,7 @@ unmatched.algae.records
 
 # Read records from the Consortium of Pacific Northwest Herbaria
 
-CPNWH.2021 <- read.csv("../../records/digitized/DarwinCore/CPNWH_Galiano_Island_macroalgae_2022-10-30_DwC.csv")
+CPNWH.2021 <- read.csv("../../records/digitized/DarwinCore/CPNWH_Galiano_Island_macroalgae_2024-01-22_DwC.csv")
 
 # Create DarwinCore dataframe template 
 
@@ -518,7 +518,7 @@ CPNWH.2021.records$eventDate <- as.Date(CPNWH.2021.records$eventDate)
 nrow(CPNWH.2021) - nrow(CPNWH.2021.records)
 
 nrow(CPNWH.2021)
-nrow(CPNWH.2021.records) # 6 records omitted; those determined only to genus; Pasiola furfuracea( UBC A64646) also omitted; see above
+nrow(CPNWH.2021.records) # 13 records omitted; those determined only to family
 
 # Add to record of unmatched names
 
@@ -707,7 +707,8 @@ iNaturalist.records$eventDate <- as.Date(iNaturalist.records$eventDate)
 # Compare records in and out
 
 nrow(iNaturalist.observations)
-nrow(iNaturalist.records) # 673 records omitted: all species resolved only to genus, or otherwise suprious records under review in consultation with Sandra
+nrow(iNaturalist.records) 
+nrow(iNaturalist.observations) - nrow(iNaturalist.records)  # 673 records omitted: all species resolved only to genus, or otherwise suprious records under review in consultation with Sandra
 
 # Add to record of unmatched names
 
