@@ -1047,13 +1047,13 @@ unmatched.algae.records
 
 # Read Webber.et.al.2020 records (Eelgrass Illumina sequencing data)
 
-Webber.et.al.2020.diatoms <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_diatoms_eelgrass_plankton_2023_bioblitz_DwC.csv")
+Webber.et.al.2020.diatoms <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galiano_Island_diatom_eelgrass_plankton_2023_bioblitz_DwC.csv")
 
 Webber.et.al.2020.diatoms <- Webber.et.al.2020.diatoms %>% subset(InSeagrass == 'y')
 
 Webber.et.al.2020.diatoms <- Webber.et.al.2020.diatoms %>% select(scientificName)
 
-Webber.et.al.2020.eukaryotes <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galliano_Island_eukaryotes_eelgrass_plankton_2023_bioblitz_DwC.csv")
+Webber.et.al.2020.eukaryotes <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galiano_Island_eukaryote_eelgrass_plankton_2023_bioblitz_DwC.csv")
 
 Webber.et.al.2020.eukaryotes <- Webber.et.al.2020.eukaryotes %>% filter(Phylum == 'Ochrophyta' | Phylum == 'Chlorophyta' | 
                                                                           Phylum == 'Chlorophyta_ph' | Phylum == 'Ciliophora' | 
