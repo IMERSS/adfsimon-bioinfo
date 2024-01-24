@@ -12,15 +12,15 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2023-09-28.csv")
+baseline <- read.csv("summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-01-21.csv")
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2023-04-22.csv")
+records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2024-01-23.csv")
 
 # Read resynthesized summary
 
-synthesized.summary <- read.csv("outputs/Galiano_marine_algae_summary_resynthesized_2023-04-22.csv")
+synthesized.summary <- read.csv("outputs/Galiano_marine_algae_and_protozoa_summary_resynthesized_2023-04-22.csv")
 
 # Summarize unique taxa
 
@@ -330,5 +330,5 @@ summary$statsCode <- "ALG"
 
 summary <- summary[order(summary$scientificName),] 
 
-write.csv(summary, "outputs/Galiano_marine_algae_summary_resynthesized.csv", row.names = FALSE, na = '')
+write.csv(summary, "outputs/Galiano_marine_algae_and_protozoa_summary_resynthesized.csv", row.names = FALSE, na = '')
 
