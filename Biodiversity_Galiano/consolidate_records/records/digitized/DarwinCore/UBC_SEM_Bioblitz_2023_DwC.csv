@@ -1,0 +1,48 @@
+Class,Order,Family,Genus,Species,scientificName,Author,Comments,eventDate,recordedBy,locality
+Insecta,Hemiptera,Lygaeidae,Lygaeus,kalmii,Lygaeus kalmii,Stal,,2023-05-27,Karen Needham,Hunterston Farm
+Insecta,Coleoptera,Buprestidae,Chrysobothris,femorata,Chrysobothris femorata,(Olivier),,2023-05-27,Karen Needham,Hunterston Farm
+Insecta,Diptera,Chamaemyiidae,Chamaemyia,juncorum,Chamaemyia juncorum,(Fallen),,2023-05-27,Karen Needham,Hunterston Farm
+Insecta,Diptera,Ephydridae,,, ,,,2023-05-27,Karen Needham,Hunterston Farm
+Insecta,Hemiptera,Cicadellidae,Aphrodes,sp.,Aphrodes sp.,,det. J. Kits 2023,2023-05-27,Karen Needham,Hunterston Farm
+Insecta,Hemiptera,Cicadellidae,Macrosteles,sp.,Macrosteles sp.,,det. J. Kits 2023,2023-05-27,Karen Needham,Hunterston Farm
+Insecta,Hemiptera,Orsillidae,Nysius,sp.,Nysius sp.,,,2023-05-27,Karen Needham,Hunterston Farm
+Insecta,Hemiptera,Pentatomidae,Banasa,dimiata,Banasa dimiata,(Say),,2023-05-27,Karen Needham,Hunterston Farm
+Insecta,Lepidoptera,Adelidae,Adela,sp.,Adela sp.,,,2023-05-27,Karen Needham,Hunterston Farm
+Insecta,Hemiptera,Cicadellidae,Dikraneura,sp.,Dikraneura sp.,,det. J. Kits 2023,2023-05-27,Karen Needham,Hunterston Farm
+Insecta,Diptera,Chironomidae,,, ,,,2023-05-27,Karen Needham,Millard Learning Centre
+Insecta,Hemiptera,Acanthosomatidae,Elasmostethus,cruciatus,Elasmostethus cruciatus,(Say),,2023-05-27,Karen Needham,Millard Learning Centre
+Insecta,Hemiptera,Corixidae,Sigara,omani,Sigara omani,(Hungerford),,2023-05-27,Karen Needham,Millard Learning Centre
+Insecta,Hymenoptera,Ichneumonidae,Netelia,sp.,Netelia sp.,,,2023-05-27,Karen Needham,Millard Learning Centre
+Insecta,Lepidoptera,Lasiocampidae,Malacosoma,californica,Malacosoma californica,(Packard),,2023-05-27,Karen Needham,Millard Learning Centre
+Insecta,Lepidoptera,Lasiocampidae,Phyllodesma,americana,Phyllodesma americana,(Harris),,2023-05-27,Karen Needham,Millard Learning Centre
+Insecta,Neuroptera,Chrysopidae,Chrysoperla,carnea,Chrysoperla carnea,(Stephens),,2023-05-27,Karen Needham,Millard Learning Centre
+Insecta,Hymenoptera,Ichneumonidae,Polyblastus,pedalis,Polyblastus pedalis,(Cresson),,2023-05-27,Karen Needham,Cook Road at West Ridge Trail
+Insecta,Hemiptera,Miridae,Capsus,ater,Capsus ater,(Linnaeus),,2023-05-27,Karen Needham,Woodstone Manor
+Insecta,Lepidoptera,Erebidae,Tyria,jacobaeae,Tyria jacobaeae,(Linnaeus),sight record,2023-05-27,Karen Needham,Woodstone Manor
+Insecta,Coleoptera,Buprestidae,Phaenops,fulvoguttata,Phaenops fulvoguttata,(Harris),,2023-05-27,Karen Needham,Shore Access #69
+Insecta,Coleoptera,Buprestidae,Phaenops,fulvoguttata,Phaenops fulvoguttata,(Harris),,2023-05-27,Karen Needham,Woodstone Manor
+Insecta,Coleoptera,Cantharidae,Podabrus,conspiratus,Podabrus conspiratus,Fall,,2023-05-27,Karen Needham,Woodstone Manor
+Insecta,Coleoptera,Chrysomelidae,Acanthoscelides,fraterculus,Acanthoscelides fraterculus,(Horn),,2023-05-27,Karen Needham,Woodstone Manor
+Insecta,Hemiptera,Rhyparochromidae,Eremocoris,ferus,Eremocoris ferus,(Say),,2023-05-27,Karen Needham,Woodstone Manor
+Insecta,Coleoptera,Carabidae,Carabus,sp.,Carabus sp.,,,2023-05-27,Karen Needham,Shore Access #69
+Insecta,Dermaptera,Anisolabidae,Anisolabis,maritima,Anisolabis maritima,(Bonelli),,2023-05-27,Karen Needham,Shore Access #69
+Insecta,Coleoptera,Cantharidae,Dichelotarsus,sp.,Dichelotarsus sp.,,,2023-05-27,Karen Needham,Hunterston Farm black light trap
+Insecta,Coleoptera,Cantharidae,Dichelotarsus,sp.,Dichelotarsus sp.,,,2023-05-27,Karen Needham,Great Beaver Swamp
+Insecta,Diptera,Syrphidae,Syrphus,sp.,Syrphus sp.,,,2023-05-27,Karen Needham,Cook Road at West Ridge Trail
+Insecta,Diptera,Syrphidae,Syrphus,sp.,Syrphus sp.,,,2023-05-27,Karen Needham,Great Beaver Swamp
+Insecta,Coleoptera,Curculionidae,Magdalis,sp.,Magdalis sp.,,,2023-05-27,Karen Needham,Great Beaver Swamp
+Insecta,Dermaptera,Forficulidae,Forficula,auricularia,Forficula auricularia,Linnaeus,,2023-05-27,Karen Needham,Great Beaver Swamp
+Insecta,Diptera,Syrphidae,Epistrophe,sp.,Epistrophe sp.,,,2023-05-27,Karen Needham,Great Beaver Swamp
+Insecta,Diptera,Syrphidae,Megasyrphus,sp.,Megasyrphus sp.,,,2023-05-27,Karen Needham,Great Beaver Swamp
+Insecta,Hemiptera,Cicadellidae,Balclutha,sp.,Balclutha sp.,,det. J. Kits 2023,2023-05-27,Karen Needham,Great Beaver Swamp
+Insecta,Hymenoptera,Ichneumonidae,Ichneumonini,,Ichneumonini ,,,2023-05-27,Karen Needham,Great Beaver Swamp
+Insecta,Odonata,Libellulidae,Erythemis,collocata,Erythemis collocata,(Hagen),photographic record,2023-05-27,Karen Needham,Great Beaver Swamp
+Insecta,Coleoptera,Coccinellidae,Psyllobora,vigintimaculata,Psyllobora vigintimaculata,(Say),,2023-05-27,Karen Needham,Cook Road at West Ridge Trail
+Insecta,Coleoptera,Coccinellidae,Psyllobora,vigintimaculata,Psyllobora vigintimaculata,(Say),,2023-05-27,Karen Needham,Great Beaver Swamp
+Insecta,Diptera,Cecidomyiidae,,, ,,,2023-05-27,Karen Needham,Hunterston Farm black light trap
+Insecta,Lepidoptera,Noctuidae,Autographa,sp.,Autographa sp.,,,2023-05-27,Karen Needham,Hunterston Farm black light trap
+Insecta,Trichoptera,Limnephilidae,Limnephilus,sp.,Limnephilus sp.,,,2023-05-27,Karen Needham,Hunterston Farm black light trap
+Insecta,Diptera,Culicidae,Aedes,spp.,Aedes spp.,,,2023-05-27,Karen Needham,Hunterston Farm black light trap
+Insecta,Diptera,Heleomyzidae,Allophyla,sp.,Allophyla sp.,,,2023-05-27,Karen Needham,Cook Road at West Ridge Trail
+Insecta,Diptera,Syrphidae,Platycheirus,sp.,Platycheirus sp.,,,2023-05-27,Karen Needham,Cook Road at West Ridge Trail
+Insecta,Hymenoptera,Halictidae,Lasioglossum,(Hemihalictus),Lasioglossum (Hemihalictus),,det. T. Kelly 2023,2023-05-27,Karen Needham,Cook Road at West Ridge Trail

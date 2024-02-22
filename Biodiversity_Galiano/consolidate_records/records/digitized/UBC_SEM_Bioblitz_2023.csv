@@ -1,0 +1,44 @@
+Class,Order,Family,Genus,Species,Taxon,Author,Millard Learning Centre BLT,Hunterston Farm,Cook Rd. @ West Ridge Trail,Hunterston Farm BLT,Great Beaver Swamp Trail,Shore Access #69,Woodstone Manor,Total # of Specimens,Lifestage,Comments,Month
+Insecta,Coleoptera,Buprestidae,Chrysobothris,femorata,Chrysobothris femorata,(Olivier),,1,,,,,,1,adult,,May
+Insecta,Coleoptera,Buprestidae,Phaenops,fulvoguttata,Phaenops fulvoguttata,(Harris),,,,,,1,1,2,adult,,May
+Insecta,Coleoptera,Cantharidae,Dichelotarsus,sp.,Dichelotarsus sp.,,,,,1,1,,,2,adult,,May
+Insecta,Coleoptera,Cantharidae,Podabrus,conspiratus,Podabrus conspiratus,Fall,,,,,,,1,1,adult,,May
+Insecta,Coleoptera,Carabidae,Carabus,sp.,Carabus sp.,,,,,,,1,,1,adult,,May
+Insecta,Coleoptera,Chrysomelidae,Acanthoscelides,fraterculus,Acanthoscelides fraterculus,(Horn),,,,,,,1,1,adult,,May
+Insecta,Coleoptera,Coccinellidae,Psyllobora,vigintimaculata,Psyllobora vigintimaculata,(Say),,,1,,2,,,3,adult,,May
+Insecta,Coleoptera,Curculionidae,Magdalis,sp.,Magdalis sp.,,,,,,1,,,1,adult,,May
+Insecta,Dermaptera,Anisolabidae,Anisolabis,maritima,Anisolabis maritima,(Bonelli),,,,,,1,,1,adult,,May
+Insecta,Dermaptera,Forficulidae,Forficula,auricularia,Forficula auricularia,Linnaeus,,,,,1,,,1,adult,,May
+Insecta,Diptera,Cecidomyiidae,,, ,,,,,1,,,,1,adult,,May
+Insecta,Diptera,Chamaemyiidae,Chamaemyia,juncorum,Chamaemyia juncorum,(Fallen),,1,,,,,,1,adult,,May
+Insecta,Diptera,Chironomidae,,, ,,1,,,,,,,1,adult,,May
+Insecta,Diptera,Culicidae,Aedes,spp.,Aedes spp.,,,,,2,,,,2,adult,,May
+Insecta,Diptera,Ephydridae,,, ,,,1,,,,,,1,adult,,May
+Insecta,Diptera,Heleomyzidae,Allophyla,sp.,Allophyla sp.,,,,1,,,,,1,adult,,May
+Insecta,Diptera,Syrphidae,Epistrophe,sp.,Epistrophe sp.,,,,,,1,,,1,adult,,May
+Insecta,Diptera,Syrphidae,Megasyrphus,sp.,Megasyrphus sp.,,,,,,1,,,1,adult,,May
+Insecta,Diptera,Syrphidae,Platycheirus,sp.,Platycheirus sp.,,,,1,,,,,1,adult,,May
+Insecta,Diptera,Syrphidae,Syrphus,sp.,Syrphus sp.,,,,1,,1,,,2,adult,,May
+Insecta,Hemiptera,Acanthosomatidae,Elasmostethus,cruciatus,Elasmostethus cruciatus,(Say),1,,,,,,,1,adult,,May
+Insecta,Hemiptera,Cicadellidae,Aphrodes,sp.,Aphrodes sp.,,,1,,,,,,1,nymph,det. J. Kits 2023,May
+Insecta,Hemiptera,Cicadellidae,Balclutha,sp.,Balclutha sp.,,,,,,1,,,1,adult,det. J. Kits 2023,May
+Insecta,Hemiptera,Cicadellidae,Dikraneura,sp.,Dikraneura sp.,,,2,,,,,,2,adult,det. J. Kits 2023,May
+Insecta,Hemiptera,Cicadellidae,Macrosteles,sp.,Macrosteles sp.,,,1,,,,,,1,adult,det. J. Kits 2023,May
+Insecta,Hemiptera,Corixidae,Sigara,omani,Sigara omani,(Hungerford),1,,,,,,,1,adult,,May
+Insecta,Hemiptera,Lygaeidae,Lygaeus,kalmii,Lygaeus kalmii,Stal,,1,,,,,1,2,adult,,May
+Insecta,Hemiptera,Miridae,Capsus,ater,Capsus ater,(Linnaeus),,,,,,,1,1,adult,,May
+Insecta,Hemiptera,Orsillidae,Nysius,sp.,Nysius sp.,,,1,,,,,,1,adult,,May
+Insecta,Hemiptera,Pentatomidae,Banasa,dimiata,Banasa dimiata,(Say),,1,,,,,,1,adult,,May
+Insecta,Hemiptera,Rhyparochromidae,Eremocoris,ferus,Eremocoris ferus,(Say),,,,,,,1,1,adult,,May
+Insecta,Hymenoptera,Halictidae,Lasioglossum,(Hemihalictus),Lasioglossum (Hemihalictus),,,,1,,,,,1,adult,det. T. Kelly 2023,May
+Insecta,Hymenoptera,Ichneumonidae,Netelia,sp.,Netelia sp.,,1,,,,,,,1,adult,,May
+Insecta,Hymenoptera,Ichneumonidae,Polyblastus,pedalis,Polyblastus pedalis,(Cresson),,,1,,,,,1,adult,,May
+Insecta,Hymenoptera,Ichneumonidae,Ichneumonini,,Ichneumonini ,,,,,,1,,,1,adult,,May
+Insecta,Lepidoptera,Adelidae,Adela,sp.,Adela sp.,,,1,,,,,,1,adult,,May
+Insecta,Lepidoptera,Erebidae,Tyria,jacobaeae,Tyria jacobaeae,(Linnaeus),,,,,,,1,1,adult,sight record,May
+Insecta,Lepidoptera,Lasiocampidae,Malacosoma,californica,Malacosoma californica,(Packard),1,,,,,,,1,adult,,May
+Insecta,Lepidoptera,Lasiocampidae,Phyllodesma,americana,Phyllodesma americana,(Harris),1,,,,,,,1,adult,,May
+Insecta,Lepidoptera,Noctuidae,Autographa,sp.,Autographa sp.,,,,,1,,,,1,adult,,May
+Insecta,Neuroptera,Chrysopidae,Chrysoperla,carnea,Chrysoperla carnea,(Stephens),2,,,,,,,2,adult,,May
+Insecta,Odonata,Libellulidae,Erythemis,collocata,Erythemis collocata,(Hagen),,,,,1,,,1,adult,photographic record,May
+Insecta,Trichoptera,Limnephilidae,Limnephilus,sp.,Limnephilus sp.,,,,,1,,,,1,adult,,May
