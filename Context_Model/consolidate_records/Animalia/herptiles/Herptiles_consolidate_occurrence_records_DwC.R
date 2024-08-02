@@ -38,7 +38,7 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Read GBIF Data
 
-GBIF <- read.csv("../../../parse_records/outputs/records_herptiles.csv")
+GBIF <- read.csv("/Users/andrewsimon/GitHub/adfsimon-bioinfo/Context_Model/consolidate_records/records/digitized/records_herptiles_2024-08-02.csv")
 
 # Replace 'scientificName' w 'verbatimScientificName'
 
