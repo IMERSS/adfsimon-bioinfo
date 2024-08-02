@@ -36,13 +36,13 @@ Terrestrial.mammals.records <- records %>% filter(class == 'Mammalia')
 
 unique(Terrestrial.mammals.records$Selected.taxon.name)
 
-Terrestrial.mammals.records <- subset(Terrestrial.mammals.records, infraorder != 'Cetacea' & Selected.taxon.name != 'Mustela vison energumenos' & Selected.taxon.name != 'Neogale vison' & Selected.taxon.name != 'Neogale vison evagor' & Selected.taxon.name != 'Neogale vison energumenos' & Selected.taxon.name != 'Neovison vison evagor' & Selected.taxon.name != 'Mustela vison energumenos' & superfamily != 'Phocoidea' & subfamily != 'Lutrinae')
+Terrestrial.mammals.records <- subset(Terrestrial.mammals.records, infraorder != 'Cetacea' & superfamily != 'Phocoidea' & subfamily != 'Lutrinae')
 
 # Herptiles
 
-unique(Herptiles.records$Selected.taxon.name)
-
 Herptiles.records <- records %>% filter(class == 'Amphibia' | class == 'Reptilia' | class == 'Squamata')
+
+unique(Herptiles.records$Selected.taxon.name)
 
 # Check that all taxa are accounted for
 
@@ -54,6 +54,6 @@ unique(missing.taxa$Selected.taxon.name)
 
 # Export catalogs
 
-write.csv(Herptiles.records, "outputs/records_herptiles_2024-08-02.csv", row.names = FALSE)
+write.csv(Herptiles.records, "outputs/records_herptiles.csv", row.names = FALSE)
 
-write.csv(Terrestrial.mammals.records, "outputs/records_terrestrial_mammals_2024-08-02.csv", row.names = FALSE)
+write.csv(Terrestrial.mammals.records, "outputs/records_terrestrial_mammals.csv", row.names = FALSE)

@@ -1,35 +1,55 @@
 Taxon,Matched.Taxon,Critical.Note
 Alces alces andersoni,Alces alces,
+Bison antiquus,,extinct
+Bos taurus,,domesticated
+Canis,,indeterminate
+Canis familiaris,,domesticated
+Canis familiaris familiaris,,domesticated
 Canis latrans incolatus,Canis latrans,
 Canis latrans lestes,Canis latrans,
 "Canis lupis Linnaeus, 1758",Canis lupus,
 Canis lupus crassodon,Canis lupus,
 Canis lupus fuscus,Canis lupus,
+Canis lupus occidentalis,,outside of range (possible extirpation?)
 "Canis lupus subsp. familiaris Linnaeus, 1758",Canis lupus,
+Capra hircus,,domesticated
 "Castor canadensis Kuhl, 1820",Castor canadensis,
 Castor canadensis leucodonta,Castor canadensis,
 Castor canadensis leucodontus,Castor canadensis,
+Cebus albifrons,,mismapped monkey
+Cebus capucinus,,mismapped monkey
+Cervus,,indeterminate
 Cervus canadensis,Cervus canadensis canadensis,
 Cervus elaphus,Cervus canadensis canadensis,
 Cervus elaphus canadensis,Cervus canadensis canadensis,
 "Cervus elaphus Linnaeus, 1758",Cervus canadensis canadensis,
+Cervus nippon,,possible introduction
+Cervus nippon keramae,,possible introduction
 Clethrionomys gapperi caurinus,Clethrionomys gapperi,
 Clethrionomys gapperi saturatus,Clethrionomys gapperi,
 Corynorhinus townsendii townsendii,Corynorhinus townsendii,
+Dasypus novemcinctus mexicanus,,mismapped armadillo
+Didelphis marsupialis,,opossum (mismapped?)
 Didelphis virginiana virginiana,Didelphis virginiana,
 Didelphis virginianus,Didelphis virginiana,
 Eptesicus fuscus bernardinus,Eptesicus fuscus,
+Equus caballus,,
 Eutamias townsendii townsendii,Neotamias townsendii,
+Felis catus,,domesticated
+Glaucomys,,indeterminate
 Glaucomys sabrinus alpinus,Glaucomys sabrinus,
 Glaucomys sabrinus fuliginosus,Glaucomys sabrinus,
 Glaucomys sabrinus oregonensis,Glaucomys sabrinus,
 Gulo gulo,Gulo gulo luscus,
+Lagomorpha,,indeterminate
 Lasiurus cinereus cinereus,Lasiurus cinereus,
+Lepus,,indeterminate
 Lepus (Poecilolagus) americanus cascadensis,Lepus americanus,
 Lepus americanus cascadensis,Lepus americanus,
 Lepus americanus columbiensis,Lepus americanus,
 Lepus americanus dalli,Lepus americanus,
 Lepus americanus virginianus,Lepus americanus,
+Lepus europaeus,,mismapped rabbit
 Lepus washingtoni,Lepus americanus washingtonii,
 Lontra canadensis mira,Lontra canadensis,
 Lontra canadensis pacifica,Lontra canadensis,
@@ -46,14 +66,17 @@ Martes americana caurina,Martes caurina,
 Martes americana vancouverensis,Martes caurina,
 Martes caurina caurina,Martes caurina,
 "Mephitis mephitis Schreber, 1777",Mephitis mephitis,
+Mephitis mephitis spissigrada,Mephitis mephitis,
 "Mephitis mephitis spissigrada Bangs, 1898",Mephitis mephitis,
+Microtus,,indeterminate
 Microtus longicaudus macrurus,Microtus longicaudus,
 Microtus montanus canescens,Microtus montanus,
 MICROTUS OREGONI OREGONI,Microtus oregoni,
 Microtus oregoni serpens,Microtus oregoni,
-"Microtus pennsylvanicus (Ord, 1815)",Microtus pennsylvanicus,
-Microtus pennsylvanicus drummondii,Microtus pennsylvanicus,
-Microtus pennsylvanicus funebris,Microtus pennsylvanicus,
+Microtus pennsylvanicus,Microtus drummondii,"Microtus drummondii split from Microtus pennsylvanicus as the species now recognized in the west; it does not appear that their ranges overlap in the west, though the BC CDC still recognizes Microtus pennsylvanicus instead of Microtus drummondii"
+"Microtus pennsylvanicus (Ord, 1815)",Microtus drummondii,"Microtus drummondii split from Microtus pennsylvanicus as the species now recognized in the west; it does not appear that their ranges overlap in the west, though the BC CDC still recognizes Microtus pennsylvanicus instead of Microtus drummondii"
+Microtus pennsylvanicus drummondii,Microtus drummondii,"Microtus drummondii split from Microtus pennsylvanicus as the species now recognized in the west; it does not appear that their ranges overlap in the west, though the BC CDC still recognizes Microtus pennsylvanicus instead of Microtus drummondii"
+Microtus pennsylvanicus funebris,Microtus drummondii,"Microtus drummondii split from Microtus pennsylvanicus as the species now recognized in the west; it does not appear that their ranges overlap in the west, though the BC CDC still recognizes Microtus pennsylvanicus instead of Microtus drummondii"
 Microtus richardsoni arvicoloides,Microtus richardsoni,
 Microtus serpens,Microtus oregoni,
 Microtus townsendi,Microtus townsendii,
@@ -66,6 +89,7 @@ Microtus townsendii tetramerus,Microtus townsendii,
 Microtus townsendii townsendii,Microtus townsendii,
 MICROTUS TOWNSENDII TOWNSENDII,Microtus townsendii,
 Mus musculus domesticus,Mus musculus,
+Mustela,,indeterminate
 Mustela erminea anguinae,Mustela erminea,
 Mustela erminea cicognanii,Mustela erminea,
 Mustela erminea fallenda,Mustela erminea,
@@ -74,6 +98,12 @@ Mustela erminea invicta,Mustela erminea,
 Mustela erminea richardsonii,Mustela erminea,
 Mustela frenata,Neogale frenata,
 Mustela frenata altifrontalis,Neogale frenata altifrontalis,
+Mustela putorius,,"European polecat, outside of range"
+Mustela richardsonii anguinae,Mustela richardsonii,"endemic to Vancouver Island, this is the only subspecies recognized by the BC CDC"
+Mustela richardsonii cicognanii,Mustela richardsonii,
+Mustela richardsonii fallenda,Mustela richardsonii,
+Mustela richardsonii invicta,Mustela richardsonii,
+Mustela richardsonii richardsonii,Mustela richardsonii,
 Mustela vison,Neogale vison,
 Mustela vison energumenos,Neogale vison,
 "Mustela vison energumenos (Bangs, 1896)",Neogale vison,
@@ -83,6 +113,7 @@ Myodes gapperi cascadensis,Clethrionomys gapperi,
 Myodes gapperi caurinus,Clethrionomys gapperi,
 Myodes gapperi occidentalis,Clethrionomys gapperi occidentalis,
 "Myodes gapperi Vigors, 1830",Clethrionomys gapperi,
+Myotis,,indeterminate
 Myotis alascensis,Myotis lucifugus,
 Myotis californicus CAURINUS,Myotis californicus,
 Myotis californicus caurinus,Myotis californicus,
@@ -92,6 +123,8 @@ Myotis yumanensis saturatus,Myotis yumanensis,
 Myotis yumanensis SATURATUS,Myotis yumanensis,
 Neogale vison energumenos,Neogale vison,
 Neogale vison evagor,Neogale vison,
+Neotamias,,indeterminate
+Neotamias sonomae alleni,,outside of range; Neotamias sonomae endemic to northwestern California
 Neotoma cinera occidentalis,Neotoma cinerea,
 Neotoma cinerea drummondii,Neotoma cinerea,
 Neotoma cinerea occidentalis,Neotoma cinerea,
@@ -101,6 +134,7 @@ Neovison vison evagor,Neogale vison,
 "Neurotrichus gibbsii (Baird, 1858)",Neurotrichus gibbsii,
 Neurotrichus gibbsii gibbsii,Neurotrichus gibbsii,
 "Neurotrichus gibbsii gibbsii (Baird, 1858)",Neurotrichus gibbsii,
+Neurotrichus gibbsii hyacinthinus,,outside of range
 NEUROTRICHUS GIBBSII MINOR,Neurotrichus gibbsii,
 Neurotrichus gibbsii minor,Neurotrichus gibbsii,
 Ochotona (Pika) princeps,Ochotona princeps,
@@ -115,12 +149,17 @@ Ondatra zibethicus osoyoosensis,Ondatra zibethicus,
 Oryctolagus cuniculus domesticus,Oryctolagus cuniculus,
 "Oryctolagus cuniculus Linnaeus, 1758",Oryctolagus cuniculus,
 Oryctolagus cuniculus ssp.,Oryctolagus cuniculus,
+Ovis aries,,domesticated
+Ovis aries aries,,domesticated
+Ovis aries musimon,,domesticated
+Peromyscus,,indeterminate
 Peromyscus keeni carli,Peromyscus keeni,
 Peromyscus keeni interdictus,Peromyscus keeni,
 Peromyscus keeni keeni,Peromyscus keeni,
 Peromyscus keeni oreas,Peromyscus keeni,
 Peromyscus KEENI OREAS,Peromyscus keeni,
 Peromyscus keeni triangularis,Peromyscus keeni,
+Peromyscus leucopus,,outside of range
 Peromyscus maniculatus angustus,Peromyscus maniculatus,
 PEROMYSCUS MANICULATUS ANGUSTUS,Peromyscus maniculatus,
 Peromyscus maniculatus artemisiae,Peromyscus maniculatus,
@@ -135,13 +174,16 @@ Peromyscus MANICULATUS HOLLISTERI,Peromyscus maniculatus,
 Peromyscus maniculatus isolatus,Peromyscus maniculatus,
 Peromyscus maniculatus oreas,Peromyscus maniculatus,
 Peromyscus maniculatus prevostensis,Peromyscus maniculatus,
+Peromyscus maniculatus rubriventer,Peromyscus maniculatus,
 Peromyscus maniculatus rubriventor,Peromyscus maniculatus,
 Peromyscus maniculatus saturatus,Peromyscus maniculatus,
 Peromyscus MANICULATUS SATURATUS,Peromyscus maniculatus,
 "Peromyscus maniculatus saturatus Bangs, 1897",Peromyscus maniculatus,
 "Peromyscus maniculatus Wagner, 1845",Peromyscus maniculatus,
+Petaurista nobilis,,"Bhutan giant flying squirrel, mismapped"
 Phenacomys intermedius intermedius,Phenacomys intermedius,
 Phenacomys intermedius oramontis,Phenacomys intermedius,
+Pinnipedia,,indeterminate
 Plecotus townsendii,Corynorhinus townsendii,
 Procyon lotor pacifica,Procyon lotor,
 Procyon lotor pacificus,Procyon lotor,
@@ -156,9 +198,13 @@ Rattus rattus rattus,Rattus rattus,
 Scapanus orarius orarius,Scapanus orarius,
 Scapanus orarius schefferi,Scapanus orarius,
 "Scapanus orarius True, 1896",Scapanus orarius,
+Sciurus,,indeterminate
 Sciurus carolinensis pennsylvanicus,Sciurus carolinensis,
+Sorex,,indeterminate
 Sorex (Otisorex) monticolus setosus,Sorex monticola,
 Sorex (Otisorex) vagrans,Sorex vagrans vagrans,
+Sorex araneus,,"Eurasian shrew, native to northern Europe (mismapped?)"
+Sorex bendirii albiventer,,endemic to Olympic Peninsula of Washington
 Sorex bendirii bendirii,Sorex bendirii,
 "Sorex bendirii bendirii (Merriam, 1884)",Sorex bendirii,
 "Sorex bendirii Merriam, 1884",Sorex bendirii,
@@ -172,22 +218,28 @@ Sorex monticola setosus,Sorex monticola,
 Sorex monticolus,Sorex monticola,
 Sorex monticolus ?,Sorex monticola,
 Sorex monticolus isolatus,Sorex monticola,
+Sorex monticolus monticolus,Sorex monticola,
 Sorex monticolus obscurus,Sorex monticola,
 "Sorex monticolus obscurus Merriam, 1891",Sorex monticola,
 Sorex monticolus setosus,Sorex monticola,
 "Sorex monticolus setosus Elliot, 1899",Sorex monticola,
 Sorex obscurus,Sorex monticola,
+Sorex pacificus,,outside of range (endemic to western Oregon in the United States)
 Sorex palustris navigator,Sorex navigator,
+Sorex trowbridgii destructioni,,outside of range (endemic to Destruction Island)
 Sorex trowbridgii trowbridgii,Sorex trowbridgii,
-Sorex vagrans,Sorex vagrans vagrans,
-Sorex vagrans ?,Sorex vagrans vagrans,
-"Sorex vagrans Baird, 1857",Sorex vagrans vagrans,
-Sorex vagrans obscurus,Sorex vagrans vagrans,
-SOREX VAGRANS SETOSUS,Sorex vagrans vagrans,
-SOREX VAGRANS VAGRANS,Sorex vagrans vagrans,
-"Sorex vagrans vagrans Baird, 1857",Sorex vagrans vagrans,
-Sorex vagrans vancouverensis,Sorex vagrans vagrans,
-"Sorex vagrans vancouverensis Merriam, 1895",Sorex vagrans vagrans,
+Sorex vagrans,Sorex vagrans,
+Sorex vagrans ?,Sorex vagrans,
+"Sorex vagrans Baird, 1857",Sorex vagrans,
+Sorex vagrans isolatus,Sorex vagrans,
+Sorex vagrans obscurus,Sorex vagrans,
+Sorex vagrans paludivagus,,outside of range (central Californian coast)
+SOREX VAGRANS SETOSUS,Sorex vagrans,
+SOREX VAGRANS VAGRANS,Sorex vagrans,
+Sorex vagrans vagrans,Sorex vagrans,
+"Sorex vagrans vagrans Baird, 1857",Sorex vagrans,
+Sorex vagrans vancouverensis,Sorex vagrans,
+"Sorex vagrans vancouverensis Merriam, 1895",Sorex vagrans,
 Spermophilus columbianus,Urocitellus columbianus,
 Spermophilus lateralis,Callospermophilus lateralis,
 Spilogale gracilis latifrons,Spilogale gracilis,

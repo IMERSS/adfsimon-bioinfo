@@ -14,7 +14,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Animalia/terrestrial_mammals/summaries/Context_model_terrestrial_mammals_review_summary_2023-12-08.csv")
+summary <- read.csv("../../../review/Animalia/terrestrial_mammals/summaries/Context_model_terrestrial_mammals_review_summary_2024-08-02.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -40,9 +40,11 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 GBIF <- read.csv("/Users/andrewsimon/GitHub/adfsimon-bioinfo/Context_Model/consolidate_records/records/digitized/records_terrestrial_mammals_2024-08-02.csv")
 
-# Replace 'scientificName' w 'verbatimScientificName'
+head(GBIF)
 
-GBIF$scientificName <- GBIF$verbatimScientificName
+# Replace 'scientificName' w 'Selected.taxon.name'
+
+GBIF$scientificName <- GBIF$Selected.taxon.name
 
 # Create DarwinCore dataframe template 
 
@@ -172,9 +174,8 @@ GBIF.records$eventDate <- as.Date(GBIF.records$eventDate)
 # Compare records in and out
 
 nrow(GBIF) - nrow(GBIF.records)
-
 nrow(GBIF)
-nrow(GBIF.records) # 237 records omitted; those indeterminate with reference to summary
+nrow(GBIF.records) # 939 records omitted; see key for justification of omissions
 
 # Start record of unmatched names
 
@@ -228,6 +229,9 @@ Subspecies$taxonRank <- "subspecies"
 Subspecies$infraspecificEpithet <- Subspecies$subspecies
 Subspecies <- subset(Subspecies, select = -c(hybrid, subspecies, variety, form))
 
+# NOTE: Some subspecies are recorded in the initial merge with DwC fields, though these are not
+# recognized in the curated summary, so they are not being classified correctly here. Correct later.
+
 # No varieties
 
 # Varieties <- subset(terrestrial.mammal.records, variety != "")
@@ -262,7 +266,7 @@ terrestrial.mammal.records[is.na(terrestrial.mammal.records)] <- ""
 # Compare with summary to ensure all recognized taxa are represented in the catalog
 
 taxa.records <- unique(terrestrial.mammal.records$scientificName)
-taxa.baseline <- unique(baseline$scientificName)
+taxa.baseline <- unique(summary$scientificName)
 
 taxa.records <- sort(taxa.records)
 taxa.baseline <- sort(taxa.baseline)
