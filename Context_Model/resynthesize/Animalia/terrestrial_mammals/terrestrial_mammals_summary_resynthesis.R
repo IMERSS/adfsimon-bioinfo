@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("../../../review/Animalia/terrestrial_mammals/summaries/Context_model_terrestrial_mammals_review_summary_2023-12-08.csv")
+baseline <- read.csv("../../../review/Animalia/terrestrial_mammals/summaries/Context_model_terrestrial_mammals_review_summary_2024-08-02.csv")
 
 # Frame baseline using new school template
 
@@ -37,7 +37,7 @@ baseline <- select(data.frame, c(1:length(Fields)))
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Animalia/terrestrial_mammals/synthesized/Context_model_terrestrial_mammal_records_consolidated_2023-12-10.csv")
+records <- read.csv("../../../consolidate_records/Animalia/terrestrial_mammals/synthesized/Context_model_terrestrial_mammal_records_consolidated_2024-08-02.csv")
 
 # Read resynthesized summary
 

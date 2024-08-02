@@ -288,18 +288,18 @@ write.csv(terrestrial.mammal.records,"synthesized/terrestrial_mammal_records_con
 
 # Evaluate georeferencing resolution of terrestrial mammal
 
-nrow(terrestrial.mammal.records) # 26K terrestrial mammal records
+nrow(terrestrial.mammal.records) # 28K terrestrial mammal records
 
 terrestrial.mammal.records$coordinateUncertaintyInMeters <- as.numeric(terrestrial.mammal.records$coordinateUncertaintyInMeters)
 
 hist(terrestrial.mammal.records$coordinateUncertaintyInMeters, 
-     xlim=c(0,1000), breaks = 400000, main="Terrestrial Mammal Records: Coordinate Uncertainty", xlab = "Coordinate Uncertainty in meters")
+     xlim=c(0,1000), breaks = 800000, main="Terrestrial Mammal Records: Coordinate Uncertainty", xlab = "Coordinate Uncertainty in meters")
 
 sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))/nrow(terrestrial.mammal.records) 
-# 23% of records lack coordinate uncertainty
+# 22% of records lack coordinate uncertainty
 
 sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))/nrow(terrestrial.mammal.records) * nrow(terrestrial.mammal.records) 
-# Or 5993/26604 records total
+# Or 6183/28220 records total
 
 georeferenced.records <- nrow(terrestrial.mammal.records)-sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))
 
@@ -307,7 +307,7 @@ sum(terrestrial.mammal.records$coordinateUncertaintyInMeters <= 100, na.rm=TRUE)
 
 sum(terrestrial.mammal.records$coordinateUncertaintyInMeters <= 100, na.rm=TRUE)/georeferenced.records * georeferenced.records
 
-# About 9K of total 26k records (47% of records) can be analysed with confidence at 100m grid scale
+# About 10K of total 22k records (48% of records) can be analysed with confidence at 100m grid scale
 
 georeferenced.records <- nrow(terrestrial.mammal.records)-sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))
 
@@ -315,7 +315,7 @@ sum(terrestrial.mammal.records$coordinateUncertaintyInMeters <= 30, na.rm=TRUE)/
 
 sum(terrestrial.mammal.records$coordinateUncertaintyInMeters < 30, na.rm=TRUE)/georeferenced.records * georeferenced.records
 
-# About 6.5K of total 26k records (32% of records) can be analysed with confidence at 30m grid scale
+# About 7K of total 22k records (32% of records) can be analysed with confidence at 30m grid scale
 
 # Count records by species
 
