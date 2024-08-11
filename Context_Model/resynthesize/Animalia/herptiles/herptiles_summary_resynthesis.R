@@ -37,7 +37,7 @@ baseline <- select(data.frame, c(1:length(Fields)))
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Animalia/herptiles/synthesized/Context_model_herptile_records_consolidated_2023-12-26.csv")
+records <- read.csv("../../../consolidate_records/Animalia/herptiles/synthesized/Context_model_herptile_records_consolidated_2024-08-10.csv")
 
 # Read resynthesized summary
 
