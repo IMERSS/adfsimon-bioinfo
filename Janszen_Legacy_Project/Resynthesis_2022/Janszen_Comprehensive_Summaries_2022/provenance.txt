@@ -1,6 +1,0 @@
-Saanich_Peninsula_Plant_List_2023-11-08.csv
-taken from https://docs.google.com/spreadsheets/d/1t59NG7kobHJfurCZi-fCRn1grSfsaWzbTcBgIrAQahs/edit?gid=0#gid=0
-
-Saanich_Peninsula_Plant_List_2024-08-23-Ludwar.csv
-taken from https://docs.google.com/spreadsheets/d/1uj3X-FZyAjhWRvq6W2RPzqRilmzMEHk8tTWinJ3VY0s/edit?gid=0#gid=0
-
