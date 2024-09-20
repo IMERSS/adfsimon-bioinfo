@@ -1,0 +1,466 @@
+Taxon,Name Status,Referred iNaturalist Id,Referred iNaturalist Name,Name Adopted,kingdom,phylum,subphylum,superclass,class,subclass,superorder,order,suborder,infraorder,superfamily,family,subfamily,tribe,genus,species
+Acer campestre,accepted,56193,Acer campestre,Acer campestre,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Sapindales,,,,Sapindaceae,,,Acer,campestre
+Acer ginnala,accepted,123638,Acer ginnala,Acer ginnala,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Sapindales,,,,Sapindaceae,,,Acer,ginnala
+Acer rubrum,accepted,48098,Acer rubrum,Acer rubrum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Sapindales,,,,Sapindaceae,,,Acer,rubrum
+Acer rubrum var. rubrum,accepted,49675,Acer rubrum rubrum,Acer rubrum rubrum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Sapindales,,,,Sapindaceae,,,Acer,rubrum
+Acer saccharinum,accepted,54762,Acer saccharinum,Acer saccharinum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Sapindales,,,,Sapindaceae,,,Acer,saccharinum
+Adiantum raddianum,accepted,158023,Adiantum raddianum,Adiantum raddianum,Plantae,Tracheophyta,,,Polypodiopsida,Polypodiidae,,Polypodiales,Pteridineae,,,Pteridaceae,Vittarioideae,,Adiantum,raddianum
+Adlumia fungosa,accepted,158027,Adlumia fungosa,Adlumia fungosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Papaveraceae,Fumarioideae,Corydaleae,Adlumia,fungosa
+Aegilops cylindrica,accepted,75290,Aegilops cylindrica,Aegilops cylindrica,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Triticeae,Aegilops,cylindrica
+Aegilops tauschii,accepted,371638,Aegilops tauschii,Aegilops tauschii,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Triticeae,Aegilops,tauschii
+Aethusa cynapium,accepted,158043,Aethusa cynapium,Aethusa cynapium,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Apiaceae,Apioideae,Selineae,Aethusa,cynapium
+Agrostemma githago,accepted,75310,Agrostemma githago,Agrostemma githago,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,Caryophylloideae,Sileneae,Agrostemma,githago
+Physalis alkekengi,unaccepted,575102,Alkekengi officinarum,Alkekengi officinarum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Physaleae,Alkekengi,officinarum
+Allium x proliferum,accepted,1080360,Allium,Allium,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Amaryllidaceae,Allioideae,Allieae,Allium,
+Allium cepa,accepted,48592,Allium cepa,Allium cepa,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Amaryllidaceae,Allioideae,Allieae,Allium,cepa
+Allium sativum,accepted,75363,Allium sativum,Allium sativum,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Amaryllidaceae,Allioideae,Allieae,Allium,sativum
+Allium scorodoprasum,accepted,158194,Allium scorodoprasum,Allium scorodoprasum,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Amaryllidaceae,Allioideae,Allieae,Allium,scorodoprasum
+Alopecurus myosuroides,accepted,75383,Alopecurus myosuroides,Alopecurus myosuroides,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Poeae,Alopecurus,myosuroides
+Amaranthus cruentus,accepted,52328,Amaranthus cruentus,Amaranthus cruentus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Amaranthaceae,Amaranthoideae,,Amaranthus,cruentus
+Amaranthus hypochondriacus,accepted,75396,Amaranthus hypochondriacus,Amaranthus hypochondriacus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Amaranthaceae,Amaranthoideae,,Amaranthus,hypochondriacus
+Amaranthus rudis,accepted,158253,Amaranthus rudis,Amaranthus rudis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Amaranthaceae,Amaranthoideae,,Amaranthus,rudis
+Amberboa moschata,accepted,158259,Amberboa moschata,Amberboa moschata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Carduoideae,Cardueae,Amberboa,moschata
+Ambrosia trifida,accepted,53034,Ambrosia trifida,Ambrosia trifida,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Heliantheae,Ambrosia,trifida
+Amsinckia tesselata,unaccepted,58050,Amsinckia tessellata,Amsinckia tessellata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Boraginales,,,,Boraginaceae,Cynoglossoideae,Cynoglosseae,Amsinckia,tessellata
+Anarrhinum bellidifolium,accepted,183320,Anarrhinum bellidifolium,Anarrhinum bellidifolium,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Antirrhineae,Anarrhinum,bellidifolium
+Anthyllis vulneraria,accepted,82685,Anthyllis vulneraria,Anthyllis vulneraria,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Loteae,Anthyllis,vulneraria
+Antirrhinum majus,accepted,48969,Antirrhinum majus,Antirrhinum majus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Antirrhineae,Antirrhinum,majus
+Arabis caucasica,accepted,158480,Arabis caucasica,Arabis caucasica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Arabideae,Arabis,caucasica
+Arachis hypogaea,accepted,63205,Arachis hypogaea,Arachis hypogaea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Dalbergieae,Arachis,hypogaea
+Aralia elata,accepted,158549,Aralia elata,Aralia elata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Araliaceae,,,Aralia,elata
+Argemone mexicana,accepted,128533,Argemone mexicana,Argemone mexicana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Papaveraceae,Papaveroideae,Papavereae,Argemone,mexicana
+Sorbus aria,unaccepted,900799,Aria edulis,Aria edulis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Aria,edulis
+Aristida oligantha,accepted,75562,Aristida oligantha,Aristida oligantha,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Aristidoideae,Aristideae,Aristida,oligantha
+Artemisia annua,accepted,75584,Artemisia annua,Artemisia annua,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Anthemideae,Artemisia,annua
+Artemisia scoparia,accepted,158721,Artemisia scoparia,Artemisia scoparia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Anthemideae,Artemisia,scoparia
+Artemisia stelleriana,accepted,158724,Artemisia stelleriana,Artemisia stelleriana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Anthemideae,Artemisia,stelleriana
+Asclepias ovalifolia,accepted,47905,Asclepias ovalifolia,Asclepias ovalifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Gentianales,,,,Apocynaceae,Asclepiadoideae,Asclepiadeae,Asclepias,ovalifolia
+Asperula arvensis,accepted,59279,Asperula arvensis,Asperula arvensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Gentianales,,,,Rubiaceae,Rubioideae,Rubieae,Asperula,arvensis
+Asplenium scolopendrium,accepted,129105,Asplenium scolopendrium,Asplenium scolopendrium,Plantae,Tracheophyta,,,Polypodiopsida,Polypodiidae,,Polypodiales,Aspleniinae,,,Aspleniaceae,,,Asplenium,scolopendrium
+Astilbe chinensis,accepted,1396475,Astilbe chinensis,Astilbe chinensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Saxifragales,,,,Saxifragaceae,,Astilbeae,Astilbe,chinensis
+Astragalus flexuosus,accepted,139637,Astragalus flexuosus,Astragalus flexuosus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Galegeae,Astragalus,flexuosus
+Astragalus trichopodus var. lonchus,accepted,80444,Astragalus trichopodus lonchus,Astragalus trichopodus lonchus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Galegeae,Astragalus,trichopodus
+Aucuba japonica,accepted,56206,Aucuba japonica,Aucuba japonica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Garryales,,,,Garryaceae,,,Aucuba,japonica
+Avena barbata,accepted,52696,Avena barbata,Avena barbata,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Poeae,Avena,barbata
+Barbarea intermedia,accepted,399949,Barbarea intermedia,Barbarea intermedia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Cardamineae,Barbarea,intermedia
+Berberis darwinii,accepted,75751,Berberis darwinii,Berberis darwinii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Berberidaceae,Berberidoideae,Berberideae,Berberis,darwinii
+Beta vulgaris,accepted,54498,Beta vulgaris,Beta vulgaris,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Amaranthaceae,Betoideae,Beteae,Beta,vulgaris
+Bidens pilosa,accepted,50203,Bidens pilosa,Bidens pilosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Coreopsideae,Bidens,pilosa
+Brassica oleracea,accepted,54516,Brassica oleracea,Brassica oleracea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Brassiceae,Brassica,oleracea
+Briza media,accepted,159452,Briza media,Briza media,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Poeae,Briza,media
+Bromus arvensis,accepted,75896,Bromus arvensis,Bromus arvensis,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Bromeae,Bromus,arvensis
+Bromus erectus,accepted,159458,Bromus erectus,Bromus erectus,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Bromeae,Bromus,erectus
+Bromus lanceolatus,accepted,159463,Bromus lanceolatus,Bromus lanceolatus,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Bromeae,Bromus,lanceolatus
+Bromus rubens,accepted,59210,Bromus rubens,Bromus rubens,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Bromeae,Bromus,rubens
+Bryonia dioica,unaccepted,55932,Bryonia cretica dioica,Bryonia cretica dioica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Cucurbitales,,,,Cucurbitaceae,,Bryonieae,Bryonia,cretica
+Bupleurum rotundifolia,unknown,,,Bupleurum subovatum,,,,,,,,,,,,,,,,
+Buxus sempervirens,accepted,133397,Buxus sempervirens,Buxus sempervirens,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Buxales,,,,Buxaceae,,,Buxus,sempervirens
+Calendula arvensis,accepted,59260,Calendula arvensis,Calendula arvensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Calenduleae,Calendula,arvensis
+Calystegia pubescens,accepted,204262,Calystegia pubescens,Calystegia pubescens,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Convolvulaceae,Convolvuloideae,Convolvuleae,Calystegia,pubescens
+Camissonia bistorta,unaccepted,75975,Camissoniopsis bistorta,Camissoniopsis bistorta,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Onagraceae,,,Camissoniopsis,bistorta
+Camissonia micrantha,unaccepted,75985,Camissoniopsis micrantha,Camissoniopsis micrantha,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Onagraceae,,,Camissoniopsis,micrantha
+Campanula glomerata,accepted,84349,Campanula glomerata,Campanula glomerata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Campanulaceae,Campanuloideae,,Campanula,glomerata
+Campanula porscharskyana,unknown,,,Campanula poscharskyana,,,,,,,,,,,,,,,,
+Campanula trachelium,accepted,48588,Campanula trachelium,Campanula trachelium,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Campanulaceae,Campanuloideae,,Campanula,trachelium
+Cannabis sativa,accepted,75997,Cannabis sativa,Cannabis sativa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Cannabaceae,,,Cannabis,sativa
+Carduus crispus,accepted,159854,Carduus crispus,Carduus crispus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Carduoideae,Cardueae,Carduus,crispus
+Carex flacca,accepted,159951,Carex flacca,Carex flacca,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Cariceae,Carex,flacca
+Carex frankii,accepted,129090,Carex frankii,Carex frankii,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Cariceae,Carex,frankii
+Carex hirta,accepted,159973,Carex hirta,Carex hirta,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Cariceae,Carex,hirta
+Carex testacea,accepted,408922,Carex testacea,Carex testacea,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Cariceae,Carex,testacea
+Castanea dentata,accepted,49186,Castanea dentata,Castanea dentata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fagales,,,,Fagaceae,,,Castanea,dentata
+Catalpa speciosa,accepted,76158,Catalpa speciosa,Catalpa speciosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Bignoniaceae,,Catalpeae,Catalpa,speciosa
+Caylusea abyssinica,unknown,,,Caylusea abyssinica,,,,,,,,,,,,,,,,
+Celastrus scandens,accepted,64538,Celastrus scandens,Celastrus scandens,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Celastrales,,,,Celastraceae,,,Celastrus,scandens
+Pennisetum alopecuroides,unaccepted,1030051,Cenchrus alopecuroides,Cenchrus alopecuroides,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Panicoideae,Paniceae,Cenchrus,alopecuroides
+Centaurea calcitrapa,accepted,56865,Centaurea calcitrapa,Centaurea calcitrapa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Carduoideae,Cardueae,Centaurea,calcitrapa
+Centaurea macrocephala,accepted,160276,Centaurea macrocephala,Centaurea macrocephala,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Carduoideae,Cardueae,Centaurea,macrocephala
+Centaurea solstitialis,accepted,52588,Centaurea solstitialis,Centaurea solstitialis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Carduoideae,Cardueae,Centaurea,solstitialis
+Chaenomeles speciosa,accepted,160369,Chaenomeles speciosa,Chaenomeles speciosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Chaenomeles,speciosa
+Chaerophyllum temulentum,unaccepted,55733,Chaerophyllum temulum,Chaerophyllum temulum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Apiaceae,Apioideae,Scandiceae,Chaerophyllum,temulum
+Chenopodium hybridum,unaccepted,896902,Chenopodiastrum hybridum,Chenopodiastrum hybridum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Amaranthaceae,Chenopodioideae,Atripliceae,Chenopodiastrum,hybridum
+Chenopodium probstii,unaccepted,58127,Chenopodium album,Chenopodium album,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Amaranthaceae,Chenopodioideae,Chenopodieae,Chenopodium,album
+Chenopodium opulifolium,accepted,160507,Chenopodium opulifolium,Chenopodium opulifolium,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Amaranthaceae,Chenopodioideae,Chenopodieae,Chenopodium,opulifolium
+Cicer arietinum,accepted,122854,Cicer arietinum,Cicer arietinum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Cicereae,Cicer,arietinum
+Citrullus lanatus,accepted,70054,Citrullus lanatus,Citrullus lanatus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Cucurbitales,,,,Cucurbitaceae,,Benincaseae,Citrullus,lanatus
+Cladanthus mixtus,accepted,82647,Cladanthus mixtus,Cladanthus mixtus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Anthemideae,Cladanthus,mixtus
+Clarkia arcuata,accepted,60088,Clarkia arcuata,Clarkia arcuata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Onagraceae,,,Clarkia,arcuata
+Colutea arborescens,accepted,76422,Colutea arborescens,Colutea arborescens,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Galegeae,Colutea,arborescens
+Consolida orientalis,accepted,160839,Consolida orientalis,Consolida orientalis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Ranunculaceae,Ranunculoideae,Delphinieae,Delphinium,orientalis
+Coreopsis tinctoria var. tinctoria,accepted,240127,Coreopsis tinctoria tinctoria,Coreopsis tinctoria tinctoria,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Coreopsideae,Coreopsis,tinctoria
+Coreopsis verticillata,accepted,129322,Coreopsis verticillata,Coreopsis verticillata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Coreopsideae,Coreopsis,verticillata
+Coriandrum sativum,accepted,67759,Coriandrum sativum,Coriandrum sativum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Apiaceae,Apioideae,Coriandreae,Coriandrum,sativum
+Corynephorus canescens,accepted,160927,Corynephorus canescens,Corynephorus canescens,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Poeae,Corynephorus,canescens
+Cosmos bipinnatus,accepted,68562,Cosmos bipinnatus,Cosmos bipinnatus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Coreopsideae,Cosmos,bipinnatus
+Cotoneaster x crispii,accepted,53376,Cotoneaster,Cotoneaster,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,
+Cotoneaster x suecicus ,accepted,53376,Cotoneaster,Cotoneaster,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,
+Cotoneaster x watereri,accepted,53376,Cotoneaster,Cotoneaster,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,
+Cotoneaster lacteus,unaccepted,411074,Cotoneaster coriaceus,Cotoneaster coriaceus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,coriaceus
+Cotoneaster crispii,accepted,1399468,Cotoneaster crispii,Cotoneaster crispii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,crispii
+Cotoneaster dielsianus,accepted,498529,Cotoneaster dielsianus,Cotoneaster dielsianus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,dielsianus
+Cotoneaster hjelmqvistii,accepted,498832,Cotoneaster hjelmqvistii,Cotoneaster hjelmqvistii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,hjelmqvistii
+Cotoneaster qungbixiensis,accepted,993678,Cotoneaster qungbixiensis,Cotoneaster qungbixiensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,qungbixiensis
+Cotoneaster hybridus pendulus,unknown,,,Cotoneaster salicifolius,,,,,,,,,,,,,,,,
+Cotoneaster salicifolius,accepted,337820,Cotoneaster salicifolius,Cotoneaster salicifolius,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,salicifolius
+Cotoneaster sternianus,accepted,791250,Cotoneaster sternianus,Cotoneaster sternianus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,sternianus
+Cotoneaster tengyuehensis,accepted,791244,Cotoneaster tengyuehensis,Cotoneaster tengyuehensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cotoneaster,tengyuehensis
+Cotula australis,accepted,53025,Cotula australis,Cotula australis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Anthemideae,Cotula,australis
+Crataegus phaenopyrum,accepted,141714,Crataegus phaenopyrum,Crataegus phaenopyrum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Crataegus,phaenopyrum
+Crepis biennis,accepted,161116,Crepis biennis,Crepis biennis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Cichorioideae,Cichorieae,Crepis,biennis
+Crepis setosa,accepted,76479,Crepis setosa,Crepis setosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Cichorioideae,Cichorieae,Crepis,setosa
+Crocus tommasinianus,accepted,55875,Crocus tommasinianus,Crocus tommasinianus,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Iridaceae,Crocoideae,Croceae,Crocus,tommasinianus
+Crocus vernus,accepted,55769,Crocus vernus,Crocus vernus,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Iridaceae,Crocoideae,Croceae,Crocus,vernus
+Cryptantha intermedia,accepted,57699,Cryptantha intermedia,Cryptantha intermedia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Boraginales,,,,Boraginaceae,Cynoglossoideae,Cynoglosseae,Cryptantha,intermedia
+Cucumis melo,accepted,76538,Cucumis melo,Cucumis melo,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Cucurbitales,,,,Cucurbitaceae,,Benincaseae,Cucumis,melo
+Cucurbita pepo,accepted,76541,Cucurbita pepo,Cucurbita pepo,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Cucurbitales,,,,Cucurbitaceae,,Cucurbiteae,Cucurbita,pepo
+Cydonia oblonga,accepted,82853,Cydonia oblonga,Cydonia oblonga,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Cydonia,oblonga
+Cynara cardunculus subsp. cardunculus,accepted,57566,Cynara cardunculus cardunculus,Cynara cardunculus cardunculus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Carduoideae,Cardueae,Cynara,cardunculus
+Cynara scolymus,unaccepted,861815,Cynara cardunculus scolymus,Cynara cardunculus scolymus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Carduoideae,Cardueae,Cynara,cardunculus
+Cyperus acuminatus,accepted,76582,Cyperus acuminatus,Cyperus acuminatus,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Cypereae,Cyperus,acuminatus
+Cyperus eragrostis,accepted,59055,Cyperus eragrostis,Cyperus eragrostis,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Cypereae,Cyperus,eragrostis
+Cyperus retrorsus,accepted,161485,Cyperus retrorsus,Cyperus retrorsus,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Cypereae,Cyperus,retrorsus
+Cytisus multiflorus,accepted,76596,Cytisus multiflorus,Cytisus multiflorus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Genisteae,Cytisus,multiflorus
+Cytisus villosus,accepted,161579,Cytisus villosus,Cytisus villosus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Genisteae,Cytisus,villosus
+Daboecia cantabrica,accepted,371651,Daboecia cantabrica,Daboecia cantabrica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ericales,,,,Ericaceae,Ericoideae,Ericeae,Daboecia,cantabrica
+Datura wrightii,accepted,58331,Datura wrightii,Datura wrightii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Datureae,Datura,wrightii
+Deutzia scabra 'Plena',accepted,161761,Deutzia scabra,Deutzia scabra,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Cornales,,,,Hydrangeaceae,,,Deutzia,scabra
+Dianthus gratianopolitanus,accepted,85439,Dianthus gratianopolitanus,Dianthus gratianopolitanus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,Caryophylloideae,Caryophylleae,Dianthus,gratianopolitanus
+Digitalis grandiflora,accepted,123625,Digitalis grandiflora,Digitalis grandiflora,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Digitalideae,Digitalis,grandiflora
+Digitalis lanata,accepted,147321,Digitalis lanata,Digitalis lanata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Digitalideae,Digitalis,lanata
+Digitalis lutea,accepted,161899,Digitalis lutea,Digitalis lutea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Digitalideae,Digitalis,lutea
+Leptochloa fusca,unaccepted,1377294,Diplachne fusca,Diplachne fusca,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Chloridoideae,Cynodonteae,Diplachne,fusca
+Leptochloa fusca subsp. uninervia,unaccepted,1377299,Diplachne fusca uninervia,Diplachne fusca uninervia,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Chloridoideae,Cynodonteae,Diplachne,fusca
+Diplotaxis muralis,accepted,76664,Diplotaxis muralis,Diplotaxis muralis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Brassiceae,Diplotaxis,muralis
+Dipsacus laciniatus,accepted,117438,Dipsacus laciniatus,Dipsacus laciniatus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Dipsacales,,,,Caprifoliaceae,Dipsacoideae,,Dipsacus,laciniatus
+Doronicum x plantagineum,accepted,61305,Doronicum,Doronicum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Senecioneae,Doronicum,
+Doronicum orientale,unaccepted,857164,Doronicum caucasicum,Doronicum caucasicum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Senecioneae,Doronicum,caucasicum
+Chenopodium ambrosioides,unaccepted,76746,Dysphania ambrosioides,Dysphania ambrosioides,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Amaranthaceae,Chenopodioideae,Dysphanieae,Dysphania,ambrosioides
+Cycloloma atriplicifolium,unaccepted,1452518,Dysphania atriplicifolia,Dysphania atriplicifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Amaranthaceae,Chenopodioideae,Dysphanieae,Dysphania,atriplicifolia
+Echinops exaltatus,accepted,162201,Echinops exaltatus,Echinops exaltatus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Carduoideae,Cardueae,Echinops,exaltatus
+Ehrharta erecta,accepted,64140,Ehrharta erecta,Ehrharta erecta,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Oryzoideae,Ehrharteae,Ehrharta,erecta
+Elaeagnus multiflora,accepted,162213,Elaeagnus multiflora,Elaeagnus multiflora,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Elaeagnaceae,,,Elaeagnus,multiflora
+Elaeagnus umbellata,accepted,64697,Elaeagnus umbellata,Elaeagnus umbellata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Elaeagnaceae,,,Elaeagnus,umbellata
+Eleocharis compressa,accepted,162236,Eleocharis compressa,Eleocharis compressa,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Eleocharideae,Eleocharis,compressa
+Eleocharis compressa var. compressa,accepted,1426753,Eleocharis compressa compressa,Eleocharis compressa compressa,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Eleocharideae,Eleocharis,compressa
+Eleocharis tenuis,accepted,76788,Eleocharis tenuis,Eleocharis tenuis,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Eleocharideae,Eleocharis,tenuis
+Eleocharis tenuis var. verrucosa,accepted,240482,Eleocharis tenuis verrucosa,Eleocharis tenuis verrucosa,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Eleocharideae,Eleocharis,tenuis
+Eleusine indica,accepted,76790,Eleusine indica,Eleusine indica,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Chloridoideae,Cynodonteae,Eleusine,indica
+Elodea callitrichoides,accepted,366210,Elodea callitrichoides,Elodea callitrichoides,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Alismatales,,,,Hydrocharitaceae,,,Elodea,callitrichoides
+Elymus dahuricus var. dahuricus,invalid,873887,Elymus dahuricus,Elymus dahuricus,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Triticeae,Elymus,dahuricus
+Epilobium komarovianum,accepted,359860,Epilobium komarovianum,Epilobium komarovianum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Onagraceae,,,Epilobium,komarovianum
+Epilobium glareosum,unaccepted,76828,Epilobium clavatum,Epilobium smithii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Onagraceae,,,Epilobium,clavatum
+Eragrostis curvula,accepted,76850,Eragrostis curvula,Eragrostis curvula,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Chloridoideae,Eragrostideae,Eragrostis,curvula
+Eragrostis tef,accepted,145597,Eragrostis tef,Eragrostis tef,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Chloridoideae,Eragrostideae,Eragrostis,tef
+Erechtites hieraciifolia,unaccepted,130888,Erechtites hieraciifolius,Erechtites hieraciifolius,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Senecioneae,Erechtites,hieraciifolius
+Erica cinerea,accepted,55775,Erica cinerea,Erica cinerea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ericales,,,,Ericaceae,Ericoideae,Ericeae,Erica,cinerea
+Conyza bonariensis,unaccepted,76904,Erigeron bonariensis,Erigeron bonariensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Erigeron,bonariensis
+Erodium moschatum,accepted,57092,Erodium moschatum,Erodium moschatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Geraniales,,,,Geraniaceae,,,Erodium,moschatum
+Eruca vesicaria subsp. sativa,unaccepted,284707,Eruca sativa,Eruca sativa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Brassiceae,Eruca,sativa
+Eryngium giganteum,accepted,359455,Eryngium giganteum,Eryngium giganteum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Apiaceae,Saniculoideae,Saniculeae,Eryngium,giganteum
+Erysimum repandum,accepted,77073,Erysimum repandum,Erysimum repandum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Erysimeae,Erysimum,repandum
+Eupatorium altissimum,accepted,119135,Eupatorium altissimum,Eupatorium altissimum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Eupatorieae,Eupatorium,altissimum
+Euphorbia characias subsp. wulfenii,accepted,414340,Euphorbia characias wulfenii,Euphorbia characias wulfenii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Euphorbiaceae,Euphorbioideae,Euphorbieae,Euphorbia,characias
+Euphorbia marginata,accepted,120507,Euphorbia marginata,Euphorbia marginata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Euphorbiaceae,Euphorbioideae,Euphorbieae,Euphorbia,marginata
+Chamaesyce nutans,unaccepted,200052,Euphorbia nutans,Euphorbia nutans,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Euphorbiaceae,Euphorbioideae,Euphorbieae,Euphorbia,nutans
+Euphorbia oblongata,accepted,77117,Euphorbia oblongata,Euphorbia oblongata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Euphorbiaceae,Euphorbioideae,Euphorbieae,Euphorbia,oblongata
+Chamaesyce serpens,unaccepted,200054,Euphorbia serpens,Euphorbia serpens,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Euphorbiaceae,Euphorbioideae,Euphorbieae,Euphorbia,serpens
+Euphorbia serrulata,unaccepted,401781,Euphorbia stricta,Euphorbia stricta,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Euphorbiaceae,Euphorbioideae,Euphorbieae,Euphorbia,stricta
+Chamaesyce vermiculata,unaccepted,204171,Euphorbia vermiculata,Euphorbia vermiculata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Euphorbiaceae,Euphorbioideae,Euphorbieae,Euphorbia,vermiculata
+Euphorbia vermiculata,accepted,204171,Euphorbia vermiculata,Euphorbia vermiculata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Euphorbiaceae,Euphorbioideae,Euphorbieae,Euphorbia,vermiculata
+Eutrochium maculatum var. maculatum,accepted,355617,Eutrochium maculatum maculatum,Eutrochium maculatum maculatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Eupatorieae,Eutrochium,maculatum
+Fagopyrum tataricum,accepted,162931,Fagopyrum tataricum,Fagopyrum tataricum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Fagopyreae,Fagopyrum,tataricum
+Fallopia baldschuanica,accepted,77128,Fallopia baldschuanica,Fallopia baldschuanica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Polygoneae,Fallopia,baldschuanica
+Fallopia dumetorum,accepted,204320,Fallopia dumetorum,Fallopia dumetorum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Polygoneae,Fallopia,dumetorum
+Festuca cinerea,accepted,934065,Festuca cinerea,Festuca cinerea,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Poeae,Festuca,cinerea
+Filipendula ulmaria,accepted,63134,Filipendula ulmaria,Filipendula ulmaria,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Rosoideae,Ulmarieae,Filipendula,ulmaria
+Filipendula vulgaris,accepted,62020,Filipendula vulgaris,Filipendula vulgaris,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Rosoideae,Ulmarieae,Filipendula,vulgaris
+Forsythia x intermedia,accepted,60580,Forsythia,Forsythia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Oleaceae,,,Forsythia,
+Fraxinus excelsior,accepted,125440,Fraxinus excelsior,Fraxinus excelsior,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Oleaceae,,,Fraxinus,excelsior
+Galeopsis speciosa,accepted,163165,Galeopsis speciosa,Galeopsis speciosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Lamioideae,,Galeopsis,speciosa
+Galium divaricatum,accepted,77193,Galium divaricatum,Galium divaricatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Gentianales,,,,Rubiaceae,Rubioideae,Rubieae,Galium,divaricatum
+Galium murale,accepted,59005,Galium murale,Galium murale,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Gentianales,,,,Rubiaceae,Rubioideae,Rubieae,Galium,murale
+Gamochaeta pensylvanica,accepted,77221,Gamochaeta pensylvanica,Gamochaeta pensylvanica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Gnaphalieae,Gamochaeta,pensylvanica
+Cytisus monspessulanus,unknown,,,Genista monspessulana,,,,,,,,,,,,,,,,
+Teline monspessulana,unaccepted,53403,Genista monspessulana,Genista monspessulana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Genisteae,Genista,monspessulana
+Genista pilosa,accepted,371833,Genista pilosa,Genista pilosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Genisteae,Genista,pilosa
+Genista sagittalis,accepted,139079,Genista sagittalis,Genista sagittalis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Genisteae,Genista,sagittalis
+Geranium columbinum,accepted,77253,Geranium columbinum,Geranium columbinum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Geraniales,,,,Geraniaceae,,,Geranium,columbinum
+Geranium macrorrhizum,accepted,320685,Geranium macrorrhizum,Geranium macrorrhizum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Geraniales,,,,Geraniaceae,,,Geranium,macrorrhizum
+Geranium pratense,accepted,55722,Geranium pratense,Geranium pratense,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Geraniales,,,,Geraniaceae,,,Geranium,pratense
+Geranium pyrenaicum,accepted,77259,Geranium pyrenaicum,Geranium pyrenaicum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Geraniales,,,,Geraniaceae,,,Geranium,pyrenaicum
+Geranium sanguineum,accepted,129853,Geranium sanguineum,Geranium sanguineum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Geraniales,,,,Geraniaceae,,,Geranium,sanguineum
+Geranium sibiricum,accepted,163265,Geranium sibiricum,Geranium sibiricum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Geraniales,,,,Geraniaceae,,,Geranium,sibiricum
+Gilia achilleifolia,accepted,51098,Gilia achilleifolia,Gilia achilleifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ericales,,,,Polemoniaceae,,,Gilia,achilleifolia
+Glandularia x hybrida,accepted,81794,Glandularia,Glandularia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Verbenaceae,,Verbeneae,Glandularia,
+Guizotia abyssinica,accepted,163437,Guizotia abyssinica,Guizotia abyssinica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Millerieae,Guizotia,abyssinica
+Gunnera tinctoria,accepted,77310,Gunnera tinctoria,Gunnera tinctoria,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Gunnerales,,,,Gunneraceae,,,Gunnera,tinctoria
+Gypsophila elegans,accepted,77314,Gypsophila elegans,Gypsophila elegans,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,Caryophylloideae,Caryophylleae,Gypsophila,elegans
+Hedera colchica,accepted,163548,Hedera colchica,Hedera colchica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Araliaceae,,,Hedera,colchica
+Helianthus x laetiflorus,accepted,56955,Helianthus,Helianthus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Heliantheae,Helianthus,
+Helianthus petiolaris,accepted,77360,Helianthus petiolaris,Helianthus petiolaris,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Heliantheae,Helianthus,petiolaris
+Helianthus petiolaris subsp. petiolaris,accepted,79934,Helianthus petiolaris petiolaris,Helianthus petiolaris petiolaris,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Heliantheae,Helianthus,petiolaris
+Heliopsis helianthoides,accepted,130382,Heliopsis helianthoides,Heliopsis helianthoides,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Heliantheae,Heliopsis,helianthoides
+Heliopsis helianthoides var. scabra,accepted,240988,Heliopsis helianthoides scabra,Heliopsis helianthoides scabra,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Heliantheae,Heliopsis,helianthoides
+Picris echioides,unaccepted,61906,Helminthotheca echioides,Helminthotheca echioides,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Cichorioideae,Cichorieae,Helminthotheca,echioides
+Hemerocallis fulva,accepted,126583,Hemerocallis fulva,Hemerocallis fulva,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Asphodelaceae,Hemerocallidoideae,,Hemerocallis,fulva
+Heracleum sphondylium,accepted,163682,Heracleum sphondylium,Heracleum sphondylium,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Apiaceae,Apioideae,Tordylieae,Heracleum,sphondylium
+Herniaria glabra,accepted,163692,Herniaria glabra,Herniaria glabra,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,,Paronychieae,Herniaria,glabra
+Heterotheca subaxillaris,accepted,77398,Heterotheca subaxillaris,Heterotheca subaxillaris,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Heterotheca,subaxillaris
+Heterotheca subaxillaris subsp. subaxillaris,accepted,315522,Heterotheca subaxillaris subaxillaris,Heterotheca subaxillaris subaxillaris,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Heterotheca,subaxillaris
+Hibiscus trionum,accepted,77411,Hibiscus trionum,Hibiscus trionum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malvales,,,,Malvaceae,Malvoideae,Hibisceae,Hibiscus,trionum
+Hieracium inops,unknown,,,Hieracium × inops,,,,,,,,,,,,,,,,
+Hippophae rhamnoides,accepted,163812,Hippophae rhamnoides,Hippophae rhamnoides,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Elaeagnaceae,,,Hippophae,rhamnoides
+Hydrocotyle sibthorpioides,accepted,128684,Hydrocotyle sibthorpioides,Hydrocotyle sibthorpioides,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Araliaceae,Hydrocotyloideae,,Hydrocotyle,sibthorpioides
+Hylotelephium erythrostictum,accepted,163907,Hylotelephium erythrostictum,Hylotelephium erythrostictum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Saxifragales,,,,Crassulaceae,Sempervivoideae,Telephieae,Hylotelephium,erythrostictum
+Hylotelephium telephioides,accepted,118744,Hylotelephium telephioides,Hylotelephium telephioides,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Saxifragales,,,,Crassulaceae,Sempervivoideae,Telephieae,Hylotelephium,telephioides
+Hylotelephium telephium,accepted,84031,Hylotelephium telephium,Hylotelephium telephium,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Saxifragales,,,,Crassulaceae,Sempervivoideae,Telephieae,Hylotelephium,telephium
+Hypericum canadense,accepted,155005,Hypericum canadense,Hypericum canadense,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Hypericaceae,,Hypericeae,Hypericum,canadense
+Hypericum humifusum,accepted,163974,Hypericum humifusum,Hypericum humifusum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Hypericaceae,,Hypericeae,Hypericum,humifusum
+Hypericum kouytchense,accepted,402661,Hypericum kouytchense,Hypericum kouytchense,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Hypericaceae,,Hypericeae,Hypericum,kouytchense
+Hypericum tetrapterum,accepted,207572,Hypericum tetrapterum,Hypericum tetrapterum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Hypericaceae,,Hypericeae,Hypericum,tetrapterum
+Iberis sempervirens,accepted,164028,Iberis sempervirens,Iberis sempervirens,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Iberideae,Iberis,sempervirens
+Ilex x altaclerensis,accepted,861032,Ilex,Ilex,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fagales,,,,Fagaceae,,,Quercus,
+Illecebrum verticillatum,accepted,154802,Illecebrum verticillatum,Illecebrum verticillatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,,Polycarpeae,Illecebrum,verticillatum
+Ionopsidium acaule,accepted,164074,Ionopsidium acaule,Ionopsidium acaule,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Cochlearieae,Ionopsidium,acaule
+Ipomoea hederacea,accepted,77495,Ipomoea hederacea,Ipomoea hederacea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Convolvulaceae,Convolvuloideae,Ipomoeeae,Ipomoea,hederacea
+Ipomoea purpurea,accepted,52344,Ipomoea purpurea,Ipomoea purpurea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Convolvulaceae,Convolvuloideae,Ipomoeeae,Ipomoea,purpurea
+Iris germanica,unaccepted,709635,Iris × germanica,Iris × germanica,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Iridaceae,Iridoideae,Irideae,Iris,
+Iris versicolor,accepted,48726,Iris versicolor,Iris versicolor,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Iridaceae,Iridoideae,Irideae,Iris,versicolor
+Isolepis pseudosetacea,accepted,436600,Isolepis pseudosetacea,Isolepis pseudosetacea,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Cyperaceae,Cyperoideae,Cypereae,Isolepis,pseudosetacea
+Jasione montana,accepted,55022,Jasione montana,Jasione montana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Campanulaceae,Campanuloideae,,Jasione,montana
+Juglans regia,accepted,63935,Juglans regia,Juglans regia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fagales,,,,Juglandaceae,,,Juglans,regia
+Kickxia spuria,accepted,64191,Kickxia spuria,Kickxia spuria,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Antirrhineae,Kickxia,spuria
+Kolkwitzia amabilis,accepted,52501,Kolkwitzia amabilis,Kolkwitzia amabilis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Dipsacales,,,,Caprifoliaceae,Linnaeoideae,,Kolkwitzia,amabilis
+Lamium maculatum,accepted,55828,Lamium maculatum,Lamium maculatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Lamioideae,Lamieae,Lamium,maculatum
+Lavandula angustifolia,accepted,133395,Lavandula angustifolia,Lavandula angustifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Ocimeae,Lavandula,angustifolia
+Leonurus quinquelobatus,accepted,603675,Leonurus quinquelobatus,Leonurus quinquelobatus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Lamioideae,Leonureae,Leonurus,quinquelobatus
+Leucanthemella serotina,accepted,164646,Leucanthemella serotina,Leucanthemella serotina,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Anthemideae,Leucanthemella,serotina
+Levisticum officinale,accepted,59432,Levisticum officinale,Levisticum officinale,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Apiaceae,Apioideae,,Levisticum,officinale
+Liatris punctata,accepted,130379,Liatris punctata,Liatris punctata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Eupatorieae,Liatris,punctata
+Ligustrum amurense,unaccepted,1230084,Ligustrum obtusifolium obtusifolium,Ligustrum obtusifolium obtusifolium,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Oleaceae,,,Ligustrum,obtusifolium
+Lilium lancifolium,accepted,49524,Lilium lancifolium,Lilium lancifolium,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Liliales,,,,Liliaceae,Lilioideae,Lilieae,Lilium,lancifolium
+Limnanthes douglasii,accepted,51336,Limnanthes douglasii,Limnanthes douglasii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Limnanthaceae,,,Limnanthes,douglasii
+Linaria maroccana,accepted,52405,Linaria maroccana,Linaria maroccana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Antirrhineae,Linaria,maroccana
+Linaria pinifolia,accepted,77777,Linaria pinifolia,Linaria pinifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Antirrhineae,Linaria,pinifolia
+Lobelia erinus,accepted,77797,Lobelia erinus,Lobelia erinus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Campanulaceae,Lobelioideae,,Lobelia,erinus
+Lobelia siphalitica,unknown,,,Lobelia siphilitica,,,,,,,,,,,,,,,,
+Lolium persicum,accepted,164709,Lolium persicum,Lolium persicum,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Poeae,Lolium,persicum
+Lonicera acuminata,accepted,603382,Lonicera acuminata,Lonicera acuminata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Dipsacales,,,,Caprifoliaceae,Caprifolioideae,,Lonicera,acuminata
+Lonicera caprifolium,accepted,51873,Lonicera caprifolium,Lonicera caprifolium,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Dipsacales,,,,Caprifoliaceae,Caprifolioideae,,Lonicera,caprifolium
+Lonicera morrowii,accepted,59773,Lonicera morrowii,Lonicera morrowii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Dipsacales,,,,Caprifoliaceae,Caprifolioideae,,Lonicera,morrowii
+Lonicera xylosteum,accepted,124548,Lonicera xylosteum,Lonicera xylosteum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Dipsacales,,,,Caprifoliaceae,Caprifolioideae,,Lonicera,xylosteum
+Lupinus angustifolius,accepted,119661,Lupinus angustifolius,Lupinus angustifolius,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Genisteae,Lupinus,angustifolius
+Lupinus depressus,accepted,164891,Lupinus depressus,Lupinus depressus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Genisteae,Lupinus,depressus
+Lupinus formusus,unknown,,,Lupinus formosus,,,,,,,,,,,,,,,,
+Lupinus luteus,accepted,55440,Lupinus luteus,Lupinus luteus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Genisteae,Lupinus,luteus
+Lupinus nanus subsp. nanus,accepted,237117,Lupinus nanus nanus,Lupinus nanus nanus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Genisteae,Lupinus,nanus
+Luzula nivea,accepted,336659,Luzula nivea,Luzula nivea,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Juncaceae,,,Luzula,nivea
+Lysimachia verticillaris,accepted,1304035,Lysimachia verticillaris,Lysimachia verticillaris,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ericales,,,,Primulaceae,Myrsinoideae,,Lysimachia,verticillaris
+Lythrum alatum,accepted,128998,Lythrum alatum,Lythrum alatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Lythraceae,,,Lythrum,alatum
+Malus baccata,accepted,165104,Malus baccata,Malus baccata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Malus,baccata
+Malus hupehensis,accepted,133352,Malus hupehensis,Malus hupehensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Malus,hupehensis
+Malus prunifolia,accepted,58735,Malus prunifolia,Malus prunifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Malus,prunifolia
+Malva alcea,accepted,146876,Malva alcea,Malva alcea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malvales,,,,Malvaceae,Malvoideae,Malveae,Malva,alcea
+Malva verticillata,accepted,77954,Malva verticillata,Malva verticillata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malvales,,,,Malvaceae,Malvoideae,Malveae,Malva,verticillata
+Matthiola incana,accepted,77966,Matthiola incana,Matthiola incana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Anchonieae,Matthiola,incana
+Medicago minima,accepted,77971,Medicago minima,Medicago minima,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Trifolieae,Medicago,minima
+Melilotus indica,unaccepted,57065,Melilotus indicus,Melilotus indicus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Trifolieae,Melilotus,indicus
+Melilotus sulcatus,accepted,165290,Melilotus sulcatus,Melilotus sulcatus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Trifolieae,Melilotus,sulcatus
+Mentha cervina,accepted,326747,Mentha cervina,Mentha cervina,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Mentha,cervina
+Mentha longifolia,accepted,77992,Mentha longifolia,Mentha longifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Mentha,longifolia
+Mentha longifolia subsp. longifolia,accepted,555478,Mentha longifolia longifolia,Mentha longifolia longifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Mentha,longifolia
+Mentha requienii,accepted,346986,Mentha requienii,Mentha requienii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Mentha,requienii
+Mibora minima,accepted,165369,Mibora minima,Mibora minima,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Poeae,Mibora,minima
+Micromeria graeca,accepted,467566,Micromeria graeca,Micromeria graeca,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Micromeria,graeca
+Micromeria graeca subsp. fruticulosa,accepted,467568,Micromeria graeca fruticulosa,Micromeria graeca fruticulosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Micromeria,graeca
+Miscanthus sinensis,accepted,165474,Miscanthus sinensis,Miscanthus sinensis,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Panicoideae,Andropogoneae,Miscanthus,sinensis
+Miscanthus sinensis,accepted,165474,Miscanthus sinensis,Miscanthus sinensis,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Panicoideae,Andropogoneae,Miscanthus,sinensis
+Misopates orontium,accepted,59270,Misopates orontium,Misopates orontium,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Antirrhineae,Misopates,orontium
+Molinia caerulea,accepted,165499,Molinia caerulea,Molinia caerulea,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Arundinoideae,Molinieae,Molinia,caerulea
+Narcissus x incomparabilis,accepted,993276,Narcissus,Narcissus,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Amaryllidaceae,Amaryllidoideae,Narcisseae,Narcissus,
+Nassella tenuissima,accepted,165660,Nassella tenuissima,Nassella tenuissima,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Stipeae,Nassella,tenuissima
+Schizonepeta tenuifolia,unknown,,,Nepeta tenuifolia,,,,,,,,,,,,,,,,
+Pysalis peruviana,unknown,,,Nicandra physalodes,,,,,,,,,,,,,,,,
+Nicandra physalodes,accepted,78217,Nicandra physalodes,Nicandra physalodes,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Nicandreae,Nicandra,physalodes
+Nicotiana alata,accepted,165703,Nicotiana alata,Nicotiana alata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Nicotianoideae,,Nicotiana,alata
+Nicotiana langsdorffii,accepted,204365,Nicotiana langsdorffii,Nicotiana langsdorffii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Nicotianoideae,,Nicotiana,langsdorffii
+Nicotiana quadrivalvis,accepted,58336,Nicotiana quadrivalvis,Nicotiana quadrivalvis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Nicotianoideae,,Nicotiana,quadrivalvis
+Nicotiana rustica,accepted,165707,Nicotiana rustica,Nicotiana rustica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Nicotianoideae,,Nicotiana,rustica
+Nicotiana sylvestris,accepted,78221,Nicotiana sylvestris,Nicotiana sylvestris,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Nicotianoideae,,Nicotiana,sylvestris
+Nigella damascena,accepted,62313,Nigella damascena,Nigella damascena,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Ranunculaceae,Ranunculoideae,Nigelleae,Nigella,damascena
+Nonea vesicaria,accepted,165730,Nonea vesicaria,Nonea vesicaria,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Boraginales,,,,Boraginaceae,Boraginoideae,Boragineae,Nonea,vesicaria
+Nothoscordum bivalve,accepted,125462,Nothoscordum bivalve,Nothoscordum bivalve,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Amaryllidaceae,Allioideae,Gilliesieae,Nothoscordum,bivalve
+Nymphaea x marliacea,accepted,51122,Nymphaea,Nymphaea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Nymphaeales,,,,Nymphaeaceae,,,Nymphaea,
+Gaura mollis,unaccepted,78241,Oenothera curtiflora,Oenothera curtiflora,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Onagraceae,,,Oenothera,curtiflora
+Oenothera curtiflora,accepted,78241,Oenothera curtiflora,Oenothera curtiflora,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Onagraceae,,,Oenothera,curtiflora
+Gaura lindheimeri,unaccepted,590726,Oenothera lindheimeri,Oenothera lindheimeri,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Onagraceae,,,Oenothera,lindheimeri
+Oenothera macrocarpa subsp. macrocarpa,accepted,237522,Oenothera macrocarpa macrocarpa,Oenothera macrocarpa macrocarpa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Onagraceae,,,Oenothera,macrocarpa
+Oenothera stricta subsp. stricta,accepted,80080,Oenothera stricta stricta,Oenothera stricta stricta,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Onagraceae,,,Oenothera,stricta
+Ophioglossum petiolatum,accepted,165861,Ophioglossum petiolatum,Ophioglossum petiolatum,Plantae,Tracheophyta,,,Polypodiopsida,Ophioglossidae,,Ophioglossales,,,,Ophioglossaceae,Ophioglossoideae,,Ophioglossum,petiolatum
+Origanum heracleoticum,unaccepted,362402,Origanum vulgare viridulum,Origanum vulgare viridulum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Origanum,vulgare
+Ornithopus perpusillus,accepted,55668,Ornithopus perpusillus,Ornithopus perpusillus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Loteae,Ornithopus,perpusillus
+Oxalis debilis var. corymbosa,unaccepted,61963,Oxalis debilis,Oxalis debilis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Oxalidales,,,,Oxalidaceae,,,Oxalis,debilis
+Oxalis exilis,accepted,57865,Oxalis exilis,Oxalis exilis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Oxalidales,,,,Oxalidaceae,,,Oxalis,exilis
+Thlaspi macrophyllum,unaccepted,371906,Pachyphragma macrophyllum,Pachyphragma macrophyllum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Thlaspideae,Pachyphragma,macrophyllum
+Papaver atlanticum,accepted,347013,Papaver atlanticum,Papaver atlanticum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Papaveraceae,Papaveroideae,Papavereae,Papaver,atlanticum
+Papaver orientale,accepted,166114,Papaver orientale,Papaver orientale,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Papaveraceae,Papaveroideae,Papavereae,Papaver,orientale
+Parietaria hespera,accepted,58338,Parietaria hespera,Parietaria hespera,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Urticaceae,,,Parietaria,hespera
+Parietaria hespera var. hespera,accepted,81178,Parietaria hespera hespera,Parietaria hespera hespera,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Urticaceae,,,Parietaria,hespera
+Paspalum dilatatum,accepted,60295,Paspalum dilatatum,Paspalum dilatatum,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Panicoideae,Paspaleae,Paspalum,dilatatum
+Perilla frutescens var. crispa,accepted,242111,Perilla frutescens crispa,Perilla frutescens crispa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Elsholtzieae,Perilla,frutescens
+Perilla frutescens var. frutescens,accepted,242112,Perilla frutescens frutescens,Perilla frutescens frutescens,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Elsholtzieae,Perilla,frutescens
+Persicaria orientalis,accepted,78454,Persicaria orientalis,Persicaria orientalis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Persicarieae,Persicaria,orientalis
+Polygonum perfoliatum,unaccepted,131249,Persicaria perfoliata,Persicaria perfoliata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Persicarieae,Persicaria,perfoliata
+Persicaria perfoliata,accepted,131249,Persicaria perfoliata,Persicaria perfoliata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Persicarieae,Persicaria,perfoliata
+Petrorhagia nanteuilii,accepted,78464,Petrorhagia nanteuilii,Petrorhagia nanteuilii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,Caryophylloideae,Caryophylleae,Petrorhagia,nanteuilii
+Petroselinum crispum,accepted,78465,Petroselinum crispum,Petroselinum crispum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Apiaceae,Apioideae,Apieae,Petroselinum,crispum
+Petunia x atkinsiana,accepted,55406,Petunia,Petunia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Petunioideae,,Petunia,
+Phacelia tanacetifolia,accepted,58185,Phacelia tanacetifolia,Phacelia tanacetifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Boraginales,,,,Boraginaceae,Hydrophylloideae,,Phacelia,tanacetifolia
+Phalaris minor,accepted,57194,Phalaris minor,Phalaris minor,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Poeae,Phalaris,minor
+Phaseolus vulgaris,accepted,122850,Phaseolus vulgaris,Phaseolus vulgaris,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Phaseoleae,Phaseolus,vulgaris
+Phyllostachys aurea,accepted,78563,Phyllostachys aurea,Phyllostachys aurea,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Bambusoideae,Arundinarieae,Phyllostachys,aurea
+Physalis grisea,accepted,166805,Physalis grisea,Physalis grisea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Physaleae,Physalis,grisea
+Physalis longifolia var. longifolia,accepted,242210,Physalis longifolia longifolia,Physalis longifolia longifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Physaleae,Physalis,longifolia
+Physalis peruviana,accepted,51988,Physalis peruviana,Physalis peruviana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Physaleae,Physalis,peruviana
+Physalis pubescens,accepted,78570,Physalis pubescens,Physalis pubescens,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Physaleae,Physalis,pubescens
+Phytolacca americana,accepted,48599,Phytolacca americana,Phytolacca americana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Phytolaccaceae,,,Phytolacca,americana
+Hieracium lactucella,unaccepted,451913,Pilosella lactucella,Pilosella lactucella,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Cichorioideae,Cichorieae,Pilosella,lactucella
+Pinus sylvestris,accepted,58722,Pinus sylvestris,Pinus sylvestris,Plantae,Tracheophyta,,,Pinopsida,,,Pinales,,,,Pinaceae,Pinoideae,,Pinus,sylvestris
+Pisum sativum,accepted,54522,Pisum sativum,Pisum sativum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Fabeae,Pisum,sativum
+Plantago aristata,accepted,78616,Plantago aristata,Plantago aristata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Plantagineae,Plantago,aristata
+Plantago ovata,accepted,58230,Plantago ovata,Plantago ovata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Plantagineae,Plantago,ovata
+Polygala vulgaris,accepted,167210,Polygala vulgaris,Polygala vulgaris,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Polygalaceae,,Polygaleae,Polygala,vulgaris
+Polypogon fugax,accepted,405144,Polypogon fugax,Polypogon fugax,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Poeae,Polypogon,fugax
+Polypogon viridis,accepted,64144,Polypogon viridis,Polypogon viridis,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Pooideae,Poeae,Polypogon,viridis
+Pontederia cordata,accepted,52599,Pontederia cordata,Pontederia cordata,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Commelinales,,,,Pontederiaceae,,,Pontederia,cordata
+Populus x canescens,accepted,1430522,Populus,Populus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Salicaceae,,,Populus,
+Populus alba,accepted,47570,Populus alba,Populus alba,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Salicaceae,,,Populus,alba
+Populus grandidentata,accepted,54839,Populus grandidentata,Populus grandidentata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Salicaceae,,,Populus,grandidentata
+Populus tremula,accepted,47571,Populus tremula,Populus tremula,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Salicaceae,,,Populus,tremula
+Potentilla reptans,accepted,167373,Potentilla reptans,Potentilla reptans,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Rosoideae,Potentilleae,Potentilla,reptans
+Potentilla verna,accepted,204391,Potentilla verna,Potentilla verna,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Rosoideae,Potentilleae,Potentilla,verna
+Prunus domestica,accepted,63735,Prunus domestica,Prunus domestica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Amygdaleae,Prunus,domestica
+Prunus lusitanica,accepted,127529,Prunus lusitanica,Prunus lusitanica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Amygdaleae,Prunus,lusitanica
+Prunus persica,accepted,78755,Prunus persica,Prunus persica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Amygdaleae,Prunus,persica
+Prunus persica var. persica,accepted,600844,Prunus persica persica,Prunus persica persica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Amygdaleae,Prunus,persica
+Gypsophila muralis,unaccepted,1092837,Psammophiliella muralis,Psammophiliella muralis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,Caryophylloideae,Caryophylleae,Psammophiliella,muralis
+Centaurea dealbata,unaccepted,522029,Psephellus dealbatus,Psephellus dealbatus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Carduoideae,Cardueae,Psephellus,dealbatus
+Minuartia macrocarpa,unaccepted,836924,Pseudocherleria macrocarpa,Pseudocherleria macrocarpa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,,Sclerantheae,Pseudocherleria,macrocarpa
+Pseudognaphalium luteoalbum,accepted,53083,Pseudognaphalium luteoalbum,Pseudognaphalium luteoalbum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Gnaphalieae,Pseudognaphalium,luteoalbum
+Arundinaria humilis,unknown,,,Pseudosasa humilis,,,,,,,,,,,,,,,,
+Pseudosasa japonica,accepted,167508,Pseudosasa japonica,Pseudosasa japonica,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Bambusoideae,Arundinarieae,Pseudosasa,japonica
+Pyracantha fortuneana,accepted,78791,Pyracantha fortuneana,Pyracantha fortuneana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Maleae,Pyracantha,fortuneana
+Quercus rubra,accepted,49005,Quercus rubra,Quercus rubra,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fagales,,,,Fagaceae,,,Quercus,rubra
+Ranunculus x heimburgerae,accepted,1365503,Ranunculus,Ranunculus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Ranunculaceae,Ranunculoideae,Ranunculeae,Ranunculus,
+Ranunculus arvensis,accepted,78818,Ranunculus arvensis,Ranunculus arvensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Ranunculaceae,Ranunculoideae,Ranunculeae,Ranunculus,arvensis
+Ranunculus eschscholtzii var. eximius,unaccepted,167721,Ranunculus eximius,Ranunculus eximius,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Ranunculaceae,Ranunculoideae,Ranunculeae,Ranunculus,eximius
+Ranunculus flammula var. flammula,accepted,81329,Ranunculus flammula flammula,Ranunculus flammula flammula,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Ranunculaceae,Ranunculoideae,Ranunculeae,Ranunculus,flammula
+Ranunculus hebecarpus,accepted,57239,Ranunculus hebecarpus,Ranunculus hebecarpus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Ranunculaceae,Ranunculoideae,Ranunculeae,Ranunculus,hebecarpus
+Ranunculus occidentalis var. brevistylis,accepted,242563,Ranunculus occidentalis brevistylis,Ranunculus occidentalis brevistylis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ranunculales,,,,Ranunculaceae,Ranunculoideae,Ranunculeae,Ranunculus,occidentalis
+Rapistrum rugosum,accepted,78835,Rapistrum rugosum,Rapistrum rugosum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Brassiceae,Rapistrum,rugosum
+Reseda luteola,accepted,78839,Reseda luteola,Reseda luteola,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Resedaceae,,,Reseda,luteola
+Reseda odorata,accepted,78840,Reseda odorata,Reseda odorata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Resedaceae,,,Reseda,odorata
+Rhexia virginica,accepted,130690,Rhexia virginica,Rhexia virginica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Myrtales,,,,Melastomataceae,Melastomatoideae,Rhexieae,Rhexia,virginica
+Rhus typhina,accepted,167829,Rhus typhina,Rhus typhina,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Sapindales,,,,Anacardiaceae,Anacardioideae,,Rhus,typhina
+Ribes nigrum,accepted,54430,Ribes nigrum,Ribes nigrum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Saxifragales,,,,Grossulariaceae,,,Ribes,nigrum
+Ribes watsonianum,accepted,167921,Ribes watsonianum,Ribes watsonianum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Saxifragales,,,,Grossulariaceae,,,Ribes,watsonianum
+Robinia viscosa,accepted,167943,Robinia viscosa,Robinia viscosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Robinieae,Robinia,viscosa
+Rorippa austriaca,accepted,78874,Rorippa austriaca,Rorippa austriaca,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Cardamineae,Rorippa,austriaca
+Rorippa microsperma,unknown,,,Rorippa cantoniensis,,,,,,,,,,,,,,,,
+Rorippa cantoniensis,accepted,167960,Rorippa cantoniensis,Rorippa cantoniensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Cardamineae,Rorippa,cantoniensis
+Rorippa heterophylla,unaccepted,359574,Rorippa dubia,Rorippa dubia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Cardamineae,Rorippa,dubia
+Rorippa globosa,accepted,204397,Rorippa globosa,Rorippa globosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Cardamineae,Rorippa,globosa
+Rorippa indica var.  indica,invalid,167965,Rorippa indica,Rorippa indica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Brassicaceae,Brassicoideae,Cardamineae,Rorippa,indica
+Dracopis amplexicaulis,unaccepted,200073,Rudbeckia amplexicaulis,Rudbeckia amplexicaulis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Heliantheae,Rudbeckia,amplexicaulis
+Rumex x pratensis,accepted,1540581,Rumex,Rumex,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Rumiceae,Rumex,
+Rumex flexuosus,accepted,405775,Rumex flexuosus,Rumex flexuosus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Rumiceae,Rumex,flexuosus
+Rumex hydrolapathum,accepted,371574,Rumex hydrolapathum,Rumex hydrolapathum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Rumiceae,Rumex,hydrolapathum
+Rumex pseudonatronatus,accepted,168249,Rumex pseudonatronatus,Rumex pseudonatronatus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Rumiceae,Rumex,pseudonatronatus
+Rumex rugosus,accepted,622883,Rumex rugosus,Rumex rugosus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Polygonaceae,Polygonoideae,Rumiceae,Rumex,rugosus
+Salix x sepulcralis,accepted,1237164,Salix,Salix,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Salicaceae,,,Salix,
+Salix cinerea,accepted,168326,Salix cinerea,Salix cinerea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Salicaceae,,,Salix,cinerea
+Salix viminalis,accepted,55822,Salix viminalis,Salix viminalis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Salicaceae,,,Salix,viminalis
+Salpichroa origanifolia,accepted,78954,Salpichroa origanifolia,Salpichroa origanifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Physaleae,Salpichroa,origanifolia
+Salpiglossis sinuata,accepted,204406,Salpiglossis sinuata,Salpiglossis sinuata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Cestroideae,Salpiglossideae,Salpiglossis,sinuata
+Salsola collina,accepted,168371,Salsola collina,Salsola collina,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Amaranthaceae,Salsoloideae,Salsoleae,Salsola,collina
+Salvia x sylvestris,accepted,50644,Salvia,Salvia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Salvia,
+Salvia plebeia,accepted,460319,Salvia plebeia,Salvia plebeia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Salvia,plebeia
+Salvia pratensis,accepted,85338,Salvia pratensis,Salvia pratensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Salvia,pratensis
+Salvia reflexa,accepted,128693,Salvia reflexa,Salvia reflexa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Salvia,reflexa
+Salvia verticillata,accepted,128689,Salvia verticillata,Salvia verticillata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Salvia,verticillata
+Perovskia atriplicifolia,unaccepted,941713,Salvia yangii,Salvia yangii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Salvia,yangii
+Saxifraga granulata,accepted,124135,Saxifraga granulata,Saxifraga granulata,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Saxifragales,,,,Saxifragaceae,,Saxifrageae,Saxifraga,granulata
+Scabiosa ochroleuca,accepted,168481,Scabiosa ochroleuca,Scabiosa ochroleuca,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Dipsacales,,,,Caprifoliaceae,Dipsacoideae,,Scabiosa,ochroleuca
+Chionodoxa forbesii,unaccepted,68357,Scilla forbesii,Scilla forbesii,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Asparagaceae,Scilloideae,Hyacintheae,Scilla,forbesii
+Chionodoxa luciliae,unaccepted,244100,Scilla luciliae,Scilla luciliae,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Asparagaceae,Scilloideae,Hyacintheae,Scilla,luciliae
+Scilla siberica,accepted,862704,Scilla siberica,Scilla siberica,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Asparagaceae,Scilloideae,Hyacintheae,Scilla,siberica
+Sedum hispanicum,accepted,168738,Sedum hispanicum,Sedum hispanicum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Saxifragales,,,,Crassulaceae,Sempervivoideae,Sedeae,Sedum,hispanicum
+Jovibarba globifera,unaccepted,909393,Sempervivum globiferum,Sempervivum globiferum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Saxifragales,,,,Crassulaceae,Sempervivoideae,Semperviveae,Sempervivum,globiferum
+Senecio x albescens,accepted,53207,Senecio,Senecio,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Senecioneae,Senecio,
+Senecio inaequidens,accepted,55607,Senecio inaequidens,Senecio inaequidens,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Senecioneae,Senecio,inaequidens
+Senecio leucanthemifolius subsp. vernalis,unaccepted,336378,Senecio vernalis,Senecio vernalis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Senecioneae,Senecio,vernalis
+Setaria verticilliformis,unaccepted,79069,Setaria verticillata,Setaria verticillata,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Panicoideae,Paniceae,Setaria,verticillata
+Silene chalcedonica,accepted,406034,Silene chalcedonica,Silene chalcedonica,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,Caryophylloideae,Sileneae,Silene,chalcedonica
+Silene conoidea,accepted,79105,Silene conoidea,Silene conoidea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,Caryophylloideae,Sileneae,Silene,conoidea
+Silene pendula,accepted,79117,Silene pendula,Silene pendula,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Caryophyllaceae,Caryophylloideae,Sileneae,Silene,pendula
+Solanum carolinense,accepted,52899,Solanum carolinense,Solanum carolinense,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Solaneae,Solanum,carolinense
+Lycopersicon esculentum,unaccepted,51737,Solanum lycopersicum,Solanum lycopersicum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Solaneae,Solanum,lycopersicum
+Solanum tuberosum,accepted,53858,Solanum tuberosum,Solanum tuberosum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Solanales,,,,Solanaceae,Solanoideae,Solaneae,Solanum,tuberosum
+Soldanella montana,accepted,169090,Soldanella montana,Soldanella montana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Ericales,,,,Primulaceae,Primuloideae,Primuleae,Soldanella,montana
+Sorbaria sorbifolia,accepted,169144,Sorbaria sorbifolia,Sorbaria sorbifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Sorbarieae,Sorbaria,sorbifolia
+Sorghum halepense,accepted,58387,Sorghum halepense,Sorghum halepense,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Panicoideae,Andropogoneae,Sorghum,halepense
+Spartium junceum,accepted,47406,Spartium junceum,Spartium junceum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Genisteae,Spartium,junceum
+Spinachia oleracea,unknown,,,Spinacia oleracea,,,,,,,,,,,,,,,,
+Spiraea alba,accepted,126823,Spiraea alba,Spiraea alba,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Spiraeeae,Spiraea,alba
+Spiraea alba var. latifolia,accepted,126819,Spiraea alba latifolia,Spiraea alba latifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Rosaceae,Amygdaloideae,Spiraeeae,Spiraea,alba
+Spartina pectinata,unaccepted,772984,Sporobolus michauxianus,Sporobolus michauxianus,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Chloridoideae,Zoysieae,Sporobolus,michauxianus
+Sporobolus neglectus,accepted,169298,Sporobolus neglectus,Sporobolus neglectus,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Poales,,,,Poaceae,Chloridoideae,Zoysieae,Sporobolus,neglectus
+Symphyotrichum x columbianum,accepted,1416877,Symphyotrichum,Symphyotrichum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,
+Symphyotrichum cordifolium,accepted,153441,Symphyotrichum cordifolium,Symphyotrichum cordifolium,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,cordifolium
+Symphyotrichum falcatum var. commutatum,accepted,243148,Symphyotrichum falcatum commutatum,Symphyotrichum falcatum commutatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,falcatum
+Symphyotrichum cusickii,unaccepted,1417070,Symphyotrichum foliaceum cusickii,Symphyotrichum foliaceum cusickii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,foliaceum
+Symphyotrichum hendersonii,accepted,79300,Symphyotrichum hendersonii,Symphyotrichum hendersonii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,hendersonii
+Symphyotrichum laeve var. laeve,accepted,243152,Symphyotrichum laeve laeve,Symphyotrichum laeve laeve,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,laeve
+Symphyotrichum lanceolatum subsp. lanceolatum var. lanceolatum,invalid,238759,Symphyotrichum lanceolatum lanceolatum,Symphyotrichum lanceolatum lanceolatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,lanceolatum
+Symphyotrichum lanceolatum var. lanceolatum,accepted,238759,Symphyotrichum lanceolatum lanceolatum,Symphyotrichum lanceolatum lanceolatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,lanceolatum
+Symphyotrichum lateriflorum,accepted,122249,Symphyotrichum lateriflorum,Symphyotrichum lateriflorum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,lateriflorum
+Symphyotrichum novae-angliae,accepted,117443,Symphyotrichum novae-angliae,Symphyotrichum novae-angliae,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,novae-angliae
+Symphyotrichum novi-belgii,accepted,169474,Symphyotrichum novi-belgii,Symphyotrichum novi-belgii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,novi-belgii
+Symphyotrichum praealtum,accepted,169480,Symphyotrichum praealtum,Symphyotrichum praealtum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Astereae,Symphyotrichum,praealtum
+Symphytum ibericum,accepted,444053,Symphytum ibericum,Symphytum ibericum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Boraginales,,,,Boraginaceae,Boraginoideae,Boragineae,Symphytum,ibericum
+Tamarix parviflora,accepted,56011,Tamarix parviflora,Tamarix parviflora,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Tamaricaceae,,,Tamarix,parviflora
+Tamarix ramosissima,accepted,56015,Tamarix ramosissima,Tamarix ramosissima,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Caryophyllales,,,,Tamaricaceae,,,Tamarix,ramosissima
+Tanecetum balsamita,unknown,,,Tanacetum balsamita,,,,,,,,,,,,,,,,
+Taxus baccata,accepted,47553,Taxus baccata,Taxus baccata,Plantae,Tracheophyta,,,Pinopsida,,,Pinales,,,,Taxaceae,,,Taxus,baccata
+Teucrium scorodonia,accepted,57439,Teucrium scorodonia,Teucrium scorodonia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Ajugoideae,,Teucrium,scorodonia
+Thymus serpyllum,accepted,322051,Thymus serpyllum,Thymus serpyllum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Lamiaceae,Nepetoideae,Mentheae,Thymus,serpyllum
+Tilia platyphyllos,accepted,169761,Tilia platyphyllos,Tilia platyphyllos,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malvales,,,,Malvaceae,Tilioideae,,Tilia,platyphyllos
+Torilis nodosa,accepted,53304,Torilis nodosa,Torilis nodosa,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Apiaceae,Apioideae,Scandiceae,Torilis,nodosa
+Trachyspermum ammi,accepted,155843,Trachyspermum ammi,Trachyspermum ammi,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Apiales,,,,Apiaceae,Apioideae,Pyramidoptereae,Trachyspermum,ammi
+Trifolium fucatum,accepted,53901,Trifolium fucatum,Trifolium fucatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Trifolieae,Trifolium,fucatum
+Trifolium resupinatum,accepted,79429,Trifolium resupinatum,Trifolium resupinatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Trifolieae,Trifolium,resupinatum
+Trigonella caerulea,accepted,169980,Trigonella caerulea,Trigonella caerulea,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Trifolieae,Trigonella,caerulea
+Trigonotis peduncularis,accepted,169982,Trigonotis peduncularis,Trigonotis peduncularis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Boraginales,,,,Boraginaceae,Cynoglossoideae,Myosotideae,Trigonotis,peduncularis
+Tropaeolum majus,accepted,54329,Tropaeolum majus,Tropaeolum majus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Brassicales,,,,Tropaeolaceae,,,Tropaeolum,majus
+Ulmus rubra,accepted,54860,Ulmus rubra,Ulmus rubra,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Rosales,,,,Ulmaceae,,,Ulmus,rubra
+Verbascum chaixii L,accepted,371658,Verbascum chaixii,Verbascum chaixii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Scrophulariaceae,,Scrophularieae,Verbascum,chaixii
+Verbascum lychnitis,accepted,133231,Verbascum lychnitis,Verbascum lychnitis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Scrophulariaceae,,Scrophularieae,Verbascum,lychnitis
+Verbascum nigrum,accepted,56164,Verbascum nigrum,Verbascum nigrum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Scrophulariaceae,,Scrophularieae,Verbascum,nigrum
+Verbena bonariensis,accepted,79487,Verbena bonariensis,Verbena bonariensis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Verbenaceae,,Verbeneae,Verbena,bonariensis
+Verbena officinalis,accepted,56163,Verbena officinalis,Verbena officinalis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Verbenaceae,,Verbeneae,Verbena,officinalis
+Verbena urticifolia var. urticifolia,invalid,129278,Verbena urticifolia,Verbena urticifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Verbenaceae,,Verbeneae,Verbena,urticifolia
+Verbena urticifolia,accepted,129278,Verbena urticifolia,Verbena urticifolia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Verbenaceae,,Verbeneae,Verbena,urticifolia
+Veronica agrestis,accepted,56626,Veronica agrestis,Veronica agrestis,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Veroniceae,Veronica,agrestis
+Veronica austriaca,accepted,738833,Veronica austriaca,Veronica austriaca,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Veroniceae,Veronica,austriaca
+Veronica austriaca subsp. vahlii,unaccepted,738840,Veronica orsiniana,Veronica bastardii,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Lamiales,,,,Plantaginaceae,,Veroniceae,Veronica,orsiniana
+Viburnum lantana,accepted,124741,Viburnum lantana,Viburnum lantana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Dipsacales,,,,Viburnaceae,,,Viburnum,lantana
+Viburnum plicatum,accepted,170203,Viburnum plicatum,Viburnum plicatum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Dipsacales,,,,Viburnaceae,,,Viburnum,plicatum
+Viburnum tinus,accepted,82666,Viburnum tinus,Viburnum tinus,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Dipsacales,,,,Viburnaceae,,,Viburnum,tinus
+Lens culinaris,unaccepted,1375470,Vicia lens,Vicia lens,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Fabales,,,,Fabaceae,Faboideae,Fabeae,Vicia,lens
+Viola x wittrockiana,accepted,1392361,Viola,Viola,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Violaceae,,,Viola,
+Viola riviniana,accepted,61481,Viola riviniana,Viola riviniana,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Malpighiales,,,,Violaceae,,,Viola,riviniana
+Vitis riparia,accepted,119936,Vitis riparia,Vitis riparia,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Vitales,,,,Vitaceae,,,Vitis,riparia
+Vitis vinifera,accepted,79519,Vitis vinifera,Vitis vinifera,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Vitales,,,,Vitaceae,,,Vitis,vinifera
+Wisteria chinensis,unknown,,,Wisteria sinensis,,,,,,,,,,,,,,,,
+Xanthium spinosum,accepted,58045,Xanthium spinosum,Xanthium spinosum,Plantae,Tracheophyta,Angiospermae,,Magnoliopsida,,,Asterales,,,,Asteraceae,Asteroideae,Heliantheae,Xanthium,spinosum
+Yucca filamentosa,accepted,81605,Yucca filamentosa,Yucca filamentosa,Plantae,Tracheophyta,Angiospermae,,Liliopsida,,,Asparagales,,,,Asparagaceae,Agavoideae,,Yucca,filamentosa
