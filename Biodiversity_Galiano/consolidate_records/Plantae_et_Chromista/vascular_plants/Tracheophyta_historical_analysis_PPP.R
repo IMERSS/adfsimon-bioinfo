@@ -68,6 +68,11 @@ nrow(native.secies.at.large.2020)
 
 # By 2024, how many species remain at large?
 
+# To date, 82% (500/607) of the vascular plants historically reported
+# for Galiano Island have been verified.
+
+nrow(confirmed.records)/nrow(historical.records.summary)
+
 nrow(reported.records) # A total of 107 species remain at large
 
 native.species.at.large.2024 <- reported.records %>% filter(Origin == 'native')
