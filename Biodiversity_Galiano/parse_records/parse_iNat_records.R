@@ -30,6 +30,30 @@ iNat.obs <- iNat.obs %>% filter(captive == 'false')
 
 iNat.obs$observed_on <- substr(iNat.obs$observed_on,1,10)
 
+# Replace lat long for records with private lat long 
+
+iNat.obs.private <- iNat.obs[!is.na(iNat.obs$private_latitude),]
+iNat.obs.private$latitude <- iNat.obs.private$private_latitude
+iNat.obs.private$longitude <- iNat.obs.private$private_longitude
+
+iNat.obs.open <- iNat.obs[is.na(iNat.obs$private_latitude),]
+
+iNat.obs <- rbind(iNat.obs.private,iNat.obs.open)
+
+iNat.obs$private_latitude <- NULL
+iNat.obs$private_longitude <- NULL
+
+# Replace observer names with handles for records lacking proper observer names
+
+iNat.obs.names <- iNat.obs[!is.na(iNat.obs$user_name) & iNat.obs$user_name != "",]
+iNat.obs.handles <- anti_join(iNat.obs,iNat.obs.names)
+
+iNat.obs.handles$user_name <- iNat.obs.handles$user_login
+
+iNat.obs <- rbind(iNat.obs.names,iNat.obs.handles)
+
+iNat.obs$user_login <- NULL
+
 # Parse taxa
 
 ## ALGAE
@@ -101,9 +125,6 @@ Bryophyta.Marchantiophyta.Anthocerotophyta.obs <- iNat.obs %>% filter(Phylum == 
 Tracheophyta.obs <- iNat.obs %>% filter(phylum == 'Tracheophyta')
 
 unique(Tracheophyta.obs$phylum)
-
-
-animalia <- iNat.obs %>% filter(Kingdom == 'Animalia')
 
 
 ## TERRESTRIAL ANIMALS

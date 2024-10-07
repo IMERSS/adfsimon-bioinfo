@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Galiano_Tracheophyta_review_summary_reviewed_2023-10-19.csv")
+baseline <- read.csv("summaries/Galiano_Tracheophyta_review_summary_reviewed_2023-11-05.csv")
 
 baseline <- baseline %>% filter(Phylum == 'Tracheophyta')
 
@@ -35,36 +35,36 @@ names(baseline) <- summary.fields
 
 # Read iNaturalist obs
 
-iNat.obs.summary <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_Tracheophyta.csv")
+iNat.obs.summary <- read.csv("../../../parse_records/outputs/iNat_obs_Tracheophyta.csv")
 names(iNat.obs.summary)
 
 # Summarize by first observed
 
-iNat.obs.summary <- iNat.obs.summary %>% group_by(iNaturalist.taxon.name) %>% filter(Date.observed == min(Date.observed))
+iNat.obs.summary <- iNat.obs.summary %>% group_by(scientific_name) %>% filter(observed_on == min(observed_on))
 
 # Drop extraneous fields
 
-drop <- c("X")
-iNat.obs.summary = iNat.obs.summary[,!(names(iNat.obs.summary) %in% drop)]
+# drop <- c("X")
+# iNat.obs.summary = iNat.obs.summary[,!(names(observed_on) %in% drop)]
 
 # Standardize 'Taxon', 'species', 'subspecies', 'variety' fields in observation summary to facilitate merges
 
-iNat.obs.summary$taxon_subspecies_name <- word(iNat.obs.summary$Taxon.name, 3)
-iNat.obs.summary$taxon_variety_name <- word(iNat.obs.summary$Taxon.name, 3)
+iNat.obs.summary$taxon_subspecies_name <- word(iNat.obs.summary$scientific_name, 3)
+iNat.obs.summary$taxon_variety_name <- word(iNat.obs.summary$scientific_name, 3)
 
 # Add field for Hybrid
 
-iNat.obs.summary$Hybrid <- ""
+iNat.obs.summary$hybrid <- ""
 
 # Rename fields in iNat observation summary to correspond with fields in baseline summary
 
-iNat.obs.summary <- rename(iNat.obs.summary, Taxon = Taxon.name)
+iNat.obs.summary <- rename(iNat.obs.summary, Taxon = scientific_name)
 iNat.obs.summary <- rename(iNat.obs.summary, Subspecies = taxon_subspecies_name)
 iNat.obs.summary <- rename(iNat.obs.summary, Variety = taxon_variety_name)
-iNat.obs.summary <- rename(iNat.obs.summary, First.Observed = Date.observed)
-iNat.obs.summary <- rename(iNat.obs.summary, Observer = Recorded.by)
-iNat.obs.summary <- rename(iNat.obs.summary, iNaturalist.Link = observationId)
-iNat.obs.summary <- rename(iNat.obs.summary, ID = iNaturalist.taxon.ID)
+iNat.obs.summary <- rename(iNat.obs.summary, First.Observed = observed_on)
+iNat.obs.summary <- rename(iNat.obs.summary, Observer = user_name)
+iNat.obs.summary <- rename(iNat.obs.summary, iNaturalist.Link = id)
+iNat.obs.summary <- rename(iNat.obs.summary, ID = taxon_id)
 
 # Create template dataframe for iNat obs summary that matches with baseline summary dataset
 
@@ -94,7 +94,7 @@ iNat.obs.summary$Infrataxon <- iNat.obs.summary$Subspecies
 
 # Now match with inner_join
 
-matched.iNat.obs.summary <- inner_join(baseline, iNat.obs.summary, by = c("Genus","Species","Infrataxon"))
+matched.iNat.obs.summary <- inner_join(baseline, iNat.obs.summary, by = c("ID"))
 names(matched.iNat.obs.summary)
 matched.iNat.obs.summary <- matched.iNat.obs.summary[,c(1,1:38)]
 
@@ -132,7 +132,7 @@ summary.matched <-  summary.matched %>% mutate_if(is.character, ~replace_na(.,""
 
 # Unmatched summary
 
-unmatched.iNat.obs.summary = anti_join(iNat.obs.summary, summary.matched, by = c("Genus", "Hybrid", "Species", "Subspecies", "Variety"))
+unmatched.iNat.obs.summary = anti_join(iNat.obs.summary, summary.matched, by = c("ID"))
 
 # Add Stats Code to unmatched Taxa
 
@@ -140,7 +140,7 @@ unmatched.iNat.obs.summary$Stats.Code <- 'VAS'
 
 # Optional: trim to unmatched summary to observations identified at least to genus
 
-unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary[!(is.na(unmatched.iNat.obs.summary$Genus) | unmatched.iNat.obs.summary$Genus == ""), ]
+# unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary[!(is.na(unmatched.iNat.obs.summary$Genus) | unmatched.iNat.obs.summary$Genus == ""), ]
 
 # Merge baseline and unmatched summary for review 
 
