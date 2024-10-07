@@ -14,19 +14,21 @@ library(tidyr)
 
 # Read iNat records
 
-iNat.obs <- read.csv("iNat_records/BioGaliano_iNat_data_2024-01-07.csv")
+iNat.obs <- read.csv("iNat_records/Galiano_All_Data_Union_Catalogue_2024_07_31.csv")
+
+# Note: The above records include complete synthesis of all Galiano Island data (GBIF + iNat inc. non-RG obs) ??
 
 # Eliminate records without dates
 
-iNat.obs <- iNat.obs[!(is.na(iNat.obs$Date.observed) | iNat.obs$Date.observed == ""), ]
+iNat.obs <- iNat.obs[!(is.na(iNat.obs$observed_on) | iNat.obs$observed_on == ""), ]
 
 # Eliminate captive/cultivated records
 
-iNat.obs <- iNat.obs %>% filter(Captive.Cultivated == 'false')
+iNat.obs <- iNat.obs %>% filter(captive == 'false')
 
 # Eliminate extraneous time stamp from 'date observed' string
 
-iNat.obs$Date.observed <- substr(iNat.obs$Date.observed,1,10)
+iNat.obs$observed_on <- substr(iNat.obs$observed_on,1,10)
 
 # Parse taxa
 
@@ -96,9 +98,9 @@ Bryophyta.Marchantiophyta.Anthocerotophyta.obs <- iNat.obs %>% filter(Phylum == 
 
 # Tracheophyta
 
-Tracheophyta.obs <- iNat.obs %>% filter(Phylum == 'Tracheophyta')
+Tracheophyta.obs <- iNat.obs %>% filter(phylum == 'Tracheophyta')
 
-unique(Tracheophyta.obs$Phylum)
+unique(Tracheophyta.obs$phylum)
 
 
 animalia <- iNat.obs %>% filter(Kingdom == 'Animalia')
