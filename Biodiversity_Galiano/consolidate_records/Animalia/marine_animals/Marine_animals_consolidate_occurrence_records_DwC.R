@@ -149,7 +149,6 @@ nrow(GI.1893.2021.names.unmatched.unmatched)
 nrow(GI.1893.2021.names.matched)+nrow(GI.1893.2021.names.unmatched.matched)+nrow(GI.1893.2021.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
-# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
 
 key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
 

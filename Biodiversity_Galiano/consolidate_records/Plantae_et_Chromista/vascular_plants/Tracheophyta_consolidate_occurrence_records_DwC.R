@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Galiano_Tracheophyta_review_summary_reviewed_2023-11-05.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Galiano_Tracheophyta_review_summary_reviewed_2024-10-07-assigned_revised.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -163,6 +163,23 @@ nrow(BC.CDC.2019.names.unmatched)
 nrow(BC.CDC.2019.names.unmatched.matched)
 nrow(BC.CDC.2019.names.unmatched.unmatched)
 nrow(BC.CDC.2019.names.matched)+nrow(BC.CDC.2019.names.unmatched.matched)+nrow(BC.CDC.2019.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(BC.CDC.2019.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- BC.CDC.2019.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(BC.CDC.2019.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
 
 # Bind records
 
@@ -324,6 +341,23 @@ nrow(Brothers.2020.names.unmatched)
 nrow(Brothers.2020.names.unmatched.matched)
 nrow(Brothers.2020.names.unmatched.unmatched)
 nrow(Brothers.2020.names.matched)+nrow(Brothers.2020.names.unmatched.matched)+nrow(Brothers.2020.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Brothers.2020.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Brothers.2020.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Brothers.2020.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
 
 # Bind records
 
@@ -491,6 +525,23 @@ nrow(DL63.names.unmatched.matched)
 nrow(DL63.names.unmatched.unmatched)
 nrow(DL63.names.matched)+nrow(DL63.names.unmatched.matched)+nrow(DL63.names.unmatched.unmatched)
 
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(DL63.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- DL63.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(DL63.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
 # Bind records
 
 DL63.records <- rbind(DL63.names.matched,DL63.names.unmatched.matched)
@@ -648,6 +699,23 @@ nrow(Ecological.Reserve.128.names.unmatched.matched)
 nrow(Ecological.Reserve.128.names.unmatched.unmatched)
 nrow(Ecological.Reserve.128.names.matched)+nrow(Ecological.Reserve.128.names.unmatched.matched)+nrow(Ecological.Reserve.128.names.unmatched.unmatched)
 
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Ecological.Reserve.128.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Ecological.Reserve.128.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Ecological.Reserve.128.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
 # Bind records
 
 Ecological.Reserve.128.records <- rbind(Ecological.Reserve.128.names.matched,Ecological.Reserve.128.names.unmatched.matched)
@@ -804,6 +872,23 @@ nrow(Hunterston.2010.names.unmatched.matched)
 nrow(Hunterston.2010.names.unmatched.unmatched)
 nrow(Hunterston.2010.names.matched)+nrow(Hunterston.2010.names.unmatched.matched)+nrow(Hunterston.2010.names.unmatched.unmatched)
 
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Hunterston.2010.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Hunterston.2010.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Hunterston.2010.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
 # Bind records
 
 Hunterston.2010.records <- rbind(Hunterston.2010.names.matched,Hunterston.2010.names.unmatched.matched)
@@ -833,18 +918,20 @@ iNaturalist.observations <- read.csv("../../..//parse_records/outputs/iNat_obs_T
 
 # Drop observations of taxa that are not identified to genus at least
 
-iNaturalist.observations <- subset(iNaturalist.observations, Genus != "")
+# iNaturalist.observations <- subset(iNaturalist.observations, genus != "")
+
+## TO DO: Restore this step once classifications are added back into this dataframe
 
 # Change iNat obs field names to DwC format
 
 iNaturalist.observations
 
-names(iNaturalist.observations)[names(iNaturalist.observations) == 'iNaturalist.taxon.name'] <- 'scientificName'
-names(iNaturalist.observations)[names(iNaturalist.observations) == 'observationID'] <- 'occurrenceID'
-names(iNaturalist.observations)[names(iNaturalist.observations) == 'Latitude'] <- 'decimalLatitude'
-names(iNaturalist.observations)[names(iNaturalist.observations) == 'Longitude'] <- 'decimalLongitude'
-names(iNaturalist.observations)[names(iNaturalist.observations) == 'Date.observed'] <- 'eventDate'
-names(iNaturalist.observations)[names(iNaturalist.observations) == 'Recorded.by'] <- 'recordedBy'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'scientific_name'] <- 'scientificName'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'id'] <- 'occurrenceID'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'latitude'] <- 'decimalLatitude'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'longitude'] <- 'decimalLongitude'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'observed_on'] <- 'eventDate'
+names(iNaturalist.observations)[names(iNaturalist.observations) == 'user_name'] <- 'recordedBy'
 
 # Create DarwinCore dataframe template 
 
@@ -951,6 +1038,23 @@ nrow(iNaturalist.observations.names.unmatched)
 nrow(iNaturalist.observations.names.unmatched.matched)
 nrow(iNaturalist.observations.names.unmatched.unmatched)
 nrow(iNaturalist.observations.names.matched)+nrow(iNaturalist.observations.names.unmatched.matched)+nrow(iNaturalist.observations.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(iNaturalist.observations.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- iNaturalist.observations.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(iNaturalist.observations.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
 
 # Bind records
 
@@ -1092,6 +1196,23 @@ nrow(Janszen.2003.names.unmatched)
 nrow(Janszen.2003.names.unmatched.matched)
 nrow(Janszen.2003.names.unmatched.unmatched)
 nrow(Janszen.2003.names.matched)+nrow(Janszen.2003.names.unmatched.matched)+nrow(Janszen.2003.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Janszen.2003.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Janszen.2003.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Janszen.2003.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
 
 # Bind records
 
@@ -1268,6 +1389,23 @@ nrow(Laughlin.2002.names.unmatched.matched)
 nrow(Laughlin.2002.names.unmatched.unmatched)
 nrow(Laughlin.2002.names.matched)+nrow(Laughlin.2002.names.unmatched.matched)+nrow(Laughlin.2002.names.unmatched.unmatched)
 
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Laughlin.2002.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Laughlin.2002.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Laughlin.2002.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
 # Bind records
 
 Laughlin.2002.records <- rbind(Laughlin.2002.names.matched,Laughlin.2002.names.unmatched.matched)
@@ -1410,6 +1548,23 @@ nrow(Lomer.2022.names.unmatched.matched)
 nrow(Lomer.2022.names.unmatched.unmatched)
 nrow(Lomer.2022.names.matched)+nrow(Lomer.2022.names.unmatched.matched)+nrow(Lomer.2022.names.unmatched.unmatched)
 
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Lomer.2022.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Lomer.2022.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Lomer.2022.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
 # Bind records
 
 Lomer.2022.records <- rbind(Lomer.2022.names.matched,Lomer.2022.names.unmatched.matched)
@@ -1434,7 +1589,7 @@ unmatched.vascular.plant.records
 
 
 
-# Read Frank Lomer 2022 Records
+# Read Frank Lomer 2022 Gossip Island Records
 # Note: specimens will all be deposited at UBC and should be checked for duplicates against UBC records in the future 
 
 Lomer.2022.Gossip.Is <- read.csv("../../records/digitized/DarwinCore/Lomer_Gossip_Island_plant_list_2022-06-13.csv")
@@ -1552,6 +1707,23 @@ nrow(Lomer.2022.Gossip.Is.names.unmatched)
 nrow(Lomer.2022.Gossip.Is.names.unmatched.matched)
 nrow(Lomer.2022.Gossip.Is.names.unmatched.unmatched)
 nrow(Lomer.2022.Gossip.Is.names.matched)+nrow(Lomer.2022.Gossip.Is.names.unmatched.matched)+nrow(Lomer.2022.Gossip.Is.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Lomer.2022.Gossip.Is.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Lomer.2022.Gossip.Is.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Lomer.2022.Gossip.Is.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
 
 # Bind records
 
@@ -1694,6 +1866,23 @@ nrow(RBCM.georeferencing.corrected.names.unmatched)
 nrow(RBCM.georeferencing.corrected.names.unmatched.matched)
 nrow(RBCM.georeferencing.corrected.names.unmatched.unmatched)
 nrow(RBCM.georeferencing.corrected.names.matched)+nrow(RBCM.georeferencing.corrected.names.unmatched.matched)+nrow(RBCM.georeferencing.corrected.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(RBCM.georeferencing.corrected.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- RBCM.georeferencing.corrected.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(RBCM.georeferencing.corrected.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
 
 # Bind records
 
@@ -1875,6 +2064,23 @@ nrow(Roemer.2004.names.unmatched.matched)
 nrow(Roemer.2004.names.unmatched.unmatched)
 nrow(Roemer.2004.names.matched)+nrow(Roemer.2004.names.unmatched.matched)+nrow(Roemer.2004.names.unmatched.unmatched)
 
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Roemer.2004.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Roemer.2004.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Roemer.2004.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
 # Bind records
 
 Roemer.2004.records <- rbind(Roemer.2004.names.matched,Roemer.2004.names.unmatched.matched)
@@ -2045,6 +2251,23 @@ nrow(Simon.2018.names.unmatched.matched)
 nrow(Simon.2018.names.unmatched.unmatched)
 nrow(Simon.2018.names.matched)+nrow(Simon.2018.names.unmatched.matched)+nrow(Simon.2018.names.unmatched.unmatched)
 
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Simon.2018.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- Simon.2018.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(Simon.2018.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
+
 # Bind records
 
 Simon.2018.records <- rbind(Simon.2018.names.matched,Simon.2018.names.unmatched.matched)
@@ -2177,6 +2400,23 @@ nrow(UBC.2022.names.unmatched)
 nrow(UBC.2022.names.unmatched.matched)
 nrow(UBC.2022.names.unmatched.unmatched)
 nrow(UBC.2022.names.matched)+nrow(UBC.2022.names.unmatched.matched)+nrow(UBC.2022.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Critical.Note')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(UBC.2022.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- UBC.2022.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(UBC.2022.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review_key.csv", row.names=FALSE)
 
 # Bind records
 
