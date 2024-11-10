@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_2023-03-05.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_2024-11-09.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -30,22 +30,31 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Consolidate records
 
-# Sources (3/5 added):
+# Sources (4/6 added):
 
-# CPNWH records 2023 -
-# GBIF records 2022 - added
+# CPNWH records 2023 - review later wrt GBIF data
+# GBIF records 2022 - added (iNat data subtracted for now)
+# iNaturalist reocords 2024 
 # LGL records 2020-07-01 - added
-# Page Squamish River Estuary records 2004 - added
+# Page 2004 - Squamish River Estuary records - added
 # Whistler Bioblitz records 2015 -
 
-# First read GBIF and CPNWH records to detect and remove duplicate records between datasets
+# Note: GBIF and CPNWH records need to be reviewed for unique records / duplication (CPNWH records excluded for now)
+
+##################
+## GBIF Records ##
+##################
 
 # GBIF TSV converted to CSV from Mac Numbers and Filtered by Taxa (Plantae)
 GBIF.2022 <- read.csv("../../../consolidate_records/records/digitized/DwC/GBIF_2022_Plantae_DwC-assigned_AS_erroneous_localities_removed_reevaluated.csv", header = TRUE)
 
 # Filter vascular plants
 
-GBIF.2022 <- GBIF.2022 %>% filter(phylum == "Tracheophyta")
+GBIF.2022 <- GBIF.2022 %>% filter( == "Tracheophyta")
+
+## Remove iNaturalist records
+
+GBIF.2022 <- GBIF.2022 %>% filter(institutionCode != "iNaturalist")
 
 ## Synthesize Records
 
@@ -199,6 +208,167 @@ unmatched.vascular.plant.records <- GBIF.2022.names.unmatched.unmatched
 unmatched.vascular.plant.records
 
 
+#################
+## iNaturalist ##
+#################
+
+# Read iNaturalist records
+iNaturalist <- read.csv("../../../consolidate_records/records/digitized/DwC/iNaturalist_Tracheophyta_Catalogue_2024_10_18_DwC.csv", header = TRUE)
+
+# Filter out casual / captive records
+
+iNaturalist <- iNaturalist %>% filter(captive != TRUE)
+
+## Synthesize Records
+
+# Create DarwinCore dataframe template 
+
+data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(iNaturalist)))
+names(data.frame) <- DwCFields
+
+data.frame[names(iNaturalist)] <- iNaturalist
+
+data.frame <- select(data.frame, c(1:length(DwCFields)))
+
+iNaturalist <- data.frame
+
+# Add metadata
+
+iNaturalist$stateProvince <- "British Columbia"
+iNaturalist$country <- "Canada"
+iNaturalist$countryCode <- "CA"
+
+# Merge with summary to standardize names and taxon metadata
+
+iNaturalist$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$taxonID <- summary$ID[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$kingdom <- summary$kingdom[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$phylum <- summary$phylum[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$class <- summary$class[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$order <- summary$order[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$suborder <- summary$suborder[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$superfamily <- summary$Superfamily[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$family <- summary$family[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$genus <- summary$genus[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$specificEpithet <- summary$specificEpithet[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$hybrid <- summary$hybrid[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$subspecies <- summary$subspecies[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$variety <- summary$variety[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$establishmentMeans <- summary$establishmentMeans[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$provincialStatus <- summary$provincialStatus[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+iNaturalist$nationalStatus <- summary$nationalStatus[match(unlist(iNaturalist$scientificName), summary$scientificName)]
+
+# Unmatched records
+
+iNaturalist.names.unmatched <- iNaturalist[is.na(iNaturalist$taxonID),]
+
+# Matched records
+
+iNaturalist.names.matched <- anti_join(iNaturalist,iNaturalist.names.unmatched)
+
+# Confirm all records are represented 
+
+nrow(iNaturalist)
+nrow(iNaturalist.names.matched)
+nrow(iNaturalist.names.unmatched)
+nrow(iNaturalist.names.matched)+nrow(iNaturalist.names.unmatched)
+
+# Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
+
+iNaturalist.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+
+# Swap unmatched names using key
+
+iNaturalist.names.unmatched.matched <- iNaturalist.names.unmatched
+
+iNaturalist.names.unmatched.matched$scientificNameTemp <- iNaturalist.key$Matched.Taxon[match(unlist(iNaturalist.names.unmatched.matched$scientificName), iNaturalist.key$Taxon)]
+
+# Add values based on newly matched name
+
+iNaturalist.names.unmatched.matched$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$taxonID <- summary$ID[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$kingdom <- summary$kingdom[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$phylum <- summary$phylum[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$class <- summary$class[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$order <- summary$order[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$suborder <- summary$suborder[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$superfamily <- summary$Superfamily[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$family <- summary$family[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$genus <- summary$genus[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$specificEpithet <- summary$specificEpithet[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$hybrid <- summary$hybrid[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$subspecies <- summary$subspecies[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$variety <- summary$variety[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$establishmentMeans <- summary$establishmentMeans[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$provincialStatus <- summary$provincialStatus[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+iNaturalist.names.unmatched.matched$nationalStatus <- summary$nationalStatus[match(unlist(iNaturalist.names.unmatched.matched$scientificNameTemp), summary$scientificName)]
+
+# Filter taxa unrecognized in summary 
+
+iNaturalist.names.unmatched.unmatched <- iNaturalist.names.unmatched.matched[is.na(iNaturalist.names.unmatched.matched$taxonID),]
+
+iNaturalist.names.unmatched.unmatched$scientificNameTemp <- NULL
+
+# Filter taxa recognized in summary
+
+iNaturalist.names.unmatched.matched$scientificName <- iNaturalist.names.unmatched.matched$scientificNameTemp
+
+iNaturalist.names.unmatched.matched$scientificNameTemp <- NULL
+
+iNaturalist.names.unmatched.matched <- iNaturalist.names.unmatched.matched %>% drop_na(taxonID)
+
+# Confirm all records are represented 
+
+nrow(iNaturalist)
+nrow(iNaturalist.names.matched)
+nrow(iNaturalist.names.unmatched)
+nrow(iNaturalist.names.unmatched.matched)
+nrow(iNaturalist.names.unmatched.unmatched)
+nrow(iNaturalist.names.matched)+nrow(iNaturalist.names.unmatched.matched)+nrow(iNaturalist.names.unmatched.unmatched)
+
+# Generate review key with mismatched names
+# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
+
+key.field.names <- c('Taxon', 'Matched.Taxon')
+
+unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(iNaturalist.names.unmatched.unmatched)))
+names(unmatched.taxa) <- key.field.names
+
+unmatched.taxa$Taxon <- iNaturalist.names.unmatched.unmatched$scientificName
+
+unmatched.taxa <- distinct(unmatched.taxa)
+
+review.key <- rbind(iNaturalist.key,unmatched.taxa)
+
+review.key[is.na(review.key)] <- ""
+
+write.csv(review.key,"keys/review.key.csv", row.names=FALSE)
+
+# Bind records
+
+iNaturalist.records <- rbind(iNaturalist.names.matched,iNaturalist.names.unmatched.matched)
+
+# Set date formatting consistent with other data frames
+
+iNaturalist.records$eventDate <- as.Date(iNaturalist.records$eventDate)
+
+# Compare records in and out
+
+nrow(iNaturalist) - nrow(iNaturalist.records)
+
+nrow(iNaturalist)
+nrow(iNaturalist.records) 
+
+# Add to record of unmatched names
+
+unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,LGL.2020.names.unmatched.unmatched)
+
+unmatched.vascular.plant.records
+
+
+######################
+## LGL 2020 Records ##
+######################
 
 # Read data from LGL HSBRI Application Appendices (2020)
 
@@ -352,6 +522,9 @@ unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,LGL.2
 unmatched.vascular.plant.records
 
 
+###############
+## Page 2004 ##
+###############
 
 # Read Nick Page, Raincoast Applied Ecology, vegetation assessment of Squamish Estuary
 
