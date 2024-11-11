@@ -54,7 +54,10 @@ GBIF.2022 <- GBIF.2022 %>% filter(phylum == "Tracheophyta")
 
 ## Remove iNaturalist records
 
-GBIF.2022 <- GBIF.2022 %>% filter(institutionCode != "iNaturalist")
+# GBIF.2022 <- GBIF.2022 %>% filter(institutionCode != "iNaturalist") 
+
+# 17,575 - 2,236 = 15,339 records lost by removing iNat records from GBIF dataset
+# 48,372 records recovered with addition of iNat records below
 
 ## Synthesize Records
 
@@ -203,6 +206,7 @@ nrow(GBIF.2022.records) # ~65 records omitted; most if not all non-established s
 unmatched.vascular.plant.records <- GBIF.2022.names.unmatched.unmatched
 
 unmatched.vascular.plant.records
+
 
 
 #################
@@ -649,7 +653,7 @@ nrow(Page.2004.names.matched)+nrow(Page.2004.names.unmatched.matched)+nrow(Page.
 # Generate review key with mismatched names
 # (Once key is revised, save as 'vascular_plant_taxon_key_2024.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon','Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Notes')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(Page.2004.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
@@ -684,8 +688,9 @@ unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,Page.
 unmatched.vascular.plant.records
 
 
+## TO DO: Figure out how to retain records not matching those in canonical summary
 
-# Assign metadata to reports lacking infrataxonomic resolution based on species epithets
+# Assign metadata to reports lacking infrataxonomic resolution
 
 unmatched.vascular.plant.records$scientificNameAuthorship <- summary$scientificNameAuthorship[match(unlist(unmatched.vascular.plant.records$scientificName), summary$specificEpithet)]
 unmatched.vascular.plant.records$kingdom <- summary$kingdom[match(unlist(unmatched.vascular.plant.records$scientificName), summary$specificEpithet)]
@@ -731,10 +736,11 @@ taxonID.key <- read.csv("keys/taxonID_key.csv")
 unmatched.vascular.plant.records.matched$taxonID <- taxonID.key$TaxonID[match(unlist(unmatched.vascular.plant.records.matched$scientificName), taxonID.key$Taxon)]
 
 
+## TO DO: add "unmatched.vascular.plant.records.matched" to catalog once you have figured out the above.
 
 # Combine all source occurrence records
 
-Vascular.plant.records <- rbind(GBIF.2022.records,LGL.2020.records,Page.2004.records,unmatched.vascular.plant.records.matched)
+Vascular.plant.records <- rbind(GBIF.2022.records,iNaturalist.records,LGL.2020.records,Page.2004.records)
 
 
 
@@ -811,7 +817,7 @@ write.csv(Vascular.plant.records,"synthesized/Howe_Sound_vascular_plant_records_
 
 # Evaluate georeferencing resolution of vascular plant records
 
-nrow(Vascular.plant.records) # 18K vascular plant occurrence records
+nrow(Vascular.plant.records) # >66K vascular plant records (increased from 18K records counted in 2022)
 
 Vascular.plant.records$coordinateUncertaintyInMeters <- as.numeric(Vascular.plant.records$coordinateUncertaintyInMeters)
 
@@ -819,17 +825,17 @@ hist(Vascular.plant.records$coordinateUncertaintyInMeters,
         xlim=c(0,1000), breaks = 100000, main="Vascular Plant Records: Coordinate Uncertainty", xlab = "Coordinate Uncertainty in meters")
 
 sum(is.na(Vascular.plant.records$coordinateUncertaintyInMeters))/nrow(Vascular.plant.records) 
-# 32% of records lack coordinate uncertainty
+# 25% of records lack coordinate uncertainty (down from 32% in 2022)
 sum(is.na(Vascular.plant.records$coordinateUncertaintyInMeters))/nrow(Vascular.plant.records) * nrow(Vascular.plant.records) 
-# Or nearly 6K of 18k records total
+# Or nearly 17K of 66K records total (compare with 6K of 18k records total in 2022)
 
 georeferenced.records <- nrow(Vascular.plant.records)-sum(is.na(Vascular.plant.records$coordinateUncertaintyInMeters))
 
-sum(Vascular.plant.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records # 80% of georeferenced records mapped to < 100 m coordinate uncertainty
+sum(Vascular.plant.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records # 82% of georeferenced records mapped to < 100 m coordinate uncertainty (vs 80% in 2022)
 
 sum(Vascular.plant.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records * georeferenced.records
 
-# That is, about 10K of total 18k records can be analysed with confidence at 100m grid scale
+# That is, about 40K of total 66k records can be analysed with confidence at 100m grid scale (compared to 10K of 18K records in 2022)
 
 # Some records with NAs are likely mapped at a reasonable degree of accuracy; it should be possible to evaluate the georeferencing by user
 # to improve data availability as may be necessary; for a first pass, however, it will suffice to map biodiversity at coarse
