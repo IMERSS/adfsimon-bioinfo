@@ -12,11 +12,11 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Tracheophyta_review_summary_new_2023-03-05.csv")
+baseline <- read.csv("summaries/Tracheophyta_review_summary_2024-11-10.csv")
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../4_consolidate_records/Plantae_et_Chromista/vascular_plants/synthesized/Howe_Sound_vascular_plant_records_consolidated.csv")
+records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/vascular_plants/synthesized/Howe_Sound_vascular_plant_records_consolidated_2024-11-10.csv")
 
 # Summarize unique taxa
 
