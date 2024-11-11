@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_2024-11-09.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Tracheophyta_review_summary_2024-11-10.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -50,7 +50,7 @@ GBIF.2022 <- read.csv("../../../consolidate_records/records/digitized/DwC/GBIF_2
 
 # Filter vascular plants
 
-GBIF.2022 <- GBIF.2022 %>% filter( == "Tracheophyta")
+GBIF.2022 <- GBIF.2022 %>% filter(phylum == "Tracheophyta")
 
 ## Remove iNaturalist records
 
@@ -114,7 +114,7 @@ nrow(GBIF.2022.names.matched)+nrow(GBIF.2022.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-GBIF.2022.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+GBIF.2022.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -166,9 +166,9 @@ nrow(GBIF.2022.names.unmatched.unmatched)
 nrow(GBIF.2022.names.matched)+nrow(GBIF.2022.names.unmatched.matched)+nrow(GBIF.2022.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
-# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
+# (Once key is revised, save as 'vascular_plant_taxon_key_2024.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon', 'Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Notes')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(GBIF.2022.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
@@ -196,10 +196,7 @@ GBIF.2022.records$eventDate <- as.Date(GBIF.2022.records$eventDate)
 nrow(GBIF.2022) - nrow(GBIF.2022.records)
 
 nrow(GBIF.2022)
-nrow(GBIF.2022.records) # ~400 records omitted; many taxa are cultivated species;
-# However, some are species that cannot be reconciled with the summary due to ambiguity
-# at the infrataxonomic level; these taxa should be sorted separately and integrated
-# with final catalog with reference to another summary dataframe perhaps?
+nrow(GBIF.2022.records) # ~65 records omitted; most if not all non-established species
 
 # Start record of unmatched names
 
@@ -275,7 +272,7 @@ nrow(iNaturalist.names.matched)+nrow(iNaturalist.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-iNaturalist.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+iNaturalist.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -327,9 +324,9 @@ nrow(iNaturalist.names.unmatched.unmatched)
 nrow(iNaturalist.names.matched)+nrow(iNaturalist.names.unmatched.matched)+nrow(iNaturalist.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
-# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
+# (Once key is revised, save as 'vascular_plant_taxon_key_2024.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon', 'Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Notes')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(iNaturalist.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
@@ -361,7 +358,7 @@ nrow(iNaturalist.records)
 
 # Add to record of unmatched names
 
-unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,LGL.2020.names.unmatched.unmatched)
+unmatched.vascular.plant.records <- rbind(unmatched.vascular.plant.records,iNaturalist.names.unmatched.unmatched)
 
 unmatched.vascular.plant.records
 
@@ -433,7 +430,7 @@ nrow(LGL.2020.names.matched)+nrow(LGL.2020.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-LGL.2020.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+LGL.2020.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -485,9 +482,9 @@ nrow(LGL.2020.names.unmatched.unmatched)
 nrow(LGL.2020.names.matched)+nrow(LGL.2020.names.unmatched.matched)+nrow(LGL.2020.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
-# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
+# (Once key is revised, save as 'vascular_plant_taxon_key_2024.csv' and rerun script to reconcile unmatched taxa)
 
-key.field.names <- c('Taxon','Matched.Taxon')
+key.field.names <- c('Taxon', 'Matched.Taxon', 'Notes')
 
 unmatched.taxa <- data.frame(matrix(ncol=length(key.field.names),nrow=nrow(LGL.2020.names.unmatched.unmatched)))
 names(unmatched.taxa) <- key.field.names
@@ -598,7 +595,7 @@ nrow(Page.2004.names.matched)+nrow(Page.2004.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Page.2004.key <- read.csv("keys/vascular_plant_taxon_key_2022.csv") 
+Page.2004.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -650,7 +647,7 @@ nrow(Page.2004.names.unmatched.unmatched)
 nrow(Page.2004.names.matched)+nrow(Page.2004.names.unmatched.matched)+nrow(Page.2004.names.unmatched.unmatched)
 
 # Generate review key with mismatched names
-# (Once key is revised, save as 'vascular_plant_taxon_key_2022.csv' and rerun script to reconcile unmatched taxa)
+# (Once key is revised, save as 'vascular_plant_taxon_key_2024.csv' and rerun script to reconcile unmatched taxa)
 
 key.field.names <- c('Taxon','Matched.Taxon')
 
