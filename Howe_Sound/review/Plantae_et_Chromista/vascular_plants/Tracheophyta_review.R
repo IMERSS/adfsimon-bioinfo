@@ -16,7 +16,7 @@ baseline <- read.csv("summaries/Tracheophyta_review_summary_2024-11-10.csv")
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/vascular_plants/synthesized/Howe_Sound_vascular_plant_records_consolidated_2024-11-10.csv")
+records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/vascular_plants/synthesized/Howe_Sound_vascular_plant_records_consolidated_2024-11-14.csv")
 
 # Summarize unique taxa
 
@@ -307,11 +307,50 @@ summary$notes <- baseline$notes[match(unlist(summary$scientificName), baseline$s
 summary$ID <- baseline$ID[match(unlist(summary$scientificName), baseline$scientificName)]
 summary$statsCode <- "VAS"
 
+# Check for duplication / errors in correspondence between summary and records
+
+unique.records <- unique(records$scientificName)
+summary.records <- summary$scientificName
+
+summary.n <- data.frame(table(summary$scientificName))
+
+length(unique.records)
+length(summary.records)
+
+setdiff(unique.records, summary.records)
+setdiff(summary.records, unique.records)
+
+# Remove duplication errors
+
+## TO DO: Figure out the source of the following errors and prevent them downstream!
+
+# Errors: 
+
+# E1: Diphasiastrum alpinum × sitchense is showing up in the summary twice, once as confirmed and once as new.
+# It should count as new and not as confirmed!
+# Remove the erroneous duplicate entry:
+
+summary <- summary %>%
+  filter(!(scientificName == "Diphasiastrum alpinum × sitchense" & reportingStatus == "confirmed"))
+
+# E2: Polystichum braunii × munitum is showing up in the summary twice, once as confirmed and once as new.
+# It should count as new and not as confirmed!
+# Remove the erroneous duplicate entry:
+
+summary <- summary %>%
+  filter(!(scientificName == "Polystichum braunii × munitum" & reportingStatus == "confirmed"))
+
+# E3: Corydalis scouleri is not represented in the records but is still showing up in the summary. ???
+# Remove from the summary:
+
+summary <- summary %>% 
+  filter(!(scientificName == "Corydalis scouleri"))
+
 # Order and output summary
 
 summary <- summary[order(summary$scientificName),] 
 
-write.csv(summary, "outputs/vascular_plant_summary_resynthesized_2023-03-05.csv", row.names = FALSE, na = '')
+write.csv(summary, "outputs/vascular_plant_summary_resynthesized.csv", row.names = FALSE, na = '')
 
 # Identify missing taxa from Judith's original list (lacking vouching records)
  
@@ -340,4 +379,4 @@ nrow(missing.taxa)
 
 missing.taxa <- left_join(missing.taxa,baseline)
 
-write.csv(missing.taxa, "outputs/missing_taxa_2023-03-05.csv", row.names = FALSE, na = '')
+write.csv(missing.taxa, "outputs/missing_taxa.csv", row.names = FALSE, na = '')

@@ -59,6 +59,10 @@ GBIF.2022 <- GBIF.2022 %>% filter(phylum == "Tracheophyta")
 # 17,575 - 2,236 = 15,339 records lost by removing iNat records from GBIF dataset
 # 48,372 records recovered with addition of iNat records below
 
+# Remove false report (aggregated due to faulty geo-referencing)
+
+GBIF.2022 <- GBIF.2022 %>% filter(!(scientificName == "Uropappus lindleyi (DC.) Nutt."))
+
 ## Synthesize Records
 
 # Create DarwinCore dataframe template 
@@ -220,6 +224,15 @@ iNaturalist <- read.csv("../../../consolidate_records/records/digitized/DwC/iNat
 
 iNaturalist <- iNaturalist %>% filter(captive != TRUE)
 
+# Substitute user handles for observer names where names aren't available
+
+iNaturalist <- iNaturalist %>%
+  mutate(recordedBy = if_else(recordedBy == "" | is.na(recordedBy), user_login, recordedBy))
+
+# Save metadata to reintegrated later
+
+iNaturalist.metadata <- iNaturalist
+
 ## Synthesize Records
 
 # Create DarwinCore dataframe template 
@@ -238,6 +251,12 @@ iNaturalist <- data.frame
 iNaturalist$stateProvince <- "British Columbia"
 iNaturalist$country <- "Canada"
 iNaturalist$countryCode <- "CA"
+iNaturalist$institutionCode <- "iNaturalist"
+iNaturalist$collectionCode <- "Observations"
+iNaturalist$occurrenceID <- paste0("https://www.inaturalist.org/observations/", iNaturalist.metadata$id)
+iNaturalist$catalogNumber <- iNaturalist.metadata$id
+iNaturalist$basisOfRecord <- "Human Observation"
+iNaturalist$occurrenceStatus <- "present"
 
 # Merge with summary to standardize names and taxon metadata
 
