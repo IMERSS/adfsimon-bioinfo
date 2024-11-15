@@ -32,7 +32,7 @@ names(summary) <- c("scientificName","scientificNameAuthorship","subtaxonAuthors
 DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','phylum','subphylum','class',
                'order','suborder','infraorder','superfamily','family','genus','subgenus','specificEpithet',
                'hybrid','subspecies','variety','form','infraspecificEpithet','taxonRank','institutionCode',
-               'collectionCode','catalogNumber','datasetName','occurrenceID','recordedBy','recordNumber',
+               'collectionCode','catalogNumber','datasetName','occurrenceID','materialSampleID','recordedBy','recordNumber',
                'fieldNumber','eventDate','year','month','day','basisOfRecord','locality','locationRemarks','island',
                'stateProvince','country','countryCode','decimalLatitude','decimalLongitude','coordinateUncertaintyInMeters',
                'georeferencedBy','georeferenceVerificationStatus','georeferenceProtocol','georeferenceRemarks',
@@ -59,17 +59,43 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 
 # Read Bioblitz 2023 Illumina sequence data
+# TO DO: decide whether to or how to include include metabarcode sequence data
 
-BioBlitz.2023 <- read.csv("../../records/digitized/DarwinCore/Webber_et_al_2021-2023_Galiano_Island_diatom_eelgrass_plankton_2023_bioblitz_DwC.csv")
+BioBlitz.2023 <- read.csv("../../records/digitized/Webber_et_al_2024_sequence_table_rbcL_share_MAL_Galiano_BioBlitz_2023_AS_MW_AS.csv")
 
-BioBlitz.2023 <- BioBlitz.2023 %>% subset(InBioBlitz == 'y')
+Webber.et.al.2024.metadata <- read.csv("../../records/digitized/Webber_et_al_2024_metadata.csv")
 
-BioBlitz.2023 <- BioBlitz.2023 %>% select(scientificName)
+# Transform matrix into long-form dataframe
 
-# Create unique identifiers for observations
+BioBlitz.2023 <- BioBlitz.2023 %>%
+  pivot_longer(
+    cols = starts_with("GBB"),       
+    names_to = "sample",             
+  )
 
-unique.prefix <- "GALIANOBIOBLITZDIATOMS2023:"
-unique.suffix <- 1:nrow(BioBlitz.2023)
+# Assign scientificName based on resolved names
+
+BioBlitz.2023$scientificName  <- BioBlitz.2023$resolved_taxon
+
+# Resolve sample IDs to facilitate merge with metadata table
+
+BioBlitz.2023$materialSampleID <- BioBlitz.2023$sample
+BioBlitz.2023$occurrenceID <- BioBlitz.2023$row_names
+
+BioBlitz.2023$materialSampleID <- gsub("\\.", "-", BioBlitz.2023$materialSampleID)
+
+# Assign metadata based on sample IDs
+
+BioBlitz.2023$eventDate  <- Webber.et.al.2024.metadata$eventDate[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
+BioBlitz.2023$recordedBy  <- Webber.et.al.2024.metadata$recordedBy[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
+BioBlitz.2023$recordNumber <- Webber.et.al.2024.metadata$recordNumber[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
+BioBlitz.2023$locality <- Webber.et.al.2024.metadata$locality[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
+BioBlitz.2023$decimalLatitude <- Webber.et.al.2024.metadata$decimalLatitude[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
+BioBlitz.2023$decimalLongitude <- Webber.et.al.2024.metadata$decimalLongitude[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
+BioBlitz.2023$coordinateUncertaintyInMeters <- Webber.et.al.2024.metadata$coordinateUncertaintyInMeters[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
+BioBlitz.2023$georeferencedBy <- Webber.et.al.2024.metadata$georeferencedBy[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
+BioBlitz.2023$habitat <- Webber.et.al.2024.metadata$habitat[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
+BioBlitz.2023$verbatimDepth <- Webber.et.al.2024.metadata$verbatimDepth[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
 
 # Create DarwinCore dataframe template 
 
@@ -82,24 +108,14 @@ BioBlitz.2023 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
+BioBlitz.2023$scientificName <- BioBlitz.2023.names$resolved_taxon
 BioBlitz.2023$datasetName <- "Galiano BioBlitz 2023"
-BioBlitz.2023$recordedBy<- "Mark Webber, Arjan van Asselt, Elaine Humphrey, Sandra Lindstrom, Laura Parfrey"
-BioBlitz.2023$eventDate <- '2023-05-26' # temporary date, update
-BioBlitz.2023$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
-BioBlitz.2023$decimalLatitude <- 48.90071443043615 # update
-BioBlitz.2023$decimalLongitude <- -123.40790606380006 # update
 BioBlitz.2023$georeferenceProtocol <- "Coordinates mapped based on precise locations of BioBlitz sampling sites"
-BioBlitz.2023$coordinateUncertaintyInMeters <- 50
 BioBlitz.2023$countryCode <- "CA"
 BioBlitz.2023$country <- "Canada"
 BioBlitz.2023$stateProvince <- "British Columbia"
 BioBlitz.2023$island <- "Galiano Island"
-BioBlitz.2023$locality <- "Update" # Update
 BioBlitz.2023$basisOfRecord <- "MaterialSample"
-
-# Remove '_' from 'scientificName'
-
-BioBlitz.2023$scientificName <-  gsub("_", " ", BioBlitz.2023$scientificName)
 
 # Merge with summary to standardize names and taxon metadata
 
@@ -139,7 +155,7 @@ nrow(BioBlitz.2023.names.matched)+nrow(BioBlitz.2023.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-BioBlitz.2023.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+BioBlitz.2023.key <- read.csv("keys/algae_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -288,7 +304,7 @@ nrow(BOLD.2021.names.matched)+nrow(BOLD.2021.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-BOLD.2021.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+BOLD.2021.key <- read.csv("keys/algae_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -435,7 +451,7 @@ nrow(CPNWH.2021.names.matched)+nrow(CPNWH.2021.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-CPNWH.2021.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+CPNWH.2021.key <- read.csv("keys/algae_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -624,7 +640,7 @@ nrow(iNaturalist.observations.names.matched)+nrow(iNaturalist.observations.names
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-iNaturalist.observations.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+iNaturalist.observations.key <- read.csv("keys/algae_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -790,7 +806,7 @@ nrow(Lindstrom.2023.names.matched)+nrow(Lindstrom.2023.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Lindstrom.2023.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+Lindstrom.2023.key <- read.csv("keys/algae_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -954,7 +970,7 @@ nrow(PMLS.2021.names.matched)+nrow(PMLS.2021.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-PMLS.2021.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+PMLS.2021.key <- read.csv("keys/algae_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -1141,7 +1157,7 @@ nrow(Webber.et.al.2020.names.matched)+nrow(Webber.et.al.2020.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Webber.et.al.2020.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+Webber.et.al.2020.key <- read.csv("keys/algae_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
@@ -1331,7 +1347,7 @@ nrow(Webber.et.al.2023.names.matched)+nrow(Webber.et.al.2023.names.unmatched)
 
 # Read key to reconcile mismatches based on previous keys modified with the inclusion of new reports to summary
 
-Webber.et.al.2023.key <- read.csv("keys/algae_taxon_key_2023.csv") 
+Webber.et.al.2023.key <- read.csv("keys/algae_taxon_key_2024.csv") 
 
 # Swap unmatched names using key
 
