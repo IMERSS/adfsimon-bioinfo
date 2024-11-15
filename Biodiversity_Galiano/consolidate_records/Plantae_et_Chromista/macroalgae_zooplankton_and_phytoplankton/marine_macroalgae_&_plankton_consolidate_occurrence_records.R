@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-01-21.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-11-15.csv")
 
 # Temporarily assign pseudo-DWC fields until system is transitioned to new school reporting methods
 
@@ -32,7 +32,8 @@ names(summary) <- c("scientificName","scientificNameAuthorship","subtaxonAuthors
 DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','phylum','subphylum','class',
                'order','suborder','infraorder','superfamily','family','genus','subgenus','specificEpithet',
                'hybrid','subspecies','variety','form','infraspecificEpithet','taxonRank','institutionCode',
-               'collectionCode','catalogNumber','datasetName','occurrenceID','materialSampleID','recordedBy','recordNumber',
+               'collectionCode','catalogNumber','datasetName','occurrenceID','materialSampleID','associatedSequences',
+               'identifiedWith','recordedBy','recordNumber',
                'fieldNumber','eventDate','year','month','day','basisOfRecord','locality','locationRemarks','island',
                'stateProvince','country','countryCode','decimalLatitude','decimalLongitude','coordinateUncertaintyInMeters',
                'georeferencedBy','georeferenceVerificationStatus','georeferenceProtocol','georeferenceRemarks',
@@ -43,18 +44,18 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Consolidate records
 
-# Sources (7/10 added):
+# Sources (5/10 added):
 
-# BioBlitz 2023 records (Illumina sequencing data) - ! Added, but Hakai to update
+# BioBlitz 2023 records (Illumina sequencing data) - ! Added
 # BOLD records 2021 - ! Added, but needs updating for 2023
-# CPNWH records 2022 - ! Added, needs to be updated for 2023
+# CPNWH records 2022 - ! Added, needs to be updated for 2023 (harmonize with GBIF)
 # iNaturalist observations 2023 - ! Added, needs update
-# Sandra Lindstrom BioBlitz collections 2023 - ! Added, needs update
-# Simon 2023 - Sanger sequencing data - ! Not yet added!
 # PMLS Records 2021 - Added # - ! Need to update dataset
-# Webber et al. 2020 Zostera epiphytes - ! added - ! Hakai to update
-# Webber et al. 2023a Sanger sequencing of clones - ! Not yet added! - Hakai to add
-# Webber et al. 2023b General Plankton Samples - ! Not yet added! - Hakai to add
+# Sandra Lindstrom BioBlitz collections 2023 - ! Added, needs update
+# Sanger sequence data - Hakai to add (harmonize with BOLD records?)
+# Webber et al. 2020 Zostera epiphytes - ! Not yet added!
+# Webber et al. 2023a Sanger sequencing of clones - ! Not yet added!
+# Webber et al. 2023b General Plankton Samples - ! Not yet added!
 
 
 
@@ -65,30 +66,36 @@ BioBlitz.2023 <- read.csv("../../records/digitized/Webber_et_al_2024_sequence_ta
 
 Webber.et.al.2024.metadata <- read.csv("../../records/digitized/Webber_et_al_2024_metadata.csv")
 
-# Transform matrix into long-form dataframe
+# Transform matrix into long-form dataframe and convert recordNumbers to match metadata
 
 BioBlitz.2023 <- BioBlitz.2023 %>%
   pivot_longer(
     cols = starts_with("GBB"),       
-    names_to = "sample",             
-  )
+    names_to = "materialSampleID",             
+  ) %>%
+  distinct() %>%
+  mutate(materialSampleID = gsub("\\.", "-", materialSampleID))
 
 # Assign scientificName based on resolved names
 
 BioBlitz.2023$scientificName  <- BioBlitz.2023$resolved_taxon
 
-# Resolve sample IDs to facilitate merge with metadata table
+# Assign sequence data to Dwc field associatedSequences
 
-BioBlitz.2023$materialSampleID <- BioBlitz.2023$sample
-BioBlitz.2023$occurrenceID <- BioBlitz.2023$row_names
+BioBlitz.2023$associatedSequences <- BioBlitz.2023$rbcL_sequence
+BioBlitz.2023$identifiedWith <- "rbcL"
 
-BioBlitz.2023$materialSampleID <- gsub("\\.", "-", BioBlitz.2023$materialSampleID)
+# Assign unique occurrenceIDs
+
+unique.prefix <- "GBB2023:"
+unique.suffix <- 1:nrow(BioBlitz.2023)
+
+BioBlitz.2023$occurrenceID <- paste(unique.prefix,unique.suffix, sep = "")
 
 # Assign metadata based on sample IDs
 
 BioBlitz.2023$eventDate  <- Webber.et.al.2024.metadata$eventDate[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
 BioBlitz.2023$recordedBy  <- Webber.et.al.2024.metadata$recordedBy[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
-BioBlitz.2023$recordNumber <- Webber.et.al.2024.metadata$recordNumber[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
 BioBlitz.2023$locality <- Webber.et.al.2024.metadata$locality[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
 BioBlitz.2023$decimalLatitude <- Webber.et.al.2024.metadata$decimalLatitude[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
 BioBlitz.2023$decimalLongitude <- Webber.et.al.2024.metadata$decimalLongitude[match(unlist(BioBlitz.2023$materialSampleID), Webber.et.al.2024.metadata$sample)]
@@ -108,7 +115,6 @@ BioBlitz.2023 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
-BioBlitz.2023$scientificName <- BioBlitz.2023.names$resolved_taxon
 BioBlitz.2023$datasetName <- "Galiano BioBlitz 2023"
 BioBlitz.2023$georeferenceProtocol <- "Coordinates mapped based on precise locations of BioBlitz sampling sites"
 BioBlitz.2023$countryCode <- "CA"
