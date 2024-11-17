@@ -585,6 +585,7 @@ iNaturalist.observations <- subset(iNaturalist.observations, Genus != "")
 
 iNaturalist.observations <- iNaturalist.observations %>% rename(scientificName = iNaturalist.taxon.name)
 iNaturalist.observations <- iNaturalist.observations %>% rename(eventDate = Date.observed)
+iNaturalist.observations <- iNaturalist.observations %>% rename(recordedBy = Recorded.by)
 iNaturalist.observations <- iNaturalist.observations %>% rename(occurrenceID = observationId)
 iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLatitude = Latitude)
 iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLongitude = Longitude)
@@ -1855,11 +1856,6 @@ marine.algae.records$basisOfRecord <- str_replace(marine.algae.records$basisOfRe
 # Order by taxon
 
 marine.algae.records <- marine.algae.records[order(marine.algae.records$scientificName), ]
-marine.algae.records <- marine.algae.records[order(marine.algae.records$family), ]
-marine.algae.records <- marine.algae.records[order(marine.algae.records$order), ]
-marine.algae.records <- marine.algae.records[order(marine.algae.records$class), ]
-marine.algae.records <- marine.algae.records[order(marine.algae.records$phylum), ]
-marine.algae.records <- marine.algae.records[order(marine.algae.records$kingdom), ]
 
 # Tally records
 

@@ -197,9 +197,9 @@ new.summary.collectionNo <- anti_join(new.summary,new.summary.missing.collection
 new.summary.missing.collectionNo$firstReportedCollectionNumber <- first.observed$occurrenceID[match(unlist(new.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
 new.summary <- rbind(new.summary.missing.collectionNo,new.summary.collectionNo)
 
-new.summary.missing.collectionNo <- new.summary %>% filter(lastReportedSource == "")
+new.summary.missing.collectionNo <- new.summary %>% filter(lastReportedCollectionNumber == "")
 new.summary.collectionNo <- anti_join(new.summary,new.summary.missing.collectionNo)
-new.summary.missing.collectionNo$lastReportedSource <- last.observed$occurrenceID[match(unlist(new.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
+new.summary.missing.collectionNo$lastReportedCollectionNumber <- last.observed$occurrenceID[match(unlist(new.summary.missing.collectionNo$scientificName), last.observed$scientificName)]
 new.summary <- rbind(new.summary.missing.collectionNo,new.summary.collectionNo)
 
 # Construct summary dataframe for historic records (reported)
@@ -245,9 +245,9 @@ confirmed.summary.collectionNo <- anti_join(confirmed.summary,confirmed.summary.
 confirmed.summary.missing.collectionNo$firstReportedCollectionNumber <- first.observed$occurrenceID[match(unlist(confirmed.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
 confirmed.summary <- rbind(confirmed.summary.missing.collectionNo,confirmed.summary.collectionNo)
 
-confirmed.summary.missing.collectionNo <- confirmed.summary %>% filter(lastReportedSource == "")
+confirmed.summary.missing.collectionNo <- confirmed.summary %>% filter(lastReportedCollectionNumber == "")
 confirmed.summary.collectionNo <- anti_join(confirmed.summary,confirmed.summary.missing.collectionNo)
-confirmed.summary.missing.collectionNo$lastReportedSource <- last.observed$occurrenceID[match(unlist(confirmed.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
+confirmed.summary.missing.collectionNo$lastReportedCollectionNumber <- last.observed$occurrenceID[match(unlist(confirmed.summary.missing.collectionNo$scientificName), last.observed$scientificName)]
 confirmed.summary <- rbind(confirmed.summary.missing.collectionNo,confirmed.summary.collectionNo)
 
 # Construct summary dataframe for historic records (reported)
@@ -327,9 +327,9 @@ historical.summary.collectionNo <- anti_join(historical.summary,historical.summa
 historical.summary.missing.collectionNo$firstReportedCollectionNumber <- first.observed$occurrenceID[match(unlist(historical.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
 historical.summary <- rbind(historical.summary.missing.collectionNo,historical.summary.collectionNo)
 
-historical.summary.missing.collectionNo <- historical.summary %>% filter(lastReportedSource == "")
+historical.summary.missing.collectionNo <- historical.summary %>% filter(lastReportedCollectionNumber == "")
 historical.summary.collectionNo <- anti_join(historical.summary,historical.summary.missing.collectionNo)
-historical.summary.missing.collectionNo$lastReportedSource <- last.observed$occurrenceID[match(unlist(historical.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
+historical.summary.missing.collectionNo$lastReportedCollectionNumber <- last.observed$occurrenceID[match(unlist(historical.summary.missing.collectionNo$scientificName), last.observed$scientificName)]
 historical.summary <- rbind(historical.summary.missing.collectionNo,historical.summary.collectionNo)
 
 # Integrate new, confirmed, and historic records
@@ -367,14 +367,5 @@ summary$statsCode <- baseline$Stats.Code[match(unlist(summary$scientificName), b
 # Order and output summary
 
 summary <- summary[order(summary$scientificName), ]
-summary <- summary[order(summary$family), ]
-summary <- summary[order(summary$order), ]
-summary <- summary[order(summary$class), ]
-summary <- summary[order(summary$phylum), ]
-summary <- summary[order(summary$kingdom), ]
 
 write.csv(summary, "outputs/Galiano_marine_algae_and_protozoa_summary_resynthesized.csv", row.names = FALSE, na = '')
-
-# MW Review
-
-summary.MW <- summary %>% filter()
