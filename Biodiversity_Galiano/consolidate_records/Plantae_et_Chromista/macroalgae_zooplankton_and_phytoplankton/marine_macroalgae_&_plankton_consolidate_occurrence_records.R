@@ -1854,7 +1854,12 @@ marine.algae.records$basisOfRecord <- str_replace(marine.algae.records$basisOfRe
 
 # Order by taxon
 
-marine.algae.records <- marine.algae.records[order(marine.algae.records$scientificName),] 
+marine.algae.records <- marine.algae.records[order(marine.algae.records$scientificName), ]
+marine.algae.records <- marine.algae.records[order(marine.algae.records$family), ]
+marine.algae.records <- marine.algae.records[order(marine.algae.records$order), ]
+marine.algae.records <- marine.algae.records[order(marine.algae.records$class), ]
+marine.algae.records <- marine.algae.records[order(marine.algae.records$phylum), ]
+marine.algae.records <- marine.algae.records[order(marine.algae.records$kingdom), ]
 
 # Tally records
 
