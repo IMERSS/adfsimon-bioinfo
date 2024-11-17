@@ -12,11 +12,11 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-01-21.csv")
+baseline <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-11-16.csv")
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2024-01-23.csv")
+records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2024-11-16.csv")
 
 # Read resynthesized summary
 
@@ -26,7 +26,9 @@ synthesized.summary <- read.csv("outputs/Galiano_marine_algae_and_protozoa_summa
 
 unique.taxa <- distinct(records, scientificName)
 
-unique.taxa.summary <- distinct(baseline, scientificName)
+unique.taxa.summary <- distinct(baseline, Taxon)
+
+names(unique.taxa.summary) <- c("scientificName")
 
 #unique.taxa.resynthesized <- distinct(synthesized.summary, scientificName)
 
@@ -130,7 +132,7 @@ recent <- current.date-20
 
 # Remove list records that misrepresent the provenance of records
 
-past.records <- past.records %>% filter(!str_detect(datasetName, "UNESCO Nomination"))
+past.records <- past.records %>% filter(!str_detect(datasetName, "UNESCO Nomination")) # Not a problem with this dataset
 
 past.records$observationCount <- taxon.record.count$count[match(unlist(past.records$scientificName), taxon.record.count$scientificName)]
 
@@ -154,11 +156,11 @@ nrow(new.records)+nrow(confirmed.records)+nrow(historic.records) == nrow(unique.
 
 # Construct summary dataframe for new records
 
-new.summary.col.no <- ncol(baseline)
+new.summary.col.no <- ncol(synthesized.summary)
 new.summary.row.no <- nrow(new.records)
 
 new.summary <- data.frame(matrix(ncol = new.summary.col.no, nrow = new.summary.row.no))
-colnames(new.summary) <- names(baseline)
+colnames(new.summary) <- names(synthesized.summary)
 
 new.summary$scientificName <- new.records$scientificName
 
@@ -188,13 +190,25 @@ new.summary.sourced <- anti_join(new.summary,new.summary.missing.source)
 new.summary.missing.source$lastReportedSource <- last.observed$datasetName[match(unlist(new.summary.missing.source$scientificName), first.observed$scientificName)]
 new.summary <- rbind(new.summary.missing.source,new.summary.sourced)
 
+# Add values where missing from collection number (first reported and last reported) by subsetting rows with missing values, adding values from datasetName, and remerging
+
+new.summary.missing.collectionNo <- new.summary %>% filter(firstReportedCollectionNumber == "")
+new.summary.collectionNo <- anti_join(new.summary,new.summary.missing.collectionNo)
+new.summary.missing.collectionNo$firstReportedCollectionNumber <- first.observed$occurrenceID[match(unlist(new.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
+new.summary <- rbind(new.summary.missing.collectionNo,new.summary.collectionNo)
+
+new.summary.missing.collectionNo <- new.summary %>% filter(lastReportedSource == "")
+new.summary.collectionNo <- anti_join(new.summary,new.summary.missing.collectionNo)
+new.summary.missing.collectionNo$lastReportedSource <- last.observed$occurrenceID[match(unlist(new.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
+new.summary <- rbind(new.summary.missing.collectionNo,new.summary.collectionNo)
+
 # Construct summary dataframe for historic records (reported)
 
-confirmed.summary.col.no <- ncol(baseline)
+confirmed.summary.col.no <- ncol(synthesized.summary)
 confirmed.summary.row.no <- nrow(confirmed.records)
 
 confirmed.summary <- data.frame(matrix(ncol = confirmed.summary.col.no, nrow = confirmed.summary.row.no))
-colnames(confirmed.summary) <- names(baseline)
+colnames(confirmed.summary) <- names(synthesized.summary)
 
 confirmed.summary$scientificName <- confirmed.records$scientificName
 
@@ -224,111 +238,143 @@ confirmed.summary.sourced <- anti_join(confirmed.summary,confirmed.summary.missi
 confirmed.summary.missing.source$lastReportedSource <- last.observed$datasetName[match(unlist(confirmed.summary.missing.source$scientificName), first.observed$scientificName)]
 confirmed.summary <- rbind(confirmed.summary.missing.source,confirmed.summary.sourced)
 
+# Add values where missing from collection number (first reported and last reported) by subsetting rows with missing values, adding values from datasetName, and remerging
+
+confirmed.summary.missing.collectionNo <- confirmed.summary %>% filter(firstReportedCollectionNumber == "")
+confirmed.summary.collectionNo <- anti_join(confirmed.summary,confirmed.summary.missing.collectionNo)
+confirmed.summary.missing.collectionNo$firstReportedCollectionNumber <- first.observed$occurrenceID[match(unlist(confirmed.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
+confirmed.summary <- rbind(confirmed.summary.missing.collectionNo,confirmed.summary.collectionNo)
+
+confirmed.summary.missing.collectionNo <- confirmed.summary %>% filter(lastReportedSource == "")
+confirmed.summary.collectionNo <- anti_join(confirmed.summary,confirmed.summary.missing.collectionNo)
+confirmed.summary.missing.collectionNo$lastReportedSource <- last.observed$occurrenceID[match(unlist(confirmed.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
+confirmed.summary <- rbind(confirmed.summary.missing.collectionNo,confirmed.summary.collectionNo)
+
 # Construct summary dataframe for historic records (reported)
 
-historic.summary.col.no <- ncol(baseline)
-historic.summary.row.no <- nrow(historic.records)
+historical.summary.col.no <- ncol(synthesized.summary)
+historical.summary.row.no <- nrow(historic.records)
 
-historic.summary <- data.frame(matrix(ncol = historic.summary.col.no, nrow = historic.summary.row.no))
-colnames(historic.summary) <- names(baseline)
+historical.summary <- data.frame(matrix(ncol = historical.summary.col.no, nrow = historical.summary.row.no))
+colnames(historical.summary) <- names(synthesized.summary)
 
-historic.summary$scientificName <- historic.records$scientificName
+historical.summary$scientificName <- historic.records$scientificName
 
-historic.summary$firstReported <- first.observed$eventDate[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
-historic.summary$firstReportedBy <- first.observed$recordedBy[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
-historic.summary$firstReportedSource <- first.observed$institutionCode[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
-historic.summary$firstReportedCollectionNumber <- first.observed$catalogNumber[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
+historical.summary$firstReported <- first.observed$eventDate[match(unlist(historical.summary$scientificName), first.observed$scientificName)]
+historical.summary$firstReportedBy <- first.observed$recordedBy[match(unlist(historical.summary$scientificName), first.observed$scientificName)]
+historical.summary$firstReportedSource <- first.observed$institutionCode[match(unlist(historical.summary$scientificName), first.observed$scientificName)]
+historical.summary$firstReportedCollectionNumber <- first.observed$catalogNumber[match(unlist(historical.summary$scientificName), first.observed$scientificName)]
 
-historic.summary$lastReported <- last.observed$eventDate[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
-historic.summary$lastReportedBy <- last.observed$recordedBy[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
-historic.summary$lastReportedSource <- last.observed$institutionCode[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
-historic.summary$lastReportedCollectionNumber <- last.observed$catalogNumber[match(unlist(historic.summary$scientificName), first.observed$scientificName)]
+historical.summary$lastReported <- last.observed$eventDate[match(unlist(historical.summary$scientificName), first.observed$scientificName)]
+historical.summary$lastReportedBy <- last.observed$recordedBy[match(unlist(historical.summary$scientificName), first.observed$scientificName)]
+historical.summary$lastReportedSource <- last.observed$institutionCode[match(unlist(historical.summary$scientificName), first.observed$scientificName)]
+historical.summary$lastReportedCollectionNumber <- last.observed$catalogNumber[match(unlist(historical.summary$scientificName), first.observed$scientificName)]
 
-historic.summary$recordCount <- taxon.record.count$count[match(unlist(historic.summary$scientificName), taxon.record.count$scientificName)]
-historic.summary$reportingStatus <- "reported"
-historic.summary$iNatObservationStatus <- iNat.observation.status$iNatObservationStatus[match(unlist(historic.summary$scientificName), iNat.observation.status$scientificName)]
+historical.summary$recordCount <- taxon.record.count$count[match(unlist(historical.summary$scientificName), taxon.record.count$scientificName)]
+historical.summary$reportingStatus <- "reported"
+historical.summary$iNatObservationStatus <- iNat.observation.status$iNatObservationStatus[match(unlist(historical.summary$scientificName), iNat.observation.status$scientificName)]
 
 # Replace values for dateless historical records 
 
 # Note: all historical records have dates as of 2023-04-16
 
-# historic.summary.dateless.col.no <- ncol(baseline)
-# historic.summary.dateless.row.no <- nrow(dateless.records.unique.n1)
+# historical.summary.dateless.col.no <- ncol(baseline)
+# historical.summary.dateless.row.no <- nrow(dateless.records.unique.n1)
 
-# historic.summary.dateless.records <- data.frame(matrix(ncol = historic.summary.dateless.col.no, nrow = historic.summary.dateless.row.no))
-# colnames(historic.summary.dateless.records) <- names(baseline)
+# historical.summary.dateless.records <- data.frame(matrix(ncol = historical.summary.dateless.col.no, nrow = historical.summary.dateless.row.no))
+# colnames(historical.summary.dateless.records) <- names(baseline)
 
-# historic.summary.dateless.records$scientificName <- dateless.records.unique.n1$scientificName
+# historical.summary.dateless.records$scientificName <- dateless.records.unique.n1$scientificName
 
-# historic.summary.dateless.records$firstReportedBy <- dateless.records.unique.n1$recordedBy[match(unlist(historic.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
-# historic.summary.dateless.records$firstReportedSource <- dateless.records.unique.n1$institutionCode[match(unlist(historic.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
-# historic.summary.dateless.records$firstReportedCollectionNumber <- dateless.records.unique.n1$catalogNumber[match(unlist(historic.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
+# historical.summary.dateless.records$firstReportedBy <- dateless.records.unique.n1$recordedBy[match(unlist(historical.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
+# historical.summary.dateless.records$firstReportedSource <- dateless.records.unique.n1$institutionCode[match(unlist(historical.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
+# historical.summary.dateless.records$firstReportedCollectionNumber <- dateless.records.unique.n1$catalogNumber[match(unlist(historical.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
 
-# historic.summary.dateless.records$lastReportedBy <- dateless.records.unique.n1$recordedBy[match(unlist(historic.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
-# historic.summary.dateless.records$lastReportedSource <- dateless.records.unique.n1$institutionCode[match(unlist(historic.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
-# historic.summary.dateless.records$lastReportedCollectionNumber <- dateless.records.unique.n1$catalogNumber[match(unlist(historic.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
+# historical.summary.dateless.records$lastReportedBy <- dateless.records.unique.n1$recordedBy[match(unlist(historical.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
+# historical.summary.dateless.records$lastReportedSource <- dateless.records.unique.n1$institutionCode[match(unlist(historical.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
+# historical.summary.dateless.records$lastReportedCollectionNumber <- dateless.records.unique.n1$catalogNumber[match(unlist(historical.summary.dateless.records$scientificName), dateless.records.unique.n1$scientificName)]
 
-# historic.summary.dateless.records$recordCount <- taxon.record.count$count[match(unlist(historic.summary.dateless.records$scientificName), taxon.record.count$scientificName)]
-# historic.summary.dateless.records$reportingStatus <- "reported"
-# historic.summary.dateless.records$iNatObservationStatus <- iNat.observation.status$iNatObservationStatus[match(unlist(historic.summary.dateless.records$scientificName), iNat.observation.status$scientificName)]
+# historical.summary.dateless.records$recordCount <- taxon.record.count$count[match(unlist(historical.summary.dateless.records$scientificName), taxon.record.count$scientificName)]
+# historical.summary.dateless.records$reportingStatus <- "reported"
+# historical.summary.dateless.records$iNatObservationStatus <- iNat.observation.status$iNatObservationStatus[match(unlist(historical.summary.dateless.records$scientificName), iNat.observation.status$scientificName)]
 
-# dateless.record.names <- historic.summary.dateless.records$scientificName
+# dateless.record.names <- historical.summary.dateless.records$scientificName
 
 # dateless.record.names <- dateless.record.names %>% paste(collapse = "|")
 
 # past.records <- records %>% filter(str_detect(scientificName, previously.reported))
 
-# historic.summary <- historic.summary %>% filter(!str_detect(scientificName, dateless.record.names))
+# historical.summary <- historical.summary %>% filter(!str_detect(scientificName, dateless.record.names))
 
-# historic.summary <- rbind(historic.summary,historic.summary.dateless.records)
+# historical.summary <- rbind(historical.summary,historical.summary.dateless.records)
 
 # Add values where missing from source (first reported and last reported) by subsetting rows with missing values, adding values from datasetName, and remerging
 
-historic.summary.missing.source <- historic.summary %>% filter(firstReportedSource == "")
-historic.summary.sourced <- anti_join(historic.summary,historic.summary.missing.source)
-historic.summary.missing.source$firstReportedSource <- first.observed$datasetName[match(unlist(historic.summary.missing.source$scientificName), first.observed$scientificName)]
-historic.summary <- rbind(historic.summary.missing.source,historic.summary.sourced)
+historical.summary.missing.source <- historical.summary %>% filter(firstReportedSource == "")
+historical.summary.sourced <- anti_join(historical.summary,historical.summary.missing.source)
+historical.summary.missing.source$firstReportedSource <- first.observed$datasetName[match(unlist(historical.summary.missing.source$scientificName), first.observed$scientificName)]
+historical.summary <- rbind(historical.summary.missing.source,historical.summary.sourced)
 
-historic.summary.missing.source <- historic.summary %>% filter(lastReportedSource == "")
-historic.summary.sourced <- anti_join(historic.summary,historic.summary.missing.source)
-historic.summary.missing.source$lastReportedSource <- last.observed$datasetName[match(unlist(historic.summary.missing.source$scientificName), first.observed$scientificName)]
-historic.summary <- rbind(historic.summary.missing.source,historic.summary.sourced)
+historical.summary.missing.source <- historical.summary %>% filter(lastReportedSource == "")
+historical.summary.sourced <- anti_join(historical.summary,historical.summary.missing.source)
+historical.summary.missing.source$lastReportedSource <- last.observed$datasetName[match(unlist(historical.summary.missing.source$scientificName), first.observed$scientificName)]
+historical.summary <- rbind(historical.summary.missing.source,historical.summary.sourced)
+
+# Add values where missing from collection number (first reported and last reported) by subsetting rows with missing values, adding values from datasetName, and remerging
+
+historical.summary.missing.collectionNo <- historical.summary %>% filter(firstReportedCollectionNumber == "")
+historical.summary.collectionNo <- anti_join(historical.summary,historical.summary.missing.collectionNo)
+historical.summary.missing.collectionNo$firstReportedCollectionNumber <- first.observed$occurrenceID[match(unlist(historical.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
+historical.summary <- rbind(historical.summary.missing.collectionNo,historical.summary.collectionNo)
+
+historical.summary.missing.collectionNo <- historical.summary %>% filter(lastReportedSource == "")
+historical.summary.collectionNo <- anti_join(historical.summary,historical.summary.missing.collectionNo)
+historical.summary.missing.collectionNo$lastReportedSource <- last.observed$occurrenceID[match(unlist(historical.summary.missing.collectionNo$scientificName), first.observed$scientificName)]
+historical.summary <- rbind(historical.summary.missing.collectionNo,historical.summary.collectionNo)
 
 # Integrate new, confirmed, and historic records
 
-summary <- rbind(new.summary,confirmed.summary,historic.summary)
+summary <- rbind(new.summary,confirmed.summary,historical.summary)
 
-summary$scientificNameAuthorship <- baseline$scientificNameAuthorship[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$subtaxonAuthorship <- baseline$subtaxonAuthorship[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$commonName <- baseline$commonName[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$kingdom <- baseline$kingdom[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$phylum <- baseline$phylum[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$subphylum <- baseline$subphylum[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$superclass <- baseline$superclass[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$class <- baseline$class[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$subclass <- baseline$subclass[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$superorder <- baseline$superorder[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$order <- baseline$order[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$suborder <- baseline$suborder[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$superfamily <- baseline$superfamily[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$family <- baseline$family[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$subfamily <- baseline$subfamily[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$tribe <- baseline$tribe[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$genus <- baseline$genus[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$specificEpithet <- baseline$specificEpithet[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$hybrid <- baseline$hybrid[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$subspecies <- baseline$subspecies[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$variety <- baseline$variety[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$establishmentMeans <- baseline$establishmentMeans[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$provincialStatus <- baseline$provincialStatus[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$nationalStatus <- baseline$nationalStatus[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$notes <- baseline$notes[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$ID <- baseline$ID[match(unlist(summary$scientificName), baseline$scientificName)]
-summary$statsCode <- "ALG"
+summary$scientificNameAuthorship <- baseline$Taxon.Author[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$subtaxonAuthorship <- baseline$Subtaxon.Author[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$commonName <- baseline$Common.Name[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$kingdom <- baseline$Kingdom[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$phylum <- baseline$Phylum[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$subphylum <- baseline$Subphylum[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$superclass <- baseline$Superclass[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$class <- baseline$Class[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$subclass <- baseline$Subclass[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$superorder <- baseline$Superorder[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$order <- baseline$Order[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$suborder <- baseline$Suborder[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$superfamily <- baseline$Superfamily[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$family <- baseline$Family[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$subfamily <- baseline$Subfamily[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$tribe <- baseline$Tribe[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$genus <- baseline$Genus[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$specificEpithet <- baseline$Species[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$hybrid <- baseline$Hybrid[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$subspecies <- baseline$Subspecies[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$variety <- baseline$Variety[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$establishmentMeans <- baseline$Origin[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$provincialStatus <- baseline$Provincial.Status[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$nationalStatus <- baseline$National.Status[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$notes <- baseline$Notes[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$ID <- baseline$ID[match(unlist(summary$scientificName), baseline$Taxon)]
+summary$statsCode <- baseline$Stats.Code[match(unlist(summary$scientificName), baseline$Taxon)]
 
 # Order and output summary
 
-summary <- summary[order(summary$scientificName),] 
+summary <- summary[order(summary$scientificName), ]
+summary <- summary[order(summary$family), ]
+summary <- summary[order(summary$order), ]
+summary <- summary[order(summary$class), ]
+summary <- summary[order(summary$phylum), ]
+summary <- summary[order(summary$kingdom), ]
 
 write.csv(summary, "outputs/Galiano_marine_algae_and_protozoa_summary_resynthesized.csv", row.names = FALSE, na = '')
 
+# MW Review
+
+summary.MW <- summary %>% filter()
