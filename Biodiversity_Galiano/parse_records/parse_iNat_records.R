@@ -69,14 +69,14 @@ Desmids.etc.3.obs <- iNat.obs %>% filter(Genus == 'Arcella')
 
 Desmids.etc.obs <- rbind(Desmids.etc.1.obs, Desmids.etc.2.obs, Desmids.etc.3.obs)
 
-# Marine algae and protozoa
+# Marine algae and protozoa # TO DO: Patch this once you have a standardized data pipeline in place
 
-Marine.algae.and.protozoa.1.obs <- iNat.obs %>% filter(Kingdom == 'Chromista' | Phylum == 'Rhodophyta')
-Marine.algae.and.protozoa.2.obs <- iNat.obs %>% filter(Phylum == 'Chlorophyta')
-Marine.algae.and.protozoa.2.obs <- subset(Marine.algae.and.protozoa.2.obs, Order != 'Trentepohliales' & Class != 'Chlorophyceae')
+Marine.algae.and.protozoa.1.obs <- iNat.obs %>% filter(phylum=='Ochrophyta'|phylum=='Rhodophyta'|phylum=='Miozoa'|phylum=='Ciliophora'|
+                                                         phylum=='Bigyra'|phylum=='Radiozoa'|phylum=='Cercozoa'|phylum=='Chlorophyta')
+Marine.algae.and.protozoa.2.obs <- iNat.obs %>% filter(phylum == 'Chlorophyta')
+#Marine.algae.and.protozoa.2.obs <- subset(Marine.algae.and.protozoa.2.obs, order != 'Trentepohliales' & class != 'Chlorophyceae')
 
 Marine.algae.and.protozoa.obs <- rbind(Marine.algae.and.protozoa.1.obs, Marine.algae.and.protozoa.2.obs)
-
 
 ## BACTERIA
 
