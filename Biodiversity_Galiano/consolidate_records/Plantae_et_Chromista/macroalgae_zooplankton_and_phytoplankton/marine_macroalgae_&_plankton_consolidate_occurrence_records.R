@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-11-16.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-11-17.csv")
 
 # Temporarily assign pseudo-DWC fields until system is transitioned to new school reporting methods
 
@@ -244,7 +244,7 @@ BioBlitz.2023.records$eventDate <- as.Date(BioBlitz.2023.records$eventDate)
 
 nrow(BioBlitz.2023) - nrow(BioBlitz.2023.records)
 nrow(BioBlitz.2023)
-nrow(BioBlitz.2023.records) # 
+nrow(BioBlitz.2023.records) # records removed all indeterminate wrt to curated summary
 
 # Start record of unmatched names
 
@@ -566,43 +566,56 @@ unmatched.algae.records
 
 iNaturalist.observations <- read.csv("../../../parse_records/outputs/iNat_obs_marine_algae_and_protozoa.csv")
 
+# TO DO: Update this script  once data pipelines are standardized.
+# Names do not need substitution with the current (last) version of the dataset
+
 # Substitute iNaturalist usernames where actual observer names are missing
 
-iNaturalist.observations.nameless <- iNaturalist.observations %>% 
-  filter(Recorded.by != "")
+# iNaturalist.observations.nameless <- iNaturalist.observations %>% 
+#   filter(Recorded.by != "")
 
-iNaturalist.observations.names <- anti_join(iNaturalist.observations,iNaturalist.observations.nameless)
+# iNaturalist.observations.names <- anti_join(iNaturalist.observations,iNaturalist.observations.nameless)
 
-iNaturalist.observations.nameless$recorded.By <- iNaturalist.observations.nameless$user_login
+# iNaturalist.observations.nameless$recorded.By <- iNaturalist.observations.nameless$user_login
 
-iNaturalist.observations <- rbind(iNaturalist.observations.nameless,iNaturalist.observations.names)
+# iNaturalist.observations <- rbind(iNaturalist.observations.nameless,iNaturalist.observations.names)
 
 # Drop observations of taxa that are not identified to genus at least
 
-iNaturalist.observations <- subset(iNaturalist.observations, Genus != "")
+# iNaturalist.observations <- subset(iNaturalist.observations, Genus != "")
+
+iNaturalist.observations <- subset(iNaturalist.observations, taxon_rank != "phylum")
+iNaturalist.observations <- subset(iNaturalist.observations, taxon_rank != "class")
+iNaturalist.observations <- subset(iNaturalist.observations, taxon_rank != "subclass")
+iNaturalist.observations <- subset(iNaturalist.observations, taxon_rank != "order")
+iNaturalist.observations <- subset(iNaturalist.observations, taxon_rank != "family")
+iNaturalist.observations <- subset(iNaturalist.observations, taxon_rank != "subfamily")
+iNaturalist.observations <- subset(iNaturalist.observations, taxon_rank != "tribe")
 
 # Add DwC fields to iNaturalist catalog to facilitate joins with DwC dataframe template
 
-iNaturalist.observations <- iNaturalist.observations %>% rename(scientificName = iNaturalist.taxon.name)
-iNaturalist.observations <- iNaturalist.observations %>% rename(eventDate = Date.observed)
-iNaturalist.observations <- iNaturalist.observations %>% rename(recordedBy = Recorded.by)
-iNaturalist.observations <- iNaturalist.observations %>% rename(occurrenceID = observationId)
-iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLatitude = Latitude)
-iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLongitude = Longitude)
+iNaturalist.observations <- iNaturalist.observations %>% rename(scientificName = scientific_name)
+iNaturalist.observations <- iNaturalist.observations %>% rename(eventDate = observed_on)
+iNaturalist.observations <- iNaturalist.observations %>% rename(recordedBy = user_name)
+iNaturalist.observations <- iNaturalist.observations %>%
+  rename(occurrenceID = id) %>%
+  mutate(occurrenceID = paste0("iNat:", occurrenceID))
+iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLatitude = latitude)
+iNaturalist.observations <- iNaturalist.observations %>% rename(decimalLongitude = longitude)
 
 # Substitute iNaturalist taxon names with names from curated summary based on taxonID
 
-iNaturalist.observations$swappedNames <- summary$scientificName[match(unlist(iNaturalist.observations$iNaturalist.taxon.ID), summary$ID)]
+# iNaturalist.observations$swappedNames <- summary$scientificName[match(unlist(iNaturalist.observations$iNaturalist.taxon.ID), summary$ID)]
 
-iNaturalist.observations.swapped.names <- iNaturalist.observations %>% drop_na(swappedNames)
+# iNaturalist.observations.swapped.names <- iNaturalist.observations %>% drop_na(swappedNames)
 
-iNaturalist.observations.unswapped.names <- anti_join(iNaturalist.observations,iNaturalist.observations.swapped.names)
+# iNaturalist.observations.unswapped.names <- anti_join(iNaturalist.observations,iNaturalist.observations.swapped.names)
 
-iNaturalist.observations.swapped.names$scientificName <- iNaturalist.observations.swapped.names$swappedNames
+# iNaturalist.observations.swapped.names$scientificName <- iNaturalist.observations.swapped.names$swappedNames
 
-iNaturalist.observations <- rbind(iNaturalist.observations.swapped.names,iNaturalist.observations.unswapped.names)
+# iNaturalist.observations <- rbind(iNaturalist.observations.swapped.names,iNaturalist.observations.unswapped.names)
 
-iNaturalist.observations$swappedNames <- NULL
+# iNaturalist.observations$swappedNames <- NULL
 
 # Create DarwinCore dataframe template 
 
@@ -952,7 +965,7 @@ PMLS.2021 <- select(data.frame, c(1:length(DwCFields)))
 
 PMLS.2021$institutionCode <- "PMLS"
 PMLS.2021$datasetName <- "Pacific Marine Life Survey Dive Records"
-PMLS.2021$catalogNumber <- paste(unique.prefix,unique.suffix, sep = "")
+PMLS.2021$occurrenceID <- paste(unique.prefix,unique.suffix, sep = "")
 PMLS.2021$coordinateUncertaintyInMeters <- 100
 PMLS.2021$island <- "Galiano Island"
 PMLS.2021$stateProvince <- "British Columbia"
