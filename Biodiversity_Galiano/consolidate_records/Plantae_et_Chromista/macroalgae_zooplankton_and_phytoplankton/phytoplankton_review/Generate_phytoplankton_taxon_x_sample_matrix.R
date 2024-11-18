@@ -4,7 +4,7 @@ library(dplyr)
 
 # Prepare matrix of Galiano Island phytoplankton based on morphological and dna evidence
 
-phytoplankton.summary <- read.csv("/Users/andrewsimon/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/phytoplankton_review/Galiano_Island_marine_phytoplankton_summary_2024-11-17.csv")
+phytoplankton.summary <- read.csv("/Users/andrewsimon/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/phytoplankton_review/Galiano_Island_phytoplankton_summary_2024-11-17.csv")
 records <- read.csv("/Users/andrewsimon/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2024-11-17.csv")
 
 # Assuming 'name' is the column that contains the species names in both dataframes
@@ -36,6 +36,6 @@ colnames(table)[1:5] <- c("iNaturalist", "BioBlitz 2023", "Zostera 2020", "Miner
 
 table <- table[, c(1, 3, 4, 5, 2)]
 
-write.csv(phytoplankton.records, "/Users/andrewsimon/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/phytoplankton_review/Galiano_Island_phytoplankton_records.csv")
-write.csv(table, "/Users/andrewsimon/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/phytoplankton_review/Galiano_Island_phytoplankton_taxon_x_sample_matrix.csv")
+write.csv(phytoplankton.records, "/Users/andrewsimon/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/phytoplankton_review/Galiano_Island_phytoplankton_records.csv", row.names = FALSE)
+write.csv(table, "/Users/andrewsimon/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/phytoplankton_review/Galiano_Island_phytoplankton_taxon_x_sample_matrix.csv", row.names = FALSE)
 
