@@ -772,11 +772,13 @@ unmatched.algae.records
 # Sandra Lindstrom's 2023 BioBlitz records #
 ############################################
 
-#  TO DO: Review. This code is supposedly not complete?
+# TO DO: confer with Sandra re: final version of this dataset
+# TO DO: decide whether to use fieldID recordID, etc for this dataset (depends on whether Sandra deposits her material?)
+# TO DO: consider adding the field 'identifiedBy' to distinguish the collection episode from the identification
+# TO DO: consider adding Zach's name alongside Sandra's for reportedBy
 
-Lindstrom.2023 <- read.csv("../../records/digitized/DarwinCore/Sandra_Lindstrom_Galiano_seaweed_collections_May_2023_Jan_2024_updates_DwC.csv")
-
-Lindstrom.2023.genetic <- read.csv("../../records/digitized/DarwinCore/Sandra_Lindstrom_Galiano_Seaweed_2023_Genetic_Data_Reporting_DwC.csv")
+Lindstrom.2023 <- read.csv("../../records/digitized/DarwinCore/Sandra_Lindstrom_Galiano_seaweed_collections_May_2023_Jan_2024_updates_genetic_data_incorporated_AS_DwC.csv")
+Lindstrom.2023.metadata <- read.csv("../../records/digitized/DarwinCore/Sandra_Lindstrom_Galiano_seaweed_collections_May_2023_Jan_2024_DwC_metadata.csv")
 
 # Create DarwinCore dataframe template (for both genetic and catalog datasets)
 
@@ -794,10 +796,6 @@ data.frame[names(Lindstrom.2023.genetic)] <- Lindstrom.2023.genetic
 
 Lindstrom.2023.genetic <- select(data.frame, c(1:length(DwCFields)))
 
-## Merge catalogs (redundancy already assessed; only unique records represented in genetic datasets)
-
-Lindstrom.2023 <- rbind(Lindstrom.2023, Lindstrom.2023.genetic)
-
 # Add metadata
 
 Lindstrom.2023$datasetName <- "Lindstrom 2023"
@@ -805,6 +803,8 @@ Lindstrom.2023$stateProvince <- "British Columbia"
 Lindstrom.2023$country <- "Canada"
 Lindstrom.2023$island <- "Galiano Island"
 Lindstrom.2023$countryCode <- "CA"
+Lindstrom.2023$decimalLatitude <- Lindstrom.2023.metadata$decimalLatitude[match(unlist(Lindstrom.2023$locality), Lindstrom.2023.metadata$scientificName)]
+Lindstrom.2023$decimalLongitude <- Lindstrom.2023.metadata$decimalLongitude[match(unlist(Lindstrom.2023$locality), Lindstrom.2023.metadata$scientificName)]
 
 # Merge with summary to standardize names and taxon metadata
 

@@ -16,7 +16,7 @@ baseline <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_prot
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2024-11-17.csv")
+records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2024-11-18.csv")
 
 # Read resynthesized summary
 
