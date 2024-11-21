@@ -37,5 +37,5 @@ colnames(table)[1:5] <- c("iNaturalist", "BioBlitz 2023", "Zostera 2020", "Miner
 table <- table[, c(1, 3, 4, 5, 2)]
 
 write.csv(phytoplankton.records, "/Users/andrewsimon/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/phytoplankton_review/Galiano_Island_phytoplankton_records.csv", row.names = FALSE)
-write.csv(table, "/Users/andrewsimon/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/phytoplankton_review/Galiano_Island_phytoplankton_taxon_x_sample_matrix.csv", row.names = FALSE)
+write.csv(table, "/Users/andrewsimon/GitHub/adfsimon-bioinfo/Biodiversity_Galiano/consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/phytoplankton_review/Galiano_Island_phytoplankton_taxon_x_sample_matrix.csv")
 
