@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Galiano_Tracheophyta_review_summary_reviewed_2024-10-07-assigned_revised.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/vascular_plants/summaries/Galiano_Tracheophyta_review_summary_reviewed_2024-11-21.csv")
 
 # Create vector of DarwinCore fields for aggregating records
 
@@ -2312,6 +2312,11 @@ UBC.2022$island <- "Galiano Island"
 UBC.2022$countryCode <- "CA"
 UBC.2022$basisOfRecord <- "PreservedSpecimen"
 UBC.2022$institutionCode <- "UBC"
+
+# Correct annotations
+
+UBC.2022$scientificName[UBC.2022$catalogNumber == "V156682"] <- "Claytonia perfoliata" 
+# Based on Frank Lomer's recent (Nov. 20 2024) annotations of this record
 
 # Merge with summary to standardize names and taxon metadata
 
