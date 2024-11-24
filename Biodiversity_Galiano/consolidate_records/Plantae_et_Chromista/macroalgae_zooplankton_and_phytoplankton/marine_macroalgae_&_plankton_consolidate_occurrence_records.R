@@ -1103,8 +1103,10 @@ unmatched.algae.records
 
 
 ##################################################################
-# Webber et al. 2020 records (Eelgrass Illumina sequencing data) #
+# Webber et al. 2021 records (Eelgrass Illumina sequencing data) #
 ##################################################################
+
+## TO DO: Update metadata to 2021-03-07
 
 Webber.et.al.2020.rbcL <- read.csv("../../records/digitized/Webber_et_al_2024_sequence_table_rbcL_share_MAL_Zostera_AS_MW_AS.csv")
 Webber.et.al.2020.18S <- read.csv("../../records/digitized/Webber_et_al_2024_sequence_table_18S_share_MAL_Zostera_AS_MW_AS.csv")
@@ -1193,9 +1195,9 @@ Webber.et.al.2020 <- select(data.frame, c(1:length(DwCFields)))
 
 # Add metadata
 
-Webber.et.al.2020$datasetName <- "Webber et al. 2020"
+Webber.et.al.2020$datasetName <- "Webber et al. 2021"
 Webber.et.al.2020$recordedBy<- "Mark Webber, Siobhan Schenck & Arjan van Asselt"
-Webber.et.al.2020$eventDate <- '2020-11-15'
+Webber.et.al.2020$eventDate <- '2021-03-07'
 Webber.et.al.2020$decimalLatitude <- 48.900714
 Webber.et.al.2020$decimalLongitude <- -123.407906
 Webber.et.al.2020$georeferenceProtocol <- "Coordinates mapped based on precise location of study area"
