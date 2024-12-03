@@ -12,7 +12,7 @@ library(tidyr)
 
 # Read baseline summary for standardizing species names
 
-summary <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-11-17.csv")
+summary <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-12-02.csv")
 
 # Temporarily assign pseudo-DWC fields until system is transitioned to new school reporting methods
 
@@ -44,25 +44,27 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Consolidate records
 
-# Sources (5/10 added):
+# Sources (9/11 added):
 
-# BioBlitz 2023 records (Illumina sequencing data) - ! Added (MW to review)
-# BOLD records 2021 - ! Added, but needs updating for 2024
-# CPNWH records 2022 - ! Added, needs to be updated for 2024 (harmonize with GBIF)
-# iNaturalist observations 2024 - ! Added, but needs update (esp. w. focus on red coralline algae)
-# PMLS Records 2021 - ! Added (no update required)
-# Sandra Lindstrom BioBlitz collections 2023 - ! Added
-# Sanger sequence data - Hakai to add (harmonize with BOLD records?)
-# Webber et al. 2020 Zostera epiphytes - ! Not yet added!
-# Webber et al. 2022 Miner's Bay samples (Illumina sequencing data) - ! Added (but consider excluding given the paucity of data from outside the study area)
-# Webber et al. 2022-2023 General Plankton Samples (Illumina sequencing data) - ! Not yet added!
-# Webber et al. 2023a Sanger sequencing of clones - ! Not yet added!
+#1 BioBlitz 2023 records (Illumina sequencing data) - ! Added! (still under review)
+#2 BOLD records 2021 - ! Added, but needs updating for 2024
+#3 CPNWH records 2022 - ! Added, needs to be updated for 2024 (harmonize with GBIF)
+#4 iNaturalist observations 2024 - ! Added, but needs update (esp. w. focus on red coralline algae)
+#5 PMLS Records 2021 - ! Added (no update required)
+#6 Sandra Lindstrom BioBlitz collections 2023 - ! Added
+#7 Sanger sequence data - Hakai to add (harmonize with BOLD records?)
+#8 Webber et al. 2020 Zostera epiphytes - ! Added! (still under review)
+#9 Webber et al. 2022 Miner's Bay samples (Illumina sequencing data) - ! Added! (still under review)
+#10 Webber et al. 2022-2023 General Plankton Samples (Illumina sequencing data) - ! Added! (still under review)
+#11 Webber et al. 2023a Sanger sequencing of clones - ! Not yet added!
 
 
 
 ########################################
 # Bioblitz 2023 Illumina sequence data #
 ########################################
+
+# TO DO: Review with MW
 
 BioBlitz.2023 <- read.csv("../../records/digitized/Webber_et_al_2024_sequence_table_rbcL_share_MAL_Galiano_BioBlitz_2023_AS_MW_AS.csv")
 
@@ -259,6 +261,8 @@ unmatched.algae.records
 #####################
 
 # TO DO: Update based on consolidated BOLD Records
+# TO DO: Check: Polysiphonia paniculata > Eutrichosiphonia paniculata (match w iNat data)
+# TO DO: Corallina spp review
 
 BOLD.2021 <- read.csv("../../records/digitized/DarwinCore/BOLD_marine_algae_2021-11-25_DwC.csv")
 
@@ -564,6 +568,9 @@ unmatched.algae.records
 # iNaturalist data #
 ####################
 
+# TO DO: Make sure Rugulopteryx okamurae is reidentified # https://www.inaturalist.org/observations/169897197
+# TO DO: Polysiphonia paniculata > Eutrichosiphonia paniculata # name changed (iNat taxon needs updated)
+
 iNaturalist.observations <- read.csv("../../../parse_records/outputs/iNat_obs_marine_algae_and_protozoa.csv")
 
 # TO DO: Update this script  once data pipelines are standardized.
@@ -772,6 +779,8 @@ unmatched.algae.records
 # Sandra Lindstrom's 2023 BioBlitz records #
 ############################################
 
+# TO DO: Confer with Sandra re: Callophyllis cf. variforma - Callophyllis variforma is reported based on genetic data by Gary Saunders et al. 
+# TO DO: Ulvaria obscura var. blyttii > Ulvaria blyttii (iNat record needs updating)
 # TO DO: confer with Sandra re: final version of this dataset
 # TO DO: decide whether to use fieldID recordID, etc for this dataset (depends on whether Sandra deposits her material?)
 # TO DO: consider adding the field 'identifiedBy' to distinguish the collection episode from the identification
@@ -941,6 +950,8 @@ unmatched.algae.records
 # PMLS 2021 records #
 #####################
 
+# TO DO: Review Corallina officinalis var. chilensis
+
 PMLS.2021 <- read.csv("../../records/digitized/DarwinCore/PMLS_Plantae_Records_Galiano_2021-07-27_DwC.csv")
 
 # Filter macroalgae (this step may be necessary for a future version of this list but not the current version which is already pruned)
@@ -1093,6 +1104,8 @@ PMLS.2021.records$eventDate <- as.Date(PMLS.2021.records$eventDate)
 nrow(PMLS.2021) - nrow(PMLS.2021.records)
 nrow(PMLS.2021)
 nrow(PMLS.2021.records) # 791 records omitted; all indeterminate with reference to summary
+# Congregatocarpus kurilensis - does not occur in the region; deleted
+# Dictyota binghamiae - does not occur in the region; deleted
 
 # Add to record of unmatched names
 
@@ -1106,7 +1119,7 @@ unmatched.algae.records
 # Webber et al. 2021 records (Eelgrass Illumina sequencing data) #
 ##################################################################
 
-## TO DO: Update metadata to 2021-03-07
+## TO DO: Resolve discrepancies
 
 Webber.et.al.2021.rbcL <- read.csv("../../records/digitized/Webber_et_al_2024_sequence_table_rbcL_share_MAL_Zostera_AS_MW_AS.csv")
 Webber.et.al.2021.18S <- read.csv("../../records/digitized/Webber_et_al_2024_sequence_table_18S_share_MAL_Zostera_AS_MW_AS.csv")
@@ -1839,10 +1852,12 @@ Species <- subset(Species, select = -c(hybrid, subspecies, variety, form))
 # Hybrids$infraspecificEpithet <- Hybrids$hybrid
 # Hybrids <- subset(Hybrids, select = -c(hybrid, subspecies, variety, form))
 
-Subspecies <- subset(marine.algae.records, subspecies != "")
-Subspecies$taxonRank <- "subspecies"
-Subspecies$infraspecificEpithet <- Subspecies$subspecies
-Subspecies <- subset(Subspecies, select = -c(hybrid, subspecies, variety, form))
+# No subspecies 
+
+# Subspecies <- subset(marine.algae.records, subspecies != "")
+# Subspecies$taxonRank <- "subspecies"
+# Subspecies$infraspecificEpithet <- Subspecies$subspecies
+# Subspecies <- subset(Subspecies, select = -c(hybrid, subspecies, variety, form))
 
 Varieties <- subset(marine.algae.records, variety != "")
 Varieties$taxonRank <- "varietas"

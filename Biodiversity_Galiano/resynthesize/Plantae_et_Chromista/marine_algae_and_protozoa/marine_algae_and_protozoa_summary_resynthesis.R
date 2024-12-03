@@ -12,15 +12,15 @@ library(tidyr)
 
 # Read baseline summary
 
-baseline <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-11-17.csv")
+baseline <- read.csv("../../../review/Plantae_et_Chromista/marine_algae_and_protozoa/summaries/Galiano_marine_algae_and_protozoa_review_summary_reviewed_2024-12-02.csv")
 
 # Read catalog of consolidated occurrence records
 
-records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2024-11-23.csv")
+records <- read.csv("../../../consolidate_records/Plantae_et_Chromista/macroalgae_zooplankton_and_phytoplankton/synthesized/Galiano_marine_algae_records_consolidated_2024-12-02.csv")
 
 # Read resynthesized summary
 
-synthesized.summary <- read.csv("outputs/Galiano_marine_algae_and_protozoa_summary_resynthesized_2023-04-22.csv")
+synthesized.summary <- read.csv("outputs/Galiano_marine_algae_and_protozoa_summary_resynthesized_2024-11-23.csv")
 
 # Summarize unique taxa
 
@@ -29,8 +29,6 @@ unique.taxa <- distinct(records, scientificName)
 unique.taxa.summary <- distinct(baseline, Taxon)
 
 names(unique.taxa.summary) <- c("scientificName")
-
-#unique.taxa.resynthesized <- distinct(synthesized.summary, scientificName)
 
 nrow(unique.taxa)
 nrow(unique.taxa.summary)
