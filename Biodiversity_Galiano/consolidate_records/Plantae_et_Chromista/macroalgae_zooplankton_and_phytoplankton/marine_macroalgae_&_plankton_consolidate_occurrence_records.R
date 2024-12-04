@@ -1864,7 +1864,7 @@ Varieties$taxonRank <- "varietas"
 Varieties$infraspecificEpithet <- Varieties$variety
 Varieties <- subset(Varieties, select = -c(hybrid, subspecies, variety, form))
 
-marine.algae.records <- rbind(Genera, Species, Subspecies, Varieties)
+marine.algae.records <- rbind(Genera, Species, Varieties)
 
 # occurrenceStatus
 
