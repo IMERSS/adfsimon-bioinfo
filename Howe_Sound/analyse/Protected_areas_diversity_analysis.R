@@ -20,7 +20,7 @@ source("scripts/utils.R")
 
 # Analysis of native plant diversity as represented in Howe Sound protected areas
 
-plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated.csv")
+plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated_2024-11-14.csv")
 
 # Add temporary unique identifier to reassign coordinates later
 

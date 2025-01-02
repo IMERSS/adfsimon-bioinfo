@@ -23,7 +23,7 @@ source("scripts/utils.R")
 
 # Analysis of historical collection activities
 
-plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated.csv")
+plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated_2024-11-14.csv")
 
 plants$yearRecorded <- as.numeric(substr(plants$eventDate, 1, 4))
 
@@ -43,8 +43,8 @@ plants.1890.1980 <- plants %>% filter(between(yearRecorded,1890,1980))
 plants.1890.1990 <- plants %>% filter(between(yearRecorded,1890,1990))
 plants.1890.2000 <- plants %>% filter(between(yearRecorded,1890,2000))
 plants.1890.2010 <- plants %>% filter(between(yearRecorded,1890,2010))
-plants.1890.2020 <- plants %>% filter(between(yearRecorded,1890,2020))
-plants.1890.2022 <- plants %>% filter(between(yearRecorded,1890,2022))
+plants.1890.2024 <- plants %>% filter(between(yearRecorded,1890,2020))
+plants.1890.2024 <- plants %>% filter(between(yearRecorded,1890,2022))
 
 y.1900 <- 1900
 y.1900.cum.obs <- nrow(plants.1890.1900) # cumulative no. observations
@@ -143,28 +143,28 @@ y.2010.spp <- y.2010.cum.spp - y.2000.cum.spp # no. species
 y.2010.ind <- y.2010.cum.ind - y.2000.cum.ind # no. observers
 
 y.2020 <- 2020
-y.2020.cum.obs <- nrow(plants.1890.2020) # cumulative no. observations
-y.2020.cum.spp <- length(unique(plants.1890.2020$scientificName)) # cumulative no. species
-y.2020.cum.ind <- length(unique(plants.1890.2020$recordedBy)) # cumulative observers
-y.2020.obs <- nrow(plants.1890.2020) - nrow(plants.1890.2010) # no. obs
+y.2020.cum.obs <- nrow(plants.1890.2024) # cumulative no. observations
+y.2020.cum.spp <- length(unique(plants.1890.2024$scientificName)) # cumulative no. species
+y.2020.cum.ind <- length(unique(plants.1890.2024$recordedBy)) # cumulative observers
+y.2020.obs <- nrow(plants.1890.2024) - nrow(plants.1890.2010) # no. obs
 y.2020.spp <- y.2020.cum.spp - y.2010.cum.spp # no. species
 y.2020.ind <- y.2020.cum.ind - y.2010.cum.ind # no. observers
 
-y.2022 <- 2022
-y.2022.cum.obs <- nrow(plants.1890.2022) # cumulative no. observations
-y.2022.cum.spp <- length(unique(plants.1890.2022$scientificName)) # cumulative no. species
-y.2022.cum.ind <- length(unique(plants.1890.2022$recordedBy)) # cumulative observers
-y.2022.obs <- nrow(plants.1890.2022) - nrow(plants.1890.2020) # no. obs
-y.2022.spp <- y.2022.cum.spp - y.2020.cum.spp # no. species
-y.2022.ind <- y.2022.cum.ind - y.2020.cum.ind # no. observers
+y.2024 <- 2024
+y.2024.cum.obs <- nrow(plants.1890.2024) # cumulative no. observations
+y.2024.cum.spp <- length(unique(plants.1890.2024$scientificName)) # cumulative no. species
+y.2024.cum.ind <- length(unique(plants.1890.2024$recordedBy)) # cumulative observers
+y.2024.obs <- nrow(plants.1890.2024) - nrow(plants.1890.2024) # no. obs
+y.2024.spp <- y.2024.cum.spp - y.2020.cum.spp # no. species
+y.2024.ind <- y.2024.cum.ind - y.2020.cum.ind # no. observers
 
-year <- c(y.1900,y.1910,y.1920,y.1930,y.1940,y.1950,y.1960,y.1970,y.1980,y.1990,y.2000,y.2010,y.2020,y.2022)
-obs <- c(y.1900.obs,y.1910.obs,y.1920.obs,y.1930.obs,y.1940.obs,y.1950.obs,y.1960.obs,y.1970.obs,y.1980.obs,y.1990.obs,y.2000.obs,y.2010.obs,y.2020.obs,y.2022.obs)
-spp <- c(y.1900.spp,y.1910.spp,y.1920.spp,y.1930.spp,y.1940.spp,y.1950.spp,y.1960.spp,y.1970.spp,y.1980.spp,y.1990.spp,y.2000.spp,y.2010.spp,y.2020.spp,y.2022.spp)
-ind <- c(y.1900.ind,y.1910.ind,y.1920.ind,y.1930.ind,y.1940.ind,y.1950.ind,y.1960.ind,y.1970.ind,y.1980.ind,y.1990.ind,y.2000.ind,y.2010.ind,y.2020.ind,y.2022.ind)
-cum.obs <- c(y.1900.cum.obs,y.1910.cum.obs,y.1920.cum.obs,y.1930.cum.obs,y.1940.cum.obs,y.1950.cum.obs,y.1960.cum.obs,y.1970.cum.obs,y.1980.cum.obs,y.1990.cum.obs,y.2000.cum.obs,y.2010.cum.obs,y.2020.cum.obs,y.2022.cum.obs)
-cum.spp <- c(y.1900.cum.spp,y.1910.cum.spp,y.1920.cum.spp,y.1930.cum.spp,y.1940.cum.spp,y.1950.cum.spp,y.1960.cum.spp,y.1970.cum.spp,y.1980.cum.spp,y.1990.cum.spp,y.2000.cum.spp,y.2010.cum.spp,y.2020.cum.spp,y.2022.cum.spp)
-cum.ind <- c(y.1900.cum.ind,y.1910.cum.ind,y.1920.cum.ind,y.1930.cum.ind,y.1940.cum.ind,y.1950.cum.ind,y.1960.cum.ind,y.1970.cum.ind,y.1980.cum.ind,y.1990.cum.ind,y.2000.cum.ind,y.2010.cum.ind,y.2020.cum.ind,y.2022.cum.ind)
+year <- c(y.1900,y.1910,y.1920,y.1930,y.1940,y.1950,y.1960,y.1970,y.1980,y.1990,y.2000,y.2010,y.2020,y.2024)
+obs <- c(y.1900.obs,y.1910.obs,y.1920.obs,y.1930.obs,y.1940.obs,y.1950.obs,y.1960.obs,y.1970.obs,y.1980.obs,y.1990.obs,y.2000.obs,y.2010.obs,y.2020.obs,y.2024.obs)
+spp <- c(y.1900.spp,y.1910.spp,y.1920.spp,y.1930.spp,y.1940.spp,y.1950.spp,y.1960.spp,y.1970.spp,y.1980.spp,y.1990.spp,y.2000.spp,y.2010.spp,y.2020.spp,y.2024.spp)
+ind <- c(y.1900.ind,y.1910.ind,y.1920.ind,y.1930.ind,y.1940.ind,y.1950.ind,y.1960.ind,y.1970.ind,y.1980.ind,y.1990.ind,y.2000.ind,y.2010.ind,y.2020.ind,y.2024.ind)
+cum.obs <- c(y.1900.cum.obs,y.1910.cum.obs,y.1920.cum.obs,y.1930.cum.obs,y.1940.cum.obs,y.1950.cum.obs,y.1960.cum.obs,y.1970.cum.obs,y.1980.cum.obs,y.1990.cum.obs,y.2000.cum.obs,y.2010.cum.obs,y.2020.cum.obs,y.2024.cum.obs)
+cum.spp <- c(y.1900.cum.spp,y.1910.cum.spp,y.1920.cum.spp,y.1930.cum.spp,y.1940.cum.spp,y.1950.cum.spp,y.1960.cum.spp,y.1970.cum.spp,y.1980.cum.spp,y.1990.cum.spp,y.2000.cum.spp,y.2010.cum.spp,y.2020.cum.spp,y.2024.cum.spp)
+cum.ind <- c(y.1900.cum.ind,y.1910.cum.ind,y.1920.cum.ind,y.1930.cum.ind,y.1940.cum.ind,y.1950.cum.ind,y.1960.cum.ind,y.1970.cum.ind,y.1980.cum.ind,y.1990.cum.ind,y.2000.cum.ind,y.2010.cum.ind,y.2020.cum.ind,y.2024.cum.ind)
 
 history <- data.frame(year,obs,spp,ind,cum.obs,cum.spp,cum.ind)
 
@@ -174,7 +174,7 @@ plot <- history %>%
   ggplot(aes(x = year, y = cum.spp, color = 'green')) +
   geom_line(alpha=0.8) + 
   geom_point(size=2) +
-  labs(title="Vascular plant species recorded in Átl’ka7tsem/Howe Sound 1890-2022",
+  labs(title="Vascular plant species recorded in Átl’ka7tsem/Howe Sound 1890-2024",
        caption="Source: Átl’ka7tsem/Howe Sound Biosphere Region Initiative")+
   ylab('Reported Species')+xlab('Year') + 
   theme_solarized_2(light=F) +
@@ -212,7 +212,7 @@ animate(
 
 # Note: algorithms time out if you use the entire 1km2 grid; use grid limited to cells intersecting with vascular plant data instead
 
-grid <- st_read("spatial_data/vectors/1km2_grid_x_vascular_plants_2022-12-24")
+grid <- st_read("spatial_data/vectors/gridded_plants_2025")
 
 # Create CRS object
 
@@ -604,13 +604,13 @@ grid.1890.2010$year <- 2010
 
 # Convert plant records to sf points
 
-plants.1890.2020 <- plants.1890.2020 %>% drop_na(decimalLatitude) # Strange: some record is missing Latitude for some reason: check!
+plants.1890.2024 <- plants.1890.2024 %>% drop_na(decimalLatitude) # Strange: some record is missing Latitude for some reason: check!
 
-plants.1890.2020.points <- st_as_sf(plants.1890.2020, coords = c("decimalLongitude", "decimalLatitude"), crs = WGS84)
+plants.1890.2024.points <- st_as_sf(plants.1890.2024, coords = c("decimalLongitude", "decimalLatitude"), crs = WGS84)
 
 # Intersect points and grid
 
-grid.1890.2020 <- st_intersection(plants.1890.2020.points, grid)
+grid.1890.2020 <- st_intersection(plants.1890.2024.points, grid)
 
 # Sum species richness by grid cell
 
@@ -634,42 +634,42 @@ grid.1890.2020$year <- 2020
 
 
 
-# 1890 - 2022 records
+# 1890 - 2024 records
 
 # Note: R Script fails here:
 
-# grid.1890.2022 <- st_intersection(plants.1890.2022.points, grid)
+# grid.1890.2024 <- st_intersection(plants.1890.2024.points, grid)
 # Error: cannot allocate vector of size 649.6 Mb
 
 # Convert plant records to sf points
 
-plants.1890.2022 <- plants.1890.2022 %>% drop_na(decimalLatitude) # Strange: some record is missing Latitude for some reason: check!
+plants.1890.2024 <- plants.1890.2024 %>% drop_na(decimalLatitude) # Strange: some record is missing Latitude for some reason: check!
 
-plants.1890.2022.points <- st_as_sf(plants.1890.2022, coords = c("decimalLongitude", "decimalLatitude"), crs = WGS84)
+plants.1890.2024.points <- st_as_sf(plants.1890.2024, coords = c("decimalLongitude", "decimalLatitude"), crs = WGS84)
 
 # Intersect points and grid
 
-grid.1890.2022 <- st_intersection(plants.1890.2022.points, grid)
+grid.1890.2024 <- st_intersection(plants.1890.2024.points, grid)
 
 # Sum species richness by grid cell
 
-grid.1890.2022$count <- 1
+grid.1890.2024$count <- 1
 
-matrix.1890.2022 <- ecodist::crosstab(grid.1890.2022$id, grid.1890.2022$scientificName, grid.1890.2022$count)
+matrix.1890.2024 <- ecodist::crosstab(grid.1890.2024$id, grid.1890.2024$scientificName, grid.1890.2024$count)
 
-matrix.1890.2022[matrix.1890.2022 > 1] <- 1
+matrix.1890.2024[matrix.1890.2024 > 1] <- 1
 
-matrix.1890.2022$richness <- rowSums(matrix.1890.2022)
+matrix.1890.2024$richness <- rowSums(matrix.1890.2024)
 
-matrix.1890.2022$id <- row.names(matrix.1890.2022)
+matrix.1890.2024$id <- row.names(matrix.1890.2024)
 
 # Assign richness values to grid
 
-grid.1890.2022 <- grid
+grid.1890.2024 <- grid
 
-grid.1890.2022$richness <- matrix.1890.2022$richness[match(unlist(grid.1890.2022$id), matrix.1890.2022$id)]
+grid.1890.2024$richness <- matrix.1890.2024$richness[match(unlist(grid.1890.2024$id), matrix.1890.2024$id)]
 
-grid.1890.2022$year <- 2022
+grid.1890.2024$year <- 2022
 
 
 
@@ -678,7 +678,7 @@ grid.1890.2022$year <- 2022
 gridded.history <- rbind(grid.1890.1900,grid.1890.1910,grid.1890.1920,grid.1890.1930,
                          grid.1890.1940,grid.1890.1950,grid.1890.1960,grid.1890.1970,
                          grid.1890.1980,grid.1890.1990,grid.1890.2000,grid.1890.2010,
-                         grid.1890.2020,grid.1890.2022)
+                         grid.1890.2020,grid.1890.2024)
 
 ncol(grid.1890.1900)
 ncol(grid.1890.1910)
@@ -693,21 +693,21 @@ ncol(grid.1890.1990)
 ncol(grid.1890.2000)
 ncol(grid.1890.2010)
 ncol(grid.1890.2020)
-ncol(grid.1890.2022)
+ncol(grid.1890.2024)
 
 # Combine data for all decades (except 1897-2022, which fails to process)
 
 gridded.history <- rbind(grid.1890.1900,grid.1890.1910,grid.1890.1920,grid.1890.1930,
                          grid.1890.1940,grid.1890.1950,grid.1890.1960,grid.1890.1970,
                          grid.1890.1980,grid.1890.1990,grid.1890.2000,grid.1890.2010,
-                         grid.1890.2020,grid.1890.2022)
+                         grid.1890.2020,grid.1890.2024)
 
 # Export sf object for historical analysis of species 
 # reported in Howe Sound through the decades:
 # Note object exported is missing data from 2020-2022
 # Need to figure out another approach to processing this dataset!
 
-st_write(gridded.history, "outputs/gridded_history_1897-2022_cumulative.shp")
+st_write(gridded.history, "outputs/gridded_history_1897-2024_cumulative.shp")
 
 
 # Write each historical chunk as separate SHP file
@@ -738,4 +738,4 @@ st_write(grid.1890.2010, "outputs/gridded_history_1897-2010.shp")
 
 st_write(grid.1890.2020, "outputs/gridded_history_1897-2020.shp")
 
-st_write(grid.1890.2022, "outputs/gridded_history_1897-2022.shp")
+st_write(grid.1890.2024, "outputs/gridded_history_1897-2024.shp")

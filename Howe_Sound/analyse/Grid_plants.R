@@ -18,9 +18,9 @@ source("scripts/geomUtils.R")
 
 # Analysis of historical collection activities
 
-summary <- read.csv("tabular_data/vascular_plant_summary_resynthesized_2023-03-05.csv")
+summary <- read.csv("tabular_data/vascular_plant_summary_resynthesized_2024-11-14.csv")
 
-plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated.csv")
+plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated_2024-11-14.csv")
 
 WGS84 <- st_crs("WGS84")
 
