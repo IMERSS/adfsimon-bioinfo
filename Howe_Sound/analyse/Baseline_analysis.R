@@ -130,7 +130,7 @@ reporting.status.grid <- rbind(reported.plants.grid, confirmed.plants.grid, new.
 
 # Output gridded data 
 
-st_write(reported.plants.grid, "outputs/gridded_historic_records_2025.shp", layer_options = "ENCODING=UTF-8", delete_dsn = TRUE)
+st_write(reported.plants.grid, "outputs/gridded_historical_records_2025.shp", layer_options = "ENCODING=UTF-8", delete_dsn = TRUE)
 
 st_write(new.plants.grid, "outputs/gridded_new_records_2025.shp", layer_options = "ENCODING=UTF-8", delete_dsn = TRUE)
 

@@ -43,6 +43,8 @@ plants.grid.csv <- dplyr::select(as.data.frame(plants.grid), -geometry)
 
 write.csv(plants.grid.csv, "outputs/gridded_plants_2025.csv", row.names = FALSE, na = "")
 
+str(plants.grid)
+
 # Export grid
 
 # Ensure UTF-8 encoding https://github.com/r-spatial/sf/issues/932
