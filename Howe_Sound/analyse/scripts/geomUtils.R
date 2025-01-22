@@ -1,5 +1,8 @@
 library(sf)
 
+# Generic utilities for working with geometric primitives including creating square gridded coordinate framed indexed by cell
+# Antranig Basman, 2023-2025
+
 # From https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude
 hortis.WGS84a = 6378137;
 hortis.WGS84b = 6356752.3142;
@@ -12,19 +15,45 @@ hortis.longitudeLength <- function (latitude) {
     return (pi * hortis.WGS84a * cos(latrad) / (180 * sqrt(1 - hortis.WGS84e2 * sinrad * sinrad)))
 }
 
-#Length in metres for a degree of latitude at given latitude
+# Length in metres for a degree of latitude at given latitude
 hortis.latitudeLength = function (latitude) {
     latrad <- pi * latitude / 180;
     sinrad <- sin(latrad);
     return (pi * hortis.WGS84a * (1 - hortis.WGS84e2) / (180 * (1 - hortis.WGS84e2 * sinrad * sinrad) ^ 1.5));
 }
 
+# Convert a distance measure in longitude degrees to the same physical length in latitude degrees, given a particular latitude
 hortis.longToLat <- function (lng, lat) {
     longLength <- hortis.longitudeLength(lat)
     latLength <- hortis.latitudeLength(lat)
     return (lng * longLength / latLength);
 }
 
+#' Generate a grid frame given spatial features and a cell size
+#'
+#' This function calculates a grid frame for a set of spatial points based on a specified cell size. 
+#' It computes the bounding box of the input features and determines the longitudinal and latitudinal 
+#' grid cell dimensions, as well as the number of cells required in each dimension.
+#'
+#' @param points An `sf` object or spatial dataset containing points or polygons from which the bounding box is derived.
+#' @param cellsize A numeric value representing the desired size of each grid cell, in meters.
+#'
+#' @return A list containing the following components:
+#' \describe{
+#'   \item{bbox}{A list with the bounding box coordinates (`xmin`, `ymin`, `xmax`, `ymax`) as numeric values.}
+#'   \item{bbox_b}{The bounding box as an `sf`-compatible object.}
+#'   \item{longsize}{The longitudinal size of each grid cell, in decimal degrees.}
+#'   \item{latsize}{The latitudinal size of each grid cell, in decimal degrees.}
+#'   \item{longcount}{The number of grid cells along the longitudinal axis.}
+#'   \item{latcount}{The number of grid cells along the latitudinal axis.}
+#' }
+#' @examples
+#' library(sf)
+#' points <- st_sfc(st_point(c(0, 0)), st_point(c(1, 1)), crs = 4326)
+#' grid_frame <- make_grid_frame(points, 1000)
+#' print(grid_frame)
+#'
+#' @export
 make_grid_frame <- function (points, cellsize) {
   bbox_b <- st_bbox(points) # order xmin, ymin, xmax, ymax
   # Undo insufferable wrapping as "named numbers"
@@ -41,6 +70,40 @@ make_grid_frame <- function (points, cellsize) {
   list(bbox = bbox, bbox_b = bbox_b, longsize = longsize, latsize = latsize, longcount = longcount, latcount = latcount)
 }
 
+#' Determine the grid cell index for a given geographical point in a supplied grid frame.
+#'
+#' @param gridframe A list containing grid frame information, typically produced by the \code{\link{make_grid_frame}} function. 
+#'   Must include \code{bbox}, \code{longsize}, \code{latsize}, and \code{longcount}.
+#' @param long A numeric value representing the longitude of the point.
+#' @param lat A numeric value representing the latitude of the point.
+#'
+#' @return An integer representing the 0-based cell index if the point lies within the grid frame's bounding box.
+#' If the point is outside the bounding box, the function returns \code{NA} and issues a warning.
+#'
+#' @details
+#' The function checks whether the input point lies within the bounding box defined by \code{gridframe}. 
+#' If so, it calculates the column and row indices (0-based) of the grid cell containing the point. 
+#' The cell index is calculated using the formula:
+#' \deqn{\text{cell_id} = \text{row_index} \times \text{longcount} + \text{col_index}}
+#'
+#' @note
+#' The grid cell indices are 0-based, meaning the top-left cell is indexed as 0.
+#' 
+#' @examples
+#' gridframe <- list(
+#'   bbox = list(xmin = 0, ymin = 0, xmax = 10, ymax = 10),
+#'   longsize = 1,
+#'   latsize = 1,
+#'   longcount = 10
+#' )
+#' cell_id <- point_to_cell(gridframe, long = 5, lat = 5)
+#' print(cell_id) #55
+#'
+#' # Example with a point outside the bounding box
+#' cell_id <- point_to_cell(gridframe, long = 15, lat = 15)
+#' # Warning is issued, and NA is returned.
+#'
+#' @export
 point_to_cell <- function (gridframe, long, lat) {
   # Check if the point is within the bbox
   if (long < gridframe$bbox$xmin || long > gridframe$bbox$xmax ||
@@ -69,10 +132,18 @@ assign_cell_id <- function (points, gridframe) {
   points$cell_id <- mapply(point_to_cell, longs, lats,
                            MoreArgs = list(gridframe = gridframe))
   assign.end <- Sys.time()
-  cat ("Assigned ", nrow(points), " points in ", (assign.end - assign.start), "s")
+  cat ("Assigned ", nrow(points), " points in ", (assign.end - assign.start), "s\n")
   return (points)
 }
 
+#' Generate a `POLYGON` geometry representing the boundaries of a grid cell given its cell ID and a grid frame.
+#'
+#' @param gridframe A list containing grid frame information, typically produced by the \code{\link{make_grid_frame}} function. 
+#'   Must include \code{bbox}, \code{longsize}, \code{latsize}, and \code{longcount}.
+#' @param cell_id An integer representing the 0-based index of the grid cell.
+#'
+#' @return An `sf` \code{POLYGON} object representing the geographical boundaries of the specified grid cell.
+#' @export
 cell_id_to_polygon <- function (gridframe, cell_id) {
   # Calculate row and column indices
   row_index <- floor(cell_id / gridframe$longcount)
@@ -91,6 +162,15 @@ cell_id_to_polygon <- function (gridframe, cell_id) {
   return (polygon)
 }
 
+#' Calculate the centroid of a grid cell given its cell ID and a grid frame.
+#'
+#' @param gridframe A list containing grid frame information, typically produced by the \code{\link{make_grid_frame}} function. 
+#'   Must include \code{bbox}, \code{longsize}, \code{latsize}, and \code{longcount}.
+#' @param cell_id An integer representing the 0-based index of the grid cell.
+#'
+#' @return A numeric vector of length 2, representing the longitude (\code{x}) and latitude (\code{y}) 
+#' coordinates of the centroid of the grid cell.
+#'
 cell_id_to_centroid <- function (gridframe, cell_id) {
   # Calculate row and column indices
   row_index <- floor(cell_id / gridframe$longcount)
@@ -103,7 +183,7 @@ cell_id_to_centroid <- function (gridframe, cell_id) {
   return (c(xmin + gridframe$longsize / 2, ymax - gridframe$latsize / 2))
 }
 
-# Accepts a dataframe with column cell_id and assigns a polygon geometry to it for the cell
+# Accepts a dataframe with column cell_id and return an sf dataframe with polygon geometry for each row
 assign_cell_geometry_sf <- function (with_cell_id, gridframe) {
   polygons <- mapply(cell_id_to_polygon, cell_id = with_cell_id$cell_id, 
                      MoreArgs = list(gridframe = gridframe), SIMPLIFY = FALSE)
