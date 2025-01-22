@@ -29,15 +29,15 @@ source("scripts/utils.R")
 
 summary <- read.csv("tabular_data/vascular_plant_summary_resynthesized_2024-11-14.csv")
 
-plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated_2024-11-14.csv")
+plants <- read.csv("outputs/gridded_plants_2025.csv")
 
-# Subset historic, confirmed and new records
+# Summarize taxa by reporting status
 
 new <- summary %>% filter(str_detect(reportingStatus, "new"))
 confirmed <- summary %>% filter(reportingStatus == "confirmed")
 reported <- summary %>% filter(reportingStatus == "reported")
 
-# Create vectors of historical, confirmed and new taxa to query catalog of occurrence records
+# Add
 
 new.taxa <- unique(new$scientificName)
 confirmed.taxa <- unique(confirmed$scientificName)
@@ -53,48 +53,11 @@ new.taxa.records <- new.taxa.records %>% mutate(status = "new")
 reported.taxa.records <- summary %>% filter(scientificName %in% reported.taxa)
 reported.taxa.records <- reported.taxa.records %>% mutate(status = "historical")
 
-# Prepare gridded choropleths of historic, confirmed, new records
-
-# First load 1km2 grid (already CRS = WGS84)
-
-grid <- st_read("spatial_data/vectors/gridded_plants_2025")
-
-# New records
-
-new.plants.grid <- grid %>% 
-  filter(scntfcN %in% new.taxa)
-
-new.plants.grid$status <- 'new'
+# Generate choropleths
 
 # Historical records
 
-reported.plants.grid <- grid %>% 
-  filter(scntfcN %in% reported.taxa)
 
-reported.plants.grid$status <- 'historical'
-
-# Confirmed records
-
-confirmed.plants.grid <- grid %>% 
-  filter(scntfcN %in% confirmed.taxa)
-
-confirmed.plants.grid$status <- 'confirmed'
-
-# Add richness values to gridded data to render as choropleth
-
-# Historic records
-
-reported.matrix <- reported.plants.grid
-
-reported.matrix$n <- 1
-
-reported.matrix <- ecodist::crosstab(reported.matrix$id, reported.matrix$scntfcN, reported.matrix$n)
-
-reported.matrix <- cbind(reported.matrix, richness = rowSums(reported.matrix))
-
-reported.matrix$id <- row.names(reported.matrix)
-
-reported.plants.grid$richness <- reported.matrix$richness[match(unlist(reported.plants.grid$id), reported.matrix$id)]
 
 # New records
 
