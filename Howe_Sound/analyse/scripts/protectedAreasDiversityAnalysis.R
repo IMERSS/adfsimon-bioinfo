@@ -16,11 +16,11 @@ library(tidyr)
 
 # Source dependencies
 
-source("scripts/utils.R")
+source("utils.R")
 
 # Analysis of native plant diversity as represented in Howe Sound protected areas
 
-plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated_2024-11-14.csv")
+plants <- read.csv("../tabular_data/Howe_Sound_vascular_plant_records_consolidated_2024-11-14.csv")
 
 # Add temporary unique identifier to reassign coordinates later
 
@@ -40,7 +40,7 @@ native.plants <- native.plants %>% drop_na(yearRecorded)
 
 # Load protected areas map
 
-protected.areas <- st_read("spatial_data/vectors/Protected_Areas")
+protected.areas <- st_read("../spatial_data/vectors/Protected_Areas")
 
 protected.areas$native.plant.diversity <- native.plant.diversity
 
@@ -63,7 +63,7 @@ plants.x.protected.areas <- st_intersection(native.plants, protected.areas)
 
 # Summarize native plant diversity in protected areas
 
- protected.areas$protected.native.plant.diversity <- length(unique(plants.x.protected.areas$scientificName))
+protected.areas$protected.native.plant.diversity <- length(unique(plants.x.protected.areas$scientificName))
 
 # Sum species richness by protected area
 
@@ -87,7 +87,7 @@ type.matrix$richness <- rowSums(type.matrix)
 
 type.matrix$protectedAreaType <- row.names(type.matrix)
 
-# Assign richness values to grid
+# Assign richness values to polgyons
 
 protected.areas$protected.area.richness <- protected.area.matrix$richness[match(unlist(protected.areas$protectedArea), protected.area.matrix$protectedArea)]
 
@@ -95,7 +95,7 @@ protected.areas$protected.area.type.richness <- type.matrix$richness[match(unlis
 
 # Write protected area analysis geospatial dataset
 
-st_write(protected.areas, "outputs/AHSBR_vascular_plant_diversity_x_protected_areas.shp")
+st_write(protected.areas, "../outputs/AHSBR_vascular_plant_diversity_x_protected_areas_2024.shp")
 
 # Write catalogs of vascular plant diversity by protected area
 
@@ -106,7 +106,7 @@ plants.x.protected.areas$native.plant.diversity <- NULL
 plants.x.protected.areas$decimalLatitude <- plants$decimalLatitude[match(unlist(plants.x.protected.areas$temp_id), plants$temp_id)]
 plants.x.protected.areas$decimalLongitude <- plants$decimalLongitude[match(unlist(plants.x.protected.areas$temp_id), plants$temp_id)]
 
-# write.csv(plants.x.protected.areas, "outputs/plants_x_protected_areas.csv")
+write.csv(plants.x.protected.areas, "../outputs/plants_x_protected_areas_2024.csv", row.names = FALSE)
 
 # Create dataframes of species recorded for each protected area type
 
@@ -122,3 +122,10 @@ ER <- plants.x.protected.areas %>% filter(protectedAreaType == 'Ecological Reser
 OGMA <- plants.x.protected.areas %>% filter(protectedAreaType == 'Old Growth Management Area (Mapped Legal)')
 WMA <- plants.x.protected.areas %>% filter(protectedAreaType == 'Wildlife Management Area')
 
+# Create summaries of native species recorded per protected area
+
+plants.x.protected.area.summary <- plants.x.protected.areas %>%
+  group_by(protectedAreaType) %>%
+  summarize(record_count = n(), .groups = "drop")
+
+write.csv(plants.x.protected.area.summary, "plants_x_protected_areas_summary.csv")
