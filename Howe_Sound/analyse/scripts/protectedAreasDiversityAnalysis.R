@@ -128,4 +128,4 @@ plants.x.protected.area.summary <- plants.x.protected.areas %>%
   group_by(protectedAreaType) %>%
   summarize(record_count = n(), .groups = "drop")
 
-write.csv(plants.x.protected.area.summary, "plants_x_protected_areas_summary.csv")
+write.csv(plants.x.protected.area.summary, "../outputs/plants_x_protected_areas_summary.csv")
