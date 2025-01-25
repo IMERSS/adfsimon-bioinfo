@@ -66,4 +66,4 @@ reporting.status.grid <- rbind(new_gridded_summary, confirmed_gridded_summary, r
 
 # Output gridded summary data
 
-write.csv(reporting.status.grid, "outputs/gridded_historical_records_2025.shp", layer_options = "ENCODING=UTF-8", delete_dsn = TRUE)
+write.csv(reporting.status.grid, "../outputs/gridded_reporting_status.csv", row.names = FALSE)
