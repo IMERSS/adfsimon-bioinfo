@@ -121,22 +121,12 @@ write.csv(CWHxm1.plants, "../outputs/AHSBR_CWHxm1_vascular_plants_2024.csv", row
 write.csv(MHmm1.plants, "../outputs/AHSBR_MHmm1_vascular_plants_2024.csv", row.names = FALSE)
 write.csv(MHmm2.plants, "../outputs/AHSBR_MHmm2_vascular_plants_2024.csv", row.names = FALSE)
 
-# Summarize unique plant records per BEC Zone
+library(dplyr)
+
+# Reduce the dataframe based on distinct scientificName
 plants.x.BEC <- plants.x.BEC %>%
-  distinct(scientificName, MAP_LABEL, DESC, geometry)
-
-# Create BEC Labels
-
-becLabels <- list(CMAunp = "Coastal Mountain Heather Alpine Zone",
-                  CWHdm  = "Dry Maritime Coastal Western Hemlock Zone",
-                  CWHds1 = "Southern Dry Submaritime Coastal Western Hemlock Zone",
-                  CWHms1 = "Southern Moist Submaritime Coastal Western Hemlock Zone",
-                  CWHvm1 = "Submontane Very Wet Maritime Coastal Western Hemlock Zone",
-                  CWHvm2 = "Montane Very Wet Maritime Coastal Western Hemlock Zone",
-                  CWHxm1 = "Eastern Very Dry Maritime Coastal Western Hemlock Zone",
-                  MHmm1 = "Windward Moist Maritime Mountain Hemlock Zone",
-                  MHmm2 = "Leeward Moist Maritime Mountain Hemlock Zone")
+  distinct(scientificName, .keep_all = TRUE)
 
 # Output plants.x.BEC for visualization
 
-st_write(plants.x.BEC, "../outputs/BEC_x_plants_2024.shp", append = FALSE)
+st_write(plants.x.BEC, "../outputs/BEC_x_plants_2024.shp")
