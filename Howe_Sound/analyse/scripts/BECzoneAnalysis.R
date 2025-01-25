@@ -137,23 +137,6 @@ becLabels <- list(CMAunp = "Coastal Mountain Heather Alpine Zone",
                   MHmm1 = "Windward Moist Maritime Mountain Hemlock Zone",
                   MHmm2 = "Leeward Moist Maritime Mountain Hemlock Zone")
 
-# Create color palette for BEC Zones
-
-# Following rough elevational gradient:  
-# CDFmm, CWHxm1, CWHdm, CWHvm1, CWHvm2, CWHds1, CWHms1, MHmm1, MHmm2, ESSFmw2, CMAunp
-
-BEC$MAP_LABEL <- as.factor(BEC$MAP_LABEL)
-
-palette = data.frame(
-  cat = c("CWHxm1","CWHdm","CWHvm2","CWHvm1","CWHds1","CWHms1","MHmm1","MHmm2","CMAunp"), 
-  col = c("#440154FF", "#472D7BFF","#3B528BFF","#2C728EFF","#21908CFF","#27AD81FF","#5DC863FF","#AADC32FF", "#FDE725FF")
-)
-
-paletteHash <- split(x = palette$col, f = palette$cat)
-taxaHash <- split(x = plants.x.BEC$scientificName, f = plants.x.BEC$MAP_LABEL)
-
-vascularData <- list(palette = paletteHash, taxa = taxaHash, mapTitle = "Map 1. Ecological communities", regionLabels = becLabels)
-
 # Output plants.x.BEC for visualization
 
-st_write(BEC, "../outputs/BEC_x_plants_2024.shp", append = FALSE)
+st_write(plants.x.BEC, "../outputs/BEC_x_plants_2024.shp", append = FALSE)
