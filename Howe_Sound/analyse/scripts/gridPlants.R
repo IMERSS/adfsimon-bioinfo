@@ -13,14 +13,14 @@ library(tidyr)
 
 # Source dependencies
 
-source("scripts/utils.R")
-source("scripts/geomUtils.R")
+source("utils.R")
+source("geomUtils.R")
 
 # Analysis of historical collection activities
 
-summary <- read.csv("tabular_data/vascular_plant_summary_resynthesized_2024-11-14.csv")
+summary <- read.csv("../tabular_data/vascular_plant_summary_resynthesized_2024-11-14.csv")
 
-plants <- read.csv("tabular_data/Howe_Sound_vascular_plant_records_consolidated_2024-11-14.csv")
+plants <- read.csv("../tabular_data/Howe_Sound_vascular_plant_records_consolidated_2024-11-14.csv")
 
 WGS84 <- st_crs("WGS84")
 
@@ -41,6 +41,4 @@ plants.grid <- assign_cell_id(plants_sf, howegrid)
 
 plants.grid.csv <- dplyr::select(as.data.frame(plants.grid), -geometry)
 
-write.csv(plants.grid.csv, "outputs/gridded_plants_2025.csv", row.names = FALSE, na = "")
-
-str(plants.grid)
+write.csv(plants.grid.csv, "../outputs/gridded_plants_2025.csv", row.names = FALSE, na = "")
