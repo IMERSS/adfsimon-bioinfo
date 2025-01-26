@@ -95,14 +95,13 @@ protected.areas$protected.area.type.richness <- type.matrix$richness[match(unlis
 
 # Write protected area analysis geospatial dataset
 
-st_write(protected.areas, "../outputs/AHSBR_vascular_plant_diversity_x_protected_areas_2024.shp")
+st_write(protected.areas, "../outputs/AHSBR_vascular_plant_diversity_x_protected_areas_2024.shp", append = FALSE)
 
 # Write catalogs of vascular plant diversity by protected area
 
 plants.x.protected.areas$geometry <- NULL
 plants.x.protected.areas$count <- NULL
 plants.x.protected.areas$native.plant.diversity <- NULL
-
 plants.x.protected.areas$decimalLatitude <- plants$decimalLatitude[match(unlist(plants.x.protected.areas$temp_id), plants$temp_id)]
 plants.x.protected.areas$decimalLongitude <- plants$decimalLongitude[match(unlist(plants.x.protected.areas$temp_id), plants$temp_id)]
 
@@ -128,4 +127,4 @@ plants.x.protected.area.summary <- plants.x.protected.areas %>%
   group_by(protectedAreaType) %>%
   summarize(record_count = n(), .groups = "drop")
 
-write.csv(plants.x.protected.area.summary, "../outputs/plants_x_protected_areas_summary.csv")
+write.csv(plants.x.protected.area.summary, "../outputs/plants_x_protected_areas_summary_2024.csv", row.names = FALSE)
