@@ -82,6 +82,11 @@ BEC <- BEC %>%
 
 plants.x.BEC <- st_intersection(plants, BEC)
 
+# For some reason the polygon geometry from the BEC object is being replaced by point geometries from the records
+# Substitute the values from the BEC geometry field based on common MAP_LABEL field
+
+plants.x.BEC$geometry  <- BEC$geometry[match(unlist(plants.x.BEC$MAP_LABEL), BEC$MAP_LABEL)]
+
 # Export CSVs: vascular plant records by BEC unit
 
 CMAunp.plants <- plants.x.BEC %>% filter(MAP_LABEL == 'CMAunp')
@@ -120,8 +125,6 @@ write.csv(CWHvm2.plants, "../outputs/AHSBR_CWHvm2_vascular_plants_2024.csv", row
 write.csv(CWHxm1.plants, "../outputs/AHSBR_CWHxm1_vascular_plants_2024.csv", row.names = FALSE)
 write.csv(MHmm1.plants, "../outputs/AHSBR_MHmm1_vascular_plants_2024.csv", row.names = FALSE)
 write.csv(MHmm2.plants, "../outputs/AHSBR_MHmm2_vascular_plants_2024.csv", row.names = FALSE)
-
-library(dplyr)
 
 # Reduce the dataframe based on distinct scientificName
 plants.x.BEC <- plants.x.BEC %>%
