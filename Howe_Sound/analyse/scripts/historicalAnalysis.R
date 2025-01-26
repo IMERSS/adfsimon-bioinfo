@@ -257,7 +257,7 @@ gridded.history <- rbind(grid.1890.1900,grid.1890.1910,grid.1890.1920,grid.1890.
                          grid.1890.1980,grid.1890.1990,grid.1890.2000,grid.1890.2010,
                          grid.1890.2020,grid.1890.2024)
 
-write.csv(gridded.history, "../outputs/gridded_history_1897-2024_cumulative.csv")
+write.csv(gridded.history, "../outputs/gridded_history_1897-2024_cumulative.csv", row.names = FALSE)
 
 # Animated plot: historical increase in species reported for the region
 
