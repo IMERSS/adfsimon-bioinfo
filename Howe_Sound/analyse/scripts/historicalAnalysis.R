@@ -179,76 +179,78 @@ cum.ind <- c(y.1900.cum.ind,y.1910.cum.ind,y.1920.cum.ind,y.1930.cum.ind,y.1940.
 
 history <- data.frame(year,obs,spp,ind,cum.obs,cum.spp,cum.ind)
 
+write.csv(history, "../outputs/history_1897-2024_cumulative.csv", row.names = FALSE)
+
 # Prepare gridded summaries for each time period as basis for choropleths
 # 1890 - 1900 records
 grid.1890.1900 <- plants.1890.1900 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 1910 records
 grid.1890.1910 <- plants.1890.1910 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 1920 records
 grid.1890.1920 <- plants.1890.1920 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 1930 records
 grid.1890.1930 <- plants.1890.1930 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 1940 records
 grid.1890.1940 <- plants.1890.1940 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 1950 records
 grid.1890.1950 <- plants.1890.1950 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 1960 records
 grid.1890.1960 <- plants.1890.1960 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 1970 records
 grid.1890.1970 <- plants.1890.1970 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 1980 records
 grid.1890.1980 <- plants.1890.1980 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 1990 records
 grid.1890.1990 <- plants.1890.1990 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 2000 records
 grid.1890.2000 <- plants.1890.2000 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 2010 records
 grid.1890.2010 <- plants.1890.2010 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 2020 records
 grid.1890.2020 <- plants.1890.2020 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # 1890 - 2024 records
 grid.1890.2024 <- plants.1890.2024 %>%
   group_by(period, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 # Combine data for all decades
 

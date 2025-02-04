@@ -10,6 +10,7 @@ library(dplyr)
 library(sf)
 library(stringr)
 library(tidyr)
+library(jsonlite)
 
 # Source dependencies
 
@@ -34,6 +35,8 @@ gridcell <- 1000
 
 howegrid <- make_grid_frame(plants_sf, gridcell)
 cat("Constructed grid with ", howegrid$longcount * howegrid$latcount, " cells")
+
+write_grid_frame(howegrid, "../outputs/gridframe.json")
 
 plants.grid <- assign_cell_id(plants_sf, howegrid)
 

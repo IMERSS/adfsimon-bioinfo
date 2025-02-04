@@ -122,9 +122,9 @@ write.csv(MHmm1.plants, "../outputs/AHSBR_MHmm1_vascular_plants_2024.csv", row.n
 write.csv(MHmm2.plants, "../outputs/AHSBR_MHmm2_vascular_plants_2024.csv", row.names = FALSE)
 
 # Summarize by species and BEC Zone
-plants.x.BEC <- plants.x.BEC %>%
+plants.x.BEC.summary <- plants.x.BEC %>%
   distinct(scientificName, MAP_LABEL, .keep_all = TRUE)
 
 # Output plants.x.BEC as a dataframe for visualization
 
-write.csv(plants.x.BEC, "../outputs/BEC_x_vascular_plants_summary_2024.csv", row.names = FALSE)
+write.csv(plants.x.BEC.summary, "../outputs/BEC_x_vascular_plants_summary_2024.csv", row.names = FALSE)

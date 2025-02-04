@@ -1,4 +1,5 @@
 library(sf)
+library(jsonlite)
 
 # Generic utilities for working with geometric primitives including creating square gridded coordinate framed indexed by cell
 # Antranig Basman, 2023-2025
@@ -70,6 +71,35 @@ make_grid_frame <- function (points, cellsize) {
   list(bbox = bbox, bbox_b = bbox_b, longsize = longsize, latsize = latsize, longcount = longcount, latcount = latcount)
 }
 
+#' Write a grid frame to a JSON file
+#'
+#' This function saves a grid frame as a JSON file, excluding the \code{bbox_b} field.
+#'
+#' @param gridframe A list containing grid frame information, typically produced by the 
+#'   \code{\link{make_grid_frame}} function.
+#' @param filename A string specifying the path where the JSON file should be saved.
+#'
+#' @return No return value. The function writes the grid frame to a file.
+#'
+write_grid_frame <- function (gridframe, filename) {
+  # https://stackoverflow.com/a/50143588/1381443
+  filtered = within(gridframe, rm(bbox_b))
+  write(jsonlite::toJSON(filtered, auto_unbox = TRUE, pretty = TRUE), filename)
+}
+
+#' Read a grid frame from a JSON file
+#'
+#' This function loads a grid frame from a JSON file.
+#'
+#' @param filename A string specifying the path to the JSON file.
+#'
+#' @return A list containing the grid frame data.
+#'
+#' @export
+read_grid_frame <- function (filename) {
+  gridframe <- jsonlite::read_json(filename)
+}
+
 #' Determine the grid cell index for a given geographical point in a supplied grid frame.
 #'
 #' @param gridframe A list containing grid frame information, typically produced by the \code{\link{make_grid_frame}} function. 
@@ -108,7 +138,7 @@ point_to_cell <- function (gridframe, long, lat) {
   # Check if the point is within the bbox
   if (long < gridframe$bbox$xmin || long > gridframe$bbox$xmax ||
       lat < gridframe$bbox$ymin || lat > gridframe$bbox$ymax) {
-    warning("Point (", long, ", ", lat, ") lies outside the bounding box ", format(gridframe$bbox_b))
+    warning("Point (", long, ", ", lat, ") lies outside the bounding box ", format(gridframe$bbox))
     return (NA)
   }
   
@@ -122,7 +152,18 @@ point_to_cell <- function (gridframe, long, lat) {
   cell_id <- row_index * gridframe$longcount + col_index
 }
 
-# Given an sf frame with POINT geometries, derive an extra column cell_id containing the gridded cell id
+#' Given an sf frame with POINT geometries, derive a cell_id column containing the gridded cell id
+#'
+#' This function assigns a `cell_id` to each point in an `sf` dataframe based on a provided grid frame.
+#'
+#' @param points An `sf` dataframe with `POINT` geometries.
+#' @param gridframe A list containing grid frame information, typically produced by the 
+#'   \code{\link{make_grid_frame}} function.
+#'
+#' @return The input `sf` dataframe with an additional \code{cell_id} column, representing 
+#' the grid cell associated with each point.
+#'
+#' @export
 assign_cell_id <- function (points, gridframe) {
   assign.start <- Sys.time()
   coords <- sf::st_coordinates(points)
@@ -183,7 +224,19 @@ cell_id_to_centroid <- function (gridframe, cell_id) {
   return (c(xmin + gridframe$longsize / 2, ymax - gridframe$latsize / 2))
 }
 
-# Accepts a dataframe with column cell_id and return an sf dataframe with polygon geometry for each row
+#' Assign polygon geometry to a dataframe based on cell IDs
+#'
+#' This function converts a dataframe containing a `cell_id` column into an `sf` dataframe 
+#' by assigning a polygon geometry to each row based on the corresponding grid cell.
+#'
+#' @param with_cell_id A dataframe that must include a column named \code{cell_id}, representing 
+#'   the 0-based index of each grid cell.
+#' @param gridframe A list containing grid frame information, typically produced by the 
+#'   \code{\link{make_grid_frame}} function.
+#'
+#' @return An `sf` dataframe where each row retains the original dataframe attributes and includes 
+#' a square `POLYGON` geometry representing the grid cell associated with each `cell_id`.
+#'
 assign_cell_geometry_sf <- function (with_cell_id, gridframe) {
   polygons <- mapply(cell_id_to_polygon, cell_id = with_cell_id$cell_id, 
                      MoreArgs = list(gridframe = gridframe), SIMPLIFY = FALSE)
@@ -195,8 +248,20 @@ assign_cell_geometry_sf <- function (with_cell_id, gridframe) {
   return (sf_df)
 }
 
-# Supply extra columns longitude, latitude to an incoming dataframe with an existing column cell_id
-assign_cell_centroids <- function(with_cell_id, gridframe) {
+#' Assign centroid coordinates to a dataframe
+#'
+#' This function adds `longitude` and `latitude` columns to a dataframe based on the centroids 
+#' of grid cells corresponding to each `cell_id`.
+#'
+#' @param with_cell_id A dataframe that must include a column named \code{cell_id}, representing 
+#'   the 0-based index of each grid cell.
+#' @param gridframe A list containing grid frame information, typically produced by the 
+#'   \code{\link{make_grid_frame}} function.
+#'
+#' @return A dataframe with the original columns, plus two new columns: \code{longitude} and 
+#' \code{latitude}, representing the centroid coordinates of the grid cell for each row.
+#'
+assign_cell_centroids <- function (with_cell_id, gridframe) {
   # Apply calculate_centroid to each cell_id in the dataframe
   centroids <- mapply(cell_id_to_centroid, cell_id = with_cell_id$cell_id, 
                       MoreArgs = list(gridframe = gridframe))
@@ -208,8 +273,21 @@ assign_cell_centroids <- function(with_cell_id, gridframe) {
   return (with_cell_id)
 }
 
-# Assigns point sf geometry holding centroids to incoming dataframe with an existing column cell_id
-assign_cell_centroids_sf <- function(with_cell_id, gridframe) {
+#' Assigns point sf geometry holding centroids to a dataframe
+#'
+#' This function adds centroid coordinates as `sf` point geometries to a dataframe based on 
+#' the `cell_id` column.
+#'
+#' @param with_cell_id A dataframe that must include a column named \code{cell_id}, representing 
+#'   the 0-based index of each grid cell.
+#' @param gridframe A list containing grid frame information, typically produced by the 
+#'   \code{\link{make_grid_frame}} function.
+#'
+#' @return An `sf` dataframe where each row includes a `POINT` geometry representing the centroid 
+#' of the grid cell associated with each `cell_id`.
+#'
+#' @export
+assign_cell_centroids_sf <- function (with_cell_id, gridframe) {
   with_coords <- assign_cell_centroids(with_cell_id, gridframe) %>% st_as_sf(coords=c("longitude", "latitude"))
   st_crs(with_coords) <- "WGS84"
   with_coords
