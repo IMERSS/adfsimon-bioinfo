@@ -20,7 +20,7 @@ source("utils.R")
 
 # Analysis of historical collection activities
 
-summary <- read.csv("../tabular_data/vascular_plant_summary_resynthesized_2024-11-14.csv")
+summary <- read.csv("../tabular_data/vascular_plant_summary_resynthesized_2024-11-14.csv", fileEncoding = "UTF-8")
 
 plants <- read.csv("../outputs/gridded_plants_2025.csv")
 
@@ -50,17 +50,17 @@ historical_records$status <- 'historical'
 # Summarize the number of records by cell for each catalog
 new_gridded_summary <- new_records %>%
   group_by(status, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 confirmed_gridded_summary <- confirmed_records %>%
   group_by(status, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
 reported_gridded_summary <- historical_records %>%
   group_by(status, cell_id) %>%
-  summarize(record_count = n(), .groups = "drop")
+  summarize(record_count = n(), richness = n_distinct(scientificName), .groups = "drop")
 
-# Consolidate gridded plant data # What did we do with this before?
+# Consolidate gridded plant data
 
 reporting.status.grid <- rbind(new_gridded_summary, confirmed_gridded_summary, reported_gridded_summary)
 
