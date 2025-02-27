@@ -352,7 +352,7 @@ nrow(Chu.Leys.2012.records)
 
 # Read iNaturalist data
 
-iNaturalist.observations <- read.csv("../../../parse_iNat_records/outputs/iNat_obs_marine_animals.csv")
+iNaturalist.observations <- read.csv("../../../parse_records/outputs/iNat_obs_marine_animals.csv")
 
 # Substitute iNaturalist usernames where actual observer names are missing
 
