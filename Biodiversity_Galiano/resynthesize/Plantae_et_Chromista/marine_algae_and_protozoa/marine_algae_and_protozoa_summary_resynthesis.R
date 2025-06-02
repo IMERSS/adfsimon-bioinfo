@@ -367,3 +367,14 @@ summary$statsCode <- baseline$Stats.Code[match(unlist(summary$scientificName), b
 summary <- summary[order(summary$scientificName), ]
 
 write.csv(summary, "outputs/Galiano_marine_algae_and_protozoa_summary_resynthesized.csv", row.names = FALSE, na = '')
+
+# Output summaries for Chlorophyta, Rhodophyta, Phaeophyceae
+
+Chlorophyta <- summary %>% filter(phylum == 'Chlorophyta')
+Rhodophyta <- summary %>% filter(phylum == 'Rhodophyta')
+Phaeophyceae <- summary %>% filter(class == 'Phaeophyceae')
+
+write.csv(Chlorophyta, "Galiano_Island_Chlorophyta_summary.csv")
+write.csv(Rhodophyta, "Galiano_Island_Rhodophyta_summary.csv")
+write.csv(Chlorophyta, "Galiano_Island_Chlorophyta_summary.csv")
+
