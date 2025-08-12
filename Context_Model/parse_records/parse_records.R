@@ -14,7 +14,7 @@ library(tidyr)
 
 # Read iNat records
 
-records <- read.csv("records/GBIF_Context_2024_07_02_Mammalia_Amphibia_Reptilia-assigned.csv")
+records <- read.csv("records/GBIF_Context_2025_08_09_Mammalia_Amphibia_Reptilia-assigned.csv")
 
 # Normalize date to YYYY-MM-DD
 
