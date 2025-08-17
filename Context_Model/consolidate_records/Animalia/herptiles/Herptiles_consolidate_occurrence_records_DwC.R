@@ -38,11 +38,16 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Read GBIF Data
 
-GBIF <- read.csv("/Users/andrewsimon/GitHub/adfsimon-bioinfo/Context_Model/consolidate_records/records/digitized/records_herptiles_2024-08-02.csv")
+GBIF <- read.csv("../../../normalize_records/outputs/herptile_records_normalized_2025-08-16.csv")
 
 # Replace 'scientificName' w 'Selected.taxon.name'
 
 GBIF$scientificName <- GBIF$Selected.taxon.name
+
+# Filter out spurious data, e.g., Jessica Kirkwood's gopher snake obs (a Galiano Island record)
+
+GBIF <- GBIF %>%
+  filter(gbifID != "2366020389")
 
 # Create DarwinCore dataframe template 
 
@@ -284,7 +289,7 @@ write.csv(herptile.records,"synthesized/herptile_records_consolidated.csv", row.
 
 # Evaluate georeferencing resolution of terrestrial mammal
 
-nrow(herptile.records) # 17.5K herptile records
+nrow(herptile.records) # >23K herptile records
 
 herptile.records$coordinateUncertaintyInMeters <- as.numeric(herptile.records$coordinateUncertaintyInMeters)
 
@@ -295,20 +300,20 @@ sum(is.na(herptile.records$coordinateUncertaintyInMeters))/nrow(herptile.records
 # 19% of records lack coordinate uncertainty
 
 sum(is.na(herptile.records$coordinateUncertaintyInMeters))/nrow(herptile.records) * nrow(herptile.records) 
-# or 3,258/17,517 records total
+# or 4,487/23,257 records total
 
 georeferenced.records <- nrow(herptile.records)-sum(is.na(herptile.records$coordinateUncertaintyInMeters))
 
-sum(herptile.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records # 60% of georeferenced records mapped to < 100 m coordinate uncertainty
+sum(herptile.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records # 63% of georeferenced records mapped to < 100 m coordinate uncertainty
 
 sum(herptile.records$coordinateUncertaintyInMeters < 100, na.rm=TRUE)/georeferenced.records * georeferenced.records
 
-# About 8.5K of total 17.5k records can be analysed with confidence at 100m grid scale
+# About 12K of total 23k records can be analysed with confidence at 100m grid scale
 
 georeferenced.records <- nrow(herptile.records)-sum(is.na(herptile.records$coordinateUncertaintyInMeters))
 
-sum(herptile.records$coordinateUncertaintyInMeters <= 30, na.rm=TRUE)/georeferenced.records # 46% of georeferenced records mapped to < 100 m coordinate uncertainty
+sum(herptile.records$coordinateUncertaintyInMeters <= 30, na.rm=TRUE)/georeferenced.records # 49% of georeferenced records mapped to < 30 m coordinate uncertainty
 
 sum(herptile.records$coordinateUncertaintyInMeters <= 30, na.rm=TRUE)/georeferenced.records * georeferenced.records
 
-# About 6.5K of total 17.5k records can be analysed with confidence at 30m grid scale
+# About 9.3K of total 23k records can be analysed with confidence at 30m grid scale

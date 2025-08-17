@@ -2,6 +2,7 @@ Taxon,Matched.Taxon,Critical.Note
 Alces alces andersoni,Alces alces,
 Bison antiquus,,extinct
 Bos taurus,,domesticated
+Callospermophilus saturatus,,"barely within range, questionable"
 Canis,,indeterminate
 Canis familiaris,,domesticated
 Canis familiaris familiaris,,domesticated
@@ -33,7 +34,8 @@ Didelphis marsupialis,,opossum (mismapped?)
 Didelphis virginiana virginiana,Didelphis virginiana,
 Didelphis virginianus,Didelphis virginiana,
 Eptesicus fuscus bernardinus,Eptesicus fuscus,
-Equus caballus,,
+Equus caballus,,domesticated
+Eschrichtius robustus,,"marine mammal, should have been filtered out before"
 Eutamias townsendii townsendii,Neotamias townsendii,
 Felis catus,,domesticated
 Glaucomys,,indeterminate
@@ -65,6 +67,7 @@ Marmota monax canadensis,Marmota monax,
 Martes americana caurina,Martes caurina,
 Martes americana vancouverensis,Martes caurina,
 Martes caurina caurina,Martes caurina,
+Mephitis mephitis hudsonica,Mephitis mephitis,
 "Mephitis mephitis Schreber, 1777",Mephitis mephitis,
 Mephitis mephitis spissigrada,Mephitis mephitis,
 "Mephitis mephitis spissigrada Bangs, 1898",Mephitis mephitis,
@@ -88,6 +91,7 @@ Microtus TOWNSENDII PUGETI,Microtus townsendii,
 Microtus townsendii tetramerus,Microtus townsendii,
 Microtus townsendii townsendii,Microtus townsendii,
 MICROTUS TOWNSENDII TOWNSENDII,Microtus townsendii,
+Morbillivirus ceti,,bizarre report of virus that somehow got included in some version of GBIF mammal data cut
 Mus musculus domesticus,Mus musculus,
 Mustela,,indeterminate
 Mustela erminea anguinae,Mustela erminea,
@@ -117,6 +121,7 @@ Myotis,,indeterminate
 Myotis alascensis,Myotis lucifugus,
 Myotis californicus CAURINUS,Myotis californicus,
 Myotis californicus caurinus,Myotis californicus,
+Myotis ciliolabrum,,outside of range
 Myotis lucifugus alascensis,Myotis lucifugus,
 Myotis volans longicrus,Myotis volans,
 Myotis yumanensis saturatus,Myotis yumanensis,
@@ -140,12 +145,14 @@ Neurotrichus gibbsii minor,Neurotrichus gibbsii,
 Ochotona (Pika) princeps,Ochotona princeps,
 Ochotona princeps brunnescens,Ochotona princeps,
 Ochotona princeps cuppes,Ochotona princeps,
+Odocoileus,,indeterminate
 Odocoileus hemionus,Odocoileus hemionus columbianus,
 Odocoileus hemionus hemionus,Odocoileus hemionus columbianus,
 "Odocoileus hemionus Rafinesque, 1817",Odocoileus hemionus columbianus,
 Odocoileus hemionus sitkensis,Odocoileus hemionus columbianus,
 Ondatra zibethicus occipitalis,Ondatra zibethicus,
 Ondatra zibethicus osoyoosensis,Ondatra zibethicus,
+Orcinus orca,,"marine mammal, should have been filtered out before"
 Oryctolagus cuniculus domesticus,Oryctolagus cuniculus,
 "Oryctolagus cuniculus Linnaeus, 1758",Oryctolagus cuniculus,
 Oryctolagus cuniculus ssp.,Oryctolagus cuniculus,
@@ -183,6 +190,7 @@ Peromyscus MANICULATUS SATURATUS,Peromyscus maniculatus,
 Petaurista nobilis,,"Bhutan giant flying squirrel, mismapped"
 Phenacomys intermedius intermedius,Phenacomys intermedius,
 Phenacomys intermedius oramontis,Phenacomys intermedius,
+Phoca vitulina richardii,,"marine mammal, should have been filtered out before"
 Pinnipedia,,indeterminate
 Plecotus townsendii,Corynorhinus townsendii,
 Procyon lotor pacifica,Procyon lotor,
@@ -195,6 +203,7 @@ Puma concolor vancouverensis,Puma concolor,
 Rattus rattus alexandrinus,Rattus rattus,
 Rattus rattus alexandrium,Rattus rattus,
 Rattus rattus rattus,Rattus rattus,
+Sarracenia oreophila,,plant; how did that get in here?
 Scapanus orarius orarius,Scapanus orarius,
 Scapanus orarius schefferi,Scapanus orarius,
 "Scapanus orarius True, 1896",Scapanus orarius,
@@ -245,6 +254,7 @@ Spermophilus lateralis,Callospermophilus lateralis,
 Spilogale gracilis latifrons,Spilogale gracilis,
 Spilogale putorius,Spilogale gracilis,
 Spilogale putorius latifrons,Spilogale gracilis,
+Sus scrofa domesticus,,domesticated
 "Sylvilagus floridanus J. A. Allen, 1890",Sylvilagus floridanus,
 Synaptomys borealis wrangeli,Synaptomys borealis,
 Tamias (Neotamias) amoenus felix,Neotamias amoenus,

@@ -38,9 +38,7 @@ DwCFields <- c('scientificName','scientificNameAuthorship','taxonID','kingdom','
 
 # Read GBIF Data
 
-GBIF <- read.csv("/Users/andrewsimon/GitHub/adfsimon-bioinfo/Context_Model/consolidate_records/records/digitized/records_terrestrial_mammals_2024-08-02.csv")
-
-head(GBIF)
+GBIF <- read.csv("../../../normalize_records/outputs/mammal_records_normalized_2025-08-16.csv")
 
 # Replace 'scientificName' w 'Selected.taxon.name'
 
@@ -288,7 +286,7 @@ write.csv(terrestrial.mammal.records,"synthesized/terrestrial_mammal_records_con
 
 # Evaluate georeferencing resolution of terrestrial mammal
 
-nrow(terrestrial.mammal.records) # 28K terrestrial mammal records
+nrow(terrestrial.mammal.records) # 35.5K terrestrial mammal records
 
 terrestrial.mammal.records$coordinateUncertaintyInMeters <- as.numeric(terrestrial.mammal.records$coordinateUncertaintyInMeters)
 
@@ -296,10 +294,10 @@ hist(terrestrial.mammal.records$coordinateUncertaintyInMeters,
      xlim=c(0,1000), breaks = 800000, main="Terrestrial Mammal Records: Coordinate Uncertainty", xlab = "Coordinate Uncertainty in meters")
 
 sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))/nrow(terrestrial.mammal.records) 
-# 22% of records lack coordinate uncertainty
+# 19% of records lack coordinate uncertainty
 
 sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))/nrow(terrestrial.mammal.records) * nrow(terrestrial.mammal.records) 
-# Or 6183/28220 records total
+# Or 6879/35,534 records total
 
 georeferenced.records <- nrow(terrestrial.mammal.records)-sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))
 
@@ -311,7 +309,7 @@ sum(terrestrial.mammal.records$coordinateUncertaintyInMeters <= 100, na.rm=TRUE)
 
 georeferenced.records <- nrow(terrestrial.mammal.records)-sum(is.na(terrestrial.mammal.records$coordinateUncertaintyInMeters))
 
-sum(terrestrial.mammal.records$coordinateUncertaintyInMeters <= 30, na.rm=TRUE)/georeferenced.records # 32% of georeferenced records mapped to < 100 m coordinate uncertainty
+sum(terrestrial.mammal.records$coordinateUncertaintyInMeters <= 30, na.rm=TRUE)/georeferenced.records # 37% of georeferenced records mapped to < 30 m coordinate uncertainty
 
 sum(terrestrial.mammal.records$coordinateUncertaintyInMeters < 30, na.rm=TRUE)/georeferenced.records * georeferenced.records
 
