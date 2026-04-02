@@ -14,7 +14,7 @@ library(tidyr)
 
 # Read iNat records
 
-iNat.obs <- read.csv("iNat_records/Galiano_All_Data_Union_Catalogue_2024_07_31.csv")
+iNat.obs <- read.csv("iNat_records/Galiano_Union_Catalogue_Taxa_2025_12_30.csv")
 
 # Note: The above records include complete synthesis of all Galiano Island data (GBIF + iNat inc. non-RG obs) ??
 
