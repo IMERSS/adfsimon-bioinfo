@@ -1,9 +1,4 @@
-# Script to parse iNat records taxonomically
-# Harmonized for iNat field names:
-# scientific_name, common_name, taxon_id, taxon_rank,
-# kingdom, phylum, class, order, infraorder, superfamily,
-# family, subfamily, genus, observed_on, user_name, user_login,
-# latitude, longitude, private_latitude, private_longitude, captive
+# Parse iNat records taxonomically
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
@@ -15,11 +10,7 @@ library(tidyr)
 iNat.obs <- read.csv("iNat_records/Galiano_Union_Catalogue_2025_12_30-assigned.csv",
                      stringsAsFactors = FALSE)
 
-# -----------------------------
 # Harmonize field names
-# -----------------------------
-# Create aliases so the rest of the script can use the old names safely
-
 iNat.obs <- iNat.obs %>%
   mutate(
     Taxon.name   = scientific_name,
@@ -36,7 +27,7 @@ iNat.obs <- iNat.obs %>%
     Taxon.rank   = taxon_rank
   )
 
-# Optional: trim whitespace in taxonomic fields
+# Trim whitespace
 iNat.obs <- iNat.obs %>%
   mutate(across(
     c(scientific_name, common_name, taxon_rank,
@@ -47,20 +38,16 @@ iNat.obs <- iNat.obs %>%
     ~ na_if(str_squish(.x), "")
   ))
 
-# -----------------------------
-# Clean records
-# -----------------------------
-
-# Eliminate records without dates
+# Remove records without dates
 iNat.obs <- iNat.obs[!(is.na(iNat.obs$observed_on) | iNat.obs$observed_on == ""), ]
 
-# Eliminate captive/cultivated records
+# Remove captive records
 iNat.obs <- iNat.obs %>% filter(captive == "false")
 
-# Eliminate extraneous time stamp from 'date observed' string
+# Clean date format
 iNat.obs$observed_on <- substr(iNat.obs$observed_on, 1, 10)
 
-# Replace lat/long for records with private lat/long
+# Replace coordinates with private values where available
 iNat.obs.private <- iNat.obs[!is.na(iNat.obs$private_latitude), ]
 iNat.obs.private$latitude <- iNat.obs.private$private_latitude
 iNat.obs.private$longitude <- iNat.obs.private$private_longitude
@@ -72,32 +59,23 @@ iNat.obs <- rbind(iNat.obs.private, iNat.obs.open)
 iNat.obs$private_latitude <- NULL
 iNat.obs$private_longitude <- NULL
 
-# Replace observer names with handles for records lacking proper observer names
+# Fix observer names
 iNat.obs.names <- iNat.obs[!is.na(iNat.obs$user_name) & iNat.obs$user_name != "", ]
 iNat.obs.handles <- anti_join(iNat.obs, iNat.obs.names)
 
 iNat.obs.handles$user_name <- iNat.obs.handles$user_login
 
 iNat.obs <- rbind(iNat.obs.names, iNat.obs.handles)
-
 iNat.obs$user_login <- NULL
 
-# -----------------------------
-# Parse taxa
-# -----------------------------
-
-## ALGAE
-
-# Freshwater and terrestrial algae and protozoa
+# Algae
 Desmids.etc.1.obs <- iNat.obs %>% filter(Phylum == "Charophyta")
-Desmids.etc.2.obs <- iNat.obs %>% filter(Phylum == "Chlorophyta")
-Desmids.etc.2.obs <- Desmids.etc.2.obs %>%
+Desmids.etc.2.obs <- iNat.obs %>% filter(Phylum == "Chlorophyta") %>%
   filter(Order == "Trentepohliales" | Class == "Chlorophyceae")
 Desmids.etc.3.obs <- iNat.obs %>% filter(Genus == "Arcella")
 
 Desmids.etc.obs <- rbind(Desmids.etc.1.obs, Desmids.etc.2.obs, Desmids.etc.3.obs)
 
-# Marine algae and protozoa
 Marine.algae.and.protozoa.1.obs <- iNat.obs %>%
   filter(Phylum %in% c("Ochrophyta", "Rhodophyta", "Miozoa", "Ciliophora",
                        "Bigyra", "Radiozoa", "Cercozoa", "Chlorophyta"))
@@ -107,11 +85,8 @@ Marine.algae.and.protozoa.2.obs <- iNat.obs %>% filter(Phylum == "Chlorophyta")
 Marine.algae.and.protozoa.obs <- rbind(Marine.algae.and.protozoa.1.obs,
                                        Marine.algae.and.protozoa.2.obs)
 
-## BACTERIA
-
+# Bacteria
 Bacteria.obs <- iNat.obs %>% filter(Kingdom == "Bacteria")
-
-## FUNGI, LICHENS, MYXOGASTRIA
 
 # Lichens
 Ascomycota.obs <- iNat.obs %>% filter(Phylum == "Ascomycota")
@@ -158,25 +133,17 @@ Myxogastria.obs <- subset(Myxogastria.obs,
                             Phylum != "Retaria" &
                             Phylum != "Sarcomastigophora")
 
-## PLANTS
-
+# Plants
 Bryophyta.Marchantiophyta.Anthocerotophyta.obs <- iNat.obs %>%
   filter(Phylum %in% c("Bryophyta", "Marchantiophyta", "Anthocerotophyta"))
 
 Tracheophyta.obs <- iNat.obs %>% filter(Phylum == "Tracheophyta")
 
-## TERRESTRIAL ANIMALS
-
-# Birds
+# Animals
 Aves.obs <- iNat.obs %>% filter(Class == "Aves")
-
-# Freshwater bryozoans
 Freshwater.bryozoans.obs <- iNat.obs %>% filter(Taxon.name == "Pectinatella magnifica")
-
-# Herptiles
 Herptiles.obs <- iNat.obs %>% filter(Class %in% c("Amphibia", "Reptilia"))
 
-# Terrestrial Arthropods
 Terrestrial.arthropods.1.obs <- iNat.obs %>%
   filter(Class %in% c("Insecta", "Arachnida", "Entognatha",
                       "Diplopoda", "Chilopoda", "Ostracoda"))
@@ -193,7 +160,6 @@ Terrestrial.arthropods.2.obs <- subset(
 Terrestrial.arthropods.obs <- rbind(Terrestrial.arthropods.1.obs,
                                     Terrestrial.arthropods.2.obs)
 
-# Terrestrial Mammals
 Terrestrial.mammals.obs <- iNat.obs %>% filter(Class == "Mammalia")
 Terrestrial.mammals.obs <- subset(
   Terrestrial.mammals.obs,
@@ -203,31 +169,20 @@ Terrestrial.mammals.obs <- subset(
     Subfamily != "Lutrinae"
 )
 
-# Terrestrial Molluscs
 Molluscs <- iNat.obs %>% filter(Phylum == "Mollusca")
 
-# NOTE:
-# Your old script used Superorder == 'Eupulmonata', but your current dataset
-# does not contain a superorder column.
-# Here we approximate by using order/family/genus logic only if needed.
-# If you want strict equivalence, add a separate lookup table later.
-
-Terrestrial.molluscs.1.obs <- Molluscs %>%
-  filter(Order != "Ellobiida")
-
+Terrestrial.molluscs.1.obs <- Molluscs %>% filter(Order != "Ellobiida")
 Terrestrial.molluscs.2.obs <- Molluscs %>% filter(Order == "Sphaeriida")
 
 Terrestrial.molluscs.obs <- rbind(Terrestrial.molluscs.1.obs,
                                   Terrestrial.molluscs.2.obs)
 
-# Terrestrial Annelids, Rotifers, etc.
 Terrestrial.annelids.etc <- iNat.obs %>%
   filter(Genus == "Amynthas" |
            Taxon.name == "Octolasion cyaneum" |
            Genus == "Habrotrocha" |
            Taxon.name == "Lumbricus terrestris")
 
-# Marine Animals
 Animals <- iNat.obs %>% filter(Kingdom == "Animalia")
 
 Terrestrial.animals <- rbind(Aves.obs, Freshwater.bryozoans.obs, Herptiles.obs,
@@ -236,9 +191,7 @@ Terrestrial.animals <- rbind(Aves.obs, Freshwater.bryozoans.obs, Herptiles.obs,
 
 Marine.animals.obs <- anti_join(Animals, Terrestrial.animals)
 
-# -----------------------------
-# Check that all taxa are accounted for
-# -----------------------------
+# Check missing taxa
 taxa <- rbind(Aves.obs, Bacteria.obs, Bryophyta.Marchantiophyta.Anthocerotophyta.obs,
               Desmids.etc.obs, Freshwater.bryozoans.obs, Fungi.obs, Herptiles.obs,
               Marine.algae.and.protozoa.obs, Lichens.obs, Marine.animals.obs,
@@ -246,12 +199,9 @@ taxa <- rbind(Aves.obs, Bacteria.obs, Bryophyta.Marchantiophyta.Anthocerotophyta
               Terrestrial.molluscs.obs, Tracheophyta.obs)
 
 missing.taxa <- anti_join(iNat.obs, taxa)
-
 unique(missing.taxa$Taxon.name)
 
-# -----------------------------
-# Export catalogs
-# -----------------------------
+# Export outputs
 write.csv(Aves.obs, "outputs/iNat_obs_birds.csv", row.names = FALSE)
 write.csv(Bacteria.obs, "outputs/iNat_obs_bacteria.csv", row.names = FALSE)
 write.csv(Bryophyta.Marchantiophyta.Anthocerotophyta.obs,
