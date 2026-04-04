@@ -1,225 +1,271 @@
 # Script to parse iNat records taxonomically
+# Harmonized for iNat field names:
+# scientific_name, common_name, taxon_id, taxon_rank,
+# kingdom, phylum, class, order, infraorder, superfamily,
+# family, subfamily, genus, observed_on, user_name, user_login,
+# latitude, longitude, private_latitude, private_longitude, captive
 
-## NOTE: Request that future obs inc. common names and also the 'casual' field to filter out casual obs
-
-# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
-
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
-
-# Load packages
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 library(dplyr)
 library(stringr)
 library(tidyr)
 
 # Read iNat records
+iNat.obs <- read.csv("iNat_records/Galiano_Union_Catalogue_2025_12_30-assigned.csv",
+                     stringsAsFactors = FALSE)
 
-iNat.obs <- read.csv("iNat_records/Galiano_Union_Catalogue_Taxa_2025_12_30.csv")
+# -----------------------------
+# Harmonize field names
+# -----------------------------
+# Create aliases so the rest of the script can use the old names safely
 
-# Note: The above records include complete synthesis of all Galiano Island data (GBIF + iNat inc. non-RG obs) ??
+iNat.obs <- iNat.obs %>%
+  mutate(
+    Taxon.name   = scientific_name,
+    Kingdom      = kingdom,
+    Phylum       = phylum,
+    Class        = class,
+    Order        = order,
+    Infraorder   = infraorder,
+    Superfamily  = superfamily,
+    Subfamily    = subfamily,
+    Family       = family,
+    Genus        = genus,
+    Common.name  = common_name,
+    Taxon.rank   = taxon_rank
+  )
+
+# Optional: trim whitespace in taxonomic fields
+iNat.obs <- iNat.obs %>%
+  mutate(across(
+    c(scientific_name, common_name, taxon_rank,
+      kingdom, phylum, class, order, infraorder,
+      superfamily, subfamily, family, genus,
+      Taxon.name, Kingdom, Phylum, Class, Order,
+      Infraorder, Superfamily, Subfamily, Family, Genus),
+    ~ na_if(str_squish(.x), "")
+  ))
+
+# -----------------------------
+# Clean records
+# -----------------------------
 
 # Eliminate records without dates
-
 iNat.obs <- iNat.obs[!(is.na(iNat.obs$observed_on) | iNat.obs$observed_on == ""), ]
 
 # Eliminate captive/cultivated records
-
-iNat.obs <- iNat.obs %>% filter(captive == 'false')
+iNat.obs <- iNat.obs %>% filter(captive == "false")
 
 # Eliminate extraneous time stamp from 'date observed' string
+iNat.obs$observed_on <- substr(iNat.obs$observed_on, 1, 10)
 
-iNat.obs$observed_on <- substr(iNat.obs$observed_on,1,10)
-
-# Replace lat long for records with private lat long 
-
-iNat.obs.private <- iNat.obs[!is.na(iNat.obs$private_latitude),]
+# Replace lat/long for records with private lat/long
+iNat.obs.private <- iNat.obs[!is.na(iNat.obs$private_latitude), ]
 iNat.obs.private$latitude <- iNat.obs.private$private_latitude
 iNat.obs.private$longitude <- iNat.obs.private$private_longitude
 
-iNat.obs.open <- iNat.obs[is.na(iNat.obs$private_latitude),]
+iNat.obs.open <- iNat.obs[is.na(iNat.obs$private_latitude), ]
 
-iNat.obs <- rbind(iNat.obs.private,iNat.obs.open)
+iNat.obs <- rbind(iNat.obs.private, iNat.obs.open)
 
 iNat.obs$private_latitude <- NULL
 iNat.obs$private_longitude <- NULL
 
 # Replace observer names with handles for records lacking proper observer names
-
-iNat.obs.names <- iNat.obs[!is.na(iNat.obs$user_name) & iNat.obs$user_name != "",]
-iNat.obs.handles <- anti_join(iNat.obs,iNat.obs.names)
+iNat.obs.names <- iNat.obs[!is.na(iNat.obs$user_name) & iNat.obs$user_name != "", ]
+iNat.obs.handles <- anti_join(iNat.obs, iNat.obs.names)
 
 iNat.obs.handles$user_name <- iNat.obs.handles$user_login
 
-iNat.obs <- rbind(iNat.obs.names,iNat.obs.handles)
+iNat.obs <- rbind(iNat.obs.names, iNat.obs.handles)
 
 iNat.obs$user_login <- NULL
 
+# -----------------------------
 # Parse taxa
+# -----------------------------
 
 ## ALGAE
 
 # Freshwater and terrestrial algae and protozoa
-
-Desmids.etc.1.obs <- iNat.obs %>% filter(Phylum == 'Charophyta')
-unique(Desmids.etc.1.obs$Taxon.name)
-Desmids.etc.2.obs <- iNat.obs %>% filter(Phylum == 'Chlorophyta')
-unique(Desmids.etc.2.obs$Taxon.name)
-Desmids.etc.2.obs <- Desmids.etc.2.obs %>% filter(Order == 'Trentepohliales' | Class == 'Chlorophyceae')
-Desmids.etc.3.obs <- iNat.obs %>% filter(Genus == 'Arcella')
+Desmids.etc.1.obs <- iNat.obs %>% filter(Phylum == "Charophyta")
+Desmids.etc.2.obs <- iNat.obs %>% filter(Phylum == "Chlorophyta")
+Desmids.etc.2.obs <- Desmids.etc.2.obs %>%
+  filter(Order == "Trentepohliales" | Class == "Chlorophyceae")
+Desmids.etc.3.obs <- iNat.obs %>% filter(Genus == "Arcella")
 
 Desmids.etc.obs <- rbind(Desmids.etc.1.obs, Desmids.etc.2.obs, Desmids.etc.3.obs)
 
-# Marine algae and protozoa # TO DO: Patch this once you have a standardized data pipeline in place
+# Marine algae and protozoa
+Marine.algae.and.protozoa.1.obs <- iNat.obs %>%
+  filter(Phylum %in% c("Ochrophyta", "Rhodophyta", "Miozoa", "Ciliophora",
+                       "Bigyra", "Radiozoa", "Cercozoa", "Chlorophyta"))
 
-Marine.algae.and.protozoa.1.obs <- iNat.obs %>% filter(phylum=='Ochrophyta'|phylum=='Rhodophyta'|phylum=='Miozoa'|phylum=='Ciliophora'|
-                                                         phylum=='Bigyra'|phylum=='Radiozoa'|phylum=='Cercozoa'|phylum=='Chlorophyta')
-Marine.algae.and.protozoa.2.obs <- iNat.obs %>% filter(phylum == 'Chlorophyta')
-#Marine.algae.and.protozoa.2.obs <- subset(Marine.algae.and.protozoa.2.obs, order != 'Trentepohliales' & class != 'Chlorophyceae')
+Marine.algae.and.protozoa.2.obs <- iNat.obs %>% filter(Phylum == "Chlorophyta")
 
-Marine.algae.and.protozoa.obs <- rbind(Marine.algae.and.protozoa.1.obs, Marine.algae.and.protozoa.2.obs)
+Marine.algae.and.protozoa.obs <- rbind(Marine.algae.and.protozoa.1.obs,
+                                       Marine.algae.and.protozoa.2.obs)
 
 ## BACTERIA
 
-Bacteria.obs <- iNat.obs %>% filter(Kingdom == 'Bacteria')
-
+Bacteria.obs <- iNat.obs %>% filter(Kingdom == "Bacteria")
 
 ## FUNGI, LICHENS, MYXOGASTRIA
 
 # Lichens
+Ascomycota.obs <- iNat.obs %>% filter(Phylum == "Ascomycota")
 
-Ascomycota.obs <- iNat.obs %>% filter(Phylum == 'Ascomycota')
+Lichenized.Ascomycota.obs <- Ascomycota.obs %>%
+  filter(Class %in% c("Arthoniomycetes", "Dothideomycetes", "Eurotiomycetes",
+                      "Lecanoromycetes", "Lichinomycetes"))
 
-Lichenized.Ascomycota.obs <- Ascomycota.obs %>% filter(Class == 'Arthoniomycetes' | Class == 'Dothideomycetes' | Class == 'Eurotiomycetes' | Class == 'Lecanoromycetes' | Class == 'Lichinomycetes')
+Lichenized.Ascomycota.obs <- subset(
+  Lichenized.Ascomycota.obs,
+  Order != "Abrothallales" &
+    Genus != "Arthophacopsis" &
+    Order != "Pleosporales" &
+    Order != "Geoglossales" &
+    Order != "Venturiales" &
+    Order != "Sareales" &
+    Family != "Stictidaceae" &
+    Order != "Eurotiales" &
+    Order != "Chaetothyriales" &
+    Order != "Capnodiales" &
+    Order != "Botryosphaeriales"
+)
 
-Lichenized.Ascomycota.obs<- subset(Lichenized.Ascomycota.obs, Order != 'Abrothallales' & Genus != 'Arthophacopsis' & Order != 'Pleosporales' & Order != 'Geoglossales' & Order != 'Venturiales' & Order != 'Sareales' & Family != 'Stictidaceae' & Order != 'Eurotiales' & Order != 'Chaetothyriales' & Order != 'Capnodiales' & Order != 'Botryosphaeriales')
+Basidiomycota.obs <- iNat.obs %>% filter(Phylum == "Basidiomycota")
 
-Basidiomycota.obs <- iNat.obs %>% filter(Phylum == 'Basidiomycota')
-
-Lichenized.Basidiomycota.obs <- Basidiomycota.obs %>% filter(Genus == 'Lichenomphalia' | Genus == 'Multiclavula')
+Lichenized.Basidiomycota.obs <- Basidiomycota.obs %>%
+  filter(Genus %in% c("Lichenomphalia", "Multiclavula"))
 
 Lichens.obs <- rbind(Lichenized.Ascomycota.obs, Lichenized.Basidiomycota.obs)
 
-# Fungi (unlichenized Ascomycota and Basidiomycota, and Mucoromycota
+# Fungi
+Unlichenized.Ascomycota.obs <- anti_join(Ascomycota.obs, Lichenized.Ascomycota.obs)
+Unlichenized.Basidiomycota.obs <- anti_join(Basidiomycota.obs, Lichenized.Basidiomycota.obs)
+Mucoromycota.obs <- iNat.obs %>% filter(Phylum == "Mucoromycota")
 
-Unlichenized.Ascomycota.obs <- anti_join(Ascomycota.obs,Lichenized.Ascomycota.obs)
-
-Unlichenized.Basidiomycota.obs <- anti_join(Basidiomycota.obs,Lichenized.Basidiomycota.obs)
-
-Mucoromycota.obs <- iNat.obs %>% filter(Phylum == 'Mucoromycota')
-
-Fungi.obs <- rbind(Unlichenized.Ascomycota.obs,Unlichenized.Basidiomycota.obs,Mucoromycota.obs)
+Fungi.obs <- rbind(Unlichenized.Ascomycota.obs,
+                   Unlichenized.Basidiomycota.obs,
+                   Mucoromycota.obs)
 
 # Myxogastria
-
-Myxogastria.obs <- iNat.obs %>% filter(Kingdom == 'Protozoa')
-Myxogastria.obs <- subset(Myxogastria.obs, Phylum != 'Amoebozoa' & Phylum != 'Retaria' & Phylum != 'Sarcomastigophora')
+Myxogastria.obs <- iNat.obs %>% filter(Kingdom == "Protozoa")
+Myxogastria.obs <- subset(Myxogastria.obs,
+                          Phylum != "Amoebozoa" &
+                            Phylum != "Retaria" &
+                            Phylum != "Sarcomastigophora")
 
 ## PLANTS
 
-# Bryophyta, Marchantiophyta, Anthocerotophyta
+Bryophyta.Marchantiophyta.Anthocerotophyta.obs <- iNat.obs %>%
+  filter(Phylum %in% c("Bryophyta", "Marchantiophyta", "Anthocerotophyta"))
 
-Bryophyta.Marchantiophyta.Anthocerotophyta.obs <- iNat.obs %>% filter(Phylum == 'Bryophyta' | Phylum == 'Marchantiophyta' | Phylum == 'Anthocerotophyta')
-
-# Tracheophyta
-
-Tracheophyta.obs <- iNat.obs %>% filter(phylum == 'Tracheophyta')
-
-unique(Tracheophyta.obs$phylum)
-
+Tracheophyta.obs <- iNat.obs %>% filter(Phylum == "Tracheophyta")
 
 ## TERRESTRIAL ANIMALS
 
 # Birds
-
-Aves.obs <- iNat.obs %>% filter(Class == 'Aves')
+Aves.obs <- iNat.obs %>% filter(Class == "Aves")
 
 # Freshwater bryozoans
-
-Freshwater.bryozoans.obs <- iNat.obs %>% filter(Taxon.name == 'Pectinatella magnifica')
+Freshwater.bryozoans.obs <- iNat.obs %>% filter(Taxon.name == "Pectinatella magnifica")
 
 # Herptiles
-
-Herptiles.obs <- iNat.obs %>% filter(Class == 'Amphibia' | Class == 'Reptilia')
+Herptiles.obs <- iNat.obs %>% filter(Class %in% c("Amphibia", "Reptilia"))
 
 # Terrestrial Arthropods
+Terrestrial.arthropods.1.obs <- iNat.obs %>%
+  filter(Class %in% c("Insecta", "Arachnida", "Entognatha",
+                      "Diplopoda", "Chilopoda", "Ostracoda"))
 
-Terrestrial.arthropods.1.obs <- iNat.obs %>% filter(Class == 'Insecta' | Class == 'Arachnida' | Class == 'Entognatha' | Class == 'Diplopoda' | Class == 'Chilopoda' | Class == 'Ostracoda')
-Terrestrial.arthropods.2.obs <- iNat.obs %>% filter(Order == 'Isopoda')
-Terrestrial.arthropods.2.obs <- subset(Terrestrial.arthropods.2.obs, Taxon.name != 'Bopyroides hippolytes' & Taxon.name != 'Gnorimosphaeroma oregonense' & Taxon.name != 'Pentidotea resecata' & Taxon.name != 'Pentidotea wosnesenskii')
+Terrestrial.arthropods.2.obs <- iNat.obs %>% filter(Order == "Isopoda")
+Terrestrial.arthropods.2.obs <- subset(
+  Terrestrial.arthropods.2.obs,
+  Taxon.name != "Bopyroides hippolytes" &
+    Taxon.name != "Gnorimosphaeroma oregonense" &
+    Taxon.name != "Pentidotea resecata" &
+    Taxon.name != "Pentidotea wosnesenskii"
+)
 
-Terrestrial.arthropods.obs <- rbind(Terrestrial.arthropods.1.obs, Terrestrial.arthropods.2.obs)
+Terrestrial.arthropods.obs <- rbind(Terrestrial.arthropods.1.obs,
+                                    Terrestrial.arthropods.2.obs)
 
 # Terrestrial Mammals
-
-Terrestrial.mammals.obs <- iNat.obs %>% filter(Class == 'Mammalia')
-
-Terrestrial.mammals.obs <- subset(Terrestrial.mammals.obs, Infraorder != 'Cetacea' & Taxon.name != 'Neogale vison' & Superfamily != 'Phocoidea' & Subfamily != 'Lutrinae')
+Terrestrial.mammals.obs <- iNat.obs %>% filter(Class == "Mammalia")
+Terrestrial.mammals.obs <- subset(
+  Terrestrial.mammals.obs,
+  Infraorder != "Cetacea" &
+    Taxon.name != "Neogale vison" &
+    Superfamily != "Phocoidea" &
+    Subfamily != "Lutrinae"
+)
 
 # Terrestrial Molluscs
+Molluscs <- iNat.obs %>% filter(Phylum == "Mollusca")
 
-Molluscs <- iNat.obs %>% filter(Phylum == 'Mollusca')
+# NOTE:
+# Your old script used Superorder == 'Eupulmonata', but your current dataset
+# does not contain a superorder column.
+# Here we approximate by using order/family/genus logic only if needed.
+# If you want strict equivalence, add a separate lookup table later.
 
-Terrestrial.molluscs.1.obs <- Molluscs %>% filter(Superorder == 'Eupulmonata')
+Terrestrial.molluscs.1.obs <- Molluscs %>%
+  filter(Order != "Ellobiida")
 
-Terrestrial.molluscs.1.obs <- subset(Terrestrial.molluscs.1.obs, Order != 'Ellobiida')
+Terrestrial.molluscs.2.obs <- Molluscs %>% filter(Order == "Sphaeriida")
 
-Terrestrial.molluscs.2.obs <- Molluscs %>% filter(Order == 'Sphaeriida')
-
-Terrestrial.molluscs.obs <- rbind(Terrestrial.molluscs.1.obs, Terrestrial.molluscs.2.obs)
+Terrestrial.molluscs.obs <- rbind(Terrestrial.molluscs.1.obs,
+                                  Terrestrial.molluscs.2.obs)
 
 # Terrestrial Annelids, Rotifers, etc.
-
-Terrestrial.annelids.etc <- iNat.obs %>% filter(Genus == 'Amynthas' | Taxon.name == 'Octolasion cyaneum' | Genus == 'Habrotrocha' | Taxon.name == 'Lumbricus terrestris')
+Terrestrial.annelids.etc <- iNat.obs %>%
+  filter(Genus == "Amynthas" |
+           Taxon.name == "Octolasion cyaneum" |
+           Genus == "Habrotrocha" |
+           Taxon.name == "Lumbricus terrestris")
 
 # Marine Animals
+Animals <- iNat.obs %>% filter(Kingdom == "Animalia")
 
-Animals <- iNat.obs %>% filter(Kingdom == 'Animalia')
-
-Terrestrial.animals <- rbind(Aves.obs, Freshwater.bryozoans.obs, Herptiles.obs, Terrestrial.annelids.etc, Terrestrial.arthropods.obs, Terrestrial.mammals.obs, Terrestrial.molluscs.obs)
+Terrestrial.animals <- rbind(Aves.obs, Freshwater.bryozoans.obs, Herptiles.obs,
+                             Terrestrial.annelids.etc, Terrestrial.arthropods.obs,
+                             Terrestrial.mammals.obs, Terrestrial.molluscs.obs)
 
 Marine.animals.obs <- anti_join(Animals, Terrestrial.animals)
 
+# -----------------------------
 # Check that all taxa are accounted for
+# -----------------------------
+taxa <- rbind(Aves.obs, Bacteria.obs, Bryophyta.Marchantiophyta.Anthocerotophyta.obs,
+              Desmids.etc.obs, Freshwater.bryozoans.obs, Fungi.obs, Herptiles.obs,
+              Marine.algae.and.protozoa.obs, Lichens.obs, Marine.animals.obs,
+              Myxogastria.obs, Terrestrial.arthropods.obs, Terrestrial.mammals.obs,
+              Terrestrial.molluscs.obs, Tracheophyta.obs)
 
-taxa <- rbind(Aves.obs,Bacteria.obs,Bryophyta.Marchantiophyta.Anthocerotophyta.obs,Desmids.etc.obs,
-              Freshwater.bryozoans.obs,Fungi.obs,Herptiles.obs,Marine.algae.and.protozoa.obs,Lichens.obs,
-              Marine.animals.obs,Myxogastria.obs,Terrestrial.arthropods.obs,Terrestrial.mammals.obs,
-              Terrestrial.molluscs.obs,Tracheophyta.obs)
-
-missing.taxa <- anti_join(iNat.obs,taxa)
+missing.taxa <- anti_join(iNat.obs, taxa)
 
 unique(missing.taxa$Taxon.name)
 
+# -----------------------------
 # Export catalogs
-
+# -----------------------------
 write.csv(Aves.obs, "outputs/iNat_obs_birds.csv", row.names = FALSE)
-
 write.csv(Bacteria.obs, "outputs/iNat_obs_bacteria.csv", row.names = FALSE)
-
-write.csv(Bryophyta.Marchantiophyta.Anthocerotophyta.obs, "outputs/iNat_obs_mosses_liverworts_and_hornworts.csv", row.names = FALSE)
-
+write.csv(Bryophyta.Marchantiophyta.Anthocerotophyta.obs,
+          "outputs/iNat_obs_mosses_liverworts_and_hornworts.csv", row.names = FALSE)
 write.csv(Desmids.etc.obs, "outputs/iNat_obs_freshwater_and_terrestrial_algae.csv", row.names = FALSE)
-
 write.csv(Freshwater.bryozoans.obs, "outputs/iNat_obs_freshwater_bryozoans.csv", row.names = FALSE)
-
 write.csv(Fungi.obs, "outputs/iNat_obs_fungi.csv", row.names = FALSE)
-
 write.csv(Herptiles.obs, "outputs/iNat_obs_herptiles.csv", row.names = FALSE)
-
 write.csv(Lichens.obs, "outputs/iNat_obs_lichens.csv", row.names = FALSE)
-
 write.csv(Marine.algae.and.protozoa.obs, "outputs/iNat_obs_marine_algae_and_protozoa.csv", row.names = FALSE)
-
 write.csv(Marine.animals.obs, "outputs/iNat_obs_marine_animals.csv", row.names = FALSE)
-
 write.csv(Myxogastria.obs, "outputs/iNat_obs_Myxogastria.csv", row.names = FALSE)
-
 write.csv(Terrestrial.annelids.etc, "outputs/iNat_obs_Terrestrial_annelids_etc.csv", row.names = FALSE)
-
 write.csv(Terrestrial.arthropods.obs, "outputs/iNat_obs_terrestrial_arthropods.csv", row.names = FALSE)
-
 write.csv(Terrestrial.mammals.obs, "outputs/iNat_obs_terrestrial_mammals.csv", row.names = FALSE)
-
 write.csv(Terrestrial.molluscs.obs, "outputs/iNat_obs_terrestrial_molluscs.csv", row.names = FALSE)
-
 write.csv(Tracheophyta.obs, "outputs/iNat_obs_Tracheophyta.csv", row.names = FALSE)
