@@ -1,4 +1,5 @@
 # Script to compare iNaturalist observations against a historical baseline
+# Updated in 2026 to maintain rule log for automated application of curation decisions to recurrent taxa
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
