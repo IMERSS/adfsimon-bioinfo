@@ -1,20 +1,12 @@
-# Script to compare iNaturalist observations against a historical baseline,
-# harvest manual taxon rules from the review-notes file,
-# apply cumulative rules to future iterations,
-# and prepare a new review file.
+# Script to compare iNaturalist observations against a historical baseline
 
-# Set relative paths
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-# Load packages
 library(dplyr)
 library(stringr)
 library(tidyr)
 
-# -----------------------------
-# Helper functions
-# -----------------------------
-
+# Read CSV as character
 read_char_csv <- function(path) {
   read.csv(
     path,
@@ -24,20 +16,24 @@ read_char_csv <- function(path) {
   )
 }
 
+# Normalize character values
 norm_chr <- function(x) {
   str_squish(ifelse(is.na(x), "", as.character(x)))
 }
 
+# Extract synonym target from notes like "Syn. Name"
 extract_synonym_target <- function(x) {
   out <- str_match(norm_chr(x), "^Syn\\.\\s*(.+)$")[, 2]
   norm_chr(out)
 }
 
+# Derive species from taxon string
 derive_species_field <- function(x) {
   x <- norm_chr(x)
   ifelse(str_count(x, "\\S+") >= 2, word(x, 2), "")
 }
 
+# Derive subspecies from taxon string
 derive_subspecies_field <- function(x) {
   x <- norm_chr(x)
   case_when(
@@ -48,6 +44,7 @@ derive_subspecies_field <- function(x) {
   )
 }
 
+# Derive variety from taxon string
 derive_variety_field <- function(x) {
   x <- norm_chr(x)
   case_when(
@@ -56,11 +53,13 @@ derive_variety_field <- function(x) {
   )
 }
 
+# Derive genus from taxon string
 derive_genus_field <- function(x) {
   x <- norm_chr(x)
   ifelse(x == "", "", word(x, 1))
 }
 
+# Replace existing rows by key with new rows
 upsert_rows <- function(existing_df, new_df, key_cols) {
   if (nrow(new_df) == 0) return(existing_df)
   if (nrow(existing_df) == 0) return(new_df)
@@ -74,6 +73,7 @@ upsert_rows <- function(existing_df, new_df, key_cols) {
   bind_rows(new_df, existing_trimmed)
 }
 
+# Check required columns
 require_cols <- function(df, required, df_name) {
   missing <- setdiff(required, names(df))
   if (length(missing) > 0) {
@@ -87,6 +87,7 @@ require_cols <- function(df, required, df_name) {
   }
 }
 
+# Empty rule log
 empty_rule_log <- function() {
   data.frame(
     Taxon = character(),
@@ -96,6 +97,7 @@ empty_rule_log <- function() {
   )
 }
 
+# Empty change log
 empty_change_log <- function() {
   data.frame(
     Taxon = character(),
@@ -106,29 +108,15 @@ empty_change_log <- function() {
   )
 }
 
-# -----------------------------
 # File paths
-# -----------------------------
-
 baseline_path <- "summaries/Galiano_Tracheophyta_review_summary_reviewed_2026-04-04.csv"
 inat_path <- "../../../parse_records/outputs/iNat_obs_Tracheophyta.csv"
+review_notes_path <- "outputs/Galiano_Tracheophyta_review_summary_review_notes.csv"
+taxon_rule_log_path <- "outputs/Galiano_Tracheophyta_taxon_rule_log.csv"
+change_log_path <- "outputs/Galiano_Tracheophyta_exclusion_change_log.csv"
+harvested_rules_path <- "outputs/Galiano_Tracheophyta_manual_rules_harvested_this_cycle.csv"
 
-# Manually edited review file used each cycle
-review_notes_path <- "outputs/Tracheophyta_review_summary_review_notes.csv"
-
-# Cumulative manual taxon rule log
-taxon_rule_log_path <- "outputs/Tracheophyta_taxon_rule_log.csv"
-
-# Cumulative auto-exclusion log
-change_log_path <- "outputs/Tracheophyta_exclusion_change_log.csv"
-
-# Audit file showing what was harvested this cycle
-harvested_rules_path <- "outputs/Tracheophyta_manual_rules_harvested_this_cycle.csv"
-
-# -----------------------------
-# Pre-flight diagnostics
-# -----------------------------
-
+# Print paths
 cat("Working directory:", getwd(), "\n")
 cat("Baseline path:", baseline_path, "\n")
 cat("iNat path:", inat_path, "\n")
@@ -137,6 +125,7 @@ cat("Taxon rule log path:", taxon_rule_log_path, "\n")
 cat("Change log path:", change_log_path, "\n")
 cat("Harvested rules path:", harvested_rules_path, "\n\n")
 
+# Check required files
 if (!file.exists(baseline_path)) {
   stop("Baseline file not found: ", baseline_path, call. = FALSE)
 }
@@ -153,10 +142,7 @@ if (!file.exists(review_notes_path)) {
   )
 }
 
-# -----------------------------
-# Read baseline summary
-# -----------------------------
-
+# Read baseline
 baseline <- read.csv(
   baseline_path,
   stringsAsFactors = FALSE,
@@ -204,10 +190,7 @@ baseline <- baseline %>%
     ID = as.character(ID)
   )
 
-# -----------------------------
 # Read iNaturalist observations
-# -----------------------------
-
 iNat.obs.summary <- read.csv(
   inat_path,
   stringsAsFactors = FALSE,
@@ -232,14 +215,14 @@ iNat.obs.summary <- iNat.obs.summary %>%
     id = as.character(id)
   )
 
-# Keep only earliest observation per raw taxon name
+# Keep earliest observation per raw taxon
 iNat.obs.summary <- iNat.obs.summary %>%
   arrange(scientific_name, observed_on, id) %>%
   group_by(scientific_name) %>%
   slice(1) %>%
   ungroup()
 
-# Derive helper fields
+# Add helper fields
 iNat.obs.summary <- iNat.obs.summary %>%
   mutate(
     taxon_subspecies_name = word(scientific_name, 3),
@@ -247,7 +230,7 @@ iNat.obs.summary <- iNat.obs.summary %>%
     hybrid = ""
   )
 
-# Create fields corresponding to baseline schema
+# Match baseline-style fields
 iNat.obs.summary <- iNat.obs.summary %>%
   mutate(
     Taxon = scientific_name,
@@ -262,7 +245,7 @@ iNat.obs.summary <- iNat.obs.summary %>%
     Taxon.rank = taxon_rank
   )
 
-# Build template matching baseline schema
+# Build template
 template.df <- as.data.frame(
   matrix(ncol = length(summary.fields), nrow = nrow(iNat.obs.summary))
 )
@@ -292,10 +275,7 @@ iNat.obs.summary.std <- template.df %>%
     Taxon.rank = iNat.obs.summary$Taxon.rank
   )
 
-# -----------------------------
-# Read existing taxon rule log
-# -----------------------------
-
+# Read taxon rule log
 if (file.exists(taxon_rule_log_path)) {
   taxon_rule_log <- read_char_csv(taxon_rule_log_path)
 } else {
@@ -320,10 +300,7 @@ taxon_rule_log <- taxon_rule_log %>%
   ) %>%
   distinct(Taxon, .keep_all = TRUE)
 
-# -----------------------------
-# Harvest manual rules from review notes
-# -----------------------------
-
+# Read review notes
 review_notes <- read_char_csv(review_notes_path)
 
 require_cols(
@@ -344,6 +321,7 @@ valid_delete_notes <- c(
   "unresolved infrataxon"
 )
 
+# Harvest valid persistent rules
 new_manual_rules <- review_notes %>%
   mutate(
     synonym_target = ifelse(
@@ -366,21 +344,21 @@ new_manual_rules <- review_notes %>%
   ) %>%
   distinct(Taxon, .keep_all = TRUE)
 
-# Save harvested rules for inspection
+# Save harvested rules
 write.csv(
   new_manual_rules,
   harvested_rules_path,
   row.names = FALSE
 )
 
-# Upsert new rules into cumulative rule log
+# Update cumulative rule log
 taxon_rule_log <- upsert_rows(
   existing_df = taxon_rule_log,
   new_df = new_manual_rules,
   key_cols = c("Taxon")
 )
 
-# Keep only valid persistent rule rows in the rule log
+# Keep only valid rule rows
 taxon_rule_log <- taxon_rule_log %>%
   mutate(
     synonym_target = ifelse(
@@ -407,10 +385,7 @@ write.csv(
   row.names = FALSE
 )
 
-# -----------------------------
-# Apply manual taxon rules
-# -----------------------------
-
+# Build manual rule lookup
 manual_rule_lookup <- taxon_rule_log %>%
   transmute(
     rule_taxon = Taxon,
@@ -418,6 +393,7 @@ manual_rule_lookup <- taxon_rule_log %>%
     manual_note = Curator.Notes
   )
 
+# Apply manual rules
 iNat.obs.summary.std <- iNat.obs.summary.std %>%
   mutate(
     Original.Taxon = Taxon
@@ -452,25 +428,14 @@ manual_synonym_parse_fail_count <- sum(iNat.obs.summary.std$synonym_parse_failed
 iNat.obs.summary.std <- iNat.obs.summary.std %>%
   filter(manual_rule != "DELETE")
 
-# Collapse again after synonym substitution
+# Collapse after synonym replacement
 iNat.obs.summary.std <- iNat.obs.summary.std %>%
   arrange(Taxon, First.Observed, iNaturalist.Link) %>%
   group_by(Taxon) %>%
   slice(1) %>%
   ungroup()
 
-# Compare synonym-resolved taxa against baseline by Taxon.
-# Keep them for review only if:
-#   1) the resolved Taxon is absent from baseline, OR
-#   2) the resolved Taxon is present in baseline AND
-#      the iNat date is earlier than the baseline date AND
-#      at least one tracked metadata field differs.
-#
-# Tracked metadata fields are:
-#   - First.Observed
-#   - Observer
-#   - iNaturalist.Link
-
+# Compare synonym-resolved taxa against baseline
 baseline_compare <- baseline %>%
   transmute(
     Taxon = norm_chr(Taxon),
@@ -515,10 +480,7 @@ iNat.obs.summary.std <- iNat.obs.summary.std %>%
     -keep_after_baseline_taxon_check
   )
 
-# -----------------------------
-# Match against baseline
-# -----------------------------
-
+# Match against baseline by ID
 summary.matched <- inner_join(
   baseline,
   iNat.obs.summary.std %>% select(ID) %>% distinct(),
@@ -534,10 +496,7 @@ unmatched.iNat.obs.summary <- anti_join(
 
 unmatched.iNat.obs.summary$Stats.Code <- "VAS"
 
-# -----------------------------
-# Add triage fields
-# -----------------------------
-
+# Baseline lookup tables
 baseline_taxon_lookup <- baseline %>%
   select(Taxon, First.Observed) %>%
   distinct() %>%
@@ -566,6 +525,7 @@ unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
     family_in_baseline = ifelse(is.na(family_in_baseline), FALSE, family_in_baseline)
   )
 
+# Resolution categories
 unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
   mutate(
     resolution_level = case_when(
@@ -576,6 +536,7 @@ unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
     )
   )
 
+# Novelty categories
 unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
   mutate(
     novelty_flag = case_when(
@@ -589,6 +550,7 @@ unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
     )
   )
 
+# Date categories
 unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
   mutate(
     date_flag = case_when(
@@ -600,6 +562,7 @@ unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
     )
   )
 
+# Review grouping
 unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
   mutate(
     review_group = case_when(
@@ -617,10 +580,7 @@ unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
     Curator.Notes = ""
   )
 
-# -----------------------------
-# Existing auto triage logic
-# -----------------------------
-
+# Auto triage
 unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
   mutate(
     auto_exclusion_note = case_when(
@@ -644,10 +604,7 @@ unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
     )
   )
 
-# -----------------------------
-# Read / update exclusion change log
-# -----------------------------
-
+# Read change log
 if (file.exists(change_log_path)) {
   change_log <- read_char_csv(change_log_path)
 } else {
@@ -668,6 +625,7 @@ change_log <- change_log %>%
     Curator.Notes = norm_chr(Curator.Notes)
   )
 
+# Current auto-exclusions
 current_auto_exclusions <- unmatched.iNat.obs.summary %>%
   filter(Curator.Decision == "DELETE") %>%
   transmute(
@@ -678,6 +636,7 @@ current_auto_exclusions <- unmatched.iNat.obs.summary %>%
   ) %>%
   distinct(Taxon, ID, .keep_all = TRUE)
 
+# Update change log
 change_log <- upsert_rows(
   existing_df = change_log,
   new_df = current_auto_exclusions,
@@ -690,17 +649,11 @@ write.csv(
   row.names = FALSE
 )
 
-# -----------------------------
-# Remove auto DELETE rows from review targets
-# -----------------------------
-
+# Keep only manual review targets
 unmatched.review.targets <- unmatched.iNat.obs.summary %>%
   filter(Curator.Decision != "DELETE")
 
-# -----------------------------
-# Prepare combined review file
-# -----------------------------
-
+# Add extra review columns to baseline
 baseline.review <- baseline %>%
   mutate(
     Taxon.rank = "",
@@ -737,10 +690,7 @@ unmatched.review.targets <- unmatched.review.targets[, review.cols]
 review.summary <- rbind(baseline.review, unmatched.review.targets)
 review.summary[is.na(review.summary)] <- ""
 
-# -----------------------------
-# Diagnostics
-# -----------------------------
-
+# Print diagnostics
 cat("Review notes path exists:", file.exists(review_notes_path), "\n")
 cat("Rows in review notes:", nrow(review_notes), "\n")
 cat("Rows harvested from review notes:", nrow(new_manual_rules), "\n")
@@ -767,10 +717,7 @@ print(table(taxon_rule_log$Curator.Decision, useNA = "ifany"))
 cat("\nAuto-exclusion note counts:\n")
 print(table(current_auto_exclusions$Curator.Notes, useNA = "ifany"))
 
-# -----------------------------
-# Write outputs
-# -----------------------------
-
+# Write output files
 write.csv(
   review.summary,
   "outputs/Galiano_Tracheophyta_review_summary.csv",
