@@ -109,6 +109,16 @@ empty_change_log <- function() {
   )
 }
 
+# Empty review notes
+empty_review_notes <- function() {
+  data.frame(
+    Taxon = character(),
+    Curator.Decision = character(),
+    Curator.Notes = character(),
+    stringsAsFactors = FALSE
+  )
+}
+
 # File paths
 baseline_path <- "summaries/Galiano_Tracheophyta_review_summary_reviewed_2026-04-04.csv"
 inat_path <- "../../../parse_records/outputs/iNat_obs_Tracheophyta.csv"
@@ -116,6 +126,7 @@ review_notes_path <- "outputs/Galiano_Tracheophyta_review_summary_review_notes.c
 taxon_rule_log_path <- "outputs/Galiano_Tracheophyta_taxon_rule_log.csv"
 change_log_path <- "outputs/Galiano_Tracheophyta_exclusion_change_log.csv"
 harvested_rules_path <- "outputs/Galiano_Tracheophyta_manual_rules_harvested_this_cycle.csv"
+output_path <- "outputs/Galiano_Tracheophyta_review_summary.csv"
 
 # Print paths
 cat("Working directory:", getwd(), "\n")
@@ -124,7 +135,8 @@ cat("iNat path:", inat_path, "\n")
 cat("Review notes path:", review_notes_path, "\n")
 cat("Taxon rule log path:", taxon_rule_log_path, "\n")
 cat("Change log path:", change_log_path, "\n")
-cat("Harvested rules path:", harvested_rules_path, "\n\n")
+cat("Harvested rules path:", harvested_rules_path, "\n")
+cat("Output path:", output_path, "\n\n")
 
 # Check required files
 if (!file.exists(baseline_path)) {
@@ -132,15 +144,6 @@ if (!file.exists(baseline_path)) {
 }
 if (!file.exists(inat_path)) {
   stop("iNaturalist observations file not found: ", inat_path, call. = FALSE)
-}
-if (!file.exists(review_notes_path)) {
-  stop(
-    paste0(
-      "Review notes file not found: ", review_notes_path, "\n",
-      "Aborting to avoid overwriting manual rule outputs with empty files."
-    ),
-    call. = FALSE
-  )
 }
 
 # Read baseline
@@ -302,20 +305,25 @@ taxon_rule_log <- taxon_rule_log %>%
   distinct(Taxon, .keep_all = TRUE)
 
 # Read review notes
-review_notes <- read_char_csv(review_notes_path)
-
-require_cols(
-  review_notes,
-  c("Taxon", "Curator.Decision", "Curator.Notes"),
-  "review notes file"
-)
-
-review_notes <- review_notes %>%
-  mutate(
-    Taxon = norm_chr(Taxon),
-    Curator.Decision = toupper(norm_chr(Curator.Decision)),
-    Curator.Notes = norm_chr(Curator.Notes)
+if (file.exists(review_notes_path)) {
+  review_notes <- read_char_csv(review_notes_path)
+  
+  require_cols(
+    review_notes,
+    c("Taxon", "Curator.Decision", "Curator.Notes"),
+    "review notes file"
   )
+  
+  review_notes <- review_notes %>%
+    mutate(
+      Taxon = norm_chr(Taxon),
+      Curator.Decision = toupper(norm_chr(Curator.Decision)),
+      Curator.Notes = norm_chr(Curator.Notes)
+    )
+} else {
+  cat("Review notes file not found — proceeding with empty review notes.\n")
+  review_notes <- empty_review_notes()
+}
 
 valid_delete_notes <- c(
   "non-established",
@@ -346,18 +354,24 @@ new_manual_rules <- review_notes %>%
   distinct(Taxon, .keep_all = TRUE)
 
 # Save harvested rules
-write.csv(
-  new_manual_rules,
-  harvested_rules_path,
-  row.names = FALSE
-)
+if (nrow(new_manual_rules) > 0) {
+  write.csv(
+    new_manual_rules,
+    harvested_rules_path,
+    row.names = FALSE
+  )
+} else {
+  cat("No manual rules harvested this cycle.\n")
+}
 
 # Update cumulative rule log
-taxon_rule_log <- upsert_rows(
-  existing_df = taxon_rule_log,
-  new_df = new_manual_rules,
-  key_cols = c("Taxon")
-)
+if (nrow(new_manual_rules) > 0) {
+  taxon_rule_log <- upsert_rows(
+    existing_df = taxon_rule_log,
+    new_df = new_manual_rules,
+    key_cols = c("Taxon")
+  )
+}
 
 # Keep only valid rule rows
 taxon_rule_log <- taxon_rule_log %>%
@@ -638,11 +652,13 @@ current_auto_exclusions <- unmatched.iNat.obs.summary %>%
   distinct(Taxon, ID, .keep_all = TRUE)
 
 # Update change log
-change_log <- upsert_rows(
-  existing_df = change_log,
-  new_df = current_auto_exclusions,
-  key_cols = c("Taxon", "ID")
-)
+if (nrow(current_auto_exclusions) > 0) {
+  change_log <- upsert_rows(
+    existing_df = change_log,
+    new_df = current_auto_exclusions,
+    key_cols = c("Taxon", "ID")
+  )
+}
 
 write.csv(
   change_log,
@@ -721,6 +737,6 @@ print(table(current_auto_exclusions$Curator.Notes, useNA = "ifany"))
 # Write output files
 write.csv(
   review.summary,
-  "outputs/Galiano_Tracheophyta_review_summary.csv",
+  output_path,
   row.names = FALSE
 )
