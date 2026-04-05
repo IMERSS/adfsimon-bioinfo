@@ -160,22 +160,18 @@ Terrestrial.arthropods.2.obs <- subset(
 Terrestrial.arthropods.obs <- rbind(Terrestrial.arthropods.1.obs,
                                     Terrestrial.arthropods.2.obs)
 
-Terrestrial.mammals.obs <- iNat.obs %>% filter(Class == "Mammalia")
-Terrestrial.mammals.obs <- subset(
-  Terrestrial.mammals.obs,
-  Infraorder != "Cetacea" &
-    Taxon.name != "Neogale vison" &
-    Superfamily != "Phocoidea" &
-    Subfamily != "Lutrinae"
-)
+Terrestrial.mammals.obs <- iNat.obs %>%
+  filter(
+    Class == "Mammalia",
+    Infraorder != "Cetacea" | is.na(Infraorder),
+    Taxon.name != "Neogale vison" | is.na(Taxon.name),
+    Superfamily != "Phocoidea" | is.na(Superfamily),
+    Subfamily != "Lutrinae" | is.na(Subfamily)
+  )
 
 Molluscs <- iNat.obs %>% filter(Phylum == "Mollusca")
 
-Terrestrial.molluscs.1.obs <- Molluscs %>% filter(Order != "Ellobiida")
-Terrestrial.molluscs.2.obs <- Molluscs %>% filter(Order == "Sphaeriida")
-
-Terrestrial.molluscs.obs <- rbind(Terrestrial.molluscs.1.obs,
-                                  Terrestrial.molluscs.2.obs)
+Terrestrial.molluscs.obs <- Molluscs %>% filter(Order == "Sphaeriida" | Order == "Stylommatophora")
 
 Terrestrial.annelids.etc <- iNat.obs %>%
   filter(Genus == "Amynthas" |

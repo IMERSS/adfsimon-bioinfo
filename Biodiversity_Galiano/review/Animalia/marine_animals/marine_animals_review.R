@@ -1,170 +1,753 @@
 # Script to compare iNaturalist observations against a historical baseline
+# Updated in 2026 to maintain rule log for automated application of curation decisions to recurrent taxa
 
-# Set relative paths (https://stackoverflow.com/questions/13672720/r-command-for-setting-working-directory-to-source-file-location-in-rstudio)
-
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
-
-# Load packages
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 library(dplyr)
 library(stringr)
 library(tidyr)
 
-# Read baseline summary
+# Read CSV as character
+read_char_csv <- function(path) {
+  read.csv(
+    path,
+    stringsAsFactors = FALSE,
+    colClasses = "character",
+    check.names = FALSE
+  )
+}
 
-baseline <- read.csv("summaries/Galiano_marine_animals_summary_2023-10-22.csv")
+# Normalize character values
+norm_chr <- function(x) {
+  str_squish(ifelse(is.na(x), "", as.character(x)))
+}
 
-# Apply standardized field names to baseline
+# Extract synonym target from notes like "Syn. Name"
+extract_synonym_target <- function(x) {
+  out <- str_match(norm_chr(x), "^Syn\\.\\s*(.+)$")[, 2]
+  norm_chr(out)
+}
 
-summary.fields <- c('scientificName','scientificNameAuthorship','subtaxonAuthorship','commonName','kingdom','phylum',
-                    'subphylum','superclass','class','subclass','superorder','order','suborder',
-                    'superfamily','family','subfamily','tribe','genus','specificEpithet','hybrid',
-                    'subspecies','variety','establishmentMeans','provincialStatus','nationalStatus','reportingStatus',
-                    'observation','firstReported','firstReportedBy','Collection.List',
-                    'firstReportedCollectionNumber','firstReportedGBIF','firstObservediNat','firstObservedBy','firstObservedID','notes',
-                    'ID','statsCode')
+# Derive species from taxon string
+derive_species_field <- function(x) {
+  x <- norm_chr(x)
+  ifelse(str_count(x, "\\S+") >= 2, word(x, 2), "")
+}
+
+# Derive subspecies from taxon string
+derive_subspecies_field <- function(x) {
+  x <- norm_chr(x)
+  case_when(
+    str_detect(x, "\\bsubsp\\.\\b") ~ word(x, 4),
+    str_detect(x, "\\bssp\\.\\b") ~ word(x, 4),
+    str_count(x, "\\S+") >= 3 & !str_detect(x, "\\b(var\\.|subsp\\.|ssp\\.|f\\.)\\b") ~ word(x, 3),
+    TRUE ~ ""
+  )
+}
+
+# Derive variety from taxon string
+derive_variety_field <- function(x) {
+  x <- norm_chr(x)
+  case_when(
+    str_detect(x, "\\bvar\\.\\b") ~ word(x, 4),
+    TRUE ~ ""
+  )
+}
+
+# Derive genus from taxon string
+derive_genus_field <- function(x) {
+  x <- norm_chr(x)
+  ifelse(x == "", "", word(x, 1))
+}
+
+# Replace existing rows by key with new rows
+upsert_rows <- function(existing_df, new_df, key_cols) {
+  if (nrow(new_df) == 0) return(existing_df)
+  if (nrow(existing_df) == 0) return(new_df)
+  
+  existing_trimmed <- anti_join(
+    existing_df,
+    new_df %>% select(all_of(key_cols)) %>% distinct(),
+    by = key_cols
+  )
+  
+  bind_rows(new_df, existing_trimmed)
+}
+
+# Check required columns
+require_cols <- function(df, required, df_name) {
+  missing <- setdiff(required, names(df))
+  if (length(missing) > 0) {
+    stop(
+      paste0(
+        df_name, " is missing required column(s): ",
+        paste(missing, collapse = ", ")
+      ),
+      call. = FALSE
+    )
+  }
+}
+
+# Empty rule log
+empty_rule_log <- function() {
+  data.frame(
+    scientificName = character(),
+    Curator.Decision = character(),
+    Curator.Notes = character(),
+    stringsAsFactors = FALSE
+  )
+}
+
+# Empty change log
+empty_change_log <- function() {
+  data.frame(
+    scientificName = character(),
+    ID = character(),
+    Curator.Decision = character(),
+    Curator.Notes = character(),
+    stringsAsFactors = FALSE
+  )
+}
+
+# Empty review notes
+empty_review_notes <- function() {
+  data.frame(
+    scientificName = character(),
+    Curator.Decision = character(),
+    Curator.Notes = character(),
+    stringsAsFactors = FALSE
+  )
+}
+
+# File paths
+baseline_path <- "summaries/Galiano_marine_animals_summary_2023-10-22.csv"
+inat_path <- "../../../parse_records/outputs/iNat_obs_marine_animals.csv"
+review_notes_path <- "outputs/Galiano_marine_animals_review_summary_review_notes.csv"
+taxon_rule_log_path <- "outputs/Galiano_marine_animals_taxon_rule_log.csv"
+change_log_path <- "outputs/Galiano_marine_animals_exclusion_change_log.csv"
+harvested_rules_path <- "outputs/Galiano_marine_animals_manual_rules_harvested_this_cycle.csv"
+output_path <- "outputs/Galiano_marine_animals_review_summary.csv"
+
+# Print paths
+cat("Working directory:", getwd(), "\n")
+cat("Baseline path:", baseline_path, "\n")
+cat("iNat path:", inat_path, "\n")
+cat("Review notes path:", review_notes_path, "\n")
+cat("Taxon rule log path:", taxon_rule_log_path, "\n")
+cat("Change log path:", change_log_path, "\n")
+cat("Harvested rules path:", harvested_rules_path, "\n")
+cat("Output path:", output_path, "\n\n")
+
+# Check required files
+if (!file.exists(baseline_path)) {
+  stop("Baseline file not found: ", baseline_path, call. = FALSE)
+}
+if (!file.exists(inat_path)) {
+  stop("iNaturalist observations file not found: ", inat_path, call. = FALSE)
+}
+
+# Read baseline
+baseline <- read.csv(
+  baseline_path,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
+
+summary.fields <- c(
+  "scientificName","scientificNameAuthorship","subtaxonAuthorship","commonName","kingdom","phylum",
+  "subphylum","superclass","class","subclass","superorder","order","suborder",
+  "superfamily","family","subfamily","tribe","genus","specificEpithet","hybrid",
+  "subspecies","variety","establishmentMeans","provincialStatus","nationalStatus","reportingStatus",
+  "observation","firstReported","firstReportedBy","Collection.List",
+  "firstReportedCollectionNumber","firstReportedGBIF","firstObservediNat","firstObservedBy","firstObservedID","notes",
+  "ID","statsCode"
+)
+
+if (ncol(baseline) != length(summary.fields)) {
+  stop(
+    paste0(
+      "Baseline column count mismatch.\n",
+      "Expected ", length(summary.fields), " columns, found ", ncol(baseline), "."
+    ),
+    call. = FALSE
+  )
+}
 
 names(baseline) <- summary.fields
 
-# Read iNaturalist obs
+baseline <- baseline %>%
+  mutate(across(everything(), ~ ifelse(is.na(.), "", .))) %>%
+  mutate(
+    scientificName = norm_chr(scientificName),
+    scientificNameAuthorship = norm_chr(scientificNameAuthorship),
+    subtaxonAuthorship = norm_chr(subtaxonAuthorship),
+    commonName = norm_chr(commonName),
+    genus = norm_chr(genus),
+    family = norm_chr(family),
+    firstObservediNat = norm_chr(firstObservediNat),
+    firstObservedBy = norm_chr(firstObservedBy),
+    firstObservedID = norm_chr(firstObservedID),
+    notes = norm_chr(notes),
+    ID = as.character(ID)
+  )
 
-iNat.obs.summary <- read.csv("../../../parse_records/outputs/iNat_obs_marine_animals.csv")
-names(iNat.obs.summary)
+# Read iNaturalist observations
+iNat.obs.summary <- read.csv(
+  inat_path,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
 
-# Summarize by first observed
+require_cols(
+  iNat.obs.summary,
+  c("scientific_name", "observed_on", "user_name", "taxon_rank", "genus", "family", "taxon_id", "id"),
+  "iNaturalist observation file"
+)
 
-iNat.obs.summary <- iNat.obs.summary %>% group_by(iNaturalist.taxon.name) %>% filter(Date.observed == min(Date.observed))
+iNat.obs.summary <- iNat.obs.summary %>%
+  mutate(
+    scientific_name = norm_chr(scientific_name),
+    observed_on = norm_chr(observed_on),
+    user_name = norm_chr(user_name),
+    taxon_rank = tolower(norm_chr(taxon_rank)),
+    genus = norm_chr(genus),
+    family = norm_chr(family),
+    taxon_id = as.character(taxon_id),
+    id = as.character(id)
+  )
 
-# Drop extraneous fields
+# Keep earliest observation per raw taxon
+iNat.obs.summary <- iNat.obs.summary %>%
+  arrange(scientific_name, observed_on, id) %>%
+  group_by(scientific_name) %>%
+  slice(1) %>%
+  ungroup()
 
-drop <- c("X")
-iNat.obs.summary = iNat.obs.summary[,!(names(iNat.obs.summary) %in% drop)]
+# Add helper fields
+iNat.obs.summary <- iNat.obs.summary %>%
+  mutate(
+    taxon_subspecies_name = word(scientific_name, 3),
+    taxon_variety_name = word(scientific_name, 3),
+    hybrid = ""
+  )
 
-# Standardize 'scientificName', 'species', 'subspecies', 'variety' fields in observation summary to facilitate merges
+# Match baseline-style fields
+iNat.obs.summary <- iNat.obs.summary %>%
+  mutate(
+    scientificName = scientific_name,
+    specificEpithet = derive_species_field(scientific_name),
+    subspecies = taxon_subspecies_name,
+    variety = taxon_variety_name,
+    firstObservediNat = observed_on,
+    firstObservedBy = user_name,
+    firstObservedID = paste0("iNat:", id),
+    ID = taxon_id,
+    genus = genus,
+    family = family,
+    hybrid = hybrid,
+    taxon.rank = taxon_rank
+  )
 
-iNat.obs.summary$taxon_subspecies_name <- word(iNat.obs.summary$Taxon.name, 3)
-iNat.obs.summary$taxon_variety_name <- word(iNat.obs.summary$Taxon.name, 3)
+# Build template
+template.df <- as.data.frame(
+  matrix(ncol = length(summary.fields), nrow = nrow(iNat.obs.summary))
+)
+names(template.df) <- summary.fields
 
-# Add field for Hybrid
+common.cols <- intersect(names(iNat.obs.summary), names(template.df))
+template.df[common.cols] <- iNat.obs.summary[common.cols]
 
-iNat.obs.summary$hybrid <- ""
+iNat.obs.summary.std <- template.df %>%
+  select(all_of(summary.fields)) %>%
+  mutate(across(where(is.logical), as.character)) %>%
+  mutate(across(where(is.character), ~ replace_na(., ""))) %>%
+  mutate(
+    scientificName = norm_chr(scientificName),
+    scientificNameAuthorship = norm_chr(scientificNameAuthorship),
+    subtaxonAuthorship = norm_chr(subtaxonAuthorship),
+    commonName = norm_chr(commonName),
+    genus = norm_chr(genus),
+    family = norm_chr(family),
+    firstObservediNat = norm_chr(firstObservediNat),
+    firstObservedBy = norm_chr(firstObservedBy),
+    firstObservedID = norm_chr(firstObservedID),
+    notes = norm_chr(notes),
+    ID = as.character(ID)
+  ) %>%
+  mutate(
+    taxon.rank = iNat.obs.summary$taxon.rank
+  )
 
-# Rename fields in iNat observation summary to correspond with fields in baseline summary
+# Read taxon rule log
+if (file.exists(taxon_rule_log_path)) {
+  taxon_rule_log <- read_char_csv(taxon_rule_log_path)
+} else {
+  taxon_rule_log <- empty_rule_log()
+}
 
-iNat.obs.summary <- rename(iNat.obs.summary, scientificName = Taxon.name)
-iNat.obs.summary <- rename(iNat.obs.summary, kingdom = Kingdom)
-iNat.obs.summary <- rename(iNat.obs.summary, phylum = Phylum)
-iNat.obs.summary <- rename(iNat.obs.summary, subphylum = Subphylum)
-iNat.obs.summary <- rename(iNat.obs.summary, superclass = Superclass)
-iNat.obs.summary <- rename(iNat.obs.summary, class = Class)
-iNat.obs.summary <- rename(iNat.obs.summary, subclass = Subclass)
-iNat.obs.summary <- rename(iNat.obs.summary, superorder = Superorder)
-iNat.obs.summary <- rename(iNat.obs.summary, order = Order)
-iNat.obs.summary <- rename(iNat.obs.summary, suborder = Suborder)
-iNat.obs.summary <- rename(iNat.obs.summary, infraorder = Infraorder)
-iNat.obs.summary <- rename(iNat.obs.summary, superfamily = Superfamily)
-iNat.obs.summary <- rename(iNat.obs.summary, family = Family)
-iNat.obs.summary <- rename(iNat.obs.summary, subfamily = Subfamily)
-iNat.obs.summary <- rename(iNat.obs.summary, tribe = Tribe)
-iNat.obs.summary <- rename(iNat.obs.summary, genus = Genus)
-iNat.obs.summary <- rename(iNat.obs.summary, subspecies = taxon_subspecies_name)
-iNat.obs.summary <- rename(iNat.obs.summary, variety = taxon_variety_name)
-iNat.obs.summary <- rename(iNat.obs.summary, firstObservediNat = Date.observed)
-iNat.obs.summary <- rename(iNat.obs.summary, firstObservedBy = Recorded.by)
-iNat.obs.summary <- rename(iNat.obs.summary, firstObservedID = observationId)
-iNat.obs.summary <- rename(iNat.obs.summary, ID = iNaturalist.taxon.ID)
+require_cols(
+  taxon_rule_log,
+  c("scientificName", "Curator.Decision", "Curator.Notes"),
+  "taxon rule log"
+)
 
-# Create template dataframe for iNat obs summary that matches with baseline summary dataset
+taxon_rule_log <- taxon_rule_log %>%
+  mutate(
+    scientificName = norm_chr(scientificName),
+    Curator.Decision = toupper(norm_chr(Curator.Decision)),
+    Curator.Notes = norm_chr(Curator.Notes)
+  ) %>%
+  filter(
+    scientificName != "",
+    Curator.Decision %in% c("DELETE", "SYNONYM")
+  ) %>%
+  distinct(scientificName, .keep_all = TRUE)
 
-iNat.obs.summary.fields <- summary.fields
+# Read review notes
+if (file.exists(review_notes_path)) {
+  review_notes <- read_char_csv(review_notes_path)
+  
+  require_cols(
+    review_notes,
+    c("scientificName", "Curator.Decision", "Curator.Notes"),
+    "review notes file"
+  )
+  
+  review_notes <- review_notes %>%
+    mutate(
+      scientificName = norm_chr(scientificName),
+      Curator.Decision = toupper(norm_chr(Curator.Decision)),
+      Curator.Notes = norm_chr(Curator.Notes)
+    )
+} else {
+  cat("Review notes file not found — proceeding with empty review notes.\n")
+  review_notes <- empty_review_notes()
+}
 
-data.frame <- as.data.frame(matrix(ncol = length(iNat.obs.summary.fields), nrow = nrow(iNat.obs.summary)))
-names(data.frame) <- iNat.obs.summary.fields
+valid_delete_notes <- c(
+  "non-established",
+  "unresolved infrataxon"
+)
 
-data.frame[names(iNat.obs.summary)] <- iNat.obs.summary
+# Harvest valid persistent rules
+new_manual_rules <- review_notes %>%
+  mutate(
+    synonym_target = ifelse(
+      Curator.Decision == "SYNONYM",
+      extract_synonym_target(Curator.Notes),
+      ""
+    ),
+    valid_persistent_rule = case_when(
+      scientificName == "" ~ FALSE,
+      Curator.Decision == "DELETE" & Curator.Notes %in% valid_delete_notes ~ TRUE,
+      Curator.Decision == "SYNONYM" & synonym_target != "" ~ TRUE,
+      TRUE ~ FALSE
+    )
+  ) %>%
+  filter(valid_persistent_rule) %>%
+  transmute(
+    scientificName = scientificName,
+    Curator.Decision = Curator.Decision,
+    Curator.Notes = Curator.Notes
+  ) %>%
+  distinct(scientificName, .keep_all = TRUE)
 
-iNat.obs.summary <- select(data.frame, c(1:length(iNat.obs.summary.fields)))
+# Save harvested rules
+if (nrow(new_manual_rules) > 0) {
+  write.csv(
+    new_manual_rules,
+    harvested_rules_path,
+    row.names = FALSE
+  )
+} else {
+  cat("No manual rules harvested this cycle.\n")
+}
 
-# Replace NAs with empty strings "" and convert logical to character
+# Update cumulative rule log
+if (nrow(new_manual_rules) > 0) {
+  taxon_rule_log <- upsert_rows(
+    existing_df = taxon_rule_log,
+    new_df = new_manual_rules,
+    key_cols = c("scientificName")
+  )
+}
 
-iNat.obs.summary <- iNat.obs.summary %>% mutate_if(is.logical, as.character)
-iNat.obs.summary <-  iNat.obs.summary %>% mutate_if(is.character, ~replace_na(.,""))
+# Keep only valid rule rows
+taxon_rule_log <- taxon_rule_log %>%
+  mutate(
+    synonym_target = ifelse(
+      Curator.Decision == "SYNONYM",
+      extract_synonym_target(Curator.Notes),
+      ""
+    )
+  ) %>%
+  filter(
+    scientificName != "",
+    (
+      Curator.Decision == "DELETE" & Curator.Notes %in% valid_delete_notes
+    ) |
+      (
+        Curator.Decision == "SYNONYM" & synonym_target != ""
+      )
+  ) %>%
+  select(-synonym_target) %>%
+  distinct(scientificName, .keep_all = TRUE)
 
-baseline <- baseline %>% mutate_if(is.logical, as.character)
-baseline <- baseline %>% mutate_if(is.character, ~replace_na(.,""))
+write.csv(
+  taxon_rule_log,
+  taxon_rule_log_path,
+  row.names = FALSE
+)
 
-# Match observation summary against baseline summary by Genus, Species, Infrataxon
+# Build manual rule lookup
+manual_rule_lookup <- taxon_rule_log %>%
+  transmute(
+    rule_taxon = scientificName,
+    manual_rule = Curator.Decision,
+    manual_note = Curator.Notes
+  )
 
-# First create common 'Infrataxon' field between data frames to facilitate join
+# Apply manual rules
+iNat.obs.summary.std <- iNat.obs.summary.std %>%
+  mutate(
+    Original.scientificName = scientificName
+  ) %>%
+  left_join(manual_rule_lookup, by = c("scientificName" = "rule_taxon")) %>%
+  mutate(
+    manual_rule = norm_chr(manual_rule),
+    manual_note = norm_chr(manual_note),
+    synonym_target = case_when(
+      manual_rule == "SYNONYM" ~ extract_synonym_target(manual_note),
+      TRUE ~ ""
+    ),
+    synonym_parse_failed = case_when(
+      manual_rule == "SYNONYM" & synonym_target == "" ~ TRUE,
+      TRUE ~ FALSE
+    ),
+    scientificName = case_when(
+      manual_rule == "SYNONYM" & synonym_target != "" ~ synonym_target,
+      TRUE ~ scientificName
+    ),
+    genus = derive_genus_field(scientificName),
+    specificEpithet = derive_species_field(scientificName),
+    subspecies = derive_subspecies_field(scientificName),
+    variety = derive_variety_field(scientificName)
+  )
 
-baseline <- baseline %>% mutate(infrataxon = coalesce(subspecies,variety))
-iNat.obs.summary$infrataxon <- iNat.obs.summary$subspecies
+manual_delete_count <- sum(iNat.obs.summary.std$manual_rule == "DELETE", na.rm = TRUE)
+manual_synonym_count <- sum(iNat.obs.summary.std$manual_rule == "SYNONYM", na.rm = TRUE)
+manual_synonym_parse_fail_count <- sum(iNat.obs.summary.std$synonym_parse_failed, na.rm = TRUE)
 
-# Now match with inner_join
+# Remove manual DELETE taxa
+iNat.obs.summary.std <- iNat.obs.summary.std %>%
+  filter(manual_rule != "DELETE")
 
-matched.iNat.obs.summary <- inner_join(baseline, iNat.obs.summary, by = c("ID"))
-names(matched.iNat.obs.summary)
-matched.iNat.obs.summary <- matched.iNat.obs.summary[,c(1,1:38)]
+# Collapse after synonym replacement
+iNat.obs.summary.std <- iNat.obs.summary.std %>%
+  arrange(scientificName, firstObservediNat, firstObservedID) %>%
+  group_by(scientificName) %>%
+  slice(1) %>%
+  ungroup()
 
-# Drop the field 'infrataxon' from summaries
+# Compare synonym-resolved taxa against baseline
+baseline_compare <- baseline %>%
+  transmute(
+    scientificName = norm_chr(scientificName),
+    baseline_firstObservediNat = norm_chr(firstObservediNat),
+    baseline_firstObservedBy = norm_chr(firstObservedBy),
+    baseline_firstObservedID = norm_chr(firstObservedID)
+  ) %>%
+  distinct(scientificName, .keep_all = TRUE)
 
-baseline$infrataxon <- NULL
-iNat.obs.summary$infrataxon <- NULL
+iNat.obs.summary.std <- iNat.obs.summary.std %>%
+  left_join(baseline_compare, by = "scientificName") %>%
+  mutate(
+    taxon_in_baseline = !is.na(baseline_firstObservediNat) & baseline_firstObservediNat != "",
+    earlier_than_baseline_for_taxon = case_when(
+      !taxon_in_baseline ~ FALSE,
+      firstObservediNat == "" ~ FALSE,
+      baseline_firstObservediNat == "" ~ FALSE,
+      firstObservediNat < baseline_firstObservediNat ~ TRUE,
+      TRUE ~ FALSE
+    ),
+    metadata_differs_from_baseline = case_when(
+      !taxon_in_baseline ~ FALSE,
+      norm_chr(firstObservediNat) != baseline_firstObservediNat ~ TRUE,
+      norm_chr(firstObservedBy) != baseline_firstObservedBy ~ TRUE,
+      norm_chr(firstObservedID) != baseline_firstObservedID ~ TRUE,
+      TRUE ~ FALSE
+    ),
+    keep_after_baseline_taxon_check = case_when(
+      !taxon_in_baseline ~ TRUE,
+      earlier_than_baseline_for_taxon & metadata_differs_from_baseline ~ TRUE,
+      TRUE ~ FALSE
+    )
+  ) %>%
+  filter(keep_after_baseline_taxon_check) %>%
+  select(
+    -baseline_firstObservediNat,
+    -baseline_firstObservedBy,
+    -baseline_firstObservedID,
+    -taxon_in_baseline,
+    -earlier_than_baseline_for_taxon,
+    -metadata_differs_from_baseline,
+    -keep_after_baseline_taxon_check
+  )
 
-# Match observation summary against baseline by Taxon and Date Observed
+# Match against baseline by ID
+summary.matched <- inner_join(
+  baseline,
+  iNat.obs.summary.std %>% select(ID) %>% distinct(),
+  by = "ID"
+) %>%
+  distinct(ID, .keep_all = TRUE)
 
-matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, scientificName = scientificName.x)
-matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, firstObservediNat = firstObservediNat.x)
-matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, firstObservedBy = firstObservedBy.x)
-matched.iNat.obs.summary <- rename(matched.iNat.obs.summary, firstObservedID = firstObservedID.x)
+unmatched.iNat.obs.summary <- anti_join(
+  iNat.obs.summary.std,
+  summary.matched %>% select(ID),
+  by = "ID"
+)
 
-matched.iNat.obs.summary$firstObserved  <- iNat.obs.summary$firstObserved[match(unlist(matched.iNat.obs.summary$scientificName), iNat.obs.summary$scientificName)]
-matched.iNat.obs.summary$firstObservedBy  <- iNat.obs.summary$firstObservedBy[match(unlist(matched.iNat.obs.summary$scientificName), iNat.obs.summary$scientificName)]
-matched.iNat.obs.summary$firstObservedID  <- iNat.obs.summary$firstObservedID[match(unlist(matched.iNat.obs.summary$scientificName), iNat.obs.summary$scientificName)]
+# Add statsCode to unmatched taxa by matching family where possible
+family_code_lookup <- baseline %>%
+  filter(family != "", statsCode != "") %>%
+  distinct(family, .keep_all = TRUE) %>%
+  transmute(family = norm_chr(family), inherited_statsCode = statsCode)
 
-# Matched summary
+unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
+  left_join(family_code_lookup, by = "family") %>%
+  mutate(
+    statsCode = inherited_statsCode
+  ) %>%
+  select(-inherited_statsCode)
 
-summary.matched <- inner_join(baseline, matched.iNat.obs.summary, by = c('scientificName','firstObservediNat'))
+# Baseline lookup tables
+baseline_taxon_lookup <- baseline %>%
+  select(scientificName, firstObservediNat) %>%
+  distinct() %>%
+  mutate(
+    scientificName = norm_chr(scientificName),
+    baseline_firstObservediNat = firstObservediNat
+  ) %>%
+  select(scientificName, baseline_firstObservediNat)
 
-summary.matched <- summary.matched[,c(1:38)]
-colnames(summary.matched) <- colnames(baseline)
-names(summary.matched) <- iNat.obs.summary.fields
+baseline_genus_lookup <- baseline %>%
+  filter(genus != "") %>%
+  distinct(genus) %>%
+  mutate(genus_in_baseline = TRUE)
 
-names(iNat.obs.summary) <- iNat.obs.summary.fields
+baseline_family_lookup <- baseline %>%
+  filter(family != "") %>%
+  distinct(family) %>%
+  mutate(family_in_baseline = TRUE)
 
-# Again convert logical to character
+unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
+  left_join(baseline_taxon_lookup, by = "scientificName") %>%
+  left_join(baseline_genus_lookup, by = "genus") %>%
+  left_join(baseline_family_lookup, by = "family") %>%
+  mutate(
+    genus_in_baseline = ifelse(is.na(genus_in_baseline), FALSE, genus_in_baseline),
+    family_in_baseline = ifelse(is.na(family_in_baseline), FALSE, family_in_baseline)
+  )
 
-summary.matched <- summary.matched %>% mutate_if(is.logical, as.character)
-summary.matched <-  summary.matched %>% mutate_if(is.character, ~replace_na(.,""))
+# Resolution categories
+unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
+  mutate(
+    resolution_level = case_when(
+      scientificName == "" | is.na(scientificName) ~ "unresolved",
+      taxon.rank %in% c("species", "subspecies", "variety", "form", "hybrid") ~ "species_or_lower",
+      taxon.rank == "genus" ~ "genus_only",
+      TRUE ~ "higher_taxon"
+    )
+  )
 
-# Unmatched summary
+# Novelty categories
+unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
+  mutate(
+    novelty_flag = case_when(
+      resolution_level == "species_or_lower" & !genus_in_baseline ~ "novel_genus",
+      resolution_level == "species_or_lower" & genus_in_baseline ~ "novel_species_in_known_genus",
+      resolution_level == "genus_only" & !genus_in_baseline ~ "novel_genus",
+      resolution_level == "genus_only" & genus_in_baseline ~ "known_genus_only",
+      resolution_level == "higher_taxon" & !family_in_baseline ~ "novel_higher_taxon",
+      resolution_level == "higher_taxon" & family_in_baseline ~ "known_higher_taxon_only",
+      TRUE ~ ""
+    )
+  )
 
-unmatched.iNat.obs.summary = anti_join(iNat.obs.summary, summary.matched, by = c("ID"))
+# Date categories
+unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
+  mutate(
+    date_flag = case_when(
+      is.na(baseline_firstObservediNat) | baseline_firstObservediNat == "" ~ "new_taxon",
+      firstObservediNat < baseline_firstObservediNat ~ "earlier_than_baseline",
+      firstObservediNat == baseline_firstObservediNat ~ "same_date_as_baseline",
+      firstObservediNat > baseline_firstObservediNat ~ "later_than_baseline",
+      TRUE ~ ""
+    )
+  )
 
-# Add Stats Code to unmatched Taxa (note: this code is imperfect but will at least add codes for new records of species within previously recorded familes)
+# Review grouping
+unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
+  mutate(
+    review_group = case_when(
+      resolution_level == "species_or_lower" ~ "deep_review",
+      date_flag %in% c("earlier_than_baseline", "later_than_baseline", "same_date_as_baseline") ~ "date_precedence_check",
+      resolution_level == "genus_only" & novelty_flag == "novel_genus" ~ "review_genus_novelty",
+      resolution_level == "genus_only" ~ "batch_genus_only",
+      TRUE ~ "low_priority"
+    )
+  )
 
-unmatched.iNat.obs.summary$Stats.Code  <- baseline$Stats.Code[match(unlist(unmatched.iNat.obs.summary$Family), baseline$Family)]
+unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
+  mutate(
+    Curator.Decision = "",
+    Curator.Notes = ""
+  )
 
-# Optional: trim unmatched summary to observations identified at least to genus
+# Auto triage
+unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
+  mutate(
+    auto_exclusion_note = case_when(
+      review_group == "batch_genus_only" ~ "genus",
+      review_group == "low_priority" & resolution_level == "higher_taxon" ~ "higher",
+      review_group == "low_priority" & resolution_level == "unresolved" ~ "unresolved",
+      review_group == "low_priority" ~ "other",
+      TRUE ~ ""
+    )
+  )
 
-unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary[!(is.na(unmatched.iNat.obs.summary$genus) | unmatched.iNat.obs.summary$genus == ""), ]
+unmatched.iNat.obs.summary <- unmatched.iNat.obs.summary %>%
+  mutate(
+    Curator.Decision = case_when(
+      review_group %in% c("batch_genus_only", "low_priority") ~ "DELETE",
+      TRUE ~ Curator.Decision
+    ),
+    Curator.Notes = case_when(
+      Curator.Decision == "DELETE" & auto_exclusion_note != "" ~ auto_exclusion_note,
+      TRUE ~ Curator.Notes
+    )
+  )
 
-# Merge baseline and unmatched summary for review 
+# Read change log
+if (file.exists(change_log_path)) {
+  change_log <- read_char_csv(change_log_path)
+} else {
+  change_log <- empty_change_log()
+}
 
-review.summary <- rbind(baseline, unmatched.iNat.obs.summary)
+require_cols(
+  change_log,
+  c("scientificName", "ID", "Curator.Decision", "Curator.Notes"),
+  "exclusion change log"
+)
 
-# Review dataframes
+change_log <- change_log %>%
+  mutate(
+    scientificName = norm_chr(scientificName),
+    ID = norm_chr(ID),
+    Curator.Decision = toupper(norm_chr(Curator.Decision)),
+    Curator.Notes = norm_chr(Curator.Notes)
+  )
 
-nrow(iNat.obs.summary)
-nrow(baseline)
-nrow(summary.matched)
-nrow(unmatched.iNat.obs.summary)
-nrow(review.summary)
+# Current auto-exclusions
+current_auto_exclusions <- unmatched.iNat.obs.summary %>%
+  filter(Curator.Decision == "DELETE") %>%
+  transmute(
+    scientificName = scientificName,
+    ID = norm_chr(ID),
+    Curator.Decision = "DELETE",
+    Curator.Notes = Curator.Notes
+  ) %>%
+  distinct(scientificName, ID, .keep_all = TRUE)
 
-# Replace NA values with ""
+# Update change log
+if (nrow(current_auto_exclusions) > 0) {
+  change_log <- upsert_rows(
+    existing_df = change_log,
+    new_df = current_auto_exclusions,
+    key_cols = c("scientificName", "ID")
+  )
+}
 
+write.csv(
+  change_log,
+  change_log_path,
+  row.names = FALSE
+)
+
+# Keep only manual review targets
+unmatched.review.targets <- unmatched.iNat.obs.summary %>%
+  filter(Curator.Decision != "DELETE") %>%
+  filter(!(is.na(genus) | genus == ""))
+
+# Add extra review columns to baseline
+baseline.review <- baseline %>%
+  mutate(
+    taxon.rank = "",
+    Original.scientificName = "",
+    manual_rule = "",
+    manual_note = "",
+    synonym_target = "",
+    synonym_parse_failed = "",
+    baseline_firstObservediNat = "",
+    genus_in_baseline = "",
+    family_in_baseline = "",
+    resolution_level = "",
+    novelty_flag = "",
+    date_flag = "",
+    review_group = "",
+    Curator.Decision = "",
+    Curator.Notes = "",
+    auto_exclusion_note = ""
+  )
+
+review.cols <- union(names(baseline.review), names(unmatched.review.targets))
+
+for (col in setdiff(review.cols, names(baseline.review))) {
+  baseline.review[[col]] <- ""
+}
+
+for (col in setdiff(review.cols, names(unmatched.review.targets))) {
+  unmatched.review.targets[[col]] <- ""
+}
+
+baseline.review <- baseline.review[, review.cols]
+unmatched.review.targets <- unmatched.review.targets[, review.cols]
+
+review.summary <- rbind(baseline.review, unmatched.review.targets)
 review.summary[is.na(review.summary)] <- ""
 
-# Write review summary 
+# Print diagnostics
+cat("Review notes path exists:", file.exists(review_notes_path), "\n")
+cat("Rows in review notes:", nrow(review_notes), "\n")
+cat("Rows harvested from review notes:", nrow(new_manual_rules), "\n")
+cat("Rows in taxon rule log:", nrow(taxon_rule_log), "\n")
+cat("Manual DELETE rules applied:", manual_delete_count, "\n")
+cat("Manual SYNONYM rules applied:", manual_synonym_count, "\n")
+cat("Manual SYNONYM parse failures:", manual_synonym_parse_fail_count, "\n")
+cat("Rows in iNat summary after manual rules and baseline-taxon screening:", nrow(iNat.obs.summary.std), "\n")
+cat("Rows matched by ID:", nrow(summary.matched), "\n")
+cat("Rows unmatched before auto DELETE filter:", nrow(unmatched.iNat.obs.summary), "\n")
+cat("Rows auto-excluded and logged:", nrow(current_auto_exclusions), "\n")
+cat("Rows retained for manual review:", nrow(unmatched.review.targets), "\n")
+cat("Rows in combined review summary:", nrow(review.summary), "\n")
 
-write.csv(review.summary, "outputs/Galiano_marine_animals_review_summary.csv", row.names = FALSE)
+cat("\nReview note decision counts:\n")
+print(table(review_notes$Curator.Decision, useNA = "ifany"))
+
+cat("\nHarvested manual rules this cycle:\n")
+print(new_manual_rules)
+
+cat("\nTaxon rule log decisions:\n")
+print(table(taxon_rule_log$Curator.Decision, useNA = "ifany"))
+
+cat("\nAuto-exclusion note counts:\n")
+print(table(current_auto_exclusions$Curator.Notes, useNA = "ifany"))
+
+# Write output files
+write.csv(
+  review.summary,
+  output_path,
+  row.names = FALSE
+)
