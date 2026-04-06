@@ -120,7 +120,7 @@ empty_review_notes <- function() {
 }
 
 # File paths
-baseline_path <- "summaries/Galiano_terrestrial_annelids_etc_review_summary_2023-11-04.csv"
+baseline_path <- "summaries/Terrestrial_annelids_etc_summary_2023-11-06.csv"
 inat_path <- "../../../parse_records/outputs/iNat_obs_Terrestrial_annelids_etc.csv"
 review_notes_path <- "outputs/Galiano_terrestrial_annelids_etc_review_summary_review_notes.csv"
 taxon_rule_log_path <- "outputs/Galiano_terrestrial_annelids_etc_taxon_rule_log.csv"
