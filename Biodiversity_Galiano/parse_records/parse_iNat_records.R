@@ -177,7 +177,8 @@ Terrestrial.annelids.etc <- iNat.obs %>%
   filter(Genus == "Amynthas" |
            Taxon.name == "Octolasion cyaneum" |
            Genus == "Habrotrocha" |
-           Taxon.name == "Lumbricus terrestris")
+           Family == "Lumbricidae" |
+           Taxon.name == "Aporrectodea")
 
 Animals <- iNat.obs %>% filter(Kingdom == "Animalia")
 

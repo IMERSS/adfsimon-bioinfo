@@ -120,9 +120,9 @@ empty_review_notes <- function() {
 }
 
 # File paths
-baseline_path <- "summaries/Galiano_marine_animals_summary_2023-10-22.csv"
+baseline_path <- "summaries/Galiano_marine_animals_summary_2026-04-05.csv"
 inat_path <- "../../../parse_records/outputs/iNat_obs_marine_animals.csv"
-review_notes_path <- "outputs/Galiano_marine_animals_review_summary_review_notes.csv"
+review_notes_path <- "outputs/Galiano_marine_animals_review_notes.csv"
 taxon_rule_log_path <- "outputs/Galiano_marine_animals_taxon_rule_log.csv"
 change_log_path <- "outputs/Galiano_marine_animals_exclusion_change_log.csv"
 harvested_rules_path <- "outputs/Galiano_marine_animals_manual_rules_harvested_this_cycle.csv"
