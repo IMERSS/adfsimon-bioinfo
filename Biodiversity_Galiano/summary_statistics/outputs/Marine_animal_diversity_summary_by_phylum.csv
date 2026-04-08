@@ -1,0 +1,17 @@
+Phylum,Phylum_Latin,total_taxa,remaining_historical,confirmed_taxa,new_taxa,resolved_taxa,recent_confirmed,recent_new,recent_total,resolved_share_pct,unresolved_share_pct
+Molluscs (Mollusca),Mollusca,208,95,82,31,113,0,0,0,54.3,45.7
+Chordates (Chordata),Chordata,139,43,77,19,96,1,6,7,69.1,30.9
+Arthropods (Arthropoda),Arthropoda,92,37,42,13,55,0,2,2,59.8,40.2
+"Jellyfish, corals & anemones (Cnidaria)",Cnidaria,78,38,33,7,40,0,2,2,51.3,48.7
+Segmented worms (Annelida),Annelida,50,28,16,6,22,0,2,2,44,56
+"Sea stars, urchins & kin (Echinodermata)",Echinodermata,42,15,25,2,27,0,1,1,64.3,35.7
+Sponges (Porifera),Porifera,41,30,10,1,11,0,1,1,26.8,73.2
+Moss animals (Bryozoa),Bryozoa,18,9,8,1,9,0,0,0,50,50
+Ribbon worms (Nemertea),Nemertea,7,2,3,2,5,0,0,0,71.4,28.6
+Comb jellies (Ctenophora),Ctenophora,4,0,4,0,4,0,0,0,100,0
+Flatworms (Platyhelminthes),Platyhelminthes,2,0,2,0,2,0,0,0,100,0
+Arrow worms (Chaetognatha),Chaetognatha,1,1,0,0,0,0,0,0,0,100
+Goblet worms (Entoprocta),Entoprocta,1,1,0,0,0,0,0,0,0,100
+Horseshoe worms (Phoronida),Phoronida,1,0,1,0,1,0,0,0,100,0
+Lamp shells (Brachiopoda),Brachiopoda,1,1,0,0,0,0,0,0,0,100
+Peanut worms (Sipuncula),Sipuncula,1,1,0,0,0,0,0,0,0,100

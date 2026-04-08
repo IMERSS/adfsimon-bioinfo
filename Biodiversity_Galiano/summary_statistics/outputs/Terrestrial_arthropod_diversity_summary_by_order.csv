@@ -1,0 +1,36 @@
+Order,Order_Latin,total_taxa,remaining_historical,confirmed_taxa,new_taxa,resolved_taxa,recent_confirmed,recent_new,recent_total,resolved_share_pct,unresolved_share_pct
+Butterflies & moths (Lepidoptera),Lepidoptera,353,7,24,322,346,0,27,27,98,2
+Beetles (Coleoptera),Coleoptera,277,64,43,170,213,0,12,12,76.9,23.1
+Flies (Diptera),Diptera,238,54,22,162,184,0,21,21,77.3,22.7
+"Ants, bees & wasps (Hymenoptera)",Hymenoptera,233,59,31,143,174,0,11,11,74.7,25.3
+True bugs (Hemiptera),Hemiptera,205,142,24,39,63,0,8,8,30.7,69.3
+Spiders (Araneae),Araneae,80,16,10,54,64,0,0,0,80,20
+Dragonflies & damselflies (Odonata),Odonata,26,4,18,4,22,0,0,0,84.6,15.4
+Lacewings (Neuroptera),Neuroptera,18,13,4,1,5,0,1,1,27.8,72.2
+Grasshoppers & crickets (Orthoptera),Orthoptera,13,2,5,6,11,0,0,0,84.6,15.4
+Caddisflies (Trichoptera),Trichoptera,11,5,0,6,6,0,0,0,54.5,45.5
+Barklice & booklice (Psocodea),Psocodea,9,0,0,9,9,0,1,1,100,0
+Woodlice (Isopoda),Isopoda,8,0,0,8,8,0,1,1,100,0
+Mites (Sarcoptiformes),Sarcoptiformes,6,0,0,6,6,0,0,0,100,0
+Springtails (Entomobryomorpha),Entomobryomorpha,5,0,0,5,5,0,0,0,100,0
+Springtails (Symphypleona),Symphypleona,4,0,0,4,4,0,1,1,100,0
+Cockroaches & termites (Blattodea),Blattodea,3,0,1,2,3,0,0,0,100,0
+Millipedes (Polydesmida),Polydesmida,3,0,2,1,3,0,0,0,100,0
+Mites (Trombidiformes),Trombidiformes,3,0,0,3,3,0,0,0,100,0
+Snakeflies (Raphidioptera),Raphidioptera,3,2,1,0,1,0,0,0,33.3,66.7
+Earwigs (Dermaptera),Dermaptera,2,0,2,0,2,0,0,0,100,0
+Harvestmen (Opiliones),Opiliones,2,0,0,2,2,0,0,0,100,0
+Mayflies (Ephemeroptera),Ephemeroptera,2,0,0,2,2,0,0,0,100,0
+Millipedes (Julida),Julida,2,0,0,2,2,0,0,0,100,0
+Springtails (Poduromorpha),Poduromorpha,2,0,0,2,2,0,1,1,100,0
+Twisted-wing parasites (Strepsiptera),Strepsiptera,2,0,0,2,2,0,0,0,100,0
+Bristly millipedes (Polyxenida),Polyxenida,1,0,0,1,1,0,0,0,100,0
+Centipedes (Scolopendromorpha),Scolopendromorpha,1,0,0,1,1,0,0,0,100,0
+Fleas (Siphonaptera),Siphonaptera,1,0,0,1,1,0,0,0,100,0
+Jumping bristletails (Archaeognatha),Archaeognatha,1,0,0,1,1,0,1,1,100,0
+Mantises (Mantodea),Mantodea,1,0,0,1,1,0,0,0,100,0
+Millipedes (Chordeumatida),Chordeumatida,1,0,0,1,1,0,1,1,100,0
+Pseudoscorpions (Pseudoscorpiones),Pseudoscorpiones,1,0,0,1,1,0,0,0,100,0
+Silverfish (Zygentoma),Zygentoma,1,0,0,1,1,0,0,0,100,0
+Stoneflies (Plecoptera),Plecoptera,1,1,0,0,0,0,0,0,0,100
+Ticks (Ixodida),Ixodida,1,0,0,1,1,0,0,0,100,0

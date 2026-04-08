@@ -75,8 +75,8 @@ NEW_RECORD_YEAR_MAX <- 2026
 BASE_FONT_FAMILY <- "sans"
 
 # Title + subtitle styling
-PLOT_TITLE <- "Biodiversity Galiano: terrestrial arthropods"
-PLOT_SUBTITLE <- "historical reports vs contemporary observersations"
+PLOT_TITLE <- "Biodiversity Galiano 2026: terrestrial arthropods"
+PLOT_SUBTITLE <- "Relational network of historical reporting and contemporary biodiversity observations"
 TITLE_CEX <- 1.60
 SUBTITLE_CEX <- 1
 TITLE_FONT <- 2
@@ -595,9 +595,9 @@ legend(
   legend = c(
     "Historical reporter / collector",
     "Contemporary observer",
-    "Taxon (reported)",
-    "Taxon (confirmed)",
-    "Taxon (new; year gradient)",
+    "Reported species",
+    "Confirmed species",
+    "New species (year gradient)",
     "Reported",
     "Confirmed",
     "New"
@@ -738,4 +738,1301 @@ if (PRINT_RANGE_CHECK) {
   cat("  Plot window padding: ", PLOT_WINDOW_PADDING, "\n", sep = "")
   cat("  Label jitter enabled: ", USE_LABEL_JITTER, "\n", sep = "")
   cat("=============================================\n\n")
+}
+
+## ------------------------------------------------------------
+## Top 10 contemporary contributors (quick view)
+## ------------------------------------------------------------
+
+top11_contemporary <- contemporary_rank %>%
+  slice_head(n = min(11, nrow(contemporary_rank)))
+
+cat("\nTop 11 contemporary contributors:\n")
+print(top11_contemporary)
+
+names(df)
+
+## ------------------------------------------------------------
+## ARTHROPOD ORDER SUMMARY FOR CUMULATIVE KNOWLEDGE BARPLOT
+## ------------------------------------------------------------
+
+if (!"Order" %in% names(df)) {
+  stop("The data do not contain a column named 'Order'.", call. = FALSE)
+}
+
+# Clean order field
+df <- df %>%
+  mutate(
+    Order = str_trim(as.character(Order)),
+    Order = na_if(Order, "")
+  )
+
+# Print available order names
+order_names_present <- df %>%
+  filter(!is.na(Order)) %>%
+  distinct(Order) %>%
+  arrange(Order) %>%
+  pull(Order)
+
+cat("\nOrders present in the dataset:\n")
+print(order_names_present)
+
+## ------------------------------------------------------------
+## CUMULATIVE KNOWLEDGE TABLE BY ORDER
+## ------------------------------------------------------------
+
+taxon_order_status <- df %>%
+  filter(!is.na(Order), !is.na(Taxon), Taxon != "") %>%
+  group_by(Order, Taxon) %>%
+  summarise(
+    has_confirmed = any(Reporting.Status.simple == "confirmed", na.rm = TRUE),
+    has_new = any(Reporting.Status.simple == "new", na.rm = TRUE),
+    has_reported = any(Reporting.Status.simple == "reported", na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    knowledge_category = case_when(
+      has_confirmed ~ "Confirmed reports",
+      has_new ~ "New records",
+      has_reported ~ "Unconfirmed historical records",
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  filter(!is.na(knowledge_category))
+
+order_diversity_summary <- taxon_order_status %>%
+  count(Order, knowledge_category, name = "n_taxa") %>%
+  group_by(Order) %>%
+  mutate(total_taxa = sum(n_taxa)) %>%
+  ungroup()
+
+# Order orders by total diversity
+order_order <- order_diversity_summary %>%
+  distinct(Order, total_taxa) %>%
+  arrange(desc(total_taxa), Order) %>%
+  pull(Order)
+
+order_diversity_summary$Order <- factor(
+  order_diversity_summary$Order,
+  levels = order_order
+)
+
+# Stack order from bottom to top
+order_diversity_summary$knowledge_category <- factor(
+  order_diversity_summary$knowledge_category,
+  levels = c(
+    "Unobserved historical records",
+    "Observed historical reports",
+    "New records"
+  )
+)
+
+## ------------------------------------------------------------
+## FRIENDLY ORDER LABELS
+## ------------------------------------------------------------
+
+order_label_map <- c(
+  "Araneae" = "Spiders (Araneae)",
+  "Archaeognatha" = "Jumping bristletails (Archaeognatha)",
+  "Blattodea" = "Cockroaches & termites (Blattodea)",
+  "Chordeumatida" = "Millipedes (Chordeumatida)",
+  "Coleoptera" = "Beetles (Coleoptera)",
+  "Dermaptera" = "Earwigs (Dermaptera)",
+  "Diptera" = "Flies (Diptera)",
+  "Entomobryomorpha" = "Springtails (Entomobryomorpha)",
+  "Ephemeroptera" = "Mayflies (Ephemeroptera)",
+  "Hemiptera" = "True bugs (Hemiptera)",
+  "Hymenoptera" = "Ants, bees & wasps (Hymenoptera)",
+  "Isopoda" = "Woodlice (Isopoda)",
+  "Ixodida" = "Ticks (Ixodida)",
+  "Julida" = "Millipedes (Julida)",
+  "Lepidoptera" = "Butterflies & moths (Lepidoptera)",
+  "Mantodea" = "Mantises (Mantodea)",
+  "Neuroptera" = "Lacewings (Neuroptera)",
+  "Odonata" = "Dragonflies & damselflies (Odonata)",
+  "Opiliones" = "Harvestmen (Opiliones)",
+  "Orthoptera" = "Grasshoppers & crickets (Orthoptera)",
+  "Plecoptera" = "Stoneflies (Plecoptera)",
+  "Poduromorpha" = "Springtails (Poduromorpha)",
+  "Polydesmida" = "Millipedes (Polydesmida)",
+  "Polyxenida" = "Bristly millipedes (Polyxenida)",
+  "Pseudoscorpiones" = "Pseudoscorpions (Pseudoscorpiones)",
+  "Psocodea" = "Barklice & booklice (Psocodea)",
+  "Raphidioptera" = "Snakeflies (Raphidioptera)",
+  "Sarcoptiformes" = "Mites (Sarcoptiformes)",
+  "Scolopendromorpha" = "Centipedes (Scolopendromorpha)",
+  "Siphonaptera" = "Fleas (Siphonaptera)",
+  "Strepsiptera" = "Twisted-wing parasites (Strepsiptera)",
+  "Symphypleona" = "Springtails (Symphypleona)",
+  "Trichoptera" = "Caddisflies (Trichoptera)",
+  "Trombidiformes" = "Mites (Trombidiformes)",
+  "Zygentoma" = "Silverfish (Zygentoma)"
+)
+
+order_diversity_summary <- order_diversity_summary %>%
+  mutate(
+    Order_label = recode(as.character(Order), !!!order_label_map, .default = as.character(Order))
+  )
+
+# Preserve plotting order after relabeling
+order_label_levels <- order_diversity_summary %>%
+  distinct(Order, Order_label) %>%
+  mutate(Order = factor(Order, levels = order_order)) %>%
+  arrange(Order) %>%
+  pull(Order_label)
+
+order_diversity_summary$Order_label <- factor(
+  order_diversity_summary$Order_label,
+  levels = order_label_levels
+)
+
+cat("\nCumulative knowledge summary by order:\n")
+print(order_diversity_summary)
+
+## ------------------------------------------------------------
+## BARPLOT: RAW COUNTS OF SPECIES BY ORDER
+## ------------------------------------------------------------
+
+vir_cols <- viridis::viridis(3, option = "D", direction = 1)
+names(vir_cols) <- c(
+  "Unconfirmed historical records",
+  "Confirmed reports",
+  "New records"
+)
+
+p_cumulative_knowledge <- ggplot(
+  order_diversity_summary,
+  aes(x = Order_label, y = n_taxa, fill = knowledge_category)
+) +
+  geom_col(width = 0.82, color = NA) +
+  scale_fill_manual(values = vir_cols) +
+  scale_x_discrete(expand = expansion(mult = c(0.10, 0.02))) +   # ← LEFT BUFFER
+  coord_cartesian(clip = "off") +                                # ← ALLOW OVERFLOW
+  labs(
+    title = "Biodiversity Galiano 2026: cumulative knowledge by arthropod order",
+    subtitle = "Number of species represented by historical-only, confirmed, and new records",
+    x = NULL,
+    y = "Number of species",
+    fill = NULL
+  ) +
+  theme_minimal(base_family = BASE_FONT_FAMILY) +
+  theme(
+    plot.background = element_rect(fill = BG_COLOR, color = BG_COLOR),
+    panel.background = element_rect(fill = BG_COLOR, color = BG_COLOR),
+    plot.margin = margin(t = 10, r = 20, b = 20, l = 60),        # ← KEY FIX
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_line(color = "gray30", linewidth = 0.3),
+    axis.text.x = element_text(
+      angle = 40,
+      hjust = 1,
+      vjust = 1,
+      color = FG_COLOR,
+      size = 10.5
+    ),
+    axis.text.y = element_text(color = FG_COLOR, size = 11),
+    axis.title.y = element_text(color = FG_COLOR, size = 12),
+    plot.title = element_text(color = FG_COLOR, face = "bold", size = 16),
+    plot.subtitle = element_text(color = FG_COLOR, size = 11),
+    legend.text = element_text(color = FG_COLOR, size = 11),
+    legend.background = element_rect(fill = BG_COLOR, color = BG_COLOR),
+    legend.key = element_rect(fill = BG_COLOR, color = BG_COLOR)
+  )
+
+print(p_cumulative_knowledge)
+
+## ------------------------------------------------------------
+## RANDOM EXAMPLE OBSERVATIONS TABLE BY ORDER × KNOWLEDGE CATEGORY
+## NEW RECORDS RESTRICTED TO PAST 2 YEARS
+## ------------------------------------------------------------
+
+set.seed(123)  # reproducible random examples
+
+# Use the most recent "new" year in the data if available; otherwise fall back to 2026
+if ("new_year" %in% names(df) && any(!is.na(df$new_year))) {
+  RECENT_NEW_YEAR_MAX <- max(df$new_year, na.rm = TRUE)
+} else {
+  RECENT_NEW_YEAR_MAX <- 2026
+}
+RECENT_NEW_YEAR_MIN <- RECENT_NEW_YEAR_MAX - 1
+
+# Helper: return first existing column from a set of candidates
+first_existing_col <- function(data, candidates) {
+  hits <- candidates[candidates %in% names(data)]
+  if (length(hits) == 0) return(NA_character_)
+  hits[1]
+}
+
+# Helper: safely pull a column, otherwise return NA vector
+pull_or_na <- function(data, colname) {
+  if (is.na(colname) || !(colname %in% names(data))) {
+    return(rep(NA_character_, nrow(data)))
+  }
+  as.character(data[[colname]])
+}
+
+## ------------------------------------------------------------
+## DETECT METADATA COLUMNS
+## ------------------------------------------------------------
+
+col_order          <- first_existing_col(df, c("Order"))
+col_taxon          <- first_existing_col(df, c("Taxon"))
+col_status         <- first_existing_col(df, c("Reporting.Status.simple", "Reporting.Status"))
+col_collector      <- first_existing_col(df, c("Collector.Source"))
+col_observer       <- first_existing_col(df, c("Observer"))
+col_hist_date      <- first_existing_col(df, c("Collected.Reported..y.m.d."))
+col_first_observed <- first_existing_col(df, c("First.Observed"))
+col_inat_link      <- first_existing_col(df, c("iNaturalist.Link"))
+col_obs_id         <- first_existing_col(df, c("ID"))
+col_new_year       <- first_existing_col(df, c("new_year"))
+
+required_cols <- c(col_order, col_taxon, col_status)
+if (any(is.na(required_cols))) {
+  stop(
+    "Missing one or more required columns for example-table generation: Order, Taxon, and/or Reporting.Status.",
+    call. = FALSE
+  )
+}
+
+## ------------------------------------------------------------
+## NORMALIZE CORE TABLE
+## ------------------------------------------------------------
+
+example_pool <- df %>%
+  mutate(
+    Order_std = pull_or_na(., col_order),
+    Taxon_std = pull_or_na(., col_taxon),
+    Reporting_std = pull_or_na(., col_status),
+    Collector_std = pull_or_na(., col_collector),
+    Observer_std = pull_or_na(., col_observer),
+    Historical_date_std = pull_or_na(., col_hist_date),
+    First_observed_std = pull_or_na(., col_first_observed),
+    iNat_URL_std = pull_or_na(., col_inat_link),
+    iNat_ID_std = pull_or_na(., col_obs_id),
+    new_year_std = suppressWarnings(as.integer(pull_or_na(., col_new_year)))
+  ) %>%
+  mutate(
+    Order_std = na_if(str_trim(Order_std), ""),
+    Taxon_std = na_if(str_trim(Taxon_std), ""),
+    Reporting_std = str_to_lower(na_if(str_trim(Reporting_std), "")),
+    Collector_std = na_if(str_trim(Collector_std), ""),
+    Observer_std = na_if(str_trim(Observer_std), ""),
+    Historical_date_std = na_if(str_trim(Historical_date_std), ""),
+    First_observed_std = na_if(str_trim(First_observed_std), ""),
+    iNat_URL_std = na_if(str_trim(iNat_URL_std), ""),
+    iNat_ID_std = na_if(str_trim(iNat_ID_std), "")
+  ) %>%
+  mutate(
+    knowledge_category = case_when(
+      Reporting_std == "reported" ~ "Remaining historical report",
+      Reporting_std == "confirmed" ~ "Confirmed record",
+      str_detect(Reporting_std, "^new") ~ "New record",
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  filter(
+    !is.na(Order_std),
+    !is.na(Taxon_std),
+    !is.na(knowledge_category)
+  )
+
+## ------------------------------------------------------------
+## ENSURE NEW-YEAR FIELD EXISTS / PARSE IF NEEDED
+## ------------------------------------------------------------
+
+if (!"new_year" %in% names(df) || all(is.na(example_pool$new_year_std))) {
+  example_pool <- example_pool %>%
+    mutate(
+      new_year_std = case_when(
+        str_detect(Reporting_std, "^new\\s+[0-9]{4}$") ~
+          as.integer(str_extract(Reporting_std, "[0-9]{4}")),
+        TRUE ~ new_year_std
+      )
+    )
+}
+
+## ------------------------------------------------------------
+## RESTRICT NEW-RECORD EXAMPLES TO THE PAST 2 YEARS
+## ------------------------------------------------------------
+
+example_pool <- example_pool %>%
+  filter(
+    knowledge_category != "New record" |
+      (!is.na(new_year_std) &
+         new_year_std >= RECENT_NEW_YEAR_MIN &
+         new_year_std <= RECENT_NEW_YEAR_MAX)
+  )
+
+## ------------------------------------------------------------
+## NORMALIZE iNAT LINKS (handles mixed formats)
+## ------------------------------------------------------------
+
+example_pool <- example_pool %>%
+  mutate(
+    iNat_link = case_when(
+      
+      # Already a proper URL → keep as-is
+      str_detect(iNat_URL_std, "^https?://") ~ iNat_URL_std,
+      
+      # Format like "iNat:123456"
+      str_detect(iNat_URL_std, "^iNat:[0-9]+$") ~
+        paste0(
+          "https://www.inaturalist.org/observations/",
+          str_extract(iNat_URL_std, "[0-9]+")
+        ),
+      
+      # If URL field is empty but ID exists
+      !is.na(iNat_ID_std) & str_detect(iNat_ID_std, "^[0-9]+$") ~
+        paste0(
+          "https://www.inaturalist.org/observations/",
+          iNat_ID_std
+        ),
+      
+      TRUE ~ NA_character_
+    )
+  )
+
+## ------------------------------------------------------------
+## ATTACH FRIENDLY ORDER LABELS IF AVAILABLE
+## ------------------------------------------------------------
+
+if (exists("order_label_map")) {
+  example_pool <- example_pool %>%
+    mutate(
+      Order_label = recode(Order_std, !!!order_label_map, .default = Order_std)
+    )
+} else {
+  example_pool <- example_pool %>%
+    mutate(Order_label = Order_std)
+}
+
+## ------------------------------------------------------------
+## SAMPLE ONE RANDOM EXAMPLE PER ORDER × KNOWLEDGE CATEGORY
+## ------------------------------------------------------------
+
+example_table <- example_pool %>%
+  group_by(Order_std, Order_label, knowledge_category) %>%
+  slice_sample(n = 1) %>%
+  ungroup() %>%
+  mutate(
+    category_sort = case_when(
+      knowledge_category == "Remaining historical report" ~ 1L,
+      knowledge_category == "Confirmed record" ~ 2L,
+      knowledge_category == "New record" ~ 3L,
+      TRUE ~ 99L
+    )
+  ) %>%
+  arrange(Order_label, category_sort, Taxon_std) %>%
+  select(
+    Order = Order_label,
+    Order_Latin = Order_std,
+    Knowledge_category = knowledge_category,
+    Taxon = Taxon_std,
+    Collector_Source = Collector_std,
+    Observer = Observer_std,
+    Historical_date = Historical_date_std,
+    First_observed = First_observed_std,
+    New_record_year = new_year_std,
+    iNat_ID = iNat_ID_std,
+    iNat_link
+  )
+
+cat("\nRandom example observations by order × knowledge category:\n")
+cat(
+  "New record examples restricted to years ",
+  RECENT_NEW_YEAR_MIN, "-", RECENT_NEW_YEAR_MAX, "\n",
+  sep = ""
+)
+print(example_table, n = nrow(example_table))
+
+## ------------------------------------------------------------
+## OPTIONAL: COUNTS CHECK
+## ------------------------------------------------------------
+
+cat("\nCounts of sampled examples by category:\n")
+print(table(example_table$Knowledge_category, useNA = "ifany"))
+
+## ------------------------------------------------------------
+## WRITE TO CSV
+## ------------------------------------------------------------
+
+write.csv(
+  example_table,
+  "outputs/Terrestrial_arthropods_random_example_observations_by_order_recent_new_records.csv",
+  row.names = FALSE
+)
+
+cat("\nSaved file: random_example_observations_by_order_recent_new_records.csv\n")
+
+## ------------------------------------------------------------
+## RANDOM EXAMPLE RECORDS BY ORDER + STORY TEXT
+## ------------------------------------------------------------
+
+head(df$Collection.List)
+head(df$Accession.Number)
+
+set.seed(123)
+
+# Use the most recent "new" year in the data if available; otherwise parse from Reporting.Status
+if ("new_year" %in% names(df) && any(!is.na(df$new_year))) {
+  RECENT_NEW_YEAR_MAX <- max(df$new_year, na.rm = TRUE)
+} else {
+  tmp_new_years <- suppressWarnings(as.integer(stringr::str_extract(
+    as.character(df$Reporting.Status),
+    "(?<=new\\s)\\d{4}"
+  )))
+  if (any(!is.na(tmp_new_years))) {
+    RECENT_NEW_YEAR_MAX <- max(tmp_new_years, na.rm = TRUE)
+  } else {
+    RECENT_NEW_YEAR_MAX <- 2026
+  }
+}
+RECENT_NEW_YEAR_MIN <- RECENT_NEW_YEAR_MAX - 1
+
+# Helper: first matching column name
+first_existing_col <- function(data, candidates) {
+  hits <- candidates[candidates %in% names(data)]
+  if (length(hits) == 0) return(NA_character_)
+  hits[1]
+}
+
+# Helper: safely pull a column as character
+pull_or_na <- function(data, colname) {
+  if (is.na(colname) || !(colname %in% names(data))) {
+    return(rep(NA_character_, nrow(data)))
+  }
+  as.character(data[[colname]])
+}
+
+# Helper: extract first 4-digit year
+extract_year <- function(x) {
+  x <- as.character(x)
+  x <- ifelse(is.na(x), NA_character_, x)
+  yr <- stringr::str_extract(x, "(?<![0-9])(18|19|20)[0-9]{2}(?![0-9])")
+  suppressWarnings(as.integer(yr))
+}
+
+# Helper: make a readable group phrase from order label
+choose_group_phrase <- function(order_label, order_latin = NA_character_) {
+  if (!is.na(order_label) && nzchar(order_label)) {
+    out <- stringr::str_remove(order_label, "\\s*\\([^\\)]+\\)")
+    out <- stringr::str_trim(out)
+    return(tolower(out))
+  }
+  if (!is.na(order_latin) && nzchar(order_latin)) {
+    return(order_latin)
+  }
+  "arthropods"
+}
+
+# Helper: normalize mixed iNaturalist.Link formats to full observation URLs
+normalize_inat_link <- function(x) {
+  x <- stringr::str_trim(as.character(x))
+  x[x == ""] <- NA_character_
+  
+  dplyr::case_when(
+    is.na(x) ~ NA_character_,
+    stringr::str_detect(x, "^https?://www\\.inaturalist\\.org/observations/[0-9]+/?$") ~
+      stringr::str_remove(x, "/$"),
+    stringr::str_detect(x, "^https?://inaturalist\\.org/observations/[0-9]+/?$") ~
+      sub("^https?://inaturalist\\.org", "https://www.inaturalist.org", stringr::str_remove(x, "/$")),
+    stringr::str_detect(x, "^iNat:[0-9]+$") ~
+      paste0("https://www.inaturalist.org/observations/", stringr::str_extract(x, "[0-9]+")),
+    stringr::str_detect(x, "^[0-9]+$") ~
+      paste0("https://www.inaturalist.org/observations/", x),
+    TRUE ~ NA_character_
+  )
+}
+
+# Helper: extract iNat observation ID from normalized URL
+extract_inat_id <- function(x) {
+  x <- as.character(x)
+  out <- stringr::str_extract(x, "(?<=/observations/)[0-9]+")
+  out[out == ""] <- NA_character_
+  out
+}
+
+# Helper: build historical metadata text in parentheses, only if data exist
+format_historical_metadata <- function(collection, accession) {
+  collection <- stringr::str_trim(as.character(collection))
+  accession  <- stringr::str_trim(as.character(accession))
+  
+  collection[is.na(collection) | collection == ""] <- NA_character_
+  accession[is.na(accession) | accession == ""] <- NA_character_
+  
+  dplyr::case_when(
+    !is.na(collection) & !is.na(accession) ~ paste0(" (", collection, ", ", accession, ")"),
+    !is.na(collection) ~ paste0(" (", collection, ")"),
+    !is.na(accession) ~ paste0(" (", accession, ")"),
+    TRUE ~ ""
+  )
+}
+
+## ------------------------------------------------------------
+## DETECT RELEVANT COLUMNS
+## ------------------------------------------------------------
+
+col_order          <- first_existing_col(df, c("Order"))
+col_taxon          <- first_existing_col(df, c("Taxon"))
+col_status_raw     <- first_existing_col(df, c("Reporting.Status"))
+col_status_simple  <- first_existing_col(df, c("Reporting.Status.simple"))
+col_collector      <- first_existing_col(df, c("Collector.Source"))
+col_observer       <- first_existing_col(df, c("Observer"))
+col_hist_date      <- first_existing_col(df, c("Collected.Reported..y.m.d."))
+col_first_observed <- first_existing_col(df, c("First.Observed"))
+col_inat_link      <- first_existing_col(df, c("iNaturalist.Link"))
+col_new_year       <- first_existing_col(df, c("new_year"))
+col_collection     <- first_existing_col(df, c("Collection.List"))
+col_accession      <- first_existing_col(df, c("Accession.Number"))
+
+required_cols <- c(col_order, col_taxon, col_status_raw)
+if (any(is.na(required_cols))) {
+  stop(
+    "Missing one or more required columns: Order, Taxon, and/or Reporting.Status.",
+    call. = FALSE
+  )
+}
+
+## ------------------------------------------------------------
+## BUILD NORMALIZED POOL
+## ------------------------------------------------------------
+
+example_pool <- df %>%
+  mutate(
+    Order_std = pull_or_na(., col_order),
+    Taxon_std = pull_or_na(., col_taxon),
+    Reporting_raw_std = pull_or_na(., col_status_raw),
+    Reporting_simple_std = pull_or_na(., col_status_simple),
+    Collector_std = pull_or_na(., col_collector),
+    Observer_std = pull_or_na(., col_observer),
+    Historical_date_std = pull_or_na(., col_hist_date),
+    First_observed_std = pull_or_na(., col_first_observed),
+    iNat_URL_raw_std = pull_or_na(., col_inat_link),
+    Collection_std = pull_or_na(., col_collection),
+    Accession_std = pull_or_na(., col_accession),
+    new_year_std = suppressWarnings(as.integer(pull_or_na(., col_new_year)))
+  ) %>%
+  mutate(
+    Order_std = na_if(stringr::str_trim(Order_std), ""),
+    Taxon_std = na_if(stringr::str_trim(Taxon_std), ""),
+    Reporting_raw_std = stringr::str_to_lower(na_if(stringr::str_trim(Reporting_raw_std), "")),
+    Reporting_simple_std = stringr::str_to_lower(na_if(stringr::str_trim(Reporting_simple_std), "")),
+    Collector_std = na_if(stringr::str_trim(Collector_std), ""),
+    Observer_std = na_if(stringr::str_trim(Observer_std), ""),
+    Historical_date_std = na_if(stringr::str_trim(Historical_date_std), ""),
+    First_observed_std = na_if(stringr::str_trim(First_observed_std), ""),
+    iNat_URL_raw_std = na_if(stringr::str_trim(iNat_URL_raw_std), ""),
+    Collection_std = na_if(stringr::str_trim(Collection_std), ""),
+    Accession_std = na_if(stringr::str_trim(Accession_std), "")
+  ) %>%
+  mutate(
+    status_std = dplyr::case_when(
+      !is.na(Reporting_simple_std) ~ Reporting_simple_std,
+      Reporting_raw_std == "reported" ~ "reported",
+      Reporting_raw_std == "confirmed" ~ "confirmed",
+      stringr::str_detect(Reporting_raw_std, "^new\\s+[0-9]{4}$") ~ "new",
+      TRUE ~ NA_character_
+    ),
+    new_year_std = dplyr::case_when(
+      !is.na(new_year_std) ~ new_year_std,
+      stringr::str_detect(Reporting_raw_std, "^new\\s+[0-9]{4}$") ~
+        suppressWarnings(as.integer(stringr::str_extract(Reporting_raw_std, "[0-9]{4}"))),
+      TRUE ~ NA_integer_
+    ),
+    Knowledge_category = dplyr::case_when(
+      status_std == "reported" ~ "Remaining historical report",
+      status_std == "confirmed" ~ "Confirmed record",
+      status_std == "new" ~ "New record",
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  filter(
+    !is.na(Order_std),
+    !is.na(Taxon_std),
+    !is.na(Knowledge_category)
+  ) %>%
+  filter(
+    Knowledge_category != "New record" |
+      (!is.na(new_year_std) &
+         new_year_std >= RECENT_NEW_YEAR_MIN &
+         new_year_std <= RECENT_NEW_YEAR_MAX)
+  ) %>%
+  mutate(
+    iNat_link = normalize_inat_link(iNat_URL_raw_std),
+    iNat_ID = extract_inat_id(iNat_link)
+  ) %>%
+  mutate(
+    # Critical fix: historical-only reports must never carry iNat metadata
+    iNat_link = dplyr::if_else(
+      Knowledge_category == "Remaining historical report",
+      NA_character_,
+      iNat_link
+    ),
+    iNat_ID = dplyr::if_else(
+      Knowledge_category == "Remaining historical report",
+      NA_character_,
+      iNat_ID
+    ),
+    Historical_metadata = format_historical_metadata(Collection_std, Accession_std)
+  )
+
+## ------------------------------------------------------------
+## ATTACH FRIENDLY ORDER LABELS
+## ------------------------------------------------------------
+
+if (exists("order_label_map")) {
+  example_pool <- example_pool %>%
+    mutate(Order_label = dplyr::recode(Order_std, !!!order_label_map, .default = Order_std))
+} else {
+  example_pool <- example_pool %>%
+    mutate(Order_label = Order_std)
+}
+
+## ------------------------------------------------------------
+## SAMPLE ONE RANDOM EXAMPLE PER ORDER × CATEGORY
+## ------------------------------------------------------------
+
+terrestrial_arthropod_story_examples <- example_pool %>%
+  group_by(Order_std, Order_label, Knowledge_category) %>%
+  slice_sample(n = 1) %>%
+  ungroup() %>%
+  mutate(
+    category_sort = dplyr::case_when(
+      Knowledge_category == "Remaining historical report" ~ 1L,
+      Knowledge_category == "Confirmed record" ~ 2L,
+      Knowledge_category == "New record" ~ 3L,
+      TRUE ~ 99L
+    ),
+    historical_year = extract_year(Historical_date_std),
+    observed_year = extract_year(First_observed_std),
+    group_phrase = mapply(
+      choose_group_phrase,
+      Order_label,
+      Order_std,
+      USE.NAMES = FALSE
+    ),
+    story_text = dplyr::case_when(
+      
+      Knowledge_category == "Remaining historical report" ~
+        dplyr::case_when(
+          !is.na(historical_year) & !is.na(Collector_std) ~
+            paste0(
+              "In ", historical_year, ", ",
+              Collector_std, Historical_metadata,
+              " reported this species of ",
+              group_phrase,
+              ", which has not been seen since."
+            ),
+          !is.na(historical_year) ~
+            paste0(
+              "In ", historical_year,
+              ", this species of ",
+              group_phrase,
+              " was historically reported", Historical_metadata,
+              ", but it has not been seen since."
+            ),
+          !is.na(Collector_std) ~
+            paste0(
+              Collector_std, Historical_metadata,
+              " reported this species of ",
+              group_phrase,
+              ", which has not been seen since."
+            ),
+          TRUE ~
+            paste0(
+              "This species of ",
+              group_phrase,
+              " was historically reported", Historical_metadata,
+              ", but has not been seen since."
+            )
+        ),
+      
+      Knowledge_category == "Confirmed record" ~
+        dplyr::case_when(
+          !is.na(historical_year) & !is.na(Collector_std) &
+            !is.na(observed_year) & !is.na(Observer_std) ~
+            paste0(
+              "In ", historical_year, ", ",
+              Collector_std, Historical_metadata,
+              " reported this species of ",
+              group_phrase,
+              ", which was later confirmed by ",
+              Observer_std,
+              " in ", observed_year, "."
+            ),
+          !is.na(historical_year) & !is.na(Collector_std) & !is.na(Observer_std) ~
+            paste0(
+              "In ", historical_year, ", ",
+              Collector_std, Historical_metadata,
+              " reported this species of ",
+              group_phrase,
+              ", which was later confirmed by ",
+              Observer_std, "."
+            ),
+          !is.na(historical_year) & !is.na(observed_year) ~
+            paste0(
+              "In ", historical_year,
+              ", this species of ",
+              group_phrase,
+              " was historically reported", Historical_metadata,
+              " and later confirmed in ",
+              observed_year, "."
+            ),
+          !is.na(Observer_std) & !is.na(observed_year) ~
+            paste0(
+              "This species of ",
+              group_phrase,
+              " was later confirmed by ",
+              Observer_std,
+              " in ", observed_year, "."
+            ),
+          TRUE ~
+            paste0(
+              "This species of ",
+              group_phrase,
+              " was historically reported", Historical_metadata,
+              " and later confirmed."
+            )
+        ),
+      
+      Knowledge_category == "New record" ~
+        dplyr::case_when(
+          !is.na(new_year_std) & !is.na(Observer_std) ~
+            paste0(
+              "In ", new_year_std, ", ",
+              Observer_std,
+              " reported this species of ",
+              group_phrase,
+              " as new for Galiano Island."
+            ),
+          !is.na(new_year_std) ~
+            paste0(
+              "In ", new_year_std,
+              ", this species of ",
+              group_phrase,
+              " was reported as new for Galiano Island."
+            ),
+          !is.na(Observer_std) ~
+            paste0(
+              Observer_std,
+              " reported this species of ",
+              group_phrase,
+              " as new for Galiano Island."
+            ),
+          TRUE ~
+            paste0(
+              "This species of ",
+              group_phrase,
+              " was reported as new for Galiano Island."
+            )
+        ),
+      
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  arrange(Order_label, category_sort, Taxon_std) %>%
+  select(
+    Order = Order_label,
+    Order_Latin = Order_std,
+    Knowledge_category,
+    Taxon = Taxon_std,
+    Collector_Source = Collector_std,
+    Observer = Observer_std,
+    Collection_List = Collection_std,
+    Accession_Number = Accession_std,
+    Historical_metadata,
+    Historical_date = Historical_date_std,
+    First_observed = First_observed_std,
+    New_record_year = new_year_std,
+    iNat_ID,
+    iNat_link,
+    story_text
+  )
+
+print(terrestrial_arthropod_story_examples, n = nrow(terrestrial_arthropod_story_examples))
+
+write.csv(
+  terrestrial_arthropod_story_examples,
+  "outputs/Terrestrial_arthropods_reports.csv",
+  row.names = FALSE
+)
+
+cat("\nSaved file: outputs/Terrestrial_arthropods_reports.csv\n")
+
+
+## ------------------------------------------------------------
+## TERRESTRIAL ARTHROPOD DIVERSITY SUMMARY
+## Broad-brush narrative + optional summary table
+## ------------------------------------------------------------
+
+library(dplyr)
+library(stringr)
+library(readr)
+
+## -----------------------------
+## USER SETTINGS
+## -----------------------------
+OUTPUT_TABLE <- TRUE
+OUTPUT_DIR   <- "outputs"
+OUTPUT_FILE  <- file.path(OUTPUT_DIR, "Terrestrial_arthropod_diversity_summary_by_order.csv")
+
+RECENT_YEARS_BACK <- 1   # "last couple of years" = max year and max year - 1
+TOP_N_GAINERS     <- 5   # how many top orders to highlight
+TOP_N_ATTENTION   <- 5   # how many backlog orders to highlight
+
+## -----------------------------
+## HELPERS
+## -----------------------------
+first_existing_col <- function(data, candidates) {
+  hits <- candidates[candidates %in% names(data)]
+  if (length(hits) == 0) return(NA_character_)
+  hits[1]
+}
+
+pull_or_na <- function(data, colname) {
+  if (is.na(colname) || !(colname %in% names(data))) {
+    return(rep(NA_character_, nrow(data)))
+  }
+  as.character(data[[colname]])
+}
+
+extract_year <- function(x) {
+  x <- as.character(x)
+  x <- ifelse(is.na(x), NA_character_, x)
+  yr <- stringr::str_extract(x, "(?<![0-9])(18|19|20)[0-9]{2}(?![0-9])")
+  suppressWarnings(as.integer(yr))
+}
+
+pct_fmt <- function(x, digits = 1) {
+  ifelse(is.na(x), "0%", paste0(round(100 * x, digits), "%"))
+}
+
+n_fmt <- function(x) {
+  format(x, big.mark = ",", scientific = FALSE, trim = TRUE)
+}
+
+collapse_and <- function(x) {
+  x <- x[!is.na(x) & x != ""]
+  x <- unique(x)
+  if (length(x) == 0) return("")
+  if (length(x) == 1) return(x)
+  if (length(x) == 2) return(paste(x, collapse = " and "))
+  paste0(paste(x[-length(x)], collapse = ", "), ", and ", x[length(x)])
+}
+
+order_group_phrase <- function(x) {
+  x <- as.character(x)
+  x <- str_trim(x)
+  x <- str_remove(x, "\\s*\\([^\\)]+\\)")
+  x[x == "" | is.na(x)] <- "arthropods"
+  x
+}
+
+## optional friendly order labels if available
+get_order_label <- function(x) {
+  if (exists("order_label_map")) {
+    dplyr::recode(x, !!!order_label_map, .default = x)
+  } else {
+    x
+  }
+}
+
+## -----------------------------
+## CHECK REQUIRED FIELDS
+## -----------------------------
+col_taxon          <- first_existing_col(df, c("Taxon"))
+col_order          <- first_existing_col(df, c("Order"))
+col_status_raw     <- first_existing_col(df, c("Reporting.Status"))
+col_status_simple  <- first_existing_col(df, c("Reporting.Status.simple"))
+col_hist_date      <- first_existing_col(df, c("Collected.Reported..y.m.d."))
+col_first_obs      <- first_existing_col(df, c("First.Observed"))
+col_new_year       <- first_existing_col(df, c("new_year"))
+col_observer       <- first_existing_col(df, c("Observer"))
+col_collector      <- first_existing_col(df, c("Collector.Source"))
+
+required_cols <- c(col_taxon, col_order, col_status_raw)
+if (any(is.na(required_cols))) {
+  stop(
+    "Missing one or more required columns: Taxon, Order, and/or Reporting.Status.",
+    call. = FALSE
+  )
+}
+
+## -----------------------------
+## NORMALIZE INPUT
+## -----------------------------
+dat <- df %>%
+  mutate(
+    Taxon_std            = pull_or_na(., col_taxon),
+    Order_std            = pull_or_na(., col_order),
+    Reporting_raw_std    = pull_or_na(., col_status_raw),
+    Reporting_simple_std = pull_or_na(., col_status_simple),
+    Historical_date_std  = pull_or_na(., col_hist_date),
+    First_observed_std   = pull_or_na(., col_first_obs),
+    Observer_std         = pull_or_na(., col_observer),
+    Collector_std        = pull_or_na(., col_collector),
+    new_year_std         = suppressWarnings(as.integer(pull_or_na(., col_new_year)))
+  ) %>%
+  mutate(
+    Taxon_std            = na_if(str_trim(Taxon_std), ""),
+    Order_std            = na_if(str_trim(Order_std), ""),
+    Reporting_raw_std    = str_to_lower(na_if(str_trim(Reporting_raw_std), "")),
+    Reporting_simple_std = str_to_lower(na_if(str_trim(Reporting_simple_std), "")),
+    Historical_date_std  = na_if(str_trim(Historical_date_std), ""),
+    First_observed_std   = na_if(str_trim(First_observed_std), ""),
+    Observer_std         = na_if(str_trim(Observer_std), ""),
+    Collector_std        = na_if(str_trim(Collector_std), "")
+  ) %>%
+  mutate(
+    status_std = case_when(
+      !is.na(Reporting_simple_std) ~ Reporting_simple_std,
+      Reporting_raw_std == "reported" ~ "reported",
+      Reporting_raw_std == "confirmed" ~ "confirmed",
+      str_detect(Reporting_raw_std, "^new\\s+[0-9]{4}$") ~ "new",
+      TRUE ~ NA_character_
+    ),
+    historical_year = extract_year(Historical_date_std),
+    observed_year = extract_year(First_observed_std),
+    new_year_std = case_when(
+      !is.na(new_year_std) ~ new_year_std,
+      str_detect(Reporting_raw_std, "^new\\s+[0-9]{4}$") ~
+        suppressWarnings(as.integer(str_extract(Reporting_raw_std, "[0-9]{4}"))),
+      TRUE ~ NA_integer_
+    ),
+    contribution_year = case_when(
+      status_std == "new" ~ new_year_std,
+      status_std == "confirmed" ~ observed_year,
+      TRUE ~ NA_integer_
+    ),
+    Order_label = get_order_label(Order_std)
+  ) %>%
+  filter(!is.na(Taxon_std), !is.na(Order_std), !is.na(status_std))
+
+if (nrow(dat) == 0) {
+  stop("No usable records were found after input normalization.", call. = FALSE)
+}
+
+## -----------------------------
+## DEFINE RECENT WINDOW
+## -----------------------------
+all_recent_years <- c(dat$new_year_std, dat$observed_year)
+all_recent_years <- all_recent_years[!is.na(all_recent_years)]
+
+if (length(all_recent_years) > 0) {
+  RECENT_YEAR_MAX <- max(all_recent_years, na.rm = TRUE)
+} else {
+  RECENT_YEAR_MAX <- as.integer(format(Sys.Date(), "%Y"))
+}
+RECENT_YEAR_MIN <- RECENT_YEAR_MAX - RECENT_YEARS_BACK
+
+## -----------------------------
+## COLLAPSE TO ONE RECORD PER TAXON
+## Priority: new > confirmed > reported
+## This avoids double-counting taxa if duplicates exist
+## -----------------------------
+status_rank <- c("reported" = 1L, "confirmed" = 2L, "new" = 3L)
+
+taxon_level <- dat %>%
+  mutate(
+    status_rank = unname(status_rank[status_std]),
+    contribution_recent = case_when(
+      status_std %in% c("new", "confirmed") &
+        !is.na(contribution_year) &
+        contribution_year >= RECENT_YEAR_MIN &
+        contribution_year <= RECENT_YEAR_MAX ~ TRUE,
+      TRUE ~ FALSE
+    )
+  ) %>%
+  arrange(Order_label, Taxon_std, desc(status_rank), desc(contribution_year)) %>%
+  group_by(Order_std, Order_label, Taxon_std) %>%
+  slice(1) %>%
+  ungroup()
+
+## -----------------------------
+## ORDER-LEVEL SUMMARY
+## -----------------------------
+order_summary <- taxon_level %>%
+  group_by(Order_std, Order_label) %>%
+  summarise(
+    total_taxa = n_distinct(Taxon_std),
+    remaining_historical = sum(status_std == "reported", na.rm = TRUE),
+    confirmed_taxa = sum(status_std == "confirmed", na.rm = TRUE),
+    new_taxa = sum(status_std == "new", na.rm = TRUE),
+    resolved_taxa = confirmed_taxa + new_taxa,
+    recent_confirmed = sum(
+      status_std == "confirmed" &
+        !is.na(contribution_year) &
+        contribution_year >= RECENT_YEAR_MIN &
+        contribution_year <= RECENT_YEAR_MAX,
+      na.rm = TRUE
+    ),
+    recent_new = sum(
+      status_std == "new" &
+        !is.na(contribution_year) &
+        contribution_year >= RECENT_YEAR_MIN &
+        contribution_year <= RECENT_YEAR_MAX,
+      na.rm = TRUE
+    ),
+    recent_total = recent_confirmed + recent_new,
+    unresolved_share = ifelse(total_taxa > 0, remaining_historical / total_taxa, NA_real_),
+    resolved_share = ifelse(total_taxa > 0, resolved_taxa / total_taxa, NA_real_),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(total_taxa), Order_label)
+
+## -----------------------------
+## OVERALL SUMMARY
+## -----------------------------
+overall <- taxon_level %>%
+  summarise(
+    total_taxa = n_distinct(Taxon_std),
+    remaining_historical = sum(status_std == "reported", na.rm = TRUE),
+    confirmed_taxa = sum(status_std == "confirmed", na.rm = TRUE),
+    new_taxa = sum(status_std == "new", na.rm = TRUE),
+    resolved_taxa = confirmed_taxa + new_taxa,
+    recent_confirmed = sum(
+      status_std == "confirmed" &
+        !is.na(contribution_year) &
+        contribution_year >= RECENT_YEAR_MIN &
+        contribution_year <= RECENT_YEAR_MAX,
+      na.rm = TRUE
+    ),
+    recent_new = sum(
+      status_std == "new" &
+        !is.na(contribution_year) &
+        contribution_year >= RECENT_YEAR_MIN &
+        contribution_year <= RECENT_YEAR_MAX,
+      na.rm = TRUE
+    )
+  ) %>%
+  mutate(
+    recent_total = recent_confirmed + recent_new
+  )
+
+## -----------------------------
+## RANKINGS FOR NARRATIVE
+## -----------------------------
+top_confirmed <- order_summary %>%
+  filter(confirmed_taxa > 0) %>%
+  arrange(desc(confirmed_taxa), desc(recent_confirmed), Order_label) %>%
+  slice_head(n = TOP_N_GAINERS)
+
+top_new <- order_summary %>%
+  filter(new_taxa > 0) %>%
+  arrange(desc(new_taxa), desc(recent_new), Order_label) %>%
+  slice_head(n = TOP_N_GAINERS)
+
+top_recent <- order_summary %>%
+  filter(recent_total > 0) %>%
+  arrange(desc(recent_total), desc(recent_new), desc(recent_confirmed), Order_label) %>%
+  slice_head(n = TOP_N_GAINERS)
+
+top_attention <- order_summary %>%
+  filter(remaining_historical > 0) %>%
+  arrange(desc(remaining_historical), desc(unresolved_share), desc(total_taxa), Order_label) %>%
+  slice_head(n = TOP_N_ATTENTION)
+
+## -----------------------------
+## OPTIONAL OUTPUT TABLE
+## -----------------------------
+if (OUTPUT_TABLE) {
+  if (!dir.exists(OUTPUT_DIR)) dir.create(OUTPUT_DIR, recursive = TRUE)
+  
+  order_summary_out <- order_summary %>%
+    mutate(
+      resolved_share_pct = round(100 * resolved_share, 1),
+      unresolved_share_pct = round(100 * unresolved_share, 1)
+    ) %>%
+    select(
+      Order = Order_label,
+      Order_Latin = Order_std,
+      total_taxa,
+      remaining_historical,
+      confirmed_taxa,
+      new_taxa,
+      resolved_taxa,
+      recent_confirmed,
+      recent_new,
+      recent_total,
+      resolved_share_pct,
+      unresolved_share_pct
+    )
+  
+  write_csv(order_summary_out, OUTPUT_FILE)
+}
+
+## -----------------------------
+## NARRATIVE TEXT
+## -----------------------------
+cat("\n")
+cat("============================================================\n")
+cat("TERRESTRIAL ARTHROPOD DIVERSITY: BROAD-BRUSH SUMMARY\n")
+cat("============================================================\n\n")
+
+cat(
+  paste0(
+    "This synthesis is based on ", n_fmt(overall$total_taxa),
+    " terrestrial arthropod taxa currently represented in the dataset, ",
+    "spanning historical reports, subsequently confirmed records, and taxa ",
+    "reported as new for Galiano Island.\n\n"
+  )
+)
+
+cat(
+  paste0(
+    "At present, ", n_fmt(overall$resolved_taxa), " taxa (",
+    pct_fmt(overall$resolved_taxa / overall$total_taxa),
+    ") have moved beyond the status of historical report: ",
+    n_fmt(overall$confirmed_taxa), " have been confirmed from historical reporting, and ",
+    n_fmt(overall$new_taxa), " represent additions reported as new for the island. ",
+    "A further ", n_fmt(overall$remaining_historical), " taxa (",
+    pct_fmt(overall$remaining_historical / overall$total_taxa),
+    ") remain known only from historical reporting and still await confirmation.\n\n"
+  )
+)
+
+if (overall$recent_total > 0) {
+  cat(
+    paste0(
+      "Recent work has made a substantial contribution. In the most recent ",
+      RECENT_YEARS_BACK + 1, "-year window represented here (",
+      RECENT_YEAR_MIN, "–", RECENT_YEAR_MAX, "), ",
+      n_fmt(overall$recent_total), " taxa were advanced through contemporary reporting: ",
+      n_fmt(overall$recent_confirmed), " through confirmation of historical records and ",
+      n_fmt(overall$recent_new), " through newly reported additions to the island biota.\n\n"
+    )
+  )
+} else {
+  cat(
+    "No contemporary confirmations or new reports fell within the recent time window used here.\n\n"
+  )
+}
+
+## top gains in confirmation
+if (nrow(top_confirmed) > 0) {
+  cat("The strongest gains in confirmation of historical records have been made in ")
+  cat(
+    paste(
+      paste0(top_confirmed$Order_label, " (", top_confirmed$confirmed_taxa, ")"),
+      collapse = ", "
+    )
+  )
+  cat(".\n")
+  if (any(top_confirmed$recent_confirmed > 0)) {
+    cat(
+      paste0(
+        "Within the recent window, the leading groups for historical confirmation were ",
+        collapse_and(
+          paste0(
+            top_confirmed$Order_label[top_confirmed$recent_confirmed > 0],
+            " (", top_confirmed$recent_confirmed[top_confirmed$recent_confirmed > 0], ")"
+          )
+        ),
+        ".\n"
+      )
+    )
+  }
+  cat("\n")
+}
+
+## top gains in new records
+if (nrow(top_new) > 0) {
+  cat("The largest gains through newly reported taxa have been made in ")
+  cat(
+    paste(
+      paste0(top_new$Order_label, " (", top_new$new_taxa, ")"),
+      collapse = ", "
+    )
+  )
+  cat(".\n")
+  if (any(top_new$recent_new > 0)) {
+    cat(
+      paste0(
+        "Recent additions have been especially notable in ",
+        collapse_and(
+          paste0(
+            top_new$Order_label[top_new$recent_new > 0],
+            " (", top_new$recent_new[top_new$recent_new > 0], ")"
+          )
+        ),
+        ".\n"
+      )
+    )
+  }
+  cat("\n")
+}
+
+## top recent activity overall
+if (nrow(top_recent) > 0) {
+  cat(
+    paste0(
+      "Looking specifically at recent activity, the groups showing the most momentum in ",
+      RECENT_YEAR_MIN, "–", RECENT_YEAR_MAX, " were ",
+      collapse_and(paste0(top_recent$Order_label, " (", top_recent$recent_total, ")")),
+      ". These groups account for much of the recent growth in contemporary knowledge of the island’s terrestrial arthropod fauna.\n\n"
+    )
+  )
+}
+
+## attention groups
+if (nrow(top_attention) > 0) {
+  cat(
+    paste0(
+      "The groups still requiring the most attention for confirmation of historical reports are ",
+      collapse_and(
+        paste0(
+          top_attention$Order_label, " (",
+          top_attention$remaining_historical, " historical-only taxa)"
+        )
+      ),
+      "."
+    )
+  )
+  cat("\n")
+  cat(
+    paste0(
+      "These groups stand out either because they contain the largest absolute backlog of historical reports, ",
+      "or because a large fraction of their reported diversity remains unconfirmed.\n\n"
+    )
+  )
+}
+
+## interpretive close
+cat(
+  paste0(
+    "Taken together, the pattern suggests that the terrestrial arthropod inventory is advancing along two fronts at once: ",
+    "first, by recovering and confirming historically reported taxa; and second, by continuing to add taxa not previously documented for the island. ",
+    "The recent pulse of activity in ", RECENT_YEAR_MIN, "–", RECENT_YEAR_MAX,
+    " indicates that contemporary community observations are continuing to make measurable gains, while also helping reveal which arthropod groups still contain the largest historical knowledge gaps.\n\n"
+  )
+)
+
+cat("------------------------------------------------------------\n")
+cat("ORDER-LEVEL SNAPSHOT\n")
+cat("------------------------------------------------------------\n\n")
+
+print(
+  order_summary %>%
+    mutate(
+      resolved_share = round(100 * resolved_share, 1),
+      unresolved_share = round(100 * unresolved_share, 1)
+    ) %>%
+    select(
+      Order = Order_label,
+      total_taxa,
+      confirmed_taxa,
+      new_taxa,
+      remaining_historical,
+      recent_confirmed,
+      recent_new,
+      recent_total,
+      resolved_share,
+      unresolved_share
+    ) %>%
+    arrange(desc(total_taxa), Order),
+  n = nrow(order_summary)
+)
+
+if (OUTPUT_TABLE) {
+  cat("\nSaved file:", OUTPUT_FILE, "\n")
 }

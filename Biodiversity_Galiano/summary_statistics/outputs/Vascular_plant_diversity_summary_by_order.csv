@@ -1,0 +1,39 @@
+Order,Order_Latin,total_taxa,remaining_historical,confirmed_taxa,new_taxa,resolved_taxa,recent_confirmed,recent_new,recent_total,resolved_share_pct,unresolved_share_pct
+Grasses (Poales),Poales,159,30,98,31,129,0,1,1,81.1,18.9
+Sunflowers (Asterales),Asterales,80,7,50,23,73,0,0,0,91.2,8.8
+Pink & cactus (Caryophyllales),Caryophyllales,64,7,41,16,57,0,1,1,89.1,10.9
+Mints (Lamiales),Lamiales,62,5,37,20,57,0,0,0,91.9,8.1
+Legumes (Fabales),Fabales,47,7,33,7,40,0,1,1,85.1,14.9
+Roses (Rosales),Rosales,46,5,29,12,41,0,1,1,89.1,10.9
+Asparagus & orchids (Asparagales),Asparagales,39,0,22,17,39,0,0,0,100,0
+Heath & blueberries (Ericales),Ericales,38,8,22,8,30,0,1,1,78.9,21.1
+Mustard (Brassicales),Brassicales,36,6,21,9,30,0,1,1,83.3,16.7
+Carrot & ginseng (Apiales),Apiales,27,3,16,8,24,0,0,0,88.9,11.1
+Saxifrages (Saxifragales),Saxifragales,25,3,14,8,22,0,0,0,88,12
+Buttercups (Ranunculales),Ranunculales,24,3,17,4,21,0,0,0,87.5,12.5
+Spurge & violets (Malpighiales),Malpighiales,21,2,13,6,19,0,0,0,90.5,9.5
+Water-plantains & allies (Alismatales),Alismatales,16,3,10,3,13,0,0,0,81.2,18.8
+Myrtles (Myrtales),Myrtales,15,0,8,7,15,0,0,0,100,0
+Borage (Boraginales),Boraginales,14,3,11,0,11,0,0,0,78.6,21.4
+Honeysuckles (Dipsacales),Dipsacales,14,1,7,6,13,0,0,0,92.9,7.1
+Pines (Pinales),Pinales,10,0,7,3,10,0,0,0,100,0
+True ferns (Polypodiales),Polypodiales,10,0,8,2,10,0,0,0,100,0
+Gentians (Gentianales),Gentianales,9,2,7,0,7,0,0,0,77.8,22.2
+Nightshades (Solanales),Solanales,9,1,4,4,8,0,0,0,88.9,11.1
+Geraniums (Geraniales),Geraniales,8,2,5,1,6,0,0,0,75,25
+Lilies (Liliales),Liliales,5,0,4,1,5,0,0,0,100,0
+Beech & oak (Fagales),Fagales,4,0,3,1,4,0,0,0,100,0
+Mallows (Malvales),Malvales,4,2,2,0,2,0,0,0,50,50
+Maple & citrus (Sapindales),Sapindales,4,0,3,1,4,0,0,0,100,0
+Dogwoods (Cornales),Cornales,3,0,3,0,3,0,0,0,100,0
+Horsetails (Equisetales),Equisetales,3,0,3,0,3,0,0,0,100,0
+Water-lilies (Nymphaeales),Nymphaeales,2,0,1,1,2,0,1,1,100,0
+Wood-sorrels (Oxalidales),Oxalidales,2,0,0,2,2,0,0,0,100,0
+Adder's-tongue (Ophioglossales),Ophioglossales,1,1,0,0,0,0,0,0,0,100
+Bittersweet (Celastrales),Celastrales,1,0,1,0,1,0,0,0,100,0
+Clubmoss (Lycopodiales),Lycopodiales,1,1,0,0,0,0,0,0,0,100
+Coontails (Ceratophyllales),Ceratophyllales,1,0,1,0,1,0,0,0,100,0
+Floating ferns (Salviniales),Salviniales,1,0,0,1,1,0,1,1,100,0
+Holly (Aquifoliales),Aquifoliales,1,0,1,0,1,0,0,0,100,0
+Sandalwoods (Santalales),Santalales,1,0,0,1,1,0,0,0,100,0
+Spikemosses (Selaginellales),Selaginellales,1,0,1,0,1,0,0,0,100,0
