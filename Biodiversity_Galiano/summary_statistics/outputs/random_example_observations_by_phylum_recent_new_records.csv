@@ -1,32 +1,32 @@
 "Phylum","Phylum_Latin","Knowledge_category","Taxon","Collector_Source","Observer","Historical_date","First_observed","New_record_year","iNat_ID","iNat_link"
-"Arrow worms (Chaetognatha)","Chaetognatha","Remaining historical report","Sagittoidea","Charlie Gibbs",NA,"1995-02-23",NA,NA,"246116","https://www.inaturalist.org/observations/246116"
-"Arthropods (Arthropoda)","Arthropoda","Remaining historical report","Bopyroides hippolytes","Andy Lamb",NA,"2010-07-17",NA,NA,"873867","https://www.inaturalist.org/observations/873867"
-"Arthropods (Arthropoda)","Arthropoda","Confirmed record","Pugettia gracilis",NA,"Peter Luckham",NA,"2013-10-13",NA,"130344","https://www.inaturalist.org/observations/2976672"
-"Arthropods (Arthropoda)","Arthropoda","New record","Chionoecetes bairdi",NA,"Dave ""Zeuss"" Cochrane",NA,"2025-04-13",2025,"359388","https://www.inaturalist.org/observations/270339038"
-"Chordates (Chordata)","Chordata","Remaining historical report","Aplidium californicum","Andy Lamb",NA,"1994-10-07",NA,NA,"131232","https://www.inaturalist.org/observations/131232"
-"Chordates (Chordata)","Chordata","Confirmed record","Megaptera novaeangliae kuzira","Amy Rowley","Andrew Simon","2001-04-20","2017-06-06",NA,"41566","https://www.inaturalist.org/observations/6532303"
-"Chordates (Chordata)","Chordata","New record","Merluccius productus",NA,"Darcy Kehler",NA,"2025-05-31",2025,"105599","https://www.inaturalist.org/observations/285811769"
-"Comb jellies (Ctenophora)","Ctenophora","Confirmed record","Beroe abyssicola","Charlie Gibbs","catiemac","1993-05-09","2020-05-09",NA,"1090851","https://www.inaturalist.org/observations/57175255"
-"Flatworms (Platyhelminthes)","Platyhelminthes","Confirmed record","Kaburakia excelsa","Andy Lamb","Andrew Simon","2016-07-24","2019-04-27",NA,"56699","https://www.inaturalist.org/observations/24259233"
-"Goblet worms (Entoprocta)","Entoprocta","Remaining historical report","Barentsia sp.","Andy Lamb",NA,"1985-12-07",NA,NA,"211513","https://www.inaturalist.org/observations/211513"
-"Horseshoe worms (Phoronida)","Phoronida","Confirmed record","Phoronis ijimai","Andy Lamb","Karolle Wall","2008-04-27","2013-06-26",NA,"372139","https://www.inaturalist.org/observations/4014973"
-"Jellyfish, corals & anemones (Cnidaria)","Cnidaria","Remaining historical report","Discophyton rudyi","Charlie Gibbs",NA,"1995-02-24",NA,NA,"460061","https://www.inaturalist.org/observations/460061"
-"Jellyfish, corals & anemones (Cnidaria)","Cnidaria","Confirmed record","Sertularella sp.","Andy Lamb","Dave ""Zeuss"" Cochrane","1985-08-02","2023-09-09",NA,"60656","https://www.inaturalist.org/observations/182593081"
-"Jellyfish, corals & anemones (Cnidaria)","Cnidaria","New record","Anthopleura xanthogrammica",NA,"Shayne Poleyko",NA,"2025-05-06",2025,"51659","https://www.inaturalist.org/observations/279148263"
-"Lamp shells (Brachiopoda)","Brachiopoda","Remaining historical report","Terebratalia transversa","Andy Lamb",NA,"1981-05-31",NA,NA,"122157","https://www.inaturalist.org/observations/122157"
-"Molluscs (Mollusca)","Mollusca","Remaining historical report","Macoma calcarea",NA,NA,"1961-06-22",NA,NA,"861604","https://www.inaturalist.org/observations/861604"
-"Molluscs (Mollusca)","Mollusca","Confirmed record","Dendronotus albus","Andy Lamb","Karin Fletcher","1969-02-22","2009-11-14",NA,"47773","https://www.inaturalist.org/observations/68751256"
-"Moss animals (Bryozoa)","Bryozoa","Remaining historical report","Bowerbankia sp.","Andy Lamb",NA,"2006-06-23",NA,NA,"345483","https://www.inaturalist.org/observations/345483"
-"Moss animals (Bryozoa)","Bryozoa","Confirmed record","Schizoporella japonica","Andy Lamb","Joan Septembre","1973-09-20","2019-05-04",NA,"519486","https://www.inaturalist.org/observations/24768697"
-"Peanut worms (Sipuncula)","Sipuncula","Remaining historical report","Golfingia vulgaris","Andy Lamb",NA,"2007-12-15",NA,NA,"874030","https://www.inaturalist.org/observations/874030"
-"Ribbon worms (Nemertea)","Nemertea","Remaining historical report","Tubulanus albocinctus","Charlie Gibbs",NA,"1996-05-29",NA,NA,"873878","https://www.inaturalist.org/observations/873878"
-"Ribbon worms (Nemertea)","Nemertea","Confirmed record","Tubulanus ruber","Andy Lamb","Karolle Wall","2008-08-23","2017-05-26",NA,"1544641","https://www.inaturalist.org/observations/7674347"
-"Sea stars, urchins & kin (Echinodermata)","Echinodermata","Remaining historical report","Pentamera sp.","Andy Lamb",NA,"2006-06-30",NA,NA,"171674","https://www.inaturalist.org/observations/171674"
-"Sea stars, urchins & kin (Echinodermata)","Echinodermata","Confirmed record","Orthasterias koehleri","Andy Lamb","Karolle Wall","1969-02-21","2013-07-24",NA,"47669","https://www.inaturalist.org/observations/3706322"
-"Sea stars, urchins & kin (Echinodermata)","Echinodermata","New record","Eupentacta pseudoquinquesemita",NA,"Dave ""Zeuss"" Cochrane",NA,"2024-04-13",2024,"311593","https://www.inaturalist.org/observations/207078125"
-"Segmented worms (Annelida)","Annelida","Remaining historical report","Crucigera zygophora",NA,NA,"1986-09-30",NA,NA,"543574","https://www.inaturalist.org/observations/543574"
-"Segmented worms (Annelida)","Annelida","Confirmed record","Dodecaceria pacifica","Andy Lamb","Peter Luckham","1969-02-21","2016-02-07",NA,"1500739","https://www.inaturalist.org/observations/2763488"
-"Segmented worms (Annelida)","Annelida","New record","Glycera sp.",NA,"Andrew Simon",NA,"2025-05-14",2025,"67313","https://www.inaturalist.org/observations/281879259"
-"Sponges (Porifera)","Porifera","Remaining historical report","Adocia sp.","Andy Lamb",NA,"1994-09-10",NA,NA,"464717","https://www.inaturalist.org/observations/464717"
-"Sponges (Porifera)","Porifera","Confirmed record","Leucilla nuttingi","Andy Lamb","Peter Luckham","1985-07-29","2013-10-13",NA,"117713","https://www.inaturalist.org/observations/2975914"
-"Sponges (Porifera)","Porifera","New record","Cliona celata",NA,"Dave ""Zeuss"" Cochrane",NA,"2024-08-16",2024,"117715","https://www.inaturalist.org/observations/236228032"
+"Arrow worms (Chaetognatha)","Chaetognatha","Remaining historical report","Sagittoidea","Charlie Gibbs",NA,"1995-02-23",NA,NA,NA,NA
+"Arthropods (Arthropoda)","Arthropoda","Remaining historical report","Bopyroides hippolytes","Andy Lamb",NA,"2010-07-17",NA,NA,NA,NA
+"Arthropods (Arthropoda)","Arthropoda","Confirmed record","Pugettia gracilis",NA,"Peter Luckham",NA,"2013-10-13",NA,"2976672","https://www.inaturalist.org/observations/2976672"
+"Arthropods (Arthropoda)","Arthropoda","New record","Chionoecetes bairdi",NA,"Dave ""Zeuss"" Cochrane",NA,"2025-04-13",2025,"270339038","https://www.inaturalist.org/observations/270339038"
+"Chordates (Chordata)","Chordata","Remaining historical report","Aplidium californicum","Andy Lamb",NA,"1994-10-07",NA,NA,NA,NA
+"Chordates (Chordata)","Chordata","Confirmed record","Megaptera novaeangliae kuzira","Amy Rowley","Andrew Simon","2001-04-20","2017-06-06",NA,"6532303","https://www.inaturalist.org/observations/6532303"
+"Chordates (Chordata)","Chordata","New record","Merluccius productus",NA,"Darcy Kehler",NA,"2025-05-31",2025,"285811769","https://www.inaturalist.org/observations/285811769"
+"Comb jellies (Ctenophora)","Ctenophora","Confirmed record","Beroe abyssicola","Charlie Gibbs","catiemac","1993-05-09","2020-05-09",NA,"57175255","https://www.inaturalist.org/observations/57175255"
+"Flatworms (Platyhelminthes)","Platyhelminthes","Confirmed record","Kaburakia excelsa","Andy Lamb","Andrew Simon","2016-07-24","2019-04-27",NA,"24259233","https://www.inaturalist.org/observations/24259233"
+"Goblet worms (Entoprocta)","Entoprocta","Remaining historical report","Barentsia sp.","Andy Lamb",NA,"1985-12-07",NA,NA,NA,NA
+"Horseshoe worms (Phoronida)","Phoronida","Confirmed record","Phoronis ijimai","Andy Lamb","Karolle Wall","2008-04-27","2013-06-26",NA,"4014973","https://www.inaturalist.org/observations/4014973"
+"Jellyfish, corals & anemones (Cnidaria)","Cnidaria","Remaining historical report","Discophyton rudyi","Charlie Gibbs",NA,"1995-02-24",NA,NA,NA,NA
+"Jellyfish, corals & anemones (Cnidaria)","Cnidaria","Confirmed record","Sertularella sp.","Andy Lamb","Dave ""Zeuss"" Cochrane","1985-08-02","2023-09-09",NA,"182593081","https://www.inaturalist.org/observations/182593081"
+"Jellyfish, corals & anemones (Cnidaria)","Cnidaria","New record","Anthopleura xanthogrammica",NA,"Shayne Poleyko",NA,"2025-05-06",2025,"279148263","https://www.inaturalist.org/observations/279148263"
+"Lamp shells (Brachiopoda)","Brachiopoda","Remaining historical report","Terebratalia transversa","Andy Lamb",NA,"1981-05-31",NA,NA,NA,NA
+"Molluscs (Mollusca)","Mollusca","Remaining historical report","Macoma calcarea",NA,NA,"1961-06-22",NA,NA,NA,NA
+"Molluscs (Mollusca)","Mollusca","Confirmed record","Dendronotus albus","Andy Lamb","Karin Fletcher","1969-02-22","2009-11-14",NA,"68751256","https://www.inaturalist.org/observations/68751256"
+"Moss animals (Bryozoa)","Bryozoa","Remaining historical report","Bowerbankia sp.","Andy Lamb",NA,"2006-06-23",NA,NA,NA,NA
+"Moss animals (Bryozoa)","Bryozoa","Confirmed record","Schizoporella japonica","Andy Lamb","Joan Septembre","1973-09-20","2019-05-04",NA,"24768697","https://www.inaturalist.org/observations/24768697"
+"Peanut worms (Sipuncula)","Sipuncula","Remaining historical report","Golfingia vulgaris","Andy Lamb",NA,"2007-12-15",NA,NA,NA,NA
+"Ribbon worms (Nemertea)","Nemertea","Remaining historical report","Tubulanus albocinctus","Charlie Gibbs",NA,"1996-05-29",NA,NA,NA,NA
+"Ribbon worms (Nemertea)","Nemertea","Confirmed record","Tubulanus ruber","Andy Lamb","Karolle Wall","2008-08-23","2017-05-26",NA,"7674347","https://www.inaturalist.org/observations/7674347"
+"Sea stars, urchins & kin (Echinodermata)","Echinodermata","Remaining historical report","Pentamera sp.","Andy Lamb",NA,"2006-06-30",NA,NA,NA,NA
+"Sea stars, urchins & kin (Echinodermata)","Echinodermata","Confirmed record","Orthasterias koehleri","Andy Lamb","Karolle Wall","1969-02-21","2013-07-24",NA,"3706322","https://www.inaturalist.org/observations/3706322"
+"Sea stars, urchins & kin (Echinodermata)","Echinodermata","New record","Eupentacta pseudoquinquesemita",NA,"Dave ""Zeuss"" Cochrane",NA,"2024-04-13",2024,"207078125","https://www.inaturalist.org/observations/207078125"
+"Segmented worms (Annelida)","Annelida","Remaining historical report","Crucigera zygophora",NA,NA,"1986-09-30",NA,NA,NA,NA
+"Segmented worms (Annelida)","Annelida","Confirmed record","Dodecaceria pacifica","Andy Lamb","Peter Luckham","1969-02-21","2016-02-07",NA,"2763488","https://www.inaturalist.org/observations/2763488"
+"Segmented worms (Annelida)","Annelida","New record","Glycera sp.",NA,"Andrew Simon",NA,"2025-05-14",2025,"281879259","https://www.inaturalist.org/observations/281879259"
+"Sponges (Porifera)","Porifera","Remaining historical report","Adocia sp.","Andy Lamb",NA,"1994-09-10",NA,NA,NA,NA
+"Sponges (Porifera)","Porifera","Confirmed record","Leucilla nuttingi","Andy Lamb","Peter Luckham","1985-07-29","2013-10-13",NA,"2975914","https://www.inaturalist.org/observations/2975914"
+"Sponges (Porifera)","Porifera","New record","Cliona celata",NA,"Dave ""Zeuss"" Cochrane",NA,"2024-08-16",2024,"236228032","https://www.inaturalist.org/observations/236228032"

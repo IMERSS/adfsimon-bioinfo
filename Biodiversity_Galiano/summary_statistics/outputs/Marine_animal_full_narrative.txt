@@ -1,0 +1,138 @@
+MARINE ANIMAL DIVERSITY: GALIANO ISLAND
+============================================================
+
+There are 686 species of marine animals known to occur in waters around Galiano Island. Of these, 604 reports are based on the historical baseline established by earlier collectors and reporters, while 82 have been added new to the island life list since the project began.
+
+Of the 604 taxa known from historical sources, 303 (50.2%) have now been observed by community members, while 301 (49.8%) remain unobserved since this project began in 2015. Over the last 2 years (2024–2025), our community has confirmed 1 historical report and added 14 new species to the list.
+
+
+MAJOR CONTEMPORARY CONTRIBUTORS
+============================================================
+
+Leading contributors to confirmation of historical records are Karolle Wall (75 confirmed), Andrew Simon (30 confirmed), Peter Luckham (43 confirmed), Dave "Zeuss" Cochrane (33 confirmed), Jackson W.F. Chu (24 confirmed), Karin Fletcher (20 confirmed), Isabelle M. Côté (12 confirmed), Neil McDaniel (11 confirmed), Tyrel Froese (3 confirmed), Emily Adamczyk (2 confirmed).
+
+Leading contributors of taxa added as new records are Karolle Wall (13 new), Andrew Simon (24 new), Dave "Zeuss" Cochrane (10 new), Karin Fletcher (1 new), Isabelle M. Côté (1 new), Tyrel Froese (2 new), Emily Adamczyk (2 new), Norah Brown (2 new), Chessi Miltner (1 new), Lauren Magner (1 new).
+
+Considering confirmed records and new additions together, the most active contributors are Karolle Wall (88 total), Andrew Simon (54 total), Peter Luckham (43 total), Dave "Zeuss" Cochrane (43 total), Jackson W.F. Chu (24 total), Karin Fletcher (21 total), Isabelle M. Côté (13 total), Neil McDaniel (11 total), Tyrel Froese (5 total), Emily Adamczyk (4 total).
+
+
+IMPORTANT HISTORICAL SOURCES
+============================================================
+
+The most important historical sources are Andy Lamb (363), Charlie Gibbs (63), Ian McTaggart-Cowan (32), Dan Quayle (17), Philip Lambert (11), Jackson W.F. Chu (10), Amy Rowley (8), Rita M. O'Clair (7), K.D. Genereux (6), C. E. Kasserra (4).
+
+
+PER-PHYLUM STORIES
+============================================================
+
+------------------------------------------------------------
+Arrow worms (Chaetognatha)
+------------------------------------------------------------
+In 1995, Charlie Gibbs (PMLS) reported Sagittoidea, a species of arrow worms, which has not been seen since.
+
+
+------------------------------------------------------------
+Arthropods (Arthropoda)
+------------------------------------------------------------
+In 1969, Andy Lamb (PMLS) reported Pugettia gracilis, a species of arthropods, which was later confirmed by Peter Luckham in 2013. Observation: https://www.inaturalist.org/observations/2976672
+In 2025, Dave "Zeuss" Cochrane reported Chionoecetes bairdi, a species of arthropods, as new for Galiano Island. Observation: https://www.inaturalist.org/observations/270339038
+In 2010, Andy Lamb (PMLS) reported Bopyroides hippolytes, a species of arthropods, which has not been seen since.
+
+
+------------------------------------------------------------
+Chordates (Chordata)
+------------------------------------------------------------
+In 2001, Amy Rowley (BCCSN) reported Megaptera novaeangliae kuzira, a species of chordates, which was later confirmed by Andrew Simon in 2017. Observation: https://www.inaturalist.org/observations/6532303
+In 2025, Darcy Kehler reported Merluccius productus, a species of chordates, as new for Galiano Island. Observation: https://www.inaturalist.org/observations/285811769
+In 1994, Andy Lamb (PMLS) reported Aplidium californicum, a species of chordates, which has not been seen since.
+
+
+------------------------------------------------------------
+Comb jellies (Ctenophora)
+------------------------------------------------------------
+In 1993, Charlie Gibbs (PMLS) reported Beroe abyssicola, a species of comb jellies, which was later confirmed by catiemac in 2020. Observation: https://www.inaturalist.org/observations/57175255
+
+
+------------------------------------------------------------
+Flatworms (Platyhelminthes)
+------------------------------------------------------------
+In 2016, Andy Lamb (PMLS) reported Kaburakia excelsa, a species of flatworms, which was later confirmed by Andrew Simon in 2019. Observation: https://www.inaturalist.org/observations/24259233
+
+
+------------------------------------------------------------
+Goblet worms (Entoprocta)
+------------------------------------------------------------
+In 1985, Andy Lamb (PMLS) reported Barentsia sp., a species of goblet worms, which has not been seen since.
+
+
+------------------------------------------------------------
+Horseshoe worms (Phoronida)
+------------------------------------------------------------
+In 2008, Andy Lamb (PMLS) reported Phoronis ijimai, a species of horseshoe worms, which was later confirmed by Karolle Wall in 2013. Observation: https://www.inaturalist.org/observations/4014973
+
+
+------------------------------------------------------------
+Jellyfish, corals & anemones (Cnidaria)
+------------------------------------------------------------
+In 1985, Andy Lamb (PMLS) reported Sertularella sp., a species of jellyfish, corals & anemones, which was later confirmed by Dave "Zeuss" Cochrane in 2023. Observation: https://www.inaturalist.org/observations/182593081
+In 2025, Shayne Poleyko reported Anthopleura xanthogrammica, a species of jellyfish, corals & anemones, as new for Galiano Island. Observation: https://www.inaturalist.org/observations/279148263
+In 1995, Charlie Gibbs (PMLS) reported Discophyton rudyi, a species of jellyfish, corals & anemones, which has not been seen since.
+
+
+------------------------------------------------------------
+Lamp shells (Brachiopoda)
+------------------------------------------------------------
+In 1981, Andy Lamb (PMLS) reported Terebratalia transversa, a species of lamp shells, which has not been seen since.
+
+
+------------------------------------------------------------
+Molluscs (Mollusca)
+------------------------------------------------------------
+In 1969, Andy Lamb (PMLS) reported Dendronotus albus, a species of molluscs, which was later confirmed by Karin Fletcher in 2009. Observation: https://www.inaturalist.org/observations/68751256
+In 1961, Macoma calcarea, a species of molluscs, was historically reported (RBCM, 976-01146-008), but it has not been seen since.
+
+
+------------------------------------------------------------
+Moss animals (Bryozoa)
+------------------------------------------------------------
+In 1973, Andy Lamb (PMLS) reported Schizoporella japonica, a species of moss animals, which was later confirmed by Joan Septembre in 2019. Observation: https://www.inaturalist.org/observations/24768697
+In 2006, Andy Lamb (PMLS) reported Bowerbankia sp., a species of moss animals, which has not been seen since.
+
+
+------------------------------------------------------------
+Peanut worms (Sipuncula)
+------------------------------------------------------------
+In 2007, Andy Lamb (PMLS) reported Golfingia vulgaris, a species of peanut worms, which has not been seen since.
+
+
+------------------------------------------------------------
+Ribbon worms (Nemertea)
+------------------------------------------------------------
+In 2008, Andy Lamb (PMLS) reported Tubulanus ruber, a species of ribbon worms, which was later confirmed by Karolle Wall in 2017. Observation: https://www.inaturalist.org/observations/7674347
+In 1996, Charlie Gibbs (PMLS) reported Tubulanus albocinctus, a species of ribbon worms, which has not been seen since.
+
+
+------------------------------------------------------------
+Sea stars, urchins & kin (Echinodermata)
+------------------------------------------------------------
+In 1969, Andy Lamb (PMLS) reported Orthasterias koehleri, a species of sea stars, urchins & kin, which was later confirmed by Karolle Wall in 2013. Observation: https://www.inaturalist.org/observations/3706322
+In 2024, Dave "Zeuss" Cochrane reported Eupentacta pseudoquinquesemita, a species of sea stars, urchins & kin, as new for Galiano Island. Observation: https://www.inaturalist.org/observations/207078125
+In 2006, Andy Lamb (PMLS) reported Pentamera sp., a species of sea stars, urchins & kin, which has not been seen since.
+
+
+------------------------------------------------------------
+Segmented worms (Annelida)
+------------------------------------------------------------
+In 1969, Andy Lamb (PMLS) reported Dodecaceria pacifica, a species of segmented worms, which was later confirmed by Peter Luckham in 2016. Observation: https://www.inaturalist.org/observations/2763488
+In 2025, Andrew Simon reported Glycera sp., a species of segmented worms, as new for Galiano Island. Observation: https://www.inaturalist.org/observations/281879259
+In 1986, Crucigera zygophora, a species of segmented worms, was historically reported (RBCM), but it has not been seen since.
+
+
+------------------------------------------------------------
+Sponges (Porifera)
+------------------------------------------------------------
+In 1985, Andy Lamb (PMLS) reported Leucilla nuttingi, a species of sponges, which was later confirmed by Peter Luckham in 2013. Observation: https://www.inaturalist.org/observations/2975914
+In 2024, Dave "Zeuss" Cochrane reported Cliona celata, a species of sponges, as new for Galiano Island. Observation: https://www.inaturalist.org/observations/236228032
+In 1994, Andy Lamb (PMLS) reported Adocia sp., a species of sponges, which has not been seen since.
+
+
