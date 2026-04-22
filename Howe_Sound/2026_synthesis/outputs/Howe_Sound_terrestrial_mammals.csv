@@ -1,0 +1,118 @@
+"scientificName","scientificNameAuthorship","kingdom","phylum","subphylum","superclass","class","subclass","superorder","order","suborder","superfamily","family","subfamily","tribe","hybrid","variety","linkName","linkTaxonID"
+"Microtus longicaudus","Merriam","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae",NA,NA,NA,NA,44307
+"Microtus oregoni","Bachman","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae",NA,NA,NA,NA,44318
+"Microtus richardsonii","De Kay","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae",NA,NA,NA,NA,44323
+"Microtus townsendii","Bachman","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae",NA,NA,NA,NA,44298
+"Myodes gapperi","Vigors","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae",NA,NA,NA,NA,74677
+"Myodes gapperi occidentalis","Merriam","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae",NA,NA,NA,NA,237346
+"Ondatra zibethicus","L.","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae",NA,NA,NA,NA,45763
+"Peromyscus keeni","Rhoads","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Neotominae",NA,NA,NA,NA,44387
+"Peromyscus maniculatus","Wagner","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Neotominae",NA,NA,NA,NA,44396
+"Phenacomys intermedius","Merriam","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae",NA,NA,NA,NA,45714
+"Synaptomys borealis","Richardson","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae",NA,NA,NA,NA,45760
+"Zapus trinotatus","Rhoads","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Dipodoidea","Zapodidae","Zapodini",NA,NA,NA,NA,43844
+"Corynorhinus townsendii","Cooper","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Vespertilioninae",NA,NA,NA,NA,74205
+"Eptesicus fuscus","Beauvois","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Vespertilioninae",NA,NA,NA,NA,40509
+"Lasionycteris noctivagans","LeConte","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Vespertilioninae",NA,NA,NA,NA,40629
+"Lasiurus cinereus","Beauvois","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Vespertilioninae",NA,NA,NA,NA,40523
+"Myotis californicus","Audubon & Bachman","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae",NA,NA,NA,NA,40342
+"Myotis evotis","H. Allen","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae",NA,NA,NA,NA,40354
+"Myotis lucifugus","LeConte","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae",NA,NA,NA,NA,40346
+"Myotis volans","H. Allen","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae",NA,NA,NA,NA,40344
+"Myotis yumanensis","H. Allen","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae",NA,NA,NA,NA,40325
+"Oreamnos americanus","de Blainville, 1816","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Artiodactyla","Ruminantia","","Bovidae","Antilopinae","Caprini",NA,NA,NA,42414
+"Ovis canadensis","Shaw, 1804","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Artiodactyla","Ruminantia","","Bovidae","Antilopinae","Caprini",NA,NA,NA,42391
+"Alces alces","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Artiodactyla","Ruminantia","","Cervidae","Capreolinae","Alceini",NA,NA,NA,522193
+"Cervus canadensis canadensis","(Erxleben, 1777)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Artiodactyla","Ruminantia","","Cervidae","Cervinae","Cervini",NA,NA,NA,564777
+"Cervus canadensis roosevelti","(Erxleben, 1777)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Artiodactyla","Ruminantia","","Cervidae","Cervinae","Cervini",NA,NA,NA,566550
+"Dama dama","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Artiodactyla","Ruminantia","","Cervidae","Cervinae","Cervini",NA,NA,NA,42161
+"Odocoileus hemionus columbianus","Rafinesque, 1817","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Artiodactyla","Ruminantia","","Cervidae","Capreolinae","Odocoileini",NA,NA,NA,42221
+"Odocoileus virginianus","Zimmermann, 1780","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Artiodactyla","Ruminantia","","Cervidae","Capreolinae","Odocoileini",NA,NA,NA,42223
+"Sus scrofa","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Artiodactyla","Suina","","Suidae","Suinae","Suini",NA,NA,NA,42134
+"Canis latrans","Say, 1823","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Canidae","","",NA,NA,NA,42051
+"Canis lupus","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Canidae","","",NA,NA,NA,42048
+"Vulpes vulpes","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Canidae","","",NA,NA,NA,42069
+"Lynx canadensis","Kerr, 1792","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Felidae","Felinae","",NA,NA,NA,41974
+"Lynx rufus","Schreber, 1777","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Felidae","Felinae","",NA,NA,NA,41976
+"Puma concolor","Linnaeus, 1771","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Felidae","Felinae","",NA,NA,NA,42007
+"Mephitis mephitis","Schreber, 1776","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Mephitidae","Mephitinae","",NA,NA,NA,41880
+"Spilogale gracilis","Merriam, 1890","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Mephitidae","Mephitinae","",NA,NA,NA,58393
+"Gulo gulo luscus","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Mustelidae","Guloninae","",NA,NA,NA,41852
+"Martes caurina","(Merriam, 1890)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Mustelidae","Guloninae","",NA,NA,NA,453111
+"Mustela erminea","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Mustelidae","Mustelinae","",NA,NA,NA,41808
+"Mustela richardsonii","Bonaparte, 1838","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Mustelidae","Mustelinae","",NA,NA,NA,1264427
+"Neogale frenata","(Lichtenstein, 1831)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Mustelidae","Mustelinae","",NA,NA,NA,1264431
+"Neogale frenata altifrontalis","(Lichtenstein, 1831)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Mustelidae","Mustelinae","",NA,NA,NA,1265170
+"Pekania pennanti","(Erxleben, 1777)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Mustelidae","Guloninae","",NA,NA,NA,453109
+"Procyon lotor","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Procyonidae","","",NA,NA,NA,41663
+"Ursus americanus","Pallas, 1780","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Ursidae","Ursinae","",NA,NA,NA,41638
+"Ursus arctos","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Carnivora","","","Ursidae","Ursinae","",NA,NA,NA,41641
+"Corynorhinus townsendii","Cooper, 1837","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Vespertilioninae","Plecotini",NA,NA,NA,74205
+"Eptesicus fuscus","Beauvois, 1796","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Vespertilioninae","Eptesicini",NA,NA,NA,40509
+"Euderma maculatum","J. A. Allen, 1891","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Vespertilioninae","Plecotini",NA,NA,NA,40631
+"Lasionycteris noctivagans","Le Conte, 1831","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Vespertilioninae","Eptesicini",NA,NA,NA,40629
+"Lasiurus cinereus","Palisot de Beauvois, 1796","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Vespertilioninae","Lasiurini",NA,NA,NA,40523
+"Myotis californicus","Audubon and Bachman, 1842","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae","",NA,NA,NA,40342
+"Myotis evotis","H. Allen, 1864","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae","",NA,NA,NA,40354
+"Myotis keenii","Merriam, 1895","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae","",NA,NA,NA,40345
+"Myotis lucifugus","Le Conte, 1831","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae","",NA,NA,NA,40346
+"Myotis thysanodes","Miller, 1897","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae","",NA,NA,NA,40347
+"Myotis volans","H. Allen, 1866","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae","",NA,NA,NA,40344
+"Myotis yumanensis","H. Allen, 1864","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Chiroptera","Yangochiroptera","Vespertilionoidea","Vespertilionidae","Myotinae","",NA,NA,NA,40325
+"Didelphis virginiana","Kerr, 1792","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","","Didelphimorphia","","","Didelphidae","Didelphinae","Didelphini",NA,NA,NA,42652
+"Sorex bendirii","Merriam, 1884","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Soricidae","Soricinae","Soricini",NA,NA,NA,46446
+"Sorex cinereus","Kerr, 1792","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Soricidae","Soricinae","Soricini",NA,NA,NA,59815
+"Sorex monticola","Merriam, 1890","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Soricidae","Soricinae","Soricini",NA,NA,NA,46456
+"Sorex navigator","(Baird, 1858)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Soricidae","Soricinae","Soricini",NA,NA,NA,1370755
+"Sorex palustris","Richardson, 1828","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Soricidae","Soricinae","Soricini",NA,NA,NA,46355
+"Sorex rohweri","Rausch, Feagin, & Rausch, 2007","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Soricidae","Soricinae","Soricini",NA,NA,NA,75088
+"Sorex trowbridgii","Baird, 1857","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Soricidae","Soricinae","Soricini",NA,NA,NA,46503
+"Sorex vagrans","Baird, 1857","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Soricidae","Soricinae","Soricini",NA,NA,NA,345876
+"Neurotrichus gibbsii","Baird, 1858","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Talpidae","Talpinae","Neurotrichini",NA,NA,NA,47051
+"Scapanus orarius","True, 1896","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Talpidae","Scalopinae","Scalopini",NA,NA,NA,47007
+"Scapanus townsendii","Bachman, 1839","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Laurasiatheria","Eulipotyphla","Erinaceota","","Talpidae","Scalopinae","Scalopini",NA,NA,NA,47010
+"Lepus americanus","Erxleben, 1777","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Lagomorpha","","","Leporidae","","",NA,NA,NA,43132
+"Lepus americanus washingtonii","Erxleben, 1777","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Lagomorpha","","","Leporidae","","",NA,NA,NA,236660
+"Oryctolagus cuniculus","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Lagomorpha","","","Leporidae","","",NA,NA,NA,43151
+"Sylvilagus floridanus","J. A. Allen, 1890","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Lagomorpha","","","Leporidae","","",NA,NA,NA,43111
+"Ochotona princeps","Richardson, 1828","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Lagomorpha","","","Ochotonidae","","",NA,NA,NA,43188
+"Aplodontia rufa","Rafinesque, 1817","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Aplodontiidae","","",NA,NA,NA,43736
+"Castor canadensis","Kuhl, 1820","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Castorimorpha","","Castoridae","","",NA,NA,NA,43794
+"Clethrionomys gapperi","(Vigors, 1830)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Clethrionomyini",NA,NA,NA,1431274
+"Clethrionomys gapperi occidentalis","(Vigors, 1830)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Clethrionomyini",NA,NA,NA,1431805
+"Microtus drummondii","(Audubon & Bachman, 1854)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Microtini",NA,NA,NA,1431621
+"Microtus longicaudus","Merriam, 1888","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Microtini",NA,NA,NA,44307
+"Microtus montanus","Peale, 1848","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Microtini",NA,NA,NA,44315
+"Microtus oregoni","Bachman, 1839","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Microtini",NA,NA,NA,44318
+"Microtus richardsoni","DeKay, 1842","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Microtini",NA,NA,NA,44323
+"Microtus townsendii","Bachman, 1839","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Microtini",NA,NA,NA,44298
+"Neotoma cinerea","Ord, 1815","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Neotominae","Neotomini",NA,NA,NA,44761
+"Ondatra zibethicus","Linnaeus, 1766","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Ondatrini",NA,NA,NA,45763
+"Peromyscus keeni","Rhoads, 1894","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Neotominae","Reithrodontomyini",NA,NA,NA,44387
+"Peromyscus maniculatus","Wagner, 1845","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Neotominae","Reithrodontomyini",NA,NA,NA,44396
+"Peromyscus sonoriensis","(J. A. Wagner, 1845)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Neotominae","Reithrodontomyini",NA,NA,NA,1431239
+"Phenacomys intermedius","Merriam, 1889","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Pliophenacomyini",NA,NA,NA,45714
+"Synaptomys borealis","Richardson, 1828","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Cricetidae","Arvicolinae","Lemmini",NA,NA,NA,45760
+"Myocastor coypus","Molina, 1782","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Hystricomorpha","Octodontoidea","Echimyidae","Echimyinae","Myocastorini",NA,NA,NA,43997
+"Erethizon dorsatum","(Linnaeus, 1758)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Hystricomorpha","Erethizontoidea","Erethizontidae","Erethizontinae","",NA,NA,NA,44026
+"Mus musculus","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Muridae","Murinae","Murini",NA,NA,NA,44705
+"Rattus norvegicus","Berkenhout, 1769","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Muridae","Murinae","Rattini",NA,NA,NA,44576
+"Rattus rattus","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Muroidea","Muridae","Murinae","Rattini",NA,NA,NA,44575
+"Callospermophilus lateralis","(Say, 1823)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Xerinae","Marmotini",NA,NA,NA,180010
+"Glaucomys sabrinus","Shaw, 1801","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Sciurinae","Pteromyini",NA,NA,NA,46266
+"Marmota caligata","Eschscholtz, 1829","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Xerinae","Marmotini",NA,NA,NA,46087
+"Marmota flaviventris","Audubon and Bachman, 1841","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Xerinae","Marmotini",NA,NA,NA,46086
+"Marmota monax","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Xerinae","Marmotini",NA,NA,NA,46095
+"Marmota vancouverensis","Swarth, 1911","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Xerinae","Marmotini",NA,NA,NA,46091
+"Neotamias amoenus","(J.A. Allen, 1890)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Xerinae","Tamiini",NA,NA,NA,225740
+"Neotamias minimus","(Bachman, 1839)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Xerinae","Tamiini",NA,NA,NA,225743
+"Neotamias townsendii","(Bachman, 1839)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Xerinae","Tamiini",NA,NA,NA,225756
+"Sciurus carolinensis","Gmelin, 1788","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Sciurinae","Sciurini",NA,NA,NA,46017
+"Sciurus griseus","Ord, 1818","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Sciurinae","Sciurini",NA,NA,NA,46023
+"Sciurus niger","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Sciurinae","Sciurini",NA,NA,NA,46020
+"Tamiasciurus douglasii","Bachman, 1838","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Sciurinae","Sciurini",NA,NA,NA,46259
+"Tamiasciurus hudsonicus","Erxleben, 1777","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Sciurinae","Sciurini",NA,NA,NA,46260
+"Urocitellus columbianus","(Ord, 1815)","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Sciuromorpha","","Sciuridae","Xerinae","Marmotini",NA,NA,NA,179998
+"Zapus hudsonius","Zimmermann, 1780","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Dipodoidea","Zapodidae","","",NA,NA,NA,43840
+"Zapus princeps","Allen, 1893","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Dipodoidea","Zapodidae","","",NA,NA,NA,43846
+"Zapus trinotatus","Rhoads, 1894","Animalia","Chordata","Vertebrata",NA,"Mammalia","Theria","Euarchontoglires","Rodentia","Myomorpha","Dipodoidea","Zapodidae","","",NA,NA,NA,43844

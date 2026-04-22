@@ -1,0 +1,14 @@
+﻿"report_group","grouping_rule","n_rows_source","n_rows_appendix"
+"AMPHIBIANS","order",18,18
+"BIRDS","family",335,334
+"LICHENS","family",312,312
+"MACROFUNGI","family",515,515
+"MARINE ALGAE","phylum",111,111
+"MARINE ANIMALS","phylum",807,806
+"NON-VASCULAR PLANTS","family",486,486
+"REPTILES","order",15,15
+"SLIME MOLDS","family",18,18
+"TERRESTRIAL INVERTS","class",1507,1506
+"TERRESTRIAL MAMMALS","order",91,90
+"UNASSIGNED",NA,3,3
+"VASCULAR PLANTS","family",1191,1191

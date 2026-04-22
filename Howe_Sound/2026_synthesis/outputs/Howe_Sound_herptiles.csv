@@ -1,0 +1,68 @@
+"scientificName","scientificNameAuthorship","kingdom","phylum","subphylum","superclass","class","subclass","superorder","order","suborder","superfamily","family","subfamily","tribe","hybrid","variety","linkName","linkTaxonID"
+"Ambystoma gracile","Baird","Animalia","Chordata","Vertebrata","","Amphibia",NA,NA,"Caudata",NA,NA,"Ambystomatidae",NA,NA,NA,NA,NA,26747
+"Ambystoma macrodactylum","Baird","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata",NA,NA,"Ambystomatidae",NA,NA,NA,NA,NA,26754
+"Anaxyrus boreas","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura",NA,NA,"Bufonidae",NA,NA,NA,NA,NA,64970
+"Aneides vagrans","Wake & Jackman","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata",NA,NA,"Plethodontidae","Plethodontinae",NA,NA,NA,NA,248672
+"Ascaphus truei","Stejneger","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura",NA,NA,"Ascaphidae",NA,NA,NA,NA,NA,24543
+"Dicamptodon tenebrosus","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata",NA,NA,"Ambystomatidae",NA,NA,NA,NA,NA,26822
+"Ensatina eschscholtzii","Gray","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata",NA,NA,"Plethodontidae","Plethodontinae",NA,NA,NA,NA,27250
+"Lithobates clamitans","Latreille","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura",NA,NA,"Ranidae",NA,NA,NA,NA,NA,65982
+"Plethodon vehiculum","Cooper","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata",NA,NA,"Plethodontidae","Plethodontinae",NA,NA,NA,NA,27194
+"Pseudacris maculata","Agassiz","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura",NA,NA,"Hylidae","Acridinae",NA,NA,NA,NA,24255
+"Pseudacris regilla","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura",NA,NA,"Hylidae","Acridinae",NA,NA,NA,NA,24259
+"Rana aurora","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura",NA,NA,"Ranidae",NA,NA,NA,NA,NA,25545
+"Rana luteiventris","Thompson","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura",NA,NA,"Ranidae",NA,NA,NA,NA,NA,25588
+"Rana pretiosa","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura",NA,NA,"Ranidae",NA,NA,NA,NA,NA,25542
+"Taricha granulosa","Skilton","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata",NA,NA,"Salamandridae","Pleurodelinae",NA,NA,NA,NA,27826
+"Charina bottae","Blainville","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes",NA,"Boidae",NA,NA,NA,NA,NA,243962
+"Contia tenuis","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes",NA,"Colubridae","Dipsadinae",NA,NA,NA,NA,26916
+"Elgaria coerulea","Wiegmann","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Sauria",NA,"Anguidae","Gerrhonotinae",NA,NA,NA,NA,32064
+"Elgaria coerulea principis","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Sauria",NA,"Anguidae","Gerrhonotinae",NA,NA,NA,NA,32065
+"Nerodia sipedon","L.","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes",NA,"Colubridae","Natricinae",NA,NA,NA,NA,29305
+"Pituophis catenifer catenifer","Blainville","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes",NA,"Colubridae","Colubrinae",NA,NA,NA,NA,29044
+"Plestiodon skiltonianus","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Sauria",NA,"Scincidae","Scincinae",NA,NA,NA,NA,37769
+"Thamnophis elegans","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes",NA,"Colubridae","Natricinae",NA,NA,NA,NA,28398
+"Thamnophis elegans vagrans","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes",NA,"Colubridae","Natricinae",NA,NA,NA,NA,28403
+"Thamnophis ordinoides","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes",NA,"Colubridae","Natricinae",NA,NA,NA,NA,28389
+"Thamnophis sirtalis","Linnaeus","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes",NA,"Colubridae","Natricinae",NA,NA,NA,NA,28362
+"Thamnophis sirtalis fitchi","Fox","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes",NA,"Colubridae","Natricinae",NA,NA,NA,NA,28371
+"Thamnophis sirtalis pickeringii","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes",NA,"Colubridae","Natricinae",NA,NA,NA,NA,28363
+"Actinemys marmorata","Baird & Girard","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Testudines",NA,NA,"Emydidae","Emydinae",NA,NA,NA,NA,73592
+"Chrysemys picta pop. 1",NA,"Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Testudines",NA,NA,"Emydidae","Deirochelyinae",NA,NA,NA,NA,39773
+"Pseudemys concinna","Le Conte","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Testudines",NA,NA,"Emydidae","Deirochelyinae",NA,NA,NA,NA,39830
+"Trachemys scripta","Thunberg in Schoepff","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Testudines",NA,NA,"Emydidae","Deirochelyinae",NA,NA,NA,NA,39782
+"Trachemys scripta elegans","Wied-Neuwied","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Testudines",NA,NA,"Emydidae","Deirochelyinae",NA,NA,NA,NA,51271
+"Ascaphus truei","(Stejneger, 1899)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura","","","Ascaphidae","",NA,NA,NA,NA,24543
+"Anaxyrus boreas","(Baird and Girard, 1852)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura","","","Bufonidae","",NA,NA,NA,NA,64970
+"Pseudacris regilla","(Baird & Girard, 1852)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura","","","Hylidae","Acridinae",NA,NA,NA,NA,24259
+"Lithobates catesbeianus","(Shaw, 1802)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura","","","Ranidae","",NA,NA,NA,NA,65979
+"Lithobates clamitans","(Latreille, 1801)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura","","","Ranidae","",NA,NA,NA,NA,65982
+"Lithobates pipiens","(Schreber, 1782)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura","","","Ranidae","",NA,NA,NA,NA,66003
+"Lithobates sylvaticus","(LeConte, 1825)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura","","","Ranidae","",NA,NA,NA,NA,66012
+"Rana aurora","Baird and Girard, 1852","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura","","","Ranidae","",NA,NA,NA,NA,25545
+"Rana luteiventris","Thompson, 1913","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura","","","Ranidae","",NA,NA,NA,NA,25588
+"Rana pretiosa","Baird & Girard, 1853","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Anura","","","Ranidae","",NA,NA,NA,NA,25542
+"Ambystoma gracile","(Baird, 1859)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata","","","Ambystomatidae","",NA,NA,NA,NA,26747
+"Ambystoma macrodactylum","Baird, 1950","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata","","","Ambystomatidae","",NA,NA,NA,NA,26754
+"Dicamptodon tenebrosus","(Baird and Girard, 1852)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata","","","Ambystomatidae","",NA,NA,NA,NA,26822
+"Aneides vagrans","Wake & Jackman, 1998","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata","","","Plethodontidae","Plethodontinae",NA,NA,NA,NA,248672
+"Ensatina eschscholtzii","Gray, 1850","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata","","","Plethodontidae","Plethodontinae",NA,NA,NA,NA,27250
+"Plethodon vehiculum","(Cooper, 1860)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata","","","Plethodontidae","Plethodontinae",NA,NA,NA,NA,27194
+"Taricha granulosa","(Skilton, 1849)","Animalia","Chordata","Vertebrata",NA,"Amphibia",NA,NA,"Caudata","","","Salamandridae","Pleurodelinae",NA,NA,NA,NA,27826
+"Elgaria coerulea","(Wiegmann, 1828)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Sauria","","Anguidae","Gerrhonotinae",NA,NA,NA,NA,32064
+"Podarcis muralis","(Laurenti, 1768)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Sauria","","Lacertidae","",NA,NA,NA,NA,55990
+"Sceloporus occidentalis","Baird and Girard, 1852","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Sauria","","Phrynosomatidae","",NA,NA,NA,NA,36204
+"Plestiodon skiltonianus","Baird & Girard, 1852","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Sauria","","Scincidae","Scincinae",NA,NA,NA,NA,37769
+"Charina bottae","(Blainville, 1835)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes","","Boidae","",NA,NA,NA,NA,243962
+"Coluber constrictor","Linnaeus, 1758","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes","","Colubridae","",NA,NA,NA,NA,27137
+"Contia tenuis","(Baird & Girard,1852)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes","","Colubridae","Dipsadinae",NA,NA,NA,NA,26916
+"Pituophis catenifer deserticola","(Blainville, 1835)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes","","Colubridae","Colubrinae",NA,NA,NA,NA,29049
+"Thamnophis elegans","(Baird & Girard, 1853","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes","","Colubridae","Natricinae",NA,NA,NA,NA,28403
+"Thamnophis ordinoides","(Baird & Girard, 1852)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes","","Colubridae","Natricinae",NA,NA,NA,NA,28389
+"Thamnophis sirtalis fitchi","(Linnaeus, 1758)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes","","Colubridae","Natricinae",NA,NA,NA,NA,28371
+"Thamnophis sirtalis pickeringii","(Linnaeus, 1758)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes","","Colubridae","Natricinae",NA,NA,NA,NA,28363
+"Crotalus oreganus","Holbrook, 1840","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Squamata","Serpentes","","Viperidae","",NA,NA,NA,NA,48268
+"Lepidochelys olivacea","(Eschscholtz, 1829)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Testudines","Cryptodira","Chelonioidea","Cheloniidae","",NA,NA,NA,NA,39670
+"Actinemys marmorata","(Baird and Girard, 1852)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Testudines","Cryptodira","","Emydidae","Emydinae",NA,NA,NA,NA,73592
+"Chrysemys picta","(Schneider, 1783)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Testudines","Cryptodira","","Emydidae","Deirochelyinae",NA,NA,NA,NA,39771
+"Trachemys scripta","(Thunberg In Schoepff, 1792)","Animalia","Chordata","Vertebrata",NA,"Reptilia",NA,NA,"Testudines","Cryptodira","","Emydidae","Deirochelyinae",NA,NA,NA,NA,39782

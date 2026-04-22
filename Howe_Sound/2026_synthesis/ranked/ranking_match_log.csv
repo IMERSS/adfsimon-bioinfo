@@ -1,0 +1,4 @@
+pass,source_field,ranking_field,newly_matched,ambiguous,still_unmatched_before_pass
+PASS_1_EXACT_SCIENTIFICNAME,scientificName,taxonName,4197,0,5633
+PASS_2_VARIETY_STRING,variety,variety,5,3,1436
+PASS_3_SUBSPECIES_STRING,subspecies,subspecies,22,3,1431
