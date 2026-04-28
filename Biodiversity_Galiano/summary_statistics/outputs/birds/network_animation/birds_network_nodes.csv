@@ -1,0 +1,245 @@
+name,node_class,taxon_status,taxon_year,color,size,label
+Aziza Cooper,historical,NA,NA,#CC79A7,2,Aziza Cooper
+Galiano Naturalist,historical,NA,NA,#CC79A7,3,Galiano Naturalist
+Keith Riding,historical,NA,NA,#CC79A7,2,Keith Riding
+Nancy Tamblyn,historical,NA,NA,#CC79A7,2,Nancy Tamblyn
+R. Smith,historical,NA,NA,#CC79A7,2,R. Smith
+Adam Huggins,contemporary,NA,NA,#E69F00,2.0056818181818183,Adam Huggins
+Adam Jermakow,contemporary,NA,NA,#E69F00,2,Adam Jermakow
+Andrew Simon,contemporary,NA,NA,#E69F00,2.1079545454545454,Andrew Simon
+B. J. Stacey,contemporary,NA,NA,#E69F00,2.0056818181818183,B. J. Stacey
+B.J. Stacey,contemporary,NA,NA,#E69F00,2,B.J. Stacey
+Bridgit Spencer,contemporary,NA,NA,#E69F00,2.0170454545454546,Bridgit Spencer
+Burl Jantzen,contemporary,NA,NA,#E69F00,2,Burl Jantzen
+Cameron Deckert,contemporary,NA,NA,#E69F00,2.0113636363636362,Cameron Deckert
+Chad Diakow,contemporary,NA,NA,#E69F00,2,Chad Diakow
+Chessi Miltner,contemporary,NA,NA,#E69F00,2,Chessi Miltner
+Christian Adler,contemporary,NA,NA,#E69F00,2,Christian Adler
+Christopher King,contemporary,NA,NA,#E69F00,2,Christopher King
+Dan MacNeal,contemporary,NA,NA,#E69F00,2.0056818181818183,Dan MacNeal
+Ellyne Geurts,contemporary,NA,NA,#E69F00,2,Ellyne Geurts
+Jackson W.F. Chu,contemporary,NA,NA,#E69F00,2,Jackson W.F. Chu
+Jen Kovach,contemporary,NA,NA,#E69F00,2,Jen Kovach
+Joan Septembre,contemporary,NA,NA,#E69F00,2,Joan Septembre
+Karolle Wall,contemporary,NA,NA,#E69F00,2.0170454545454546,Karolle Wall
+Keith Valentine,contemporary,NA,NA,#E69F00,2,Keith Valentine
+Kevin Toomer,contemporary,NA,NA,#E69F00,2.0170454545454546,Kevin Toomer
+Kris Krüg,contemporary,NA,NA,#E69F00,2.0056818181818183,Kris Krüg
+Kristian Sigvardsen,contemporary,NA,NA,#E69F00,2.0113636363636362,Kristian Sigvardsen
+Lauren Magner,contemporary,NA,NA,#E69F00,2.022727272727273,Lauren Magner
+Liam Steele,contemporary,NA,NA,#E69F00,2.0056818181818183,Liam Steele
+Mark Webber,contemporary,NA,NA,#E69F00,2,Mark Webber
+Michael Hoebel,contemporary,NA,NA,#E69F00,2.2613636363636362,Michael Hoebel
+Peter Taylor,contemporary,NA,NA,#E69F00,2.0056818181818183,Peter Taylor
+Peter Thompson & Michael Hoebel,contemporary,NA,NA,#E69F00,2,Peter Thompson & Michael Hoebel
+Richard Harrigan,contemporary,NA,NA,#E69F00,2,Richard Harrigan
+Romayne Galager,contemporary,NA,NA,#E69F00,2,Romayne Galager
+Sarah Tweedale,contemporary,NA,NA,#E69F00,2.0681818181818183,Sarah Tweedale
+Sean Vanderluit,contemporary,NA,NA,#E69F00,2.0056818181818183,Sean Vanderluit
+Shera Street,contemporary,NA,NA,#E69F00,2.0113636363636362,Shera Street
+Sophia Silverman,contemporary,NA,NA,#E69F00,2,Sophia Silverman
+Steph Brulot-Sawchyn,contemporary,NA,NA,#E69F00,2,Steph Brulot-Sawchyn
+Steve Ansell,contemporary,NA,NA,#E69F00,2,Steve Ansell
+Steve Murray,contemporary,NA,NA,#E69F00,2,Steve Murray
+Tanya Inglis,contemporary,NA,NA,#E69F00,2,Tanya Inglis
+Tobin Sparling (he/him),contemporary,NA,NA,#E69F00,2,Tobin Sparling (he/him)
+W. Cartwright,contemporary,NA,NA,#E69F00,2,W. Cartwright
+Zeke Gilmore,contemporary,NA,NA,#E69F00,2,Zeke Gilmore
+blakedanis,contemporary,NA,NA,#E69F00,2,blakedanis
+bobmcd’,contemporary,NA,NA,#E69F00,2.0113636363636362,bobmcd’
+cmac79’,contemporary,NA,NA,#E69F00,2,cmac79’
+hdcooper,contemporary,NA,NA,#E69F00,2,hdcooper
+lesfreck,contemporary,NA,NA,#E69F00,2.0170454545454546,lesfreck
+lornasdr,contemporary,NA,NA,#E69F00,2,lornasdr
+tanageraz,contemporary,NA,NA,#E69F00,2,tanageraz
+Glaucidium californicum,taxon,reported,NA,gray60,1,NA
+Accipiter gentilis,taxon,reported,NA,gray60,1,NA
+Accipiter striatus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Actitis macularius,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Aechmophorus occidentalis,taxon,reported,NA,gray60,1,NA
+Aegolius acadicus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Agelaius phoeniceus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Aix sponsa,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Anas acuta,taxon,reported,NA,gray60,1,NA
+Anas carolinensis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Anas crecca,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Anas platyrhynchos,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Anser albifrons,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Anthus rubescens,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Aquila chrysaetos,taxon,reported,NA,gray60,1,NA
+Ardea herodias fannini,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Arenaria interpres,taxon,reported,NA,gray60,1,NA
+Arenaria melanocephala,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Asio flammeus,taxon,reported,NA,gray60,1,NA
+Astur cooperii,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Aythya affinis,taxon,reported,NA,gray60,1,NA
+Aythya collaris,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Aythya marila,taxon,reported,NA,gray60,1,NA
+Bombycilla cedrorum,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Brachyramphus marmoratus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Branta canadensis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Bubo virginianus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Bucephala albeola,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Bucephala clangula,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Bucephala islandica,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Buteo jamaicensis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Calidris alpina,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Calidris mauri,taxon,reported,NA,gray60,1,NA
+Calidris virgata,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Calypte anna,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Cardellina pusilla,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Cathartes aura,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Catharus guttatus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Catharus ustulatus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Cepphus columba,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Cerorhinca monocerata,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Certhia americana,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Chaetura vauxi,taxon,reported,NA,gray60,1,NA
+Charadrius semipalmatus,taxon,reported,NA,gray60,1,NA
+Charadrius vociferus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Chen caerulescens,taxon,reported,NA,gray60,1,NA
+Chordeiles minor,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Chroicocephalus philadelphia,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Cinclus mexicanus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Circus hudsonius,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Cistothorus palustris,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Clangula hyemalis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Colaptes auratus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Contopus cooperi,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Contopus sordidulus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Corthylio calendula,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Corvus brachyrhynchos caurinus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Corvus corax principalis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Cyanocitta stelleri,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Cygnus buccinator,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Cygnus olor,taxon,reported,NA,gray60,1,NA
+Cypseloides niger,taxon,reported,NA,gray60,1,NA
+Dendragapus fuliginosus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Dryobates pubescens,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Dryocopus pileatus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Empidonax difficilis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Empidonax hammondii,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Empidonax traillii,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Eremophila alpestris,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Euphagus cyanocephalus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Falco columbarius,taxon,reported,NA,gray60,1,NA
+Falco peregrinus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Falco sparverius,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Gallinago delicata,taxon,reported,NA,gray60,1,NA
+Gavia immer,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Gavia pacifica,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Gavia stellata,taxon,reported,NA,gray60,1,NA
+Geothlypis tolmiei,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Geothlypis trichas,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Haematopus bachmani,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Haemorhous mexicanus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Haemorhous purpureus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Haliaeetus leucocephalus washingtoniensis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Hesperiphona vespertina,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Hirundo rustica erythrogaster,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Histrionicus histrionicus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Ixoreus naevius,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Junco hyemalis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Lanius borealis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Larus argentatus,taxon,reported,NA,gray60,1,NA
+Larus brachyrhynchus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Larus californicus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Larus delawarensis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Larus glaucescens,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Larus glaucoides thayeri,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Larus heermanni,taxon,reported,NA,gray60,1,NA
+Larus occidentalis,taxon,reported,NA,gray60,1,NA
+Leiothlypis celata,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Leuconotopicus villosus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Limnodromus scolopaceus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Lophodytes cucullatus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Loxia curvirostra,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Mareca americana,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Mareca penelope,taxon,reported,NA,gray60,1,NA
+Mareca strepera,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Megaceryle alcyon,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Megascops kennicottii,taxon,reported,NA,gray60,1,NA
+Melanitta americana,taxon,reported,NA,gray60,1,NA
+Melanitta deglandi,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Melanitta perspicillata,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Melospiza georgiana,taxon,reported,NA,gray60,1,NA
+Melospiza lincolnii,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Melospiza melodia,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Mergus merganser,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Mergus serrator,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Molothrus ater,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Myadestes townsendi,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Nannopterum auritum,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Pandion haliaetus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Passer domesticus,taxon,reported,NA,gray60,1,NA
+Passerculus sandwichensis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Passerella iliaca,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Passerina amoena,taxon,reported,NA,gray60,1,NA
+Patagioenas fasciata,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Pelecanus erythrorhynchos,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Petrochelidon pyrrhonota,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Phalaropus lobatus,taxon,reported,NA,gray60,1,NA
+Pheucticus melanocephalus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Pipilo maculatus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Piranga ludoviciana,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Podiceps auritus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Podiceps grisegena,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Podiceps nigricollis,taxon,reported,NA,gray60,1,NA
+Podilymbus podiceps,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Poecile rufescens,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Progne subis arboricola,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Psaltriparus minimus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Regulus satrapa,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Selasphorus rufus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Setophaga aestiva,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Setophaga coronata auduboni,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Setophaga coronata coronata,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Setophaga nigrescens,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Setophaga townsendi,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Sitta canadensis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Spatula clypeata,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Sphyrapicus nuchalis,taxon,reported,NA,gray60,1,NA
+Sphyrapicus ruber,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Spinus pinus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Spinus tristis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Spizella passerina,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Stelgidopteryx serripennis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Sterna hirundo,taxon,reported,NA,gray60,1,NA
+Streptopelia decaocto,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Strix varia,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Sturnella neglecta,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Sturnus vulgaris,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Synthliboramphus antiquus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Tachycineta bicolor,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Tachycineta thalassina,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Thryomanes bewickii,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Tringa flavipes,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Tringa melanoleuca,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Troglodytes aedon,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Troglodytes pacificus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Turdus migratorius,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Uria aalge,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Urile pelagicus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Urile penicillatus,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Vireo cassinii,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Vireo huttoni,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Vireo swainsoni,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Xanthocephalus xanthocephalus,taxon,reported,NA,gray60,1,NA
+Zenaida macroura,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Zonotrichia albicollis,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Zonotrichia atricapilla,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Zonotrichia leucophrys,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Zonotrichia querula,taxon,confirmed,NA,#009E73,1.0045454545454546,NA
+Phalaropus fulicarius,taxon,reported,NA,gray60,1,NA
+Branta hutchinsii,taxon,reported,NA,gray60,1,NA
+Bonasa umbellus brunnescens,taxon,reported,NA,gray60,1,NA
+Hydroprogne caspia,taxon,new,2022,#E28B0C,1,NA
+Columba livia domestica,taxon,confirmed,NA,#009E73,1,NA
+Sialia currucoides,taxon,new,2023,#DB7406,1,NA
+Pheucticus ludovicianus,taxon,new,2020,#EFB918,1,NA
+Antigone canadensis,taxon,new,2021,#E9A212,1,NA
+Pica hudsonia,taxon,new,2020,#EFB918,1,NA
+Rallus limicola,taxon,new,2016,#FDE725,1,NA
+Tyto furcata pratincola,taxon,new,2017,#F6D01E,1,NA
+Salpinctes obsoletus,taxon,new,2024,#D55E00,1,NA
+Melanerpes erythrocephalus,taxon,new,2024,#D55E00,1,NA

@@ -1,5 +1,5 @@
-#### R Script for visualizing terrestrial arthropod contribution networks
-#### Historical reporters/collectors vs contemporary observers
+#### R script for visualizing terrestrial arthropod reporting
+#### Outputs are grouped under outputs/terrestrial_arthropods
 
 # Set relative paths
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
@@ -99,6 +99,12 @@ LABEL_ONLY_PEOPLE <- TRUE
 # Legend styling
 LEGEND_TITLE_CEX <- 1.00
 LEGEND_TEXT_CEX <- 0.88
+
+# Outputs
+BASE_OUTPUT_DIR <- "outputs"
+NETWORK_GROUP <- "terrestrial_arthropods"
+OUTPUT_DIR <- file.path(BASE_OUTPUT_DIR, NETWORK_GROUP)
+if (!dir.exists(OUTPUT_DIR)) dir.create(OUTPUT_DIR, recursive = TRUE)
 
 ## ------------------------------------------------------------
 ## Read in data
@@ -941,6 +947,15 @@ p_cumulative_knowledge <- ggplot(
 
 print(p_cumulative_knowledge)
 
+ggsave(
+  filename = file.path(OUTPUT_DIR, "terrestrial_arthropods_cumulative_knowledge_by_order.pdf"),
+  plot = p_cumulative_knowledge,
+  width = 12,
+  height = 7,
+  units = "in"
+)
+cat("\nSaved file: ", file.path(OUTPUT_DIR, "terrestrial_arthropods_cumulative_knowledge_by_order.pdf"), "\n", sep = "")
+
 ## ------------------------------------------------------------
 ## RANDOM EXAMPLE OBSERVATIONS TABLE BY ORDER × KNOWLEDGE CATEGORY
 ## NEW RECORDS RESTRICTED TO PAST 2 YEARS
@@ -1158,11 +1173,11 @@ print(table(example_table$Knowledge_category, useNA = "ifany"))
 
 write.csv(
   example_table,
-  "outputs/Terrestrial_arthropods_random_example_observations_by_order_recent_new_records.csv",
+  file.path(OUTPUT_DIR, "Terrestrial_arthropods_random_example_observations_by_order_recent_new_records.csv"),
   row.names = FALSE
 )
 
-cat("\nSaved file: random_example_observations_by_order_recent_new_records.csv\n")
+cat("\nSaved file: ", file.path(OUTPUT_DIR, "Terrestrial_arthropods_random_example_observations_by_order_recent_new_records.csv"), "\n", sep = "")
 
 ## ------------------------------------------------------------
 ## RANDOM EXAMPLE RECORDS BY ORDER + STORY TEXT
@@ -1553,11 +1568,11 @@ print(terrestrial_arthropod_story_examples, n = nrow(terrestrial_arthropod_story
 
 write.csv(
   terrestrial_arthropod_story_examples,
-  "outputs/Terrestrial_arthropods_reports.csv",
+  file.path(OUTPUT_DIR, "Terrestrial_arthropods_reports.csv"),
   row.names = FALSE
 )
 
-cat("\nSaved file: outputs/Terrestrial_arthropods_reports.csv\n")
+cat("\nSaved file: ", file.path(OUTPUT_DIR, "Terrestrial_arthropods_reports.csv"), "\n", sep = "")
 
 
 ## ------------------------------------------------------------
@@ -1573,7 +1588,6 @@ library(readr)
 ## USER SETTINGS
 ## -----------------------------
 OUTPUT_TABLE <- TRUE
-OUTPUT_DIR   <- "outputs"
 OUTPUT_FILE  <- file.path(OUTPUT_DIR, "Terrestrial_arthropod_diversity_summary_by_order.csv")
 
 RECENT_YEARS_BACK <- 1   # "last couple of years" = max year and max year - 1
@@ -1711,6 +1725,9 @@ dat <- df %>%
 if (nrow(dat) == 0) {
   stop("No usable records were found after input normalization.", call. = FALSE)
 }
+
+write_csv(dat, file.path(OUTPUT_DIR, "terrestrial_arthropods_central_accounting_table.csv"))
+cat("\nSaved file: ", file.path(OUTPUT_DIR, "terrestrial_arthropods_central_accounting_table.csv"), "\n", sep = "")
 
 ## -----------------------------
 ## DEFINE RECENT WINDOW
@@ -2036,3 +2053,106 @@ print(
 if (OUTPUT_TABLE) {
   cat("\nSaved file:", OUTPUT_FILE, "\n")
 }
+
+## ------------------------------------------------------------
+## EXPORT NETWORK OBJECTS FOR TIME-SLICED ANIMATION
+## ------------------------------------------------------------
+
+NETWORK_OUTPUT_DIR <- file.path(OUTPUT_DIR, "network_animation")
+if (!dir.exists(NETWORK_OUTPUT_DIR)) {
+  dir.create(NETWORK_OUTPUT_DIR, recursive = TRUE)
+}
+
+historical_edge_years <- dat %>%
+  filter(status_std %in% c("reported", "confirmed"), !is.na(Collector_std)) %>%
+  transmute(
+    from = Collector_std,
+    to = Taxon_std,
+    person_class = "historical",
+    edge_class = status_std,
+    entry_year = historical_year
+  )
+
+contemporary_edge_years <- dat %>%
+  filter(status_std %in% c("new", "confirmed"), !is.na(Observer_std)) %>%
+  transmute(
+    from = Observer_std,
+    to = Taxon_std,
+    person_class = "contemporary",
+    edge_class = status_std,
+    entry_year = case_when(
+      status_std == "confirmed" ~ observed_year,
+      status_std == "new" ~ new_year_std,
+      TRUE ~ NA_integer_
+    )
+  )
+
+edge_year_lookup <- bind_rows(historical_edge_years, contemporary_edge_years) %>%
+  filter(!is.na(entry_year)) %>%
+  group_by(from, to, person_class, edge_class) %>%
+  summarise(entry_year = min(entry_year, na.rm = TRUE), .groups = "drop")
+
+edges_export <- edges_top %>%
+  left_join(
+    edge_year_lookup,
+    by = c("from", "to", "person_class", "edge_class")
+  ) %>%
+  select(
+    from,
+    to,
+    person_name,
+    person_class,
+    edge_class,
+    weight,
+    entry_year
+  ) %>%
+  distinct()
+
+nodes_export <- nodes_top %>%
+  mutate(
+    color = V(g_top)$color[match(name, V(g_top)$name)],
+    size = V(g_top)$size[match(name, V(g_top)$name)],
+    label = V(g_top)$label[match(name, V(g_top)$name)]
+  )
+
+layout_export <- data.frame(
+  name = V(g_top)$name,
+  x = lay_top[, 1],
+  y = lay_top[, 2],
+  label_x = label_coords[, 1],
+  label_y = label_coords[, 2],
+  stringsAsFactors = FALSE
+)
+
+plot_window_export <- data.frame(
+  x_min = xlim_use[1],
+  x_max = xlim_use[2],
+  y_min = ylim_use[1],
+  y_max = ylim_use[2]
+)
+
+write_csv(
+  edges_export,
+  file.path(NETWORK_OUTPUT_DIR, "terrestrial_arthropods_network_edges.csv")
+)
+
+write_csv(
+  nodes_export,
+  file.path(NETWORK_OUTPUT_DIR, "terrestrial_arthropods_network_nodes.csv")
+)
+
+write_csv(
+  layout_export,
+  file.path(NETWORK_OUTPUT_DIR, "terrestrial_arthropods_network_layout.csv")
+)
+
+write_csv(
+  plot_window_export,
+  file.path(NETWORK_OUTPUT_DIR, "terrestrial_arthropods_network_plot_window.csv")
+)
+
+cat("\nSaved network animation files:\n")
+cat("  ", file.path(NETWORK_OUTPUT_DIR, "terrestrial_arthropods_network_edges.csv"), "\n", sep = "")
+cat("  ", file.path(NETWORK_OUTPUT_DIR, "terrestrial_arthropods_network_nodes.csv"), "\n", sep = "")
+cat("  ", file.path(NETWORK_OUTPUT_DIR, "terrestrial_arthropods_network_layout.csv"), "\n", sep = "")
+cat("  ", file.path(NETWORK_OUTPUT_DIR, "terrestrial_arthropods_network_plot_window.csv"), "\n", sep = "")

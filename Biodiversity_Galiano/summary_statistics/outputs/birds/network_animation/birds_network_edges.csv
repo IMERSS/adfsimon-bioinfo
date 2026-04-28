@@ -1,0 +1,338 @@
+from,to,person_name,person_class,edge_class,weight,entry_year
+Aziza Cooper,Glaucidium californicum,Aziza Cooper,historical,reported,1,1994
+Galiano Naturalist,Accipiter gentilis,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Accipiter striatus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Actitis macularius,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Aechmophorus occidentalis,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Aegolius acadicus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Agelaius phoeniceus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Aix sponsa,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Anas acuta,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Anas carolinensis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Anas crecca,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Anas platyrhynchos,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Anser albifrons,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Anthus rubescens,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Aquila chrysaetos,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Ardea herodias fannini,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Arenaria interpres,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Arenaria melanocephala,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Asio flammeus,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Astur cooperii,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Aythya affinis,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Aythya collaris,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Aythya marila,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Bombycilla cedrorum,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Brachyramphus marmoratus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Branta canadensis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Bubo virginianus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Bucephala albeola,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Bucephala clangula,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Bucephala islandica,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Buteo jamaicensis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Calidris alpina,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Calidris mauri,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Calidris virgata,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Calypte anna,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Cardellina pusilla,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Cathartes aura,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Catharus guttatus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Catharus ustulatus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Cepphus columba,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Cerorhinca monocerata,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Certhia americana,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Chaetura vauxi,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Charadrius semipalmatus,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Charadrius vociferus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Chen caerulescens,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Chordeiles minor,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Chroicocephalus philadelphia,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Cinclus mexicanus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Circus hudsonius,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Cistothorus palustris,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Clangula hyemalis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Colaptes auratus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Contopus cooperi,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Contopus sordidulus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Corthylio calendula,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Corvus brachyrhynchos caurinus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Corvus corax principalis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Cyanocitta stelleri,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Cygnus buccinator,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Cygnus olor,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Cypseloides niger,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Dendragapus fuliginosus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Dryobates pubescens,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Dryocopus pileatus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Empidonax difficilis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Empidonax hammondii,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Empidonax traillii,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Eremophila alpestris,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Euphagus cyanocephalus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Falco columbarius,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Falco peregrinus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Falco sparverius,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Gallinago delicata,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Gavia immer,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Gavia pacifica,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Gavia stellata,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Geothlypis tolmiei,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Geothlypis trichas,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Haematopus bachmani,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Haemorhous mexicanus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Haemorhous purpureus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Haliaeetus leucocephalus washingtoniensis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Hesperiphona vespertina,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Hirundo rustica erythrogaster,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Histrionicus histrionicus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Ixoreus naevius,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Junco hyemalis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Lanius borealis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Larus argentatus,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Larus brachyrhynchus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Larus californicus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Larus delawarensis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Larus glaucescens,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Larus glaucoides thayeri,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Larus heermanni,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Larus occidentalis,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Leiothlypis celata,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Leuconotopicus villosus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Limnodromus scolopaceus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Lophodytes cucullatus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Loxia curvirostra,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Mareca americana,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Mareca penelope,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Mareca strepera,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Megaceryle alcyon,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Megascops kennicottii,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Melanitta americana,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Melanitta deglandi,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Melanitta perspicillata,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Melospiza georgiana,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Melospiza lincolnii,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Melospiza melodia,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Mergus merganser,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Mergus serrator,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Molothrus ater,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Myadestes townsendi,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Nannopterum auritum,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Pandion haliaetus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Passer domesticus,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Passerculus sandwichensis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Passerella iliaca,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Passerina amoena,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Patagioenas fasciata,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Pelecanus erythrorhynchos,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Petrochelidon pyrrhonota,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Phalaropus lobatus,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Pheucticus melanocephalus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Pipilo maculatus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Piranga ludoviciana,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Podiceps auritus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Podiceps grisegena,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Podiceps nigricollis,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Podilymbus podiceps,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Poecile rufescens,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Progne subis arboricola,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Psaltriparus minimus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Regulus satrapa,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Selasphorus rufus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Setophaga aestiva,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Setophaga coronata auduboni,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Setophaga coronata coronata,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Setophaga nigrescens,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Setophaga townsendi,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Sitta canadensis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Spatula clypeata,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Sphyrapicus nuchalis,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Sphyrapicus ruber,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Spinus pinus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Spinus tristis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Spizella passerina,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Stelgidopteryx serripennis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Sterna hirundo,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Streptopelia decaocto,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Strix varia,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Sturnella neglecta,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Sturnus vulgaris,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Synthliboramphus antiquus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Tachycineta bicolor,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Tachycineta thalassina,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Thryomanes bewickii,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Tringa flavipes,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Tringa melanoleuca,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Troglodytes aedon,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Troglodytes pacificus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Turdus migratorius,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Uria aalge,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Urile pelagicus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Urile penicillatus,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Vireo cassinii,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Vireo huttoni,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Vireo swainsoni,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Xanthocephalus xanthocephalus,Galiano Naturalist,historical,reported,1,2016
+Galiano Naturalist,Zenaida macroura,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Zonotrichia albicollis,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Zonotrichia atricapilla,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Zonotrichia leucophrys,Galiano Naturalist,historical,confirmed,1,2016
+Galiano Naturalist,Zonotrichia querula,Galiano Naturalist,historical,confirmed,1,2016
+Keith Riding,Phalaropus fulicarius,Keith Riding,historical,reported,1,2016
+Nancy Tamblyn,Branta hutchinsii,Nancy Tamblyn,historical,reported,1,2017
+R. Smith,Bonasa umbellus brunnescens,R. Smith,historical,reported,1,1991
+Adam Huggins,Mareca strepera,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Tachycineta bicolor,Adam Huggins,contemporary,confirmed,1,2016
+Adam Jermakow,Lanius borealis,Adam Jermakow,contemporary,confirmed,1,2018
+Andrew Simon,Actitis macularius,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Anas carolinensis,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Anas crecca,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Brachyramphus marmoratus,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Catharus ustulatus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Chordeiles minor,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Dendragapus fuliginosus,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Euphagus cyanocephalus,Andrew Simon,contemporary,confirmed,1,2023
+Andrew Simon,Hirundo rustica erythrogaster,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Hydroprogne caspia,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Junco hyemalis,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Leuconotopicus villosus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Nannopterum auritum,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Sitta canadensis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Spinus tristis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Tachycineta thalassina,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Troglodytes aedon,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Turdus migratorius,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Urile pelagicus,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Vireo huttoni,Andrew Simon,contemporary,confirmed,1,2019
+B. J. Stacey,Bucephala clangula,B. J. Stacey,contemporary,confirmed,1,2012
+B. J. Stacey,Chroicocephalus philadelphia,B. J. Stacey,contemporary,confirmed,1,2012
+B.J. Stacey,Gavia immer,B.J. Stacey,contemporary,confirmed,1,2012
+Bridgit Spencer,Empidonax difficilis,Bridgit Spencer,contemporary,confirmed,1,2015
+Bridgit Spencer,Loxia curvirostra,Bridgit Spencer,contemporary,confirmed,1,2015
+Bridgit Spencer,Pandion haliaetus,Bridgit Spencer,contemporary,confirmed,1,2015
+Bridgit Spencer,Sphyrapicus ruber,Bridgit Spencer,contemporary,confirmed,1,2015
+Burl Jantzen,Dryocopus pileatus,Burl Jantzen,contemporary,confirmed,1,2010
+Cameron Deckert,Buteo jamaicensis,Cameron Deckert,contemporary,confirmed,1,2009
+Cameron Deckert,Melospiza melodia,Cameron Deckert,contemporary,confirmed,1,2010
+Cameron Deckert,Regulus satrapa,Cameron Deckert,contemporary,confirmed,1,2009
+Chad Diakow,Zonotrichia querula,Chad Diakow,contemporary,confirmed,1,2019
+Chessi Miltner,Arenaria melanocephala,Chessi Miltner,contemporary,confirmed,1,2016
+Christian Adler,Columba livia domestica,Christian Adler,contemporary,confirmed,1,2017
+Christopher King,Cinclus mexicanus,Christopher King,contemporary,confirmed,1,2017
+Dan MacNeal,Pipilo maculatus,Dan MacNeal,contemporary,confirmed,1,2013
+Dan MacNeal,Piranga ludoviciana,Dan MacNeal,contemporary,confirmed,1,2013
+Ellyne Geurts,Clangula hyemalis,Ellyne Geurts,contemporary,confirmed,1,2022
+Jackson W.F. Chu,Larus glaucoides thayeri,Jackson W.F. Chu,contemporary,confirmed,1,2022
+Jen Kovach,Cygnus buccinator,Jen Kovach,contemporary,confirmed,1,2018
+Joan Septembre,Calidris alpina,Joan Septembre,contemporary,confirmed,1,2019
+Karolle Wall,Astur cooperii,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Cathartes aura,Karolle Wall,contemporary,confirmed,1,2006
+Karolle Wall,Megaceryle alcyon,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Strix varia,Karolle Wall,contemporary,confirmed,1,2010
+Keith Valentine,Melanitta perspicillata,Keith Valentine,contemporary,confirmed,1,2016
+Kevin Toomer,Bubo virginianus,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer,Circus hudsonius,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer,Mareca americana,Kevin Toomer,contemporary,confirmed,1,2017
+Kevin Toomer,Sialia currucoides,Kevin Toomer,contemporary,new,1,2023
+Kris Krüg,Anas platyrhynchos,Kris Krüg,contemporary,confirmed,1,2016
+Kris Krüg,Bucephala islandica,Kris Krüg,contemporary,confirmed,1,2016
+Kristian Sigvardsen,Corthylio calendula,Kristian Sigvardsen,contemporary,confirmed,1,2016
+Kristian Sigvardsen,Dryobates pubescens,Kristian Sigvardsen,contemporary,confirmed,1,2016
+Kristian Sigvardsen,Leiothlypis celata,Kristian Sigvardsen,contemporary,confirmed,1,2016
+Lauren Magner,Cistothorus palustris,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Colaptes auratus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Corvus corax principalis,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Spizella passerina,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Vireo swainsoni,Lauren Magner,contemporary,confirmed,1,2015
+Liam Steele,Contopus sordidulus,Liam Steele,contemporary,confirmed,1,2020
+Liam Steele,Podiceps grisegena,Liam Steele,contemporary,confirmed,1,2022
+Mark Webber,Pheucticus ludovicianus,Mark Webber,contemporary,new,1,2020
+Michael Hoebel,Agelaius phoeniceus,Michael Hoebel,contemporary,confirmed,1,2010
+Michael Hoebel,Anser albifrons,Michael Hoebel,contemporary,confirmed,1,2014
+Michael Hoebel,Antigone canadensis,Michael Hoebel,contemporary,new,1,2021
+Michael Hoebel,Aythya collaris,Michael Hoebel,contemporary,confirmed,1,2011
+Michael Hoebel,Bombycilla cedrorum,Michael Hoebel,contemporary,confirmed,1,2014
+Michael Hoebel,Bucephala albeola,Michael Hoebel,contemporary,confirmed,1,2010
+Michael Hoebel,Calidris virgata,Michael Hoebel,contemporary,confirmed,1,2014
+Michael Hoebel,Calypte anna,Michael Hoebel,contemporary,confirmed,1,2014
+Michael Hoebel,Cardellina pusilla,Michael Hoebel,contemporary,confirmed,1,2015
+Michael Hoebel,Catharus guttatus,Michael Hoebel,contemporary,confirmed,1,2013
+Michael Hoebel,Cerorhinca monocerata,Michael Hoebel,contemporary,confirmed,1,2017
+Michael Hoebel,Contopus cooperi,Michael Hoebel,contemporary,confirmed,1,2012
+Michael Hoebel,Cyanocitta stelleri,Michael Hoebel,contemporary,confirmed,1,2015
+Michael Hoebel,Empidonax traillii,Michael Hoebel,contemporary,confirmed,1,2015
+Michael Hoebel,Eremophila alpestris,Michael Hoebel,contemporary,confirmed,1,2017
+Michael Hoebel,Falco peregrinus,Michael Hoebel,contemporary,confirmed,1,2009
+Michael Hoebel,Geothlypis tolmiei,Michael Hoebel,contemporary,confirmed,1,2013
+Michael Hoebel,Geothlypis trichas,Michael Hoebel,contemporary,confirmed,1,2011
+Michael Hoebel,Haemorhous purpureus,Michael Hoebel,contemporary,confirmed,1,2009
+Michael Hoebel,Ixoreus naevius,Michael Hoebel,contemporary,confirmed,1,2015
+Michael Hoebel,Larus brachyrhynchus,Michael Hoebel,contemporary,confirmed,1,2011
+Michael Hoebel,Larus delawarensis,Michael Hoebel,contemporary,confirmed,1,2010
+Michael Hoebel,Limnodromus scolopaceus,Michael Hoebel,contemporary,confirmed,1,2013
+Michael Hoebel,Lophodytes cucullatus,Michael Hoebel,contemporary,confirmed,1,2014
+Michael Hoebel,Melanitta deglandi,Michael Hoebel,contemporary,confirmed,1,2017
+Michael Hoebel,Molothrus ater,Michael Hoebel,contemporary,confirmed,1,2015
+Michael Hoebel,Myadestes townsendi,Michael Hoebel,contemporary,confirmed,1,2010
+Michael Hoebel,Passerculus sandwichensis,Michael Hoebel,contemporary,confirmed,1,2015
+Michael Hoebel,Passerella iliaca,Michael Hoebel,contemporary,confirmed,1,2014
+Michael Hoebel,Patagioenas fasciata,Michael Hoebel,contemporary,confirmed,1,2007
+Michael Hoebel,Pelecanus erythrorhynchos,Michael Hoebel,contemporary,confirmed,1,2016
+Michael Hoebel,Petrochelidon pyrrhonota,Michael Hoebel,contemporary,confirmed,1,2013
+Michael Hoebel,Pica hudsonia,Michael Hoebel,contemporary,new,1,2020
+Michael Hoebel,Podiceps auritus,Michael Hoebel,contemporary,confirmed,1,2014
+Michael Hoebel,Psaltriparus minimus,Michael Hoebel,contemporary,confirmed,1,2013
+Michael Hoebel,Setophaga coronata coronata,Michael Hoebel,contemporary,confirmed,1,2011
+Michael Hoebel,Setophaga nigrescens,Michael Hoebel,contemporary,confirmed,1,2014
+Michael Hoebel,Setophaga townsendi,Michael Hoebel,contemporary,confirmed,1,2014
+Michael Hoebel,Spinus pinus,Michael Hoebel,contemporary,confirmed,1,2010
+Michael Hoebel,Stelgidopteryx serripennis,Michael Hoebel,contemporary,confirmed,1,2011
+Michael Hoebel,Sturnus vulgaris,Michael Hoebel,contemporary,confirmed,1,2008
+Michael Hoebel,Thryomanes bewickii,Michael Hoebel,contemporary,confirmed,1,2015
+Michael Hoebel,Troglodytes pacificus,Michael Hoebel,contemporary,confirmed,1,2010
+Michael Hoebel,Urile penicillatus,Michael Hoebel,contemporary,confirmed,1,2012
+Michael Hoebel,Vireo cassinii,Michael Hoebel,contemporary,confirmed,1,2015
+Michael Hoebel,Zenaida macroura,Michael Hoebel,contemporary,confirmed,1,2011
+Michael Hoebel,Zonotrichia albicollis,Michael Hoebel,contemporary,confirmed,1,2019
+Peter Taylor,Progne subis arboricola,Peter Taylor,contemporary,confirmed,1,2015
+Peter Taylor,Zonotrichia leucophrys,Peter Taylor,contemporary,confirmed,1,2015
+Peter Thompson & Michael Hoebel,Falco sparverius,Peter Thompson & Michael Hoebel,contemporary,confirmed,1,2019
+Richard Harrigan,Empidonax hammondii,Richard Harrigan,contemporary,confirmed,1,2023
+Romayne Galager,Rallus limicola,Romayne Galager,contemporary,new,1,2016
+Sarah Tweedale,Accipiter striatus,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Charadrius vociferus,Sarah Tweedale,contemporary,confirmed,1,2015
+Sarah Tweedale,Haemorhous mexicanus,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Hesperiphona vespertina,Sarah Tweedale,contemporary,confirmed,1,2015
+Sarah Tweedale,Histrionicus histrionicus,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Mergus merganser,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Mergus serrator,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Pheucticus melanocephalus,Sarah Tweedale,contemporary,confirmed,1,2015
+Sarah Tweedale,Setophaga coronata auduboni,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Streptopelia decaocto,Sarah Tweedale,contemporary,confirmed,1,2018
+Sarah Tweedale,Tringa flavipes,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Tyto furcata pratincola,Sarah Tweedale,contemporary,new,1,2017
+Sarah Tweedale,Zonotrichia atricapilla,Sarah Tweedale,contemporary,confirmed,1,2016
+Sean Vanderluit,Anthus rubescens,Sean Vanderluit,contemporary,confirmed,1,2024
+Sean Vanderluit,Salpinctes obsoletus,Sean Vanderluit,contemporary,new,1,2024
+Shera Street,Ardea herodias fannini,Shera Street,contemporary,confirmed,1,2009
+Shera Street,Branta canadensis,Shera Street,contemporary,confirmed,1,2007
+Shera Street,Selasphorus rufus,Shera Street,contemporary,confirmed,1,2003
+Sophia Silverman,Tringa melanoleuca,Sophia Silverman,contemporary,confirmed,1,2025
+Steph Brulot-Sawchyn,Melospiza lincolnii,Steph Brulot-Sawchyn,contemporary,confirmed,1,2024
+Steve Ansell,Larus glaucescens,Steve Ansell,contemporary,confirmed,1,2008
+Steve Murray,Cepphus columba,Steve Murray,contemporary,confirmed,1,2014
+Tanya Inglis,Aegolius acadicus,Tanya Inglis,contemporary,confirmed,1,2020
+Tobin Sparling (he/him),Spatula clypeata,Tobin Sparling (he/him),contemporary,confirmed,1,2024
+W. Cartwright,Synthliboramphus antiquus,W. Cartwright,contemporary,confirmed,1,2019
+Zeke Gilmore,Setophaga aestiva,Zeke Gilmore,contemporary,confirmed,1,2023
+blakedanis,Podilymbus podiceps,blakedanis,contemporary,confirmed,1,2020
+bobmcd’,Gavia pacifica,bobmcd’,contemporary,confirmed,1,2015
+bobmcd’,Larus californicus,bobmcd’,contemporary,confirmed,1,2017
+bobmcd’,Uria aalge,bobmcd’,contemporary,confirmed,1,2015
+cmac79’,Aix sponsa,cmac79’,contemporary,confirmed,1,2018
+hdcooper,Haematopus bachmani,hdcooper,contemporary,confirmed,1,2008
+lesfreck,Certhia americana,lesfreck,contemporary,confirmed,1,2011
+lesfreck,Corvus brachyrhynchos caurinus,lesfreck,contemporary,confirmed,1,2012
+lesfreck,Haliaeetus leucocephalus washingtoniensis,lesfreck,contemporary,confirmed,1,2010
+lesfreck,Poecile rufescens,lesfreck,contemporary,confirmed,1,2011
+lornasdr,Sturnella neglecta,lornasdr,contemporary,confirmed,1,2022
+tanageraz,Melanerpes erythrocephalus,tanageraz,contemporary,new,1,2024

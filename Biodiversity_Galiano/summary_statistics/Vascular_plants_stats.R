@@ -808,7 +808,9 @@ library(viridis)
 ## USER SETTINGS
 ## ------------------------------------------------------------
 
-OUTPUT_DIR <- "outputs"
+BASE_OUTPUT_DIR <- "outputs"
+NETWORK_GROUP <- "vascular_plants"
+OUTPUT_DIR <- file.path(BASE_OUTPUT_DIR, NETWORK_GROUP)
 if (!dir.exists(OUTPUT_DIR)) dir.create(OUTPUT_DIR, recursive = TRUE)
 
 BASE_FONT_FAMILY <- "sans"
@@ -1066,6 +1068,9 @@ dat <- df %>%
 if (nrow(dat) == 0) {
   stop("No usable records found after normalization.", call. = FALSE)
 }
+
+write_csv(dat, file.path(OUTPUT_DIR, "vascular_plants_central_accounting_table.csv"))
+cat("\nSaved file: ", file.path(OUTPUT_DIR, "vascular_plants_central_accounting_table.csv"), "\n", sep = "")
 
 ## ------------------------------------------------------------
 ## DEFINE RECENT WINDOW
@@ -1804,3 +1809,91 @@ cat(
   "\n",
   sep = ""
 )
+## ------------------------------------------------------------
+## NETWORK EXPORTS FOR ANIMATION
+## Same output structure as the marine animal script
+## ------------------------------------------------------------
+
+NETWORK_OUTPUT_DIR <- file.path(OUTPUT_DIR, "network_animation")
+if (!dir.exists(NETWORK_OUTPUT_DIR)) {
+  dir.create(NETWORK_OUTPUT_DIR, recursive = TRUE)
+}
+
+historical_edge_years <- dat %>%
+  filter(status_std %in% c("reported", "confirmed"), !is.na(Collector_std)) %>%
+  transmute(
+    from = Collector_std,
+    to = Taxon_std,
+    person_class = "historical",
+    edge_class = status_std,
+    entry_year = historical_year
+  )
+
+contemporary_edge_years <- dat %>%
+  filter(status_std %in% c("new", "confirmed"), !is.na(Observer_std)) %>%
+  transmute(
+    from = Observer_std,
+    to = Taxon_std,
+    person_class = "contemporary",
+    edge_class = status_std,
+    entry_year = case_when(
+      status_std == "confirmed" ~ observed_year,
+      status_std == "new" ~ new_year_std,
+      TRUE ~ NA_integer_
+    )
+  )
+
+edge_year_lookup <- bind_rows(historical_edge_years, contemporary_edge_years) %>%
+  filter(!is.na(entry_year)) %>%
+  group_by(from, to, person_class, edge_class) %>%
+  summarise(entry_year = min(entry_year, na.rm = TRUE), .groups = "drop")
+
+edges_export <- edges_top %>%
+  left_join(
+    edge_year_lookup,
+    by = c("from", "to", "person_class", "edge_class")
+  ) %>%
+  select(
+    from,
+    to,
+    person_name,
+    person_class,
+    edge_class,
+    weight,
+    entry_year
+  ) %>%
+  distinct()
+
+nodes_export <- nodes_top %>%
+  mutate(
+    color = V(g_top)$color[match(name, V(g_top)$name)],
+    size = V(g_top)$size[match(name, V(g_top)$name)],
+    label = V(g_top)$label[match(name, V(g_top)$name)]
+  )
+
+layout_export <- data.frame(
+  name = V(g_top)$name,
+  x = lay_top[, 1],
+  y = lay_top[, 2],
+  label_x = label_coords[, 1],
+  label_y = label_coords[, 2],
+  stringsAsFactors = FALSE
+)
+
+plot_window_export <- data.frame(
+  x_min = xlim_use[1],
+  x_max = xlim_use[2],
+  y_min = ylim_use[1],
+  y_max = ylim_use[2]
+)
+
+write_csv(edges_export, file.path(NETWORK_OUTPUT_DIR, "vascular_plants_network_edges.csv"))
+write_csv(nodes_export, file.path(NETWORK_OUTPUT_DIR, "vascular_plants_network_nodes.csv"))
+write_csv(layout_export, file.path(NETWORK_OUTPUT_DIR, "vascular_plants_network_layout.csv"))
+write_csv(plot_window_export, file.path(NETWORK_OUTPUT_DIR, "vascular_plants_network_plot_window.csv"))
+
+cat("\nSaved network animation files:\n")
+cat("  ", file.path(NETWORK_OUTPUT_DIR, "vascular_plants_network_edges.csv"), "\n", sep = "")
+cat("  ", file.path(NETWORK_OUTPUT_DIR, "vascular_plants_network_nodes.csv"), "\n", sep = "")
+cat("  ", file.path(NETWORK_OUTPUT_DIR, "vascular_plants_network_layout.csv"), "\n", sep = "")
+cat("  ", file.path(NETWORK_OUTPUT_DIR, "vascular_plants_network_plot_window.csv"), "\n", sep = "")

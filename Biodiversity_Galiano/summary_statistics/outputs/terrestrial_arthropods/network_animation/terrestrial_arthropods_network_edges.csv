@@ -1,0 +1,977 @@
+from,to,person_name,person_class,edge_class,weight,entry_year
+C.-K. Chan,Amphorophora parviflori,C.-K. Chan,historical,reported,1,2000
+C.-K. Chan,Aphis hederae,C.-K. Chan,historical,reported,1,2000
+C.-K. Chan,Aphis holodisci,C.-K. Chan,historical,reported,1,2000
+C.-K. Chan,Aulacorthum pterinigrum,C.-K. Chan,historical,reported,1,2000
+C.-K. Chan,Aulacorthum solani,C.-K. Chan,historical,reported,1,2000
+C.-K. Chan,Ericaphis fimbriata,C.-K. Chan,historical,reported,1,2000
+C.-K. Chan,Ericaphis wakibae,C.-K. Chan,historical,reported,1,2006
+C.-K. Chan,Hyadaphis foeniculi,C.-K. Chan,historical,reported,1,2000
+C.-K. Chan,Illinoia crystleae,C.-K. Chan,historical,reported,1,2000
+C.-K. Chan,Illinoia maxima,C.-K. Chan,historical,reported,1,2000
+Chris G. Ratzlaff,Eumenes crucifera,Chris G. Ratzlaff,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Abia americana,Geoffrey G.E. Scudder,historical,reported,1,1977
+Geoffrey G.E. Scudder,Acantholomidea porosa,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Acantholyda maculiventris,Geoffrey G.E. Scudder,historical,reported,1,1974
+Geoffrey G.E. Scudder,Acilius abbreviatus,Geoffrey G.E. Scudder,historical,reported,1,1987
+Geoffrey G.E. Scudder,Aedes aloponotum,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Aedes campestris,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Aedes caspius dorsalis,Geoffrey G.E. Scudder,historical,reported,1,1990
+Geoffrey G.E. Scudder,Aedes fitchii,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Aedes sierrensis,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Aedes togoi,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Aeshna umbrosa,Geoffrey G.E. Scudder,historical,confirmed,1,1975
+Geoffrey G.E. Scudder,Agabus anthracinus,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Agonum limbatum,Geoffrey G.E. Scudder,historical,reported,1,1985
+Geoffrey G.E. Scudder,Agulla assimilis,Geoffrey G.E. Scudder,historical,confirmed,1,1989
+Geoffrey G.E. Scudder,Agulla herbsti,Geoffrey G.E. Scudder,historical,reported,1,1974
+Geoffrey G.E. Scudder,Alydus calcaratus,Geoffrey G.E. Scudder,historical,confirmed,1,1970
+Geoffrey G.E. Scudder,Alydus eurinus,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Amblysellus grex,Geoffrey G.E. Scudder,historical,reported,1,1986
+Geoffrey G.E. Scudder,Anacaena lutescens,Geoffrey G.E. Scudder,historical,reported,1,1972
+Geoffrey G.E. Scudder,Andrena angustella,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Andrena chlorura,Geoffrey G.E. Scudder,historical,reported,1,1982
+Geoffrey G.E. Scudder,Andrena frigida,Geoffrey G.E. Scudder,historical,confirmed,1,1981
+Geoffrey G.E. Scudder,Andrena prunorum,Geoffrey G.E. Scudder,historical,confirmed,1,1981
+Geoffrey G.E. Scudder,Anisepyris occidentalis,Geoffrey G.E. Scudder,historical,reported,1,1986
+Geoffrey G.E. Scudder,Anoscopus albiger,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Anthaxia retifer,Geoffrey G.E. Scudder,historical,confirmed,1,1978
+Geoffrey G.E. Scudder,Anthocoris antevolens,Geoffrey G.E. Scudder,historical,reported,1,1982
+Geoffrey G.E. Scudder,Anyphaena aperta,Geoffrey G.E. Scudder,historical,confirmed,1,1983
+Geoffrey G.E. Scudder,Aporus luxus,Geoffrey G.E. Scudder,historical,confirmed,1,1974
+Geoffrey G.E. Scudder,Aradus fuscomaculatus,Geoffrey G.E. Scudder,historical,reported,1,1971
+Geoffrey G.E. Scudder,Aradus heidemanni,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Asciodema obsoleta,Geoffrey G.E. Scudder,historical,reported,1,1989
+Geoffrey G.E. Scudder,Asemum striatum,Geoffrey G.E. Scudder,historical,reported,1,1983
+Geoffrey G.E. Scudder,Atomaria subdentata,Geoffrey G.E. Scudder,historical,reported,1,1974
+Geoffrey G.E. Scudder,Atractotomus cooperi,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Banasa dimidiata,Geoffrey G.E. Scudder,historical,confirmed,1,1977
+Geoffrey G.E. Scudder,Banasa sordida,Geoffrey G.E. Scudder,historical,confirmed,1,1993
+Geoffrey G.E. Scudder,Barce fraterna,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Bareogonalos canadensis,Geoffrey G.E. Scudder,historical,confirmed,1,1988
+Geoffrey G.E. Scudder,Bembidion connivens,Geoffrey G.E. Scudder,historical,reported,1,1979
+Geoffrey G.E. Scudder,Bembidion versicolor,Geoffrey G.E. Scudder,historical,reported,1,1982
+Geoffrey G.E. Scudder,Bembix americana,Geoffrey G.E. Scudder,historical,confirmed,1,1986
+Geoffrey G.E. Scudder,Bethylus decipiens,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Billaea sp.,Geoffrey G.E. Scudder,historical,reported,1,1979
+Geoffrey G.E. Scudder,Blepharidopterus angulatus,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Blepharidopterus provancheri,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Blera nigra,Geoffrey G.E. Scudder,historical,reported,1,1979
+Geoffrey G.E. Scudder,Bombus fervidus,Geoffrey G.E. Scudder,historical,reported,1,1985
+Geoffrey G.E. Scudder,Bombus flavifrons,Geoffrey G.E. Scudder,historical,confirmed,1,1970
+Geoffrey G.E. Scudder,Bombus insularis,Geoffrey G.E. Scudder,historical,reported,1,1975
+Geoffrey G.E. Scudder,Bombus melanopygus,Geoffrey G.E. Scudder,historical,confirmed,1,1978
+Geoffrey G.E. Scudder,Bombus mixtus,Geoffrey G.E. Scudder,historical,confirmed,1,1973
+Geoffrey G.E. Scudder,Bombus occidentalis,Geoffrey G.E. Scudder,historical,reported,1,1974
+Geoffrey G.E. Scudder,Bombus suckleyi,Geoffrey G.E. Scudder,historical,reported,1,1975
+Geoffrey G.E. Scudder,Bombus vancouverensis vancouverensis,Geoffrey G.E. Scudder,historical,confirmed,1,1987
+Geoffrey G.E. Scudder,Buprestis langii,Geoffrey G.E. Scudder,historical,reported,1,1976
+Geoffrey G.E. Scudder,Callicorixa vulnerata,Geoffrey G.E. Scudder,historical,reported,1,1972
+Geoffrey G.E. Scudder,Calliphora terraenovae,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Calliphora vomitoria,Geoffrey G.E. Scudder,historical,confirmed,1,1986
+Geoffrey G.E. Scudder,Callobius severus,Geoffrey G.E. Scudder,historical,confirmed,1,1984
+Geoffrey G.E. Scudder,Camponotus vicinus,Geoffrey G.E. Scudder,historical,confirmed,1,1973
+Geoffrey G.E. Scudder,Campyloneura virgula,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Centrodera spurca,Geoffrey G.E. Scudder,historical,confirmed,1,1986
+Geoffrey G.E. Scudder,Ceraleptus pacificus,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Ceratagallia californica,Geoffrey G.E. Scudder,historical,reported,1,1989
+Geoffrey G.E. Scudder,Ceratocapsus apicatus,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Ceratocapsus cunealis,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Ceratocapsus denticulatus,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Ceruchus striatus,Geoffrey G.E. Scudder,historical,reported,1,1983
+Geoffrey G.E. Scudder,Chlorochroa ligata,Geoffrey G.E. Scudder,historical,confirmed,1,1975
+Geoffrey G.E. Scudder,Chlorochroa rossiana,Geoffrey G.E. Scudder,historical,confirmed,1,1970
+Geoffrey G.E. Scudder,Chrysis nitidula,Geoffrey G.E. Scudder,historical,confirmed,1,1986
+Geoffrey G.E. Scudder,Chrysopa nigricornis,Geoffrey G.E. Scudder,historical,reported,1,1987
+Geoffrey G.E. Scudder,Chrysopa oculata,Geoffrey G.E. Scudder,historical,confirmed,1,1989
+Geoffrey G.E. Scudder,Chrysoperla carnea complex,Geoffrey G.E. Scudder,historical,confirmed,1,1987
+Geoffrey G.E. Scudder,Chrysops proclivis,Geoffrey G.E. Scudder,historical,reported,1,1979
+Geoffrey G.E. Scudder,Clinidium calcaratum,Geoffrey G.E. Scudder,historical,confirmed,1,1976
+Geoffrey G.E. Scudder,Clytus planifrons,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Coccinella trifasciata,Geoffrey G.E. Scudder,historical,reported,1,1990
+Geoffrey G.E. Scudder,Colladonus arctostaphyli,Geoffrey G.E. Scudder,historical,reported,1,1980
+Geoffrey G.E. Scudder,Colladonus montanus reductus,Geoffrey G.E. Scudder,historical,reported,1,1990
+Geoffrey G.E. Scudder,Colymbetes densus,Geoffrey G.E. Scudder,historical,reported,1,NA
+Geoffrey G.E. Scudder,Compsidolon salicellum,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Conocephalus fasciatus,Geoffrey G.E. Scudder,historical,confirmed,1,1986
+Geoffrey G.E. Scudder,Corimelaena pulicaria,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Coriomeris insularis,Geoffrey G.E. Scudder,historical,reported,1,1970
+Geoffrey G.E. Scudder,Corisella inscripta,Geoffrey G.E. Scudder,historical,reported,1,1982
+Geoffrey G.E. Scudder,Cosmopepla intergressa,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Criorhina nigripes,Geoffrey G.E. Scudder,historical,reported,1,1986
+Geoffrey G.E. Scudder,Culex tarsalis,Geoffrey G.E. Scudder,historical,reported,1,1971
+Geoffrey G.E. Scudder,Culiseta incidens,Geoffrey G.E. Scudder,historical,reported,1,1983
+Geoffrey G.E. Scudder,Cybaeus morosus,Geoffrey G.E. Scudder,historical,reported,1,1991
+Geoffrey G.E. Scudder,Cymus luridus,Geoffrey G.E. Scudder,historical,reported,1,1974
+Geoffrey G.E. Scudder,Delphacodes lutulentella,Geoffrey G.E. Scudder,historical,reported,1,1989
+Geoffrey G.E. Scudder,Deltocephalus fuscinervosus,Geoffrey G.E. Scudder,historical,reported,1,1986
+Geoffrey G.E. Scudder,Deltocephalus vanduzei,Geoffrey G.E. Scudder,historical,reported,1,1986
+Geoffrey G.E. Scudder,Deltocephalus vanfus,Geoffrey G.E. Scudder,historical,reported,1,1990
+Geoffrey G.E. Scudder,Dendroctonus pseudotsugae,Geoffrey G.E. Scudder,historical,reported,1,1971
+Geoffrey G.E. Scudder,Deraeocoris brevis,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Deraeocoris incertus,Geoffrey G.E. Scudder,historical,reported,1,1973
+Geoffrey G.E. Scudder,Deraeocoris rubroclarus,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Desmopachria convexa,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Dicentrus bluthneri,Geoffrey G.E. Scudder,historical,confirmed,1,1971
+Geoffrey G.E. Scudder,Dicyphus discrepans,Geoffrey G.E. Scudder,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Dikraneura absenta,Geoffrey G.E. Scudder,historical,reported,1,1989
+Geoffrey G.E. Scudder,Dikraneura rufula,Geoffrey G.E. Scudder,historical,reported,1,1990
+Geoffrey G.E. Scudder,Dinomus laetus,Geoffrey G.E. Scudder,historical,confirmed,1,1977
+Geoffrey G.E. Scudder,Dolerus nauticus,Geoffrey G.E. Scudder,historical,reported,1,1976
+Geoffrey G.E. Scudder,Dolichovespula arenaria,Geoffrey G.E. Scudder,historical,confirmed,1,1987
+Geoffrey G.E. Scudder,Dolichovespula maculata,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Dolichovespula norvegicoides,Geoffrey G.E. Scudder,historical,confirmed,1,1975
+Geoffrey G.E. Scudder,Elaphropus parvulus,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Elasmostethus cruciatus,Geoffrey G.E. Scudder,historical,confirmed,1,1983
+Geoffrey G.E. Scudder,Elasmucha lateralis,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Emblethis vicarius,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Empicoris pilosus,Geoffrey G.E. Scudder,historical,reported,1,1983
+Geoffrey G.E. Scudder,Empicoris rubromaculatus,Geoffrey G.E. Scudder,historical,reported,1,1973
+Geoffrey G.E. Scudder,Empicoris vagabundus,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Enicospilus sp.,Geoffrey G.E. Scudder,historical,confirmed,1,1986
+Geoffrey G.E. Scudder,Enoclerus schaefferi,Geoffrey G.E. Scudder,historical,confirmed,1,1980
+Geoffrey G.E. Scudder,Ephialtes sp.,Geoffrey G.E. Scudder,historical,reported,1,1976
+Geoffrey G.E. Scudder,Ephuta sp.,Geoffrey G.E. Scudder,historical,reported,1,1983
+Geoffrey G.E. Scudder,Episyron sp.,Geoffrey G.E. Scudder,historical,reported,1,1979
+Geoffrey G.E. Scudder,Eremocoris elegantulus sp. nov.,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Eremocoris obscurus,Geoffrey G.E. Scudder,historical,reported,1,1974
+Geoffrey G.E. Scudder,Eremocoris semicinctus,Geoffrey G.E. Scudder,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Eriocampa ovata,Geoffrey G.E. Scudder,historical,reported,1,1983
+Geoffrey G.E. Scudder,Eristalis anthophorina,Geoffrey G.E. Scudder,historical,confirmed,1,1983
+Geoffrey G.E. Scudder,Eristalis tenax,Geoffrey G.E. Scudder,historical,confirmed,1,1980
+Geoffrey G.E. Scudder,Eronyxa pallida,Geoffrey G.E. Scudder,historical,confirmed,1,1986
+Geoffrey G.E. Scudder,Eudioctria sackeni,Geoffrey G.E. Scudder,historical,confirmed,1,1986
+Geoffrey G.E. Scudder,Eupeodes volucris,Geoffrey G.E. Scudder,historical,confirmed,1,1985
+Geoffrey G.E. Scudder,Eurygaster alternata,Geoffrey G.E. Scudder,historical,confirmed,1,1980
+Geoffrey G.E. Scudder,Eurygaster amerinda,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Euschistus conspersus,Geoffrey G.E. Scudder,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Euschistus servus,Geoffrey G.E. Scudder,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Eutrichapion cavifrons,Geoffrey G.E. Scudder,historical,reported,1,1979
+Geoffrey G.E. Scudder,Ferdinandea croesus,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Gastrodes pacificus,Geoffrey G.E. Scudder,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Geocoris bullatus,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Geomyza lurida,Geoffrey G.E. Scudder,historical,reported,1,1990
+Geoffrey G.E. Scudder,Gerris buenoi,Geoffrey G.E. Scudder,historical,reported,1,1982
+Geoffrey G.E. Scudder,Gerris incognitus,Geoffrey G.E. Scudder,historical,reported,1,1971
+Geoffrey G.E. Scudder,Gerris incurvatus,Geoffrey G.E. Scudder,historical,reported,1,1985
+Geoffrey G.E. Scudder,Gerris pingreensis,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Goniozus sp.,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Grammoptera subargentata,Geoffrey G.E. Scudder,historical,reported,1,1977
+Geoffrey G.E. Scudder,Gryllus pennsylvanicus,Geoffrey G.E. Scudder,historical,confirmed,1,1979
+Geoffrey G.E. Scudder,Gyrinus picipes,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Hadromyia crawfordi,Geoffrey G.E. Scudder,historical,reported,1,1980
+Geoffrey G.E. Scudder,Hadromyia pulchra,Geoffrey G.E. Scudder,historical,reported,1,1987
+Geoffrey G.E. Scudder,Harpalus cordifer,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Helophorus lacustris,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Helophorus ledatus,Geoffrey G.E. Scudder,historical,reported,1,1975
+Geoffrey G.E. Scudder,Hemerobius bistrigatus,Geoffrey G.E. Scudder,historical,reported,1,1977
+Geoffrey G.E. Scudder,Hemerobius discretus,Geoffrey G.E. Scudder,historical,reported,1,1982
+Geoffrey G.E. Scudder,Hemerobius humulinus,Geoffrey G.E. Scudder,historical,reported,1,1980
+Geoffrey G.E. Scudder,Hemerobius kokaneeanus,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Hemerobius ovalis,Geoffrey G.E. Scudder,historical,reported,1,1977
+Geoffrey G.E. Scudder,Hemerobius pacificus,Geoffrey G.E. Scudder,historical,reported,1,1990
+Geoffrey G.E. Scudder,Hemerobius pinidumus,Geoffrey G.E. Scudder,historical,reported,1,1982
+Geoffrey G.E. Scudder,Hemerobius stigma,Geoffrey G.E. Scudder,historical,confirmed,1,1982
+Geoffrey G.E. Scudder,Hemipenthes sinuosa,Geoffrey G.E. Scudder,historical,confirmed,1,1983
+Geoffrey G.E. Scudder,Hesperocorixa atopodonta,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Hesperocorixa laevigata,Geoffrey G.E. Scudder,historical,reported,1,1982
+Geoffrey G.E. Scudder,Hesperocorixa vulgaris,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Hippodamia sp.,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Holcostethus limbolarius,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Holopleura marginata,Geoffrey G.E. Scudder,historical,reported,1,1977
+Geoffrey G.E. Scudder,Homaemus aeneifrons consors,Geoffrey G.E. Scudder,historical,reported,1,2019
+Geoffrey G.E. Scudder,Hybodera tuberculata,Geoffrey G.E. Scudder,historical,reported,1,1971
+Geoffrey G.E. Scudder,Hybomitra affinis,Geoffrey G.E. Scudder,historical,reported,1,1975
+Geoffrey G.E. Scudder,Hybomitra astuta,Geoffrey G.E. Scudder,historical,reported,1,1973
+Geoffrey G.E. Scudder,Hybomitra atrobasis,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Hybomitra californica,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Hybomitra captonis,Geoffrey G.E. Scudder,historical,reported,1,1981
+Geoffrey G.E. Scudder,Hybomitra epistates,Geoffrey G.E. Scudder,historical,reported,1,1978
+Geoffrey G.E. Scudder,Hydroporus longiusculus,Geoffrey G.E. Scudder,historical,reported,1,1975
+Geoffrey G.E. Scudder,Hydroporus striola,Geoffrey G.E. Scudder,historical,reported,1,1984
+Geoffrey G.E. Scudder,Hylurgops porosus,Geoffrey G.E. Scudder,historical,reported,1,1972
+Geoffrey G.E. Scudder,Hyperaspis postica,Geoffrey G.E. Scudder,historical,reported,1,1990
+Geoffrey G.E. Scudder,Hystricia abrupta,Geoffrey G.E. Scudder,historical,confirmed,1,1980
+Geoffrey G.E. Scudder,Idiocerus iodes,Geoffrey G.E. Scudder,historical,reported,1,1983
+Geoffrey G.E. Scudder,Ischnura erratica,Geoffrey G.E. Scudder,historical,reported,1,1977
+Geoffrey G.E. Scudder,Isomira comstocki,Geoffrey G.E. Scudder,historical,confirmed,1,1991
+Geoffrey G.E. Scudder,Kleidocerys resedae,Geoffrey G.E. Scudder,historical,confirmed,1,1969
+Geoffrey G.E. Scudder,Laphria ventralis,Geoffrey G.E. Scudder,historical,confirmed,1,1983
+Geoffrey G.E. Scudder,Lasius pallitarsis,Geoffrey G.E. Scudder,historical,confirmed,1,1973
+Geoffrey G.E. Scudder,Lepturopsis dolorosa,Geoffrey G.E. Scudder,historical,confirmed,1,1991
+Geoffrey G.E. Scudder,Lestes congener,Geoffrey G.E. Scudder,historical,confirmed,1,1984
+Geoffrey G.E. Scudder,Lopus decolor,Geoffrey G.E. Scudder,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Melanoplus sanguinipes,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Melanostoma mellinum,Geoffrey G.E. Scudder,historical,confirmed,1,1983
+Geoffrey G.E. Scudder,Mulsantina picta,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Myrmecophilus oregonensis,Geoffrey G.E. Scudder,historical,confirmed,1,1998
+Geoffrey G.E. Scudder,Necrophilus hydrophiloides,Geoffrey G.E. Scudder,historical,confirmed,1,1979
+Geoffrey G.E. Scudder,Necydalis laevicollis,Geoffrey G.E. Scudder,historical,confirmed,1,1984
+Geoffrey G.E. Scudder,Neomochtherus willistoni,Geoffrey G.E. Scudder,historical,confirmed,1,1983
+Geoffrey G.E. Scudder,Neoneides muticus,Geoffrey G.E. Scudder,historical,confirmed,1,1970
+Geoffrey G.E. Scudder,Omus dejeanii,Geoffrey G.E. Scudder,historical,confirmed,1,1994
+Geoffrey G.E. Scudder,Ophion sp.,Geoffrey G.E. Scudder,historical,confirmed,1,1984
+Geoffrey G.E. Scudder,Opsimus quadrilineatus,Geoffrey G.E. Scudder,historical,confirmed,1,1972
+Geoffrey G.E. Scudder,Ortholeptura valida,Geoffrey G.E. Scudder,historical,confirmed,1,1983
+Geoffrey G.E. Scudder,Osmia lignaria,Geoffrey G.E. Scudder,historical,confirmed,1,1974
+Geoffrey G.E. Scudder,Phellopsis porcata,Geoffrey G.E. Scudder,historical,confirmed,1,1973
+Geoffrey G.E. Scudder,Phoroctenia vittata,Geoffrey G.E. Scudder,historical,confirmed,1,1986
+Geoffrey G.E. Scudder,Photinus hatchi,Geoffrey G.E. Scudder,historical,confirmed,1,1985
+Geoffrey G.E. Scudder,Phytocoris tiliae,Geoffrey G.E. Scudder,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Pidonia scripta,Geoffrey G.E. Scudder,historical,confirmed,1,1978
+Geoffrey G.E. Scudder,Platycotis vittata,Geoffrey G.E. Scudder,historical,confirmed,1,1982
+Geoffrey G.E. Scudder,Polistes aurifer,Geoffrey G.E. Scudder,historical,confirmed,1,1974
+Geoffrey G.E. Scudder,Pristoceuthophilus celatus,Geoffrey G.E. Scudder,historical,confirmed,1,1991
+Geoffrey G.E. Scudder,Prosternon bombycinum,Geoffrey G.E. Scudder,historical,confirmed,1,1972
+Geoffrey G.E. Scudder,Psyllobora borealis,Geoffrey G.E. Scudder,historical,confirmed,1,1985
+Geoffrey G.E. Scudder,Psyllobora vigintimaculata,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Pterostichus amethystinus,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Pterostichus herculaneus,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Pterostichus lama,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Rosalia funebris,Geoffrey G.E. Scudder,historical,confirmed,1,1971
+Geoffrey G.E. Scudder,Sceliphron caementarium,Geoffrey G.E. Scudder,historical,confirmed,1,1978
+Geoffrey G.E. Scudder,Scymnus nebulosus,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Scytonotus sp.,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Selatosomus suckleyi,Geoffrey G.E. Scudder,historical,confirmed,1,1973
+Geoffrey G.E. Scudder,Sericomyia chalcopyga,Geoffrey G.E. Scudder,historical,confirmed,1,1989
+Geoffrey G.E. Scudder,Sinodendron rugosum,Geoffrey G.E. Scudder,historical,confirmed,1,1980
+Geoffrey G.E. Scudder,Sphecomyia pattonii,Geoffrey G.E. Scudder,historical,confirmed,1,1978
+Geoffrey G.E. Scudder,Stenodema pilosipes,Geoffrey G.E. Scudder,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Stenotus binotatus,Geoffrey G.E. Scudder,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Stigmatomma oregonense,Geoffrey G.E. Scudder,historical,confirmed,1,1973
+Geoffrey G.E. Scudder,Sympetrum obtrusum,Geoffrey G.E. Scudder,historical,confirmed,1,1984
+Geoffrey G.E. Scudder,Sympetrum vicinum,Geoffrey G.E. Scudder,historical,confirmed,1,1984
+Geoffrey G.E. Scudder,Synecdoche nemoralis,Geoffrey G.E. Scudder,historical,confirmed,1,1973
+Geoffrey G.E. Scudder,Temnoscheila chlorodia,Geoffrey G.E. Scudder,historical,confirmed,1,1975
+Geoffrey G.E. Scudder,Tetragnatha sp.,Geoffrey G.E. Scudder,historical,confirmed,1,1982
+Geoffrey G.E. Scudder,Thyanta pallidovirens,Geoffrey G.E. Scudder,historical,confirmed,1,2019
+Geoffrey G.E. Scudder,Toxomerus marginatus,Geoffrey G.E. Scudder,historical,confirmed,1,1986
+Geoffrey G.E. Scudder,Toxomerus occidentalis,Geoffrey G.E. Scudder,historical,confirmed,1,1987
+Geoffrey G.E. Scudder,Trichiosoma triangulum,Geoffrey G.E. Scudder,historical,confirmed,1,1991
+Geoffrey G.E. Scudder,Urocerus albicornis,Geoffrey G.E. Scudder,historical,confirmed,1,1984
+Geoffrey G.E. Scudder,Urocerus californicus,Geoffrey G.E. Scudder,historical,confirmed,1,1971
+Geoffrey G.E. Scudder,Vespula alascensis,Geoffrey G.E. Scudder,historical,confirmed,1,1972
+Geoffrey G.E. Scudder,Vespula consobrina,Geoffrey G.E. Scudder,historical,confirmed,1,1974
+Geoffrey G.E. Scudder,Vespula pensylvanica,Geoffrey G.E. Scudder,historical,confirmed,1,1990
+Geoffrey G.E. Scudder,Xylophagus decorus,Geoffrey G.E. Scudder,historical,reported,2,1980
+Geoffrey G.E. Scudder,Xylotrechus undulatus,Geoffrey G.E. Scudder,historical,confirmed,1,1974
+Geoffrey G.E. Scudder,Zootermopsis angusticollis,Geoffrey G.E. Scudder,historical,confirmed,1,1975
+Gerald Straley,Anthocharis julia flora,Gerald Straley,historical,confirmed,1,1981
+Gerald Straley,Callophrys mossii mossii,Gerald Straley,historical,reported,1,1981
+Gord Hutchings,Aeshna eremita,Gord Hutchings,historical,reported,1,1996
+Gord Hutchings,Aeshna interrupta,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Aeshna palmata,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Anax junius,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Enallagma boreale,Gord Hutchings,historical,reported,1,1996
+Gord Hutchings,Erythemis collocata,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Ischnura cervula,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Ischnura perparva,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Libellula forensis,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Libellula quadrimaculata,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Pachydiplax longipennis,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Plathemis lydia,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Rhionaeschna californica,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Rhionaeschna multicolor,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Sympetrum illotum,Gord Hutchings,historical,confirmed,1,1996
+Gord Hutchings,Sympetrum pallipes,Gord Hutchings,historical,confirmed,1,1996
+J. Scudder,Brachypalpus amithaon,J. Scudder,historical,confirmed,1,1986
+J. Scudder,Dinomus pernitens,J. Scudder,historical,confirmed,1,1986
+J. Scudder,Etorofus obliteratus,J. Scudder,historical,confirmed,1,1986
+J. Scudder,Leptoglossus occidentalis,J. Scudder,historical,confirmed,1,1975
+J. Scudder,Myrmeleon exitialis,J. Scudder,historical,confirmed,1,1983
+J. Scudder,Peltis pippingskoeldi,J. Scudder,historical,confirmed,1,1979
+Joel Gibson,Camponotus modoc,Joel Gibson,historical,confirmed,1,2017
+Joel Gibson,Fucellia fucorum,Joel Gibson,historical,reported,1,2017
+Joel Gibson,Plectrura spinicauda,Joel Gibson,historical,confirmed,1,2017
+Jon Shepard,Acronicta insita,Jon Shepard,historical,confirmed,1,1995
+Jon Shepard,Callophrys gryneus plicataria,Jon Shepard,historical,confirmed,1,1995
+Jon Shepard,Erynnis propertius,Jon Shepard,historical,confirmed,1,1995
+Jon Shepard,Eulithis xylina,Jon Shepard,historical,confirmed,1,1995
+Jon Shepard,Hypena abalienalis,Jon Shepard,historical,reported,1,1995
+Jon Shepard,Nomenia duodecemlineata,Jon Shepard,historical,confirmed,1,1995
+Jon Shepard,Sabulodes venata,Jon Shepard,historical,confirmed,1,1995
+Jon Shepard,Tetracis cervinaria,Jon Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Caripeta aequaliaria,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Caripeta divisata,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Clemensia umbrata,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1998
+Jon Shepard & Sigrid Shepard,Ecliptopera silaceata albolineata,Jon Shepard & Sigrid Shepard,historical,reported,1,1995
+Jon Shepard & Sigrid Shepard,Gabriola dyari,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Herpetogramma thestealis,Jon Shepard & Sigrid Shepard,historical,reported,1,1995
+Jon Shepard & Sigrid Shepard,Hydria undulata,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Hypena californica,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Idaea dimidiata,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Macaria signaria dispuncta,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Nemoria darwiniata,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1955
+Jon Shepard & Sigrid Shepard,Panthea virginarius,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Pyrausta perrubralis,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Rheumaptera meadii,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Stamnoctenis pearsalli,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+Jon Shepard & Sigrid Shepard,Xanthorhoe defensaria,Jon Shepard & Sigrid Shepard,historical,confirmed,1,1995
+N.C. Scudder,Agulla adnixa,N.C. Scudder,historical,reported,1,1975
+N.C. Scudder,Baccha elongata,N.C. Scudder,historical,reported,1,1987
+N.C. Scudder,Chrysops furcatus,N.C. Scudder,historical,reported,1,1982
+N.C. Scudder,Criorhina coquilletti,N.C. Scudder,historical,confirmed,1,1980
+N.C. Scudder,Eumichthus oedipus,N.C. Scudder,historical,reported,1,1990
+N.C. Scudder,Hadromyia grandis,N.C. Scudder,historical,reported,1,1983
+N.C. Scudder,Hybomitra aasa,N.C. Scudder,historical,reported,1,1979
+N.C. Scudder,Monochamus scutellatus,N.C. Scudder,historical,confirmed,1,1974
+RA Cannings,Anisolabis maritima,RA Cannings,historical,confirmed,1,1981
+RA Cannings,Forficula dentata,RA Cannings,historical,confirmed,1,1981
+RBCM BC Spider Database,Cicurina tersa,RBCM BC Spider Database,historical,reported,1,2016
+RBCM BC Spider Database,Cybaeota shastae,RBCM BC Spider Database,historical,reported,1,2016
+RBCM BC Spider Database,Dysdera crocata,RBCM BC Spider Database,historical,confirmed,1,2016
+RBCM BC Spider Database,Eris militaris,RBCM BC Spider Database,historical,confirmed,1,2016
+RBCM BC Spider Database,Pholcus phalangioides,RBCM BC Spider Database,historical,confirmed,1,2016
+Richard Cannings,Bibio xanthopus complex,Richard Cannings,historical,confirmed,1,1981
+Rob Cannings,Bombylius major,Rob Cannings,historical,confirmed,1,1981
+Rob Cannings,Calliphora latifrons,Rob Cannings,historical,reported,1,1981
+Robb Bennett,Ceratinops inflatus,Robb Bennett,historical,reported,1,2012
+Robb Bennett,Eratigena duellica,Robb Bennett,historical,confirmed,1,2002
+Robb Bennett,Ethobuella tuonops,Robb Bennett,historical,reported,1,2012
+Robb Bennett,Neriene digna,Robb Bennett,historical,confirmed,1,2007
+Robb Bennett,Xysticus pretiosus,Robb Bennett,historical,confirmed,1,2012
+Robert Cannings,Coccinella californica,Robert Cannings,historical,reported,1,1981
+Syd G. Cannings,Ammophila azteca,Syd G. Cannings,historical,reported,1,1990
+Syd G. Cannings,Ammophila strenua,Syd G. Cannings,historical,reported,1,1990
+Syd G. Cannings,Andrena candida,Syd G. Cannings,historical,reported,1,1981
+Syd G. Cannings,Astata nubecula,Syd G. Cannings,historical,reported,1,1990
+Syd G. Cannings,Diodontus boharti,Syd G. Cannings,historical,reported,1,1990
+Syd G. Cannings,Dryudella caerulea,Syd G. Cannings,historical,reported,1,1990
+Syd G. Cannings,Eucalliphora latifrons,Syd G. Cannings,historical,reported,1,1990
+Syd G. Cannings,Hedychridium dimidiatum,Syd G. Cannings,historical,reported,1,1990
+Syd G. Cannings,Holopyga ventralis,Syd G. Cannings,historical,reported,1,1990
+Syd G. Cannings,Megachile fidelis,Syd G. Cannings,historical,confirmed,1,1990
+Syd G. Cannings,Meliscaeva cinctella,Syd G. Cannings,historical,confirmed,1,1981
+Syd G. Cannings,Phormia regina,Syd G. Cannings,historical,confirmed,1,1990
+Syd G. Cannings,Sphecodes sp.,Syd G. Cannings,historical,confirmed,1,1990
+Syd G. Cannings,Synopeas anomaliventre,Syd G. Cannings,historical,reported,2,1981
+Syd G. Cannings,Xyelecia nearctica,Syd G. Cannings,historical,reported,2,1981
+Sydney G. Cannings,Coccinella novemnotata,Sydney G. Cannings,historical,confirmed,1,1981
+Sydney G. Cannings,Cycloneda polita,Sydney G. Cannings,historical,confirmed,1,1990
+Sydney G. Cannings,Cypha crotchii,Sydney G. Cannings,historical,reported,1,1981
+Sydney G. Cannings,Dictyoptera simplicipes,Sydney G. Cannings,historical,confirmed,1,1981
+Sydney G. Cannings,Stropenron columbiana,Sydney G. Cannings,historical,confirmed,1,1981
+Sydney G. Cannings,Xestoleptura crassipes,Sydney G. Cannings,historical,confirmed,1,1990
+unknown,Euchlaena johnsonaria,unknown,historical,reported,1,1930
+Adam Huggins,Aeshna interrupta,Adam Huggins,contemporary,confirmed,1,2021
+Adam Huggins,Alniphagus aspericollis,Adam Huggins,contemporary,new,1,2025
+Adam Huggins,Bareogonalos canadensis,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Chrysops coloradensis,Adam Huggins,contemporary,new,1,2024
+Adam Huggins,Eremocoris semicinctus,Adam Huggins,contemporary,confirmed,1,2018
+Aislyn King,Phellopsis porcata,Aislyn King,contemporary,confirmed,1,2022
+Alexander J. Wright,Tetracis cervinaria,Alexander J. Wright,contemporary,confirmed,1,2017
+"Alison, Laura and Malcolm Colwell",Harpaphe haydeniana,"Alison, Laura and Malcolm Colwell",contemporary,confirmed,1,2016
+"Alison, Laura, and Malcolm Colwell",Rhionaeschna californica,"Alison, Laura, and Malcolm Colwell",contemporary,confirmed,1,2012
+Andrew Simon,Acleris nivisellana,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Adela septentrionella,Andrew Simon,contemporary,new,1,2015
+Andrew Simon,Agapostemon subtilior,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Agelenopsis sp.,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Agulla assimilis,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Allothrombium sp.,Andrew Simon,contemporary,new,1,2015
+Andrew Simon,Alopecosa kochi,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Alucita montana,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Alydus calcaratus,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Amara sp.,Andrew Simon,contemporary,new,1,2015
+Andrew Simon,Amoebaleria infuscata,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Ancistrocerus albophaleratus,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Andrena astragali,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Andrena frigida,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Andrena perplexa,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Andrena prunorum,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Andrena transnigra,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Anthalia sp.,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Anthaxia (Melanthaxia) sp.,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Anthophora ursina,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Anthrenus lepidus,Andrew Simon,contemporary,new,1,2024
+Andrew Simon,Antrodiaetus pacificus,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Anyphaena aperta,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Araniella displicata,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Archiearis infans,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Armadillidium vulgare,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Auplopus sp.,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Baccha cognata,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Banasa sordida,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Bassaniana cf. utahensis,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Bibio palliatus,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Bibio xanthopus complex,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Bombus flavifrons,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Bombus vosnesenskii,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Bruchidius villosus,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Calathus fuscipes,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Callilepis pluto,Andrew Simon,contemporary,new,1,2023
+Andrew Simon,Calliphora vicina,Andrew Simon,contemporary,new,1,2024
+Andrew Simon,Calliphora vomitoria,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Callobius pictus,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Callobius severus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Callophrys augustinus,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Callophrys gryneus plicataria,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Camnula pellucida,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Camponotus modoc,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Castianeira longipalpus,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Cerastis enigmatica,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Ceratina acantha,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Ceratina nanula,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Ceuthophilus agassizii,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Chaoborus trivittatus,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Chrysobothris femorata complex,Andrew Simon,contemporary,new,1,2023
+Andrew Simon,Cladara limitaria,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Coccinella septempunctata,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Coelioxys rufitarsis,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Conocephalus fasciatus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Coriarachne brunneipes,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Crambus bidens,Andrew Simon,contemporary,new,1,2019
+Andrew Simon,Criorhina coquilletti,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Cryptorhynchus lapathi,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Cybaeus signifer,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Cyclophora cf. dataria,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Cyclosa conica,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Dasychira grisefacta,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Dasysyrphus intrudens complex,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Dialictus sp.,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Dianthidium pudicum,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Dicheirus piceus,Andrew Simon,contemporary,new,1,2020
+Andrew Simon,Diplolepis bicolor,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Diplolepis polita,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Diplolepis rosae,Andrew Simon,contemporary,new,1,2015
+Andrew Simon,Diplotaxis brevicollis,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Dissosteira carolina,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Dolichovespula arenaria,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Dolichovespula maculata,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Dolichovespula norvegicoides,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Drapetisca alteranda,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Egira rubrica,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Eleodes constricta,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Elophila icciusalis,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Empis sp.,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Entomobrya katzi,Andrew Simon,contemporary,new,1,2019
+Andrew Simon,Epitheca spinigera,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Epuraea aestiva,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Eratigena agrestis,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Eratigena duellica,Andrew Simon,contemporary,confirmed,1,2014
+Andrew Simon,Eucera sp.,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Eumenes consobrinus,Andrew Simon,contemporary,new,1,2019
+Andrew Simon,Eumenes crucifera,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Eumenes verticalis,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Euodynerus foraminatus complex,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Euodynerus sp.,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Euschistus conspersus,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Eusphalerum sp.,Andrew Simon,contemporary,new,1,2023
+Andrew Simon,Euthyatira pudens,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Eutomostethus ephippium,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Euura sp.,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Evarcha proszynskii,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Evergestis funalis,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Forficula dentata,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Formica aserva,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Formica fusca complex,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Gnaphosa sp.,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Gryllus pennsylvanicus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Gymnosoma sp.,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Habronattus oregonensis,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Habropoda cineraria,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Habropoda miserabilis,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Halictus confusus,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Halictus tripartitus,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Helcystogramma badia,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Helophilus fasciatus,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Hemipenthes morioides,Andrew Simon,contemporary,new,1,2023
+Andrew Simon,Hemipenthes sinuosa,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Hippodamia washingtoni,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Hofmannophila pseudospretella,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Hypena californica,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Hyphantria cunea,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Isomira comstocki,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Lasius pallitarsis,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Leptoglossus occidentalis,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Lopus decolor,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Megachile fidelis,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Melanoplus sanguinipes,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Melanostoma mellinum,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Monochamus scutellatus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Myrmeleon exitialis,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Necrophilus hydrophiloides,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Neomochtherus willistoni,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Neriene digna,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Omus dejeanii,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Panthea virginarius,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Pholcus phalangioides,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Phormia regina,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Photinus hatchi,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Polistes aurifer,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Psyllobora vigintimaculata,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Rheumaptera meadii,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Sphecodes sp.,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Sympetrum pallipes,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Tetragnatha sp.,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Vespula alascensis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Vespula consobrina,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Vespula pensylvanica,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Xanthorhoe defensaria,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Xestoleptura crassipes,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Xysticus pretiosus,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Zootermopsis angusticollis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon & Kevin Toomer,Eristalis anthophorina,Andrew Simon & Kevin Toomer,contemporary,confirmed,1,2018
+Andrew Simon & Kevin Toomer,Sericomyia chalcopyga,Andrew Simon & Kevin Toomer,contemporary,confirmed,1,2018
+Andy Taggart Smith,Cisseps fulvicollis,Andy Taggart Smith,contemporary,new,1,2019
+Austin Baines & Andrew Simon,Camponotus novaeboracensis,Austin Baines & Andrew Simon,contemporary,new,1,2022
+"Austin Baines, Rhys Hutton, and Andrew Simon",Formica oreas,"Austin Baines, Rhys Hutton, and Andrew Simon",contemporary,new,1,2020
+Ayla Malcolm,Agriotes lineatus,Ayla Malcolm,contemporary,new,1,2017
+Ayla Malcolm,Eristalis obscura,Ayla Malcolm,contemporary,new,1,2017
+Cameron Deckert,Ischnura cervula,Cameron Deckert,contemporary,confirmed,1,2010
+Cameron Deckert,Ischnura perparva,Cameron Deckert,contemporary,confirmed,1,2010
+Cameron Deckert,Pachydiplax longipennis,Cameron Deckert,contemporary,confirmed,1,2010
+Carolyn Jungsuh Rhee,Furcula scolopendrina,Carolyn Jungsuh Rhee,contemporary,new,1,2025
+Charlene Wood,Bembidion concretum,Charlene Wood,contemporary,new,1,2019
+Charlene Wood,Bembidion incrematum,Charlene Wood,contemporary,new,1,2019
+Charlene Wood,Cis ephippiatus,Charlene Wood,contemporary,new,1,2019
+Charlene Wood,Cucujus puniceus,Charlene Wood,contemporary,new,1,2019
+Charlene Wood,Dendroides ephemeroides,Charlene Wood,contemporary,new,1,2019
+Charlene Wood,Myrmecophilus oregonensis,Charlene Wood,contemporary,confirmed,1,2019
+Charlene Wood,Peltis pippingskoeldi,Charlene Wood,contemporary,confirmed,1,2019
+Charlene Wood,Pterostichus herculaneus,Charlene Wood,contemporary,confirmed,1,2019
+Charlene Wood,Trichiosoma triangulum,Charlene Wood,contemporary,confirmed,1,2019
+Chaynna Jane Hoffman,Acronicta insita,Chaynna Jane Hoffman,contemporary,confirmed,1,2021
+Chaynna Jane Hoffman,Dictyoptera simplicipes,Chaynna Jane Hoffman,contemporary,confirmed,1,2022
+Chris Ratzlaff,Aglais milberti,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Alloxysta victrix,Chris Ratzlaff,contemporary,new,1,2019
+Chris Ratzlaff,Anaspis atrata,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Anaspis duryi,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Antepirrhoe sp.,Chris Ratzlaff,contemporary,new,1,2024
+Chris Ratzlaff,Aporinellus completus,Chris Ratzlaff,contemporary,new,1,2019
+Chris Ratzlaff,Aporus luxus,Chris Ratzlaff,contemporary,confirmed,1,2019
+Chris Ratzlaff,Argyresthia calliphanes,Chris Ratzlaff,contemporary,new,1,2019
+Chris Ratzlaff,Belyta sp.,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Caenochrysis doriae,Chris Ratzlaff,contemporary,new,1,2024
+Chris Ratzlaff,Callomyia venusta,Chris Ratzlaff,contemporary,new,1,2019
+Chris Ratzlaff,Chelonus (Chelonus) sp.,Chris Ratzlaff,contemporary,new,1,2019
+Chris Ratzlaff,Chrysis nitidula,Chris Ratzlaff,contemporary,confirmed,1,2019
+Chris Ratzlaff,Chrysopilus sp.,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Conomorium sp.,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Crabro latipes,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Crophius bohemani,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Crossocerus elongatulus,Chris Ratzlaff,contemporary,new,1,2024
+Chris Ratzlaff,Curculio uniformis,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Dacne californica,Chris Ratzlaff,contemporary,new,1,2024
+Chris Ratzlaff,Enochrus sp.,Chris Ratzlaff,contemporary,new,1,2024
+Chris Ratzlaff,Errastunus sp.,Chris Ratzlaff,contemporary,new,1,2024
+Chris Ratzlaff,Evagetes padrinus padrinus,Chris Ratzlaff,contemporary,new,1,2019
+Chris Ratzlaff,Gorytes sp.,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Harmostes reflexulus,Chris Ratzlaff,contemporary,new,1,2023
+Chris Ratzlaff,Homorthodes hanhami,Chris Ratzlaff,contemporary,new,1,2024
+Christian Adler,Araneus saevus,Christian Adler,contemporary,new,1,2018
+Christian Adler,Buprestis aurulenta,Christian Adler,contemporary,new,1,2016
+Christian Adler,Coeloides sp.,Christian Adler,contemporary,new,1,2019
+Christian Adler,Dytiscus marginicollis,Christian Adler,contemporary,new,1,2020
+Christian Adler,Opsimus quadrilineatus,Christian Adler,contemporary,confirmed,1,2021
+Christian Adler,Urocerus californicus,Christian Adler,contemporary,confirmed,1,2019
+Christopher Kingi,Toxomerus occidentalis,Christopher Kingi,contemporary,confirmed,1,2016
+Cody Clayton,Apamea amputatrix,Cody Clayton,contemporary,new,1,2016
+Cody Clayton,Chrysopa oculata,Cody Clayton,contemporary,confirmed,1,2016
+Cody Clayton,Feralia deceptiva,Cody Clayton,contemporary,new,1,2016
+Cody Clayton,Hyppa contrasta,Cody Clayton,contemporary,new,1,2016
+Dave “Zeuss” Cochrane,Coquillettidia perturbans,Dave “Zeuss” Cochrane,contemporary,new,1,2019
+Dave “Zeuss” Cochrane,Ctenolepisma sp.,Dave “Zeuss” Cochrane,contemporary,new,1,2019
+Ed Andrusiak,Scytonotus sp.,Ed Andrusiak,contemporary,confirmed,1,2016
+Elizabeth McClelland,Sceliphron caementarium,Elizabeth McClelland,contemporary,confirmed,1,2018
+Emily Um,Buprestis lyrata,Emily Um,contemporary,new,1,2021
+Felix Erhard,Rosalia funebris,Felix Erhard,contemporary,confirmed,1,2013
+Fern,Dicyrtomina ornata,Fern,contemporary,new,1,2024
+Frank Moyle,Enoclerus sphegeus,Frank Moyle,contemporary,new,1,2020
+Gabe Schp,Eupeodes latifasciatus,Gabe Schp,contemporary,new,1,2022
+Galiano observer,Dysdera crocata,Galiano observer,contemporary,confirmed,1,2016
+Hannah Hickli,Eucalantica polita,Hannah Hickli,contemporary,new,1,2023
+Ian Guthrie,Anax junius,Ian Guthrie,contemporary,confirmed,1,2008
+Ian Guthrie,Bombus melanopygus,Ian Guthrie,contemporary,confirmed,1,2014
+Ian Guthrie,Bombus mixtus,Ian Guthrie,contemporary,confirmed,1,2014
+Ian Guthrie,Libellula forensis,Ian Guthrie,contemporary,confirmed,1,2008
+Ian Guthrie,Plathemis lydia,Ian Guthrie,contemporary,confirmed,1,2014
+Ian Guthrie,Toxomerus marginatus,Ian Guthrie,contemporary,confirmed,1,2014
+Ian Toms,Amorbia cuneanum,Ian Toms,contemporary,new,1,2019
+Jack Bindernagel,Habronattus hirsutus,Jack Bindernagel,contemporary,new,1,2019
+Jackson W.F. Chu,Brachymyrmex depilis,Jackson W.F. Chu,contemporary,new,1,2023
+Jackson W.F. Chu,Dicyphus discrepans,Jackson W.F. Chu,contemporary,confirmed,1,2023
+Jesse McCleery,Dargida procinctus,Jesse McCleery,contemporary,new,1,2015
+Jesse McCleery,Gazoryctra mathewi,Jesse McCleery,contemporary,new,1,2015
+Joan Septembre,Aceria erinea,Joan Septembre,contemporary,new,1,2023
+Joan Septembre,Coniontis ovalis,Joan Septembre,contemporary,new,1,2019
+Karen Elisabeth Harris,Cuterebra approximata,Karen Elisabeth Harris,contemporary,new,1,2018
+Karen Elisabeth Harris,Temnoscheila chlorodia,Karen Elisabeth Harris,contemporary,confirmed,1,2021
+Kath Boake Wüthrich,Callibaetis ferrugineus hageni,Kath Boake Wüthrich,contemporary,new,1,2019
+Kath Boake Wüthrich,Coelodasys unicornis,Kath Boake Wüthrich,contemporary,new,1,2018
+Kath Boake Wüthrich,Neoneides muticus,Kath Boake Wüthrich,contemporary,confirmed,1,2020
+Kath Quayle,Chaetodactylus sp.,Kath Quayle,contemporary,new,1,2023
+Kath Quayle,Chrysis ignita complex,Kath Quayle,contemporary,new,1,2023
+Kath Quayle,Eristalis flavipes,Kath Quayle,contemporary,new,1,2025
+Kath Quayle,Hylaeus sp.,Kath Quayle,contemporary,new,1,2023
+Kath Quayle,Thyanta pallidovirens,Kath Quayle,contemporary,confirmed,1,2023
+Katie Kushneryk,Hydriomena irata,Katie Kushneryk,contemporary,new,1,2019
+Kendall McLaughlin,Aeshna umbrosa,Kendall McLaughlin,contemporary,confirmed,1,2022
+Kendall McLaughlin,Anthrenus verbasci,Kendall McLaughlin,contemporary,new,1,2023
+Kendall McLaughlin,Drassodes sp.,Kendall McLaughlin,contemporary,new,1,2023
+Kendall McLaughlin,Formica neogagates complex,Kendall McLaughlin,contemporary,new,1,2023
+Kendall McLaughlin,Necydalis laevicollis,Kendall McLaughlin,contemporary,confirmed,1,2022
+Kevin Toomer,Abrostola urentis,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Acleris britannia,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Acleris maccana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Acleris maximana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Acleris rhombana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Acrobasis tricolorella,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Adelphagrotis indeterminata,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Agonopterix alstroemeriana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Agonopterix nervosa,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Agriphila straminella,Kevin Toomer,contemporary,new,1,2024
+Kevin Toomer,Agrochola lota,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Agrochola pulchella,Kevin Toomer,contemporary,new,1,2024
+Kevin Toomer,Agrochola purpurea,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Agrotis ipsilon,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Allygus mixtus,Kevin Toomer,contemporary,new,1,2025
+Kevin Toomer,Altica ambiens,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Amblyptilia pica,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Amphipyra pyramidoides,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Anania hortulata,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Anania tertialis,Kevin Toomer,contemporary,new,1,2020
+Kevin Toomer,Anisodactylus binotatus,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Anthomyia procellaris,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Anticlea vasiliata,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Apamea cf. scoparia,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Aphomia sociella,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Aplocera plagiata,Kevin Toomer,contemporary,new,1,2024
+Kevin Toomer,Archips argyrospila,Kevin Toomer,contemporary,new,1,2024
+Kevin Toomer,Argyrotaenia dorsalana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Argyrotaenia provana,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Arhopalus sp.,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Arta epicoenalis,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Athous rufiventris,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Batia lunaris,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Behrensia conchiformis,Kevin Toomer,contemporary,new,1,2020
+Kevin Toomer,Bembix americana,Kevin Toomer,contemporary,confirmed,1,2022
+Kevin Toomer,Biston betularia,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Blastobasis sp.,Kevin Toomer,contemporary,new,1,2024
+Kevin Toomer,Cabera erythemaria,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Callibaetis ferrugineus ferrugineus,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Callizzia amorata,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Camponotus (Tanaemyrmex) sp.,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Carabus nemoralis,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Caradrina montana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Carcina quercana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Caripeta divisata,Kevin Toomer,contemporary,confirmed,1,2022
+Kevin Toomer,Catocala relicta,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Catocala sp.,Kevin Toomer,contemporary,new,1,2020
+Kevin Toomer,Ceranemota fasciata,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Ceratodalia gueneata,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Cerceris sp.,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Cheilosia sp.,Kevin Toomer,contemporary,new,1,2025
+Kevin Toomer,Chelostoma florisomne,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Chlorosea banksaria,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Choristoneura fumiferana,Kevin Toomer,contemporary,new,1,2024
+Kevin Toomer,Choristoneura occidentalis,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Choristoneura rosaceana,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Chrysoperla carnea complex,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer,Chrysoteuchia topiarius,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Chrysotoxum sp.,Kevin Toomer,contemporary,new,1,2025
+Kevin Toomer,Chrysotus sp.,Kevin Toomer,contemporary,new,1,2025
+Kevin Toomer,Cissusa indiscreta,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Clausicella setigera,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Clemensia umbrata,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer,Clepsis clemensiana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Clepsis consimilana,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Clepsis peritana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Clostera apicalis,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Coelichneumon sp.,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Colletes sp.,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Colomerus holodisci,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Cosmia praeacuta,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Cosmopepla conspicillaris,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Cramptonomyia spenceri,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Criorhina occidentalis,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Cuterebra fontinella grisea,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Cyclophora pendulinaria,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Diarsia esurialis,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Dicerca sexualis,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Dicranomyia humidicola,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Dicranoptycha sp.,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Dictya sp.,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Digrammia continuata,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Digrammia neptaria,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Digrammia setonana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Dinomus laetus,Kevin Toomer,contemporary,confirmed,1,2023
+Kevin Toomer,Dioryctria abietivorella,Kevin Toomer,contemporary,new,1,2024
+Kevin Toomer,Dioryctria sp.,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Disholcaspis sp.,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Drepana arcuata,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Drepana bilineata,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Drepanulatrix monicaria,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Drepanulatrix unicalcararia,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Dryomyza sp.,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Dusona sp.,Kevin Toomer,contemporary,new,1,2025
+Kevin Toomer,Dysstroma citrata,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Dysstroma sobria,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Dytiscus cordieri,Kevin Toomer,contemporary,new,1,2024
+Kevin Toomer,Ectemnius sp.,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Egira crucialis,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Egira curialis,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Egira hiemalis,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Egira perlubens,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Endothenia nubilana,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Ennomos magnaria,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Enoclerus eximius,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Epalpus signifer,Kevin Toomer,contemporary,new,1,2024
+Kevin Toomer,Epeolus olympiellus,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Ephestiodes erythrella,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Ephestiodes gilvescentella,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Epinotia albangulana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Epinotia johnsonana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Epinotia lomonana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Epinotia radicana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Epirrita autumnata,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Erannis vancouverensis,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Eriophyes laevis,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Eristalis arbustorum,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Etorofus obliteratus,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer,Eucopina siskiyouana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Eudioctria sackeni,Kevin Toomer,contemporary,confirmed,1,2022
+Kevin Toomer,Eudonia commortalis,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Eudonia echo,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Eudonia rectilinea,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Eudonia spenceri,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Eulia ministrana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Eumerus sp.,Kevin Toomer,contemporary,new,1,2025
+Kevin Toomer,Euphyia intermediata,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Eupithecia cretaceata,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Eupithecia gilvipennata,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Eupithecia graefii,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Eupithecia olivacea,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Eupithecia ravocostaliata,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Eupithecia unicolor,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Eupsilia tristigmata,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Eurois occulta,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Eurygaster alternata,Kevin Toomer,contemporary,confirmed,1,2022
+Kevin Toomer,Euthyatira semicircularis,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Euxoa sp.,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Euzophera semifuneralis,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Exaireta spinigera,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Falcaria bilineata,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Fazia micrura,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Gabriola dyari,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer,Gesneria centuriella,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Gluphisia severa,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Graphocephala atropunctata,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Habrosyne scripta,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Halesochila taylori,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Halictus ligatus,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Harpalus affinis,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Hedya nubiferana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Hedya ochroleucana,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Heleomyza sp.,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Hellinsia homodactylus,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Hemerobius stigma,Kevin Toomer,contemporary,confirmed,1,2022
+Kevin Toomer,Hemicrepidius sp.,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Herpetogramma aquilonalis,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Hesperophylax sp.,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Heterotoma planicornis,Kevin Toomer,contemporary,new,1,2025
+Kevin Toomer,Holcocera immaculella,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Homoeosoma electella,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Homoneura sp.,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Homorthodes communis,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Hydrellia sp.,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Hydria undulata,Kevin Toomer,contemporary,confirmed,1,2022
+Kevin Toomer,Hydriomena furcata,Kevin Toomer,contemporary,new,1,2024
+Kevin Toomer,Hydriomena renunciata,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Hydriomena speciosata,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Hylemya alcathoe,Kevin Toomer,contemporary,new,1,2017
+Kevin Toomer,Hyles gallii,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Ianassa pallida,Kevin Toomer,contemporary,new,1,2021
+Kevin Toomer,Idaea dimidiata,Kevin Toomer,contemporary,confirmed,1,2021
+Kevin Toomer,Iridopsis emasculatum,Kevin Toomer,contemporary,new,1,2019
+Kevin Toomer,Itoplectis conquisitor,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Lepturopsis dolorosa,Kevin Toomer,contemporary,confirmed,1,2021
+Kevin Toomer,Lestes congener,Kevin Toomer,contemporary,confirmed,1,2019
+Kevin Toomer,Macaria signaria dispuncta,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer,Nemoria darwiniata,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer,Nomenia duodecemlineata,Kevin Toomer,contemporary,confirmed,1,2020
+Kevin Toomer,Phytocoris tiliae,Kevin Toomer,contemporary,confirmed,1,2022
+Kevin Toomer,Pterostichus lama,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer,Sabulodes venata,Kevin Toomer,contemporary,confirmed,1,2019
+Kevin Toomer,Stamnoctenis pearsalli,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer,Stenotus binotatus,Kevin Toomer,contemporary,confirmed,1,2022
+Kris Krüg,Altica bimarginata complex,Kris Krüg,contemporary,new,1,2017
+Kris Krüg,Anthocharis julia flora,Kris Krüg,contemporary,confirmed,1,2017
+Kris Krüg,Elasmostethus cruciatus,Kris Krüg,contemporary,confirmed,1,2017
+Kristian Sigvardsen,Acronicta radcliffei,Kristian Sigvardsen,contemporary,new,1,2016
+Kristian Sigvardsen,Bombylius major,Kristian Sigvardsen,contemporary,confirmed,1,2016
+Kristian Sigvardsen,Hyalophora euryalus,Kristian Sigvardsen,contemporary,confirmed,1,2015
+Kristian Sigvardsen,Laphria ventralis,Kristian Sigvardsen,contemporary,confirmed,1,2018
+Lauren Magner,Apis mellifera,Lauren Magner,contemporary,new,1,2016
+Lauren Magner,Bombus sitkensis,Lauren Magner,contemporary,new,1,2016
+Lauren Magner,Bombus vancouverensis vancouverensis,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Brachypalpus alopex,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Brachypalpus amithaon,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Camponotus vicinus,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Chlorochroa ligata,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Cordulia shurtleffii,Lauren Magner,contemporary,new,1,2016
+Lauren Magner,Crambus pascuella,Lauren Magner,contemporary,new,1,2016
+Lauren Magner,Ctenocephalides felis,Lauren Magner,contemporary,new,1,2017
+Lauren Magner,Egira simplex,Lauren Magner,contemporary,new,1,2021
+Lauren Magner,Eriophyes emarginatae,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Feralia comstocki,Lauren Magner,contemporary,new,1,2019
+Lauren Magner,Hylastes sp.,Lauren Magner,contemporary,new,1,2017
+Lena Dietz Chiasson,Cimbex americanus,Lena Dietz Chiasson,contemporary,new,1,2019
+Liam Ragan,Aceria genistae,Liam Ragan,contemporary,new,1,2022
+Liam Ragan,Agonopterix canadensis,Liam Ragan,contemporary,new,1,2024
+Liam Ragan,Agromyza pseudoreptans,Liam Ragan,contemporary,new,1,2025
+Liam Ragan,Arctorthezia occidentalis,Liam Ragan,contemporary,new,1,2022
+Liam Ragan,Astrotischeria sp.,Liam Ragan,contemporary,new,1,2024
+Liam Ragan,Brachypterus urticae,Liam Ragan,contemporary,new,1,2024
+Liam Ragan,Catastega sp.,Liam Ragan,contemporary,new,1,2024
+Liam Ragan,Contarinia pseudotsugae,Liam Ragan,contemporary,new,1,2025
+Liam Ragan,Coptodisca arbutiella,Liam Ragan,contemporary,new,1,2024
+Liam Ragan,Dicyrtomina saundersi,Liam Ragan,contemporary,new,1,2023
+Liam Ragan,Emmelina monodactyla,Liam Ragan,contemporary,new,1,2022
+Liam Ragan,Entomobrya nivalis,Liam Ragan,contemporary,new,1,2022
+Liam Ragan,Eristalinus aeneus,Liam Ragan,contemporary,new,1,2022
+Liam Ragan,Hypogastrura sp.,Liam Ragan,contemporary,new,1,2024
+Libby & Rick Avis,Cordilura fuscipes,Libby & Rick Avis,contemporary,new,1,2019
+Libby & Rick Avis,Dichelotarsus piniphilus,Libby & Rick Avis,contemporary,new,1,2019
+Libby Avis,Agrotis vancouverensis,Libby Avis,contemporary,new,1,2017
+Libby Avis,Anavitrinella pampinaria,Libby Avis,contemporary,new,1,2017
+Libby Avis,Autographa californica,Libby Avis,contemporary,new,1,2017
+Libby Avis,Callidium sp.,Libby Avis,contemporary,new,1,2017
+Libby Avis,Dasysyrphus occidualis,Libby Avis,contemporary,new,1,2017
+Libby Avis,Dichelotarsus cavicollis,Libby Avis,contemporary,new,1,2017
+Libby Avis,Ectropis crepuscularia,Libby Avis,contemporary,new,1,2019
+Libby Avis,Harmonia axyridis,Libby Avis,contemporary,new,1,2017
+Libby Avis,Hydriomena manzanita,Libby Avis,contemporary,new,1,2019
+Libby Avis,Hypena decorata,Libby Avis,contemporary,new,1,2017
+Libby Avis,Hypena humuli,Libby Avis,contemporary,new,1,2017
+Libby Avis,Ophion sp.,Libby Avis,contemporary,confirmed,1,2019
+Libby and Rick Avis,Apamea unanimis,Libby and Rick Avis,contemporary,new,1,2023
+Libby and Rick Avis,Eupithecia rotundopuncta,Libby and Rick Avis,contemporary,new,1,2023
+Libby and Rick Avis,Stenodema pilosipes,Libby and Rick Avis,contemporary,confirmed,1,2023
+Lori Weidenhammer,Sphecomyia pattonii,Lori Weidenhammer,contemporary,confirmed,1,2019
+Lorin Gaertner,Enchoria lacteata,Lorin Gaertner,contemporary,new,1,2019
+Luke Halpin,Chalcophora angulicollis,Luke Halpin,contemporary,confirmed,1,2016
+Maggie O'Shaughnessy,Arctia caja,Maggie O'Shaughnessy,contemporary,new,1,2019
+Marty Moser,Araneus trifolium,Marty Moser,contemporary,new,1,2018
+Marty Moser,Eulithis xylina,Marty Moser,contemporary,confirmed,1,2017
+Marty Moser,Hesperumia latipennis,Marty Moser,contemporary,new,1,2017
+Michael Beach,Halictus rubicundus,Michael Beach,contemporary,new,1,2017
+Michael Butler,Libellula quadrimaculata,Michael Butler,contemporary,confirmed,1,2014
+Michael Butler,Rhionaeschna multicolor,Michael Butler,contemporary,confirmed,1,2014
+Michael Butler,Sympetrum illotum,Michael Butler,contemporary,confirmed,1,2014
+Myung Jin (John) Kang,Diastrophus kincaidii,Myung Jin (John) Kang,contemporary,new,1,2023
+Nancy Tamblyn,Enicospilus sp.,Nancy Tamblyn,contemporary,confirmed,1,2021
+Nancy Tamblyn,Meliscaeva cinctella,Nancy Tamblyn,contemporary,confirmed,1,2020
+Nancy Tamblyn,Sinodendron rugosum,Nancy Tamblyn,contemporary,confirmed,1,2022
+Paige Amos,Chinavia sp.,Paige Amos,contemporary,new,1,2023
+Radu Scurtescu,Halyomorpha halys,Radu Scurtescu,contemporary,new,1,2022
+Rebecca Reader-Lee,Gelis sp.,Rebecca Reader-Lee,contemporary,new,1,2023
+Rolando Lampitoc,Araneus diadematus,Rolando Lampitoc,contemporary,new,1,2015
+Rolando Lampitoc,Pristoceuthophilus celatus,Rolando Lampitoc,contemporary,confirmed,1,2016
+Sarafina Henderson,Ancistrocerus adiabatus,Sarafina Henderson,contemporary,new,1,2023
+Sarah Tweedale,Aquarius remigis,Sarah Tweedale,contemporary,new,1,2017
+Sarah Tweedale,Brochymena affinis,Sarah Tweedale,contemporary,new,1,2017
+Sarah Tweedale,Caripeta aequaliaria,Sarah Tweedale,contemporary,confirmed,1,2017
+Sarah Tweedale,Danosoma brevicorne,Sarah Tweedale,contemporary,new,1,2018
+Sarah Tweedale,Ditylus quadricollis,Sarah Tweedale,contemporary,new,1,2016
+Sarah Tweedale,Eris militaris,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Eristalis tenax,Sarah Tweedale,contemporary,confirmed,1,2018
+Sarah Tweedale,Hemithea aestivaria,Sarah Tweedale,contemporary,new,1,2016
+Sarah Tweedale,Ortholeptura valida,Sarah Tweedale,contemporary,confirmed,1,2018
+Sarah Tweedale,Pyrausta perrubralis,Sarah Tweedale,contemporary,confirmed,1,2019
+Scott Gilmore,Adela trigrapha,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Agathidium maculosum,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Agriotes sparsus,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Agriotes thevenetii,Scott Gilmore,contemporary,new,1,2018
+Scott Gilmore,Ampedus atripennis,Scott Gilmore,contemporary,new,1,2018
+Scott Gilmore,Ampedus behrensi,Scott Gilmore,contemporary,new,1,2018
+Scott Gilmore,Ampedus rhodopus,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Amphichroum maculatum,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Anaspis rufa,Scott Gilmore,contemporary,new,1,2023
+Scott Gilmore,Anisolabis maritima,Scott Gilmore,contemporary,confirmed,1,2019
+Scott Gilmore,Anthaxia retifer,Scott Gilmore,contemporary,confirmed,1,2018
+Scott Gilmore,Athous imitans,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Balclutha sp.,Scott Gilmore,contemporary,new,1,2018
+Scott Gilmore,Banasa dimidiata,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Batrisodes sp.,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Bibio albipennis,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Burnettweldia washingtonensis,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Caloptilia sp.,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Cameraria gaultheriella,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Cardiophorus sp.,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Celastrina echo,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Cerobasis guestfalica,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Chilocorus tricyclus,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Chlorochroa rossiana,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Cicindela oregona,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Clinidium calcaratum,Scott Gilmore,contemporary,confirmed,1,2019
+Scott Gilmore,Clypastraea sp.,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Coccinella novemnotata,Scott Gilmore,contemporary,confirmed,1,2023
+Scott Gilmore,Corymbitodes sp.,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Ctenicera angularis,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Curculio sp.,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Cycloneda polita,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Cylindrocopturus furnissi,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Cyrtomoptera divisa,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Dalopius corvinus,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Dalopius tristis,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Deinopteroloma subcostatum,Scott Gilmore,contemporary,new,1,2018
+Scott Gilmore,Deraeocoris sp.,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Dicentrus bluthneri,Scott Gilmore,contemporary,confirmed,1,2019
+Scott Gilmore,Dicerca crassicollis,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Dichelotarsus sp.,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Dinomus pernitens,Scott Gilmore,contemporary,confirmed,1,2019
+Scott Gilmore,Dolichopus plumipes,Scott Gilmore,contemporary,new,1,2023
+Scott Gilmore,Dyslobus granicollis,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Ectopsocus sp.,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Elaphrus sp.,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Eleodes pimelioides,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Endrosis sarcitrella,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Enoclerus schaefferi,Scott Gilmore,contemporary,confirmed,1,2023
+Scott Gilmore,Entomobrya clitellaria,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Entomobrya triangularis,Scott Gilmore,contemporary,new,1,2018
+Scott Gilmore,Epirrhoe alternata,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Eronyxa pallida,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Erynnis propertius,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Eupeodes volucris,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Galerucella nymphaeae,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Gastrodes pacificus,Scott Gilmore,contemporary,confirmed,1,2018
+Scott Gilmore,Graphopsocus cruciatus,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Gyrinus bifarius,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Hadromorphus sp.,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Idolus columbiana,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Iphthiminus sp.,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Iratiquedius prostans,Scott Gilmore,contemporary,new,1,2019
+Scott Gilmore,Kleidocerys resedae,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Mulsantina picta,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Phoroctenia vittata,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Pidonia scripta,Scott Gilmore,contemporary,confirmed,1,2018
+Scott Gilmore,Platycotis vittata,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Plectrura spinicauda,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Prosternon bombycinum,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Psyllobora borealis,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Pterostichus amethystinus,Scott Gilmore,contemporary,confirmed,1,2018
+Scott Gilmore,Scymnus nebulosus,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Selatosomus suckleyi,Scott Gilmore,contemporary,confirmed,1,2017
+Scott Gilmore,Stigmatomma oregonense,Scott Gilmore,contemporary,confirmed,1,2018
+Scott Gilmore,Stropenron columbiana,Scott Gilmore,contemporary,confirmed,1,2018
+Scott Gilmore,Synecdoche nemoralis,Scott Gilmore,contemporary,confirmed,1,2017
+Shera Street,Aeshna palmata,Shera Street,contemporary,confirmed,1,2007
+Shera Street,Osmia lignaria,Shera Street,contemporary,confirmed,1,2017
+Sophie Dickson-Otty,Euschistus servus,Sophie Dickson-Otty,contemporary,confirmed,1,2022
+Steven Esau,Copromyza sp.,Steven Esau,contemporary,new,1,2024
+Steven Esau,Dicranomyia marmorata,Steven Esau,contemporary,new,1,2022
+Steven Esau,Epistrophe sp.,Steven Esau,contemporary,new,1,2023
+Steven Esau,Eristalis hirta,Steven Esau,contemporary,new,1,2024
+Sylvie Hawkes,Urocerus albicornis,Sylvie Hawkes,contemporary,confirmed,1,2020
+Terry M,Diploschizia impigritella,Terry M,contemporary,new,1,2023
+Tieg Mowbray,Caliroa cerasi,Tieg Mowbray,contemporary,new,1,2019
+Tyson Ehlers,Castianeira walsinghami,Tyson Ehlers,contemporary,new,1,2018
+Tyson Ehlers,Sympetrum obtrusum,Tyson Ehlers,contemporary,confirmed,1,2017
+Tyson Ehlers,Sympetrum vicinum,Tyson Ehlers,contemporary,confirmed,1,2017
+William Terpenning,Elasmucha lateralis,William Terpenning,contemporary,confirmed,1,2016
+William Terpenning,Hesperotipula sp.,William Terpenning,contemporary,new,1,2016
+Wolfgang Matthes,Centrodera spurca,Wolfgang Matthes,contemporary,confirmed,1,2017
+Wolfgang Matthes,Xylotrechus undulatus,Wolfgang Matthes,contemporary,confirmed,1,2016
+Zeke Gilmore,Chionodes mediofuscella,Zeke Gilmore,contemporary,new,1,2023
+bugsfan,Apamea devastator,bugsfan,contemporary,new,1,2023
+bugsfan,Aseptis binotata,bugsfan,contemporary,new,1,2023

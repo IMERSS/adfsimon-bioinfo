@@ -1,0 +1,1296 @@
+from,to,person_name,person_class,edge_class,weight,entry_year
+Andy Lamb & Donna Gibbs,Salicornia depressa,Andy Lamb & Donna Gibbs,historical,reported,1,2006
+Andy Lamb & Donna Gibbs,Zostera marina,Andy Lamb & Donna Gibbs,historical,confirmed,1,1985
+Angela Wood,Acmispon americanus var. americanus,Angela Wood,historical,reported,1,1975
+Angela Wood,Aira caryophyllea,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Alopecurus geniculatus,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Anthoxanthum odoratum,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Bromus carinatus var. carinatus,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Capsella bursa-pastoris,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Cardamine oligosperma,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Comarum palustre,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Echium vulgare,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Elymus glaucus ssp. glaucus,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Erythranthe cf guttata,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Erythranthe sookensis,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Festuca rubra ssp. pruinosa,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Gaultheria shallon,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Grindelia stricta,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Hesperis matronalis,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Hordeum murinum ssp. murinum,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Hyacinthoides × massartiana,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Juncus acuminatus,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Juncus bolanderi,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Juncus dudleyi,Angela Wood,historical,reported,1,1975
+Angela Wood,Lapsana communis,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Leucanthemum vulgare,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Lupinus polyphyllus var. polyphyllus,Angela Wood,historical,reported,1,1975
+Angela Wood,Luzula multiflora ssp. multiflora,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Moehringia macrophylla,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Myosotis arvensis,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Myosotis discolor,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Myosotis laxa,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Myosotis scorpioides,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Myosotis sylvatica,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Phragmites australis ssp. americanus,Angela Wood,historical,reported,1,1975
+Angela Wood,Poa howellii,Angela Wood,historical,reported,1,1975
+Angela Wood,Poa pratensis,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Polystichum munitum,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Quercus garryana var. garryana,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Ranunculus repens,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Raphanus raphanistrum,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Silene latifolia,Angela Wood,historical,reported,1,1975
+Angela Wood,Sisymbrium officinale,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Spergularia rubra,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Stellaria crispa,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Stellaria sitchana,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Symphyotrichum chilense,Angela Wood,historical,confirmed,1,1975
+Angela Wood,Ulex europaeus,Angela Wood,historical,confirmed,1,1975
+B. Schwartz,Claytonia sibirica,B. Schwartz,historical,confirmed,1,1972
+B. Stephens,Cerastium arvense ssp. strictum,B. Stephens,historical,confirmed,1,1972
+B. Turner,Carex leporina,B. Turner,historical,confirmed,1,1966
+Bev Benedict,Erythranthe nasuta,Bev Benedict,historical,confirmed,1,1993
+Bruce Bennett,Symphyotrichum subspicatum,Bruce Bennett,historical,confirmed,1,1966
+Christopher Clement,Eleocharis palustris,Christopher Clement,historical,confirmed,1,1978
+Christopher Clement,Juncus effusus ssp. pacificus,Christopher Clement,historical,confirmed,1,1978
+Christopher Clement,Salix prolixa,Christopher Clement,historical,reported,1,1978
+Frank Lomer,Agrostis pallens,Frank Lomer,historical,confirmed,1,2022
+Frank Lomer,Cardamine flexuosa,Frank Lomer,historical,confirmed,1,2003
+Frank Lomer,Festuca microstachys var. pauciflora,Frank Lomer,historical,confirmed,1,2003
+Frank Lomer,Glyceria elata,Frank Lomer,historical,confirmed,1,2022
+Frank Lomer,Medicago arabica,Frank Lomer,historical,confirmed,1,2022
+Frank Lomer,Melica harfordii,Frank Lomer,historical,confirmed,1,2022
+Frank Lomer,Montia howellii,Frank Lomer,historical,confirmed,1,2001
+Frank Lomer,Myosurus minimus,Frank Lomer,historical,confirmed,1,2014
+Frank Lomer,Petrosedum rupestre,Frank Lomer,historical,reported,1,2022
+Frank Lomer,Petroselinum crispum,Frank Lomer,historical,confirmed,1,2014
+Frank Lomer,Poa infirma,Frank Lomer,historical,reported,1,2014
+Frank Lomer,Prunus × pugetensis,Frank Lomer,historical,reported,1,2014
+Frank Lomer,Rhinanthus minor,Frank Lomer,historical,reported,1,2022
+Frank Lomer,Sagina apetala,Frank Lomer,historical,reported,1,2003
+Frank Lomer,Sagina maxima ssp. maxima,Frank Lomer,historical,reported,1,2014
+Frank Lomer,Sanguisorba minor,Frank Lomer,historical,reported,1,2003
+Frank Lomer,Silene antirrhina,Frank Lomer,historical,confirmed,1,2022
+Frank Lomer,Sisyrinchium idahoense var. idahoense,Frank Lomer,historical,confirmed,1,2022
+Frank Lomer,Torilis arvensis,Frank Lomer,historical,confirmed,1,2022
+Frank Lomer,Trifolium microcephalum,Frank Lomer,historical,confirmed,1,2001
+Frank Lomer,Typha angustifolia,Frank Lomer,historical,confirmed,1,2014
+Frank Lomer,Uropappus lindleyi,Frank Lomer,historical,confirmed,1,2003
+Frank Lomer,Veronica peregrina var. peregrina,Frank Lomer,historical,confirmed,1,2022
+Frank Lomer,Veronica persica,Frank Lomer,historical,confirmed,1,2022
+Frank Lomer,Vicia lathyroides,Frank Lomer,historical,confirmed,1,2014
+Frank Lomer,Wolffia columbiana,Frank Lomer,historical,confirmed,1,2014
+Frank Lomer,Yabea microcarpa,Frank Lomer,historical,confirmed,1,2003
+Gerald B. Straley,Agoseris heterophylla ssp. heterophylla,Gerald B. Straley,historical,confirmed,1,1988
+Gerald B. Straley,Alchemilla occidentalis,Gerald B. Straley,historical,confirmed,1,1983
+Gerald B. Straley,Bellis perennis,Gerald B. Straley,historical,confirmed,1,1989
+Gerald B. Straley,Cynosurus echinatus,Gerald B. Straley,historical,confirmed,1,1986
+Gerald B. Straley,Draba verna,Gerald B. Straley,historical,confirmed,1,1989
+Gerald B. Straley,Fumaria reuteri,Gerald B. Straley,historical,confirmed,1,1987
+Gerald B. Straley,Gnaphalium palustre,Gerald B. Straley,historical,confirmed,1,1986
+Gerald B. Straley,Montia dichotoma,Gerald B. Straley,historical,confirmed,1,1983
+Gerald B. Straley,Montia linearis,Gerald B. Straley,historical,confirmed,1,1988
+Gerald B. Straley,Oemleria cerasiformis,Gerald B. Straley,historical,confirmed,1,1989
+Gerald B. Straley,Perideridia gairdneri,Gerald B. Straley,historical,confirmed,1,1989
+Gerald B. Straley,Phacelia tanacetifolia,Gerald B. Straley,historical,reported,1,1987
+Gerald B. Straley,Prunus laurocerasus,Gerald B. Straley,historical,confirmed,1,1989
+Gerald B. Straley,Rubus bifrons,Gerald B. Straley,historical,confirmed,1,1989
+Gerald B. Straley,Rubus laciniatus,Gerald B. Straley,historical,confirmed,1,1989
+Gerald B. Straley,Rubus spectabilis,Gerald B. Straley,historical,confirmed,1,1989
+Gerald B. Straley,Shepherdia canadensis,Gerald B. Straley,historical,confirmed,1,1989
+Gerald B. Straley,Sherardia arvensis,Gerald B. Straley,historical,confirmed,1,1987
+Gerald B. Straley,Silene coronaria,Gerald B. Straley,historical,confirmed,1,1986
+Gerald B. Straley,Stellaria nitens,Gerald B. Straley,historical,confirmed,1,1983
+Gerald B. Straley,Trifolium variegatum,Gerald B. Straley,historical,confirmed,1,1983
+Gerald B. Straley,Triphysaria pusilla,Gerald B. Straley,historical,confirmed,1,1983
+Gerald B. Straley,Viola odorata,Gerald B. Straley,historical,confirmed,1,1989
+Gerald Straley & K. Nichols,Daphne laureola,Gerald Straley & K. Nichols,historical,confirmed,1,1989
+Hans Roemer,Agrostis gigantea,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Alnus rubra,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Amelanchier alnifolia,Hans Roemer,historical,confirmed,1,1980
+Hans Roemer,Athyrium filix-femina ssp. cyclosorum,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Carex aquatilis var. dives,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Carex canescens ssp. canescens,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Carex echinata ssp. echinata,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Carex livida,Hans Roemer,historical,reported,1,2000
+Hans Roemer,Carex obnupta,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Ceanothus sanguineus,Hans Roemer,historical,reported,1,1995
+Hans Roemer,Cicuta douglasii,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Clarkia amoena ssp. caurina,Hans Roemer,historical,confirmed,1,2004
+Hans Roemer,Drosera rotundifolia,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Eriophorum chamissonis,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Frangula purshiana,Hans Roemer,historical,confirmed,1,1980
+Hans Roemer,Galium trifidum,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Kalmia microphylla var. occidentalis,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Koeleria macrantha,Hans Roemer,historical,confirmed,1,1995
+Hans Roemer,Lemna minuta,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Lemna trisulca,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Ludwigia palustris,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Lycopus uniflorus,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Lysichiton americanus,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Lysimachia europaea ssp. arctica,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Lysimachia thyrsiflora,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Nuphar polysepala,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Oenanthe sarmentosa,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Persicaria amphibia,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Pinus monticola,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Potamogeton natans,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Potamogeton pusillus,Hans Roemer,historical,reported,1,2000
+Hans Roemer,Pseudotsuga menziesii var. menziesii,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Rhododendron groenlandicum,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Rhynchospora alba,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Rubus ursinus,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Salix lasiandra var. lasiandra,Hans Roemer,historical,confirmed,1,1995
+Hans Roemer,Sanicula bipinnatifida,Hans Roemer,historical,reported,1,1993
+Hans Roemer,Scirpus microcarpus,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Sparganium emersum,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Sparganium natans,Hans Roemer,historical,reported,1,2000
+Hans Roemer,Spiraea douglasii var. douglasii,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Thuja plicata,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Tsuga heterophylla,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Typha latifolia,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Vaccinium oxycoccos,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Veronica scutellata,Hans Roemer,historical,confirmed,1,2000
+Hans Roemer,Viola minuscula,Hans Roemer,historical,confirmed,1,2000
+Harvey Janszen,Abies grandis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Acer glabrum var. douglasii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Acer macrophyllum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Achillea millefolium complex,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Achlys triphylla,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Acmispon denticulatus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Acmispon parviflorus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Actaea rubra,Harvey Janszen,historical,reported,1,1981
+Harvey Janszen,Adenocaulon bicolor,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Agoseris grandiflora var. leptophylla,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Agrostis capillaris,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Agrostis exarata,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Agrostis scabra,Harvey Janszen,historical,reported,1,1979
+Harvey Janszen,Aira praecox,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Alcea rosea,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Alchemilla arvensis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Allium amplectens,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Allotropa virgata,Harvey Janszen,historical,confirmed,1,1982
+Harvey Janszen,Alopecurus pratensis,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Amaranthus powellii,Harvey Janszen,historical,confirmed,1,1975
+Harvey Janszen,Amsinckia menziesii,Harvey Janszen,historical,confirmed,1,1984
+Harvey Janszen,Anaphalis margaritacea,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Andromeda polifolia var. polifolia,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Angelica genuflexa,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Anthemis cotula,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Anthoxanthum aristatum ssp. aristatum,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Anthriscus caucalis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Aphyllon californicum ssp. californicum,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Apocynum androsaemifolium,Harvey Janszen,historical,reported,1,1984
+Harvey Janszen,Aquilegia formosa,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Arbutus menziesii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Arctium minus,Harvey Janszen,historical,confirmed,1,1975
+Harvey Janszen,Arctostaphylos uva-ursi,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Arctostaphylos × media,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Arenaria serpyllifolia var. serpyllifolia,Harvey Janszen,historical,reported,1,1979
+Harvey Janszen,Arrhenatherum elatius ssp. elatius,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Artemisia campestris ssp. pacifica,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Artemisia suksdorfii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Athysanus pusillus,Harvey Janszen,historical,confirmed,1,1978
+Harvey Janszen,Atriplex dioica,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Avena sativa,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Barbarea orthoceras,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Bellardia viscosa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Berberis aquifolium,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Berberis nervosa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Betula papyrifera,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Bolboschoenus maritimus ssp. paludosus,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Brodiaea coronaria,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Bromus diandrus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Bromus inermis,Harvey Janszen,historical,reported,1,1975
+Harvey Janszen,Bromus sitchensis,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Bromus vulgaris,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Buddleja davidii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Calandrinia menziesii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Callitriche heterophylla,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Calystegia sepium ssp. sepium,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Camassia quamash ssp. quamash,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Campanula rotundifolia,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Campanula scouleri,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cardamine pensylvanica,Harvey Janszen,historical,confirmed,1,1975
+Harvey Janszen,Carex arcta,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Carex aurea,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Carex cusickii,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Carex echinata ssp. phyllomanica,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Carex flava,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Carex hendersonii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Carex inops ssp. inops,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Carex kelloggii var. limnophila,Harvey Janszen,historical,reported,1,1979
+Harvey Janszen,Carex lasiocarpa,Harvey Janszen,historical,confirmed,1,1975
+Harvey Janszen,Carex leptalea,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Carex lyngbyei,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Carex oederi var. oederi,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Carex pachystachya,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Carex utriculata,Harvey Janszen,historical,reported,1,1979
+Harvey Janszen,Centaurium erythraea,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cerastium fontanum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cerastium glomeratum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Chamaenerion angustifolium,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Chenopodium album,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Chimaphila umbellata ssp. umbellata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cichorium intybus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cinna latifolia,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Circaea alpina ssp. alpina,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Circaea alpina ssp. pacifica,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Cirsium arvense,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cirsium vulgare,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Clinopodium douglasii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Collinsia grandiflora,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Collinsia parviflora,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Collomia heterophylla,Harvey Janszen,historical,confirmed,1,1976
+Harvey Janszen,Convolvulus arvensis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Corallorhiza maculata var. occidentalis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Corallorhiza striata var. striata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cornus nuttallii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cornus sericea ssp. occidentalis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cotoneaster simonsii,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Crassula connata,Harvey Janszen,historical,reported,1,1983
+Harvey Janszen,Crataegus douglasii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Crataegus monogyna,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Crepis capillaris,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cynosurus cristatus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Cytisus scoparius,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Dactylis glomerata,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Danthonia californica,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Datura stramonium,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Daucus carota,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Daucus pusillus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Delphinium ajacis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Delphinium menziesii,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Deschampsia danthonioides,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Dianthus armeria,Harvey Janszen,historical,confirmed,1,1975
+Harvey Janszen,Digitalis purpurea,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Distichlis spicata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Dryopteris expansa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Dulichium arundinaceum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Elodea canadensis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Elymus repens,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Epilobium brachycarpum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Equisetum arvense,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Equisetum hyemale ssp. affine,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Equisetum telmateia ssp. braunii,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Erigeron canadensis,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Eriocoma lemmonii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Eriophyllum lanatum var. leucophyllum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Erodium cicutarium,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Erysimum cheiranthoides,Harvey Janszen,historical,reported,1,1981
+Harvey Janszen,Erythranthe alsinoides,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Erythronium oregonum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Eschscholzia californica,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Euphorbia peplus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Euphrasia nemorosa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Fallopia convolvulus,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Festuca bromoides,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Festuca myuros,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Festuca occidentalis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Festuca roemeri var. roemeri,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Festuca subulata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Festuca subuliflora,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Filago germanica,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Fragaria chiloensis,Harvey Janszen,historical,reported,1,1975
+Harvey Janszen,Fragaria vesca ssp. bracteata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Fritillaria affinis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Galium aparine,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Galium mollugo,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Geranium bicknellii,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Geranium carolinianum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Geranium dissectum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Geranium molle,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Geranium pusillum,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Geranium robertianum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Geum macrophyllum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Glechoma hederacea,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Glyceria borealis,Harvey Janszen,historical,reported,1,1979
+Harvey Janszen,Glyceria leptostachya,Harvey Janszen,historical,confirmed,1,1982
+Harvey Janszen,Glyceria striata,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Gnaphalium uliginosum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Graphephorum canescens,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Graphephorum cernuum,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Grindelia squarrosa,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Hedera helix,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Hemitomes congestum,Harvey Janszen,historical,reported,1,1981
+Harvey Janszen,Heuchera micrantha var. diversifolia,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Hieracium albiflorum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Holodiscus discolor var. discolor,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Hordeum brachyantherum ssp. brachyantherum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Hordeum jubatum,Harvey Janszen,historical,reported,1,1981
+Harvey Janszen,Hordeum murinum ssp. leporinum,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Hypericum anagalloides,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Hypericum calycinum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Hypericum perforatum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Hypochaeris glabra,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Hypochaeris radicata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Ilex aquifolium,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Iris pseudacorus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Jacobaea vulgaris,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Juncus articulatus,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Juncus balticus,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Juncus bufonius,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Juncus effusus ssp. effusus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Juncus ensifolius,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Juncus oxymeris,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Juncus tenuis,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Laburnum anagyroides,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lactuca serriola,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lathyrus japonicus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lathyrus latifolius,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lathyrus nevadensis var. pilosellus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lepidium virginicum ssp. menziesii,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Leptosiphon minimus,Harvey Janszen,historical,confirmed,1,1982
+Harvey Janszen,Leymus mollis ssp. mollis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lilium columbianum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Linaria purpurea,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Linnaea borealis ssp. longiflora,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Lithophragma glabrum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lolium arundinaceum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lolium multiflorum,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Lolium perenne,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lolium pratense,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lomatium nudicaule,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lomatium papilioniferum,Harvey Janszen,historical,confirmed,1,1982
+Harvey Janszen,Lomatium utriculatum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lonicera ciliosa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lonicera hispidula,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lotus corniculatus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lupinus arboreus,Harvey Janszen,historical,reported,1,1981
+Harvey Janszen,Lupinus bicolor,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lupinus polycarpus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Luzula macrantha,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Luzula subsessilis,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Lycopodium clavatum,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Lysimachia arvensis,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Lysimachia latifolia,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Lysimachia maritima,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Madia glomerata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Madia gracilis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Madia sativa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Maianthemum dilatatum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Maianthemum racemosum ssp. amplexicaule,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Malus domestica,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Malus fusca,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Malva moschata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Malva neglecta,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Matricaria discoidea,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Meconella oregana,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Medicago lupulina,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Medicago sativa ssp. sativa,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Melilotus albus,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Melissa officinalis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Mentha canadensis,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Mentha suaveolens,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Micranthes integrifolia,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Microsteris gracilis,Harvey Janszen,historical,confirmed,1,1982
+Harvey Janszen,Monotropa hypopitys,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Monotropa uniflora,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Montia parvifolia,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Mycelis muralis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Myriophyllum spicatum,Harvey Janszen,historical,reported,1,1979
+Harvey Janszen,Nasturtium officinale,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Navarretia squarrosa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Nemophila pedunculata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Nuttallanthus texanus,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Papaver somniferum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Paxistima myrsinites,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Persicaria maculosa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Petasites frigidus var. palmatus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Petasites japonicus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Phacelia linearis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Phalaris arundinacea,Harvey Janszen,historical,confirmed,1,1975
+Harvey Janszen,Philadelphus lewisii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Phleum pratense,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Phragmites australis ssp. australis,Harvey Janszen,historical,reported,1,1981
+Harvey Janszen,Physocarpus capitatus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Pinus ponderosa var. ponderosa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Plagiobothrys tenellus,Harvey Janszen,historical,reported,1,1980
+Harvey Janszen,Plantago elongata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Plantago lanceolata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Plantago major,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Plantago maritima,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Platanthera elegans,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Platanthera elongata,Harvey Janszen,historical,confirmed,1,1975
+Harvey Janszen,Platanthera unalascensis,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Plectritis congesta ssp. congesta,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Plectritis macrocera,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Poa annua,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Poa compressa,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Poa nemoralis,Harvey Janszen,historical,reported,1,1984
+Harvey Janszen,Poa secunda,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Poa trivialis,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Polygonum aviculare,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Polygonum douglasii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Polygonum fowleri,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Polypogon monspeliensis,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Populus tremuloides,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Populus trichocarpa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Potamogeton berchtoldii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Potentilla norvegica,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Primula hendersonii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Primula pauciflora var. pauciflora,Harvey Janszen,historical,reported,1,1984
+Harvey Janszen,Prunella vulgaris,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Prunus emarginata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Pteridium aquilinum ssp. pubescens,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Puccinellia nutkaensis,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Puccinellia pumila,Harvey Janszen,historical,reported,1,1979
+Harvey Janszen,Pyrola asarifolia,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Pyrola picta,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Ranunculus acris,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Ranunculus aquatilis,Harvey Janszen,historical,reported,1,1979
+Harvey Janszen,Ranunculus flammula,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Ranunculus occidentalis var. occidentalis,Harvey Janszen,historical,confirmed,1,1975
+Harvey Janszen,Ranunculus sardous,Harvey Janszen,historical,confirmed,1,1982
+Harvey Janszen,Ranunculus uncinatus,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Raphanus sativus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Ribes bracteosum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Ribes divaricatum var. divaricatum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Ribes sanguineum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Rorippa palustris ssp. palustris,Harvey Janszen,historical,reported,1,1982
+Harvey Janszen,Rosa gymnocarpa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Rosa nutkana ssp. nutkana,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Rosa rubiginosa,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Rubus leucodermis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Rubus parviflorus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Rumex acetosella,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Rumex conglomeratus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Rumex crispus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Rumex obtusifolius,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Rumex transitorius,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Sagina decumbens ssp. occidentalis,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Sagina procumbens,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Salicornia pacifica,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Salix scouleriana,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Salix sitchensis,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Sambucus racemosa var. arborescens,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Sanicula crassicaulis var. crassicaulis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Saxifraga cespitosa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Sceptridium multifidum,Harvey Janszen,historical,reported,1,1979
+Harvey Janszen,Schoenoplectus acutus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Secale cereale,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Sedum album,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Sedum lanceolatum var. nesioticum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Sedum spathulifolium,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Senecio vulgaris,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Silene vulgaris,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Sisymbrium altissimum,Harvey Janszen,historical,reported,1,1982
+Harvey Janszen,Solanum americanum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Solanum sarrachoides,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Solidago elongata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Sonchus arvensis ssp. arvensis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Sonchus asper,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Sonchus oleraceus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Spergula arvensis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Spergularia canadensis var. occidentalis,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Spergularia marina,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Spiranthes romanzoffiana,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Spirodela polyrhiza,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Stachys chamissonis var. cooleyae,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Stellaria media,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Struthiopteris spicant,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Symphoricarpos albus var. laevigatus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Symphoricarpos mollis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Symphytum officinale,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Tanacetum vulgare,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Taraxacum erythrospermum agg.,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Tellima grandiflora,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Thlaspi arvense,Harvey Janszen,historical,confirmed,1,1979
+Harvey Janszen,Thysanocarpus curvipes,Harvey Janszen,historical,confirmed,1,1980
+Harvey Janszen,Tiarella trifoliata var. trifoliata,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Torilis japonica,Harvey Janszen,historical,confirmed,1,1976
+Harvey Janszen,Torreyochloa pallida var. pauciflora,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Toxicodendron diversilobum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Toxicoscordion venenosum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Tragopogon porrifolius,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Trifolium campestre,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Trifolium dichotomum,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Trifolium dubium,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Trifolium hybridum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Trifolium incarnatum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Trifolium microdon,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Trifolium oliganthum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Trifolium pratense,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Trifolium repens,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Trifolium subterraneum,Harvey Janszen,historical,confirmed,1,1981
+Harvey Janszen,Trifolium willdenovii,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Trifolium wormskioldii,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Triglochin concinna var. concinna,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Triglochin maritima,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Triodanis perfoliata,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Triteleia hyacinthina,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Utricularia macrorhiza,Harvey Janszen,historical,reported,1,2001
+Harvey Janszen,Vaccinium ovatum,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Vaccinium parvifolium,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Verbascum thapsus,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Veronica filiformis,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Veronica serpyllifolia,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Vicia americana,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Vicia cracca,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Vicia gigantea,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Vicia hirsuta,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Vicia sativa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Vicia villosa var. villosa,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Vinca major,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Vinca minor,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Viola palustris,Harvey Janszen,historical,confirmed,1,2001
+Harvey Janszen,Viola sempervirens,Harvey Janszen,historical,confirmed,1,2001
+"Harvey Janszen, Jenifer Penny & Charlotte Norris",Ceratophyllum echinatum,"Harvey Janszen, Jenifer Penny & Charlotte Norris",historical,confirmed,1,1996
+"Harvey Janszen, Jenifer Penny & Charlotte Norris",Cystopteris fragilis,"Harvey Janszen, Jenifer Penny & Charlotte Norris",historical,confirmed,1,1996
+J. A. Calder,Aphyllon purpureum,J. A. Calder,historical,confirmed,1,1961
+J. A. Calder,Arctostaphylos columbiana,J. A. Calder,historical,confirmed,1,1961
+J. A. Calder,Camassia leichtlinii ssp. suksdorfii,J. A. Calder,historical,confirmed,1,1961
+J. A. Calder,Pentagramma triangularis ssp. triangularis,J. A. Calder,historical,confirmed,1,1961
+J. A. Calder,Polypodium glycyrrhiza,J. A. Calder,historical,confirmed,1,1961
+J. Travis,Rhamphospermum arvense,J. Travis,historical,reported,1,1928
+"Jenifer Penny, Charlotte Norris, & Harvey Janszen",Allium cernuum,"Jenifer Penny, Charlotte Norris, & Harvey Janszen",historical,confirmed,1,1996
+"Jennifer L. Penny, Charlotte E. Norris, & Harvey Janszen",Castilleja attenuata,"Jennifer L. Penny, Charlotte E. Norris, & Harvey Janszen",historical,confirmed,1,1996
+Keith Erickson & S. Gates,Potamogeton gramineus,Keith Erickson & S. Gates,historical,reported,1,2002
+Keith Erickson & Steven Gates,Juncus supiniformis,Keith Erickson & Steven Gates,historical,reported,1,2002
+Kent Brothers,Cardamine hirsuta,Kent Brothers,historical,confirmed,1,NA
+Kent Brothers,Claytonia parviflora,Kent Brothers,historical,confirmed,1,NA
+Kent Brothers,Goodyera oblongifolia,Kent Brothers,historical,confirmed,1,NA
+Kent Brothers,Poa bulbosa,Kent Brothers,historical,confirmed,1,NA
+Kent Brothers,Taxus brevifolia,Kent Brothers,historical,confirmed,1,NA
+Leon Pavlick,Bromus tectorum,Leon Pavlick,historical,confirmed,1,1975
+Matt Fairbarns,Idahoa scapigera,Matt Fairbarns,historical,confirmed,1,2016
+Matt Fairbarns,Lathyrus sylvestris,Matt Fairbarns,historical,reported,1,2016
+Matt Fairbarns,Pseudognaphalium stramineum,Matt Fairbarns,historical,confirmed,1,2016
+Matt Fairbarns,Sanicula graveolens,Matt Fairbarns,historical,reported,1,2016
+Matt Fairbarns,Taraxacum officinale agg.,Matt Fairbarns,historical,confirmed,1,2016
+P. F. Zika,Impatiens glandulifera,P. F. Zika,historical,reported,1,2004
+R. Biggs,Cardamine nuttallii,R. Biggs,historical,confirmed,1,1972
+S. Keene,Argentina pacifica,S. Keene,historical,confirmed,1,1974
+S. Keene,Bromus hordeaceus,S. Keene,historical,confirmed,1,1974
+S. Keene,Bromus sterilis,S. Keene,historical,confirmed,1,1974
+T. C. Brayshaw,Puccinellia nuttalliana,T. C. Brayshaw,historical,reported,1,1975
+T. M. Taylor,Verbascum phlomoides,T. M. Taylor,historical,confirmed,1,1992
+Terry Taylor,Fumaria officinalis,Terry Taylor,historical,reported,1,2012
+Terry Taylor,Lunaria annua,Terry Taylor,historical,confirmed,1,2012
+Terry Taylor,Luzula parviflora,Terry Taylor,historical,reported,1,2012
+Terry Taylor,Narcissus cf. pseudonarcissus,Terry Taylor,historical,confirmed,1,2012
+Terry Taylor,Symphytum × uplandicum,Terry Taylor,historical,reported,1,2012
+Trudy Chatwin,Bidens amplissima,Trudy Chatwin,historical,reported,1,2012
+V. J. Krajina,Castilleja hispida,V. J. Krajina,historical,confirmed,1,1980
+W. M. Bird,Allium acuminatum,W. M. Bird,historical,confirmed,1,1958
+Wilfred B. Schofield,Calypso bulbosa var. occidentalis,Wilfred B. Schofield,historical,confirmed,1,1974
+Wilfred B. Schofield,Claytonia perfoliata,Wilfred B. Schofield,historical,confirmed,1,1974
+Wilfred B. Schofield,Crocidium multicaule,Wilfred B. Schofield,historical,confirmed,1,1974
+Wilfred B. Schofield,Lithophragma parviflorum,Wilfred B. Schofield,historical,confirmed,1,1974
+Wilfred B. Schofield,Montia fontana,Wilfred B. Schofield,historical,confirmed,1,1974
+Wilfred B. Schofield,Neottia cordata,Wilfred B. Schofield,historical,confirmed,1,1974
+Wilfred B. Schofield,Ribes lobbii,Wilfred B. Schofield,historical,confirmed,1,1974
+William J. Crins,Anisocarpus madioides,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Cirsium brevistylum,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Deschampsia elongata,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Epilobium ciliatum,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Epilobium minutum,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Erythranthe ptilota,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Galium triflorum,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Holcus lanatus,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Luzula comosa var. laxa,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Madia exigua,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Melica subulata,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Nemophila parviflora,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Osmorhiza berteroi,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Selaginella wallacei,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Senecio sylvaticus,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Veronica americana,William J. Crins,historical,confirmed,1,1986
+William J. Crins,Veronica arvensis,William J. Crins,historical,confirmed,1,1986
+William Newcombe,Arabis eschscholtziana,William Newcombe,historical,confirmed,1,1930
+William Newcombe,Lepidium ramosissimum,William Newcombe,historical,reported,1,1934
+William Newcombe,Turritis glabra,William Newcombe,historical,confirmed,1,1930
+Adam Huggins,Acer glabrum var. douglasii,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Aegopodium podagraria,Adam Huggins,contemporary,new,1,2023
+Adam Huggins,Allium acuminatum,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Allium cernuum,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Allium vineale,Adam Huggins,contemporary,new,1,2019
+Adam Huggins,Alopecurus pratensis,Adam Huggins,contemporary,confirmed,1,2022
+Adam Huggins,Arctostaphylos uva-ursi,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Artemisia suksdorfii,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Asplenium trichomanes ssp. trichomanes,Adam Huggins,contemporary,new,1,2016
+Adam Huggins,Avena sativa,Adam Huggins,contemporary,confirmed,1,2022
+Adam Huggins,Bromus diandrus,Adam Huggins,contemporary,confirmed,1,2022
+Adam Huggins,Carex scoparia,Adam Huggins,contemporary,new,1,2022
+Adam Huggins,Clematis vitalba,Adam Huggins,contemporary,new,1,2019
+Adam Huggins,Echinochloa crus-galli,Adam Huggins,contemporary,new,1,2022
+Adam Huggins,Elymus glaucus ssp. glaucus,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Elymus repens,Adam Huggins,contemporary,confirmed,1,2022
+Adam Huggins,Empetrum nigrum,Adam Huggins,contemporary,new,1,2016
+Adam Huggins,Epilobium brachycarpum,Adam Huggins,contemporary,confirmed,1,2018
+Adam Huggins,Epilobium densiflorum,Adam Huggins,contemporary,new,1,2016
+Adam Huggins,Festuca roemeri var. roemeri,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Glechoma hederacea,Adam Huggins,contemporary,confirmed,1,2020
+Adam Huggins,Grindelia hirsutula,Adam Huggins,contemporary,new,1,2016
+Adam Huggins,Juncus balticus,Adam Huggins,contemporary,confirmed,1,2022
+Adam Huggins,Malus fusca,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Nymphoides peltata,Adam Huggins,contemporary,new,1,2022
+Adam Huggins,Philadelphus lewisii,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Pilosella aurantiaca,Adam Huggins,contemporary,new,1,2016
+Adam Huggins,Ribes lobbii,Adam Huggins,contemporary,confirmed,1,2021
+Adam Huggins,Salix lasiandra var. lasiandra,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Sambucus cerulea,Adam Huggins,contemporary,new,1,2022
+Adam Huggins,Schoenoplectus acutus,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Solanum nigrum,Adam Huggins,contemporary,new,1,2018
+Adam Huggins,Solidago lepida,Adam Huggins,contemporary,new,1,2016
+Adam Huggins,Sorbus aucuparia,Adam Huggins,contemporary,new,1,2016
+Adam Huggins,Stellaria crispa,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Symphyotrichum novi-belgii,Adam Huggins,contemporary,new,1,2020
+Adam Huggins,Symphyotrichum subspicatum,Adam Huggins,contemporary,confirmed,1,2020
+Adam Huggins,Toxicodendron diversilobum,Adam Huggins,contemporary,confirmed,1,2018
+Adam Huggins,Valerianella locusta,Adam Huggins,contemporary,new,1,2020
+Adam Huggins & Andrew Simon,Menyanthes trifoliata,Adam Huggins & Andrew Simon,contemporary,new,1,2016
+Aimee Pelletier,Euphorbia myrsinites,Aimee Pelletier,contemporary,new,1,2019
+Alejandro Huereca Delgado,Sempervivum tectorum,Alejandro Huereca Delgado,contemporary,new,1,2021
+Alexander J. Wright,Callitriche heterophylla,Alexander J. Wright,contemporary,confirmed,1,2017
+Alexander J. Wright,Hippuris vulgaris,Alexander J. Wright,contemporary,new,1,2017
+Alexander J. Wright,Juncus ensifolius,Alexander J. Wright,contemporary,confirmed,1,2017
+Alexander J. Wright,Ornithogalum umbellatum,Alexander J. Wright,contemporary,new,1,2017
+Alexander J. Wright,Trifolium microcephalum,Alexander J. Wright,contemporary,confirmed,1,2017
+Alexander J. Wright,Trifolium microdon,Alexander J. Wright,contemporary,confirmed,1,2017
+Alexander J. Wright,Veronica officinalis,Alexander J. Wright,contemporary,new,1,2017
+Alexander J. Wright,Viola palustris,Alexander J. Wright,contemporary,confirmed,1,2017
+Alexander J. Wright,Wolffia columbiana,Alexander J. Wright,contemporary,confirmed,1,2017
+Alexander J. Wright,Yabea microcarpa,Alexander J. Wright,contemporary,confirmed,1,2017
+Alexander J. Wright & Andrew Simon,Cirsium brevistylum,Alexander J. Wright & Andrew Simon,contemporary,confirmed,1,2017
+Alexander J. Wright & Andrew Simon,Clarkia amoena ssp. lindleyi,Alexander J. Wright & Andrew Simon,contemporary,new,1,2017
+Alexander J. Wright & Andrew Simon,Festuca microstachys var. pauciflora,Alexander J. Wright & Andrew Simon,contemporary,confirmed,1,2017
+"Alison, Laura and Malcolm Colwell",Abies grandis,"Alison, Laura and Malcolm Colwell",contemporary,confirmed,1,2012
+"Alison, Laura and Malcolm Colwell",Arceuthobium douglasii,"Alison, Laura and Malcolm Colwell",contemporary,new,1,2016
+"Alison, Laura and Malcolm Colwell",Dryopteris expansa,"Alison, Laura and Malcolm Colwell",contemporary,confirmed,1,2016
+"Alison, Laura and Malcolm Colwell",Epipactis helleborine,"Alison, Laura and Malcolm Colwell",contemporary,new,1,2016
+"Alison, Laura and Malcolm Colwell",Hyacinthoides hispanica,"Alison, Laura and Malcolm Colwell",contemporary,new,1,2016
+"Alison, Laura and Malcolm Colwell",Prunus emarginata,"Alison, Laura and Malcolm Colwell",contemporary,confirmed,1,2012
+"Alison, Laura and Malcolm Colwell",Rumex occidentalis,"Alison, Laura and Malcolm Colwell",contemporary,new,1,2016
+"Alison, Laura and Malcolm Colwell",Scilla luciliae,"Alison, Laura and Malcolm Colwell",contemporary,new,1,2016
+"Alison, Laura and Malcolm Colwell",Thuja plicata,"Alison, Laura and Malcolm Colwell",contemporary,confirmed,1,2012
+"Alison, Laura and Malcolm Colwell",Tsuga heterophylla,"Alison, Laura and Malcolm Colwell",contemporary,confirmed,1,2012
+"Alison, Laura and Malcolm Colwell",Viola sempervirens,"Alison, Laura and Malcolm Colwell",contemporary,confirmed,1,2016
+Andrew Simon,Acer macrophyllum,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Acmispon parviflorus,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Adenocaulon bicolor,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Adiantum aleuticum var. aleuticum,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Aesculus hippocastanum,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Agoseris heterophylla ssp. heterophylla,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Agrostis capillaris,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Agrostis exarata,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Agrostis pallens,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Agrostis stolonifera,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Aira praecox,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Alchemilla arvensis,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Alchemilla occidentalis,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Allotropa virgata,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Alopecurus geniculatus,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Amaranthus powellii,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Ambrosia chamissonis,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Amsinckia menziesii,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Anisocarpus madioides,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Anthoxanthum odoratum,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Anthriscus caucalis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Aquilegia formosa,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Arabis eschscholtziana,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Argentina pacifica,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Artemisia campestris ssp. pacifica,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Athyrium filix-femina ssp. cyclosorum,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Athysanus pusillus,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Atriplex dioica,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Atriplex prostrata,Andrew Simon,contemporary,new,1,2015
+Andrew Simon,Barbarea orthoceras,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Barbarea verna,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Berberis aquifolium,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Betula papyrifera,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Bidens cernua,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Boechera divaricarpa,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Bromus commutatus,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Bromus hordeaceus,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Bromus sterilis,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Bromus tectorum,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Bromus vulgaris,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Cakile edentula var. edentula,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Cakile maritima ssp. maritima,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Calamagrostis canadensis,Andrew Simon,contemporary,new,1,2024
+Andrew Simon,Calystegia sepium ssp. sepium,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Campanula persicifolia,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Capsella bursa-pastoris,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Cardamine flexuosa,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Cardamine hirsuta,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Cardamine pensylvanica,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Carex arcta,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Carex aurea,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Carex canescens ssp. canescens,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Carex exsiccata,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Carex hendersonii,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Carex inops ssp. inops,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Carex leptopoda,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Carex lyngbyei,Andrew Simon,contemporary,confirmed,1,2023
+Andrew Simon,Carex obnupta,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Carex oederi var. oederi,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Carex pallescens,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Carex pellita,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Castilleja attenuata,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Cerastium glomeratum,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Cerastium pumilum,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Cerastium tomentosum,Andrew Simon,contemporary,new,1,2019
+Andrew Simon,Chenopodium album,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Cichorium intybus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Cirsium vulgare,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Clarkia amoena ssp. caurina,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Claytonia rubra ssp. depressa,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Clinopodium douglasii,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Collomia heterophylla,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Conioselinum gmelinii,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Corallorhiza maculata var. maculata,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Cornus sericea ssp. occidentalis,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Corylus cornuta ssp. californica,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Cotoneaster franchetii,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Cotoneaster simonsii,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Crataegus douglasii,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Cynosurus cristatus,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Cystopteris fragilis,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Dactylis glomerata,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Danthonia californica,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Daphne laureola,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Daucus carota,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Daucus pusillus,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Deschampsia cespitosa,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Deschampsia elongata,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Dianthus armeria,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Distichlis spicata,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Draba verna,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Drosera rotundifolia,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Dulichium arundinaceum,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Echinops sphaerocephalus,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Eleocharis palustris,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Elodea canadensis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Epilobium ciliatum,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Epilobium minutum,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Epilobium ravenii,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Equisetum telmateia ssp. braunii,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Eriocoma lemmonii,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Erodium cicutarium,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Erythranthe cf guttata,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Erythranthe microphylla,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Erythranthe nasuta,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Erythranthe sookensis,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Eschscholzia californica,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Euphorbia cyparissias,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Euphorbia peplus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Euphrasia nemorosa,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Festuca bromoides,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Festuca myuros,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Festuca occidentalis,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Festuca subulata,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Festuca subuliflora,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Filago germanica,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Fragaria vesca ssp. bracteata,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Frangula purshiana,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Galinsoga quadriradiata,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Galium trifidum,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Galium triflorum,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Geranium carolinianum,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Geranium molle,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Geranium versicolor,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Glyceria elata,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Glyceria leptostachya,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Gnaphalium uliginosum,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Graphephorum cernuum,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Hedera helix,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Hedera hibernica,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Hesperis matronalis,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Hordeum brachyantherum ssp. brachyantherum,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Hordeum murinum ssp. murinum,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Hyacinthoides × massartiana,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Hypericum calycinum,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Hypericum perforatum,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Hypochaeris glabra,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Ilex aquifolium,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Juncus bufonius,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Juncus effusus ssp. effusus,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Juncus effusus ssp. pacificus,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Juncus hesperius,Andrew Simon,contemporary,new,1,2020
+Andrew Simon,Juncus tenuis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Lactuca serriola,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Lamium hybridum,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Lathyrus japonicus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Lathyrus nevadensis var. pilosellus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Lemna trisulca,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Lemna turionifera,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Lepidium heterophyllum,Andrew Simon,contemporary,new,1,2020
+Andrew Simon,Lepidium virginicum ssp. menziesii,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Leymus mollis ssp. mollis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Linaria purpurea,Andrew Simon,contemporary,confirmed,1,2014
+Andrew Simon,Lobularia maritima,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Lolium arundinaceum,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Lolium perenne,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Lolium pratense,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Lomatium papilioniferum,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Lomatium utriculatum,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Lupinus polycarpus,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Luzula comosa var. laxa,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Luzula multiflora ssp. multiflora,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Lycopus americanus,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Lycopus uniflorus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Lysimachia latifolia,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Lysimachia minima,Andrew Simon,contemporary,new,1,2020
+Andrew Simon,Lysimachia nummularia,Andrew Simon,contemporary,new,1,2025
+Andrew Simon,Madia glomerata,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Madia gracilis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Madia sativa,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Malus domestica,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Malva moschata,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Medicago lupulina,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Melica harfordii,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Melica subulata,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Melissa officinalis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Micranthes rufidula,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Microsteris gracilis,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Moenchia erecta,Andrew Simon,contemporary,new,1,2020
+Andrew Simon,Montia dichotoma,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Montia howellii,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Montia parvifolia,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Mycelis muralis,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Myosotis arvensis,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Myosotis discolor,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Myosotis sylvatica,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Myosurus minimus,Andrew Simon,contemporary,confirmed,1,2023
+Andrew Simon,Myriophyllum sp.,Andrew Simon,contemporary,new,1,2019
+Andrew Simon,Narcissus cf. pseudonarcissus,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Nemophila parviflora,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Nemophila pedunculata,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Neottia cordata,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Oemleria cerasiformis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Oenanthe sarmentosa,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Oenothera biennis,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Osmorhiza berteroi,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Oxalis corniculata,Andrew Simon,contemporary,new,1,2020
+Andrew Simon,Panicum capillare,Andrew Simon,contemporary,new,1,2019
+Andrew Simon,Papaver somniferum,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Paxistima myrsinites,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Perideridia gairdneri,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Petroselinum crispum,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Phacelia linearis,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Phalaris arundinacea,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Phleum pratense,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Picea sitchensis,Andrew Simon,contemporary,new,1,2020
+Andrew Simon,Pinus ponderosa var. ponderosa,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Plantago major,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Plantago maritima,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Plectritis congesta ssp. brachystemon,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Poa annua,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Poa bulbosa,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Poa compressa,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Poa pratensis,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Poa secunda,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Poa trivialis,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Polygonum aviculare,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Polygonum fowleri,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Populus nigra,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Populus tremuloides,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Populus trichocarpa,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Potamogeton amplifolius,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Potamogeton berchtoldii,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Potamogeton natans,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Prunella vulgaris,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Prunus laurocerasus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Pseudognaphalium stramineum,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Pseudognaphalium thermale,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Pyrola picta,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Pyrus communis,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Ranunculus acris,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Ranunculus occidentalis var. occidentalis,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Ranunculus sardous,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Ranunculus uncinatus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Raphanus raphanistrum,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Raphanus sativus,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Reynoutria japonica,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Rhynchospora alba,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Rosa canina,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Rubus bifrons,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Rubus leucodermis,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Rubus parviflorus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Rubus spectabilis,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Rumex conglomeratus,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Rumex transitorius,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Sabulina macra,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Sagina decumbens ssp. occidentalis,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Sagina procumbens,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Salix hookeriana,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Salix sitchensis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Sambucus racemosa var. arborescens,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Sanicula crassicaulis var. crassicaulis,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Sanicula crassicaulis var. tripartita,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Scirpus cyperinus,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Scorzoneroides autumnalis,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Sedum acre,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Sedum album,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Sedum lanceolatum var. nesioticum,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Selaginella wallacei,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Senecio vulgaris,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Setaria pumila,Andrew Simon,contemporary,new,1,2019
+Andrew Simon,Sisymbrium officinale,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Smyrnium olusatrum,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Solanum nitidibaccatum,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Solidago elongata,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Sonchus arvensis ssp. arvensis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Sonchus asper,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Sparganium angustifolium,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Sparganium emersum,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Spergula arvensis,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Spergularia canadensis var. occidentalis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Spiranthes romanzoffiana,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Spirodela polyrhiza,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Stachys chamissonis var. cooleyae,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Stellaria graminea,Andrew Simon,contemporary,new,1,2015
+Andrew Simon,Stellaria media,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Stellaria nitens,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Symphoricarpos albus var. laevigatus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Symphoricarpos mollis,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Symphyotrichum chilense,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Symphytum officinale,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Tanacetum vulgare,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Taraxacum officinale agg.,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Thlaspi arvense,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Torilis arvensis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Torreyochloa pallida var. pauciflora,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Tragopogon porrifolius,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Trifolium arvense,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Trifolium campestre,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Trifolium dichotomum,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Trifolium dubium,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Trifolium glomeratum,Andrew Simon,contemporary,new,1,2020
+Andrew Simon,Trifolium hybridum,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Trifolium incarnatum,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Trifolium repens,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Trifolium striatum,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Trifolium variegatum,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Triglochin maritima,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Turritis glabra,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Typha latifolia,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Uropappus lindleyi,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Utricularia gibba,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Vaccinium parvifolium,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Verbascum thapsus,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Veronica americana,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Veronica arvensis,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Veronica filiformis,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Veronica peregrina var. peregrina,Andrew Simon,contemporary,confirmed,1,2018
+Andrew Simon,Veronica peregrina var. xalapensis,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Vicia americana,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Vicia hirsuta,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Vicia lathyroides,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Vicia tetrasperma,Andrew Simon,contemporary,new,1,2020
+Andrew Simon,Vinca major,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Viola minuscula,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Viola odorata,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon & Alexander J. Wright,Bromus sitchensis,Andrew Simon & Alexander J. Wright,contemporary,confirmed,1,2017
+Andrew Simon & Austin Baines,Maianthemum racemosum ssp. amplexicaule,Andrew Simon & Austin Baines,contemporary,confirmed,1,2022
+Andrew Simon & Frank Lomer,Bromus racemosus,Andrew Simon & Frank Lomer,contemporary,new,1,2022
+Andrew Simon & Frank Lomer,Bromus secalinus,Andrew Simon & Frank Lomer,contemporary,new,1,2022
+Andrew Simon & Frank Lomer,Carex sylvatica,Andrew Simon & Frank Lomer,contemporary,new,1,2022
+Andrew Simon & Frank Lomer,Danthonia decumbens,Andrew Simon & Frank Lomer,contemporary,new,1,2022
+Andrew Simon & Frank Lomer,Deschampsia danthonioides,Andrew Simon & Frank Lomer,contemporary,confirmed,1,2022
+Andrew Simon & Frank Lomer,Epilobium parviflorum,Andrew Simon & Frank Lomer,contemporary,new,1,2022
+Andrew Simon & Frank Lomer,Festuca rubra ssp. pruinosa,Andrew Simon & Frank Lomer,contemporary,confirmed,1,2022
+Andrew Simon & Frank Lomer,Festuca rubra ssp. rubra,Andrew Simon & Frank Lomer,contemporary,new,1,2022
+Andrew Simon & Frank Lomer,Graphephorum canescens,Andrew Simon & Frank Lomer,contemporary,confirmed,1,2022
+Andrew Simon & Frank Lomer,Iris × hybrida,Andrew Simon & Frank Lomer,contemporary,new,1,2022
+Andrew Simon & Frank Lomer,Juncus pylaei,Andrew Simon & Frank Lomer,contemporary,new,1,2022
+Andrew Simon & Frank Lomer,Oenanthe pimpinelloides,Andrew Simon & Frank Lomer,contemporary,new,1,2020
+Andrew Simon & Frank Lomer,Poa palustris,Andrew Simon & Frank Lomer,contemporary,new,1,2022
+Andrew Simon & Frank Lomer,Psilocarphus tenellus,Andrew Simon & Frank Lomer,contemporary,new,1,2022
+Andrew Simon & Frank Lomer,Sisyrinchium idahoense var. idahoense,Andrew Simon & Frank Lomer,contemporary,confirmed,1,2022
+Andrew Simon & Kevin Toomer,Polygonum spergulariiforme,Andrew Simon & Kevin Toomer,contemporary,new,1,2018
+Andrew Simon & Quirin Hohendorf,Corallorhiza striata var. striata,Andrew Simon & Quirin Hohendorf,contemporary,confirmed,1,2018
+Andrew Simon & Ryan Batten,Plantago elongata,Andrew Simon & Ryan Batten,contemporary,confirmed,1,2022
+"Andrew Simon, Quentin Cronk, Diana Percy, Carmen Lea, Jessica Duncan & Harley Gordon",Ceratophyllum echinatum,"Andrew Simon, Quentin Cronk, Diana Percy, Carmen Lea, Jessica Duncan & Harley Gordon",contemporary,confirmed,1,2019
+"Andrew Simon, Quentin Cronk, Diana Percy, Carmen Lea, Jessica Duncan & Harley Gordon",Maianthemum dilatatum,"Andrew Simon, Quentin Cronk, Diana Percy, Carmen Lea, Jessica Duncan & Harley Gordon",contemporary,confirmed,1,2019
+Audrey Irvine-Broque,Lomatium nudicaule,Audrey Irvine-Broque,contemporary,confirmed,1,2021
+Audrey Irvine-Broque,Platanthera unalascensis,Audrey Irvine-Broque,contemporary,confirmed,1,2021
+Audrey Irvine-Broque,Pterospora andromedea,Audrey Irvine-Broque,contemporary,new,1,2021
+Barbara Irving,Gnaphalium palustre,Barbara Irving,contemporary,confirmed,1,2021
+Barbara Rennie,Castilleja miniata var. dixonii,Barbara Rennie,contemporary,new,1,2022
+Brian Starzomski,Brodiaea coronaria,Brian Starzomski,contemporary,confirmed,1,2012
+Brian Starzomski,Erythranthe alsinoides,Brian Starzomski,contemporary,confirmed,1,2012
+Brian Starzomski,Pyrola asarifolia,Brian Starzomski,contemporary,confirmed,1,2019
+Brian Starzomski,Sedum spathulifolium,Brian Starzomski,contemporary,confirmed,1,2012
+Brian Starzomski,Vicia gigantea,Brian Starzomski,contemporary,confirmed,1,2019
+Caitlin Robinson,Persicaria maculosa,Caitlin Robinson,contemporary,confirmed,1,2022
+Caitlin Robinson,Petasites japonicus,Caitlin Robinson,contemporary,confirmed,1,2019
+Caitlin Robinson & Andrew Simon,Platanthera ephemerantha,Caitlin Robinson & Andrew Simon,contemporary,new,1,2021
+Chessi Miltner,Plectritis congesta ssp. congesta,Chessi Miltner,contemporary,confirmed,1,2016
+Christopher Heffley,Amaranthus retroflexus,Christopher Heffley,contemporary,new,1,2018
+Christopher Heffley,Lunaria annua,Christopher Heffley,contemporary,confirmed,1,2019
+Christopher Heffley,Potentilla recta,Christopher Heffley,contemporary,new,1,2020
+Christopher Heffley,Ribes rubrum,Christopher Heffley,contemporary,new,1,2018
+Christopher Heffley,Robinia pseudoacacia,Christopher Heffley,contemporary,new,1,2017
+Christopher Heffley,Veronica persica,Christopher Heffley,contemporary,confirmed,1,2018
+Colleen Doty,Datura stramonium,Colleen Doty,contemporary,confirmed,1,2016
+Corinne Risler,Toxicoscordion venenosum,Corinne Risler,contemporary,confirmed,1,2014
+David Clements,Aubrieta deltoidea,David Clements,contemporary,new,1,2025
+David Deforest Berman,Calystegia silvatica ssp. silvatica,David Deforest Berman,contemporary,new,1,2017
+Ed Andrusiak,Conium maculatum,Ed Andrusiak,contemporary,new,1,2019
+Ed Andrusiak,Echium vulgare,Ed Andrusiak,contemporary,confirmed,1,2020
+Emma Harrower,Cerastium arvense ssp. strictum,Emma Harrower,contemporary,confirmed,1,2011
+Emma Harrower,Collinsia grandiflora,Emma Harrower,contemporary,confirmed,1,2011
+Emma Harrower,Lithophragma parviflorum,Emma Harrower,contemporary,confirmed,1,2011
+Emma Menchions,Azolla sp.,Emma Menchions,contemporary,new,1,2025
+Eric Hagen,Festuca trachyphylla,Eric Hagen,contemporary,new,1,2021
+Felix Erhard,Achlys triphylla,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Calypso bulbosa var. occidentalis,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Camassia leichtlinii ssp. suksdorfii,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Claytonia perfoliata,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Collinsia parviflora,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Corallorhiza maculata var. occidentalis,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Cynosurus echinatus,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Delphinium menziesii,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Juncus articulatus,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Lilium columbianum,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Lupinus bicolor,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Lysichiton americanus,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Petrosedum forsterianum,Felix Erhard,contemporary,new,1,2015
+Felix Erhard,Plantago lanceolata,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Ribes bracteosum,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Rosa gymnocarpa,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Rumex acetosella,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Trifolium willdenovii,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Typha angustifolia,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Ulex europaeus,Felix Erhard,contemporary,confirmed,1,2013
+Felix Erhard,Urtica gracilis ssp. gracilis,Felix Erhard,contemporary,new,1,2017
+Ian Guthrie,Alnus rubra,Ian Guthrie,contemporary,confirmed,1,2012
+Isaac Bibb,Centaurea melitensis,Isaac Bibb,contemporary,new,1,2023
+Jason Headley,Soliva sessilis,Jason Headley,contemporary,new,1,2019
+Jean Buchanan,Petasites frigidus var. palmatus,Jean Buchanan,contemporary,confirmed,1,2019
+Jenny Sterling & Andrew Simon,Corallorhiza mertensiana,Jenny Sterling & Andrew Simon,contemporary,new,1,2022
+Jonah Timms,Penstemon ovatus,Jonah Timms,contemporary,new,1,2016
+Judith Holm,Carex aquatilis var. dives,Judith Holm,contemporary,confirmed,1,2017
+Judith Holm,Carex cusickii,Judith Holm,contemporary,confirmed,1,2017
+Judith Holm,Carex laeviculmis,Judith Holm,contemporary,new,1,2017
+Judith Holm,Carex leptalea,Judith Holm,contemporary,confirmed,1,2017
+Judith Holm,Eriophorum gracile,Judith Holm,contemporary,new,1,2017
+Judith Holm,Juncus arcticus ssp. alaskanus,Judith Holm,contemporary,new,1,2017
+Judith Holm,Leptosiphon minimus,Judith Holm,contemporary,confirmed,1,2017
+Judith Holm,Ludwigia palustris,Judith Holm,contemporary,confirmed,1,2017
+Justine Apostolopoulos,Tiarella trifoliata var. laciniata,Justine Apostolopoulos,contemporary,new,1,2019
+KGW,Allium geyeri var. tenerum,KGW,contemporary,new,1,2023
+Karolle Wall,Aphyllon purpureum,Karolle Wall,contemporary,confirmed,1,2007
+Karolle Wall,Arctostaphylos columbiana,Karolle Wall,contemporary,confirmed,1,2006
+Karolle Wall,Geranium robertianum,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Nuphar polysepala,Karolle Wall,contemporary,confirmed,1,2015
+Kath Quayle,Plantago macrocarpa,Kath Quayle,contemporary,new,1,2023
+Katie Kushneryk,Narcissus poeticus,Katie Kushneryk,contemporary,new,1,2019
+Kendall McLaughlin,Acmispon denticulatus,Kendall McLaughlin,contemporary,confirmed,1,2023
+Kevin Toomer,Calluna vulgaris,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Cotoneaster horizontalis,Kevin Toomer,contemporary,new,1,2018
+Kevin Toomer,Dipsacus fullonum,Kevin Toomer,contemporary,new,1,2017
+Kevin Toomer,Fumaria muralis,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Fumaria reuteri,Kevin Toomer,contemporary,confirmed,1,2022
+Kevin Toomer,Lamium galeobdolon,Kevin Toomer,contemporary,new,1,2022
+Kevin Toomer,Silybum marianum,Kevin Toomer,contemporary,new,1,2023
+Kevin Toomer,Verbascum phlomoides,Kevin Toomer,contemporary,confirmed,1,2018
+Kevin Toomer & Andrew Simon,Persicaria amphibia,Kevin Toomer & Andrew Simon,contemporary,confirmed,1,2018
+Kiara Gannon,Montia linearis,Kiara Gannon,contemporary,confirmed,1,2019
+Kris Krüg,Armeria maritima,Kris Krüg,contemporary,new,1,2017
+Kris Krüg,Galanthus nivalis,Kris Krüg,contemporary,new,1,2017
+Kris Krüg,Prunus virginiana,Kris Krüg,contemporary,new,1,2017
+Kris Krüg,Vinca minor,Kris Krüg,contemporary,confirmed,1,2017
+Kristian Sigvardsen,Centranthus ruber,Kristian Sigvardsen,contemporary,new,1,2019
+Kristian Sigvardsen,Delphinium ajacis,Kristian Sigvardsen,contemporary,confirmed,1,2022
+Kristian Sigvardsen,Erythronium oregonum × revolutum,Kristian Sigvardsen,contemporary,new,1,2016
+Kristian Sigvardsen,Myosotis scorpioides,Kristian Sigvardsen,contemporary,confirmed,1,2021
+Kristian Sigvardsen,Origanum vulgare,Kristian Sigvardsen,contemporary,new,1,2020
+Kristian Sigvardsen,Primula hendersonii,Kristian Sigvardsen,contemporary,confirmed,1,2017
+Kristian Sigvardsen,Rosa nutkana ssp. nutkana,Kristian Sigvardsen,contemporary,confirmed,1,2014
+Kristian Sigvardsen,Rubus ursinus,Kristian Sigvardsen,contemporary,confirmed,1,2014
+Kristian Sigvardsen,Vicia sativa,Kristian Sigvardsen,contemporary,confirmed,1,2014
+Larissa Marie,Antirrhinum majus,Larissa Marie,contemporary,new,1,2019
+Larissa Marie,Cymbalaria muralis,Larissa Marie,contemporary,new,1,2019
+Larry Halverson,Arbutus menziesii,Larry Halverson,contemporary,confirmed,1,2003
+Larry Halverson,Crataegus monogyna,Larry Halverson,contemporary,confirmed,1,2003
+Larry Halverson,Silene coronaria,Larry Halverson,contemporary,confirmed,1,2003
+Lauren Magner,Achillea millefolium complex,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Agoseris grandiflora var. leptophylla,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Aira caryophyllea,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Amelanchier alnifolia,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Anaphalis margaritacea,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Anthoxanthum aristatum ssp. aristatum,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Arctium minus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Bellardia viscosa,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Bellis perennis,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Berberis nervosa,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Bromus carinatus var. carinatus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Buddleja davidii,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Campanula scouleri,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Cardamine oligosperma,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Carex echinata ssp. echinata,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Carex lasiocarpa,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Centaurium erythraea,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Cerastium fontanum,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Chamaenerion angustifolium,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Cicuta douglasii,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Circaea alpina ssp. alpina,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Circaea alpina ssp. pacifica,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Cirsium arvense,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Claytonia parviflora,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Claytonia sibirica,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Comarum palustre,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Corallorhiza maculata var. ozettensis,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Cornus nuttallii,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Crepis capillaris,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Equisetum arvense,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Equisetum hyemale ssp. affine,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Eriophorum chamissonis,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Eriophyllum lanatum var. leucophyllum,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Erythranthe ptilota,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Galium aparine,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Gamochaeta ustulata,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Geranium dissectum,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Geum macrophyllum,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Heuchera micrantha var. diversifolia,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Hieracium albiflorum,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Holcus lanatus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Holodiscus discolor var. discolor,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Hypericum anagalloides,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Hypochaeris radicata,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Iris pseudacorus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Jacobaea vulgaris,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Juncus bolanderi,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Kalmia microphylla var. occidentalis,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Koeleria macrantha,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Kopsiopsis hookeri,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Lamium purpureum,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Lapsana communis,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Lathyrus latifolius,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Leontodon saxatilis ssp. saxatilis,Lauren Magner,contemporary,new,1,2016
+Lauren Magner,Lepidium campestre,Lauren Magner,contemporary,new,1,2016
+Lauren Magner,Leucanthemum vulgare,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Linnaea borealis ssp. longiflora,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Lonicera ciliosa,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Lonicera hispidula,Lauren Magner,contemporary,confirmed,1,2014
+Lauren Magner,Lotus corniculatus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Luzula macrantha,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Luzula subsessilis,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Lysimachia europaea ssp. arctica,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Lysimachia thyrsiflora,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Madia exigua,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Matricaria discoidea,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Mentha canadensis,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Moehringia macrophylla,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Muscari armeniacum,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Myosotis laxa,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Navarretia squarrosa,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Pentagramma triangularis ssp. triangularis,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Physocarpus capitatus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Pinus contorta ssp. contorta,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Pinus monticola,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Platanthera elongata,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Platanthera transversa,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Polypodium glycyrrhiza,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Prunus avium,Lauren Magner,contemporary,new,1,2016
+Lauren Magner,Prunus cerasifera,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Pteridium aquilinum ssp. pubescens,Lauren Magner,contemporary,confirmed,1,2014
+Lauren Magner,Pyrola aphylla,Lauren Magner,contemporary,new,1,2018
+Lauren Magner,Ranunculus flammula,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Ranunculus repens,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Rhododendron groenlandicum,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Ribes sanguineum,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Rosa rubiginosa,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Rubus laciniatus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Rumex crispus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Rumex obtusifolius,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Salix scouleriana,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Scirpus microcarpus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Senecio sylvaticus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Sherardia arvensis,Lauren Magner,contemporary,confirmed,1,2017
+Lauren Magner,Silene antirrhina,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Sonchus oleraceus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Spergularia rubra,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Spiraea douglasii var. douglasii,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Stellaria sitchana,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Struthiopteris spicant,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Teesdalia nudicaulis,Lauren Magner,contemporary,new,1,2020
+Lauren Magner,Tellima grandiflora,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Tiarella trifoliata var. trifoliata,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Torilis japonica,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Trifolium oliganthum,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Trifolium pratense,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Vaccinium ovatum,Lauren Magner,contemporary,confirmed,1,2014
+Lauren Magner,Vaccinium oxycoccos,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Veronica scutellata,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Veronica serpyllifolia,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Viburnum tinus,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Vicia cracca,Lauren Magner,contemporary,confirmed,1,2016
+Lauren Magner,Vicia villosa var. villosa,Lauren Magner,contemporary,confirmed,1,2016
+Liam Ragan,Prunus lusitanica,Liam Ragan,contemporary,new,1,2024
+Madeline Hart,Silene dioica,Madeline Hart,contemporary,new,1,2025
+Marlin Stewart,Claytonia exigua ssp. exigua,Marlin Stewart,contemporary,new,1,2016
+Michael Butler,Goodyera oblongifolia,Michael Butler,contemporary,confirmed,1,2014
+Myung Jin (John) Kang,Arrhenatherum elatius ssp. elatius,Myung Jin (John) Kang,contemporary,confirmed,1,2023
+Myung Jin (John) Kang,Saxifraga cespitosa,Myung Jin (John) Kang,contemporary,confirmed,1,2023
+Nancy Woodham,Erythronium oregonum,Nancy Woodham,contemporary,confirmed,1,2012
+Nancy Woodham,Grindelia stricta,Nancy Woodham,contemporary,confirmed,1,2011
+Paul Abell,Cytisus scoparius,Paul Abell,contemporary,confirmed,1,2009
+Paul Abell,Gaultheria shallon,Paul Abell,contemporary,confirmed,1,2009
+Paz Touchburn,Zostera japonica,Paz Touchburn,contemporary,new,1,2016
+"Quentin Cronk, Diana Percy, Carmen Lea, Harley Gordon, Jessica Duncan & Andrew Simon",Lemna minuta,"Quentin Cronk, Diana Percy, Carmen Lea, Harley Gordon, Jessica Duncan & Andrew Simon",contemporary,confirmed,1,2019
+Roanan DeMeyer,Linum usitatissimum,Roanan DeMeyer,contemporary,new,1,2022
+Roanan DeMeyer,Platanthera elegans,Roanan DeMeyer,contemporary,confirmed,1,2022
+Ryan Batten,Crocidium multicaule,Ryan Batten,contemporary,confirmed,1,2014
+Ryan Batten,Idahoa scapigera,Ryan Batten,contemporary,confirmed,1,2013
+Ryan Batten,Meconella oregana,Ryan Batten,contemporary,confirmed,1,2014
+Ryan Batten,Micranthes integrifolia,Ryan Batten,contemporary,confirmed,1,2013
+Ryan Batten,Thysanocarpus curvipes,Ryan Batten,contemporary,confirmed,1,2014
+Ryan Batten and Andrew Simon,Lithophragma glabrum,Ryan Batten and Andrew Simon,contemporary,confirmed,1,2022
+Sarah Tweedale,Allium amplectens,Sarah Tweedale,contemporary,confirmed,1,2017
+Sarah Tweedale,Calandrinia menziesii,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Camassia quamash ssp. quamash,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Cardamine nuttallii,Sarah Tweedale,contemporary,confirmed,1,2017
+Sarah Tweedale,Convolvulus arvensis,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Monotropa uniflora,Sarah Tweedale,contemporary,confirmed,1,2006
+Sarah Tweedale,Nasturtium officinale,Sarah Tweedale,contemporary,confirmed,1,2016
+Sarah Tweedale,Phalaris canariensis,Sarah Tweedale,contemporary,new,1,2016
+Sarah Tweedale,Tanacetum parthenium,Sarah Tweedale,contemporary,new,1,2018
+Sarah Tweedale,Trifolium subterraneum,Sarah Tweedale,contemporary,confirmed,1,2017
+Sarah Tweedale,Triphysaria pusilla,Sarah Tweedale,contemporary,confirmed,1,2017
+Sarah Tweedale,Triteleia grandiflora,Sarah Tweedale,contemporary,new,1,2018
+Sarah Tweedale,Triteleia hyacinthina,Sarah Tweedale,contemporary,confirmed,1,2016
+Shera Street,Castilleja hispida,Shera Street,contemporary,confirmed,1,2010
+Shera Street,Digitalis purpurea,Shera Street,contemporary,confirmed,1,2010
+Shera Street,Fritillaria affinis,Shera Street,contemporary,confirmed,1,2009
+Shera Street,Polystichum munitum,Shera Street,contemporary,confirmed,1,2009
+Shera Street,Zostera marina,Shera Street,contemporary,confirmed,1,2009
+Sofia Silverman,Brasenia schreberi,Sofia Silverman,contemporary,new,1,2025
+Spencer Shields,Marrubium vulgare,Spencer Shields,contemporary,new,1,2023
+Sylvie Hawkes,Agrostis gigantea,Sylvie Hawkes,contemporary,confirmed,1,2020
+Sylvie Hawkes,Arctium lappa,Sylvie Hawkes,contemporary,new,1,2020
+Sylvie Hawkes,Impatiens capensis,Sylvie Hawkes,contemporary,new,1,2020
+Sylvie Hawkes,Solanum americanum,Sylvie Hawkes,contemporary,confirmed,1,2020
+T. Abe Lloyd,Chimaphila umbellata ssp. umbellata,T. Abe Lloyd,contemporary,confirmed,1,2011
+T. Abe Lloyd,Cuscuta pacifica var. pacifica,T. Abe Lloyd,contemporary,new,1,2016
+T. Abe Lloyd,Juniperus maritima,T. Abe Lloyd,contemporary,new,1,2016
+T. Abe Lloyd,Pseudotsuga menziesii var. menziesii,T. Abe Lloyd,contemporary,confirmed,1,2011
+T. Abe Lloyd,Quercus garryana var. garryana,T. Abe Lloyd,contemporary,confirmed,1,2011
+T. Abe Lloyd,Ribes divaricatum var. divaricatum,T. Abe Lloyd,contemporary,confirmed,1,2010
+T. Abe Lloyd,Salicornia pacifica,T. Abe Lloyd,contemporary,confirmed,1,2010
+T. Abe Lloyd,Shepherdia canadensis,T. Abe Lloyd,contemporary,confirmed,1,2010
+T. Abe Lloyd,Taxus brevifolia,T. Abe Lloyd,contemporary,confirmed,1,2011
+Terry M,Medicago arabica,Terry M,contemporary,confirmed,1,2023
+Terry M,Myrrhis odorata,Terry M,contemporary,new,1,2023
+Tieg Mowbray,Laburnum anagyroides,Tieg Mowbray,contemporary,confirmed,1,2018
+Tiffany Moser,Cyclamen hederifolium,Tiffany Moser,contemporary,new,1,2017
+Tyler Innes,Carex leporina,Tyler Innes,contemporary,confirmed,1,2023
+Tyler Innes,Carex pachystachya,Tyler Innes,contemporary,confirmed,1,2023
+Tyrel Froese & Andrew Simon,Montia fontana,Tyrel Froese & Andrew Simon,contemporary,confirmed,1,2017
+Tyson Ehlers,Eleocharis obtusa,Tyson Ehlers,contemporary,new,1,2017
+Tyson Ehlers,Juncus acuminatus,Tyson Ehlers,contemporary,confirmed,1,2017
+Tyson Ehlers,Polygonum douglasii,Tyson Ehlers,contemporary,confirmed,1,2017
+Tyson Ehlers,Spergularia macrotheca var. macrotheca,Tyson Ehlers,contemporary,new,1,2017
+Tyson Ehlers,Spergularia marina,Tyson Ehlers,contemporary,confirmed,1,2017
+aanderson72,Trifolium fragiferum,aanderson72,contemporary,new,1,2025
+dreaming-magpie,Lotus tenuis,dreaming-magpie,contemporary,new,1,2023
+dshrimpz,Galanthus elwesii,dshrimpz,contemporary,new,1,2023
+laijasmine,Ribes lacustre,laijasmine,contemporary,new,1,2017
+maplerice,Ligustrum vulgare,maplerice,contemporary,new,1,2020
+newport1,Caltha palustris,newport1,contemporary,new,1,2023
+pblaeser,Lythrum salicaria,pblaeser,contemporary,new,1,2019
+salishsea,Centaurea cyanus,salishsea,contemporary,new,1,2016
+scuddlebutt,Hypericum androsaemum,scuddlebutt,contemporary,new,1,2019

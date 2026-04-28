@@ -1,0 +1,942 @@
+from,to,person_name,person_class,edge_class,weight,entry_year
+A. W. Argue,Trachipterus altivelis,A. W. Argue,historical,reported,1,1965
+Alexander Agassiz,Aglantha digitale,Alexander Agassiz,historical,reported,1,1861
+Alexander Agassiz,Diadumene lineata,Alexander Agassiz,historical,confirmed,1,1859
+Amy Rowley,Aethalodelphis obliquidens,Amy Rowley,historical,confirmed,1,2002
+Amy Rowley,Balaenoptera acutorostrata,Amy Rowley,historical,reported,1,2004
+Amy Rowley,Balaenoptera physalus,Amy Rowley,historical,reported,1,2007
+Amy Rowley,Eschrichtius robustus,Amy Rowley,historical,reported,1,2001
+Amy Rowley,Megaptera novaeangliae kuzira,Amy Rowley,historical,confirmed,1,2001
+Amy Rowley,Orcinus orca,Amy Rowley,historical,confirmed,1,2001
+Amy Rowley,Phocoena phocoena vomerina,Amy Rowley,historical,confirmed,1,2001
+Amy Rowley,Phocoenoides dalli,Amy Rowley,historical,confirmed,1,2001
+Andy Lamb,Acanthodoris atrogriseata,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Acanthodoris hudsoni,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Acanthodoris nanaimoensis,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Acantholithodes hispidus,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Acarnus erithacus,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Acmaea mitra,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Adocia sp.,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Aeolidia papillosa,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Aequorea victoria s.lat.,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Aglaophenia sp.,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Alcyonium sp.,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Aldisa albomarginata,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Aldisa cooperi,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Aldisa sanguinea,Andy Lamb,historical,confirmed,1,2013
+Andy Lamb,Aldisa tara,Andy Lamb,historical,confirmed,1,2018
+Andy Lamb,Ammodytes personatus,Andy Lamb,historical,confirmed,1,1993
+Andy Lamb,Amphilectus digitatus,Andy Lamb,historical,reported,1,1981
+Andy Lamb,Amphisbetia greenei,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Amphissa columbiana,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Amphissa versicolor,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Ampithoe lacertosa,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Anoplarchus purpurescens,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Antho (Plocamia) karykina,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Anthopleura elegantissima,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Antiopella fusca,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Apata pricei,Andy Lamb,historical,confirmed,1,2013
+Andy Lamb,Aplidium californicum,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Aplidium kottae,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Aplysilla polyraphis,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Aplysilla sp.,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Apomatus geniculatus,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Argulus pugettensis,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Artedius fenestralis,Andy Lamb,historical,confirmed,1,1968
+Andy Lamb,Artedius harringtoni,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Ascidia columbiana,Andy Lamb,historical,reported,1,2011
+Andy Lamb,Ascidia paratropa,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Asemichthys taylori,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Atalodoris jannae,Andy Lamb,historical,confirmed,1,2018
+Andy Lamb,Balanophyllia (Balanophyllia) elegans,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Balanus crenatus,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Balanus glandula,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Balticina willemoesi,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Bankia setacea,Andy Lamb,historical,reported,1,1999
+Andy Lamb,Barentsia sp.,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Bathypera feminalba,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Beringraja rhina,Andy Lamb,historical,reported,1,2010
+Andy Lamb,Bispira pacifica,Andy Lamb,historical,reported,1,1973
+Andy Lamb,Boltenia villosa,Andy Lamb,historical,confirmed,1,1986
+Andy Lamb,Bopyroides hippolytes,Andy Lamb,historical,reported,1,2010
+Andy Lamb,Boreoberthella chacei,Andy Lamb,historical,confirmed,1,2005
+Andy Lamb,Botrylloides violaceus,Andy Lamb,historical,confirmed,1,2007
+Andy Lamb,Bougainvillia sp.,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Bowerbankia sp.,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Brachyistius frenatus,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Brosmophycis marginata,Andy Lamb,historical,reported,1,2010
+Andy Lamb,Bugulina californica,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Cadlina luteomarginata,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Cadlina modesta,Andy Lamb,historical,confirmed,1,2006
+Andy Lamb,Cancer productus,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Caprella alaskana,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Caryophyllia (Caryophyllia) alaskensis,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Caulibugula californica,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Chaetopterus variopedatus complex,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Chelyosoma productum,Andy Lamb,historical,reported,1,1969
+Andy Lamb,Chirolophis decoratus,Andy Lamb,historical,confirmed,1,1993
+Andy Lamb,Chirolophis nugator,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Chitonotus pugetensis,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Chone aurantiaca,Andy Lamb,historical,confirmed,1,1999
+Andy Lamb,Chthamalus dalli,Andy Lamb,historical,confirmed,1,2008
+Andy Lamb,Ciliatocardium ciliatum,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Ciona savignyi,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Citharichthys stigmaeus,Andy Lamb,historical,confirmed,1,1993
+Andy Lamb,Clathria (Microciona) pennata,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Clathrina sp.,Andy Lamb,historical,reported,1,2017
+Andy Lamb,Cliona californiana,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Clupea pallasii,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Cnemidocarpa finmarkiensis,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Corella inflata,Andy Lamb,historical,confirmed,1,1999
+Andy Lamb,Coryphella longicaudata,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Coryphella trophina,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Craniella villosa,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Crassadoma gigantea,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Crepidula cf nummaria,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Cribrinopsis fernaldi,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Cribrinopsis rubens,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Crisia sp.,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Cryptobranchia concentrica,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Cryptochiton stelleri,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Cryptolithodes sitchensis,Andy Lamb,historical,reported,1,1999
+Andy Lamb,Cryptolithodes typicus,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Cryptonatica aleutica,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Cucumaria miniata,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Cucumaria pallida,Andy Lamb,historical,confirmed,1,2006
+Andy Lamb,Cucumaria piperata,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Cyanea ferruginea,Andy Lamb,historical,confirmed,1,1999
+Andy Lamb,Dendrobeania lichenoides,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Dendrobeania murrayana,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Dendronotus albus,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Dendronotus iris,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Dendronotus rufus,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Dermasterias imbricata,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Diaperoforma californica,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Diaphorodoris lirulatocauda,Andy Lamb,historical,confirmed,1,2008
+Andy Lamb,Diaulula odonoghuei,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Didemnum carnulentum,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Didemnum vexillum,Andy Lamb,historical,reported,1,2013
+Andy Lamb,Diodora aspera,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Diopatra ornata,Andy Lamb,historical,confirmed,1,1999
+Andy Lamb,Dirona albolineata,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Dirona pellucida,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Distaplia occidentalis,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Dodecaceria pacifica,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Doris montereyensis,Andy Lamb,historical,confirmed,1,1968
+Andy Lamb,Doris odhneri,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Ectopleura crocea,Andy Lamb,historical,reported,1,1993
+Andy Lamb,Ectopleura marina,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Elassochirus gilli,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Elassochirus tenuimanus,Andy Lamb,historical,reported,1,1993
+Andy Lamb,Emplectonema viride,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Enophrys bison,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Entodesma navicula,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Epiactis prolifera,Andy Lamb,historical,reported,1,1973
+Andy Lamb,Epitonium indianorum,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Epizoanthus scotinus,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Eualus butleri,Andy Lamb,historical,reported,1,2016
+Andy Lamb,Eubranchus rupium,Andy Lamb,historical,reported,1,2012
+Andy Lamb,Eudistoma molle,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Eudistoma purpuropunctatum,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Eudistylia vancouveri,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Eumetopias jubatus,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Euphausia sp.,Andy Lamb,historical,reported,1,1973
+Andy Lamb,Evasterias troschelii,Andy Lamb,historical,confirmed,1,1968
+Andy Lamb,Gadus chalcogrammus,Andy Lamb,historical,reported,1,1973
+Andy Lamb,Gari californica,Andy Lamb,historical,reported,1,2005
+Andy Lamb,Garveia annulata,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Geitodoris heathi,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Gobiesox maeandricus,Andy Lamb,historical,confirmed,1,1995
+Andy Lamb,Golfingia vulgaris,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Gorgonocephalus eucnemis,Andy Lamb,historical,confirmed,1,1971
+Andy Lamb,Grammaria sp.,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Halcampa decemtentaculata,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Halecium beanii,Andy Lamb,historical,reported,1,2010
+Andy Lamb,Halecium densum,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Halichondria (Eumastia) sitiens,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Halichondria (Halichondria) bowerbanki,Andy Lamb,historical,reported,1,1973
+Andy Lamb,Halichondria (Halichondria) panicea,Andy Lamb,historical,reported,1,1968
+Andy Lamb,Haliclona (Haliclona) sp.1,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Haliclona (Haliclona) sp.2,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Haliotis kamtschatkana,Andy Lamb,historical,reported,1,1981
+Andy Lamb,Halosydna brevisetosa,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Hamigera sp.,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Hapalogaster mertensii,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Harmothoe fragilis,Andy Lamb,historical,reported,1,2012
+Andy Lamb,Hemilepidotus hemilepidotus,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Henricia aspera aspera,Andy Lamb,historical,reported,1,1969
+Andy Lamb,Henricia leviuscula complex,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Henricia sanguinolenta,Andy Lamb,historical,confirmed,1,2009
+Andy Lamb,Heptacarpus stylus,Andy Lamb,historical,confirmed,1,2006
+Andy Lamb,Heptacarpus tridens,Andy Lamb,historical,reported,1,1999
+Andy Lamb,Hermissenda crassicornis,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Heteropora alaskensis,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Heteropora pacifica,Andy Lamb,historical,confirmed,1,1971
+Andy Lamb,Hippasteria phrygiana,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Homaxinella amphispicula,Andy Lamb,historical,reported,1,1999
+Andy Lamb,Hydractinia sp.,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Hydrallmania franciscana,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Hydrolagus colliei,Andy Lamb,historical,confirmed,1,1971
+Andy Lamb,Icelinus tenuis,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Iophon lamella,Andy Lamb,historical,reported,1,1973
+Andy Lamb,Jordania zonope,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Kaburakia excelsa,Andy Lamb,historical,confirmed,1,2016
+Andy Lamb,Katharina tunicata,Andy Lamb,historical,confirmed,1,1993
+Andy Lamb,Kellia suborbicularis,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Lacuna variegata,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Lafoea dumosa,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Lebbeus eludus,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Lebbeus mundus,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Lepeophtheirus sp.,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Lepeta concentrica,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Lepidopsetta bilineata,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Leptasterias hexactis,Andy Lamb,historical,confirmed,1,1993
+Andy Lamb,Leptosynapta transgressor,Andy Lamb,historical,reported,1,2013
+Andy Lamb,Leucandra heathi,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Leucilla nuttingi,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Leucosolenia eleanor,Andy Lamb,historical,confirmed,1,2006
+Andy Lamb,Leucosolenia nautilia,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Leukoma staminea,Andy Lamb,historical,confirmed,1,2007
+Andy Lamb,Limacia cockerelli,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Limacina helicina,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Liparis pulchellus,Andy Lamb,historical,confirmed,1,1995
+Andy Lamb,Lirabuccinum dirum,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Lophopanopeus bellus,Andy Lamb,historical,confirmed,1,2007
+Andy Lamb,Lottia scutum,Andy Lamb,historical,confirmed,1,2006
+Andy Lamb,Macoma nasuta,Andy Lamb,historical,confirmed,1,2009
+Andy Lamb,Margarites pupillus,Andy Lamb,historical,confirmed,1,2009
+Andy Lamb,Marsenina rhombica,Andy Lamb,historical,reported,1,2016
+Andy Lamb,Mediaster aequalis,Andy Lamb,historical,confirmed,1,1971
+Andy Lamb,Melibe leonina,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Melicertum octocostatum,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Membranipora villosa,Andy Lamb,historical,confirmed,1,1993
+Andy Lamb,Mesocentrotus franciscanus,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Metandrocarpa taylori,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Metridium farcimen,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Metridium senile,Andy Lamb,historical,confirmed,1,1968
+Andy Lamb,Micrura verrilli,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Modiolus modiolus,Andy Lamb,historical,reported,1,2005
+Andy Lamb,Molgula pacifica,Andy Lamb,historical,reported,1,1993
+Andy Lamb,Mopalia muscosa,Andy Lamb,historical,confirmed,1,2008
+Andy Lamb,Mopalia phorminx,Andy Lamb,historical,reported,1,2019
+Andy Lamb,Mopalia sinuata,Andy Lamb,historical,reported,1,2019
+Andy Lamb,Mopalia spectabilis,Andy Lamb,historical,confirmed,1,1999
+Andy Lamb,Muggiaea sp.,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Mya truncata,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Mytilimeria nuttalli,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Myxicola sp.A,Andy Lamb,historical,reported,1,2018
+Andy Lamb,Myxilla (Myxilla) lacunosa,Andy Lamb,historical,reported,1,1973
+Andy Lamb,Nassarius mendicus,Andy Lamb,historical,confirmed,1,2018
+Andy Lamb,Nautichthys oculofasciatus,Andy Lamb,historical,confirmed,1,1995
+Andy Lamb,Neoturris breviconis,Andy Lamb,historical,confirmed,1,2007
+Andy Lamb,Nereis sp.,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Nereis vexillosa,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Nucella canaliculata,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Nucella ostrina,Andy Lamb,historical,confirmed,1,2008
+Andy Lamb,Obelia sp.,Andy Lamb,historical,confirmed,1,1968
+Andy Lamb,Odontopyxis trispinosa,Andy Lamb,historical,confirmed,1,2006
+Andy Lamb,Oedignathus inermis,Andy Lamb,historical,confirmed,1,2008
+Andy Lamb,Onchidoris bilamellata,Andy Lamb,historical,confirmed,1,2006
+Andy Lamb,Oncorhynchus keta,Andy Lamb,historical,reported,1,2013
+Andy Lamb,Ophiodon elongatus,Andy Lamb,historical,confirmed,1,1968
+Andy Lamb,Ophiopholis kennerlyi,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Oregonia gracilis,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Orthasterias koehleri,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Orthopyxis sp.,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Oxydromus pugettensis,Andy Lamb,historical,confirmed,1,2006
+Andy Lamb,Oxylebius pictus,Andy Lamb,historical,confirmed,1,1971
+Andy Lamb,Pachycerianthus fimbriatus,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Pachychalina sp.,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Paciocinebrina interfossa,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Paciocinebrina lurida,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Pagurus armatus,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Pagurus caurinus,Andy Lamb,historical,confirmed,1,2005
+Andy Lamb,Pagurus hirsutiusculus,Andy Lamb,historical,confirmed,1,2016
+Andy Lamb,Pagurus kennerlyi,Andy Lamb,historical,reported,1,1999
+Andy Lamb,Pagurus ochotensis,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Pagurus quaylei,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Pagurus samuelis,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Pagurus stevensae,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Pandalus danae,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Panopea generosa,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Paracyathus stearnsii,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Parasabella media,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Peachia quinquecapitata,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Peltodoris lentiginosa,Andy Lamb,historical,confirmed,1,2006
+Andy Lamb,Peltodoris nobilis,Andy Lamb,historical,confirmed,1,1968
+Andy Lamb,Pentamera sp.,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Perophora annectens,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Petaloconchus compactus,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Petrolisthes eriomerus,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Phacellophora camtschatica,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Phanerodon vacca,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Phidolopora pacifica,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Phoca vitulina richardii,Andy Lamb,historical,confirmed,1,1995
+Andy Lamb,Pholis clemensi,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Phoronis ijimai,Andy Lamb,historical,confirmed,1,2008
+Andy Lamb,Phyllaplysia taylori,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Phyllochaetopterus prolifica,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Phyllochaetopterus sp.,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Phyllolithodes papillosus,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Pileolaria sp.,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Pisaster brevispinus,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Pisaster ochraceus,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Pista elongata,Andy Lamb,historical,reported,1,1993
+Andy Lamb,Placiphorella rufa,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Placiphorella velata,Andy Lamb,historical,reported,1,2011
+Andy Lamb,Pleraplysilla sp.,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Pleurobrachia bachei,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Pleuronichthys coenosus,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Plumularia sp.,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Polymastia pachymastia,Andy Lamb,historical,confirmed,1,1994
+Andy Lamb,Polyorchis penicillatus,Andy Lamb,historical,confirmed,1,2009
+Andy Lamb,Porichthys notatus,Andy Lamb,historical,confirmed,1,1995
+Andy Lamb,Portorchardia candela,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Protula pacifica,Andy Lamb,historical,reported,1,1981
+Andy Lamb,Pseudochitinopoma occidentalis,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Psolus chitonoides,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Psolus squamatus,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Pteraster tesselatus,Andy Lamb,historical,confirmed,1,1971
+Andy Lamb,Ptilichthys goodei,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Pugettia gracilis,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Pugettia producta,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Pycnoclavella stanleyi,Andy Lamb,historical,confirmed,1,1993
+Andy Lamb,Pycnopodia helianthoides,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Pyura haustor,Andy Lamb,historical,reported,1,1969
+Andy Lamb,Pyura mirabilis,Andy Lamb,historical,reported,1,2013
+Andy Lamb,Rhamphocottus richardsonii,Andy Lamb,historical,confirmed,1,1981
+Andy Lamb,Rhinogobiops nicholsii,Andy Lamb,historical,confirmed,1,1968
+Andy Lamb,Rhinolithodes wosnessenskii,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Rhizocaulus verticillatus,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Ronquilus jordani,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Rostanga pulchra,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Salmacina tribranchiata,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Sarsia sp.,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Saxidomus gigantea,Andy Lamb,historical,confirmed,1,2006
+Andy Lamb,Scabrotrophon maltzani,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Schizobranchia insignis,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Schizoporella japonica,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Schuchertinia allmanii,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Schuchertinia milleri,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Scorpaenichthys marmoratus,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Sebastes auriculatus,Andy Lamb,historical,reported,1,1973
+Andy Lamb,Sebastes caurinus,Andy Lamb,historical,confirmed,1,1968
+Andy Lamb,Sebastes diploproa,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Sebastes emphaeus,Andy Lamb,historical,confirmed,1,1993
+Andy Lamb,Sebastes flavidus,Andy Lamb,historical,confirmed,1,1971
+Andy Lamb,Sebastes melanops,Andy Lamb,historical,reported,1,1993
+Andy Lamb,Sebastes nigrocinctus,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Selaginopsis sp.,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Semele rubropicta,Andy Lamb,historical,reported,1,1999
+Andy Lamb,Semibalanus cariosus,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Semisuberites cribrosa,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Sertularella sp.,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Similiclava nivea,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Solaster endeca,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Solaster stimpsoni,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Solen sicarius,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Solmissus sp.,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Solmundaegina nematophora,Andy Lamb,historical,confirmed,1,2009
+Andy Lamb,Spiochaetopterus costarum pottsi,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Stomphia coccinea,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Stomphia didemon,Andy Lamb,historical,reported,1,1971
+Andy Lamb,Styela gibbsii,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Stylantheca papillosa,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Stylasterias forreri,Andy Lamb,historical,reported,1,1973
+Andy Lamb,Stylatula elongata,Andy Lamb,historical,confirmed,1,2016
+Andy Lamb,Suberites concinnus,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Suberites latus,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Sycon sp.,Andy Lamb,historical,reported,1,1994
+Andy Lamb,Synchirus gilli,Andy Lamb,historical,reported,1,1996
+Andy Lamb,Syngnathus leptorhynchus,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Terebratalia transversa,Andy Lamb,historical,reported,1,1981
+Andy Lamb,Tethya californiana,Andy Lamb,historical,reported,1,1981
+Andy Lamb,Thelepus sp.,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Thrombophyton trachydermum,Andy Lamb,historical,confirmed,1,2009
+Andy Lamb,Thuiaria sp.,Andy Lamb,historical,reported,1,2006
+Andy Lamb,Thuiaria thuja,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Tochuina gigantea,Andy Lamb,historical,confirmed,1,1973
+Andy Lamb,Tomopteris sp.,Andy Lamb,historical,confirmed,1,2010
+Andy Lamb,Trichotropis cancellata,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Trididemnum alexi,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Triglops macellus,Andy Lamb,historical,reported,1,2013
+Andy Lamb,Triopha modesta,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Tritonia festiva,Andy Lamb,historical,confirmed,1,1985
+Andy Lamb,Trypanosyllis sp.,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Tubulanus ruber,Andy Lamb,historical,confirmed,1,2008
+Andy Lamb,Tubulanus sexlineatus,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Tubularia indivisa,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Urtibrina clandestina,Andy Lamb,historical,confirmed,1,1969
+Andy Lamb,Velutina velutina,Andy Lamb,historical,reported,1,2008
+Andy Lamb,Vermetus compactus,Andy Lamb,historical,reported,1,1985
+Andy Lamb,Weberella perlucida,Andy Lamb,historical,reported,1,2007
+Andy Lamb,Xestospongia hispida,Andy Lamb,historical,reported,1,2005
+Andy Lamb,Ziminella japonica,Andy Lamb,historical,reported,1,2009
+Andy Lamb,Zirfaea pilsbryi,Andy Lamb,historical,reported,1,2016
+Andy Lamb & Donna Gibbs,Fusitriton oregonensis,Andy Lamb & Donna Gibbs,historical,confirmed,1,1973
+BC Hydro - submerged cable,Strongylocentrotus droebachiensis,BC Hydro - submerged cable,historical,confirmed,1,1986
+C. E. Kasserra,Hexagrammos decagrammus,C. E. Kasserra,historical,confirmed,1,1982
+C. E. Kasserra,Sebastes maliger,C. E. Kasserra,historical,confirmed,1,1982
+C. E. Kasserra,Sebastes ruberrimus,C. E. Kasserra,historical,confirmed,1,1982
+C. E. Kasserra,Squalus suckleyi,C. E. Kasserra,historical,confirmed,1,1982
+Charles Newcombe,Lepidochitona sp.,Charles Newcombe,historical,reported,1,1893
+Charlie Gibbs,Aegires albopunctatus,Charlie Gibbs,historical,confirmed,1,1996
+Charlie Gibbs,Aglaja ocelligera,Charlie Gibbs,historical,confirmed,1,1996
+Charlie Gibbs,Agonopsis vulsa,Charlie Gibbs,historical,confirmed,1,1995
+Charlie Gibbs,Alcyonidium pedunculatum,Charlie Gibbs,historical,reported,1,1994
+Charlie Gibbs,Anarrhichthys ocellatus,Charlie Gibbs,historical,reported,1,1994
+Charlie Gibbs,Anthopleura artemisia,Charlie Gibbs,historical,confirmed,1,1996
+Charlie Gibbs,Artedius lateralis,Charlie Gibbs,historical,confirmed,1,1985
+Charlie Gibbs,Aulorhynchus flavidus,Charlie Gibbs,historical,confirmed,1,1994
+Charlie Gibbs,Aurelia labiata,Charlie Gibbs,historical,confirmed,1,1996
+Charlie Gibbs,Beringraja binoculata,Charlie Gibbs,historical,reported,1,1995
+Charlie Gibbs,Beroe abyssicola,Charlie Gibbs,historical,confirmed,1,1993
+Charlie Gibbs,Bolinopsis infundibulum,Charlie Gibbs,historical,confirmed,1,1996
+Charlie Gibbs,Cellaria diffusa,Charlie Gibbs,historical,reported,1,1995
+Charlie Gibbs,Chromopleustes oculatus,Charlie Gibbs,historical,reported,1,1995
+Charlie Gibbs,Clavelina huntsmani,Charlie Gibbs,historical,reported,1,1995
+Charlie Gibbs,Clinocardium nuttallii,Charlie Gibbs,historical,confirmed,1,1995
+Charlie Gibbs,Crepidula norrisiarum,Charlie Gibbs,historical,reported,1,1995
+Charlie Gibbs,Cystodytes lobatus,Charlie Gibbs,historical,reported,1,1993
+Charlie Gibbs,Diplosoma listerianum,Charlie Gibbs,historical,confirmed,1,1999
+Charlie Gibbs,Discophyton rudyi,Charlie Gibbs,historical,reported,1,1995
+Charlie Gibbs,Dodecaceria concharum,Charlie Gibbs,historical,confirmed,1,1999
+Charlie Gibbs,Echidnocerus cibarius,Charlie Gibbs,historical,confirmed,1,1994
+Charlie Gibbs,Engraulis mordax,Charlie Gibbs,historical,confirmed,1,2006
+Charlie Gibbs,Enteroctopus dofleini,Charlie Gibbs,historical,confirmed,1,1993
+Charlie Gibbs,Epiactis lisbethae,Charlie Gibbs,historical,reported,1,1999
+Charlie Gibbs,Euphysa sp.,Charlie Gibbs,historical,confirmed,1,1993
+Charlie Gibbs,Euplokamis dunlapae,Charlie Gibbs,historical,confirmed,1,1995
+Charlie Gibbs,Eurylepta leoparda,Charlie Gibbs,historical,confirmed,1,1996
+Charlie Gibbs,Eutonina indicans,Charlie Gibbs,historical,confirmed,1,1996
+Charlie Gibbs,Gadus macrocephalus,Charlie Gibbs,historical,confirmed,1,1994
+Charlie Gibbs,Gastropteron pacificum,Charlie Gibbs,historical,confirmed,1,1994
+Charlie Gibbs,Halocynthia igaboja,Charlie Gibbs,historical,confirmed,1,1994
+Charlie Gibbs,Heptacarpus kincaidi,Charlie Gibbs,historical,confirmed,1,1996
+Charlie Gibbs,Lebbeus grandimanus,Charlie Gibbs,historical,reported,1,1996
+Charlie Gibbs,Lepidozona trifida,Charlie Gibbs,historical,reported,1,1999
+Charlie Gibbs,Liparis dennyi,Charlie Gibbs,historical,reported,1,1995
+Charlie Gibbs,Metacarcinus magister,Charlie Gibbs,historical,confirmed,1,1996
+Charlie Gibbs,Mopalia ciliata,Charlie Gibbs,historical,confirmed,1,1999
+Charlie Gibbs,Mopalia hindsii,Charlie Gibbs,historical,confirmed,1,1999
+Charlie Gibbs,Mopalia kennerleyi,Charlie Gibbs,historical,reported,1,1999
+Charlie Gibbs,Mycale (Aegogropila) adhaerens,Charlie Gibbs,historical,reported,1,1999
+Charlie Gibbs,Myxicola sp.B,Charlie Gibbs,historical,confirmed,1,1993
+Charlie Gibbs,Nanomia bijuga,Charlie Gibbs,historical,confirmed,1,1993
+Charlie Gibbs,Neosabellaria cementarium,Charlie Gibbs,historical,reported,1,1996
+Charlie Gibbs,Neotrypaea californiensis,Charlie Gibbs,historical,confirmed,1,1995
+Charlie Gibbs,Octopus rubescens,Charlie Gibbs,historical,reported,1,1995
+Charlie Gibbs,Ophiura sarsii,Charlie Gibbs,historical,reported,1,1993
+Charlie Gibbs,Pandalus eous,Charlie Gibbs,historical,reported,1,1995
+Charlie Gibbs,Pandalus platyceros,Charlie Gibbs,historical,confirmed,1,1995
+Charlie Gibbs,Pandalus stenolepis,Charlie Gibbs,historical,confirmed,1,1995
+Charlie Gibbs,Placetron wosnessenskii,Charlie Gibbs,historical,reported,1,1999
+Charlie Gibbs,Podothecus accipenserinus,Charlie Gibbs,historical,confirmed,1,1995
+Charlie Gibbs,Primavelans insculpta,Charlie Gibbs,historical,confirmed,1,1995
+Charlie Gibbs,Psolidium bidiscum,Charlie Gibbs,historical,reported,1,1996
+Charlie Gibbs,Rossia pacifica,Charlie Gibbs,historical,reported,1,1994
+Charlie Gibbs,Sagittoidea,Charlie Gibbs,historical,reported,1,1995
+Charlie Gibbs,Synoicum parfustis,Charlie Gibbs,historical,reported,1,1999
+Charlie Gibbs,Telmessus cheiragonus,Charlie Gibbs,historical,confirmed,1,1996
+Charlie Gibbs,Tresus capax,Charlie Gibbs,historical,confirmed,1,1993
+Charlie Gibbs,Tripoplax trifida,Charlie Gibbs,historical,reported,1,1999
+Charlie Gibbs,Tritonia exsulans,Charlie Gibbs,historical,confirmed,1,2006
+Charlie Gibbs,Tubulanus albocinctus,Charlie Gibbs,historical,reported,1,1996
+Charlie Gibbs,Virgularia sp.,Charlie Gibbs,historical,confirmed,1,1995
+Claudia E. Kasserra,Embiotoca lateralis,Claudia E. Kasserra,historical,confirmed,1,1982
+Dan B. Quayle,Acila castrensis,Dan B. Quayle,historical,reported,1,1961
+Dan Quayle,Chlamys hastata,Dan Quayle,historical,confirmed,1,1962
+Dan Quayle,Chlamys rubida,Dan Quayle,historical,reported,1,1961
+Dan Quayle,Coanicardita ventricosa,Dan Quayle,historical,reported,1,1959
+Dan Quayle,Crenella decussata,Dan Quayle,historical,reported,1,1959
+Dan Quayle,Epitonium hindsii,Dan Quayle,historical,reported,1,1959
+Dan Quayle,Eulalia sp.,Dan Quayle,historical,reported,1,1959
+Dan Quayle,Florometra serratissima,Dan Quayle,historical,confirmed,1,1960
+Dan Quayle,Fusinus sp.,Dan Quayle,historical,reported,1,1959
+Dan Quayle,Hyas lyratus,Dan Quayle,historical,reported,1,1961
+Dan Quayle,Keenocardium blandum,Dan Quayle,historical,reported,1,1959
+Dan Quayle,Luidia foliolata,Dan Quayle,historical,confirmed,1,1959
+Dan Quayle,Macoma obliqua,Dan Quayle,historical,reported,1,1959
+Dan Quayle,Megayoldia thraciaeformis,Dan Quayle,historical,reported,1,1942
+Dan Quayle,Modiolus rectus,Dan Quayle,historical,reported,1,1959
+Dan Quayle,Nitidella sp.,Dan Quayle,historical,reported,1,1959
+Dan Quayle,Oenopota sp.,Dan Quayle,historical,reported,1,1959
+Dan Quayle,Parvilucina tenuisculpta,Dan Quayle,historical,reported,1,1959
+Daniel Kent,Pandalus lucidirimicolus,Daniel Kent,historical,reported,1,1995
+Donald E. McAllister & M. O. Yesaki,Oligocottus maculosus,Donald E. McAllister & M. O. Yesaki,historical,confirmed,1,1960
+Donald E. McAllister & M. O. Yesaki,Phytichthys chirus,Donald E. McAllister & M. O. Yesaki,historical,reported,1,1960
+Donald E. McAllister & M.O Yesaki,Pentidotea wosnesenskii,Donald E. McAllister & M.O Yesaki,historical,confirmed,1,1960
+Donna Gibbs,Celleporina robertsoniae,Donna Gibbs,historical,reported,1,1997
+Donna Gibbs,Disporella separata,Donna Gibbs,historical,reported,1,1997
+"Fisheries Research Board of Canada, Nanaimo",Mitrocoma cellularia,"Fisheries Research Board of Canada, Nanaimo",historical,confirmed,1,1928
+Ian McTaggart-Cowan,Acteocina culcitella,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Axinopsida serricata,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Cylichna attonsa,Ian McTaggart-Cowan,historical,confirmed,1,1961
+Ian McTaggart-Cowan,Ennucula tenuis,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Euspira pallida,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Gadila aberrans,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Glycymeris septentrionalis,Ian McTaggart-Cowan,historical,reported,1,1958
+Ian McTaggart-Cowan,Humilaria kennerleyi,Ian McTaggart-Cowan,historical,reported,1,1958
+Ian McTaggart-Cowan,Keenaea centifilosa,Ian McTaggart-Cowan,historical,reported,1,1958
+Ian McTaggart-Cowan,Lyonsia bracteata,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Melanella micans,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Mitrella gausapata,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Mopalia vespertina,Ian McTaggart-Cowan,historical,confirmed,1,1973
+Ian McTaggart-Cowan,Musculus discors,Ian McTaggart-Cowan,historical,reported,1,1958
+Ian McTaggart-Cowan,Musculus niger,Ian McTaggart-Cowan,historical,reported,1,1958
+Ian McTaggart-Cowan,Nucella lamellosa,Ian McTaggart-Cowan,historical,confirmed,1,1961
+Ian McTaggart-Cowan,Nuculana leonina,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Odostomia sp.,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Ophiodermella fancherae,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Pandora filosa,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Pandora wardiana,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Panomya ampla,Ian McTaggart-Cowan,historical,reported,1,1958
+Ian McTaggart-Cowan,Patinopecten caurinus,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Rhabdus rectius,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Rictaxis punctocaelatus,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Thracia trapezoides,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Tresus nuttallii,Ian McTaggart-Cowan,historical,confirmed,1,1958
+Ian McTaggart-Cowan,Trophonopsis orpheus,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Turbonilla sp.,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Velutina plicatilis,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Yoldia hyperborea,Ian McTaggart-Cowan,historical,reported,1,1961
+Ian McTaggart-Cowan,Zemysina impolita,Ian McTaggart-Cowan,historical,reported,1,1958
+J. M. Ellis,Parophrys vetulus,J. M. Ellis,historical,reported,1,1982
+J. M. Ellis,Platichthys stellatus,J. M. Ellis,historical,confirmed,1,1982
+Jackson W.F. Chu,Aphrocallistes vastus,Jackson W.F. Chu,historical,confirmed,1,2011
+Jackson W.F. Chu,Chorilia longipes,Jackson W.F. Chu,historical,confirmed,1,2008
+Jackson W.F. Chu,Echidnocerus foraminatus,Jackson W.F. Chu,historical,confirmed,1,2008
+Jackson W.F. Chu,Heterochone calyx,Jackson W.F. Chu,historical,confirmed,1,2012
+Jackson W.F. Chu,Lyopsetta exilis,Jackson W.F. Chu,historical,confirmed,1,2008
+Jackson W.F. Chu,Munida quadrispina,Jackson W.F. Chu,historical,confirmed,1,2008
+Jackson W.F. Chu,Rhabdocalyptus dawsoni,Jackson W.F. Chu,historical,confirmed,1,2008
+Jackson W.F. Chu,Sebastes elongatus,Jackson W.F. Chu,historical,confirmed,1,2008
+Jackson W.F. Chu,Sebastes proriger,Jackson W.F. Chu,historical,confirmed,1,2008
+Jackson W.F. Chu,Tetilla sp.,Jackson W.F. Chu,historical,reported,1,2008
+Joesphine F.L. Hart,Fabia subquadrata,Joesphine F.L. Hart,historical,reported,1,1934
+John Fleury,Yoldia amygdalea,John Fleury,historical,reported,1,1962
+K.D. Genereux,Apodichthys flavidus,K.D. Genereux,historical,confirmed,1,1982
+K.D. Genereux,Cymatogaster aggregata,K.D. Genereux,historical,confirmed,1,1982
+K.D. Genereux,Hexagrammos stelleri,K.D. Genereux,historical,confirmed,1,1982
+K.D. Genereux,Leptocottus armatus,K.D. Genereux,historical,confirmed,1,1982
+K.D. Genereux,Myoxocephalus polyacanthocephalus,K.D. Genereux,historical,confirmed,1,1982
+K.D. Genereux,Pholis laeta,K.D. Genereux,historical,confirmed,1,1982
+Karin Fletcher,Haminoea vesicula,Karin Fletcher,historical,confirmed,1,2018
+Keith Erickson,Gasterosteus aculeatus,Keith Erickson,historical,confirmed,1,2000
+Keith Erickson,Oncorhynchus clarkii,Keith Erickson,historical,reported,1,2000
+Keith Erickson,Oncorhynchus kisutch,Keith Erickson,historical,confirmed,1,2000
+Kent Brothers,Lontra canadensis pacifica,Kent Brothers,historical,confirmed,1,2011
+Kent Brothers,Neogale vison,Kent Brothers,historical,confirmed,1,2011
+Philip Lambert,Amphiodia periercta,Philip Lambert,historical,reported,1,1975
+Philip Lambert,Armina californica,Philip Lambert,historical,confirmed,1,1975
+Philip Lambert,Crossaster papposus,Philip Lambert,historical,reported,1,1973
+Philip Lambert,Cumanotus fernaldi,Philip Lambert,historical,reported,1,1975
+Philip Lambert,Halocynthia aurantium,Philip Lambert,historical,reported,1,1973
+Philip Lambert,Melanochlamys diomedea,Philip Lambert,historical,confirmed,1,1975
+Philip Lambert,Metacarcinus gracilis,Philip Lambert,historical,confirmed,1,1973
+Philip Lambert,Mytilus edulis complex,Philip Lambert,historical,confirmed,1,1982
+Philip Lambert,Myxilla (Myxilla) incrustans,Philip Lambert,historical,confirmed,1,1973
+Philip Lambert,Ophiura luetkenii,Philip Lambert,historical,reported,1,1973
+Philip Lambert,Tonicella insignis,Philip Lambert,historical,confirmed,1,1973
+Randy Baker,Bathydrilus litoreus,Randy Baker,historical,reported,1,1979
+Randy Baker,Limnodriloides victoriensis,Randy Baker,historical,reported,1,1979
+Rita M. O'Clair,Clytia gregaria,Rita M. O'Clair,historical,confirmed,1,1976
+Rita M. O'Clair,Corella willmeriana,Rita M. O'Clair,historical,confirmed,1,1976
+Rita M. O'Clair,Desdimelita californica,Rita M. O'Clair,historical,reported,1,1976
+Rita M. O'Clair,Desdimelita microdentata,Rita M. O'Clair,historical,reported,1,1976
+Rita M. O'Clair,Gnathopleustes pachychaetus,Rita M. O'Clair,historical,reported,1,1976
+Rita M. O'Clair,Gnorimosphaeroma oregonense,Rita M. O'Clair,historical,confirmed,1,1976
+Rita M. O'Clair,Heptacarpus brevirostris,Rita M. O'Clair,historical,confirmed,1,1976
+Robert Forsyth & Tammy Forsyth,Lepidozona mertensii,Robert Forsyth & Tammy Forsyth,historical,confirmed,1,1995
+Robert Forsyth & Tammy Forsyth,Tonicella lineata,Robert Forsyth & Tammy Forsyth,historical,confirmed,1,1995
+Sandra Millen-Crane,Tenellia nepunicea,Sandra Millen-Crane,historical,confirmed,1,1982
+T. Kessler,Arctonoe fragilis,T. Kessler,historical,confirmed,1,1975
+T. Kessler,Arctonoe pulchra,T. Kessler,historical,confirmed,1,1975
+T. Kessler,Arctonoe vittata,T. Kessler,historical,reported,1,1975
+W. Barraclough,Berryteuthis magister,W. Barraclough,historical,reported,1,1956
+W. Barraclough,Eusergestes similis,W. Barraclough,historical,confirmed,1,1965
+W. Barraclough,Pandalus borealis,W. Barraclough,historical,reported,1,1956
+W. Clemens,Isodictya rigida,W. Clemens,historical,reported,1,1960
+Adam Huggins,Phacellophora camtschatica,Adam Huggins,contemporary,confirmed,1,2016
+Adam Huggins,Strongylocentrotus droebachiensis,Adam Huggins,contemporary,confirmed,1,2016
+Alex Niese,Neoamphitrite robusta,Alex Niese,contemporary,new,1,2022
+Andrew Simon,Amphissa columbiana,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Anoplarchus purpurescens,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Artedius lateralis,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Balanus glandula,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Brachyistius frenatus,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Calliostoma canaliculatum,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Catablema vesicarium nodulosum,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Chthamalus dalli,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Clinocottus acuticeps,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Clytia gregaria,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Corella inflata,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Emplectonema viride,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Eutonina indicans,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Glycera sp.,Andrew Simon,contemporary,new,1,2025
+Andrew Simon,Hemigrapsus oregonensis,Andrew Simon,contemporary,new,1,2015
+Andrew Simon,Hippolyte clarki,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Kaburakia excelsa,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Katharina tunicata,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Lacuna vincta,Andrew Simon,contemporary,new,1,2023
+Andrew Simon,Leptocottus armatus,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Leukoma staminea,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Littorina scutulata,Andrew Simon,contemporary,new,1,2015
+Andrew Simon,Lottia digitalis,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Lottia pelta,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Macoma brota,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Magallana gigas,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Megalorchestia pugettensis,Andrew Simon,contemporary,new,1,2018
+Andrew Simon,Megaptera novaeangliae kuzira,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Membranipora villosa,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Metridium senile,Andrew Simon,contemporary,confirmed,1,2017
+Andrew Simon,Mitrocoma cellularia,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Mitrocomella polydiademata,Andrew Simon,contemporary,new,1,2021
+Andrew Simon,Mopalia swanii,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Mya arenaria,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Myosotella myosotis,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Mytilus edulis complex,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Nassarius mendicus,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Nucella lamellosa,Andrew Simon,contemporary,confirmed,1,2015
+Andrew Simon,Nucella ostrina,Andrew Simon,contemporary,confirmed,1,2019
+Andrew Simon,Obelia sp.,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Oligocottus rimensis,Andrew Simon,contemporary,new,1,2024
+Andrew Simon,Oncorhynchus gorbuscha,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Parasabella media,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Phanerodon vacca,Andrew Simon,contemporary,confirmed,1,2020
+Andrew Simon,Pholis ornata,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Planorbella trivolvis,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Podocerus cristatus,Andrew Simon,contemporary,new,1,2022
+Andrew Simon,Saxidomus gigantea,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Sebastes flavidus,Andrew Simon,contemporary,confirmed,1,2022
+Andrew Simon,Semibalanus cariosus,Andrew Simon,contemporary,confirmed,1,2016
+Andrew Simon,Stagnicola sp.,Andrew Simon,contemporary,new,1,2016
+Andrew Simon,Thelepus sp.,Andrew Simon,contemporary,confirmed,1,2021
+Andrew Simon,Traskorchestia traskiana,Andrew Simon,contemporary,new,1,2017
+Andrew Simon,Xiphister mucosus,Andrew Simon,contemporary,new,1,2020
+Ayla Malcolm,Neogale vison,Ayla Malcolm,contemporary,confirmed,1,2017
+Bridget Spencer,Anthopleura elegantissima,Bridget Spencer,contemporary,confirmed,1,2013
+Catiemac,Epigamia magna,Catiemac,contemporary,new,1,2022
+Chessi Miltner,Cryptochiton stelleri,Chessi Miltner,contemporary,confirmed,1,2016
+Chessi Miltner,Tonicella lineata,Chessi Miltner,contemporary,confirmed,1,2016
+Chessi Miltner,Zalophus californianus,Chessi Miltner,contemporary,new,1,2016
+Christian Adler,Eusergestes similis,Christian Adler,contemporary,confirmed,1,2022
+Christina Robinson,Oncorhynchus tshawytscha,Christina Robinson,contemporary,new,1,2017
+Daniella LoScerbo,Fusitriton oregonensis,Daniella LoScerbo,contemporary,confirmed,1,2023
+Darcy Kehler,Merluccius productus,Darcy Kehler,contemporary,new,1,2025
+"Dave ""Zeuss"" Cochrane",Ascidia paratropa,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Balanus rostratus,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Cerebratulus sp.,"Dave ""Zeuss"" Cochrane",contemporary,new,1,2019
+"Dave ""Zeuss"" Cochrane",Chionoecetes bairdi,"Dave ""Zeuss"" Cochrane",contemporary,new,1,2025
+"Dave ""Zeuss"" Cochrane",Chirolophis decoratus,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Chone aurantiaca,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Cliona californiana,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2021
+"Dave ""Zeuss"" Cochrane",Cliona celata,"Dave ""Zeuss"" Cochrane",contemporary,new,1,2024
+"Dave ""Zeuss"" Cochrane",Corella willmeriana,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Diaperoforma californica,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Diplosoma listerianum,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Dodecaceria concharum,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Epizoanthus scotinus,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2021
+"Dave ""Zeuss"" Cochrane",Eumicrotremus orbis,"Dave ""Zeuss"" Cochrane",contemporary,new,1,2023
+"Dave ""Zeuss"" Cochrane",Eupentacta pseudoquinquesemita,"Dave ""Zeuss"" Cochrane",contemporary,new,1,2024
+"Dave ""Zeuss"" Cochrane",Euplokamis dunlapae,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2021
+"Dave ""Zeuss"" Cochrane",Gorgonocephalus eucnemis,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2021
+"Dave ""Zeuss"" Cochrane",Henricia pumila,"Dave ""Zeuss"" Cochrane",contemporary,new,1,2023
+"Dave ""Zeuss"" Cochrane",Henricia sanguinolenta,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Heptacarpus kincaidi,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Heteropora pacifica,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Ismaila belciki,"Dave ""Zeuss"" Cochrane",contemporary,new,1,2022
+"Dave ""Zeuss"" Cochrane",Lepidopsetta bilineata,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2022
+"Dave ""Zeuss"" Cochrane",Lepidozona mertensii,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Leucosolenia eleanor,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Leucosolenia nautilia,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Luidia foliolata,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Metacaprella kennerlyi,"Dave ""Zeuss"" Cochrane",contemporary,new,1,2023
+"Dave ""Zeuss"" Cochrane",Pagurus caurinus,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Pagurus ochotensis,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Pandalus stenolepis,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Perophora annectens,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Phidolopora pacifica,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Pholis clemensi,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Phyllolithodes papillosus,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2022
+"Dave ""Zeuss"" Cochrane",Podothecus accipenserinus,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Sertularella sp.,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Sinosturio transmontanus,"Dave ""Zeuss"" Cochrane",contemporary,new,1,2023
+"Dave ""Zeuss"" Cochrane",Solmundaegina nematophora,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2021
+"Dave ""Zeuss"" Cochrane",Styela clava,"Dave ""Zeuss"" Cochrane",contemporary,new,1,2024
+"Dave ""Zeuss"" Cochrane",Stylatula elongata,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Thrombophyton trachydermum,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2023
+"Dave ""Zeuss"" Cochrane",Tomopteris sp.,"Dave ""Zeuss"" Cochrane",contemporary,confirmed,1,2021
+Dave Metzger,Halosydna brevisetosa,Dave Metzger,contemporary,confirmed,1,2019
+Dave Metzger,Paranemertes peregrina,Dave Metzger,contemporary,new,1,2019
+David Metzger,Gnorimosphaeroma oregonense,David Metzger,contemporary,confirmed,1,2019
+Elsa Hunter,Engraulis mordax,Elsa Hunter,contemporary,confirmed,1,2021
+Emily Adamczyk,Caprella mutica,Emily Adamczyk,contemporary,new,1,2019
+Emily Adamczyk,Oxylebius pictus,Emily Adamczyk,contemporary,confirmed,1,2019
+Emily Adamczyk,Platynereis bicanaliculata,Emily Adamczyk,contemporary,new,1,2019
+Emily Adamczyk,Tresus nuttallii,Emily Adamczyk,contemporary,confirmed,1,2019
+Ian Guthrie,Lebbeus groenlandicus,Ian Guthrie,contemporary,new,1,2024
+Ian Guthrie,Microgadus proximus,Ian Guthrie,contemporary,new,1,2024
+Isabelle M. Côté,Acmaea mitra,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Arctonoe fragilis,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Cadlina sylviaearleae,Isabelle M. Côté,contemporary,new,1,2019
+Isabelle M. Côté,Chirolophis nugator,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Cucumaria pallida,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Cucumaria piperata,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Ectopleura marina,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Entodesma navicula,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Metandrocarpa taylori,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Mopalia ciliata,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Myxicola sp.B,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Panopea generosa,Isabelle M. Côté,contemporary,confirmed,1,2019
+Isabelle M. Côté,Tonicella insignis,Isabelle M. Côté,contemporary,confirmed,1,2019
+Jackson W.F. Chu,Acantholithodes hispidus,Jackson W.F. Chu,contemporary,confirmed,1,2007
+Jackson W.F. Chu,Agonopsis vulsa,Jackson W.F. Chu,contemporary,confirmed,1,2008
+Jackson W.F. Chu,Aphrocallistes vastus,Jackson W.F. Chu,contemporary,confirmed,1,2007
+Jackson W.F. Chu,Balanophyllia (Balanophyllia) elegans,Jackson W.F. Chu,contemporary,confirmed,1,2007
+Jackson W.F. Chu,Chorilia longipes,Jackson W.F. Chu,contemporary,confirmed,1,2009
+Jackson W.F. Chu,Echidnocerus foraminatus,Jackson W.F. Chu,contemporary,confirmed,1,2008
+Jackson W.F. Chu,Enteroctopus dofleini,Jackson W.F. Chu,contemporary,confirmed,1,2007
+Jackson W.F. Chu,Gadus macrocephalus,Jackson W.F. Chu,contemporary,confirmed,1,2009
+Jackson W.F. Chu,Heterochone calyx,Jackson W.F. Chu,contemporary,confirmed,1,2009
+Jackson W.F. Chu,Hydrolagus colliei,Jackson W.F. Chu,contemporary,confirmed,1,2007
+Jackson W.F. Chu,Lyopsetta exilis,Jackson W.F. Chu,contemporary,confirmed,1,2007
+Jackson W.F. Chu,Mediaster aequalis,Jackson W.F. Chu,contemporary,confirmed,1,2008
+Jackson W.F. Chu,Metridium farcimen,Jackson W.F. Chu,contemporary,confirmed,1,2009
+Jackson W.F. Chu,Munida quadrispina,Jackson W.F. Chu,contemporary,confirmed,1,2008
+Jackson W.F. Chu,Pandalus platyceros,Jackson W.F. Chu,contemporary,confirmed,1,2008
+Jackson W.F. Chu,Peltodoris lentiginosa,Jackson W.F. Chu,contemporary,confirmed,1,2009
+Jackson W.F. Chu,Psolus chitonoides,Jackson W.F. Chu,contemporary,confirmed,1,2008
+Jackson W.F. Chu,Pteraster tesselatus,Jackson W.F. Chu,contemporary,confirmed,1,2009
+Jackson W.F. Chu,Rhabdocalyptus dawsoni,Jackson W.F. Chu,contemporary,confirmed,1,2007
+Jackson W.F. Chu,Sebastes elongatus,Jackson W.F. Chu,contemporary,confirmed,1,2008
+Jackson W.F. Chu,Sebastes maliger,Jackson W.F. Chu,contemporary,confirmed,1,2008
+Jackson W.F. Chu,Sebastes proriger,Jackson W.F. Chu,contemporary,confirmed,1,2008
+Jackson W.F. Chu,Sebastes ruberrimus,Jackson W.F. Chu,contemporary,confirmed,1,2008
+Jackson W.F. Chu,Tochuina gigantea,Jackson W.F. Chu,contemporary,confirmed,1,2009
+Jennifer Grant,Botrylloides violaceus,Jennifer Grant,contemporary,confirmed,1,2020
+Jennifer Grant,Diopatra ornata,Jennifer Grant,contemporary,confirmed,1,2020
+Joan Septembre,Schizoporella japonica,Joan Septembre,contemporary,confirmed,1,2019
+John D Reynolds,Batillaria attramentaria,John D Reynolds,contemporary,new,1,2019
+John D Reynolds,Tegula funebralis,John D Reynolds,contemporary,new,1,2019
+KGW,Cyanoplax hartwegii,KGW,contemporary,new,1,2023
+Karen Steve Smith,Eumetopias jubatus,Karen Steve Smith,contemporary,confirmed,1,2016
+Karen Steve Smith,Phocoena phocoena vomerina,Karen Steve Smith,contemporary,confirmed,1,2019
+Karin Fletcher,Acanthodoris hudsoni,Karin Fletcher,contemporary,confirmed,1,2009
+Karin Fletcher,Acanthodoris nanaimoensis,Karin Fletcher,contemporary,confirmed,1,2009
+Karin Fletcher,Aegires albopunctatus,Karin Fletcher,contemporary,confirmed,1,2018
+Karin Fletcher,Antiopella fusca,Karin Fletcher,contemporary,confirmed,1,2009
+Karin Fletcher,Apata pricei,Karin Fletcher,contemporary,confirmed,1,2014
+Karin Fletcher,Atalodoris jannae,Karin Fletcher,contemporary,confirmed,1,2009
+Karin Fletcher,Boreoberthella chacei,Karin Fletcher,contemporary,confirmed,1,2014
+Karin Fletcher,Cadlina modesta,Karin Fletcher,contemporary,confirmed,1,2014
+Karin Fletcher,Cerberilla mosslandica,Karin Fletcher,contemporary,new,1,2018
+Karin Fletcher,Coryphella trophina,Karin Fletcher,contemporary,confirmed,1,2009
+Karin Fletcher,Dendronotus albus,Karin Fletcher,contemporary,confirmed,1,2009
+Karin Fletcher,Diaulula odonoghuei,Karin Fletcher,contemporary,confirmed,1,2014
+Karin Fletcher,Dirona pellucida,Karin Fletcher,contemporary,confirmed,1,2009
+Karin Fletcher,Doris montereyensis,Karin Fletcher,contemporary,confirmed,1,2014
+Karin Fletcher,Doris odhneri,Karin Fletcher,contemporary,confirmed,1,2009
+Karin Fletcher,Geitodoris heathi,Karin Fletcher,contemporary,confirmed,1,2009
+Karin Fletcher,Peltodoris nobilis,Karin Fletcher,contemporary,confirmed,1,2009
+Karin Fletcher,Portorchardia candela,Karin Fletcher,contemporary,confirmed,1,2014
+Karin Fletcher,Rostanga pulchra,Karin Fletcher,contemporary,confirmed,1,2014
+Karin Fletcher,Tenellia nepunicea,Karin Fletcher,contemporary,confirmed,1,2014
+Karin Fletcher,Triopha modesta,Karin Fletcher,contemporary,confirmed,1,2009
+Karolle Wall,Aeolidia loui,Karolle Wall,contemporary,new,1,2016
+Karolle Wall,Aequorea victoria s.lat.,Karolle Wall,contemporary,confirmed,1,2017
+Karolle Wall,Aglaja ocelligera,Karolle Wall,contemporary,confirmed,1,2015
+Karolle Wall,Aldisa sanguinea,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Alia carinata,Karolle Wall,contemporary,new,1,2017
+Karolle Wall,Ammodytes personatus,Karolle Wall,contemporary,confirmed,1,2011
+Karolle Wall,Anthopleura artemisia,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Apodichthys flavidus,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Apostichopus californicus,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Aulorhynchus flavidus,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Aurelia labiata,Karolle Wall,contemporary,confirmed,1,2015
+Karolle Wall,Bugulina californica,Karolle Wall,contemporary,confirmed,1,2017
+Karolle Wall,Citharichthys stigmaeus,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Clevelandia ios,Karolle Wall,contemporary,new,1,2017
+Karolle Wall,Cnemidocarpa finmarkiensis,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Coryphella longicaudata,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Crangon nigricauda,Karolle Wall,contemporary,new,1,2018
+Karolle Wall,Crassadoma gigantea,Karolle Wall,contemporary,confirmed,1,2015
+Karolle Wall,Cucumaria miniata,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Cyanea ferruginea,Karolle Wall,contemporary,confirmed,1,2005
+Karolle Wall,Dendraster excentricus,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Dendronotus albopunctatus,Karolle Wall,contemporary,new,1,2015
+Karolle Wall,Dendronotus iris,Karolle Wall,contemporary,confirmed,1,2011
+Karolle Wall,Dendronotus rufus,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Diaphorodoris lirulatocauda,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Dirona albolineata,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Eperetmus typus,Karolle Wall,contemporary,new,1,2017
+Karolle Wall,Euphysa sp.,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Eurylepta leoparda,Karolle Wall,contemporary,confirmed,1,2015
+Karolle Wall,Evasterias troschelii,Karolle Wall,contemporary,confirmed,1,2007
+Karolle Wall,Gasterosteus aculeatus,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Gastropteron pacificum,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Gobiesox maeandricus,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Haminoea vesicula,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Henricia leviuscula complex,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Heptacarpus brevirostris,Karolle Wall,contemporary,confirmed,1,2017
+Karolle Wall,Heptacarpus sitchensis,Karolle Wall,contemporary,new,1,2017
+Karolle Wall,Heptacarpus stylus,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Hexagrammos decagrammus,Karolle Wall,contemporary,confirmed,1,2017
+Karolle Wall,Hexagrammos stelleri,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Lophopanopeus bellus,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Lumpenus sagitta,Karolle Wall,contemporary,new,1,2017
+Karolle Wall,Marsenina stearnsii,Karolle Wall,contemporary,new,1,2016
+Karolle Wall,Melanochlamys diomedea,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Mesocentrotus franciscanus,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Metacarcinus gracilis,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Metacarcinus magister,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Mopalia hindsii,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Mopalia lignosa,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Mopalia spectabilis,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Myoxocephalus polyacanthocephalus,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Nanomia bijuga,Karolle Wall,contemporary,confirmed,1,2014
+Karolle Wall,Nautichthys oculofasciatus,Karolle Wall,contemporary,confirmed,1,2015
+Karolle Wall,Neoturris breviconis,Karolle Wall,contemporary,confirmed,1,2011
+Karolle Wall,Odontopyxis trispinosa,Karolle Wall,contemporary,confirmed,1,2017
+Karolle Wall,Onchidoris bilamellata,Karolle Wall,contemporary,confirmed,1,2009
+Karolle Wall,Oncorhynchus kisutch,Karolle Wall,contemporary,confirmed,1,2017
+Karolle Wall,Ophiopholis kennerlyi,Karolle Wall,contemporary,confirmed,1,2014
+Karolle Wall,Oregonia gracilis,Karolle Wall,contemporary,confirmed,1,2017
+Karolle Wall,Orthasterias koehleri,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Oxydromus pugettensis,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Pagurus armatus,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Pagurus granosimanus,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Pandalus danae,Karolle Wall,contemporary,confirmed,1,2015
+Karolle Wall,Pentidotea resecata,Karolle Wall,contemporary,new,1,2016
+Karolle Wall,Phoca vitulina richardii,Karolle Wall,contemporary,confirmed,1,2005
+Karolle Wall,Pholis laeta,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Phoronis ijimai,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Phyllaplysia taylori,Karolle Wall,contemporary,confirmed,1,2015
+Karolle Wall,Pisaster brevispinus,Karolle Wall,contemporary,confirmed,1,2006
+Karolle Wall,Pleurobrachia bachei,Karolle Wall,contemporary,confirmed,1,2011
+Karolle Wall,Pleuronichthys coenosus,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Pododesmus macrochisma,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Polyorchis penicillatus,Karolle Wall,contemporary,confirmed,1,2006
+Karolle Wall,Porichthys notatus,Karolle Wall,contemporary,confirmed,1,2007
+Karolle Wall,Rhamphocottus richardsonii,Karolle Wall,contemporary,confirmed,1,2010
+Karolle Wall,Sarsia tubulosa,Karolle Wall,contemporary,confirmed,1,2011
+Karolle Wall,Schizobranchia insignis,Karolle Wall,contemporary,confirmed,1,2017
+Karolle Wall,Sebastes caurinus,Karolle Wall,contemporary,confirmed,1,2016
+Karolle Wall,Serpula columbiana,Karolle Wall,contemporary,confirmed,1,2015
+Karolle Wall,Solaster stimpsoni,Karolle Wall,contemporary,confirmed,1,2013
+Karolle Wall,Stomotoca atra,Karolle Wall,contemporary,new,1,2015
+Karolle Wall,Telmessus cheiragonus,Karolle Wall,contemporary,confirmed,1,2017
+Karolle Wall,Tonicella cf undocaerulea,Karolle Wall,contemporary,new,1,2015
+Karolle Wall,Triopha catalinae,Karolle Wall,contemporary,new,1,2016
+Karolle Wall,Tubulanus ruber,Karolle Wall,contemporary,confirmed,1,2017
+Karolle Wall,Tubulanus sexlineatus,Karolle Wall,contemporary,confirmed,1,2018
+Karolle Wall,Urticina grebelnyi,Karolle Wall,contemporary,confirmed,1,2006
+Kathleen Buckley,Littorina sitkana,Kathleen Buckley,contemporary,new,1,2017
+Kendall McLaughlin,Hiatella arctica,Kendall McLaughlin,contemporary,new,1,2023
+Kendall McLaughlin,Psettichthys melanostictus,Kendall McLaughlin,contemporary,new,1,2025
+Kiara Ganon,Lirabuccinum dirum,Kiara Ganon,contemporary,confirmed,1,2019
+Kris Krüg,Mopalia muscosa,Kris Krüg,contemporary,confirmed,1,2017
+Kris Krüg,Mopalia vespertina,Kris Krüg,contemporary,confirmed,1,2017
+Kris Krüg,Petrolisthes eriomerus,Kris Krüg,contemporary,confirmed,1,2017
+Kristian Sigvardsen,Alitta williami,Kristian Sigvardsen,contemporary,new,1,2017
+Kristian Sigvardsen,Carassius auratus,Kristian Sigvardsen,contemporary,new,1,2021
+Kristian Sigvardsen,Diadumene lineata,Kristian Sigvardsen,contemporary,confirmed,1,2018
+Larry Taylor,Distaplia occidentalis,Larry Taylor,contemporary,confirmed,1,2019
+Lauren Magner,Neostylidium eschrichtii,Lauren Magner,contemporary,new,1,2015
+Lauren Magner,Oligocottus maculosus,Lauren Magner,contemporary,confirmed,1,2015
+Lauren Magner,Pagurus hirsutiusculus,Lauren Magner,contemporary,confirmed,1,2016
+Lena Dietz Chiasson,Nereis vexillosa,Lena Dietz Chiasson,contemporary,confirmed,1,2019
+Liam Ragan,Nanomia septata,Liam Ragan,contemporary,new,1,2024
+Liam Ragan,Phocoenoides dalli,Liam Ragan,contemporary,confirmed,1,2022
+Liam Ragan,Pterocirrus montereyensis,Liam Ragan,contemporary,new,1,2024
+Lillian Rose Crossman,Clione limacina,Lillian Rose Crossman,contemporary,new,1,2020
+Nancy Woodham,Hemigrapsus nudus,Nancy Woodham,contemporary,confirmed,1,2011
+Natalie Kennedy,Neotrypaea californiensis,Natalie Kennedy,contemporary,confirmed,1,2019
+Natassa Uehara,Aethalodelphis obliquidens,Natassa Uehara,contemporary,confirmed,1,2025
+Neil McDaniel,Aldisa cooperi,Neil McDaniel,contemporary,confirmed,1,1978
+Neil McDaniel,Aldisa tara,Neil McDaniel,contemporary,confirmed,1,1978
+Neil McDaniel,Balanus nubilus,Neil McDaniel,contemporary,confirmed,1,2008
+Neil McDaniel,Dendrobeania lichenoides,Neil McDaniel,contemporary,confirmed,1,2008
+Neil McDaniel,Garveia annulata,Neil McDaniel,contemporary,confirmed,1,2008
+Neil McDaniel,Hemilepidotus hemilepidotus,Neil McDaniel,contemporary,confirmed,1,2008
+Neil McDaniel,Myxilla (Myxilla) incrustans,Neil McDaniel,contemporary,confirmed,1,1978
+Neil McDaniel,Oedignathus inermis,Neil McDaniel,contemporary,confirmed,1,1978
+Neil McDaniel,Primavelans insculpta,Neil McDaniel,contemporary,confirmed,1,2008
+Neil McDaniel,Pycnoclavella stanleyi,Neil McDaniel,contemporary,confirmed,1,2008
+Neil McDaniel,Stylantheca papillosa,Neil McDaniel,contemporary,confirmed,1,1978
+Norah Brown,Arctonoe pulchra,Norah Brown,contemporary,confirmed,1,2019
+Norah Brown,Cribrilina sp.,Norah Brown,contemporary,new,1,2019
+Norah Brown,Diodora aspera,Norah Brown,contemporary,confirmed,1,2019
+Norah Brown,Lottia parallela,Norah Brown,contemporary,new,1,2019
+Paz Touchburn,Syngnathus leptorhynchus,Paz Touchburn,contemporary,confirmed,1,2016
+Penelope Bridge,Embiotoca lateralis,Penelope Bridge,contemporary,confirmed,1,2020
+Peter Luckham,Aeolidia papillosa,Peter Luckham,contemporary,confirmed,1,2016
+Peter Luckham,Alcyonium sp.,Peter Luckham,contemporary,confirmed,1,2016
+Peter Luckham,Armina californica,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Artedius fenestralis,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Artedius harringtoni,Peter Luckham,contemporary,confirmed,1,2015
+Peter Luckham,Asemichthys taylori,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Bolinopsis infundibulum,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Boltenia villosa,Peter Luckham,contemporary,confirmed,1,2015
+Peter Luckham,Cadlina luteomarginata,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Calliostoma ligatum,Peter Luckham,contemporary,confirmed,1,2016
+Peter Luckham,Cancer productus,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Ceratostoma foliatum,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Chlamys hastata,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Craniella villosa,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Dermasterias imbricata,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Dodecaceria pacifica,Peter Luckham,contemporary,confirmed,1,2016
+Peter Luckham,Echidnocerus cibarius,Peter Luckham,contemporary,confirmed,1,2015
+Peter Luckham,Enophrys bison,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Eudistylia vancouveri,Peter Luckham,contemporary,confirmed,1,2015
+Peter Luckham,Eupentacta quinquesemita,Peter Luckham,contemporary,confirmed,1,2016
+Peter Luckham,Florometra serratissima,Peter Luckham,contemporary,confirmed,1,2015
+Peter Luckham,Glebocarcinus oregonensis,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Halocynthia igaboja,Peter Luckham,contemporary,confirmed,1,2015
+Peter Luckham,Jordania zonope,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Leucilla nuttingi,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Liparis pulchellus,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Neverita lewisii,Peter Luckham,contemporary,confirmed,1,2016
+Peter Luckham,Ophiodon elongatus,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Pachycerianthus fimbriatus,Peter Luckham,contemporary,confirmed,1,2016
+Peter Luckham,Pagurus beringanus,Peter Luckham,contemporary,confirmed,1,2015
+Peter Luckham,Polymastia pachymastia,Peter Luckham,contemporary,confirmed,1,2016
+Peter Luckham,Ptilosarcus gurneyi,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Pugettia gracilis,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Pugettia producta,Peter Luckham,contemporary,confirmed,1,2016
+Peter Luckham,Pycnopodia helianthoides,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Rhinogobiops nicholsii,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Scyra acutifrons,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Sebastes emphaeus,Peter Luckham,contemporary,confirmed,1,2015
+Peter Luckham,Tresus capax,Peter Luckham,contemporary,confirmed,1,2016
+Peter Luckham,Tritonia exsulans,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Tritonia festiva,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Urtibrina clandestina,Peter Luckham,contemporary,confirmed,1,2013
+Peter Luckham,Virgularia sp.,Peter Luckham,contemporary,confirmed,1,2013
+Quinn Galbraith-Robertson,Scorpaenichthys marmoratus,Quinn Galbraith-Robertson,contemporary,confirmed,1,2023
+Rebecca Reader-Lee,Oligocottus snyderi,Rebecca Reader-Lee,contemporary,new,1,2023
+Scott Gilmore,Cyanoplax dentiens,Scott Gilmore,contemporary,new,1,2017
+Scott Gilmore,Margarites pupillus,Scott Gilmore,contemporary,confirmed,1,2017
+Shayne Poleyko,Anthopleura xanthogrammica,Shayne Poleyko,contemporary,new,1,2025
+Shera Street,Clinocardium nuttallii,Shera Street,contemporary,confirmed,1,2009
+Shera Street,Lontra canadensis pacifica,Shera Street,contemporary,confirmed,1,2006
+Shera Street,Pisaster ochraceus,Shera Street,contemporary,confirmed,1,2009
+Sofia Silverman,Psychrolutes paradoxus,Sofia Silverman,contemporary,new,1,2024
+Steve Ansell,Orcinus orca,Steve Ansell,contemporary,confirmed,1,2004
+Tom Appleby,Cymatogaster aggregata,Tom Appleby,contemporary,confirmed,1,2018
+Tyrel Froese,Lottia scutum,Tyrel Froese,contemporary,confirmed,1,2016
+Tyrel Froese,Macoma nasuta,Tyrel Froese,contemporary,confirmed,1,2016
+Tyrel Froese,Nuttallia obscurata,Tyrel Froese,contemporary,new,1,2016
+Tyrel Froese,Pentidotea wosnesenskii,Tyrel Froese,contemporary,confirmed,1,2017
+Tyrel Froese,Ruditapes philippinarum,Tyrel Froese,contemporary,new,1,2016
+Tyson Ehlers,Hermissenda crassicornis,Tyson Ehlers,contemporary,confirmed,1,2009
+Tyson Ehlers,Squalus suckleyi,Tyson Ehlers,contemporary,confirmed,1,2017
+alyanalalani,Leptasterias hexactis,alyanalalani,contemporary,confirmed,1,2023
+awworld,Balanus crenatus,awworld,contemporary,confirmed,1,2019
+catiemac,Beroe abyssicola,catiemac,contemporary,confirmed,1,2020
+catiemac,Leuckartiara longicalcar,catiemac,contemporary,new,1,2020
+jroderick,Melibe leonina,jroderick,contemporary,confirmed,1,2006
+linddealy,Philine auriformis,linddealy,contemporary,new,1,2018
+pacificwhitesideddolphin,Platichthys stellatus,pacificwhitesideddolphin,contemporary,confirmed,1,2020
+ridingbio,Xiphister atropurpureus,ridingbio,contemporary,new,1,2021
+smrhaddon,Clupea pallasii,smrhaddon,contemporary,confirmed,1,2021
