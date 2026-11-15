@@ -199,9 +199,47 @@ classify <- function(name) {
 dwc.cols <- c("scientificName","verbatimScientificName","identificationQualifier","identificationRemarks","vernacularName",
   "kingdom","phylum","datasetName","recordedBy","eventDate","verbatimEventDate","eventRemarks","fieldNumber","locality",
   "locationRemarks","habitat","decimalLatitude","decimalLongitude","geodeticDatum","coordinateUncertaintyInMeters",
-  "georeferenceProtocol","georeferenceRemarks","basisOfRecord","samplingProtocol","occurrenceRemarks","bibliographicCitation")
+  "georeferencedBy","georeferencedDate","georeferenceProtocol","georeferenceSources","georeferenceVerificationStatus","georeferenceRemarks","basisOfRecord","samplingProtocol","occurrenceRemarks","bibliographicCitation")
+
+# Point-radius georeferences for named sites (see build_site_gazetteer_2026-11-14.R); applied only to records without
+# coordinates of their own
+gazetteer <- read.csv(file.path(dig.dir, "Galiano_vascular_plant_site_gazetteer_2026-11-14.csv"), colClasses = "character")
+source.sites <- c(
+  "Searle_2001_Trincomali_Nature_Sanctuary_plant_list" = "Trincomali Nature Sanctuary",
+  "Huggins_Thompson_2023_Quadra_Hill_baseline_survey" = "Quadra Hill",
+  "Turner_Erickson_Canfield_1998_Pebble_Beach_vegetation_inventory" = "Pebble Beach",
+  "Huggins_2019_DL64_Cable_Bay_preliminary_survey" = "Cable Bay (DL64)",
+  "DL57_Millard_Learning_Centre_flora_inventory_2012-2015" = "Millard Learning Centre (DL57)",
+  "Erickson_2016_DL21_DL22_Mount_Sutil_baseline_plot_vegetation" = "Mount Sutil (DL21, DL22, REM Lot 23)",
+  "Fairbarns_2016_Rock_Bluff_System_vascular_plant_survey" = "Mount Sutil (DL21, DL22, REM Lot 23)",
+  "Scholz_Janszen_2004_Mount_Sutil_REM_Lot_23_baseline" = "Mount Sutil (DL21, DL22, REM Lot 23)",
+  "Erickson_2022_DL21_DL22_BC_CDC_rare_element_occurrences" = "Mount Sutil (DL21, DL22, REM Lot 23)",
+  "Taylor_2012_Galiano_Island_vascular_plant_record" = "Bluffs Park; Matthews Point; Bellhouse Park",
+  "Crystal_Mountain_Species" = "Crystal Mountain (DL89, DL90)"
+)
+
+georeference_site <- function(name, dwc) {
+  if (!(name %in% names(source.sites))) return(dwc)
+  g <- gazetteer[gazetteer$site == source.sites[[name]], ]
+  for (col in c("decimalLatitude","decimalLongitude","georeferenceRemarks")) if (is.null(dwc[[col]])) dwc[[col]] <- ""
+  todo <- is.na(dwc$decimalLatitude) | dwc$decimalLatitude == ""
+  dwc$decimalLatitude[todo] <- g$decimalLatitude
+  dwc$decimalLongitude[todo] <- g$decimalLongitude
+  dwc$geodeticDatum[todo] <- g$geodeticDatum
+  dwc$coordinateUncertaintyInMeters[todo] <- g$coordinateUncertaintyInMeters
+  dwc$georeferencedBy[todo] <- "automated point-radius georeference prepared for Andrew Simon"
+  dwc$georeferencedDate[todo] <- "2026-11-14"
+  dwc$georeferenceProtocol[todo] <- "point-radius method (Chapman & Wieczorek 2020, Georeferencing Best Practices); point on surface of site polygon(s), radius to furthest extent"
+  dwc$georeferenceSources[todo] <- g$georeferenceSources
+  dwc$georeferenceVerificationStatus[todo] <- "requires verification"
+  dwc$georeferenceRemarks[todo] <- str_squish(paste0("site-level georeference for '", g$site, "'; record not located more precisely by the source. ",
+                                                     dwc$georeferenceRemarks[todo]))
+  dwc
+}
 
 write_source <- function(name, digitized, dwc) {
+  for (col in setdiff(dwc.cols, names(dwc))) dwc[[col]] <- ""
+  dwc <- georeference_site(name, dwc)
   cls <- classify(dwc$scientificName)
   dwc$kingdom <- cls[, 1]; dwc$phylum <- cls[, 2]
   dwc$country <- NULL
@@ -423,7 +461,7 @@ r <- with_names(x, src); x <- r$x
 dwc <- data.frame(r$cl, vernacularName = x$vernacularName, datasetName = x$datasetName, recordedBy = x$recordedBy,
   eventDate = x$eventDate, eventRemarks = "year only; dates in transcription were drag-filled",
   locality = x$locality, locationRemarks = "species list from the entire baseline survey (19 plots)",
-  georeferenceRemarks = "verbatim coordinates in source ('45°51’18.23”E; 54°20’33.30”N') are invalid; not georeferenced",
+  georeferenceRemarks = "verbatim coordinates in source ('45°51’18.23”E; 54°20’33.30”N') are invalid and were disregarded",
   basisOfRecord = "HumanObservation", samplingProtocol = "baseline survey species list", stringsAsFactors = FALSE)
 write_source(src, x, dwc)
 

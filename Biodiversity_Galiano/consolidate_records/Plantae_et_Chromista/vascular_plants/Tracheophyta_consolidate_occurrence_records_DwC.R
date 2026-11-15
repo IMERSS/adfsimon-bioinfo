@@ -1452,6 +1452,11 @@ unmatched.vascular.plant.records
 
 Lomer.2022 <- read.csv("../../records/digitized/DarwinCore/Lomer_2022_Galiano_collections_DwC.csv")
 
+# Assign collector's coordinates to DwC fields (previously dropped by the DwC template; corrected 2026-11-14)
+
+Lomer.2022$decimalLatitude <- Lomer.2022$degreesLatitude
+Lomer.2022$decimalLongitude <- Lomer.2022$degreesLongitude
+
 # Create DarwinCore dataframe template 
 
 data.frame <- as.data.frame(matrix(ncol = length(DwCFields), nrow = nrow(Lomer.2022)))
@@ -2130,6 +2135,11 @@ names(Simon.2018.transects) <- c('TID','Latitude','Longitude','Note')
 
 Simon.2018 <- inner_join(Simon.2018.veg.data, Simon.2018.transects, by = 'TID')
 
+# Assign transect coordinates to DwC fields (previously dropped by the DwC template; corrected 2026-11-14)
+
+Simon.2018$decimalLatitude <- Simon.2018$Latitude
+Simon.2018$decimalLongitude <- Simon.2018$Longitude
+
 # Add 'fieldNumber' column
 
 Simon.2018$fieldNumber <- Simon.2018$SID
@@ -2328,6 +2338,24 @@ UBC.2022$island <- "Galiano Island"
 UBC.2022$countryCode <- "CA"
 UBC.2022$basisOfRecord <- "PreservedSpecimen"
 UBC.2022$institutionCode <- "UBC"
+
+# Add georeferences for records lacking coordinates (see digitization/georeference_UBC_2026-11-14.R)
+
+UBC.2022.georeferences <- read.csv("../../records/digitized/UBC_Galiano_Island_vascular_plants_georeferences_2026-11-14.csv", colClasses = "character")
+
+georef <- match(UBC.2022$catalogNumber, UBC.2022.georeferences$catalogNumber)
+georef.rows <- !is.na(georef) & (is.na(UBC.2022$decimalLatitude) | UBC.2022$decimalLatitude == "")
+
+UBC.2022$decimalLatitude[georef.rows] <- UBC.2022.georeferences$decimalLatitude[georef[georef.rows]]
+UBC.2022$decimalLongitude[georef.rows] <- UBC.2022.georeferences$decimalLongitude[georef[georef.rows]]
+UBC.2022$coordinateUncertaintyInMeters[georef.rows] <- UBC.2022.georeferences$coordinateUncertaintyInMeters[georef[georef.rows]]
+UBC.2022$georeferencedBy[georef.rows] <- UBC.2022.georeferences$georeferencedBy[georef[georef.rows]]
+UBC.2022$georeferenceProtocol[georef.rows] <- UBC.2022.georeferences$georeferenceProtocol[georef[georef.rows]]
+UBC.2022$georeferenceVerificationStatus[georef.rows] <- UBC.2022.georeferences$georeferenceVerificationStatus[georef[georef.rows]]
+UBC.2022$georeferenceRemarks[georef.rows] <- paste0(UBC.2022.georeferences$georeferenceRemarks[georef[georef.rows]],
+  "; sources: ", UBC.2022.georeferences$georeferenceSources[georef[georef.rows]],
+  "; datum: ", UBC.2022.georeferences$geodeticDatum[georef[georef.rows]],
+  "; georeferenced ", UBC.2022.georeferences$georeferencedDate[georef[georef.rows]])
 
 # Correct annotations
 
@@ -4713,9 +4741,13 @@ sort(unique(unmatched.vascular.plant.records$scientificName))
 # Note (2026-11-14): each source block above overwrites keys/review_key.csv with only its own unmatched names;
 # this writes the key with unmatched names from every source
 
-unmatched.taxa <- data.frame(Taxon = sort(unique(unmatched.vascular.plant.records$scientificName)), Matched.Taxon = "", Critical.Note = "")
+# Names already in the key (including those resolved as 'DELETE: <reason>' in Critical.Note) are not offered for review again
 
-review.key <- rbind(read.csv("keys/vascular_plant_taxon_key_2024.csv"), unmatched.taxa)
+taxon.key <- read.csv("keys/vascular_plant_taxon_key_2024.csv")
+
+unmatched.taxa <- data.frame(Taxon = setdiff(sort(unique(unmatched.vascular.plant.records$scientificName)), taxon.key$Taxon), Matched.Taxon = "", Critical.Note = "")
+
+review.key <- rbind(taxon.key, unmatched.taxa)
 
 review.key[is.na(review.key)] <- ""
 
