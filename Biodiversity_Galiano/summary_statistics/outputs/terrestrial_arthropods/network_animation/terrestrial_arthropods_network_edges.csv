@@ -10,6 +10,8 @@ C.-K. Chan,Hyadaphis foeniculi,C.-K. Chan,historical,reported,1,2000
 C.-K. Chan,Illinoia crystleae,C.-K. Chan,historical,reported,1,2000
 C.-K. Chan,Illinoia maxima,C.-K. Chan,historical,reported,1,2000
 Chris G. Ratzlaff,Eumenes crucifera,Chris G. Ratzlaff,historical,confirmed,1,2019
+Cossentine & Kuhlman,Ageniaspis fuscicollis,Cossentine & Kuhlman,historical,reported,1,2000
+E. Harrower,Chalcophora angulicollis,E. Harrower,historical,confirmed,1,2012
 Geoffrey G.E. Scudder,Abia americana,Geoffrey G.E. Scudder,historical,reported,1,1977
 Geoffrey G.E. Scudder,Acantholomidea porosa,Geoffrey G.E. Scudder,historical,reported,1,2019
 Geoffrey G.E. Scudder,Acantholyda maculiventris,Geoffrey G.E. Scudder,historical,reported,1,1974
@@ -193,7 +195,6 @@ Geoffrey G.E. Scudder,Hylurgops porosus,Geoffrey G.E. Scudder,historical,reporte
 Geoffrey G.E. Scudder,Hyperaspis postica,Geoffrey G.E. Scudder,historical,reported,1,1990
 Geoffrey G.E. Scudder,Hystricia abrupta,Geoffrey G.E. Scudder,historical,confirmed,1,1980
 Geoffrey G.E. Scudder,Idiocerus iodes,Geoffrey G.E. Scudder,historical,reported,1,1983
-Geoffrey G.E. Scudder,Ischnura erratica,Geoffrey G.E. Scudder,historical,reported,1,1977
 Geoffrey G.E. Scudder,Isomira comstocki,Geoffrey G.E. Scudder,historical,confirmed,1,1991
 Geoffrey G.E. Scudder,Kleidocerys resedae,Geoffrey G.E. Scudder,historical,confirmed,1,1969
 Geoffrey G.E. Scudder,Laphria ventralis,Geoffrey G.E. Scudder,historical,confirmed,1,1983
@@ -315,43 +316,44 @@ N.C. Scudder,Eumichthus oedipus,N.C. Scudder,historical,reported,1,1990
 N.C. Scudder,Hadromyia grandis,N.C. Scudder,historical,reported,1,1983
 N.C. Scudder,Hybomitra aasa,N.C. Scudder,historical,reported,1,1979
 N.C. Scudder,Monochamus scutellatus,N.C. Scudder,historical,confirmed,1,1974
-RA Cannings,Anisolabis maritima,RA Cannings,historical,confirmed,1,1981
-RA Cannings,Forficula dentata,RA Cannings,historical,confirmed,1,1981
 RBCM BC Spider Database,Cicurina tersa,RBCM BC Spider Database,historical,reported,1,2016
 RBCM BC Spider Database,Cybaeota shastae,RBCM BC Spider Database,historical,reported,1,2016
 RBCM BC Spider Database,Dysdera crocata,RBCM BC Spider Database,historical,confirmed,1,2016
 RBCM BC Spider Database,Eris militaris,RBCM BC Spider Database,historical,confirmed,1,2016
 RBCM BC Spider Database,Pholcus phalangioides,RBCM BC Spider Database,historical,confirmed,1,2016
 Richard Cannings,Bibio xanthopus complex,Richard Cannings,historical,confirmed,1,1981
-Rob Cannings,Bombylius major,Rob Cannings,historical,confirmed,1,1981
-Rob Cannings,Calliphora latifrons,Rob Cannings,historical,reported,1,1981
 Robb Bennett,Ceratinops inflatus,Robb Bennett,historical,reported,1,2012
 Robb Bennett,Eratigena duellica,Robb Bennett,historical,confirmed,1,2002
 Robb Bennett,Ethobuella tuonops,Robb Bennett,historical,reported,1,2012
 Robb Bennett,Neriene digna,Robb Bennett,historical,confirmed,1,2007
 Robb Bennett,Xysticus pretiosus,Robb Bennett,historical,confirmed,1,2012
+Robert Cannings,Anisolabis maritima,Robert Cannings,historical,confirmed,1,1981
+Robert Cannings,Bombylius major,Robert Cannings,historical,confirmed,1,1981
+Robert Cannings,Calliphora latifrons,Robert Cannings,historical,reported,1,1981
 Robert Cannings,Coccinella californica,Robert Cannings,historical,reported,1,1981
-Syd G. Cannings,Ammophila azteca,Syd G. Cannings,historical,reported,1,1990
-Syd G. Cannings,Ammophila strenua,Syd G. Cannings,historical,reported,1,1990
-Syd G. Cannings,Andrena candida,Syd G. Cannings,historical,reported,1,1981
-Syd G. Cannings,Astata nubecula,Syd G. Cannings,historical,reported,1,1990
-Syd G. Cannings,Diodontus boharti,Syd G. Cannings,historical,reported,1,1990
-Syd G. Cannings,Dryudella caerulea,Syd G. Cannings,historical,reported,1,1990
-Syd G. Cannings,Eucalliphora latifrons,Syd G. Cannings,historical,reported,1,1990
-Syd G. Cannings,Hedychridium dimidiatum,Syd G. Cannings,historical,reported,1,1990
-Syd G. Cannings,Holopyga ventralis,Syd G. Cannings,historical,reported,1,1990
-Syd G. Cannings,Megachile fidelis,Syd G. Cannings,historical,confirmed,1,1990
-Syd G. Cannings,Meliscaeva cinctella,Syd G. Cannings,historical,confirmed,1,1981
-Syd G. Cannings,Phormia regina,Syd G. Cannings,historical,confirmed,1,1990
-Syd G. Cannings,Sphecodes sp.,Syd G. Cannings,historical,confirmed,1,1990
-Syd G. Cannings,Synopeas anomaliventre,Syd G. Cannings,historical,reported,2,1981
-Syd G. Cannings,Xyelecia nearctica,Syd G. Cannings,historical,reported,2,1981
+Robert Cannings,Forficula dentata,Robert Cannings,historical,confirmed,1,1981
+Sydney G. Cannings,Ammophila azteca,Sydney G. Cannings,historical,reported,1,1990
+Sydney G. Cannings,Ammophila strenua,Sydney G. Cannings,historical,reported,1,1990
+Sydney G. Cannings,Andrena candida,Sydney G. Cannings,historical,reported,1,1981
+Sydney G. Cannings,Astata nubecula,Sydney G. Cannings,historical,reported,1,1990
+Sydney G. Cannings,Bombus flavidus,Sydney G. Cannings,historical,reported,1,1981
 Sydney G. Cannings,Coccinella novemnotata,Sydney G. Cannings,historical,confirmed,1,1981
 Sydney G. Cannings,Cycloneda polita,Sydney G. Cannings,historical,confirmed,1,1990
 Sydney G. Cannings,Cypha crotchii,Sydney G. Cannings,historical,reported,1,1981
 Sydney G. Cannings,Dictyoptera simplicipes,Sydney G. Cannings,historical,confirmed,1,1981
+Sydney G. Cannings,Diodontus boharti,Sydney G. Cannings,historical,reported,1,1990
+Sydney G. Cannings,Dryudella caerulea,Sydney G. Cannings,historical,reported,1,1990
+Sydney G. Cannings,Eucalliphora latifrons,Sydney G. Cannings,historical,reported,1,1990
+Sydney G. Cannings,Hedychridium dimidiatum,Sydney G. Cannings,historical,reported,1,1990
+Sydney G. Cannings,Holopyga ventralis,Sydney G. Cannings,historical,reported,1,1990
+Sydney G. Cannings,Megachile fidelis,Sydney G. Cannings,historical,confirmed,1,1990
+Sydney G. Cannings,Meliscaeva cinctella,Sydney G. Cannings,historical,confirmed,1,1981
+Sydney G. Cannings,Phormia regina,Sydney G. Cannings,historical,confirmed,1,1990
+Sydney G. Cannings,Sphecodes sp.,Sydney G. Cannings,historical,confirmed,1,1990
 Sydney G. Cannings,Stropenron columbiana,Sydney G. Cannings,historical,confirmed,1,1981
+Sydney G. Cannings,Synopeas anomaliventre,Sydney G. Cannings,historical,reported,2,1981
 Sydney G. Cannings,Xestoleptura crassipes,Sydney G. Cannings,historical,confirmed,1,1990
+Sydney G. Cannings,Xyelecia nearctica,Sydney G. Cannings,historical,reported,2,1981
 unknown,Euchlaena johnsonaria,unknown,historical,reported,1,1930
 Adam Huggins,Aeshna interrupta,Adam Huggins,contemporary,confirmed,1,2021
 Adam Huggins,Alniphagus aspericollis,Adam Huggins,contemporary,new,1,2025
@@ -783,7 +785,6 @@ Kevin Toomer,Hyles gallii,Kevin Toomer,contemporary,new,1,2023
 Kevin Toomer,Ianassa pallida,Kevin Toomer,contemporary,new,1,2021
 Kevin Toomer,Idaea dimidiata,Kevin Toomer,contemporary,confirmed,1,2021
 Kevin Toomer,Iridopsis emasculatum,Kevin Toomer,contemporary,new,1,2019
-Kevin Toomer,Itoplectis conquisitor,Kevin Toomer,contemporary,new,1,2023
 Kevin Toomer,Lepturopsis dolorosa,Kevin Toomer,contemporary,confirmed,1,2021
 Kevin Toomer,Lestes congener,Kevin Toomer,contemporary,confirmed,1,2019
 Kevin Toomer,Macaria signaria dispuncta,Kevin Toomer,contemporary,confirmed,1,2018

@@ -263,19 +263,33 @@ Brothers, Kent (2020): Brothers_2020_Galiano_Records_DwC.csv
 >> *Consortium of Pacific Northwest Herbaria 
 (note: redundancies with Canadian Museum of Nature, UBC, Royal BC Museum)
 
->> Erickson, Keith (2016, 2022)
+Erickson, Keith (2016): Erickson_2016_DL21_DL22_Mount_Sutil_baseline_plot_vegetation_DwC.csv
+
+Erickson, Keith (2022): Erickson_2022_DL21_DL22_BC_CDC_rare_element_occurrences_DwC.csv
+
+Erickson, Keith (2009): Collins_Westbourne_Covanent_Baseline Report_Consolidated_data_DwC.csv
+
+Erickson, Keith (2010): Crystal_Mountain_Species_DwC.csv
 
 Hunterston Farms (2010): Hunterston_Farms_Bioblitz_2010_sorted_2022-10-16_DwC.csv
 
->> Fairbarns, Matt (Aruncus Consulting) (2016)
+Fairbarns, Matt (Aruncus Consulting) (2016): Fairbarns_2016_Rock_Bluff_System_vascular_plant_survey_DwC.csv
 
 Galiano Conservancy Association (2002a): DL63_plot_metadata_DwC.csv
 
 Galiano Conservancy Association (2002b): DL63_veg_list_2001-2002_DwC.csv
 
+Galiano Conservancy Association (2009): GCA_2009_Galiano_Species_Master_List_DwC.csv
+
+Galiano Conservancy Association (2012-2015): DL57_Millard_Learning_Centre_flora_inventory_2012-2015_DwC.csv
+
 Galiano Conservancy Association (2002c): Laughlin_Vegetation_Data_2002-08-20_DwC.csv
 
 *iNaturalist
+
+Huggins, Adam (2019): Huggins_2019_DL64_Cable_Bay_preliminary_survey_DwC.csv
+
+Huggins, Adam & Thompson, Michelle (2023): Huggins_Thompson_2023_Quadra_Hill_baseline_survey_DwC.csv
 
 Janszen, Harvey (2003): Janszen_2003_Outer_Gulf_Islands_Vascular_Plant_Checklist_DwC.csv
 
@@ -293,11 +307,21 @@ Roemer, Hans (2004): Roemer_2004_Mt_Sutil_plot_metadata_DwC.csv, Roemer_2004_Mt_
 
 *Royal BC Museum: RBCM_vascular_plant_records_georeferencing_corrected_2021-12-05_DwC.csv
 
+Scholz, Odin & Janszen, Harvey (2004): Scholz_Janszen_2004_Mount_Sutil_REM_Lot_23_baseline_DwC.csv
+
+Searle & Associates (2001): Searle_2001_Trincomali_Nature_Sanctuary_plant_list_DwC.csv
+
 Simon, Andrew (2018): Simon_2018_transect_coordinates_DwC.csv, Simon_2018_vegetation_data_DwC.csv
 
->> Taylor, Terry (2016)
+>> Taylor, Terry (2016) (checklist PDF archived in raw/Galiano_Island_Vascular_Plant_Data_compilation_2026-11-14)
+
+Taylor, Terry (2012): Taylor_2012_Galiano_Island_vascular_plant_record_DwC.csv
 
 >> Thompson, Undine (2013)
+
+Thompson, Undiné Celeste (2011): Celeste_Thompson_2011_Plants_of_Retreat_Island_DwC.csv
+
+Turner, N., Erickson, K. & Canfield, C. (1998): Turner_Erickson_Canfield_1998_Pebble_Beach_vegetation_inventory_DwC.csv
 
 *UBC: UBC_Galiano_Island_vascular_plants_2022-10-31_DwC.csv
 

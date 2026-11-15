@@ -1,0 +1,25 @@
+name,node_class,taxon_status,taxon_year,color,size,label
+A.I. Ortenburger,historical,NA,NA,#CC79A7,3,A.I. Ortenburger
+"BC Ministry of Water, Land & Air Protection",historical,NA,NA,#CC79A7,2,"BC Ministry of Water, Land & Air Protection"
+Geoffrey G.E. Scudder,historical,NA,NA,#CC79A7,2,Geoffrey G.E. Scudder
+Kent Brothers,historical,NA,NA,#CC79A7,3,Kent Brothers
+Brian Starzomski,contemporary,NA,NA,#E69F00,2,Brian Starzomski
+Cameron Eckert,contemporary,NA,NA,#E69F00,2,Cameron Eckert
+Henny Schnare,contemporary,NA,NA,#E69F00,2,Henny Schnare
+Ian Guthrie,contemporary,NA,NA,#E69F00,2,Ian Guthrie
+Jenny Breukelman,contemporary,NA,NA,#E69F00,2,Jenny Breukelman
+Jessica Kirkwood,contemporary,NA,NA,#E69F00,2,Jessica Kirkwood
+Laura Matthias,contemporary,NA,NA,#E69F00,2,Laura Matthias
+Marlin Stewart,contemporary,NA,NA,#E69F00,2,Marlin Stewart
+Shera Street,contemporary,NA,NA,#E69F00,2,Shera Street
+mandrews65,contemporary,NA,NA,#E69F00,2,mandrews65
+Pituophis catenifer catenifer,taxon,confirmed,NA,#009E73,1.8,NA
+Pseudacris regilla,taxon,confirmed,NA,#009E73,1.8,NA
+Contia tenuis,taxon,confirmed,NA,#009E73,1.8,NA
+Taricha granulosa,taxon,confirmed,NA,#009E73,1.8,NA
+Rana aurora,taxon,confirmed,NA,#009E73,1.8,NA
+Thamnophis sirtalis pickeringii,taxon,confirmed,NA,#009E73,1.8,NA
+Trachemys scripta elegans,taxon,new,2016,#FDE725,1,NA
+Ambystoma macrodactylum,taxon,new,2016,#FDE725,1,NA
+Ambystoma gracile,taxon,new,2016,#FDE725,1,NA
+Podarcis muralis,taxon,new,2025,#D55E00,1,NA

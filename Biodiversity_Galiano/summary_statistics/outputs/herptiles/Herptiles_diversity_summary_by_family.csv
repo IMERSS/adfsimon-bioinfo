@@ -1,0 +1,8 @@
+Family,Family_Latin,total_taxa,remaining_historical,confirmed_taxa,new_taxa,resolved_taxa,recent_confirmed,recent_new,recent_total,resolved_share_pct,unresolved_share_pct
+Colubrid snakes (Colubridae),Colubridae,3,0,3,0,3,0,0,0,100,0
+Mole salamanders (Ambystomatidae),Ambystomatidae,2,0,0,2,2,0,0,0,100,0
+Newts (Salamandridae),Salamandridae,1,0,1,0,1,0,0,0,100,0
+Pond turtles (Emydidae),Emydidae,1,0,0,1,1,0,0,0,100,0
+Treefrogs (Hylidae),Hylidae,1,0,1,0,1,0,0,0,100,0
+True frogs (Ranidae),Ranidae,1,0,1,0,1,0,0,0,100,0
+Wall lizards (Lacertidae),Lacertidae,1,0,0,1,1,0,1,1,100,0

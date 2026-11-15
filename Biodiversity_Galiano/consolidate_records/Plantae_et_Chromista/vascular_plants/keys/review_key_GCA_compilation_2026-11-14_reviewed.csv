@@ -1,0 +1,86 @@
+Taxon,Matched.Taxon,Critical.Note,records,sources,target.in.summary
+Acer douglasii,Acer glabrum var. douglasii,synonym,2,ERICKSON2016; GCAMASTERLIST2009,TRUE
+Achillea millefolium var. lanulosa,Achillea millefolium complex,infrataxon not resolved in summary,1,SCHOLZJANSZEN2004,TRUE
+Adiantum pedatum,Adiantum aleuticum var. aleuticum,A. pedatum s.str. is eastern; PNW reports refer to A. aleuticum,3,ERICKSON2016; GCAMASTERLIST2009; TURNER1998,TRUE
+Agropyron sp.,,genus-level report,1,DL57MLC,
+Agrostis sp.,,genus-level report,3,ERICKSON2016; GCAMASTERLIST2009,
+Allium cernuum var. cernuum,Allium cernuum,,1,SCHOLZJANSZEN2004,TRUE
+Amelanchier florida,Amelanchier alnifolia,synonym,1,DL57MLC,TRUE
+Anthoxanthum odoratum ssp. odoratum,Anthoxanthum odoratum,,1,DL57MLC,TRUE
+Arabis glabra,Turritis glabra,synonym,1,FAIRBARNS2016,TRUE
+Brodiaea coronaria ssp. coronaria,Brodiaea coronaria,,2,SCHOLZJANSZEN2004; THOMPSON2011,TRUE
+Brodiaea hyacinthina,Triteleia hyacinthina,synonym,2,ERICKSON2016; GCAMASTERLIST2009,TRUE
+Bromus hordeaceus ssp. hordeaceus,Bromus hordeaceus,,1,SCHOLZJANSZEN2004,TRUE
+Calandrinia ciliata var. menziesii,Calandrinia menziesii,synonym,1,SCHOLZJANSZEN2004,TRUE
+Cardamine oligosperma var. oligosperma,Cardamine oligosperma,,1,SCHOLZJANSZEN2004,TRUE
+Carex laxiculmis,,eastern North American species; questionable report,1,DL57MLC,
+Carex rostrata,Carex utriculata,coastal BC reports of C. rostrata generally refer to C. utriculata; verify,3,ERICKSON2016; GCAMASTERLIST2009,TRUE
+Cerastium fontanum ssp. triviale,Cerastium fontanum,"summary uses species rank (existing key maps C. fontanum to ssp. vulgare, which is not in the summary)",1,TAYLOR2012,TRUE
+Cerastium holosteoides,Cerastium fontanum,"summary uses species rank (existing key maps C. fontanum to ssp. vulgare, which is not in the summary)",2,TRINCOMALI2001,TRUE
+Chrysanthemum leucanthemum,Leucanthemum vulgare,synonym,1,TURNER1998,TRUE
+Chrysanthemum vulgare,Tanacetum vulgare,synonym,2,ERICKSON2016; GCAMASTERLIST2009,TRUE
+Claytonia perfoliata var. perfoliata,Claytonia perfoliata,,1,FAIRBARNS2016,TRUE
+Clematis ligusticifolia,,potential new record; possible confusion with C. vitalba,1,QUADRAHILL2023,
+Corallorhiza maculata ssp. mertensiana,Corallorhiza mertensiana,synonym,1,TURNER1998,TRUE
+Danthonia spicata,,potential new record; verify,1,TRINCOMALI2001,
+Delphinium menziesii ssp. menziesii,Delphinium menziesii,,1,SCHOLZJANSZEN2004,TRUE
+Eleocharis sp.,,genus-level report,1,DL57MLC,
+Elymus hirsutus,,Rejected; likely misapplied to E. glaucus,2,CRYSTALMTN2010,
+Epilobium tetragonum,,tentatively accepted; plausible for BC,1,DL57MLC,
+Equisetum fluviatile,,Rejected; likely misreport of a species otherwise not known from Galiano Island,1,TURNER1998,
+Equisetum telmateia var. braunii,Equisetum telmateia ssp. braunii,,1,TAYLOR2012,TRUE
+Eriophyllum lanatum var. lanatum,Eriophyllum lanatum var. leucophyllum,follows existing key convention for E. lanatum; verify variety,1,SCHOLZJANSZEN2004,TRUE
+Erodium cicutarium ssp. cicutarium,Erodium cicutarium,,1,SCHOLZJANSZEN2004,TRUE
+Fragaria sp.,,genus-level report,1,ERICKSON2016,
+Fragaria virginiana var. glauca,Fragaria vesca,misreport of Fragaria vesca,1,THOMPSON2011,
+Fritillaria affinis var. affinis,Fritillaria affinis,legacy transcription (Collins/Crystal Mountain/Retreat Island): typo or non-vascular taxon; see upstream cleaning,1,THOMPSON2011,TRUE
+Fritillaria lanceolata,Fritillaria affinis,synonym,2,ERICKSON2016; TURNER1998,TRUE
+Galium carolinianum,Geranium carolinianum,"Report requires validation, likely a typo / mistake",1,TURNER1998,
+Gamochaeta sp.,,genus-level report,1,DL57MLC,
+Gnaphalium microcephalum,Pseudognaphalium thermale,G. microcephalum var. thermale; verify,2,DL57MLC,TRUE
+Gnaphalium sp.,,genus-level report,1,TRINCOMALI2001,
+Goodyera pubescens,Goodyera oblongifolia,G. pubescens is eastern; likely misapplied,1,DL57MLC,TRUE
+Gymnocarpium dryopteris,,Rejected; likely misidentification,1,TURNER1998,
+Juncus mertensianus,,Rejected; likely misidentification,1,DL57MLC,
+Juncus sp.,,genus-level report,2,DL57MLC; TURNER1998,
+Kickxia elatine,,potential new record (exotic); verify,1,TRINCOMALI2001,
+Lomatium dissectum,,potential new record; verify,1,DL57MLC,
+Lupinus bicolor ssp. bicolor,Lupinus bicolor,,1,SCHOLZJANSZEN2004,TRUE
+Luzula fastigiata,Luzula sp.,Cannot accept given problems in this complex,1,TAYLOR2012,TRUE
+Montia parviflora,Claytonia parviflora,synonym,1,QUADRAHILL2023,TRUE
+Montia perfoliata,Claytonia perfoliata,synonym,2,THOMPSON2011; TURNER1998,TRUE
+Montia sibirica,Claytonia sibirica,synonym,1,TURNER1998,TRUE
+Muscari sp.,,genus-level report,1,DL57MLC,
+Narcissus sp.,,genus-level report,1,DL57MLC,
+Olsynium douglasii,,"Rejected; either misidentification, or planted",1,DL57MLC,
+Piperia elegans ssp. elegans,Platanthera elongata,Name historically misapplied to Platanthera elongata,1,DL57MLC,
+Piperia sp.,,genus-level report,3,ERICKSON2016; GCAMASTERLIST2009; TAYLOR2012,
+Piperia transversa,Platanthera transversa,synonym,4,DL57MLC; QUADRAHILL2023; TRINCOMALI2001,TRUE
+Plectritis congesta var. congesta,Plectritis congesta ssp. congesta,,1,SCHOLZJANSZEN2004,TRUE
+Poa pratensis ssp. pratensis,Poa pratensis,,1,SCHOLZJANSZEN2004,TRUE
+Polygonum douglasii ssp. spergulariiforme,Polygonum spergulariiforme,synonym,1,SCHOLZJANSZEN2004,TRUE
+Polygonum sp.,,genus-level report,6,ERICKSON2016; GCAMASTERLIST2009,
+Populus trichocarpa × deltoides,,cultivated hybrid; probably non-established,1,DL57MLC,
+Potentilla anserina ssp. pacifica,Argentina pacifica,synonym,1,DL57MLC,TRUE
+Pyrus fusca,Malus fusca,synonym,1,TURNER1998,TRUE
+Rosa nootkensis,Rosa nutkana ssp. nutkana,misspelling of R. nutkana,2,CRYSTALMTN2010,TRUE
+Rubus ursinus ssp. macropetalus,Rubus ursinus,,1,TAYLOR2012,TRUE
+Salix lucida,Salix lasiandra var. lasiandra,S. lucida ssp. lasiandra,1,QUADRAHILL2023,TRUE
+Salix lucida ssp. lasiandra,Salix lasiandra var. lasiandra,synonym,1,CRYSTALMTN2010,TRUE
+Saxifraga integrifolia,Micranthes integrifolia,synonym,2,SCHOLZJANSZEN2004; TAYLOR2012,TRUE
+Saxifraga rufidula,Micranthes rufidula,synonym,1,SCHOLZJANSZEN2004,TRUE
+Schedonorus pratensis,Lolium pratense,synonym,1,QUADRAHILL2023,TRUE
+Sedum reflexum,Petrosedum rupestre,synonym,1,TAYLOR2012,TRUE
+Sedum spathulifolium var. spathulifolium,Sedum spathulifolium,,1,SCHOLZJANSZEN2004,TRUE
+Sequoiadendron giganteum,,planted; probably non-established,1,QUADRAHILL2023,
+Sorbus sitchensis,,Rejected; name misapplied to S. aucuparia,1,THOMPSON2011,
+Sparganium sp.,,genus-level report,1,QUADRAHILL2023,
+Stachys mexicana,Stachys chamissonis var. cooleyae,Name commonly misapplied to Stachys chamissonis var. cooleyae,1,DL57MLC,
+Stachys sp.,,genus-level report,1,CRYSTALMTN2010,
+Triteleia howellii,,"Rejected; either misidentification, or planted",1,DL57MLC,
+Urtica dioica ssp. gracilis,Urtica gracilis ssp. gracilis,synonym,1,TAYLOR2012,TRUE
+Urtica lyallii,Urtica gracilis ssp. gracilis,synonym,2,TRINCOMALI2001,TRUE
+Vaccinium sp.,,genus-level report,3,HUGGINS2019,
+Verbascum sp.,,genus-level report,1,TAYLOR2012,
+Viburnum lantana,,Non-established,1,DL57MLC,
+Vulpia myuros,Festuca myuros,synonym,4,DL57MLC; QUADRAHILL2023; SCHOLZJANSZEN2004; TRINCOMALI2001,TRUE
